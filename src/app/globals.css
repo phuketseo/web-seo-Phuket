@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --primary: #6366f1;
+    --primary-dark: #4f46e5;
+    --primary-light: #818cf8;
+    --accent: #25D366;
+    --accent-dark: #1ebe57;
+    --text-dark: #0f172a;
+    --text-gray: #64748b;
+    --bg-light: #f8fafc;
+    --bg-white: #ffffff;
+    --border: #e2e8f0;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-inter), 'Inter', sans-serif;
+    color: var(--text-dark);
+    background: var(--bg-white);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-kanit), 'Kanit', sans-serif;
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer base {
+  /* font-serif class now maps to Kanit Black for sharp modern look */
+  .font-serif {
+    font-family: var(--font-kanit), 'Kanit', sans-serif !important;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .text-gradient-green {
+    background: linear-gradient(135deg, #25D366 0%, #1ebe57 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  /* Hero soft background gradient */
+  .hero-gradient {
+    background: radial-gradient(ellipse 80% 60% at 60% -10%, #e0e7ff 0%, transparent 60%),
+                radial-gradient(ellipse 60% 50% at -10% 80%, #fce7f3 0%, transparent 60%),
+                #ffffff;
+  }
+  /* Pill button — primary */
+  .btn-pill {
+    @apply inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-7 py-3.5 rounded-full text-sm transition-all duration-200 hover:shadow-lg hover:shadow-indigo-200 hover:-translate-y-0.5 active:scale-95;
+  }
+  /* Pill button — ghost */
+  .btn-pill-ghost {
+    @apply inline-flex items-center gap-2 border border-slate-200 text-slate-700 hover:border-indigo-300 hover:text-indigo-700 hover:bg-indigo-50 font-medium px-7 py-3.5 rounded-full text-sm transition-all duration-200;
+  }
+  /* WhatsApp Green CTA pill */
+  .btn-pill-green {
+    @apply inline-flex items-center gap-2 text-white font-semibold px-7 py-3.5 rounded-full text-sm transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5 active:scale-95;
+    background-color: #25D366;
+  }
+  .btn-pill-green:hover {
+    background-color: #1ebe57;
+  }
+  .section-padding { @apply py-20 md:py-28; }
+  .container-custom { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; }
+  .card-hover { @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1; }
+}

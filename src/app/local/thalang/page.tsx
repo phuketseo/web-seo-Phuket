@@ -1,0 +1,81 @@
+import { Metadata } from 'next';
+import LocalSeoPage from '@/components/LocalSeoPage';
+
+export const metadata: Metadata = {
+  title: 'SEO ถลาง - บริการเพิ่มอันดับธุรกิจในถลาง ภูเก็ต',
+  description: 'เพิ่มการมองเห็นธุรกิจของคุณในถลาง ภูเก็ต ด้วยบริการ SEO ที่เชี่ยวชาญสำหรับโรงแรม, รีสอร์ท, อสังหาฯ, ร้านอาหาร, และสปา',
+};
+
+const thalangData = {
+  area: 'ถลาง',
+  areaEn: 'Thalang',
+  slug: 'thalang',
+  description: 'ย่านที่พักใกล้สนามบินภูเก็ต ศูนย์กลางอสังหาริมทรัพย์ระดับ Luxury',
+  businesses: ['โรงแรม', 'รีสอร์ท', 'อสังหาฯ', 'ร้านอาหาร', 'สปา'],
+  keywords: ['SEO ถลาง', 'โรงแรมถลาง', 'อสังหาฯถลาง', 'รีสอร์ทถลาง'],
+  landmarks: ['สนามบินภูเก็ต', 'หาดไม้ขาว', 'หาดนาทอน', 'อนุสาวรีย์วีรสตรี'],
+  stats: [
+    { metric: "+250%", label: "Organic Traffic" },
+    { metric: "Top 5", label: "ติดอันดับ Google" },
+    { metric: "4 เดือน", label: "เห็นผลลัพธ์" },
+    { metric: "40+", label: "ธุรกิจในถลาง" },
+  ],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'หน้าแรก',
+      item: 'https://www.phuketseo.com/',
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Local SEO',
+      item: 'https://www.phuketseo.com/local',
+    },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      name: 'ถลาง',
+      item: 'https://www.phuketseo.com/local/thalang',
+    },
+  ],
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'บริการ SEO ในถลาง ภูเก็ต',
+  description: 'บริการ SEO สำหรับธุรกิจในถลาง ภูเก็ต เพื่อเพิ่มการมองเห็นและลูกค้า',
+  serviceType: 'Local SEO',
+  areaServed: {
+    '@type': 'Place',
+    name: 'ถลาง, ภูเก็ต',
+  },
+  provider: {
+    '@type': 'Organization',
+    name: 'PhuketSEO',
+    url: 'https://www.phuketseo.com',
+  },
+};
+
+export default function ThalangPage() {
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <LocalSeoPage {...thalangData} />
+    </>
+  );
+}
