@@ -23,7 +23,7 @@ export async function POST(req: NextRequest) {
     }
 
     await resend.emails.send({
-      from: "PhuketSEO <onboarding@resend.dev>",
+      from: "PhuketSEO <noreply@phuketseo.com>",
       to: [process.env.CONTACT_EMAIL ?? "phuketseo369@gmail.com"],
       subject: `Lead ใหม่: ${name} — ${business ?? "ไม่ระบุธุรกิจ"}`,
       html: `
@@ -47,7 +47,7 @@ export async function POST(req: NextRequest) {
     });
 
     await resend.emails.send({
-      from: "PhuketSEO <onboarding@resend.dev>",
+      from: "PhuketSEO <noreply@phuketseo.com>",
       to: [email],
       subject: "ขอบคุณที่ติดต่อ PhuketSEO — เราจะติดต่อกลับเร็วๆ นี้",
       html: `
