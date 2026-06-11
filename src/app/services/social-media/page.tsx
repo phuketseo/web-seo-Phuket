@@ -1,6 +1,8 @@
 ﻿
 import Link from 'next/link';
 import { ChevronRight, Award, Users, TrendingUp, Lightbulb, Rocket, BarChart, DollarSign, HelpCircle, Share2, MessageCircle, Video } from 'lucide-react';
+import { siteConfig } from '@/lib/utils';
+import { organizationJsonLd } from '@/lib/schema';
 
 export const metadata = {
   title: 'Social Media Marketing ภูเก็ต — เพิ่มยอดขาย | PhuketSEO',
@@ -38,14 +40,12 @@ export default function SocialMediaPage() {
         '@type': 'Service',
         'serviceType': 'Social Media Marketing',
         'provider': {
-          '@type': 'Organization',
-          'name': 'PhuketSEO',
-          'url': 'https://phuketseo.com',
-          'logo': 'https://phuketseo.com/logo.png',
-          'contactPoint': {
+          ...organizationJsonLd,
+          contactPoint: {
             '@type': 'ContactPoint',
-            'telephone': '+66-81-234-5678',
-            'contactType': 'customer service',
+            telephone: siteConfig.phoneInternational,
+            email: siteConfig.email,
+            contactType: 'customer service',
           },
         },
         'areaServed': {
@@ -403,7 +403,7 @@ export default function SocialMediaPage() {
             ปรึกษาฟรี ไม่มีค่าใช้จ่าย
           </Link>
           <div className="mt-10 text-lg">
-            <p>โทร: <a href="tel:+66812345678" className="underline hover:text-gray-200">081-234-5678</a></p>
+            <p>โทร: <a href={`tel:${siteConfig.phone}`} className="underline hover:text-gray-200">{siteConfig.phone}</a></p>
             <p>LINE ID: <span className="font-semibold">@phuketseo</span></p>
           </div>
         </div>

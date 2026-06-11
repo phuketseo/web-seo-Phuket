@@ -2,6 +2,8 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { CheckCircle, Code, Layout, ShoppingCart, Briefcase, PenTool, Phone } from 'lucide-react';
+import { siteConfig } from '@/lib/utils';
+import { organizationJsonLd } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'รับทำเว็บไซต์ภูเก็ต ออกแบบเว็บมืออาชีพ | PhuketSEO',
@@ -46,15 +48,13 @@ export default function WebDesignServicePage() {
         "@type": "Service",
         "serviceType": "Web Design Service",
         "provider": {
-          "@type": "Organization",
-          "name": "PhuketSEO",
-          "url": "https://www.phuketseo.com",
-          "logo": "https://www.phuketseo.com/logo.png", // Placeholder, assuming a logo exists
-          "contactPoint": {
+          ...organizationJsonLd,
+          contactPoint: {
             "@type": "ContactPoint",
-            "telephone": "+66-81-234-5678", // Placeholder
-            "contactType": "customer service"
-          }
+            telephone: siteConfig.phoneInternational,
+            email: siteConfig.email,
+            contactType: "customer service",
+          },
         },
         "name": "รับทำเว็บไซต์ภูเก็ต",
         "description": "บริการรับทำเว็บไซต์ ออกแบบเว็บสวยงาม ทันสมัย รองรับทุกอุปกรณ์ เพิ่มยอดขายให้ธุรกิจของคุณในภูเก็ต เริ่มต้นเพียง 15,000 บาท",

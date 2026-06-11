@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import { Fragment } from 'react';
 import { Users, Award, Lightbulb } from 'lucide-react';
+import { organizationJsonLd } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'เกี่ยวกับเรา - PhuketSEO: ผู้เชี่ยวชาญด้านการตลาดดิจิทัลในภูเก็ต',
@@ -33,27 +34,15 @@ export default function AboutPage() {
           }
         `}
       </script>
-      <script type="application/ld+json">
-        {`
-          {
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "PhuketSEO",
-            "url": "https://www.phuketseo.com/",
-            "logo": "https://www.phuketseo.com/logo.png",
-            "contactPoint": {
-              "@type": "ContactPoint",
-              "telephone": "+66-81-234-5678",
-              "contactType": "customer service"
-            },
-            "sameAs": [
-              "https://www.facebook.com/phuketseo",
-              "https://twitter.com/phuketseo",
-              "https://www.linkedin.com/company/phuketseo"
-            ]
-          }
-        `}
-      </script>
+            ...organizationJsonLd,
+          }),
+        }}
+      />
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-[#1e3a8a] to-[#25D366] text-white py-20">
         <div className="container mx-auto px-4 text-center">

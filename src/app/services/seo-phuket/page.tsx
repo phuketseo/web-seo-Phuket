@@ -1,6 +1,7 @@
 ﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { CheckCircle, ArrowRight, Search, TrendingUp, Star, BarChart3, FileText, Link2, MapPin } from "lucide-react";
+import { localBusinessJsonLd } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "รับทำ SEO ภูเก็ต | ติดอันดับ Google ได้จริง - PhuketSEO",
@@ -23,7 +24,7 @@ const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   name: "บริการ SEO ภูเก็ต",
-  provider: { "@type": "LocalBusiness", name: "PhuketSEO" },
+  provider: localBusinessJsonLd,
   description: "บริการ SEO สำหรับธุรกิจในภูเก็ต ติดอันดับ Google หน้า 1",
   areaServed: { "@type": "City", name: "ภูเก็ต" },
   offers: {

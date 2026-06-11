@@ -2,6 +2,8 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
 import { ChevronRight, TrendingUp, Users, Briefcase, HeartPulse } from 'lucide-react';
+import { siteConfig } from '@/lib/utils';
+import { organizationJsonLd } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'ผลงานของเรา - PhuketSEO | กรณีศึกษา Digital Marketing ที่ประสบความสำเร็จ',
@@ -44,16 +46,15 @@ const CaseStudiesPage = () => {
     '@context': 'https://schema.org',
     '@graph': [
       {
-        '@type': 'Organization',
-        'name': 'PhuketSEO',
-        'url': 'https://www.phuketseo.com/case-studies',
-        'logo': 'https://www.phuketseo.com/logo.png', // Placeholder, replace with actual logo URL
-        'contactPoint': {
+        ...organizationJsonLd,
+        url: `${siteConfig.url}/case-studies`,
+        contactPoint: {
           '@type': 'ContactPoint',
-          'telephone': '+66-81-234-5678', // Placeholder, replace with actual phone number
-          'contactType': 'customer service',
-          'areaServed': 'TH',
-          'availableLanguage': 'Thai',
+          telephone: siteConfig.phoneInternational,
+          email: siteConfig.email,
+          contactType: 'customer service',
+          areaServed: 'TH',
+          availableLanguage: 'Thai',
         },
       },
       {

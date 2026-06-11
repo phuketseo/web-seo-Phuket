@@ -4,59 +4,71 @@
  * <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
  */
 
+import { siteConfig } from "@/lib/utils";
+
+export const postalAddressSchema = {
+  "@type": "PostalAddress",
+  ...siteConfig.postalAddress,
+};
+
+export const geoCoordinatesSchema = {
+  "@type": "GeoCoordinates",
+  ...siteConfig.geo,
+};
+
+export const organizationSameAs = [
+  siteConfig.social.facebook,
+  siteConfig.social.instagram,
+  siteConfig.social.linkedin,
+  siteConfig.social.youtube,
+];
+
+export const organizationJsonLd = {
+  "@type": "Organization",
+  name: siteConfig.name,
+  url: siteConfig.url,
+  logo: `${siteConfig.url}/logo.png`,
+  email: siteConfig.email,
+  telephone: siteConfig.phoneInternational,
+  address: postalAddressSchema,
+  sameAs: organizationSameAs,
+};
+
+export const localBusinessJsonLd = {
+  "@type": "LocalBusiness",
+  "@id": siteConfig.url,
+  name: siteConfig.name,
+  image: `${siteConfig.url}/og-image.png`,
+  url: siteConfig.url,
+  telephone: siteConfig.phoneInternational,
+  email: siteConfig.email,
+  priceRange: "฿฿",
+  description: siteConfig.description,
+  address: postalAddressSchema,
+  geo: geoCoordinatesSchema,
+  sameAs: organizationSameAs,
+};
+
 export const organizationSchema = {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "PhuketSEO",
-  url: "https://phuketseo.com",
-  logo: "https://phuketseo.com/logo.png",
+  ...organizationJsonLd,
   description:
     "บริษัท Digital Marketing Agency ในภูเก็ต ให้บริการ SEO, Google Ads, Social Media Marketing และ Web Design",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "123 ถนนภูเก็ต",
-    addressLocality: "เมืองภูเก็ต",
-    addressRegion: "ภูเก็ต",
-    postalCode: "83000",
-    addressCountry: "TH",
-  },
   contactPoint: {
     "@type": "ContactPoint",
-    telephone: "+66-76-XXX-XXX",
+    telephone: siteConfig.phoneInternational,
+    email: siteConfig.email,
     contactType: "customer service",
     availableLanguage: ["Thai", "English"],
   },
-  sameAs: [
-    "https://www.facebook.com/phuketseo",
-    "https://www.instagram.com/phuketseo",
-    "https://lin.ee/phuketseo",
-  ],
 };
 
 export const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": "https://phuketseo.com",
-  name: "PhuketSEO",
-  image: "https://phuketseo.com/og-image.png",
-  url: "https://phuketseo.com",
-  telephone: "+66-76-XXX-XXX",
+  ...localBusinessJsonLd,
   priceRange: "฿฿฿",
   description:
     "Digital Marketing Agency ในภูเก็ต เชี่ยวชาญ SEO, Google Ads, Social Media และ Web Design สำหรับธุรกิจในภูเก็ต",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "123 ถนนภูเก็ต",
-    addressLocality: "เมืองภูเก็ต",
-    addressRegion: "ภูเก็ต",
-    postalCode: "83000",
-    addressCountry: "TH",
-  },
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: 7.8804,
-    longitude: 98.3923,
-  },
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",

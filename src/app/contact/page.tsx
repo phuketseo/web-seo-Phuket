@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Home, Mail, Phone, Building, MessageSquare, Globe, Search, MapPin, Clock, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 import { siteConfig } from "@/lib/utils";
+import { organizationJsonLd } from "@/lib/schema";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -16,13 +17,11 @@ const jsonLd = {
       ],
     },
     {
-      "@type": "Organization",
-      name: siteConfig.name,
-      url: siteConfig.url,
-      logo: `${siteConfig.url}/logo.png`,
+      ...organizationJsonLd,
       contactPoint: {
         "@type": "ContactPoint",
-        telephone: siteConfig.phone,
+        telephone: siteConfig.phoneInternational,
+        email: siteConfig.email,
         contactType: "customer service",
         areaServed: "TH",
         availableLanguage: ["Thai", "English"],

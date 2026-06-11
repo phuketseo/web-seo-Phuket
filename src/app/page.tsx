@@ -2,6 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { siteConfig } from "@/lib/utils";
+import { geoCoordinatesSchema, organizationSameAs, postalAddressSchema } from "@/lib/schema";
 import {
   Search, TrendingUp, Share2, Monitor, Star, CheckCircle,
   ArrowRight, Phone, MessageCircle, Award, Users, BarChart3,
@@ -19,20 +20,13 @@ export const metadata: Metadata = {
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  name: "PhuketSEO",
+  name: siteConfig.name,
   description: "เอเจนซี่ SEO และการตลาดออนไลน์ในภูเก็ต",
-  url: "https://phuketseo.com",
-  telephone: "+66-76-123-456",
-  email: "hello@phuketseo.com",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "123/45 ถนนภูเก็ต",
-    addressLocality: "ตลาดใหญ่",
-    addressRegion: "ภูเก็ต",
-    postalCode: "83000",
-    addressCountry: "TH",
-  },
-  geo: { "@type": "GeoCoordinates", latitude: 7.8804, longitude: 98.3923 },
+  url: siteConfig.url,
+  telephone: siteConfig.phoneInternational,
+  email: siteConfig.email,
+  address: postalAddressSchema,
+  geo: geoCoordinatesSchema,
   openingHours: "Mo-Fr 09:00-18:00",
   priceRange: "฿฿",
   aggregateRating: {
@@ -41,11 +35,7 @@ const organizationSchema = {
     reviewCount: "52",
     bestRating: "5",
   },
-  sameAs: [
-    "https://facebook.com/phuketseo",
-    "https://instagram.com/phuketseo",
-    "https://linkedin.com/company/phuketseo",
-  ],
+  sameAs: organizationSameAs,
 };
 
 const faqSchema = {

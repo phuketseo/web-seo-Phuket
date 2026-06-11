@@ -1,6 +1,8 @@
 ﻿import React from 'react';
 import Link from 'next/link';
 import { CheckCircle, XCircle, Star, Briefcase, TrendingUp } from 'lucide-react';
+import { siteConfig } from '@/lib/utils';
+import { organizationJsonLd } from '@/lib/schema';
 
 export const metadata = {
   title: 'ราคาบริการ - PhuketSEO | แผนการตลาดดิจิทัลสำหรับธุรกิจของคุณ',
@@ -39,19 +41,13 @@ const jsonLd = {
       ]
     },
     {
-      "@type": "Organization",
-      "name": "PhuketSEO",
-      "url": "https://www.phuketseo.com",
-      "logo": "https://www.phuketseo.com/logo.png", // Placeholder, assuming a logo exists
-      "contactPoint": {
+      ...organizationJsonLd,
+      contactPoint: {
         "@type": "ContactPoint",
-        "telephone": "+66-81-234-5678", // Placeholder
-        "contactType": "customer service"
+        telephone: siteConfig.phoneInternational,
+        email: siteConfig.email,
+        contactType: "customer service",
       },
-      "sameAs": [
-        "https://www.facebook.com/phuketseo", // Placeholder
-        "https://www.instagram.com/phuketseo" // Placeholder
-      ]
     }
   ]
 };
