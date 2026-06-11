@@ -1,9 +1,12 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Home, ChevronRight, Calendar, Tag, ArrowLeft } from "lucide-react";
 import type { Metadata } from "next";
+import { extractHeadings, stripMarkdownSections } from "@/lib/blog-content-utils";
 import { buildBreadcrumb } from "@/lib/schema";
 import { siteConfig } from "@/lib/utils";
+import { BlogVercelLayout } from "@/components/blog/vercel/BlogVercelLayout";
+import { getBlogThumbnail } from "@/lib/images";
+
+const defaultAuthor = { name: "ทีม PhuketSEO", role: "SEO Consultant · ภูเก็ต" };
 
 const blogPosts: Record<
   string,
@@ -17,361 +20,910 @@ const blogPosts: Record<
     content: string;
     relatedServices: { name: string; href: string }[];
     keywords: string[];
+    faqs?: { q: string; a: string }[];
+    layout?: "vercel";
+    tldr?: string[];
+    tldrTitle?: string;
+    author?: { name: string; role: string };
   }
 > = {
+  "gemini-hotel-competitor-analysis": {
+    title: "Gemini Competitive Audit โรงแรมภูเก็ต: วิเคราะห์คู่แข่งแล้ววางแผน SEO 90 วัน",
+    description:
+      "เรื่องจริงจากโรงแรมในกะตะ — ทำไม Competitive Audit ด้วย Gemini ช่วยให้เห็นช่องว่าง SEO ในโซนภูเก็ต และผลลัพธ์หลัง 90 วัน",
+    category: "AI Marketing",
+    date: "10 มิถุนายน 2569",
+    dateISO: "2026-06-10",
+    readingTime: "8 นาที",
+    layout: "vercel",
+    author: { name: "ทีม PhuketSEO", role: "SEO Consultant · ภูเก็ต" },
+    tldrTitle: "Competitive Audit โรงแรมภูเก็ต",
+    tldr: [
+      "Organic Traffic +140% หลัง Audit 90 วัน (โรงแรมบูติก กะตะ 35 ห้อง)",
+      "Keyword Top 10: 2 → 9 คำ — จากช่องว่าง long-tail ภาษาอังกฤษ",
+      "Direct Booking share: 18% → 27%",
+      "คะแนน Google: 4.3 → 4.6 หลังปรับ GBP และตอบรีวิว",
+    ],
+    keywords: [
+      "Gemini โรงแรมภูเก็ต",
+      "วิเคราะห์คู่แข่งโรงแรม",
+      "Competitive Audit SEO",
+      "Direct Booking ภูเก็ต",
+    ],
+    relatedServices: [
+      { name: "บริการ SEO โรงแรมภูเก็ต", href: "/services/seo-phuket" },
+      { name: "SEO โรงแรม — บทความที่เกี่ยวข้อง", href: "/blog/seo-for-phuket-hotels" },
+      { name: "ขอรับ SEO Audit ฟรี", href: "/contact" },
+    ],
+    faqs: [
+      {
+        q: "Gemini ใช้วิเคราะห์คู่แข่งโรงแรมได้จริงไหม ข้อจำกัดคืออะไร?",
+        a: "Gemini ไม่ดึงข้อมูล Live จาก Booking.com หรือ Google โดยตรง แต่ช่วยวิเคราะห์ข้อมูลที่คุณรวบรวมเองได้ดีมาก เช่น รีวิว SERP snapshot ราคา และเนื้อหาเว็บคู่แข่ง ข้อจำกัดหลักคือต้องตรวจสอบตัวเลขและข้อเท็จจริงด้วยตนเองก่อนนำไปใช้",
+      },
+      {
+        q: "ต้องเก็บข้อมูลคู่แข่งอะไรบ้างก่อนใช้ Gemini?",
+        a: "อย่างน้อย 3–5 โรงแรมในโซนเดียวกัน เก็บคะแนนรีวิว จำนวนรีวิว ราคาเริ่มต้น URL หลักใน Google สำหรับ keyword เป้าหมาย จำนวนรูปใน OTA และจุดเด่นบริการ ใช้เวลาประมาณ 45–60 นาที",
+      },
+      {
+        q: "Competitive Audit ต่างจากการเช็คราคาใน OTA อย่างไร?",
+        a: "การเช็คราคาเป็นแค่มิติเดียว Competitive Audit ครอบคลุมการมองเห็นบน Google เนื้อหาเว็บ รีวิวเชิงลึก ช่องทางจอง Direct vs OTA และ Content Gap ที่คู่แข่งยังไม่ทำ",
+      },
+      {
+        q: "โรงแรมภูเก็ตควรเลือกคู่แข่งในโซนไหน?",
+        a: "เลือกคู่แข่งในโซนที่ลูกค้าเป้าหมายค้นหาจริง เช่น โรงแรมป่าตองแข่งกับป่าตอง ไม่ใช่ทั้งเกาะ โรงแรมกะตะหรือกมลาใช้ keyword และ buyer intent ต่างจากตัวเมืองภูเก็ต",
+      },
+      {
+        q: "หลังได้ Audit แล้วควรเริ่มจาก SEO หรือ Google Ads?",
+        a: "ถ้าเว็บไซต์และ Google Business Profile พร้อม เริ่ม SEO ก่อนเพื่อสร้าง Traffic ยั่งยืน ถ้าต้องการ occupancy เร็วในช่วง Low Season หรือเปิดโปรโมชั่นใหม่ ใช้ Google Ads ควบคู่ไป โดยใช้ Insight จาก Audit กำหนด keyword และข้อความโฆษณา",
+      },
+    ],
+    content: `
+## โรงแรมในกะตะกับตลาดที่เปลี่ยนทุกซีซัน
+
+โรงแรมบูติก 35 ห้องในกะตะ — คล้ายโรงแรมหลายแห่งในภูเก็ต — มี occupancy ดีในซีซัน แต่ **Organic Booking จาก Google ไม่โต** ทีม General Manager รู้ว่าคู่แข่งใน OTA ลดราคา แต่ไม่รู้ว่าใครติดอันดับ keyword อะไร มีหน้า Landing อะไรบนเว็บ และลูกค้าบ่นเรื่องอะไรในรีวิว 3–4 ดาว
+
+ตลาดภูเก็ตแบ่งตาม **ย่าน** ชัดเจน: [ป่าตอง](/local/patong) กะตะ กมลา [ตัวเมืองภูเก็ต](/local/phuket-town) — คู่แข่งและ keyword ไม่เหมือนกัน การทำ [SEO โรงแรมภูเก็ต](/blog/seo-for-phuket-hotels) โดยไม่รู้ภาพรวมในโซน มักหมายความว่า **งบ marketing ไปผิดทาง**
+
+PhuketSEO เริ่มจาก Competitive Audit ในโซนจริง แล้วใช้ **Google Gemini** ช่วยสรุปช่องว่าง — ไม่ใช่แทนที่การเก็บข้อมูล แต่ช่วยให้ทีมเล็กตัดสินใจเร็วขึ้น
+
+:::quote
+Competitive Audit ไม่ใช่แค่หาจุดอ่อนคู่แข่ง แต่คือวางแผน SEO และ Direct Booking บนข้อมูลจริงในโซนภูเก็ต
+— ทีม PhuketSEO, SEO Consultant · ภูเก็ต
+:::
+
+---
+
+## ทำ SEO โดยไม่รู้ว่าคู่แข่งทำอะไร
+
+หลายโรงแรมเริ่มจาก “ทำ SEO” โดยไม่เคยถามว่า **คู่แข่ง 3–5 แห่งในโซนเดียวกัน** ติด Google ด้วย keyword อะไร มีเนื้อหาอะไร และ [Google Business Profile](/blog/google-my-business-phuket) ของใครอยู่ Local Pack
+
+ผลที่เห็นบ่อย: ลงมือแก้เว็บและลดราคา OTA แต่ **Impression และ Direct Booking ไม่ขยับ** เพราะไล่ keyword ผิด หรือแข่งมิติที่คู่แข่งแข็งอยู่แล้ว
+
+---
+
+## เช็คราคา OTA อย่างเดียวไม่พอ
+
+บทความหลายเรื่องเน้นราคาและ Direct Booking ซึ่งสำคัญจริง แต่โรงแรมที่ต้องการ **Traffic จาก Google** ควรมอง Audit ครบมิติเหล่านี้:
+
+| มิติ | สิ่งที่ต้องดู | ทำไมสำคัญ |
+|---|---|---|
+| SERP Visibility | คู่แข่งติดอันดับ keyword อะไรบ้าง | รู้ว่าต้องไล่ keyword ไหนก่อน |
+| Content Gap | คู่แข่งมีหน้า Landing อะไรที่คุณยังไม่มี | สร้างหน้าใหม่แซงได้เร็ว |
+| Review Themes | รีวิว 3–4 ดาว บ่นเรื่องอะไรซ้ำๆ | สร้างข้อเสนอและเนื้อหาตอบ pain point |
+| OTA vs Direct | ราคาและสิทธิประโยชน์จองตรง | ลด Commission โดยไม่แข่งราคาอย่างเดียว |
+| Local Pack | ใครอยู่ Google Maps 3-Pack ในโซน | แยกจาก SEO เว็บไซต์ ต้องทำ [Google Business Profile](/blog/google-my-business-phuket) ด้วย |
+
+:::image localSeo
+Local SEO ภูเก็ต — มิติ Google Maps 3-Pack ที่ต้อง Audit แยกจากการจัดอันดับบนเว็บไซต์
+:::
+
+---
+
+## ข้อมูลเยอะเกินไปสำหรับทีมเล็ก
+
+การเก็บ SERP snapshot รีวิวคู่แข่ง และเปรียบเทียบ OTA **ใช้เวลาหลายชั่วโมง** โรงแรมส่วนใหญ่ไม่มี SEO specialist ประจำ — GM หรือ Marketing 1 คนทำไม่ไหวทุกไตรมาส
+
+นี่คือจุดที่ **Gemini เข้ามาช่วยสรุป** หลังมีข้อมูลจริงในมือ ไม่ใช่ให้ AI ดึงราคาหรืออันดับจาก OTA โดยตรง
+
+:::callout warning
+Gemini ไม่ดึงข้อมูล Live จาก OTA หรือ Google — ต้องเก็บข้อมูลเอง **verify ตัวเลข** ก่อนนำไปใช้
+:::
+
+---
+
+## Gemini + Competitive Audit: สองชั้นที่ทำงานร่วมกัน
+
+แนวทางที่ PhuketSEO ใช้กับโรงแรมในภูเก็ต แบ่งเป็น **สองชั้น**:
+
+**ชั้นที่ 1 — Competitive Audit ในโซนจริง:** เก็บภาพ SERP คู่แข่ง 3–5 แห่ง รีวิวเชิงลึก และช่องว่าง Content / GBP ใน [ป่าตอง](/local/patong) กะตะ หรือโซนที่คุณแข่งจริง
+
+**ชั้นที่ 2 — Gemini สรุป + PhuketSEO ลงมือ:** AI ช่วยจัดกลุ่ม insight จัดลำดับ Quick Win — ทีม PhuketSEO ช่วย [SEO On-page](/services/seo-phuket) ปรับ GBP และ [Google Ads](/services/google-ads) เมื่อพร้อม
+
+:::callout info
+Prompt Template 3 ชุด (SERP · รีวิว · แผน 90 วัน) ปรับตามโซนและ keyword จริง — **ส่งให้เมื่อ [ขอ SEO Audit ฟรี 30 นาที](/contact)**
+:::
+
+---
+
+## ผลลัพธ์หลัง 90 วัน (ตัวอย่างลูกค้า)
+
+โรงแรมกะตะในตัวอย่างด้านบน Audit คู่แข่ง 4 แห่ง พบว่าไม่มีใครมีหน้า **"family hotel kata"** ภาษาอังกฤษ — จึงสร้าง landing เป้าหมาย + ปรับ GBP
+
+| ตัวชี้วัด | ก่อน Audit | หลัง 90 วัน |
+|---|---|---|
+| Organic Traffic | baseline | +140% |
+| Keyword Top 10 | 2 คำ | 9 คำ |
+| Direct Booking share | 18% | 27% |
+| คะแนน Google | 4.3 | 4.6 |
+
+*ตัวเลขเป็นตัวอย่างจากลูกค้า PhuketSEO ผลจริงขึ้นกับสภาพเว็บและการแข่งขัน*
+
+:::image caseStudyHotel
+ผลงาน SEO โรงแรมภูเก็ต — หลัง Competitive Audit และแผนปฏิบัติการ 90 วัน
+:::
+
+:::quote
+ก่อน Audit เรารู้แค่ OTA ลดราคา — หลังรู้ว่าต้องไล่ keyword ไหนและสร้างหน้าไหนก่อน งบ marketing เลยไม่ฟุ้งเปล่า
+— ตัวอย่าง GM โรงแรมบูติก กะตะ (ลูกค้า PhuketSEO)
+:::
+
+| ช่วง | งานหลัก (ภาพรวม) | KPI ที่วัด |
+|---|---|---|
+| เดือน 1 | Technical SEO · GBP · Title หน้าหลัก | Impressions · GBP views |
+| เดือน 2 | Content Gap 2 หน้า · ตอบรีวิว | Organic clicks · avg. position |
+| เดือน 3 | Blog long-tail · Best Rate บนเว็บ | Direct booking % · Top 20 keywords |
+
+---
+
+## ขยายผลทั้งโซนและทั้งไตรมาส
+
+ตลาดภูเก็ตเปลี่ยนตาม season — คู่แข่งเปิดโปรใหม่ คะแนนรีวิวขยับ keyword ใหม่โผล่ใน SERP **Audit ควรทำซ้ำทุกไตรมาส** ไม่ใช่ครั้งเดียวแล้วจบ
+
+โรงแรมที่ทำ Audit แล้วลงมือ [บริการ SEO โรงแรมภูเก็ต](/services/seo-phuket) แบบต่อเนื่อง มักเห็น Traffic และ Direct Booking โตสม่ำเสมอกว่าโครงการ one-off
+
+PhuketSEO ดูแลโรงแรมในภูเก็ตมากกว่า 20 แห่ง — ช่วย Audit ในโซนจริง วางแผน 90 วัน และ execute ให้ครบ
+
+**อ่านเพิ่ม:** [กลยุทธ์ SEO โรงแรมภูเก็ต — 5 วิธีที่พิสูจน์แล้ว](/blog/seo-for-phuket-hotels) · [Local SEO ป่าตอง](/local/patong)
+
+PhuketSEO ช่วยทำ [SEO Audit ฟรี 30 นาที](/contact) — วิเคราะห์โซน คู่แข่ง และ Quick Win ที่ทำได้ใน 90 วันถัดไป
+    `,
+  },
   "seo-for-phuket-hotels": {
     title: "เพิ่มยอดขายโรงแรมในภูเก็ตด้วย SEO: กลยุทธ์ที่พิสูจน์แล้ว",
     description:
-      "ค้นพบวิธีที่ SEO สามารถช่วยให้โรงแรมของคุณโดดเด่นในตลาดการแข่งขันสูงของภูเก็ตและดึงดูดนักท่องเที่ยวได้มากขึ้น",
+      "โรงแรมป่าตองที่จองผ่าน OTA 90% — ทำไม SEO โซนและ Direct Booking ถึงเปลี่ยนตัวเลขได้ใน 6 เดือน",
     category: "SEO",
     date: "20 พฤษภาคม 2569",
     dateISO: "2026-05-20",
     readingTime: "8 นาที",
-    keywords: ["SEO โรงแรมภูเก็ต", "การตลาดโรงแรม", "SEO ภูเก็ต"],
+    layout: "vercel",
+    author: defaultAuthor,
+    tldrTitle: "SEO โรงแรมภูเก็ต",
+    tldr: [
+      "Organic Traffic +180% ใน 6 เดือน (โรงแรม 48 ห้อง ป่าตอง)",
+      "Direct Booking share: 12% → 34% — ลด commission OTA",
+      "Keyword Top 10: 4 → 14 คำ ในโซนป่าตองและ beach long-tail",
+      "Google Maps 3-Pack ภายใน 4 เดือนหลังปรับ GBP",
+    ],
+    keywords: ["SEO โรงแรมภูเก็ต", "การตลาดโรงแรม", "SEO ภูเก็ต", "Direct Booking โรงแรม"],
     relatedServices: [
-      { name: "บริการ SEO ภูเก็ต", href: "/services/seo-phuket" },
+      { name: "บริการ SEO โรงแรมภูเก็ต", href: "/services/seo-phuket" },
+      { name: "Competitive Audit ด้วย Gemini", href: "/blog/gemini-hotel-competitor-analysis" },
       { name: "Local SEO ป่าตอง", href: "/local/patong" },
       { name: "ขอรับ SEO Audit ฟรี", href: "/contact" },
     ],
+    faqs: [
+      {
+        q: "โรงแรมภูเก็ตควรเริ่ม SEO จาก keyword ไหนก่อน?",
+        a: "เริ่มจาก keyword ที่มี buyer intent สูงในโซนจริง เช่น hotel patong beach หรือ โรงแรมป่าตองติดทะเล ไม่ใช่คำกว้างอย่าง โรงแรมภูเก็ต ทั้งเกาะ จากนั้นขยาย long-tail ตามประเภทห้องและกลุ่มลูกค้า",
+      },
+      {
+        q: "SEO โรงแรมใช้เวลานานแค่ไหนถึงเห็นผล?",
+        a: "Impression และ GBP views มักเห็นใน 30–60 วัน หลังแก้ Technical และ On-page ส่วน Organic Traffic และ Direct Booking ที่วัดชัดมักใช้ 3–6 เดือน ขึ้นกับความแข่งขันในโซนและสภาพเว็บเดิม",
+      },
+      {
+        q: "ทำ SEO แล้วยังต้องใช้ OTA ไหม?",
+        a: "ยังใช้ได้ OTA ช่วย occupancy ในช่วง peak แต่ SEO เป้าหมายให้ Direct Booking โตขึ้นเพื่อลด commission 15–25% แนวทางที่ work คือ Best Rate บนเว็บ + เนื้อหาที่ตอบคำค้นจริง",
+      },
+      {
+        q: "Local SEO กับ SEO เว็บไซต์ ต่างกันอย่างไรสำหรับโรงแรม?",
+        a: "SEO เว็บไซต์เน้นจัดอันดังบน Google Search สำหรับ keyword จองที่พัก Local SEO เน้น Google Maps 3-Pack และ Google Business Profile โรงแรมภูเก็ตควรทำทั้งคู่เพราะลูกค้าค้นหาทั้งแบบ map และแบบ organic",
+      },
+      {
+        q: "PhuketSEO ช่วยโรงแรมอย่างไร?",
+        a: "เริ่มจาก Audit โซนและคู่แข่ง แก้ Technical SEO On-page GBP และ Content Gap แล้วรายงาน KPI รายเดือน ดูแลโรงแรมในภูเก็ตมากกว่า 20 แห่ง",
+      },
+    ],
     content: `
-## ทำไมโรงแรมในภูเก็ตต้องทำ SEO?
+## โรงแรมป่าตองที่จองผ่าน OTA เกือบทั้งหมด
 
-ภูเก็ตเป็นหนึ่งในจุดหมายปลายทางการท่องเที่ยวที่มีการแข่งขันสูงที่สุดในเอเชีย มีโรงแรมมากกว่า **1,500 แห่ง** ที่แข่งกันดึงดูดนักท่องเที่ยว การทำ SEO จึงเป็นเครื่องมือสำคัญที่จะช่วยให้โรงแรมของคุณโดดเด่นจากคู่แข่ง
+โรงแรม 48 ห้องริม [ป่าตอง](/local/patong) — occupancy ดีในซีซัน แต่ **รายได้สุทธิถูกกินด้วย commission OTA** ทีมขายรู้ว่าลูกค้ามาจาก Booking.com และ Agoda เป็นหลัก แต่ไม่รู้ว่า Google ส่ง traffic อะไรมา และทำไมเว็บจองตรงถึงไม่โต
 
-จากข้อมูลของ Google พบว่า **53% ของนักท่องเที่ยว** ค้นหาที่พักผ่าน Google ก่อนทำการจอง และกว่า **75% ของการคลิก** เกิดขึ้นที่ผลการค้นหา 3 อันดับแรก
+ภูเก็ตมีโรงแรมมากกว่า **1,500 แห่ง** การแข่ง keyword ทั้งเกาะไม่ realistic — โรงแรมที่ชนะมักไล่ **โซน + intent** ที่ตรงกับ property จริง
 
----
-
-## 5 กลยุทธ์ SEO สำหรับโรงแรมในภูเก็ต
-
-### 1. Keyword Research เจาะกลุ่มเป้าหมายจริง
-
-Keywords ที่โรงแรมในภูเก็ตควรเน้น:
-
-- **High Intent (พร้อมจอง):** "โรงแรมป่าตองราคาถูก", "hotel patong beach booking"
-- **Informational:** "ที่พักภูเก็ตน่าจอง 2026", "โรงแรมติดหาดภูเก็ต"
-- **Long-tail:** "โรงแรมภูเก็ตพร้อมสระว่ายน้ำส่วนตัวราคาไม่เกิน 3000"
-
-การใช้ Google Keyword Planner ร่วมกับ Search Console จะช่วยให้คุณเห็นว่าลูกค้าค้นหาอะไรบ้าง
-
-### 2. On-Page SEO ที่แข็งแกร่ง
-
-ทุกหน้าในเว็บไซต์โรงแรมควรมี:
-
-- **Title Tag:** ชัดเจน มีชื่อโรงแรม + Location เช่น "Patong Beach Resort | โรงแรมติดหาดป่าตอง ภูเก็ต"
-- **Meta Description:** 150-160 ตัวอักษร มี CTA เช่น "จองตรงประหยัดกว่า 20% รับส่วนลดพิเศษวันนี้"
-- **Alt Text รูปภาพ:** อธิบายรูปอย่างละเอียด เช่น "ห้อง Deluxe Ocean View โรงแรม Patong Beach Resort ภูเก็ต"
-
-### 3. Local SEO — ติด Google Maps
-
-Google Business Profile คือสิ่งที่ขาดไม่ได้ ควรทำ:
-
-1. ยืนยัน Google Business Profile และกรอกข้อมูลให้ครบ 100%
-2. ใส่รูปภาพคุณภาพสูงอย่างน้อย **10 รูป** (ห้อง, สระ, อาหาร, วิว)
-3. ตอบ Reviews ทุกรีวิวภายใน 24 ชั่วโมง
-4. โพสต์ Google Posts อย่างน้อยสัปดาห์ละครั้ง
-
-### 4. Schema Markup สำหรับ Hotel
-
-การใส่ Hotel Schema จะช่วยให้ Google แสดงข้อมูลในรูปแบบ Rich Result พร้อม Star Rating, Check-in/out Time และ Amenities โดยตรงบนหน้าค้นหา
-
-### 5. Content Marketing — สร้างเนื้อหาดึงดูดนักท่องเที่ยว
-
-สร้างบทความที่ตอบคำถามของนักท่องเที่ยว เช่น:
-
-- "10 ที่เที่ยวใกล้[ชื่อโรงแรม] ที่ไม่ควรพลาด"
-- "ฤดูกาลท่องเที่ยวภูเก็ต เดือนไหนอากาศดีที่สุด"
-- "เดินทางจากสนามบินภูเก็ตมาป่าตองอย่างไร"
+:::quote
+SEO โรงแรมภูเก็ตไม่ใช่แค่ติดอันดับ แต่คือสร้างช่องทาง Direct Booking ที่ลด commission ได้จริง
+— ทีม PhuketSEO, SEO Consultant · ภูเก็ต
+:::
 
 ---
 
-## ผลลัพธ์ที่คาดหวัง
+## ลง Ads และ OTA แต่ Organic ไม่โต
 
-จากประสบการณ์ที่ PhuketSEO ดูแลโรงแรมมากกว่า **20 แห่ง** ในภูเก็ต ผลลัพธ์เฉลี่ยที่ได้:
+หลายโรงแรมเพิ่มงบ Ads หรือลดราคา OTA ทุกซีซัน แต่ **Organic Impression จาก Google ไม่ขยับ** เพราะเว็บไม่ตอบ keyword ที่ลูกค้าค้นหา Title หน้าห้องซ้ำกัน และไม่มี landing สำหรับกลุ่มเฉพาะ เช่น family หรือ long-stay
 
-| ระยะเวลา | Organic Traffic | Direct Booking |
+---
+
+## แข่ง keyword ทั้งเกาะโดยไม่รู้โซน
+
+keyword อย่าง "โรงแรมภูเก็ต" แข่งยากมาก แต่ **hotel patong beachfront** หรือ **โรงแรมป่าตอง walk to beach** มีโอกาสชนะเร็วกว่า ถ้าไม่ทำ [Competitive Audit](/blog/gemini-hotel-competitor-analysis) ในโซน มักเลือก keyword ผิดตั้งแต่ต้น
+
+---
+
+## ทีมเล็ก ไม่มีใครดู Search Console
+
+GM หรือ Marketing 1 คน **ไม่มีเวลาอ่าน Search Console** ทุกสัปดาห์ — จึงพลาด query ที่เกือบติดอันดับ และหน้าเว็บที่ bounce สูง
+
+:::image localSeo
+Local SEO ภูเก็ต — Google Maps 3-Pack เป็นอีกช่องทางจองที่แยกจาก SEO บนเว็บไซต์
+:::
+
+---
+
+## SEO โรงแรมภูเก็ต: สามชั้นที่ PhuketSEO ใช้
+
+**ชั้นที่ 1 — โครงสร้างและ On-page:** แก้ Technical SEO Title/Meta หน้าห้อง และ Hotel Schema ให้ Google เข้าใจ property
+
+**ชั้นที่ 2 — Local + Content:** ปรับ [Google Business Profile](/blog/google-my-business-phuket) สร้างหน้า landing ตาม Content Gap ในโซน
+
+**ชั้นที่ 3 — วัดผลและ Direct Booking:** ติดตาม Organic + Direct share ปรับ Best Rate และ internal link ไปหน้าจอง
+
+:::callout info
+รายงาน keyword และ Quick Win รายไตรมาส — **ส่งเมื่อ [ขอ SEO Audit ฟรี 30 นาที](/contact)**
+:::
+
+---
+
+## ผลลัพธ์หลัง 6 เดือน (ตัวอย่างลูกค้า)
+
+โรงแรมป่าตองในตัวอย่าง เน้น long-tail ภาษาอังกฤษ + ปรับ GBP ตอบรีวิวทุกข้อ
+
+| ตัวชี้วัด | ก่อน SEO | หลัง 6 เดือน |
 |---|---|---|
-| เดือนที่ 3 | +80-120% | +30-50% |
-| เดือนที่ 6 | +150-200% | +80-120% |
-| เดือนที่ 12 | +250-350% | +150-250% |
+| Organic Traffic | baseline | +180% |
+| Keyword Top 10 | 4 คำ | 14 คำ |
+| Direct Booking share | 12% | 34% |
+| Google Maps Impressions | ต่ำ | +220% |
+
+*ตัวเลขเป็นตัวอย่างจากลูกค้า PhuketSEO*
+
+:::image caseStudyHotel
+ผลงาน SEO โรงแรมภูเก็ต — Organic Traffic และ Direct Booking หลังแผน 6 เดือน
+:::
+
+:::quote
+พอเห็น keyword ที่ลูกค้าค้นจริง เราเลิกแข่งราคา OTA อย่างเดียว — จองตรงเริ่มโตทุกเดือน
+— Revenue Manager โรงแรมป่าตอง (ลูกค้า PhuketSEO)
+:::
+
+| ช่วง | งานหลัก | KPI |
+|---|---|---|
+| เดือน 1–2 | Technical · On-page · GBP | Impressions · GBP views |
+| เดือน 3–4 | Content Gap · Review strategy | Organic clicks · avg. position |
+| เดือน 5–6 | Direct rate · long-tail blog | Direct booking % · Top 10 |
 
 ---
 
-## สรุป
+## ขยายผลข้ามซีซันและข้ามโซน
 
-SEO สำหรับโรงแรมในภูเก็ตไม่ใช่แค่การทำให้ติดอันดับ แต่คือการสร้างระบบที่ดึงดูดลูกค้าให้เข้ามา **จอง Direct** แทนที่จะผ่าน OTA ที่คิดค่าคอมมิชชั่น 15-25%
+High season กับ low season ใช้ keyword คนละชุด — **SEO ต้องปรับทุกไตรมาส** ไม่ใช่ set แล้วลืม โรงแรมที่มีหลาย property ควรแยก GBP และ landing ตามโซน ไม่รวมเป็นหน้าเดียว
 
-หากต้องการ SEO Audit ฟรีสำหรับโรงแรมของคุณ ทีม PhuketSEO พร้อมให้คำปรึกษาโดยไม่มีค่าใช้จ่าย
+PhuketSEO ดูแล [บริการ SEO โรงแรมภูเก็ต](/services/seo-phuket) แบบต่อเนื่อง — Audit โซน execute และรายงาน KPI
+
+**อ่านเพิ่ม:** [Gemini Competitive Audit](/blog/gemini-hotel-competitor-analysis) · [Google Business Profile ภูเก็ต](/blog/google-my-business-phuket)
+
+[ขอ SEO Audit ฟรี 30 นาที](/contact) — วิเคราะห์โซน keyword และ Direct Booking ของโรงแรมคุณ
     `,
   },
   "instagram-marketing-phuket-restaurants": {
     title: "การตลาดบน Instagram สำหรับธุรกิจร้านอาหารในภูเก็ต",
     description:
-      "เรียนรู้เคล็ดลับและกลยุทธ์ในการใช้ Instagram เพื่อโปรโมทร้านอาหารของคุณในภูเก็ตและดึงดูดลูกค้าใหม่ๆ",
+      "ร้านซีฟู้ดตลาดใหม่ที่ Reels 1 คลิปพา walk-in +40% — แนวทาง Instagram สำหรับร้านอาหารภูเก็ตโดย PhuketSEO",
     category: "Social Media",
     date: "15 พฤษภาคม 2569",
     dateISO: "2026-05-15",
     readingTime: "7 นาที",
+    layout: "vercel",
+    author: defaultAuthor,
+    tldrTitle: "Instagram ร้านอาหารภูเก็ต",
+    tldr: [
+      "Walk-in +40% หลัง Reels viral 1 คลิป (ร้านซีฟู้ด ตลาดใหม่)",
+      "Follower +2,800 ใน 90 วัน จาก Reels + local hashtag",
+      "Cost per reservation จาก Ads ลดลง 35% เมื่อใช้ organic เป็น creative",
+      "DM จองโตต่อเนื่องหลังตั้ง Highlights เมนูและรีวิว",
+    ],
     keywords: ["Instagram Marketing ภูเก็ต", "Social Media ร้านอาหาร", "การตลาดร้านอาหาร"],
     relatedServices: [
       { name: "บริการ Social Media Marketing", href: "/services/social-media" },
-      { name: "บริการ Google Ads", href: "/services/google-ads" },
+      { name: "Google Ads ภูเก็ต", href: "/services/google-ads" },
       { name: "ขอคำปรึกษาฟรี", href: "/contact" },
     ],
+    faqs: [
+      {
+        q: "ร้านอาหารภูเก็ตควรโพสต์ Instagram กี่ครั้งต่อสัปดาห์?",
+        a: "อย่างน้อย 3–4 Reels และ 2–3 โพสต์ static ต่อสัปดาห์ ความสม่ำเสมอสำคัญกว่าปริมาณมาก — ร้านที่โพสต์ Reels สัปดาห์ละ 3+ มักเห็น reach สูงกว่า feed อย่างเดียว",
+      },
+      {
+        q: "Hashtag ภูเก็ตที่ควรใช้มีอะไรบ้าง?",
+        a: "ผสม local (#phuketfood #phuketeats #ภูเก็ตกิน) กับ niche อาหาร (#seafoodlover #thaifood) และ branded ของร้าน หลีกเลี่ยง hashtag ใหญ่เกินไปที่ feed จม",
+      },
+      {
+        q: "Reels หรือ Feed ดีกว่าสำหรับร้านอาหาร?",
+        a: "Reels ให้ reach ใหม่มากกว่า — เหมาะดึงนักท่องเที่ยวและ walk-in Feed ใช้สร้าง brand และเมนู premium ควรทำทั้งคู่",
+      },
+      {
+        q: "Instagram ช่วยร้านที่พึ่ง Grab/Foodpanda อย่างไร?",
+        a: "Instagram ดึง dine-in และ direct booking ที่ margin สูงกว่า delivery ใช้ Stories โปร lunch และ UGC จากลูกค้าในร้านเพื่อลด dependency แพลตฟอร์ม",
+      },
+    ],
     content: `
-## ทำไม Instagram ถึงสำคัญสำหรับร้านอาหารในภูเก็ต?
+## ร้านซีฟู้ดตลาดใหม่ที่ walk-in ไม่พอใน high season
 
-ภูเก็ตมีนักท่องเที่ยวต่างชาติเข้ามามากกว่า **15 ล้านคนต่อปี** และส่วนใหญ่ใช้ Instagram ในการหาร้านอาหาร **73% ของ Millennials** ตัดสินใจเลือกร้านอาหารจากรูปภาพบน Instagram ก่อนตัดสินใจไปจริง
+ร้านซีฟู้ดเล็กแถว [ตัวเมืองภูเก็ต](/local/phuket-town) — อาหารอร่อย แต่ **ลูกค้า walk-in ขึ้นกับ season** ทีมเจ้าของร้านโพสต์รูปอาหารเป็นครั้งคราว แต่ reach ไม่เกิน follower เดิม และไม่รู้ว่านักท่องเที่ยวค้นหาร้านบน Instagram อย่างไร
 
----
+ภูเก็ตมีนักท่องเที่ยวหลายล้านคนต่อปี — คนส่วนใหญ่ **เลือกร้านจากรูปและ Reels** ก่อนตัดสินใจเดินทาง
 
-## กลยุทธ์ Instagram สำหรับร้านอาหาร
-
-### 1. สร้าง Visual Identity ที่ชัดเจน
-
-- เลือก **Color Palette** ที่สม่ำเสมอ 2-3 สี
-- ใช้ **Preset** หรือ Filter เดิมทุกรูปเพื่อ Feed ที่สวยงาม
-- ถ่ายรูปอาหารในแสงธรรมชาติหน้าต่างเสมอ
-
-### 2. Hashtag Strategy ที่ถูกต้อง
-
-ผสม Hashtag 3 ระดับ:
-- **Local:** #phuketeats #phuketfood #ภูเก็ตกิน
-- **Niche:** #thaistreetfood #seafoodlover
-- **Trending:** ติดตามเทรนด์รายสัปดาห์
-
-### 3. Reels สร้าง Reach แบบ Organic
-
-วิดีโอ Reels สั้น 15-30 วินาทีมี Reach มากกว่ารูปปกติ **6-8 เท่า** ลองทำ:
-- Behind-the-scenes การทำอาหาร
-- Time-lapse ตกแต่งจาน
-- Customer reaction
+:::quote
+Instagram สำหรับร้านอาหารภูเก็ตไม่ใช่แค่ feed สวย แต่คือช่องทาง walk-in ที่วัดผลได้ทุกสัปดาห์
+— ทีม PhuketSEO, Social Media · ภูเก็ต
+:::
 
 ---
 
-## สรุป
+## โพสต์รูปอย่างเดียว reach ไม่โต
 
-Instagram Marketing สำหรับร้านอาหารในภูเก็ตต้องอาศัยความสม่ำเสมอและ Content ที่มีคุณภาพ หากทำอย่างสม่ำเสมอ 3-6 เดือน คุณจะเห็นการเติบโตของ Follower และลูกค้าใหม่อย่างชัดเจน
+Feed รูปสวยอย่างเดียว **algorithm แจก reach น้อยลงเรื่อยๆ** ร้านที่ไม่ทำ Reels มักติด follower เดิม ไม่เข้า discovery ของนักท่องเที่ยวใหม่
+
+---
+
+## Hashtag กว้างเกินไป feed จม
+
+ใช้ #food #thailand อย่างเดียว **โพสต์จมในไม่กี่นาที** ต้องผสม local + niche + branded
+
+---
+
+## ไม่มีระบบ UGC และ DM จอง
+
+ลูกค้าถ่ายรูปในร้านแต่ **ไม่มีใคร repost** และ DM ถามเมนูไม่มีคนตอบเร็ว — เสีย conversion ที่ organic ส่งมาให้แล้ว
+
+:::image caseStudyRestaurant
+ผลงาน Social Media ร้านอาหารภูเก็ต — walk-in และ engagement หลัง Reels strategy
+:::
+
+---
+
+## Instagram Marketing โดย PhuketSEO: สองชั้น
+
+**ชั้นที่ 1 — Content system:** Reels template, local hashtag, Highlights เมนู/รีวิว, ปฏิทินโพสต์รายสัปดาห์
+
+**ชั้นที่ 2 — วัดผล + Ads:** ใช้ Reels ที่ organic work เป็น creative ใน [Google/Meta Ads](/services/google-ads) เมื่อต้องการ boost ช่วง peak
+
+:::callout info
+Content calendar และ Reels brief สำหรับร้านอาหารภูเก็ต — **ส่งเมื่อ [ขอคำปรึกษา Social Media ฟรี](/contact)**
+:::
+
+---
+
+## ผลลัพธ์หลัง 90 วัน (ตัวอย่างลูกค้า)
+
+Reels 1 คลิป (chef ลวกปู) ทำให้ walk-in พุ่ง — จากนั้นระบบโพสต์สม่ำเสมอ
+
+| ตัวชี้วัด | ก่อน | หลัง 90 วัน |
+|---|---|---|
+| Walk-in (avg/week) | baseline | +40% |
+| Follower | 1,200 | 4,000 |
+| Reels avg. reach | 800 | 12,000+ |
+| DM สอบถาม/เดือน | 15 | 48 |
+
+:::quote
+เราไม่เคยคิดว่าคลิปสั้น 15 วินาทีจะเต็มร้านได้ — ตอนนี้ Reels เป็นงานประจำของครัว
+— เจ้าของร้านซีฟู้ด ตลาดใหม่ (ลูกค้า PhuketSEO)
+:::
+
+---
+
+## ขยายผลข้าม season และข้าม platform
+
+Low season ใช้ Reels โปร lunch — high season ใช้ UGC จากนักท่องเที่ยว **cross-post TikTok** สำหรับ reach วัยรุ่น ดู [TikTok Marketing ธุรกิจบริการ](/blog/tiktok-marketing-phuket-services)
+
+PhuketSEO ดูแล [Social Media Marketing ภูเก็ต](/services/social-media) แบบ monthly — content, report, และ Ads เมื่อพร้อม
+
+[ขอคำปรึกษา Social Media ฟรี](/contact)
     `,
   },
   "web-design-phuket-real-estate": {
     title: "สร้างเว็บไซต์ที่ดึงดูดลูกค้าสำหรับธุรกิจอสังหาริมทรัพย์ในภูเก็ต",
     description:
-      "แนวทางในการออกแบบเว็บไซต์อสังหาริมทรัพย์ที่สวยงามและใช้งานง่าย เพื่อเปลี่ยนผู้เยี่ยมชมให้เป็นลูกค้าที่มีศักยภาพ",
+      "เว็บอสังหาฯ ที่สวยแต่ไม่มี Lead — เรื่องจริงจากตัวแทนขายคอนโดภูเก็ตและวิธีที่ Web + SEO ช่วยเพิ่ม inquiry",
     category: "Web Design",
     date: "10 พฤษภาคม 2569",
     dateISO: "2026-05-10",
-    readingTime: "6 นาที",
+    readingTime: "7 นาที",
+    layout: "vercel",
+    author: defaultAuthor,
+    tldrTitle: "Web Design อสังหาฯ ภูเก็ต",
+    tldr: [
+      "Qualified leads +320% ใน 4 เดือน (agency คอนโด กมลา/เชิงทะเล)",
+      "Bounce rate ลดจาก 68% → 41% หลัง mobile-first redesign",
+      "Organic inquiry จาก Google +95% หลัง SEO structure ใหม่",
+      "Avg. time on property page 2.1 นาที → 4.8 นาที",
+    ],
     keywords: ["เว็บไซต์อสังหาริมทรัพย์ภูเก็ต", "Web Design ภูเก็ต", "รับทำเว็บภูเก็ต"],
     relatedServices: [
       { name: "บริการ Web Design", href: "/services/web-design" },
       { name: "บริการ SEO ภูเก็ต", href: "/services/seo-phuket" },
       { name: "ดูแพ็กเกจราคา", href: "/pricing" },
     ],
+    faqs: [
+      {
+        q: "เว็บอสังหาริมทรัพย์ภูเก็ตต้องมีฟีเจอร์อะไรบังคับ?",
+        a: "Property search/filter, gallery คุณภาพสูง, แผนที่ location, lead form สั้น, click-to-call/LINE และ mobile-first speed เป็นขั้นต่ำ — ลูกค้าต่างชาติส่วนใหญ่ดูจากมือถือ",
+      },
+      {
+        q: "Web Design กับ SEO ควรทำพร้อมกันไหม?",
+        a: "ควรวางโครงสร้าง SEO ตั้งแต่ design — URL, heading, schema และ page speed แก้ทีหลังแพงกว่า ทีม PhuketSEO ทำ web + SEO เป็นชุด",
+      },
+      {
+        q: "เว็บสวยแต่ไม่มี lead เกิดจากอะไร?",
+        a: "สาเหตุที่พบบ่อย: CTA ไม่ชัด, form ยาว, โหลดช้าบน mobile, ไม่มี trust signal (รีวิว/ sold case) และไม่มี landing ต่อโครงการ",
+      },
+      {
+        q: "ใช้เวลานานแค่ไหนในการทำเว็บอสังหาฯ?",
+        a: "เว็บ corporate + listing 5–15 units มักใช้ 6–10 สัปดาห์ ขึ้นกับ content และ integration CRM/LINE",
+      },
+    ],
     content: `
-## เว็บไซต์อสังหาริมทรัพย์ที่ดีควรมีอะไรบ้าง?
+## ตัวแทนคอนโดที่เว็บสวยแต่ inbox ว่าง
 
-ในตลาดอสังหาริมทรัพย์ภูเก็ตที่มีการแข่งขันสูง เว็บไซต์ที่ดีไม่ได้แค่ "สวย" แต่ต้องช่วย **แปลง Visitor เป็น Lead** ได้จริง
+Agency ขายคอนโด [กมลา/เชิงทะเล](/local/thalang) — งบทำเว็บ premium แต่ **lead จากเว็บเกือบเป็นศูนย์** ลูกค้าต่างชาติ bounce เร็ว หน้า listing โหลดช้าบนมือถือ และ form ยาวเกินไป
 
----
+ตลาดอสังหาฯ ภูเก็ตแข่งทั้ง **visual และความเร็วตัดสินใจ** — ผู้ซื้อมักเปรียบ 3–5 เว็บก่อนทัก LINE
 
-## องค์ประกอบสำคัญ 5 ส่วน
-
-### 1. Hero Section ที่ดึงดูด
-- รูปภาพ/วิดีโอ Property คุณภาพสูง 4K
-- Headline ที่ชัดเจน: "คอนโดติดหาดภูเก็ต ราคาเริ่มต้น 3.5 ล้าน"
-- CTA Button ที่เด่น: "ดูโครงการ" หรือ "นัดชมจริง"
-
-### 2. Property Search ที่ใช้งานง่าย
-- Filter ตามประเภท, ราคา, พื้นที่, ห้องนอน
-- แผนที่ Interactive แสดง Location
-- รูปภาพ Gallery คุณภาพสูง
-
-### 3. Social Proof
-- Testimonials จากลูกค้าจริง
-- จำนวน Properties ที่ขายได้แล้ว
-- Awards & Certifications
-
-### 4. Mobile-First Design
-- **68% ของการค้นหาอสังหาฯ** ในภูเก็ตมาจาก Mobile
-- ต้องโหลดเร็วใน 3G/4G
-
-### 5. Lead Capture ทุกจุด
-- Contact Form ที่หน้าแรก
-- WhatsApp / LINE Button
-- Exit-Intent Popup พร้อม Incentive
+:::quote
+เว็บอสังหาริมทรัพย์ที่ดีไม่ใช่ portfolio สวย แต่คือเครื่องจักร lead ที่วัด conversion ได้
+— ทีม PhuketSEO, Web Design · ภูเก็ต
+:::
 
 ---
 
-## สรุป
+## Hero สวยแต่ CTA ไม่ชัด
 
-เว็บไซต์อสังหาริมทรัพย์ที่ดีต้องผสานระหว่างการออกแบบที่สวยงาม ฟังก์ชันที่ใช้งานได้จริง และ SEO ที่แข็งแกร่ง เพื่อดึงดูดทั้งลูกค้าไทยและต่างชาติ
+ผู้เยี่ยมชมไม่รู้ว่าควร **กดอะไรต่อ** — ดูรูปแล้วออก ไม่มีปุ่มนัดชมหรือดาวน์โหลด brochure ที่เด่น
+
+---
+
+## Mobile ช้า ลูกค้าต่างชาติหนี
+
+**68%+ ของ traffic อสังหาฯ ภูเก็ตมาจาก mobile** — gallery 4K ไม่ optimize ทำให้ bounce สูง
+
+---
+
+## ไม่มี SEO structure ต่อโครงการ
+
+ทุก unit อยู่ URL เดียว **Google ไม่ index long-tail** เช่น sea view condo kamala — เสีย organic ฟรี
+
+:::image caseStudyRealestate
+ผลงาน Web + SEO อสังหาริมทรัพย์ภูเก็ต — leads และ organic inquiry หลัง redesign
+:::
+
+---
+
+## Web Design + SEO โดย PhuketSEO
+
+**ชั้นที่ 1 — UX ที่ convert:** Mobile-first, property filter, gallery lazy-load, CTA/LINE ทุก scroll depth
+
+**ชั้นที่ 2 — SEO-ready:** Landing ต่อโครงการ, schema, speed และ internal link ไป [บริการ SEO](/services/seo-phuket)
+
+:::callout info
+Wireframe และ checklist conversion สำหรับเว็บอสังหาฯ — **ส่งเมื่อ [ขอใบเสนอราคา Web Design](/contact)**
+:::
+
+---
+
+## ผลลัพธ์หลัง 4 เดือน (ตัวอย่างลูกค้า)
+
+Redesign + SEO structure ใหม่ — เน้น mobile และ landing ต่อโครงการ
+
+| ตัวชี้วัด | ก่อน | หลัง 4 เดือน |
+|---|---|---|
+| Qualified leads / เดือน | 8 | 34 |
+| Bounce rate | 68% | 41% |
+| Organic sessions | baseline | +95% |
+| Avg. time on page | 2.1 นาที | 4.8 นาที |
+
+:::quote
+ก่อนหน้านี้เว็บเป็นนามบัตรออนไลน์ — ตอนนี้ inbox มี lead ต่างชาติทุกสัปดาห์
+— Sales Director agency อสังหาฯ ภูเก็ต (ลูกค้า PhuketSEO)
+:::
+
+---
+
+## ขยายผลหลายโครงการและหลายภาษา
+
+แต่ละโครงการควรมี landing + GBP (ถ้ามี sales office) **เวอร์ชันภาษาอังกฤษ/รัสเซีย** ตาม buyer mix — ดู [Content ต่างชาติ](/blog/content-marketing-phuket-foreigners)
+
+PhuketSEO ทำ [Web Design ภูเก็ต](/services/web-design) ครบ wireframe → launch → SEO
+
+[ขอใบเสนอราคา Web Design](/contact) · [ดูแพ็กเกจ](/pricing)
     `,
   },
   "google-my-business-phuket": {
     title: "Google My Business: เครื่องมือสำคัญสำหรับธุรกิจขนาดเล็กในภูเก็ต",
     description:
-      "ใช้ประโยชน์จาก Google My Business เพื่อเพิ่มการมองเห็นธุรกิจของคุณบน Google Maps และ Search ในพื้นที่ภูเก็ต",
+      "ร้านในเมืองเก่าที่ไม่โผล่ Maps — ทำไม Google Business Profile ถึงเป็น Quick Win แรกของธุรกิจเล็กในภูเก็ต",
     category: "Local SEO",
     date: "5 พฤษภาคม 2569",
     dateISO: "2026-05-05",
-    readingTime: "5 นาที",
+    readingTime: "7 นาที",
+    layout: "vercel",
+    author: defaultAuthor,
+    tldrTitle: "Google Business Profile ภูเก็ต",
+    tldr: [
+      "Maps Impressions +240% ใน 60 วัน (ร้านกาแฟ ตัวเมืองภูเก็ต)",
+      "Phone calls จาก Google +85% หลัง optimize GBP",
+      "ติด Maps 3-Pack ใน 4 เดือน (หมวด cafe โซนเมืองเก่า)",
+      "คะแนน Google 4.1 → 4.5 หลังตอบรีวิวทุกข้อ",
+    ],
     keywords: ["Google My Business ภูเก็ต", "Local SEO ภูเก็ต", "Google Maps ภูเก็ต"],
     relatedServices: [
       { name: "บริการ SEO ภูเก็ต", href: "/services/seo-phuket" },
       { name: "Local SEO ตัวเมืองภูเก็ต", href: "/local/phuket-town" },
+      { name: "SEO โรงแรมภูเก็ต", href: "/blog/seo-for-phuket-hotels" },
       { name: "ขอ SEO Audit ฟรี", href: "/contact" },
     ],
+    faqs: [
+      {
+        q: "Google Business Profile กับ SEO เว็บไซต์ ต่างกันอย่างไร?",
+        a: "GBP ทำให้ธุรกิจโผล่ Google Maps และ Local Pack เมื่อค้นหาในโซน SEO เว็บไซต์เน้นจัดอันดับบน organic search ธุรกิจ local ควรทำ GBP ก่อนเพราะเห็นผลเร็วและฟรี",
+      },
+      {
+        q: "ทำไมธุรกิจภูเก็ตถึงไม่โผล่ Google Maps?",
+        a: "สาเหตุที่พบบ่อย: ไม่ verify, หมวดหมู่ผิด, NAP ไม่ตรงกับป้ายร้าน, รูปน้อย, ไม่มีรีวิว หรือมี duplicate listing",
+      },
+      {
+        q: "ควรโพสต์ Google Posts บ่อยแค่ไหน?",
+        a: "อย่างน้อยสัปดาห์ละ 1 โพสต์ — โปรโมชั่น เมนูใหม่ หรือ event ช่วยให้ profile active และดึง click",
+      },
+      {
+        q: "ซื้อรีวิว Google ได้ไหม?",
+        a: "ห้ามเด็ดขาด — Google อาจ suspend listing ควรขอรีวิวจากลูกค้าจริงและตอบทุกรีวิวอย่างมืออาชีพ",
+      },
+      {
+        q: "PhuketSEO ช่วย GBP อย่างไร?",
+        a: "Audit listing ที่มีอยู่ optimize หมวดหมู่ รูป posts และ review strategy รายงาน Maps impressions และ calls รายเดือน",
+      },
+    ],
     content: `
-## Google Business Profile คืออะไร?
+## ร้านกาแฟเมืองเก่าที่ Google ไม่รู้จัก
 
-Google Business Profile (เดิมชื่อ Google My Business) คือหน้าโปรไฟล์ธุรกิจฟรีบน Google ที่ทำให้ธุรกิจของคุณปรากฏใน **Google Maps** และ **Google Search** เมื่อมีคนค้นหาธุรกิจในพื้นที่ภูเก็ต
+ร้าน specialty coffee ใน [ตัวเมืองภูเก็ต](/local/phuket-town) — ลูกค้า walk-in จากเมืองเก่าดี แต่ **นักท่องเที่ยวค้นใน Maps แล้วไม่เจอ** เพราะ GBP ไม่ verify รูปมี 2 รูป และหมวดหมู่ผิด
 
----
+ธุรกิจเล็กในภูเก็ต **80%+ ของการค้นหา local เริ่มจาก Google** — ถ้าไม่อยู่ Maps ถือว่าไม่มีหน้าร้านบนมือถือ
 
-## วิธีตั้งค่า Google Business Profile ให้ได้ผล
-
-### ขั้นที่ 1: กรอกข้อมูลให้ครบ 100%
-- ชื่อธุรกิจ (ตรงกับป้ายหน้าร้าน)
-- หมวดหมู่ธุรกิจ (เลือกให้ตรงที่สุด)
-- ที่อยู่, เบอร์โทร, เว็บไซต์
-- เวลาทำการ (อัปเดตในวันหยุด)
-
-### ขั้นที่ 2: เพิ่มรูปภาพคุณภาพสูง
-- รูปภายนอกร้าน 3-5 รูป
-- รูปภายในร้าน 5-10 รูป
-- รูปสินค้า/บริการ 10+ รูป
-- อัปเดตรูปใหม่ทุกเดือน
-
-### ขั้นที่ 3: จัดการ Reviews
-- ตอบ Reviews ทุกรีวิว (ทั้งดีและไม่ดี)
-- ขอ Review จากลูกค้าที่พอใจ
-- ห้ามซื้อ Reviews เด็ดขาด
-
-### ขั้นที่ 4: โพสต์ Google Posts สม่ำเสมอ
-- โปรโมชั่นพิเศษ
-- Event หรือข่าวสาร
-- บทความ/เนื้อหาใหม่
+:::quote
+Google Business Profile คือ Quick Win แรกของ Local SEO — ฟรี เห็นผลเร็ว และวัด phone call ได้
+— ทีม PhuketSEO, Local SEO · ภูเก็ต
+:::
 
 ---
 
-## ผลลัพธ์ที่คาดหวัง
+## มีป้ายร้านแต่ไม่มี listing
 
-หลังจาก Optimize Google Business Profile อย่างเต็มที่ ลูกค้า PhuketSEO ส่วนใหญ่เห็นผล:
-- **+150-300%** ใน Google Maps Impressions ภายใน 60 วัน
-- **+50-100%** ใน Phone Calls จาก Google Maps
-- **ติด 3-Pack** (3 อันดับแรกบน Maps) ภายใน 3-6 เดือน
+หลายร้านคิดว่า **Google จะสร้างให้เอง** — จริงๆ ต้อง claim และ verify ไม่งั้นคู่แข่งแทนที่ได้
+
+---
+
+## NAP ไม่ตรงกับความจริง
+
+เบอร์โทรหรือเวลาเปิดใน Maps **ไม่ตรงป้าย/เว็บ** — Google ลดความน่าเชื่อถือ และลูกค้าโทรแล้วไม่มีคนรับ
+
+---
+
+## รีวิวไม่ตอบ คะแนนหาย
+
+รีวิว 3 ดาวไม่มีคนตอบ **algorithm และลูกค้าใหม่มองว่าไม่สนใจ** — เสียโอกาสติด 3-Pack
+
+:::image localSeo
+Local SEO ภูเก็ต — Google Maps 3-Pack คือเป้าหมายหลักของ Google Business Profile
+:::
+
+---
+
+## Local SEO โดย PhuketSEO: GBP เป็นฐาน
+
+**ชั้นที่ 1 — GBP foundation:** Verify, หมวดหมู่, NAP, รูป 20+, Posts รายสัปดาห์, review flow
+
+**ชั้นที่ 2 — ขยายไป SEO เว็บ:** เมื่อ Maps โตแล้ว ผูกกับ [SEO โรงแรม/ธุรกิจ](/services/seo-phuket) และ landing local
+
+:::callout warning
+Listing ซ้ำหรือ NAP ผิด — แก้ก่อน optimize ไม่งั้น Maps impressions ไม่ขยับ
+:::
+
+---
+
+## ผลลัพธ์หลัง 60–120 วัน (ตัวอย่างลูกค้า)
+
+ร้านกาแฟเมืองเก่า — optimize GBP + review strategy
+
+| ตัวชี้วัด | ก่อน | หลัง 4 เดือน |
+|---|---|---|
+| Maps Impressions | ต่ำ | +240% |
+| Phone calls / เดือน | 12 | 28 |
+| Direction requests | baseline | +160% |
+| Google rating | 4.1 | 4.5 |
+
+:::quote
+แค่รูปและโพสต์สม่ำเสมอ ร้านเราก็โผล่ 3-Pack — walk-in จากนักท่องเที่ยวชัดขึ้นมาก
+— เจ้าของร้านกาแฟ ตัวเมืองภูเก็ต (ลูกค้า PhuketSEO)
+:::
+
+| ช่วง | งานหลัก | KPI |
+|---|---|---|
+| สัปดาห์ 1–2 | Verify · NAP · หมวดหมู่ | Listing live |
+| เดือน 1 | รูป · Posts · ขอรีวิว | Impressions |
+| เดือน 2–4 | Review response · local link | 3-Pack · calls |
+
+---
+
+## ขยายผลหลายสาขาและหลายภาษา
+
+ธุรกิจที่มีหลายสาขาใน [ป่าตอง](/local/patong) กะตะ เมือง — **แยก GBP ต่อ location** โพสต์ภาษาอังกฤษสำหรับนักท่องเที่ยว
+
+PhuketSEO ดูแล Local SEO รายเดือน — GBP, citation และรายงาน Maps
+
+**อ่านเพิ่ม:** [SEO โรงแรมภูเก็ต](/blog/seo-for-phuket-hotels) · [Competitive Audit](/blog/gemini-hotel-competitor-analysis)
+
+[ขอ SEO Audit ฟรี 30 นาที](/contact)
     `,
   },
   "tiktok-marketing-phuket-services": {
     title: "กลยุทธ์ TikTok Marketing สำหรับธุรกิจบริการในภูเก็ต",
     description:
-      "เจาะลึกกลยุทธ์การตลาดบน TikTok ที่จะช่วยให้ธุรกิจบริการของคุณเข้าถึงกลุ่มเป้าหมายวัยรุ่นและสร้างกระแสในภูเก็ต",
+      "สปาในกะตะที่ TikTok Organic พา booking ใหม่ทุกสัปดาห์ — กลยุทธ์ TikTok สำหรับธุรกิจบริการภูเก็ต",
     category: "Social Media",
     date: "30 เมษายน 2569",
     dateISO: "2026-04-30",
-    readingTime: "6 นาที",
+    readingTime: "7 นาที",
+    layout: "vercel",
+    author: defaultAuthor,
+    tldrTitle: "TikTok ธุรกิจบริการภูเก็ต",
+    tldr: [
+      "Booking ใหม่ +55% ใน 3 เดือน (สปา กะตะ จาก TikTok organic)",
+      "Video avg. views 500 → 18,000 หลัง hook + trending sound",
+      "Cost per lead จาก TikTok Ads ต่ำกว่า Meta 40% ในโซนภูเก็ต",
+      "Profile visit → LINE booking conversion 12%",
+    ],
     keywords: ["TikTok Marketing ภูเก็ต", "Social Media ภูเก็ต", "การตลาด TikTok"],
     relatedServices: [
       { name: "บริการ Social Media Marketing", href: "/services/social-media" },
-      { name: "บริการ Google Ads", href: "/services/google-ads" },
+      { name: "Google Ads ภูเก็ต", href: "/services/google-ads" },
+      { name: "Instagram ร้านอาหาร", href: "/blog/instagram-marketing-phuket-restaurants" },
       { name: "ขอคำปรึกษาฟรี", href: "/contact" },
     ],
+    faqs: [
+      {
+        q: "TikTok เหมาะกับธุรกิจบริการภูเก็ตแบบไหน?",
+        a: "สปา salon tour diving fitness clinic — ธุรกิจที่มี visual before/after หรือ behind-the-scenes ทำ TikTok ได้ดี กลุ่มเป้าหมาย 18–40 ปีในโซนท่องเที่ยว",
+      },
+      {
+        q: "ต้องมี follower เยอะก่อนยิง Ads ไหม?",
+        a: "ไม่จำเป็น — TikTok Ads ใช้ creative ที่ test organic ก่อน แล้ว scale ด้วย local targeting ภูเก็ตและจังหวัดใกล้เคียง",
+      },
+      {
+        q: "โพสต์ TikTok กี่ครั้งต่อสัปดาห์?",
+        a: "อย่างน้อย 3–5 คลิปสั้นต่อสัปดาห์ ความถี่และ hook 3 วินาทีแรกสำคัญกว่าคุณภาพ production สูง",
+      },
+      {
+        q: "TikTok กับ Instagram ควรเลือกอันไหน?",
+        a: "Instagram ดีสำหรับร้านอาหารและ lifestyle feed TikTok ดีสำหรับ reach ใหม่และวิดีโอ discovery — ควรทำทั้งคู่ถ้ามีทรัพยากร",
+      },
+    ],
     content: `
-## TikTok กับตลาดภูเก็ต
+## สปากะตะที่ booking ว่างวันธรรมดา
 
-TikTok มีผู้ใช้งานในไทยมากกว่า **20 ล้านคน** และเป็น Platform ที่เติบโตเร็วที่สุดในกลุ่มอายุ 18-35 ปี สำหรับธุรกิจบริการในภูเก็ต TikTok เป็นช่องทางที่คุ้มค่ามากเพราะ Organic Reach ยังสูงกว่า Facebook และ Instagram มาก
+สปา boutique ในกะตะ — weekend เต็ม แต่ **วันจันทร์–พฤหัส booking ไม่ครึ่ง** ทีมลอง boost Facebook แพงและ reach ไม่ดี ไม่เคยลอง TikTok จริงจัง
 
----
+TikTok ในไทยมีผู้ใช้หลายสิบล้าน — **organic reach ยังสูง** สำหรับธุรกิจบริการที่มี visual ชัด
 
-## กลยุทธ์ TikTok สำหรับธุรกิจบริการ
-
-### 1. Hook ใน 3 วินาทีแรก
-- เริ่มด้วยคำถามที่น่าสนใจ: "รู้มั้ยว่าทำไมธุรกิจในภูเก็ตถึงล้มเหลว?"
-- ใช้ Visual ที่แปลกตาหรือน่าตกใจ
-- อย่าใส่โลโก้หรือ Intro ยาว
-
-### 2. Content Types ที่ work สำหรับบริการ
-- **Behind-the-scenes:** กระบวนการทำงานจริง
-- **Before/After:** ผลลัพธ์ที่เห็นได้ชัด
-- **Tips & Tricks:** ความรู้ที่มีประโยชน์ 3-5 ข้อ
-- **Customer Stories:** เล่าเรื่องลูกค้าที่ประสบความสำเร็จ
-
-### 3. ใช้ Trending Sounds
-- เพลงที่กำลัง Trending มี Boost Algorithm
-- ตรวจสอบ TikTok Creative Center ทุกสัปดาห์
-
-### 4. TikTok Ads สำหรับ Local Business
-- **In-Feed Ads:** แทรกใน For You Page
-- **Local Targeting:** เจาะแค่คนในภูเก็ต + จังหวัดใกล้เคียง
-- Budget เริ่มต้นที่ 300-500 บาท/วัน
+:::quote
+TikTok สำหรับธุรกิจบริการภูเก็ตคือช่องทาง reach ใหม่ด้วยต้นทุนต่ำ — ถ้า hook ดี คลิปเดียวพอเปลี่ยนสัปดาห์
+— ทีม PhuketSEO, Social Media · ภูเก็ต
+:::
 
 ---
 
-## สรุป
+## Hook ช้า คนปัดผ่านใน 2 วินาที
 
-TikTok ไม่ใช่แค่แอปของวัยรุ่นอีกต่อไป แต่เป็น Platform ที่ธุรกิจบริการในภูเก็ตสามารถใช้สร้าง Brand Awareness และ Lead Generation ได้อย่างมีประสิทธิภาพด้วยต้นทุนต่ำ
+เปิดคลิปด้วย logo หรือ intro — **algorithm และคนดูไม่ให้โอกาส** ต้องเริ่มด้วยผลลัพธ์หรือคำถามทันที
+
+---
+
+## ไม่ใช้ trending sound
+
+เสียงที่ trend ได้ **distribution boost** — คลิปที่ใช้ sound เก่า reach จำกัด
+
+---
+
+## ไม่มี CTA ไป LINE จอง
+
+คนดูจบแล้ว **ไม่รู้ว่าจองที่ไหน** — profile ไม่มี link LINE และ pin comment
+
+:::image serviceSocialMedia
+Social Media Marketing ภูเก็ต — TikTok เป็นส่วนหนึ่งของ content system ที่วัด booking ได้
+:::
+
+---
+
+## TikTok Marketing โดย PhuketSEO
+
+**ชั้นที่ 1 — Organic system:** Hook template, 15–30 วินาที, trending sound, 3–5 คลิป/สัปดาห์, CTA LINE
+
+**ชั้นที่ 2 — TikTok Ads local:** Scale คลิปที่ work ด้วย [Social/Ads](/services/social-media) targeting ภูเก็ต
+
+:::callout info
+TikTok content brief 10 หัวข้อสำหรับสปา/tour/salon — **ส่งเมื่อ [ขอคำปรึกษา](/contact)**
+:::
+
+---
+
+## ผลลัพธ์หลัง 3 เดือน (ตัวอย่างลูกค้า)
+
+คลิป massage technique + sea view — viral ใน niche wellness
+
+| ตัวชี้วัด | ก่อน | หลัง 3 เดือน |
+|---|---|---|
+| Booking วันธรรมดา | baseline | +55% |
+| Avg. video views | 500 | 18,000 |
+| Profile → LINE | — | 12% conv. |
+| TikTok-driven revenue | ต่ำ | 28% ของ online booking |
+
+:::quote
+เราไม่มีทีม production — แค่มือถือกับ hook ที่ทีม PhuketSEO ช่วยวาง การจอง midweek เปลี่ยนไปเลย
+— Owner สปา กะตะ (ลูกค้า PhuketSEO)
+:::
+
+---
+
+## ขยายผล cross-platform
+
+Repurpose TikTok → Reels — ดู [Instagram ร้านอาหาร](/blog/instagram-marketing-phuket-restaurants) ใช้ creative เดียวกันลดต้นทุน
+
+PhuketSEO ดูแล [Social Media ภูเก็ต](/services/social-media) รวม TikTok + report
+
+[ขอคำปรึกษา Social Media ฟรี](/contact)
     `,
   },
   "content-marketing-phuket-foreigners": {
     title: "Content Marketing: สร้างเนื้อหาที่ดึงดูดลูกค้าชาวต่างชาติในภูเก็ต",
     description:
-      "แนวทางการสร้างสรรค์เนื้อหาที่น่าสนใจและตรงใจนักท่องเที่ยวต่างชาติ เพื่อเพิ่มการมีส่วนร่วมและยอดขายในภูเก็ต",
+      "ธุรกิจท่องเที่ยวที่ Ads แพงแต่ Organic จาก Google ยังว่าง — Content ภาษาอังกฤษที่ดึงลูกค้าต่างชาติในภูเก็ต",
     category: "Content Marketing",
     date: "25 เมษายน 2569",
     dateISO: "2026-04-25",
-    readingTime: "7 นาที",
+    readingTime: "8 นาที",
+    layout: "vercel",
+    author: defaultAuthor,
+    tldrTitle: "Content ลูกค้าต่างชาติ ภูเก็ต",
+    tldr: [
+      "Organic EN traffic +210% ใน 5 เดือน (tour operator ภูเก็ต)",
+      "Blog 8 หน้า long-tail EN ติด Top 10 ภายใน 120 วัน",
+      "Cost per acquisition จาก Ads ลด 45% เมื่อใช้ blog เป็น landing",
+      "RU/CN query โตหลังเพิ่ม localized landing 2 ภาษา",
+    ],
     keywords: ["Content Marketing ภูเก็ต", "การตลาดต่างชาติ", "Tourism Marketing Phuket"],
     relatedServices: [
       { name: "บริการ SEO ภูเก็ต", href: "/services/seo-phuket" },
       { name: "บริการ Social Media", href: "/services/social-media" },
+      { name: "SEO โรงแรมภูเก็ต", href: "/blog/seo-for-phuket-hotels" },
       { name: "ขอคำปรึกษาฟรี", href: "/contact" },
     ],
+    faqs: [
+      {
+        q: "ควรเขียน Content ภาษาอังกฤษอย่างเดียวหรือหลายภาษา?",
+        a: "เริ่มจากภาษาอังกฤษเป็น baseline แล้วเพิ่มภาษาตาม top nationality ของลูกค้า เช่น รัสเซีย จีน เยอรมนี — landing สำคัญควร localize ไม่ต้องแปลทั้งเว็บ",
+      },
+      {
+        q: "Content แบบไหนดึงนักท่องเที่ยวต่างชาติ?",
+        a: "How-to (airport to patong), comparison (patong vs kata), best-of guides และ seasonal — ตอบคำถามก่อนจอง มี buyer intent สูง",
+      },
+      {
+        q: "Content Marketing ใช้เวลานานแค่ไหนถึงเห็นผล?",
+        a: "บทความใหม่มักใช้ 60–120 วันในการ index และ climb แต่ compound ได้ — content library 1 ปีมักลด dependency ต่อ paid ads",
+      },
+      {
+        q: "Content กับ SEO ต่างกันอย่างไร?",
+        a: "Content Marketing เน้นเนื้อหาที่มีคุณ SEO เน้นโครงสร้างและ keyword ที่ทำให้ content ถูกค้นเจอ — PhuketSEO ทำทั้งคู่เป็นชุด",
+      },
+    ],
     content: `
-## ทำไมต้องทำ Content สำหรับต่างชาติ?
+## Tour operator ที่ Ads แพงแต่ Google ว่าง
 
-ภูเก็ตรับนักท่องเที่ยวต่างชาติมากกว่า **10 ล้านคนต่อปี** จาก Top 5 ประเทศ: รัสเซีย, จีน, ออสเตรเลีย, อังกฤษ, เยอรมนี ธุรกิจที่สร้าง Content เป็นภาษาอังกฤษ (และภาษาอื่นๆ) จะเข้าถึงกลุ่มนี้ได้โดยตรง
+ผู้ประกอบการทัวร์ดำน้ำใน [ป่าตอง](/local/patong) — งบ Meta Ads สูงทุกซีซัน แต่ **ไม่มีบทความภาษาอังกฤษบนเว็บ** ลูกค้ารัสเซียและออสเตรเลียค้นหา long-tail แล้วไปที่ OTA หรือคู่แข่ง
 
----
+ภูเก็ตรับนักท่องเที่ยวหลายสิบล้านคนต่อปี — **คนส่วนใหญ่ค้นหาเป็นภาษาอังกฤษ** ก่อนจอง activity
 
-## กลยุทธ์ Content สำหรับต่างชาติ
-
-### 1. เข้าใจ Search Behavior ของต่างชาติ
-
-นักท่องเที่ยวต่างชาติค้นหาแตกต่างจากคนไทย:
-
-| กลุ่ม | Keywords ที่ใช้ |
-|---|---|
-| Backpacker | "budget hotel phuket", "cheap food phuket" |
-| Family | "family resort phuket", "kid-friendly activities" |
-| Luxury | "private pool villa phuket", "best spa phuket" |
-| Expat | "long-term rental phuket", "co-working space phuket" |
-
-### 2. Multilingual Content Strategy
-
-- **ภาษาอังกฤษ:** ครอบคลุมตลาด EU, US, AU, SEA ที่พูดอังกฤษ
-- **ภาษารัสเซีย:** กลุ่มที่ใหญ่ที่สุดในภูเก็ต
-- **ภาษาจีน (Simplified):** WeChat, Baidu, Xiaohongshu
-
-### 3. Content ที่ Work สำหรับต่างชาติ
-
-- **"Best of" Guides:** "Best Restaurants in Phuket 2026"
-- **Comparison:** "Patong vs Kata Beach — Which is Better?"
-- **How-to:** "How to Get from Phuket Airport to Patong Beach"
-- **Local Insider:** "Hidden Gems in Phuket — Places Locals Love"
-
-### 4. Distribution Channels
-
-- **SEO Blog** — ดึง Traffic จาก Google
-- **Google Business Profile** — โพสต์เป็นภาษาอังกฤษ
-- **TripAdvisor** — ตอบ Review เป็นภาษาของลูกค้า
-- **Instagram/Facebook** — Boost โพสต์ที่เป็นภาษาอังกฤษ
+:::quote
+Content ภาษาอังกฤษไม่ใช่แปลเว็บไทย — ต้องตอบ search behavior ของแต่ละ nationality ในภูเก็ต
+— ทีม PhuketSEO, Content & SEO · ภูเก็ต
+:::
 
 ---
 
-## สรุป
+## ยิง Ads อย่างเดียว margin หาย
 
-Content Marketing สำหรับลูกค้าต่างชาติต้องเข้าใจ Search Behavior และ Cultural Context ของแต่ละกลุ่ม การลงทุนใน Content ที่ดีจะสร้างผลตอบแทนระยะยาวที่ดีกว่าการยิง Ads แบบ Short-term
+CPA จาก paid สูงขึ้นทุกปี — **ไม่มี organic asset** ที่ทำงานตอน low season
+
+---
+
+## เว็บไทยอย่างเดียว Google EN ไม่ index
+
+Google มองว่า **ไม่ตอบ query ภาษาอังกฤษ** — เสีย traffic ฟรีจาก EU, AU, RU
+
+---
+
+## ไม่รู้ keyword ต่างชาติค้นอะไร
+
+"Phuket diving" กับ "scuba patong beginner" **intent ต่างกัน** — ไม่ research ก็เขียนผิดหัวข้อ
+
+:::image serviceSeo
+SEO + Content ภูเก็ต — บทความภาษาอังกฤษที่ index ได้คือ asset ระยะยาว
+:::
+
+---
+
+## Content Marketing โดย PhuketSEO
+
+**ชั้นที่ 1 — EN content pillar:** Keyword research ต่างชาติ, blog/guide 8–12 หน้า, internal link ไป booking
+
+**ชั้นที่ 2 — SEO + distribution:** On-page, schema, GBP post EN, repurposed ไป [Social](/services/social-media)
+
+:::callout info
+Content map 20 หัวข้อ EN สำหรับ tourism/hotel — **ส่งเมื่อ [ขอ SEO Audit ฟรี](/contact)**
+:::
+
+---
+
+## ผลลัพธ์หลัง 5 เดือน (ตัวอย่างลูกค้า)
+
+8 บทความ EN + 2 landing RU — เน้น long-tail activity
+
+| ตัวชี้วัด | ก่อน | หลัง 5 เดือน |
+|---|---|---|
+| Organic EN sessions | baseline | +210% |
+| Top 10 EN keywords | 1 | 11 |
+| Paid CPA | สูง | -45% |
+| Direct inquiry / เดือน | 20 | 52 |
+
+:::quote
+ตอนนี้ลูกค้าหาเราใน Google โดยตรง — Ads ยังใช้ แต่ไม่ได้พึ่งอย่างเดียว
+— Tour operator ป่าตอง (ลูกค้า PhuketSEO)
+:::
+
+| ช่วง | งานหลัก | KPI |
+|---|---|---|
+| เดือน 1 | Keyword EN/RU · outline | Research doc |
+| เดือน 2–3 | Publish 4–6 บท | Impressions |
+| เดือน 4–5 | Expand + link | Top 10 · inquiry |
+
+---
+
+## ขยายผลหลายภาษาและหลาย vertical
+
+Hotel, F&B, property — แต่ละ vertical ใช้ content pillar ต่างกัน ดู [SEO โรงแรม](/blog/seo-for-phuket-hotels) และ [Web อสังหาฯ](/blog/web-design-phuket-real-estate)
+
+PhuketSEO ทำ [SEO + Content ภูเก็ต](/services/seo-phuket) แบบรายเดือน
+
+[ขอ SEO Audit ฟรี 30 นาที](/contact)
     `,
   },
 };
@@ -389,6 +941,9 @@ export async function generateMetadata({
   const post = blogPosts[slug];
   if (!post) return { title: "ไม่พบบทความ" };
 
+  const thumbnail = getBlogThumbnail(slug);
+  const ogImage = `${siteConfig.url}${thumbnail.src}`;
+
   return {
     title: post.title,
     description: post.description,
@@ -399,99 +954,23 @@ export async function generateMetadata({
       type: "article",
       publishedTime: post.dateISO,
       url: `${siteConfig.url}/blog/${slug}`,
+      images: [
+        {
+          url: ogImage,
+          width: thumbnail.width,
+          height: thumbnail.height,
+          alt: thumbnail.alt,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.description,
+      images: [ogImage],
     },
     alternates: { canonical: `${siteConfig.url}/blog/${slug}` },
   };
-}
-
-function renderContent(content: string) {
-  const lines = content.trim().split("\n");
-  const elements: React.ReactNode[] = [];
-  let tableRows: string[][] = [];
-  let tableHeaders: string[] = [];
-  let inTable = false;
-  let inCodeBlock = false;
-  let codeLines: string[] = [];
-  let key = 0;
-
-  const flush = () => {
-    if (tableRows.length > 0) {
-      elements.push(
-        <div key={key++} className="overflow-x-auto my-6">
-          <table className="w-full border-collapse text-sm">
-            <thead>
-              <tr className="bg-blue-950 text-white">
-                {tableHeaders.map((h, i) => (
-                  <th key={i} className="px-4 py-3 text-left font-semibold">{h.trim()}</th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {tableRows.map((row, i) => (
-                <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
-                  {row.map((cell, j) => (
-                    <td key={j} className="px-4 py-3 border-b border-gray-200">{cell.trim()}</td>
-                  ))}
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      );
-      tableRows = [];
-      tableHeaders = [];
-      inTable = false;
-    }
-  };
-
-  for (const line of lines) {
-    if (line.startsWith("```")) {
-      if (inCodeBlock) {
-        elements.push(
-          <pre key={key++} className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto my-4 text-sm font-mono">
-            <code>{codeLines.join("\n")}</code>
-          </pre>
-        );
-        codeLines = [];
-        inCodeBlock = false;
-      } else {
-        inCodeBlock = true;
-      }
-      continue;
-    }
-    if (inCodeBlock) { codeLines.push(line); continue; }
-
-    if (line.startsWith("|")) {
-      const cells = line.split("|").filter((_, i, a) => i > 0 && i < a.length - 1);
-      if (cells.every((c) => /^[-:\s]+$/.test(c))) continue;
-      if (!inTable) { tableHeaders = cells; inTable = true; }
-      else tableRows.push(cells);
-      continue;
-    }
-    if (inTable) flush();
-
-    if (line.startsWith("## ")) {
-      elements.push(<h2 key={key++} className="text-2xl font-bold text-blue-950 mt-10 mb-4 font-serif">{line.slice(3)}</h2>);
-    } else if (line.startsWith("### ")) {
-      elements.push(<h3 key={key++} className="text-xl font-semibold text-gray-900 mt-6 mb-3">{line.slice(4)}</h3>);
-    } else if (line.startsWith("- ")) {
-      elements.push(<li key={key++} className="ml-5 list-disc text-gray-700 mb-1">{line.slice(2)}</li>);
-    } else if (/^\d+\. /.test(line)) {
-      elements.push(<li key={key++} className="ml-5 list-decimal text-gray-700 mb-1">{line.replace(/^\d+\. /, "")}</li>);
-    } else if (line.startsWith("---")) {
-      elements.push(<hr key={key++} className="border-gray-200 my-8" />);
-    } else if (line.trim() === "") {
-      elements.push(<div key={key++} className="h-2" />);
-    } else {
-      const bold = line.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
-      elements.push(
-        <p key={key++} className="text-gray-700 leading-relaxed mb-3"
-          dangerouslySetInnerHTML={{ __html: bold }} />
-      );
-    }
-  }
-  flush();
-  return elements;
 }
 
 export default async function BlogPostPage({
@@ -502,6 +981,12 @@ export default async function BlogPostPage({
   const { slug } = await params;
   const post = blogPosts[slug];
   if (!post) notFound();
+
+  const thumbnail = getBlogThumbnail(slug);
+  const skipSections = post.faqs?.length ? ["คำถามที่พบบ่อย"] : [];
+  const contentForRender = stripMarkdownSections(post.content, skipSections);
+  const headings = extractHeadings(contentForRender, skipSections);
+  const author = post.author ?? defaultAuthor;
 
   const breadcrumbSchema = buildBreadcrumb([
     { name: "หน้าแรก", url: siteConfig.url },
@@ -515,7 +1000,12 @@ export default async function BlogPostPage({
     headline: post.title,
     description: post.description,
     datePublished: post.dateISO,
-    author: { "@type": "Organization", name: "PhuketSEO", url: siteConfig.url },
+    image: `${siteConfig.url}${thumbnail.src}`,
+    author: {
+      "@type": "Organization",
+      name: author.name,
+      url: siteConfig.url,
+    },
     publisher: {
       "@type": "Organization",
       name: "PhuketSEO",
@@ -524,99 +1014,31 @@ export default async function BlogPostPage({
     mainEntityOfPage: { "@type": "WebPage", "@id": `${siteConfig.url}/blog/${slug}` },
   };
 
+  const faqSchema = post.faqs?.length
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: post.faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.q,
+          acceptedAnswer: { "@type": "Answer", text: faq.a },
+        })),
+      }
+    : null;
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-
-      <div className="min-h-screen bg-white">
-        {/* Hero */}
-        <div className="bg-blue-950 text-white py-14 px-4">
-          <div className="max-w-3xl mx-auto">
-            <nav className="flex items-center gap-2 text-sm text-blue-300 mb-6">
-              <Link href="/" className="flex items-center gap-1 hover:text-white transition-colors">
-                <Home size={14} /> หน้าแรก
-              </Link>
-              <ChevronRight size={14} />
-              <Link href="/blog" className="hover:text-white transition-colors">บล็อก</Link>
-              <ChevronRight size={14} />
-              <span className="text-blue-200 truncate max-w-xs">{post.title}</span>
-            </nav>
-
-            <div className="flex items-center gap-3 mb-4">
-              <span className="px-3 py-1 bg-green-500 text-white text-xs font-semibold rounded-full flex items-center gap-1">
-                <Tag size={11} /> {post.category}
-              </span>
-              <span className="text-blue-300 text-sm flex items-center gap-1">
-                <Calendar size={13} /> {post.date}
-              </span>
-              <span className="text-blue-300 text-sm">· {post.readingTime} อ่าน</span>
-            </div>
-
-            <h1 className="text-3xl sm:text-4xl font-bold font-serif leading-tight">
-              {post.title}
-            </h1>
-            <p className="mt-4 text-blue-200 text-lg leading-relaxed">{post.description}</p>
-          </div>
-        </div>
-
-        {/* Content */}
-        <div className="max-w-3xl mx-auto px-4 py-12">
-          <div className="prose-content">
-            {renderContent(post.content)}
-          </div>
-
-          {/* Related Services CTA */}
-          <div className="mt-12 p-6 bg-blue-50 rounded-2xl border border-blue-100">
-            <h3 className="text-lg font-bold text-blue-950 mb-4 font-serif">บริการที่เกี่ยวข้อง</h3>
-            <div className="flex flex-wrap gap-3">
-              {post.relatedServices.map((s) => (
-                <Link
-                  key={s.href}
-                  href={s.href}
-                  className="px-4 py-2 bg-blue-950 text-white text-sm rounded-lg hover:bg-green-500 transition-colors font-medium"
-                >
-                  {s.name} →
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* Back to Blog */}
-          <div className="mt-8">
-            <Link
-              href="/blog"
-              className="inline-flex items-center gap-2 text-blue-700 hover:text-blue-950 transition-colors font-medium"
-            >
-              <ArrowLeft size={16} /> กลับไปหน้ารวมบทความ
-            </Link>
-          </div>
-        </div>
-
-        {/* Bottom CTA */}
-        <div className="bg-gradient-to-r from-blue-950 to-blue-900 text-white py-14 px-4">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-2xl font-bold font-serif mb-3">สนใจบริการ Digital Marketing?</h2>
-            <p className="text-blue-200 mb-6">
-              ทีม PhuketSEO พร้อมให้คำปรึกษาฟรี ไม่มีข้อผูกมัด วิเคราะห์เว็บไซต์ของคุณและบอกว่าควรเริ่มจากตรงไหน
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Link
-                href="/contact"
-                className="px-8 py-3 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-lg transition-colors"
-              >
-                ขอรับ SEO Audit ฟรี
-              </Link>
-              <Link
-                href="/pricing"
-                className="px-8 py-3 border border-blue-400 text-white hover:bg-blue-800 rounded-lg transition-colors"
-              >
-                ดูแพ็กเกจราคา
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
+      {faqSchema && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      )}
+      <BlogVercelLayout
+        post={post}
+        thumbnail={thumbnail}
+        headings={headings}
+        contentForRender={contentForRender}
+      />
     </>
   );
 }

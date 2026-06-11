@@ -3,10 +3,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { siteConfig } from "@/lib/utils";
 import { geoCoordinatesSchema, organizationSameAs, postalAddressSchema } from "@/lib/schema";
+import { siteImages } from "@/lib/images";
 import {
-  Search, TrendingUp, Share2, Monitor, Star, CheckCircle,
+  Star, CheckCircle,
   ArrowRight, Phone, MessageCircle, Award, Users, BarChart3,
-  Globe, ChevronDown, Quote, Zap, Shield, Target, Clock
+  Globe, ChevronDown, Quote, Zap, Shield, Target, Clock, TrendingUp
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -88,7 +89,7 @@ const faqSchema = {
 // ─── Data ─────────────────────────────────────────────────────────────────────
 const services = [
   {
-    icon: Search,
+    iconImage: siteImages.icons.seo,
     title: "SEO ภูเก็ต",
     desc: "ดันอันดับเว็บไซต์บน Google ให้ลูกค้าค้นหาเจอ ด้วยกลยุทธ์ SEO ที่พิสูจน์แล้วว่าได้ผล",
     result: "Traffic เพิ่มเฉลี่ย +250%",
@@ -96,7 +97,7 @@ const services = [
     color: "bg-blue-50 text-blue-700",
   },
   {
-    icon: TrendingUp,
+    iconImage: siteImages.icons.googleAds,
     title: "Google Ads",
     desc: "ยิงโฆษณาตรงกลุ่มเป้าหมาย ได้ผลลัพธ์ทันที ประหยัดงบประมาณด้วย ROI สูงสุด",
     result: "ROI เฉลี่ย 450%",
@@ -104,7 +105,7 @@ const services = [
     color: "bg-green-50 text-green-700",
   },
   {
-    icon: Share2,
+    iconImage: siteImages.icons.socialMedia,
     title: "Social Media Marketing",
     desc: "สร้างแบรนด์บน Facebook, Instagram, TikTok เพิ่ม Engagement และยอดขายจาก Social",
     result: "Engagement เพิ่ม +180%",
@@ -112,7 +113,7 @@ const services = [
     color: "bg-purple-50 text-purple-700",
   },
   {
-    icon: Monitor,
+    iconImage: siteImages.icons.webDesign,
     title: "Web Design",
     desc: "ออกแบบเว็บไซต์ที่สวยงาม รวดเร็ว Mobile-Friendly และ Optimized สำหรับ SEO",
     result: "Conversion Rate +85%",
@@ -154,6 +155,7 @@ const caseStudies = [
     result: "Direct Booking +320%, Organic Traffic +450%, ROI 680%",
     duration: "6 เดือน",
     services: ["SEO", "Google Ads", "Web Design"],
+    image: siteImages.caseStudies.hotel,
   },
   {
     client: "Phuket Property Co.",
@@ -162,6 +164,7 @@ const caseStudies = [
     result: "Leads +280%, อันดับ 1 สำหรับ 15 Keywords, ยอดขาย +190%",
     duration: "4 เดือน",
     services: ["SEO", "Social Media"],
+    image: siteImages.caseStudies.realestate,
   },
 ];
 
@@ -275,6 +278,15 @@ export default function HomePage() {
 
       {/* ── 1. HERO ── */}
       <section className="relative min-h-screen hero-gradient flex items-center overflow-hidden">
+        <Image
+          src={siteImages.hero.home.src}
+          alt=""
+          fill
+          className="object-cover opacity-[0.07] pointer-events-none"
+          priority
+          sizes="100vw"
+          aria-hidden
+        />
         {/* Soft blobs */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-indigo-200/40 rounded-full blur-3xl" />
@@ -361,8 +373,14 @@ export default function HomePage() {
                 href={s.href}
                 className="group bg-white border border-gray-100 rounded-2xl p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
               >
-                <div className={`w-12 h-12 ${s.color} rounded-xl flex items-center justify-center mb-4`}>
-                  <s.icon size={22} />
+                <div className={`w-12 h-12 ${s.color} rounded-xl flex items-center justify-center mb-4 overflow-hidden`}>
+                  <Image
+                    src={s.iconImage.src}
+                    alt={s.iconImage.alt}
+                    width={48}
+                    height={48}
+                    className="object-contain"
+                  />
                 </div>
                 <h3 className="font-bold text-blue-950 text-lg mb-2 font-serif">{s.title}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed mb-4">{s.desc}</p>
@@ -434,7 +452,16 @@ export default function HomePage() {
           </div>
           <div className="grid md:grid-cols-2 gap-8">
             {caseStudies.map((cs) => (
-              <div key={cs.client} className="bg-gradient-to-br from-indigo-600 to-violet-700 rounded-2xl p-8 text-white">
+              <div key={cs.client} className="relative bg-gradient-to-br from-indigo-600 to-violet-700 rounded-2xl p-8 text-white overflow-hidden">
+                <Image
+                  src={cs.image.src}
+                  alt=""
+                  fill
+                  className="object-cover opacity-20 pointer-events-none"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  aria-hidden
+                />
+                <div className="relative z-10">
                 <div className="flex items-start justify-between mb-6">
                   <div>
                     <h3 className="text-xl font-bold font-serif mb-1">{cs.client}</h3>
@@ -458,6 +485,7 @@ export default function HomePage() {
                       {sv}
                     </span>
                   ))}
+                </div>
                 </div>
               </div>
             ))}

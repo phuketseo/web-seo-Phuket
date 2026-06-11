@@ -1,6 +1,8 @@
 ﻿import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { CheckCircle, ArrowRight, Target, TrendingUp, BarChart3, Zap } from "lucide-react";
+import { siteImages } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "รับทำ Google Ads ภูเก็ต | ยิงแอดตรงกลุ่มเป้าหมาย - PhuketSEO",
@@ -42,8 +44,17 @@ export default function GoogleAdsPage() {
         </div>
       </div>
 
-      <section className="bg-gradient-to-br from-blue-950 to-blue-900 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
+      <section className="relative bg-gradient-to-br from-blue-950 to-blue-900 py-20 overflow-hidden">
+        <Image
+          src={siteImages.services.googleAds.src}
+          alt=""
+          fill
+          className="object-cover opacity-20 pointer-events-none"
+          priority
+          sizes="100vw"
+          aria-hidden
+        />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <div className="inline-flex items-center gap-2 bg-green-500/20 border border-green-400/30 text-green-300 text-sm font-medium px-4 py-2 rounded-full mb-6">
               <Target size={14} />

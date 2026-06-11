@@ -1,0 +1,150 @@
+import Link from "next/link";
+import { ArrowLeft, ChevronRight } from "lucide-react";
+import { BlogArticleMeta } from "@/components/blog/vercel/BlogArticleMeta";
+import { BlogAuthorBox } from "@/components/blog/vercel/BlogAuthorBox";
+import { BlogGridBackground } from "@/components/blog/vercel/BlogGridBackground";
+import { BlogReadingProgress } from "@/components/blog/vercel/BlogReadingProgress";
+import { BlogTldr } from "@/components/blog/vercel/BlogTldr";
+import { BlogFeaturedImage } from "@/components/blog/BlogFeaturedImage";
+import { BlogFaqSection } from "@/components/blog/BlogFaqSection";
+import { BlogTableOfContents } from "@/components/blog/BlogTableOfContents";
+import type { BlogHeading } from "@/lib/blog-content-utils";
+import { renderBlogContent } from "@/lib/render-blog-content";
+import type { SiteImage } from "@/lib/images";
+
+export type VercelBlogPost = {
+  title: string;
+  description: string;
+  category: string;
+  date: string;
+  dateISO: string;
+  readingTime: string;
+  relatedServices: { name: string; href: string }[];
+  faqs?: { q: string; a: string }[];
+  tldr?: string[];
+  tldrTitle?: string;
+  author?: { name: string; role: string };
+};
+
+type Props = {
+  post: VercelBlogPost;
+  thumbnail: SiteImage;
+  headings: BlogHeading[];
+  contentForRender: string;
+};
+
+export function BlogVercelLayout({ post, thumbnail, headings, contentForRender }: Props) {
+  const author = post.author ?? { name: "ทีม PhuketSEO", role: "SEO Consultant · ภูเก็ต" };
+
+  return (
+    <BlogGridBackground>
+      <BlogReadingProgress />
+
+      <header className="pt-24 pb-12 px-4">
+        <div className="max-w-3xl mx-auto text-center">
+          <nav className="flex items-center justify-center gap-1.5 text-sm text-neutral-500 mb-10">
+            <Link href="/blog" className="hover:text-neutral-900 transition-colors">
+              บล็อก
+            </Link>
+            <ChevronRight size={14} className="text-neutral-300" />
+            <span className="text-neutral-900">{post.category}</span>
+          </nav>
+
+          <h1 className="text-3xl sm:text-[2.75rem] font-semibold tracking-tight leading-[1.12] text-neutral-900 max-w-2xl mx-auto">
+            {post.title}
+          </h1>
+
+          <BlogAuthorBox name={author.name} role={author.role} />
+
+          <BlogArticleMeta
+            readingTime={post.readingTime}
+            date={post.date}
+            dateISO={post.dateISO}
+          />
+        </div>
+      </header>
+
+      <div className="max-w-6xl mx-auto px-4 pb-20">
+        <div className="lg:grid lg:grid-cols-[200px_1fr] lg:gap-16 xl:gap-20">
+          <aside className="hidden lg:block">
+            <BlogTableOfContents headings={headings} theme="vercel" />
+          </aside>
+
+          <article className="min-w-0">
+            <BlogTableOfContents headings={headings} variant="mobile" theme="vercel" />
+
+            {post.tldr && post.tldr.length > 0 && (
+              <BlogTldr title={post.tldrTitle} items={post.tldr} />
+            )}
+
+            <div className="mb-10">
+              <BlogFeaturedImage image={thumbnail} theme="vercel" />
+            </div>
+
+            <div className="blog-prose blog-prose-vercel">
+              {renderBlogContent(contentForRender, {
+                midCtaAfterSection: 5,
+                theme: "vercel",
+              })}
+            </div>
+
+            {post.faqs && <BlogFaqSection faqs={post.faqs} theme="vercel" />}
+
+            <section className="mt-14 pt-10 border-t border-neutral-200/80">
+              <h3 className="text-sm font-medium uppercase tracking-[0.1em] text-neutral-500 mb-4">
+                บริการที่เกี่ยวข้อง
+              </h3>
+              <ul className="space-y-3">
+                {post.relatedServices.map((s) => (
+                  <li key={s.href}>
+                    <Link
+                      href={s.href}
+                      className="text-[15px] text-neutral-900 underline decoration-neutral-300 underline-offset-4 hover:decoration-neutral-900 transition-colors"
+                    >
+                      {s.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
+
+            <div className="mt-10 pt-6 border-t border-neutral-200/80">
+              <Link
+                href="/blog"
+                className="inline-flex items-center gap-2 text-sm text-neutral-500 hover:text-neutral-900 transition-colors"
+              >
+                <ArrowLeft size={15} />
+                กลับไปหน้ารวมบทความ
+              </Link>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <section className="border-t border-neutral-200/80 bg-white py-16 px-4">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-xl font-semibold tracking-tight text-neutral-900 mb-3">
+            ต้องการความช่วยเหลือด้าน SEO?
+          </h2>
+          <p className="text-neutral-500 mb-8 leading-relaxed">
+            ทีม PhuketSEO พร้อมให้คำปรึกษาฟรี 30 นาที — วิเคราะห์เว็บ SEO Local และแผน Digital Marketing สำหรับธุรกิจในภูเก็ต
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center px-6 py-2.5 bg-neutral-900 hover:bg-neutral-800 text-white text-sm font-medium rounded-md transition-colors"
+            >
+              ขอรับ SEO Audit ฟรี
+            </Link>
+            <Link
+              href="/pricing"
+              className="inline-flex items-center justify-center px-6 py-2.5 border border-neutral-300 hover:border-neutral-900 text-neutral-900 text-sm font-medium rounded-md transition-colors"
+            >
+              ดูแพ็กเกจราคา
+            </Link>
+          </div>
+        </div>
+      </section>
+    </BlogGridBackground>
+  );
+}

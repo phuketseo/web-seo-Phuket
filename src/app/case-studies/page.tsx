@@ -1,9 +1,10 @@
-﻿
-import Link from 'next/link';
+﻿import Link from 'next/link';
+import Image from 'next/image';
 import { Metadata } from 'next';
 import { ChevronRight, TrendingUp, Users, Briefcase, HeartPulse } from 'lucide-react';
 import { siteConfig } from '@/lib/utils';
 import { organizationJsonLd } from '@/lib/schema';
+import { siteImages } from '@/lib/images';
 
 export const metadata: Metadata = {
   title: 'ผลงานของเรา - PhuketSEO | กรณีศึกษา Digital Marketing ที่ประสบความสำเร็จ',
@@ -18,6 +19,7 @@ const CaseStudiesPage = () => {
       metric: '+250% Traffic',
       icon: TrendingUp,
       bgColor: 'bg-gradient-to-br from-blue-800 to-blue-600',
+      image: siteImages.caseStudies.hotel,
     },
     {
       title: 'โครงการอสังหาริมทรัพย์',
@@ -25,6 +27,7 @@ const CaseStudiesPage = () => {
       metric: '+320% Leads',
       icon: Users,
       bgColor: 'bg-gradient-to-br from-green-600 to-green-400',
+      image: siteImages.caseStudies.realestate,
     },
     {
       title: 'ร้านอาหารชื่อดัง',
@@ -32,6 +35,7 @@ const CaseStudiesPage = () => {
       metric: '+180% Bookings',
       icon: Briefcase,
       bgColor: 'bg-gradient-to-br from-blue-600 to-blue-400',
+      image: siteImages.caseStudies.restaurant,
     },
     {
       title: 'คลินิกความงามและสุขภาพ',
@@ -39,6 +43,7 @@ const CaseStudiesPage = () => {
       metric: '+200% Appointments',
       icon: HeartPulse,
       bgColor: 'bg-gradient-to-br from-green-700 to-green-500',
+      image: siteImages.caseStudies.clinic,
     },
   ];
 
@@ -90,7 +95,7 @@ const CaseStudiesPage = () => {
           <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4">ผลงานของเรา</h1>
           <p className="text-xl md:text-2xl mb-8">กรณีศึกษาความสำเร็จด้าน Digital Marketing ที่ PhuketSEO ภาคภูมิใจ</p>
           <Link href="/contact" className="inline-block bg-[#25D366] hover:bg-green-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 ease-in-out shadow-lg">
-            ปรึกษาผู้เชี่ยวชาญฟรี
+            ปรึกษาผู้เชี่ยวชาะฟรี
           </Link>
         </div>
       </section>
@@ -100,8 +105,16 @@ const CaseStudiesPage = () => {
         <div className="container mx-auto px-6">
           <h2 className="text-3xl md:text-5xl font-serif font-bold text-center mb-12 text-[#1e3a8a]">เรื่องราวความสำเร็จของลูกค้า</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
-            {caseStudies.map((study, index) => (
-              <div key={index} className={`relative p-8 rounded-xl shadow-xl overflow-hidden transform transition duration-500 hover:scale-105 ${study.bgColor} text-white`}>
+            {caseStudies.map((study) => (
+              <div key={study.title} className={`relative p-8 rounded-xl shadow-xl overflow-hidden transform transition duration-500 hover:scale-105 ${study.bgColor} text-white`}>
+                <Image
+                  src={study.image.src}
+                  alt=""
+                  fill
+                  className="object-cover opacity-25 pointer-events-none"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  aria-hidden
+                />
                 <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\"100%\" height=\"100%\" viewBox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cpath d=\"M14.75 28.5L25 39.25L35.25 28.5L25 17.75L14.75 28.5ZM64.75 28.5L75 39.25L85.25 28.5L75 17.75L64.75 28.5ZM14.75 71.5L25 82.25L35.25 71.5L25 60.75L14.75 71.5ZM64.75 71.5L75 82.25L85.25 71.5L75 60.75L64.75 71.5Z\" fill=\"%23ffffff\" fill-opacity=\"0.1\"%3E%3C/path%3E%3C/svg%3E")' }}></div>
                 <div className="relative z-10">
                   <div className="flex items-center mb-4">

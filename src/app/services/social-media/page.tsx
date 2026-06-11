@@ -1,8 +1,10 @@
 ﻿
 import Link from 'next/link';
+import Image from 'next/image';
 import { ChevronRight, Award, Users, TrendingUp, Lightbulb, Rocket, BarChart, DollarSign, HelpCircle, Share2, MessageCircle, Video } from 'lucide-react';
 import { siteConfig } from '@/lib/utils';
 import { organizationJsonLd } from '@/lib/schema';
+import { siteImages } from '@/lib/images';
 
 export const metadata = {
   title: 'Social Media Marketing ภูเก็ต — เพิ่มยอดขาย | PhuketSEO',
@@ -118,8 +120,17 @@ export default function SocialMediaPage() {
       />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-[#1e3a8a] to-[#25D366] text-white py-20 md:py-32">
-        <div className="container mx-auto px-4 text-center">
+      <section className="relative bg-gradient-to-r from-[#1e3a8a] to-[#25D366] text-white py-20 md:py-32 overflow-hidden">
+        <Image
+          src={siteImages.services.socialMedia.src}
+          alt=""
+          fill
+          className="object-cover opacity-20 pointer-events-none"
+          priority
+          sizes="100vw"
+          aria-hidden
+        />
+        <div className="container mx-auto px-4 text-center relative z-10">
           <h1 className="font-serif text-4xl md:text-6xl font-bold leading-tight mb-4">
             Social Media Marketing ภูเก็ต
           </h1>

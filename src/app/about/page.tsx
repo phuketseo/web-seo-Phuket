@@ -1,8 +1,9 @@
 ﻿import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Fragment } from 'react';
-import { Users, Award, Lightbulb } from 'lucide-react';
+import Image from 'next/image';
+import { Award, Lightbulb } from 'lucide-react';
 import { organizationJsonLd } from '@/lib/schema';
+import { siteImages } from '@/lib/images';
 
 export const metadata: Metadata = {
   title: 'เกี่ยวกับเรา - PhuketSEO: ผู้เชี่ยวชาญด้านการตลาดดิจิทัลในภูเก็ต',
@@ -81,30 +82,31 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Team Section - Placeholder for now, will add actual team members later */}
+        {/* Team Section */}
         <section className="mb-16">
           <h2 className="font-serif text-4xl font-bold text-[#1e3a8a] mb-8 text-center">ทีมงานของเรา</h2>
           <div className="max-w-3xl mx-auto text-lg text-center">
             <p>เรามีทีมงานผู้เชี่ยวชาญที่มีประสบการณ์และความรู้ความสามารถในการขับเคลื่อนธุรกิจของคุณให้ประสบความสำเร็จ</p>
             <div className="grid md:grid-cols-3 gap-8 mt-8">
-              {/* Team Member 1 */}
-              <div className="flex flex-col items-center">
-                <div className="w-32 h-32 bg-gray-200 rounded-full mb-4 flex items-center justify-center text-[#25D366]"><Users size={48} /></div>
-                <h3 className="font-serif text-xl font-semibold text-[#1e3a8a]">คุณสมชาย ดิจิทัล</h3>
-                <p className="text-gray-600">ผู้ก่อตั้ง & ผู้เชี่ยวชาญ SEO</p>
-              </div>
-              {/* Team Member 2 */}
-              <div className="flex flex-col items-center">
-                <div className="w-32 h-32 bg-gray-200 rounded-full mb-4 flex items-center justify-center text-[#25D366]"><Users size={48} /></div>
-                <h3 className="font-serif text-xl font-semibold text-[#1e3a8a]">คุณอรอนงค์ เว็บมาสเตอร์</h3>
-                <p className="text-gray-600">หัวหน้าฝ่ายออกแบบเว็บไซต์</p>
-              </div>
-              {/* Team Member 3 */}
-              <div className="flex flex-col items-center">
-                <div className="w-32 h-32 bg-gray-200 rounded-full mb-4 flex items-center justify-center text-[#25D366]"><Users size={48} /></div>
-                <h3 className="font-serif text-xl font-semibold text-[#1e3a8a]">คุณวิชัย โซเชียล</h3>
-                <p className="text-gray-600">ผู้จัดการฝ่ายโซเชียลมีเดีย</p>
-              </div>
+              {[
+                { image: siteImages.team.somchai, name: "คุณสมชาย ดิจิทัล", role: "ผู้ก่อตั้ง & ผู้เชี่ยวชาญ SEO" },
+                { image: siteImages.team.oranong, name: "คุณอรอนงค์ เว็บมาสเตอร์", role: "หัวหน้าฝ่ายออกแบบเว็บไซต์" },
+                { image: siteImages.team.vichai, name: "คุณวิชัย โซเชียล", role: "ผู้จัดการฝ่ายโซเชียลมีเดีย" },
+              ].map((member) => (
+                <div key={member.name} className="flex flex-col items-center">
+                  <div className="relative w-32 h-32 rounded-full overflow-hidden mb-4">
+                    <Image
+                      src={member.image.src}
+                      alt={member.image.alt}
+                      fill
+                      className="object-cover"
+                      sizes="128px"
+                    />
+                  </div>
+                  <h3 className="font-serif text-xl font-semibold text-[#1e3a8a]">{member.name}</h3>
+                  <p className="text-gray-600">{member.role}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>

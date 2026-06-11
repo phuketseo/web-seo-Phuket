@@ -79,4 +79,33 @@
   .section-padding { @apply py-20 md:py-28; }
   .container-custom { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; }
   .card-hover { @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1; }
+
+  .blog-prose {
+    max-width: 65ch;
+    font-size: 18px;
+    line-height: 1.7;
+  }
+
+  .blog-prose strong {
+    @apply font-semibold text-slate-900;
+  }
+
+  .blog-prose li::marker {
+    @apply text-indigo-500;
+  }
+
+  .blog-prose-vercel {
+    max-width: 65ch;
+    font-size: 16px;
+    line-height: 1.75;
+    color: #404040;
+  }
+
+  .blog-prose-vercel strong {
+    @apply font-semibold text-neutral-900;
+  }
+
+  .blog-prose-vercel li::marker {
+    @apply text-neutral-400;
+  }
 }
