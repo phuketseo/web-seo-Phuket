@@ -40,7 +40,7 @@ export function BlogVercelLayout({ post, thumbnail, headings, contentForRender }
     <BlogGridBackground>
       <BlogReadingProgress />
 
-      <header className="pt-24 pb-12 px-4">
+      <header className="pt-24 pb-8 px-4">
         <div className="max-w-3xl mx-auto text-center">
           <nav className="flex items-center justify-center gap-1.5 text-sm text-neutral-500 mb-10">
             <Link href="/blog" className="hover:text-neutral-900 transition-colors">
@@ -73,13 +73,13 @@ export function BlogVercelLayout({ post, thumbnail, headings, contentForRender }
           <article className="min-w-0">
             <BlogTableOfContents headings={headings} variant="mobile" theme="vercel" />
 
+            <div className="mb-8">
+              <BlogFeaturedImage image={thumbnail} theme="vercel" />
+            </div>
+
             {post.tldr && post.tldr.length > 0 && (
               <BlogTldr title={post.tldrTitle} items={post.tldr} />
             )}
-
-            <div className="mb-10">
-              <BlogFeaturedImage image={thumbnail} theme="vercel" />
-            </div>
 
             <div className="blog-prose blog-prose-vercel">
               {renderBlogContent(contentForRender, {

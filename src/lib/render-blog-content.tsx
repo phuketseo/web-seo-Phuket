@@ -287,7 +287,7 @@ export function renderBlogContent(content: string, options: RenderOptions = {}) 
           id={id}
           className={
             isVercel
-              ? "text-xl sm:text-2xl font-semibold tracking-tight text-neutral-900 mt-14 mb-5 scroll-mt-28 first:mt-0"
+              ? "text-xl sm:text-2xl font-semibold tracking-tight text-neutral-900 mt-5 mb-5 scroll-mt-28 first:mt-0"
               : "text-2xl font-bold text-blue-950 mt-12 mb-5 font-serif scroll-mt-28 first:mt-0"
           }
         >
@@ -338,7 +338,7 @@ export function renderBlogContent(content: string, options: RenderOptions = {}) 
       );
     } else if (line.startsWith("---")) {
       elements.push(
-        <hr key={key++} className={isVercel ? "border-neutral-200 my-12" : "border-slate-200 my-10"} />
+        <hr key={key++} className={isVercel ? "border-neutral-200 my-4" : "border-slate-200 my-4"} />
       );
     } else if (line.trim() === "") {
       elements.push(<div key={key++} className="h-2" />);

@@ -12,7 +12,7 @@ export function BlogInlineImage({ image, caption, theme = "default" }: Props) {
   const isVercel = theme === "vercel";
 
   return (
-    <figure className="my-10 -mx-2 sm:mx-0">
+    <figure className="my-3 -mx-2 sm:mx-0">
       <div
         className={
         isVercel

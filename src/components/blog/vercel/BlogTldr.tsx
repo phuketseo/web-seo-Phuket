@@ -8,7 +8,7 @@ export function BlogTldr({ title, items }: Props) {
   if (!items.length) return null;
 
   return (
-    <section className="mb-10 pb-10 border-b border-neutral-200/80">
+    <section className="mb-8 pb-8 border-b border-neutral-200/80">
       {title && (
         <h3 className="text-base font-semibold text-neutral-900 tracking-tight mb-4">{title}</h3>
       )}
