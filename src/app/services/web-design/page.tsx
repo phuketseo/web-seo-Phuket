@@ -4,8 +4,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { CheckCircle, Code, Layout, ShoppingCart, Briefcase, PenTool, Phone } from 'lucide-react';
 import { siteConfig } from '@/lib/utils';
-import { organizationJsonLd } from '@/lib/schema';
+import { organizationJsonLd, faqSchema } from '@/lib/schema';
 import { siteImages } from '@/lib/images';
+import { webDesignContent } from '@/lib/service-content';
+import { ServiceFaqSection } from '@/components/ServiceFaqSection';
 
 export const metadata: Metadata = {
   title: 'รับทำเว็บไซต์ภูเก็ต ออกแบบเว็บมืออาชีพ | PhuketSEO',
@@ -14,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'รับทำเว็บไซต์ภูเก็ต ออกแบบเว็บมืออาชีพ | PhuketSEO',
     description: 'บริการรับทำเว็บไซต์ ออกแบบเว็บสวยงาม ทันสมัย รองรับทุกอุปกรณ์ เพิ่มยอดขายให้ธุรกิจของคุณในภูเก็ต เริ่มต้นเพียง 15,000 บาท',
-    url: 'https://www.phuketseo.com/services/web-design',
+    url: 'https://phuketseo.com/services/web-design',
     type: 'website',
   },
 };
@@ -30,19 +32,19 @@ export default function WebDesignServicePage() {
             "@type": "ListItem",
             "position": 1,
             "name": "หน้าแรก",
-            "item": "https://www.phuketseo.com/"
+            "item": "https://phuketseo.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "บริการ",
-            "item": "https://www.phuketseo.com/services"
+            "item": "https://phuketseo.com/services"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "รับทำเว็บไซต์",
-            "item": "https://www.phuketseo.com/services/web-design"
+            "item": "https://phuketseo.com/services/web-design"
           }
         ]
       },
@@ -60,7 +62,7 @@ export default function WebDesignServicePage() {
         },
         "name": "รับทำเว็บไซต์ภูเก็ต",
         "description": "บริการรับทำเว็บไซต์ ออกแบบเว็บสวยงาม ทันสมัย รองรับทุกอุปกรณ์ เพิ่มยอดขายให้ธุรกิจของคุณในภูเก็ต เริ่มต้นเพียง 15,000 บาท",
-        "url": "https://www.phuketseo.com/services/web-design",
+        "url": "https://phuketseo.com/services/web-design",
         "areaServed": {
           "@type": "Place",
           "name": "ภูเก็ต, ประเทศไทย"
@@ -73,7 +75,8 @@ export default function WebDesignServicePage() {
             "minPrice": "15000"
           }
         }
-      }
+      },
+      faqSchema(webDesignContent.faqs)
     ]
   };
 
@@ -110,6 +113,26 @@ export default function WebDesignServicePage() {
         <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
           <div className="absolute w-64 h-64 bg-white rounded-full -top-16 -left-16"></div>
           <div className="absolute w-96 h-96 bg-white rounded-full -bottom-32 -right-32"></div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-white border-b border-gray-100">
+        <div className="container mx-auto px-6 max-w-3xl space-y-4">
+          {webDesignContent.intro.map((paragraph) => (
+            <p key={paragraph.slice(0, 40)} className="text-gray-700 text-lg leading-relaxed">
+              {paragraph}
+            </p>
+          ))}
+          <p className="text-gray-600 leading-relaxed">
+            อ่านเพิ่ม:{" "}
+            <Link href="/blog/web-design-phuket-real-estate" className="text-blue-700 hover:underline">
+              Web Design อสังหาฯ ภูเก็ต
+            </Link>
+            {" · "}
+            <Link href="/services/seo-phuket" className="text-blue-700 hover:underline">
+              บริการ SEO ภูเก็ต
+            </Link>
+          </p>
         </div>
       </section>
 
@@ -194,6 +217,8 @@ export default function WebDesignServicePage() {
           </Link>
         </div>
       </section>
+
+      <ServiceFaqSection faqs={webDesignContent.faqs} />
 
       {/* Contact Call to Action */}
       <section className="py-16 md:py-24 bg-gray-50">

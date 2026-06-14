@@ -1,10 +1,14 @@
 import LocalSeoPage from "@/components/LocalSeoPage";
 import { Metadata } from "next";
+import { faqSchema } from "@/lib/schema";
+import { localSeoContent } from "@/lib/local-seo-content";
 
 export const metadata: Metadata = {
   title: "SEO ป่าตอง - เพิ่มการมองเห็นธุรกิจในป่าตอง ภูเก็ต",
   description: "บริการ SEO สำหรับธุรกิจในป่าตอง ภูเก็ต เพิ่มการมองเห็นออนไลน์ของคุณสำหรับโรงแรม, บาร์, ร้านอาหาร, ร้านนวด, ทัวร์, และดำน้ำ",
 };
+
+const areaContent = localSeoContent.patong;
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -14,19 +18,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "หน้าแรก",
-      "item": "https://www.phuketseo.com/",
+      "item": "https://phuketseo.com/",
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Local SEO",
-      "item": "https://www.phuketseo.com/local",
+      "item": "https://phuketseo.com/local",
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "ป่าตอง",
-      "item": "https://www.phuketseo.com/local/patong",
+      "item": "https://phuketseo.com/local/patong",
     },
   ],
 };
@@ -38,7 +42,7 @@ const serviceSchema = {
   "provider": {
     "@type": "Organization",
     "name": "PhuketSEO",
-    "url": "https://www.phuketseo.com",
+    "url": "https://phuketseo.com",
   },
   "areaServed": {
     "@type": "Place",
@@ -52,8 +56,12 @@ const serviceSchema = {
   },
   "description": "บริการ SEO สำหรับธุรกิจในป่าตอง ภูเก็ต เพื่อเพิ่มการมองเห็นและลูกค้าในพื้นที่",
   "name": "บริการ Local SEO ป่าตอง",
-  "url": "https://www.phuketseo.com/local/patong",
+  "url": "https://phuketseo.com/local/patong",
 };
+
+const faqSchemaJson = faqSchema(
+  areaContent.faqs.map((faq) => ({ question: faq.q, answer: faq.a }))
+);
 
 export default function PatongPage() {
   const areaData = {
@@ -70,6 +78,8 @@ export default function PatongPage() {
       { metric: "4 เดือน", label: "เห็นผลลัพธ์" },
       { metric: "50+", label: "ธุรกิจในป่าตอง" },
     ],
+    intro: areaContent.intro,
+    faqs: areaContent.faqs,
   };
 
   return (
@@ -81,6 +91,10 @@ export default function PatongPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchemaJson) }}
       />
       <LocalSeoPage {...areaData} />
     </>

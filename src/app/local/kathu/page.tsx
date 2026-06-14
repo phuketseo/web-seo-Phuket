@@ -1,5 +1,7 @@
 import { Metadata } from 'next';
 import LocalSeoPage from '@/components/LocalSeoPage';
+import { faqSchema } from '@/lib/schema';
+import { localSeoContent } from '@/lib/local-seo-content';
 
 // Metadata for Kathu page
 export const metadata: Metadata = {
@@ -9,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'SEO กะทู้ - เพิ่มการมองเห็นธุรกิจของคุณในภูเก็ต',
     description: 'บริการ SEO สำหรับธุรกิจในกะทู้ ภูเก็ต เช่น สนามกอล์ฟ รีสอร์ท ร้านอาหาร สปา และอสังหาฯ เพิ่มลูกค้าในพื้นที่ด้วยกลยุทธ์ SEO ท้องถิ่น',
-    url: 'https://www.phuketseo.com/local/kathu', // Assuming this is the URL structure
+    url: 'https://phuketseo.com/local/kathu',
     type: 'website',
   },
   twitter: {
@@ -18,6 +20,12 @@ export const metadata: Metadata = {
     description: 'บริการ SEO สำหรับธุรกิจในกะทู้ ภูเก็ต เช่น สนามกอล์ฟ รีสอร์ท ร้านอาหาร สปา และอสังหาฯ เพิ่มลูกค้าในพื้นที่ด้วยกลยุทธ์ SEO ท้องถิ่น',
   },
 };
+
+const areaContent = localSeoContent.kathu;
+
+const faqSchemaJson = faqSchema(
+  areaContent.faqs.map((faq) => ({ question: faq.q, answer: faq.a }))
+);
 
 export default function KathuPage() {
   const areaDetails = {
@@ -34,6 +42,8 @@ export default function KathuPage() {
       { metric: "3 เดือน", label: "เห็นผลลัพธ์" },
       { metric: "30+", label: "ธุรกิจในกะทู้" },
     ],
+    intro: areaContent.intro,
+    faqs: areaContent.faqs,
   };
 
   const breadcrumbSchema = {
@@ -44,19 +54,19 @@ export default function KathuPage() {
         '@type': 'ListItem',
         position: 1,
         name: 'หน้าแรก',
-        item: 'https://www.phuketseo.com/',
+        item: 'https://phuketseo.com/',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'บริการ Local SEO',
-        item: 'https://www.phuketseo.com/local',
+        item: 'https://phuketseo.com/local',
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: 'กะทู้',
-        item: 'https://www.phuketseo.com/local/kathu',
+        item: 'https://phuketseo.com/local/kathu',
       },
     ],
   };
@@ -70,7 +80,7 @@ export default function KathuPage() {
     provider: {
       '@type': 'Organization',
       name: 'PhuketSEO',
-      url: 'https://www.phuketseo.com',
+      url: 'https://phuketseo.com',
     },
     areaServed: {
       '@type': 'AdministrativeArea',
@@ -96,6 +106,10 @@ export default function KathuPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchemaJson) }}
       />
       <LocalSeoPage {...areaDetails} />
     </>

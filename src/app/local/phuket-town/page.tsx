@@ -1,13 +1,15 @@
 import { Metadata } from 'next';
 import LocalSeoPage from "@/components/LocalSeoPage";
+import { faqSchema } from "@/lib/schema";
+import { localSeoContent } from "@/lib/local-seo-content";
 
-// Metadata
 export const metadata: Metadata = {
   title: 'SEO ตัวเมืองภูเก็ต: เพิ่มการมองเห็นธุรกิจของคุณในย่านวัฒนธรรม',
   description: 'บริการ SEO สำหรับธุรกิจในตัวเมืองภูเก็ต ไม่ว่าจะเป็นร้านค้า ร้านอาหาร คลินิก หรือโรงแรมบูติก เพิ่มโอกาสให้ลูกค้าค้นพบคุณ',
 };
 
-// BreadcrumbList Schema
+const areaContent = localSeoContent["phuket-town"];
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -22,34 +24,38 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 2,
       "name": "Local SEO",
-      "item": "https://phuketseo.com/local/"
+      "item": "https://phuketseo.com/local"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "ตัวเมืองภูเก็ต",
-      "item": "https://phuketseo.com/local/phuket-town/"
+      "item": "https://phuketseo.com/local/phuket-town"
     }
   ]
 };
 
-// Service Schema
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   "serviceType": "Local SEO Services",
   "provider": {
     "@type": "Organization",
-    "name": "PhuketSEO"
+    "name": "PhuketSEO",
+    "url": "https://phuketseo.com"
   },
   "areaServed": {
     "@type": "AdministrativeArea",
     "name": "ตัวเมืองภูเก็ต"
   },
   "description": "บริการ SEO สำหรับธุรกิจในตัวเมืองภูเก็ต เพื่อเพิ่มการมองเห็นและดึงดูดลูกค้าในพื้นที่",
-  "url": "https://phuketseo.com/local/phuket-town/",
+  "url": "https://phuketseo.com/local/phuket-town",
   "name": "Local SEO ตัวเมืองภูเก็ต"
 };
+
+const faqSchemaJson = faqSchema(
+  areaContent.faqs.map((faq) => ({ question: faq.q, answer: faq.a }))
+);
 
 export default function PhuketTownPage() {
   const areaProps = {
@@ -66,9 +72,25 @@ export default function PhuketTownPage() {
       { metric: "5 เดือน", label: "เห็นผลลัพธ์" },
       { metric: "60+", label: "ธุรกิจในตัวเมือง" },
     ],
+    intro: areaContent.intro,
+    faqs: areaContent.faqs,
   };
 
   return (
-    <LocalSeoPage {...areaProps} />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchemaJson) }}
+      />
+      <LocalSeoPage {...areaProps} />
+    </>
   );
 }

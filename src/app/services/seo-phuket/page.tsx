@@ -2,8 +2,10 @@
 import Link from "next/link";
 import Image from "next/image";
 import { CheckCircle, ArrowRight, Search, TrendingUp, Star, BarChart3, FileText, Link2, MapPin } from "lucide-react";
-import { localBusinessJsonLd } from "@/lib/schema";
+import { localBusinessJsonLd, faqSchema } from "@/lib/schema";
 import { siteImages } from "@/lib/images";
+import { seoPhuketContent } from "@/lib/service-content";
+import { ServiceFaqSection } from "@/components/ServiceFaqSection";
 
 export const metadata: Metadata = {
   title: "รับทำ SEO ภูเก็ต | ติดอันดับ Google ได้จริง - PhuketSEO",
@@ -37,6 +39,8 @@ const serviceSchema = {
   },
 };
 
+const faqSchemaJson = faqSchema(seoPhuketContent.faqs);
+
 const seoProcess = [
   { step: "01", title: "วิเคราะห์เว็บไซต์ & คู่แข่ง", desc: "ตรวจสอบสภาพเว็บไซต์ปัจจุบัน วิเคราะห์คู่แข่ง และหา Keyword Opportunities ที่ดีที่สุด", icon: Search },
   { step: "02", title: "วางกลยุทธ์ Keyword", desc: "เลือก Keywords ที่มี Search Volume สูง Competition ต่ำ และตรงกับกลุ่มเป้าหมายของธุรกิจคุณ", icon: BarChart3 },
@@ -58,6 +62,7 @@ export default function SeoPhuketPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchemaJson) }} />
 
       {/* Breadcrumb */}
       <div className="bg-gray-50 border-b border-gray-100 pt-24">
@@ -126,6 +131,30 @@ export default function SeoPhuketPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-white border-b border-gray-100">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+          {seoPhuketContent.intro.map((paragraph) => (
+            <p key={paragraph.slice(0, 40)} className="text-gray-700 text-lg leading-relaxed">
+              {paragraph}
+            </p>
+          ))}
+          <p className="text-gray-600 leading-relaxed">
+            อ่านเพิ่ม:{" "}
+            <Link href="/blog/seo-for-phuket-hotels" className="text-blue-700 hover:underline">
+              SEO โรงแรมภูเก็ต
+            </Link>
+            {" · "}
+            <Link href="/blog/google-my-business-phuket" className="text-blue-700 hover:underline">
+              Google Business Profile
+            </Link>
+            {" · "}
+            <Link href="/local/patong" className="text-blue-700 hover:underline">
+              Local SEO ป่าตอง
+            </Link>
+          </p>
         </div>
       </section>
 
@@ -202,6 +231,8 @@ export default function SeoPhuketPage() {
           </div>
         </div>
       </section>
+
+      <ServiceFaqSection faqs={seoPhuketContent.faqs} />
 
       {/* CTA */}
       <section className="py-16 bg-green-500">

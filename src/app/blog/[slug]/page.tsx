@@ -1145,11 +1145,13 @@ export default async function BlogPostPage({
     headline: post.title,
     description: post.description,
     datePublished: post.dateISO,
+    dateModified: post.dateISO,
     image: `${siteConfig.url}${thumbnail.src}`,
     author: {
-      "@type": "Organization",
+      "@type": "Person",
       name: author.name,
-      url: siteConfig.url,
+      jobTitle: author.role,
+      url: `${siteConfig.url}/about`,
     },
     publisher: {
       "@type": "Organization",

@@ -1,5 +1,6 @@
 ﻿import Link from "next/link";
-import { CheckCircle, ArrowRight, MapPin, Phone, Star } from "lucide-react";
+import { CheckCircle, ArrowRight, MapPin, Phone } from "lucide-react";
+import { BlogFaqSection } from "@/components/blog/BlogFaqSection";
 
 interface LocalSeoPageProps {
   area: string;
@@ -10,10 +11,12 @@ interface LocalSeoPageProps {
   keywords: string[];
   landmarks: string[];
   stats: { metric: string; label: string }[];
+  intro?: string[];
+  faqs?: { q: string; a: string }[];
 }
 
 export default function LocalSeoPage({
-  area, areaEn, slug, description, businesses, keywords, landmarks, stats,
+  area, areaEn, slug, description, businesses, keywords, landmarks, stats, intro, faqs,
 }: LocalSeoPageProps) {
   return (
     <>
@@ -71,6 +74,28 @@ export default function LocalSeoPage({
         </div>
       </section>
 
+      {intro?.length ? (
+        <section className="py-16 bg-white border-b border-gray-100">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+            {intro.map((paragraph) => (
+              <p key={paragraph.slice(0, 40)} className="text-gray-700 text-lg leading-relaxed">
+                {paragraph}
+              </p>
+            ))}
+            <p className="text-gray-600 leading-relaxed">
+              อ่านเพิ่ม:{" "}
+              <Link href="/blog/google-my-business-phuket" className="text-blue-700 hover:underline">
+                Google Business Profile ภูเก็ต
+              </Link>
+              {" · "}
+              <Link href="/services/seo-phuket" className="text-blue-700 hover:underline">
+                บริการ SEO ภูเก็ต
+              </Link>
+            </p>
+          </div>
+        </section>
+      ) : null}
+
       {/* Businesses */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -126,6 +151,14 @@ export default function LocalSeoPage({
           </div>
         </div>
       </section>
+
+      {faqs?.length ? (
+        <section className="py-16 bg-gray-50">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <BlogFaqSection faqs={faqs} />
+          </div>
+        </section>
+      ) : null}
 
       {/* CTA */}
       <section className="py-16 bg-blue-950">

@@ -3,6 +3,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { CheckCircle, ArrowRight, Target, TrendingUp, BarChart3, Zap } from "lucide-react";
 import { siteImages } from "@/lib/images";
+import { faqSchema } from "@/lib/schema";
+import { googleAdsContent } from "@/lib/service-content";
+import { ServiceFaqSection } from "@/components/ServiceFaqSection";
 
 export const metadata: Metadata = {
   title: "รับทำ Google Ads ภูเก็ต | ยิงแอดตรงกลุ่มเป้าหมาย - PhuketSEO",
@@ -20,6 +23,8 @@ const breadcrumbSchema = {
   ],
 };
 
+const faqSchemaJson = faqSchema(googleAdsContent.faqs);
+
 const features = [
   { icon: Target, title: "Search Ads", desc: "โฆษณาบน Google Search ตรงกับคนที่กำลังค้นหาสินค้า/บริการของคุณ" },
   { icon: BarChart3, title: "Display Ads", desc: "Banner โฆษณาบนเว็บไซต์พันธมิตร Google เพิ่ม Brand Awareness" },
@@ -31,6 +36,7 @@ export default function GoogleAdsPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchemaJson) }} />
 
       <div className="bg-gray-50 border-b border-gray-100 pt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
@@ -90,6 +96,26 @@ export default function GoogleAdsPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-white border-b border-gray-100">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+          {googleAdsContent.intro.map((paragraph) => (
+            <p key={paragraph.slice(0, 40)} className="text-gray-700 text-lg leading-relaxed">
+              {paragraph}
+            </p>
+          ))}
+          <p className="text-gray-600 leading-relaxed">
+            อ่านเพิ่ม:{" "}
+            <Link href="/services/seo-phuket" className="text-blue-700 hover:underline">
+              บริการ SEO ภูเก็ต
+            </Link>
+            {" · "}
+            <Link href="/blog/seo-for-phuket-hotels" className="text-blue-700 hover:underline">
+              SEO โรงแรมภูเก็ต
+            </Link>
+          </p>
         </div>
       </section>
 
@@ -153,6 +179,8 @@ export default function GoogleAdsPage() {
           </div>
         </div>
       </section>
+
+      <ServiceFaqSection faqs={googleAdsContent.faqs} />
 
       <section className="py-16 bg-green-500">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
