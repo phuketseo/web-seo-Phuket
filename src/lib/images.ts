@@ -151,6 +151,102 @@ export const siteImages = {
       width: 2304,
       height: 1536,
     },
+    geminiHotel: {
+      src: "/images/blog/blog-thumb-gemini-hotel.png",
+      alt: "Gemini วิเคราะห์คู่แข่งโรงแรมภูเก็ต — แผน SEO 90 วัน",
+      width: 2304,
+      height: 1536,
+    },
+    seoHotelNew: {
+      src: "/images/blog/blog-thumb-seo-hotel.png",
+      alt: "เพิ่มยอดขายโรงแรมภูเก็ตด้วย SEO — กลยุทธ์ที่พิสูจน์แล้ว",
+      width: 2304,
+      height: 1536,
+    },
+    instagramRestaurant: {
+      src: "/images/blog/blog-thumb-instagram-restaurant.png",
+      alt: "Instagram Marketing สำหรับร้านอาหารภูเก็ต — Walk-in +40%",
+      width: 2304,
+      height: 1536,
+    },
+    webDesignRealestate: {
+      src: "/images/blog/blog-thumb-web-design-realestate.png",
+      alt: "เว็บไซต์อสังหาฯ ภูเก็ต ที่ดึงดูด Lead ได้จริง — Leads +320%",
+      width: 2304,
+      height: 1536,
+    },
+    gmbPhuket: {
+      src: "/images/blog/blog-thumb-gmb-phuket.png",
+      alt: "Google My Business เครื่องมือสำคัญธุรกิจเล็กภูเก็ต — Maps Impressions +240%",
+      width: 2304,
+      height: 1536,
+    },
+    tiktokServices: {
+      src: "/images/blog/blog-thumb-tiktok-services.png",
+      alt: "TikTok Marketing สำหรับธุรกิจบริการภูเก็ต — Booking +55%",
+      width: 2304,
+      height: 1536,
+    },
+    contentForeigners: {
+      src: "/images/blog/blog-thumb-content-foreigners.png",
+      alt: "Content Marketing ดึงลูกค้าต่างชาติในภูเก็ต — Organic EN +210%",
+      width: 2304,
+      height: 1536,
+    },
+    geminiSerp: {
+      src: "/images/blog/blog-inline-gemini-serp.png",
+      alt: "Competitive Audit ด้วย Gemini — มองเห็นช่องว่าง SEO ในโซนภูเก็ต",
+      width: 2304,
+      height: 1536,
+    },
+    geminiResults: {
+      src: "/images/blog/blog-inline-gemini-results.png",
+      alt: "ผลลัพธ์ 90 วัน หลัง Competitive Audit โรงแรมภูเก็ต",
+      width: 2304,
+      height: 1536,
+    },
+    hotelMaps: {
+      src: "/images/blog/blog-inline-hotel-maps.png",
+      alt: "Google Maps 3-Pack ช่องทาง Direct Booking โรงแรมภูเก็ต",
+      width: 2304,
+      height: 1536,
+    },
+    hotelResults: {
+      src: "/images/blog/blog-inline-hotel-results.png",
+      alt: "ผลลัพธ์ 6 เดือน SEO โรงแรมป่าตอง — Organic Traffic +180% Direct Booking +34%",
+      width: 2304,
+      height: 1536,
+    },
+    instagramResults: {
+      src: "/images/blog/blog-inline-instagram-results.png",
+      alt: "ผลลัพธ์ 90 วัน Instagram ร้านซีฟู้ดตลาดใหม่ภูเก็ต",
+      width: 2304,
+      height: 1536,
+    },
+    realestateResults: {
+      src: "/images/blog/blog-inline-realestate-results.png",
+      alt: "ผลลัพธ์ 4 เดือน Web + SEO อสังหาริมทรัพย์ภูเก็ต — Leads +320%",
+      width: 2304,
+      height: 1536,
+    },
+    gmbResults: {
+      src: "/images/blog/blog-inline-gmb-results.png",
+      alt: "ผลลัพธ์ 4 เดือน GBP ร้านกาแฟเมืองเก่าภูเก็ต — Maps Impressions +240%",
+      width: 2304,
+      height: 1536,
+    },
+    tiktokResults: {
+      src: "/images/blog/blog-inline-tiktok-results.png",
+      alt: "ผลลัพธ์ 3 เดือน TikTok สปากะตะ — Booking วันธรรมดา +55%",
+      width: 2304,
+      height: 1536,
+    },
+    contentResults: {
+      src: "/images/blog/blog-inline-content-results.png",
+      alt: "ผลลัพธ์ 5 เดือน Content EN ดึงลูกค้าต่างชาติภูเก็ต — Organic EN +210%",
+      width: 2304,
+      height: 1536,
+    },
     webDesignSeo: {
       src: "/images/blog/blog-thumb-web-design-seo.png",
       alt: "Web Design กับ SEO",
@@ -189,13 +285,13 @@ export const siteImages = {
 } as const;
 
 export const blogThumbnailBySlug: Record<string, SiteImage> = {
-  "gemini-hotel-competitor-analysis": siteImages.blog.seoHotel,
-  "seo-for-phuket-hotels": siteImages.blog.seoHotel,
-  "instagram-marketing-phuket-restaurants": siteImages.blog.socialMedia,
-  "web-design-phuket-real-estate": siteImages.blog.webDesignSeo,
-  "google-my-business-phuket": siteImages.blog.localSeo,
-  "tiktok-marketing-phuket-services": siteImages.blog.socialMedia,
-  "content-marketing-phuket-foreigners": siteImages.blog.contentMarketing,
+  "gemini-hotel-competitor-analysis": siteImages.blog.geminiHotel,
+  "seo-for-phuket-hotels": siteImages.blog.seoHotelNew,
+  "instagram-marketing-phuket-restaurants": siteImages.blog.instagramRestaurant,
+  "web-design-phuket-real-estate": siteImages.blog.webDesignRealestate,
+  "google-my-business-phuket": siteImages.blog.gmbPhuket,
+  "tiktok-marketing-phuket-services": siteImages.blog.tiktokServices,
+  "content-marketing-phuket-foreigners": siteImages.blog.contentForeigners,
   "seo-for-phuket-spas": siteImages.blog.seoSpa,
 };
 
@@ -215,6 +311,15 @@ export const blogInlineImages: Record<string, SiteImage> = {
   serviceWebDesign: siteImages.services.webDesign,
   spaLocalSeo: siteImages.blog.spaLocalSeo,
   spaCaseStudy: siteImages.blog.spaCaseStudy,
+  geminiSerp: siteImages.blog.geminiSerp,
+  geminiResults: siteImages.blog.geminiResults,
+  hotelMaps: siteImages.blog.hotelMaps,
+  hotelResults: siteImages.blog.hotelResults,
+  instagramResults: siteImages.blog.instagramResults,
+  realestateResults: siteImages.blog.realestateResults,
+  gmbResults: siteImages.blog.gmbResults,
+  tiktokResults: siteImages.blog.tiktokResults,
+  contentResults: siteImages.blog.contentResults,
 };
 
 export function resolveBlogInlineImage(key: string): SiteImage | null {
