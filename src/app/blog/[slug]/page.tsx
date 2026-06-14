@@ -27,6 +27,151 @@ const blogPosts: Record<
     author?: { name: string; role: string };
   }
 > = {
+  "seo-for-phuket-spas": {
+    title: "SEO สำหรับ Spa & Wellness ภูเก็ต: ดึง Booking ต่างชาติโดยไม่พึ่ง OTA",
+    description:
+      "สปาในกะตะที่ผ่านมาพึ่ง Agoda/Klook เป็นหลัก — ทำไม SEO + Local ถึงเพิ่ม Direct Booking 60% ใน 5 เดือน",
+    category: "SEO",
+    date: "14 มิถุนายน 2569",
+    dateISO: "2026-06-14",
+    readingTime: "8 นาที",
+    layout: "vercel",
+    author: defaultAuthor,
+    tldrTitle: "SEO Spa & Wellness ภูเก็ต",
+    tldr: [
+      "Direct Booking +60% ใน 5 เดือน (สปา boutique กะตะ 6 treatment rooms)",
+      "Organic EN sessions +190% จาก long-tail wellness keyword",
+      "Google Maps 3-Pack ในหมวด day spa โซนกะตะ ภายใน 3 เดือน",
+      "Klook/Agoda dependency ลดจาก 85% → 55% ของ booking ทั้งหมด",
+    ],
+    keywords: [
+      "SEO สปาภูเก็ต",
+      "Wellness Marketing Phuket",
+      "สปาภูเก็ต Google",
+      "Day Spa Phuket SEO",
+      "Direct Booking สปา",
+    ],
+    relatedServices: [
+      { name: "บริการ SEO ภูเก็ต", href: "/services/seo-phuket" },
+      { name: "Google Business Profile ภูเก็ต", href: "/blog/google-my-business-phuket" },
+      { name: "TikTok Marketing ธุรกิจบริการ", href: "/blog/tiktok-marketing-phuket-services" },
+      { name: "ขอ SEO Audit ฟรี", href: "/contact" },
+    ],
+    faqs: [
+      {
+        q: "SEO สปาภูเก็ตต่างจาก SEO โรงแรมอย่างไร?",
+        a: "SEO โรงแรมเน้น keyword จองที่พักและ OTA สปาเน้น treatment-level keyword เช่น thai massage kata phuket หรือ couples spa phuket beachfront และต้องการ GBP ที่แสดงเมนูบริการชัดเจน นอกจากนี้สปามักแข่งกับ Klook/Viator มากกว่า Booking.com",
+      },
+      {
+        q: "ควรเลือก keyword treatment หรือ keyword โซนก่อน?",
+        a: "เริ่มจาก keyword โซน+treatment ร่วมกัน เช่น 'spa kata phuket' หรือ 'day spa patong' เพราะมี buyer intent สูงและแข่งน้อยกว่า keyword กว้าง จากนั้นขยายไปหน้า treatment เฉพาะ เช่น thai massage, herbal compress, couple package",
+      },
+      {
+        q: "Google Business Profile สปาควร optimize อะไรเป็นพิเศษ?",
+        a: "หมวดหมู่หลักควรเป็น Day Spa และ Massage Therapist ใส่รูปห้อง treatment ไม่ต่ำกว่า 20 รูป เพิ่ม Services และราคาใน profile ตอบรีวิวภาษาอังกฤษทุกข้อ และโพสต์ Google Posts โปรโมชั่นอย่างน้อยสัปดาห์ละ 1 ครั้ง",
+      },
+      {
+        q: "Klook/Agoda ยังใช้ได้ไหมถ้าทำ SEO?",
+        a: "ใช้ได้ Klook/Agoda ช่วยให้มองเห็นในกลุ่มนักท่องเที่ยวที่ไม่ค้นหา Google แต่เป้าหมายของ SEO คือเพิ่ม Direct Booking share ซึ่งมี margin สูงกว่าประมาณ 20–30% เมื่อ SEO แข็งแกร่ง สปาสามารถลด dependency OTA โดยไม่กระทบ occupancy",
+      },
+      {
+        q: "ใช้เวลานานแค่ไหนถึงเห็น Direct Booking โต?",
+        a: "Google Maps impressions และ organic clicks มักเห็นใน 45–60 วันหลังแก้ GBP และ on-page Direct Booking ที่วัดชัดมักใช้ 3–5 เดือน ขึ้นกับการแข่งขันในโซนและ conversion ของเว็บสปา",
+      },
+    ],
+    content: `
+## สปากะตะที่ booking มาจาก Agoda และ Klook เกือบทั้งหมด
+
+สปา boutique 6 treatment rooms ในกะตะ — บริการดี รีวิวดี แต่ **Direct Booking จากเว็บไม่ถึง 15%** ของ booking ทั้งหมด ส่วนที่เหลือมาจาก Agoda, Klook และ Viator ซึ่งหัก commission 20–30% ทุกครั้ง
+
+ตลาด Spa & Wellness ภูเก็ตเติบโตต่อเนื่อง — นักท่องเที่ยวหลายล้านคนค้นหา **day spa phuket** หรือ **thai massage kata** ก่อนตัดสินใจจอง แต่สปาที่ไม่มี SEO จะไม่ปรากฏในผลการค้นหาเหล่านี้
+
+:::quote
+SEO สปาภูเก็ตไม่ใช่แค่ติดอันดับ แต่คือสร้าง Direct Booking channel ที่ลด commission OTA ได้ทันที
+— ทีม PhuketSEO, SEO Consultant · ภูเก็ต
+:::
+
+---
+
+## ลง OTA แต่ margin หาย
+
+สปาหลายแห่งขยาย Klook/Agoda เพื่อเพิ่ม booking — แต่ **commission 20–30% ต่อ booking** กัด margin อย่างเงียบๆ ยิ่งขายผ่าน OTA เยอะ กำไรยิ่งบาง และสปาไม่มีข้อมูลลูกค้าสำหรับ re-marketing
+
+---
+
+## เว็บไม่ตอบ keyword ลูกค้าต่างชาติ
+
+เว็บสปาส่วนใหญ่มีข้อมูลภาษาไทยเป็นหลัก — **Google ไม่จัดอันดับสำหรับ query ภาษาอังกฤษ** เช่น "couples massage phuket kata" หรือ "luxury day spa patong" ทั้งที่เป็น keyword ที่นักท่องเที่ยวค้นจริงก่อนจอง
+
+---
+
+## ไม่อยู่ Google Maps 3-Pack ในโซนที่แข่ง
+
+[Google Business Profile](/blog/google-my-business-phuket) ที่ไม่ optimize ทำให้สปาไม่โผล่ Maps เมื่อลูกค้าค้นหา "spa near me" หรือ "day spa kata" — เสีย traffic ฟรีที่ intent สูงมาก
+
+:::image spaLocalSeo
+Google Maps 3-Pack สำหรับ Spa ภูเก็ต — ตำแหน่ง Local Pack คือ organic booking channel ที่ไม่ต้องเสีย commission
+:::
+
+---
+
+## SEO Spa & Wellness โดย PhuketSEO: สามชั้น
+
+**ชั้นที่ 1 — On-page + Treatment Pages:** สร้าง landing ต่อ treatment หลัก (thai massage, herbal compress, couple package) พร้อม keyword EN/TH ที่ตรงกับ search intent จริง
+
+**ชั้นที่ 2 — Local SEO + GBP:** Optimize [Google Business Profile](/blog/google-my-business-phuket) ใส่ Services, รูป treatment rooms 20+ รูป, Posts สัปดาห์ละครั้ง และ review response strategy
+
+**ชั้นที่ 3 — Direct Booking System:** Best Price Guarantee บนเว็บ + CTA LINE/WhatsApp ทุก scroll depth เพื่อแปลง organic traffic เป็น booking โดยตรง
+
+:::callout info
+SEO Audit ฟรี 30 นาที รวม keyword analysis ในโซนและ GBP checklist สำหรับสปาของคุณ — **[ติดต่อ PhuketSEO](/contact)**
+:::
+
+---
+
+## ผลลัพธ์หลัง 5 เดือน (ตัวอย่างลูกค้า)
+
+สปากะตะในตัวอย่าง — เน้น treatment landing pages ภาษาอังกฤษ + GBP + review strategy
+
+| ตัวชี้วัด | ก่อน SEO | หลัง 5 เดือน |
+|---|---|---|
+| Direct Booking share | 15% | 36% |
+| Organic EN sessions | baseline | +190% |
+| Google Maps Impressions | ต่ำ | +260% |
+| Klook/Agoda dependency | 85% | 55% |
+
+*ตัวเลขเป็นตัวอย่างจากลูกค้า PhuketSEO ผลจริงขึ้นกับสภาพเว็บและการแข่งขันในโซน*
+
+:::image spaCaseStudy
+ผลงาน SEO Spa & Wellness ภูเก็ต — Direct Booking และ Organic Traffic หลังแผน 5 เดือน
+:::
+
+:::quote
+ก่อนหน้านี้เราคิดว่า Klook คือทางเดียว — พอ Google เริ่มส่งลูกค้าตรง margin เปลี่ยนไปเลย
+— เจ้าของสปา boutique กะตะ (ลูกค้า PhuketSEO)
+:::
+
+| ช่วง | งานหลัก | KPI |
+|---|---|---|
+| เดือน 1 | Technical · GBP · Treatment pages | Impressions · GBP views |
+| เดือน 2–3 | EN content · Review strategy | Organic clicks · avg. position |
+| เดือน 4–5 | Direct booking system · Long-tail blog | Direct booking % · Top 10 |
+
+---
+
+## ขยายผล: keyword ตาม treatment และ season
+
+High season ดึง keyword เฉพาะ เช่น "new year spa phuket" — low season ใช้ package ราคาพิเศษเป็น content ดึง long-stay wellness traveler SEO ต้องปรับทุกไตรมาสตามตลาด
+
+สปาที่มี Visual content ดี ควรทำ [TikTok Marketing](/blog/tiktok-marketing-phuket-services) ควบคู่กับ SEO — Organic reach ช่วยดึง booking จากคนที่ยังไม่รู้จักแบรนด์
+
+PhuketSEO ดูแล [บริการ SEO ภูเก็ต](/services/seo-phuket) สำหรับสปาและธุรกิจบริการแบบต่อเนื่อง — Audit โซน execute และรายงาน KPI รายเดือน
+
+**อ่านเพิ่ม:** [Google Business Profile ภูเก็ต](/blog/google-my-business-phuket) · [SEO โรงแรมภูเก็ต](/blog/seo-for-phuket-hotels)
+
+[ขอ SEO Audit ฟรี 30 นาที](/contact) — วิเคราะห์โซน keyword และ Direct Booking opportunity ของสปาคุณ
+    `,
+  },
   "gemini-hotel-competitor-analysis": {
     title: "Gemini Competitive Audit โรงแรมภูเก็ต: วิเคราะห์คู่แข่งแล้ววางแผน SEO 90 วัน",
     description:

@@ -25,6 +25,15 @@ export const blogCategories = [
 
 export const blogPostsMeta: BlogPostMeta[] = [
   {
+    slug: "seo-for-phuket-spas",
+    title: "SEO สำหรับ Spa & Wellness ภูเก็ต: ดึง Booking ต่างชาติโดยไม่พึ่ง OTA",
+    category: "SEO",
+    dateISO: "2026-06-14",
+    description:
+      "สปาในกะตะที่ผ่านมาพึ่ง Agoda/Klook เป็นหลัก — ทำไม SEO + Local ถึงเพิ่ม Direct Booking 60% ใน 5 เดือน",
+    thumbnail: getBlogThumbnail("seo-for-phuket-spas"),
+  },
+  {
     slug: "gemini-hotel-competitor-analysis",
     title: "Gemini Competitive Audit โรงแรมภูเก็ต: วิเคราะห์คู่แข่งแล้ววางแผน SEO 90 วัน",
     category: "AI Marketing",

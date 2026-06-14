@@ -133,6 +133,24 @@ export const siteImages = {
       width: 2304,
       height: 1536,
     },
+    seoSpa: {
+      src: "/images/blog/blog-thumb-seo-spa-phuket.png",
+      alt: "SEO สำหรับ Spa & Wellness ภูเก็ต — เพิ่ม Direct Booking ไม่พึ่ง OTA",
+      width: 2304,
+      height: 1536,
+    },
+    spaLocalSeo: {
+      src: "/images/blog/blog-inline-spa-local-seo.png",
+      alt: "Google Maps 3-Pack สำหรับสปาภูเก็ต — ช่องทาง Direct Booking ที่ไม่เสีย commission",
+      width: 2304,
+      height: 1536,
+    },
+    spaCaseStudy: {
+      src: "/images/blog/blog-inline-spa-case-study.png",
+      alt: "ผลลัพธ์จริง SEO สปาภูเก็ต — Direct Booking +60% Organic Traffic +190% ใน 5 เดือน",
+      width: 2304,
+      height: 1536,
+    },
     webDesignSeo: {
       src: "/images/blog/blog-thumb-web-design-seo.png",
       alt: "Web Design กับ SEO",
@@ -178,6 +196,7 @@ export const blogThumbnailBySlug: Record<string, SiteImage> = {
   "google-my-business-phuket": siteImages.blog.localSeo,
   "tiktok-marketing-phuket-services": siteImages.blog.socialMedia,
   "content-marketing-phuket-foreigners": siteImages.blog.contentMarketing,
+  "seo-for-phuket-spas": siteImages.blog.seoSpa,
 };
 
 export function getBlogThumbnail(slug: string): SiteImage {
@@ -190,9 +209,12 @@ export const blogInlineImages: Record<string, SiteImage> = {
   caseStudyHotel: siteImages.caseStudies.hotel,
   caseStudyRestaurant: siteImages.caseStudies.restaurant,
   caseStudyRealestate: siteImages.caseStudies.realestate,
+  caseStudyClinic: siteImages.caseStudies.clinic,
   serviceSeo: siteImages.services.seo,
   serviceSocialMedia: siteImages.services.socialMedia,
   serviceWebDesign: siteImages.services.webDesign,
+  spaLocalSeo: siteImages.blog.spaLocalSeo,
+  spaCaseStudy: siteImages.blog.spaCaseStudy,
 };
 
 export function resolveBlogInlineImage(key: string): SiteImage | null {
