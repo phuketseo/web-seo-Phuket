@@ -7,6 +7,7 @@ interface LocalSeoPageProps {
   areaEn: string;
   slug: string;
   description: string;
+  answerBlock?: string;
   businesses: string[];
   keywords: string[];
   landmarks: string[];
@@ -16,7 +17,7 @@ interface LocalSeoPageProps {
 }
 
 export default function LocalSeoPage({
-  area, areaEn, slug, description, businesses, keywords, landmarks, stats, intro, faqs,
+  area, areaEn, slug, description, answerBlock, businesses, keywords, landmarks, stats, intro, faqs,
 }: LocalSeoPageProps) {
   return (
     <>
@@ -48,7 +49,12 @@ export default function LocalSeoPage({
               <br />
               ในพื้นที่ {area}
             </h1>
-            <p className="text-blue-200 text-lg leading-relaxed mb-8">{description}</p>
+            <p className="text-blue-200 text-lg leading-relaxed mb-4">{description}</p>
+            {answerBlock ? (
+              <p className="text-white/90 text-base leading-relaxed mb-8 bg-white/10 border border-white/20 rounded-xl px-4 py-3">
+                {answerBlock}
+              </p>
+            ) : null}
             <div className="flex flex-wrap gap-4 mb-8">
               <Link href="/contact" className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-xl transition-all hover:shadow-xl hover:-translate-y-0.5">
                 ปรึกษาฟรี <ArrowRight size={16} />

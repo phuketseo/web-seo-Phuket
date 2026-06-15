@@ -7,8 +7,9 @@ export function cn(...inputs: ClassValue[]) {
 
 export const siteConfig = {
   name: "PhuketSEO",
-  tagline: "SEO ภูเก็ต ติดอันดับได้จริง",
-  description: "บริการ SEO ภูเก็ต, Google Ads, Social Media Marketing และ Web Design สำหรับธุรกิจในภูเก็ต",
+  tagline: "รับทำ SEO + เว็บไซต์ภูเก็ต — ติด Google พร้อม AI Search",
+  description:
+    "รับทำ SEO และเว็บไซต์ภูเก็ต สำหรับธุรกิจไทยท้องถิ่น ติด Google Maps, เว็บเร็ว, พร้อม AEO/GEO และ AI Overview เริ่มต้น ฿5,900/เดือน",
   url: "https://phuketseo.com",
   phone: "092-555-1369",
   phoneInternational: "+66-92-555-1369",

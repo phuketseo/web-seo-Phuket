@@ -2,6 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { siteConfig } from "@/lib/utils";
+import { pricingPackages } from "@/lib/pricing-packages";
 import { geoCoordinatesSchema, organizationSameAs, postalAddressSchema } from "@/lib/schema";
 import { siteImages } from "@/lib/images";
 import {
@@ -11,9 +12,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "PhuketSEO | รับทำ SEO ภูเก็ต ติดอันดับ Google ได้จริง",
+  title: "PhuketSEO | รับทำ SEO + เว็บไซต์ภูเก็ต ติด Google พร้อม AI Search",
   description:
-    "บริการ SEO ภูเก็ต, Google Ads, Social Media Marketing และ Web Design สำหรับธุรกิจในภูเก็ต ดูแลธุรกิจมากกว่า 80 แห่ง ผลลัพธ์วัดได้จริง ปรึกษาฟรี!",
+    "รับทำ SEO และเว็บไซต์ภูเก็ต สำหรับธุรกิจไทยในภูเก็ต ติด Google Maps, เว็บเร็ว, พร้อม AEO/GEO และ AI Overview เริ่มต้น ฿5,900/เดือน ปรึกษาฟรี!",
   alternates: { canonical: "https://phuketseo.com" },
 };
 
@@ -22,7 +23,7 @@ const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   name: siteConfig.name,
-  description: "เอเจนซี่ SEO และการตลาดออนไลน์ในภูเก็ต",
+  description: "รับทำ SEO + เว็บไซต์ภูเก็ต สำหรับธุรกิจไทยท้องถิ่น ติด Google Maps และ AI Search",
   url: siteConfig.url,
   telephone: siteConfig.phoneInternational,
   email: siteConfig.email,
@@ -56,7 +57,7 @@ const faqSchema = {
       name: "ค่าบริการ SEO ภูเก็ต เริ่มต้นที่เท่าไหร่?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "แพ็กเกจ SEO ของเราเริ่มต้นที่ 9,900 บาท/เดือน สำหรับแพ็กเกจ Starter ที่เหมาะกับธุรกิจขนาดเล็ก ไปจนถึง 29,900 บาท/เดือน สำหรับแพ็กเกจ Premium ที่ครอบคลุมทุกด้าน",
+        text: "แพ็กเกจ SEO Lite เริ่มต้น 5,900 บาท/เดือน (GBP + Social Proof) SEO Pro 8,900 บาท/เดือน (เว็บ + SEO + AEO/GEO) และ SEO Pro Max 15,000 บาท/เดือน (รวม Ads)",
       },
     },
     {
@@ -91,80 +92,56 @@ const services = [
   {
     iconImage: siteImages.icons.seo,
     title: "SEO ภูเก็ต",
-    desc: "ดันอันดับเว็บไซต์บน Google ให้ลูกค้าค้นหาเจอ ด้วยกลยุทธ์ SEO ที่พิสูจน์แล้วว่าได้ผล",
-    result: "Traffic เพิ่มเฉลี่ย +250%",
+    desc: "ติด Google Maps และ Organic Search ด้วย Local SEO, On-page และ AEO/GEO structure",
+    result: "เริ่มต้น ฿5,900/เดือน",
     href: "/services/seo-phuket",
     color: "bg-blue-50 text-blue-700",
   },
   {
-    iconImage: siteImages.icons.googleAds,
-    title: "Google Ads",
-    desc: "ยิงโฆษณาตรงกลุ่มเป้าหมาย ได้ผลลัพธ์ทันที ประหยัดงบประมาณด้วย ROI สูงสุด",
-    result: "ROI เฉลี่ย 450%",
-    href: "/services/google-ads",
-    color: "bg-green-50 text-green-700",
-  },
-  {
-    iconImage: siteImages.icons.socialMedia,
-    title: "Social Media Marketing",
-    desc: "สร้างแบรนด์บน Facebook, Instagram, TikTok เพิ่ม Engagement และยอดขายจาก Social",
-    result: "Engagement เพิ่ม +180%",
-    href: "/services/social-media",
-    color: "bg-purple-50 text-purple-700",
-  },
-  {
     iconImage: siteImages.icons.webDesign,
-    title: "Web Design",
-    desc: "ออกแบบเว็บไซต์ที่สวยงาม รวดเร็ว Mobile-Friendly และ Optimized สำหรับ SEO",
-    result: "Conversion Rate +85%",
+    title: "ทำเว็บไซต์ + SEO",
+    desc: "เว็บเร็ว mobile-first พร้อม SEO และ AI Search structure ตั้งแต่วัน launch",
+    result: "Setup จาก ฿29,900",
     href: "/services/web-design",
     color: "bg-green-50 text-green-700",
   },
 ];
 
 const industries = [
-  { name: "โรงแรม & รีสอร์ท", icon: "🏨", desc: "เพิ่มการจองโดยตรง ลด OTA Commission", href: "/services/seo-phuket" },
-  { name: "อสังหาริมทรัพย์", icon: "🏢", desc: "ดึง Leads ผู้ซื้อและผู้เช่าคุณภาพสูง", href: "/services/seo-phuket" },
-  { name: "ร้านอาหาร & บาร์", icon: "🍽️", desc: "เพิ่มลูกค้าจาก Google Maps และ Search", href: "/services/seo-phuket" },
-  { name: "คลินิก & สปา", icon: "💆", desc: "ดึงลูกค้าที่ค้นหาบริการสุขภาพและความงาม", href: "/services/seo-phuket" },
+  { name: "โรงแรม & รีสอร์ท", icon: "🏨", desc: "Direct Booking ลด OTA commission", href: "/industries/seo-hotels-phuket" },
+  { name: "อสังหาริมทรัพย์", icon: "🏢", desc: "ดึง Leads ผู้ซื้อและผู้เช่าคุณภาพสูง", href: "/industries/seo-real-estate-phuket" },
+  { name: "ร้านอาหาร & บาร์", icon: "🍽️", desc: "SEO + Maps สำหรับร้านอาหารภูเก็ต", href: "/industries/seo-restaurants-phuket" },
+  { name: "คลินิก & สปา", icon: "💆", desc: "Direct Booking ไม่พึ่ง OTA", href: "/industries/seo-spa-phuket" },
   { name: "ทัวร์ & กิจกรรม", icon: "🤿", desc: "เพิ่มการจองทัวร์และกิจกรรมในภูเก็ต", href: "/services/seo-phuket" },
   { name: "ร้านค้าปลีก", icon: "🛍️", desc: "เพิ่มยอดขายออนไลน์และหน้าร้าน", href: "/services/seo-phuket" },
 ];
 
 const metrics = [
-  { value: "80+", label: "ธุรกิจที่ดูแล", icon: Users },
-  { value: "250%", label: "Traffic เพิ่มเฉลี่ย", icon: TrendingUp },
-  { value: "4.9", label: "คะแนนรีวิว", icon: Star },
-  { value: "10+", label: "ปีประสบการณ์", icon: Award },
+  { value: "฿5,900", label: "เริ่มต้น/เดือน", icon: Users },
+  { value: "7 วัน", label: "ส่ง SEO Audit", icon: TrendingUp },
+  { value: "3 แพ็ก", label: "Lite / Pro / Max", icon: Star },
+  { value: "AI Ready", label: "AEO + GEO", icon: Award },
 ];
 
 const whyUs = [
-  { icon: Target, title: "เชี่ยวชาญตลาดภูเก็ต", desc: "เข้าใจพฤติกรรมลูกค้าท้องถิ่นและนักท่องเที่ยวต่างชาติ ทั้งภาษาไทยและอังกฤษ" },
-  { icon: BarChart3, title: "ผลลัพธ์วัดได้จริง", desc: "รายงานรายเดือนที่โปร่งใส ติดตาม KPI ได้ทุก Keyword และ Conversion" },
-  { icon: Shield, title: "ไม่มีสัญญาผูกมัด", desc: "เชื่อมั่นในผลงาน ไม่บังคับสัญญาระยะยาว ลูกค้าอยู่เพราะพอใจผลลัพธ์" },
-  { icon: Clock, title: "Support ตลอด 7 วัน", desc: "ทีมงานพร้อมตอบคำถามและแก้ปัญหาทุกวัน ไม่ทิ้งลูกค้า" },
-  { icon: Zap, title: "ทีมผู้เชี่ยวชาญ", desc: "SEO Expert, Google Ads Certified, Content Writer และ Developer ในทีมเดียว" },
-  { icon: Globe, title: "ครอบคลุมทุกช่องทาง", desc: "SEO + Ads + Social + Web Design ครบวงจร ไม่ต้องใช้หลายเอเจนซี่" },
+  { icon: Target, title: "โฟกัสธุรกิจไทยในภูเก็ต", desc: "เข้าใจตลาดท้องถิ่น ร้านอาหาร สปา อสังหาฯ และ SME ในแต่ละย่าน" },
+  { icon: BarChart3, title: "ผลลัพธ์วัดได้จริง", desc: "รายงาน KPI รายเดือน — ranking, traffic, GBP views และ conversion" },
+  { icon: Shield, title: "ไม่มีสัญญาผูกมัด", desc: "เชื่อมั่นในผลงาน ยกเลิกได้ทุกเดือน แนะนำขั้นต่ำ 3 เดือนเพื่อเห็นผล" },
+  { icon: Clock, title: "ส่งมอบเร็ว", desc: "SEO Audit ภายใน 7 วัน GBP setup ภายใน 14 วัน เห็น impression ใน 30–60 วัน" },
+  { icon: Zap, title: "SEO + เว็บ + AI Search", desc: "Phuket Visibility Stack — ติด Google, เว็บเร็ว, พร้อม AI Overview" },
+  { icon: Globe, title: "Ads เป็นเทคนิคเสริม", desc: "แพ็ก Pro Max รวม Ads แต่บริการหลักคือ SEO + เว็บที่ส่งมอบได้จริง" },
 ];
 
 const caseStudies = [
   {
-    client: "Patong Beach Resort",
-    industry: "โรงแรม 4 ดาว",
-    challenge: "การจองโดยตรงน้อย พึ่งพา OTA 85%",
-    result: "Direct Booking +320%, Organic Traffic +450%, ROI 680%",
-    duration: "6 เดือน",
-    services: ["SEO", "Google Ads", "Web Design"],
-    image: siteImages.caseStudies.hotel,
-  },
-  {
-    client: "Phuket Property Co.",
-    industry: "อสังหาริมทรัพย์",
-    challenge: "ไม่มีตัวตนออนไลน์ ลูกค้าหาไม่เจอ",
-    result: "Leads +280%, อันดับ 1 สำหรับ 15 Keywords, ยอดขาย +190%",
-    duration: "4 เดือน",
-    services: ["SEO", "Social Media"],
-    image: siteImages.caseStudies.realestate,
+    slug: "phuketseo-website-rebuild",
+    client: "PhuketSEO.com",
+    industry: "SEO Agency",
+    challenge: "เว็บเดิม positioning กระจาย ไม่ชัดว่าขายอะไร และยังไม่มีโครงสร้าง AEO/GEO",
+    result: "3 แพ็กราคาชัด · 11+ หน้า SEO-ready · FAQ + llms.txt · Phase 1 live 2 สัปดาห์",
+    duration: "Phase 1–2 (2026)",
+    services: ["Next.js", "SEO", "AEO/GEO"],
+    image: siteImages.services.webDesign,
   },
 ];
 
@@ -189,55 +166,14 @@ const testimonials = [
   },
 ];
 
-const pricing = [
-  {
-    name: "Starter",
-    price: "9,900",
-    desc: "เหมาะสำหรับธุรกิจขนาดเล็กที่เริ่มต้น SEO",
-    features: [
-      "5 Keywords หลัก",
-      "On-Page SEO Optimization",
-      "Google Business Profile",
-      "รายงานรายเดือน",
-      "Support ทาง LINE",
-    ],
-    cta: "เริ่มต้น",
-    popular: false,
-  },
-  {
-    name: "Professional",
-    price: "19,900",
-    desc: "เหมาะสำหรับธุรกิจที่ต้องการเติบโตอย่างจริงจัง",
-    features: [
-      "15 Keywords",
-      "On-Page + Off-Page SEO",
-      "Content Marketing (4 บทความ/เดือน)",
-      "Link Building",
-      "Google Ads Management",
-      "รายงานรายสัปดาห์",
-      "Support ตลอด 7 วัน",
-    ],
-    cta: "เลือกแพ็กเกจนี้",
-    popular: true,
-  },
-  {
-    name: "Premium",
-    price: "29,900",
-    desc: "สำหรับธุรกิจที่ต้องการครองตลาดออนไลน์",
-    features: [
-      "Unlimited Keywords",
-      "Full SEO Strategy",
-      "Content Marketing (8 บทความ/เดือน)",
-      "Premium Link Building",
-      "Google Ads + Social Ads",
-      "Social Media Management",
-      "Dedicated Account Manager",
-      "รายงาน Real-time Dashboard",
-    ],
-    cta: "ติดต่อเรา",
-    popular: false,
-  },
-];
+const pricing = pricingPackages.map((pkg) => ({
+  name: pkg.name,
+  price: pkg.priceLabel,
+  desc: pkg.desc,
+  features: pkg.features.slice(0, 5),
+  cta: pkg.cta,
+  popular: pkg.popular,
+}));
 
 const faqs = [
   {
@@ -246,7 +182,7 @@ const faqs = [
   },
   {
     q: "ค่าบริการ SEO ภูเก็ต เริ่มต้นที่เท่าไหร่?",
-    a: "แพ็กเกจ SEO ของเราเริ่มต้นที่ 9,900 บาท/เดือน สำหรับแพ็กเกจ Starter ไปจนถึง 29,900 บาท/เดือน สำหรับแพ็กเกจ Premium",
+    a: "แพ็กเกจ SEO Lite เริ่ม 5,900 บาท/เดือน SEO Pro 8,900 บาท/เดือน และ SEO Pro Max 15,000 บาท/เดือน ดูรายละเอียดที่หน้าราคา",
   },
   {
     q: "PhuketSEO ให้บริการธุรกิจประเภทไหนบ้าง?",
@@ -298,18 +234,18 @@ export default function HomePage() {
           <div>
             <div className="inline-flex items-center gap-2 bg-indigo-50 border border-indigo-200 text-indigo-600 text-sm font-medium px-4 py-2 rounded-full mb-8">
               <Zap size={13} />
-              เอเจนซี่ SEO อันดับ 1 ในภูเก็ต
+              Phuket Visibility Stack™
             </div>
             <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold text-slate-900 font-serif leading-[1.1] mb-6">
-              SEO ภูเก็ต
+              รับทำ SEO +
               <br />
-              <span className="text-gradient">ติดอันดับได้จริง</span>
+              <span className="text-gradient">เว็บไซต์ภูเก็ต</span>
               <br />
-              เพิ่มยอดขาย
+              ติด Google & AI Search
             </h1>
             <p className="text-slate-500 text-lg leading-relaxed mb-10 max-w-lg">
-              บริการ SEO, Google Ads, Social Media และ Web Design สำหรับธุรกิจในภูเก็ต
-              ด้วยทีมผู้เชี่ยวชาญที่มีประสบการณ์ 10+ ปี ผลลัพธ์วัดได้จริง
+              ช่วยธุรกิจไทยในภูเก็ต ติด Google Maps มีเว็บเร็วที่ Google ชอบ และพร้อมโผล่ AI Overview
+              เริ่มต้น ฿5,900/เดือน ไม่มีสัญญาผูกมัด
             </p>
             <div className="flex flex-wrap gap-3 mb-10">
               <Link href="/contact" className="btn-pill text-base px-8 py-4">
@@ -323,15 +259,15 @@ export default function HomePage() {
             <div className="flex flex-wrap gap-6 text-sm text-slate-500">
               <div className="flex items-center gap-1.5">
                 <Star size={15} className="text-yellow-400 fill-yellow-400" />
-                <span>4.9/5 จาก 50+ รีวิว</span>
+                <span>SEO Lite จาก ฿5,900</span>
               </div>
               <div className="flex items-center gap-1.5">
                 <Users size={15} className="text-indigo-400" />
-                <span>ดูแลธุรกิจ 80+ แห่ง</span>
+                <span>Audit ภายใน 7 วัน</span>
               </div>
               <div className="flex items-center gap-1.5">
                 <Award size={15} className="text-indigo-400" />
-                <span>Google Partner</span>
+                <span>AEO + GEO Ready</span>
               </div>
             </div>
           </div>
@@ -339,10 +275,10 @@ export default function HomePage() {
           {/* Right - Stats Cards */}
           <div className="hidden lg:grid grid-cols-2 gap-4">
             {[
-              { label: "Organic Traffic เพิ่ม", value: "+250%", sub: "เฉลี่ยลูกค้าทุกราย", color: "bg-indigo-600", light: false },
-              { label: "ROI Google Ads", value: "450%", sub: "Return on Investment", color: "bg-white border border-slate-100 shadow-sm", light: true },
-              { label: "ธุรกิจที่ดูแล", value: "80+", sub: "ในภูเก็ตและทั่วไทย", color: "bg-white border border-slate-100 shadow-sm", light: true },
-              { label: "ปีประสบการณ์", value: "10+", sub: "SEO & Digital Marketing", color: "bg-green-500", light: false },
+              { label: "แพ็ก SEO Pro", value: "฿8,900", sub: "เว็บ + SEO + AEO/GEO", color: "bg-indigo-600", light: false },
+              { label: "SEO Audit", value: "7 วัน", sub: "ส่งมอบหลังเริ่มงาน", color: "bg-white border border-slate-100 shadow-sm", light: true },
+              { label: "GBP Views", value: "30-60 วัน", sub: "เริ่มเห็น impression", color: "bg-white border border-slate-100 shadow-sm", light: true },
+              { label: "AI Search", value: "AEO+GEO", sub: "พร้อม AI Overview", color: "bg-green-500", light: false },
             ].map((stat) => (
               <div key={stat.label} className={`${stat.color} rounded-2xl p-6`}>
                 <div className={`text-3xl font-bold font-serif mb-1 ${stat.light ? "text-slate-900" : "text-white"}`}>{stat.value}</div>
@@ -360,13 +296,13 @@ export default function HomePage() {
           <div className="text-center mb-14">
             <div className="text-indigo-500 font-semibold text-sm uppercase tracking-wider mb-2">บริการของเรา</div>
             <h2 className="text-4xl font-bold text-slate-900 font-serif mb-4">
-              บริการการตลาดออนไลน์ครบวงจร
+              บริการหลักของเรา
             </h2>
             <p className="text-slate-500 max-w-2xl mx-auto">
-              ครอบคลุมทุกด้านของ Digital Marketing ด้วยทีมผู้เชี่ยวชาญเฉพาะทาง ให้ผลลัพธ์ที่วัดได้จริง
+              โฟกัส SEO + เว็บไซต์ที่ส่งมอบได้จริง สำหรับธุรกิจไทยในภูเก็ต
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
             {services.map((s) => (
               <Link
                 key={s.href}
@@ -450,9 +386,13 @@ export default function HomePage() {
               ผลลัพธ์จริงจากลูกค้าของเรา
             </h2>
           </div>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-1 gap-8 max-w-2xl mx-auto">
             {caseStudies.map((cs) => (
-              <div key={cs.client} className="relative bg-gradient-to-br from-indigo-600 to-violet-700 rounded-2xl p-8 text-white overflow-hidden">
+              <Link
+                key={cs.client}
+                href={`/case-studies/${cs.slug}`}
+                className="relative bg-gradient-to-br from-indigo-600 to-violet-700 rounded-2xl p-8 text-white overflow-hidden block hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 group"
+              >
                 <Image
                   src={cs.image.src}
                   alt=""
@@ -486,8 +426,11 @@ export default function HomePage() {
                     </span>
                   ))}
                 </div>
+                <span className="inline-flex items-center gap-2 mt-4 text-green-300 text-sm font-semibold group-hover:gap-3 transition-all">
+                  อ่าน case study <ArrowRight size={14} />
+                </span>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
           <div className="text-center mt-8">
@@ -527,9 +470,9 @@ export default function HomePage() {
           <div className="text-center mb-14">
             <div className="text-indigo-500 font-semibold text-sm uppercase tracking-wider mb-2">ราคา</div>
             <h2 className="text-4xl font-bold text-slate-900 font-serif mb-4">
-              แพ็กเกจที่เหมาะกับทุกขนาดธุรกิจ
+              Phuket Visibility Stack™
             </h2>
-            <p className="text-slate-500">ราคาโปร่งใส ไม่มีค่าใช้จ่ายซ่อนเร้น ปรับได้ตามความต้องการ</p>
+            <p className="text-slate-500">แพ็กเกจ SEO Lite / Pro / Pro Max — ไม่มีค่าใช้จ่ายซ่อนเร้น</p>
           </div>
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {pricing.map((p) => (

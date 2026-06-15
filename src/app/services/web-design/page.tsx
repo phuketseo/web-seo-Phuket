@@ -10,8 +10,8 @@ import { webDesignContent } from '@/lib/service-content';
 import { ServiceFaqSection } from '@/components/ServiceFaqSection';
 
 export const metadata: Metadata = {
-  title: 'รับทำเว็บไซต์ภูเก็ต ออกแบบเว็บมืออาชีพ | PhuketSEO',
-  description: 'บริการรับทำเว็บไซต์ ออกแบบเว็บสวยงาม ทันสมัย รองรับทุกอุปกรณ์ เพิ่มยอดขายให้ธุรกิจของคุณในภูเก็ต เริ่มต้นเพียง 15,000 บาท',
+  title: 'รับทำเว็บไซต์ภูเก็ต — เว็บเร็ว ติด Google | PhuketSEO',
+  description: 'เว็บเร็ว ติด Google พร้อม SEO และ AI Search structure สำหรับธุรกิจในภูเก็ต Setup จาก ฿29,900 + ดูแลรายเดือนในแพ็ก Pro',
   keywords: ['รับทำเว็บไซต์ภูเก็ต', 'ออกแบบเว็บไซต์', 'สร้างเว็บไซต์', 'เว็บดีไซน์ภูเก็ต', 'PhuketSEO'],
   openGraph: {
     title: 'รับทำเว็บไซต์ภูเก็ต ออกแบบเว็บมืออาชีพ | PhuketSEO',

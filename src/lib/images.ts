@@ -127,6 +127,24 @@ export const siteImages = {
       width: 2304,
       height: 1536,
     },
+    localSeoPillar: {
+      src: "/images/blog/blog-thumb-local-seo-phuket-kue-arai-clean.png",
+      alt: "Local SEO ภูเก็ต คืออะไร — ติด Google Maps 3-Pack Maps Impressions +240%",
+      width: 2304,
+      height: 1536,
+    },
+    localSeoMaps: {
+      src: "/images/blog/blog-inline-local-seo-maps-clean.png",
+      alt: "Google Maps 3-Pack — ช่องทางลูกค้าท้องถิ่นภูเก็ต Maps Impressions +240%",
+      width: 2304,
+      height: 1536,
+    },
+    localSeoResults: {
+      src: "/images/blog/blog-inline-local-seo-results-clean.png",
+      alt: "ผลลัพธ์ 3 เดือน Local SEO ภูเก็ต — Maps +240% Phone Calls +85% Reviews 12→48",
+      width: 2304,
+      height: 1536,
+    },
     contentMarketing: {
       src: "/images/blog/blog-thumb-content-marketing.png",
       alt: "Content Marketing Strategy",
@@ -159,7 +177,7 @@ export const siteImages = {
     },
     seoHotelNew: {
       src: "/images/blog/blog-thumb-seo-hotel.png",
-      alt: "เพิ่มยอดขายโรงแรมภูเก็ตด้วย SEO — กลยุทธ์ที่พิสูจน์แล้ว",
+      alt: "SEO โรงแรมภูเก็ต — เพิ่ม Direct Booking ลด OTA commission",
       width: 2304,
       height: 1536,
     },
@@ -207,7 +225,7 @@ export const siteImages = {
     },
     hotelMaps: {
       src: "/images/blog/blog-inline-hotel-maps.png",
-      alt: "Google Maps 3-Pack ช่องทาง Direct Booking โรงแรมภูเก็ต",
+      alt: "Google Maps 3-Pack — ช่องทาง Direct Booking โรงแรมภูเก็ต Maps Impressions +220%",
       width: 2304,
       height: 1536,
     },
@@ -253,6 +271,36 @@ export const siteImages = {
       width: 2304,
       height: 1536,
     },
+    seoPhuketPillar: {
+      src: "/images/blog/blog-thumb-seo-phuket-kue-arai-clean.png",
+      alt: "SEO ภูเก็ต คืออะไร — เพิ่มการมองเห็น ติด Google Organic Traffic +180%",
+      width: 2304,
+      height: 1536,
+    },
+    seoPhuketStack: {
+      src: "/images/blog/blog-inline-seo-phuket-stack-clean.png",
+      alt: "Phuket Visibility Stack — แพ็ก SEO Lite ฿5,900 Pro ฿8,900 Pro Max ฿15,000",
+      width: 2304,
+      height: 1536,
+    },
+    rabTamWebPillar: {
+      src: "/images/blog/blog-thumb-rab-tam-web-phuket-clean.png",
+      alt: "รับทำเว็บไซต์ภูเก็ต — Next.js เร็ว PageSpeed 95+ Setup ฿29,900",
+      width: 2304,
+      height: 1536,
+    },
+    rabTamWebPricing: {
+      src: "/images/blog/blog-inline-rab-tam-web-pricing-clean.png",
+      alt: "แพ็กเว็บ + SEO ภูเก็ต — Landing ฿29,900 Corporate ฿39,900 Multi-service ฿49,900",
+      width: 2304,
+      height: 1536,
+    },
+    rabTamWebResults: {
+      src: "/images/blog/blog-inline-rab-tam-web-results-clean.png",
+      alt: "Next.js vs WordPress ภูเก็ต — PageSpeed 95+ Core Web Vitals ผ่านทุกตัว",
+      width: 2304,
+      height: 1536,
+    },
   },
   team: {
     somchai: {
@@ -293,6 +341,13 @@ export const blogThumbnailBySlug: Record<string, SiteImage> = {
   "tiktok-marketing-phuket-services": siteImages.blog.tiktokServices,
   "content-marketing-phuket-foreigners": siteImages.blog.contentForeigners,
   "seo-for-phuket-spas": siteImages.blog.seoSpa,
+  "seo-phuket-kue-arai": siteImages.blog.seoPhuketPillar,
+  "local-seo-phuket-kue-arai": siteImages.blog.localSeoPillar,
+  "raaka-seo-phuket": siteImages.blog.gmbPhuket,
+  "aeo-kue-arai": siteImages.blog.geminiSerp,
+  "ai-overview-kue-arai": siteImages.blog.contentResults,
+  "rab-tam-web-phuket": siteImages.blog.rabTamWebPillar,
+  "geo-kue-arai": siteImages.blog.geminiResults,
 };
 
 export function getBlogThumbnail(slug: string): SiteImage {
@@ -320,6 +375,11 @@ export const blogInlineImages: Record<string, SiteImage> = {
   gmbResults: siteImages.blog.gmbResults,
   tiktokResults: siteImages.blog.tiktokResults,
   contentResults: siteImages.blog.contentResults,
+  seoPhuketStack: siteImages.blog.seoPhuketStack,
+  localSeoMaps: siteImages.blog.localSeoMaps,
+  localSeoResults: siteImages.blog.localSeoResults,
+  rabTamWebPricing: siteImages.blog.rabTamWebPricing,
+  rabTamWebResults: siteImages.blog.rabTamWebResults,
 };
 
 export function resolveBlogInlineImage(key: string): SiteImage | null {

@@ -30,13 +30,27 @@ const YoutubeIcon = () => (
 
 const services = [
   { name: "SEO ภูเก็ต", href: "/services/seo-phuket" },
+  { name: "ทำเว็บไซต์ + SEO", href: "/services/web-design" },
+  { name: "AI Search (AEO/GEO)", href: "/services/ai-search-visibility" },
+  { name: "แพ็กเกจราคา", href: "/pricing" },
+];
+
+const industries = [
+  { name: "SEO ร้านอาหารภูเก็ต", href: "/industries/seo-restaurants-phuket" },
+  { name: "SEO สปาภูเก็ต", href: "/industries/seo-spa-phuket" },
+  { name: "SEO โรงแรมภูเก็ต", href: "/industries/seo-hotels-phuket" },
+  { name: "SEO อสังหาฯ ภูเก็ต", href: "/industries/seo-real-estate-phuket" },
+];
+
+const secondaryServices = [
   { name: "Google Ads ภูเก็ต", href: "/services/google-ads" },
-  { name: "Social Media Marketing", href: "/services/social-media" },
-  { name: "Web Design ภูเก็ต", href: "/services/web-design" },
+  { name: "Social Media", href: "/services/social-media" },
 ];
 
 const localSeo = [
   { name: "SEO ป่าตอง", href: "/local/patong" },
+  { name: "SEO กะตะ", href: "/local/kata" },
+  { name: "SEO กมลา", href: "/local/kamala" },
   { name: "SEO กะทู้", href: "/local/kathu" },
   { name: "SEO ตัวเมืองภูเก็ต", href: "/local/phuket-town" },
   { name: "SEO ถลาง", href: "/local/thalang" },
@@ -44,6 +58,7 @@ const localSeo = [
 
 const company = [
   { name: "เกี่ยวกับเรา", href: "/about" },
+  { name: "Phuket Visibility Stack", href: "/methodology/phuket-visibility-stack" },
   { name: "ผลงานของเรา", href: "/case-studies" },
   { name: "แพ็กเกจราคา", href: "/pricing" },
   { name: "บทความ SEO", href: "/blog" },
@@ -64,11 +79,11 @@ export default function Footer() {
               </div>
               <div>
                 <div className="font-bold text-lg leading-tight font-serif">PhuketSEO</div>
-                <div className="text-xs tracking-widest uppercase text-blue-300">Digital Marketing</div>
+                <div className="text-xs tracking-widest uppercase text-blue-300">SEO + Web ภูเก็ต</div>
               </div>
             </Link>
             <p className="text-blue-200 text-sm leading-relaxed mb-6 max-w-xs">
-              เอเจนซี่การตลาดออนไลน์อันดับ 1 ในภูเก็ต ให้บริการ SEO, Google Ads, Social Media และ Web Design สำหรับธุรกิจท้องถิ่นและนานาชาติ
+              รับทำ SEO + เว็บไซต์ภูเก็ต สำหรับธุรกิจไทยท้องถิ่น ติด Google Maps, เว็บเร็ว, พร้อม AEO/GEO และ AI Search
             </p>
             <div className="space-y-3 text-sm text-blue-200">
               <div className="flex items-start gap-2">
@@ -118,6 +133,16 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
+            <p className="text-blue-400 text-xs uppercase tracking-wider mt-6 mb-3">บริการเสริม</p>
+            <ul className="space-y-2.5">
+              {secondaryServices.map((s) => (
+                <li key={s.href}>
+                  <Link href={s.href} className="text-blue-300 hover:text-green-400 text-sm transition-colors">
+                    {s.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
 
           {/* Local SEO */}
@@ -125,6 +150,16 @@ export default function Footer() {
             <h3 className="font-semibold text-white mb-4 text-sm uppercase tracking-wider">Local SEO</h3>
             <ul className="space-y-2.5">
               {localSeo.map((s) => (
+                <li key={s.href}>
+                  <Link href={s.href} className="text-blue-200 hover:text-green-400 text-sm transition-colors">
+                    {s.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <p className="text-blue-400 text-xs uppercase tracking-wider mt-6 mb-3">อุตสาหกรรม</p>
+            <ul className="space-y-2.5">
+              {industries.map((s) => (
                 <li key={s.href}>
                   <Link href={s.href} className="text-blue-200 hover:text-green-400 text-sm transition-colors">
                     {s.name}

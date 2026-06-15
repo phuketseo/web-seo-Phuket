@@ -18,12 +18,43 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const servicePages: MetadataRoute.Sitemap = [
     "seo-phuket",
+    "web-design",
+    "ai-search-visibility",
     "google-ads",
     "social-media",
-    "web-design",
   ].map((slug) => ({
     url: `${baseUrl}/services/${slug}`,
     priority: 0.9,
+    changeFrequency: "monthly",
+    lastModified: now,
+  }));
+
+  const methodologyPages: MetadataRoute.Sitemap = [
+    "phuket-visibility-stack",
+  ].map((slug) => ({
+    url: `${baseUrl}/methodology/${slug}`,
+    priority: 0.85,
+    changeFrequency: "monthly",
+    lastModified: now,
+  }));
+
+  const industryPages: MetadataRoute.Sitemap = [
+    "seo-restaurants-phuket",
+    "seo-spa-phuket",
+    "seo-hotels-phuket",
+    "seo-real-estate-phuket",
+  ].map((slug) => ({
+    url: `${baseUrl}/industries/${slug}`,
+    priority: 0.85,
+    changeFrequency: "monthly",
+    lastModified: now,
+  }));
+
+  const caseStudyPages: MetadataRoute.Sitemap = [
+    "phuketseo-website-rebuild",
+  ].map((slug) => ({
+    url: `${baseUrl}/case-studies/${slug}`,
+    priority: 0.8,
     changeFrequency: "monthly",
     lastModified: now,
   }));
@@ -33,6 +64,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "kathu",
     "phuket-town",
     "thalang",
+    "kata",
+    "kamala",
   ].map((slug) => ({
     url: `${baseUrl}/local/${slug}`,
     priority: 0.85,
@@ -47,5 +80,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(post.dateISO),
   }));
 
-  return [...staticPages, ...servicePages, ...localPages, ...blogPages];
+  return [...staticPages, ...servicePages, ...methodologyPages, ...industryPages, ...caseStudyPages, ...localPages, ...blogPages];
 }

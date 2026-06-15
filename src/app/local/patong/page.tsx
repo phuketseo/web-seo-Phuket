@@ -80,6 +80,7 @@ export default function PatongPage() {
     ],
     intro: areaContent.intro,
     faqs: areaContent.faqs,
+    answerBlock: areaContent.answerBlock,
   };
 
   return (

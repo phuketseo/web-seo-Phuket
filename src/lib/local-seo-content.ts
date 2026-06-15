@@ -1,12 +1,15 @@
 export type LocalAreaFaq = { q: string; a: string };
 
 export type LocalAreaContent = {
+  answerBlock?: string;
   intro: string[];
   faqs: LocalAreaFaq[];
 };
 
 export const localSeoContent: Record<string, LocalAreaContent> = {
   patong: {
+    answerBlock:
+      "Local SEO ป่าตอง คือการทำให้ธุรกิจในโซนหาดป่าตอง ถนนบางลา และย่านท่องเที่ยวโผล่ Google Maps เมื่อลูกค้าค้นหา โรงแรมป่าตอง ร้านอาหารป่าตอง หรือทัวร์ป่าตอง PhuketSEO เริ่มจาก GBP แพ็ก Lite ฿5,900/เดือน",
     intro: [
       "Local SEO ป่าตองจาก PhuketSEO ช่วยให้ธุรกิจในโซนหาดป่าตอง ถนนบางลา และย่านท่องเที่ยวหลักโผล่ Google Maps และ organic search เมื่อลูกค้าค้นหา โรงแรมป่าตอง ร้านอาหารป่าตอง หรือทัวร์ป่าตอง ตลาดป่าตองแข่งสูงมาก การไล่ keyword ทั้งเกาะจึงไม่ realistic — เราเน้น long-tail ในโซนจริง",
       "บริการครอบคลุม Google Business Profile optimization, NAP consistency, review strategy และ landing page ตาม Content Gap ในโซนป่าตอง อ่านเพิ่มเกี่ยวกับ SEO โรงแรมและ Google Business Profile ในบล็อกของเรา",
@@ -99,6 +102,58 @@ export const localSeoContent: Record<string, LocalAreaContent> = {
       {
         q: "ใช้เวลานานแค่ไหนถึงเห็นผล?",
         a: "GBP views มักเห็นใน 30–60 วัน organic traffic จาก local landing มักใช้ 3–5 เดือน ขึ้นกับการแข่งขัน",
+      },
+    ],
+  },
+  kata: {
+    answerBlock:
+      "Local SEO กะตะ คือการ optimize ให้ธุรกิจในโซนหาดกะตะ กะตะน้อย และถนนกะตะโผล่ Google Maps และ Search เมื่อลูกค้าค้นหา spa kata, restaurant kata หรือ hotel kata beach PhuketSEO แพ็ก Lite ฿5,900/เดือน",
+    intro: [
+      "Local SEO กะตะจาก PhuketSEO เน้นธุรกิจในโซนหาดกะตะ กะตะน้อย และถนนกะตะ — ย่านที่ผสม family tourist, สปา และร้านอาหารริมหาด ลูกค้าค้นหา spa kata phuket, thai massage kata หรือ restaurant kata beach บน Google ก่อนจอง",
+      "เราช่วย optimize Google Business Profile สร้าง landing ตาม keyword gap ในโซนกะตะ และเชื่อมกับ industry pages สำหรับสปาและร้านอาหาร",
+    ],
+    faqs: [
+      {
+        q: "SEO กะตะต่างจากป่าตองอย่างไร?",
+        a: "กะตะเน้น family beach, spa และ boutique hotel keyword มากกว่า nightlife ของป่าตอง buyer intent และคู่แข่งในโซนต่างกัน ต้อง optimize แยก",
+      },
+      {
+        q: "ธุรกิจประเภทไหนในกะตะควรทำ Local SEO?",
+        a: "สปา ร้านอาหาร โรงแรม boutique รีสอร์ท และทัวร์ดำน้ำ — ธุรกิจที่ลูกค้าค้นหา near kata beach หรือ spa kata ก่อนตัดสินใจ",
+      },
+      {
+        q: "Local SEO กะตะ ใช้เวลานานแค่ไหน?",
+        a: "GBP impressions มักเห็นใน 30–60 วัน การติด Maps 3-Pack ขึ้นกับรีวิวและคู่แข่ง โดยทั่วไป 2–4 เดือน",
+      },
+      {
+        q: "PhuketSEO ช่วย Local SEO กะตะอย่างไร?",
+        a: "Audit โซนกะตะ optimize GBP สร้าง landing ตาม keyword gap และรายงาน Maps impressions, calls รายเดือน",
+      },
+    ],
+  },
+  kamala: {
+    answerBlock:
+      "Local SEO กมลา คือการทำให้ธุรกิจในโซนหาดกมลา กมลา village และ luxury zone โผล่ Google เมื่อลูกค้าค้นหา condo kamala, resort kamala หรือ restaurant kamala beach PhuketSEO แพ็ก Pro ฿8,900 สำหรับธุรกิจที่ต้องการเว็บ + AEO",
+    intro: [
+      "Local SEO กมลาจาก PhuketSEO ครอบคลุมโซนหาดกมลา กมลา village และ luxury residential — ลูกค้าเป้าหมายรวม condo buyer, resort guest และ fine dining เราช่วย optimize GBP, zone landing และ SEO อสังหาริมทรัพย์ในโซน",
+      "keyword ภาษาอังกฤษและรัสเซียสำคัญในโซนกมลา — เราวาง content EN/RU ตาม buyer mix พร้อม NAP consistency ทุกช่องทาง",
+    ],
+    faqs: [
+      {
+        q: "Local SEO กมลาเหมาะกับธุรกิจแบบไหน?",
+        a: "อสังหาริมทรัพย์ รีสอร์ท luxury ร้านอาหาร fine dining และ spa premium ในโซนกมลา",
+      },
+      {
+        q: "ทำไม keyword EN/RU สำคัญในกมลา?",
+        a: "buyer ต่างชาติและ investor ค้นหา condo kamala phuket, villa kamala เป็นภาษาอังกฤษ บาง segment ใช้รัสเซีย — content ต้องครอบคลุม",
+      },
+      {
+        q: "Local SEO กมลาต่างจากถลางอย่างไร?",
+        a: "กมลาเน้น luxury beachfront และ condo/resort keyword ถลางครอบคลุม airport hotel และ mai khao กว้างกว่า แต่ทั้งสองโซนแข่ง keyword EN",
+      },
+      {
+        q: "PhuketSEO รายงานผล Local SEO กมลาอย่างไร?",
+        a: "รายงาน Maps impressions, direction requests, phone calls และ keyword rankings ในโซนกมลารายเดือน",
       },
     ],
   },

@@ -34,8 +34,8 @@ const serviceSchema = {
   offers: {
     "@type": "Offer",
     priceCurrency: "THB",
-    price: "9900",
-    priceSpecification: { "@type": "UnitPriceSpecification", priceCurrency: "THB", price: "9900", unitText: "MONTH" },
+    price: "5900",
+    priceSpecification: { "@type": "UnitPriceSpecification", priceCurrency: "THB", price: "5900", unitText: "MONTH" },
   },
 };
 
@@ -101,9 +101,11 @@ export default function SeoPhuketPage() {
               <br />
               ได้จริง
             </h1>
-            <p className="text-blue-200 text-lg leading-relaxed mb-8">
-              บริการ SEO สำหรับธุรกิจในภูเก็ต ด้วยกลยุทธ์ที่พิสูจน์แล้วว่าได้ผล
-              ติดอันดับ Google หน้า 1 เพิ่ม Organic Traffic และ Leads คุณภาพสูง
+            <p className="text-blue-200 text-lg leading-relaxed mb-4">
+              บริการ SEO สำหรับธุรกิจไทยในภูเก็ต ติด Google Maps และ Organic Search พร้อมโครงสร้าง AEO/GEO
+            </p>
+            <p className="text-white/90 text-base leading-relaxed mb-8 bg-white/10 border border-white/20 rounded-xl px-4 py-3">
+              {seoPhuketContent.answerBlock}
             </p>
             <div className="flex flex-wrap gap-4 mb-8">
               <Link href="/contact" className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-xl transition-all hover:shadow-xl hover:-translate-y-0.5">
@@ -143,16 +145,35 @@ export default function SeoPhuketPage() {
           ))}
           <p className="text-gray-600 leading-relaxed">
             อ่านเพิ่ม:{" "}
-            <Link href="/blog/seo-for-phuket-hotels" className="text-blue-700 hover:underline">
-              SEO โรงแรมภูเก็ต
+            <Link href="/blog/seo-phuket-kue-arai" className="text-blue-700 hover:underline">
+              SEO ภูเก็ต คืออะไร
             </Link>
             {" · "}
-            <Link href="/blog/google-my-business-phuket" className="text-blue-700 hover:underline">
-              Google Business Profile
+            <Link href="/blog/local-seo-phuket-kue-arai" className="text-blue-700 hover:underline">
+              Local SEO ภูเก็ต
             </Link>
             {" · "}
-            <Link href="/local/patong" className="text-blue-700 hover:underline">
-              Local SEO ป่าตอง
+            <Link href="/blog/raaka-seo-phuket" className="text-blue-700 hover:underline">
+              ราคา SEO ภูเก็ต
+            </Link>
+          </p>
+        </div>
+      </section>
+
+      <section className="py-16 bg-indigo-50 border-b border-indigo-100">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold text-blue-950 font-serif mb-6">{seoPhuketContent.aeoSection.title}</h2>
+          <div className="space-y-4">
+            {seoPhuketContent.aeoSection.paragraphs.map((p) => (
+              <p key={p.slice(0, 40)} className="text-gray-700 leading-relaxed">
+                {p}
+              </p>
+            ))}
+          </div>
+          <p className="mt-6 text-sm text-gray-600">
+            รวมในแพ็กเกจ{" "}
+            <Link href="/pricing" className="text-blue-700 font-semibold hover:underline">
+              SEO Pro ฿8,900/เดือน
             </Link>
           </p>
         </div>
@@ -214,10 +235,10 @@ export default function SeoPhuketPage() {
             </div>
             <div className="bg-blue-950 rounded-2xl p-8 text-white">
               <h3 className="text-2xl font-bold font-serif mb-2">เริ่มต้นที่</h3>
-              <div className="text-5xl font-bold text-green-400 font-serif mb-1">฿9,900</div>
-              <div className="text-blue-300 mb-6">/เดือน (แพ็กเกจ Starter)</div>
+              <div className="text-5xl font-bold text-green-400 font-serif mb-1">฿5,900</div>
+              <div className="text-blue-300 mb-6">/เดือน (SEO Lite)</div>
               <ul className="space-y-2 mb-8 text-sm text-blue-100">
-                {["5 Keywords หลัก", "On-Page SEO", "Google Business Profile", "รายงานรายเดือน"].map((f) => (
+                {["GBP + Social Proof", "Keyword 5 คำ", "รายงาน GBP", "Pro ฿8,900 (+AEO/GEO)"].map((f) => (
                   <li key={f} className="flex items-center gap-2">
                     <CheckCircle size={14} className="text-green-400" /> {f}
                   </li>

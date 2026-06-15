@@ -1,10 +1,20 @@
 export type ServiceFaq = { question: string; answer: string };
 
 export const seoPhuketContent = {
+  answerBlock:
+    "SEO ภูเก็ต คือการปรับแต่งเว็บไซต์และ Google Business Profile ให้ธุรกิจในภูเก็ตติดอันดับ Google และ Google Maps เมื่อลูกค้าค้นหาในโซนจริง PhuketSEO ให้บริการ SEO + เว็บ + AEO/GEO เริ่มต้น ฿5,900/เดือน",
   intro: [
-    "บริการ SEO ภูเก็ตจาก PhuketSEO ออกแบบมาสำหรับธุรกิจที่ต้องการติดอันดับ Google ในโซนจริง ไม่ใช่แค่ keyword กว้างทั้งเกาะ เราเริ่มจาก Audit เว็บไซต์ คู่แข่ง และ Google Business Profile แล้ววางแผน keyword ที่มี buyer intent สูง เช่น โรงแรมป่าตอง สปากะตะ หรือร้านอาหารตัวเมืองภูเก็ต",
-    "SEO ภูเก็ตที่ได้ผลต้องทำทั้ง On-page, Technical SEO, Local SEO และ Content ควบคู่กัน โดยเฉพาะธุรกิจท่องเที่ยวที่ลูกค้าค้นหาทั้งภาษาไทยและภาษาอังกฤษ PhuketSEO ดูแลโรงแรม ร้านอาหาร อสังหาริมทรัพย์ และธุรกิจบริการในภูเก็ตมากกว่า 20 แห่ง พร้อมรายงาน KPI รายเดือน",
+    "บริการ SEO ภูเก็ตจาก PhuketSEO ออกแบบมาสำหรับธุรกิจไทยท้องถิ่น — ร้านอาหาร สปา อสังหาริมทรัพย์ และ SME ในภูเก็ต ที่ต้องการติด Google ในโซนจริง เราเริ่มจาก Audit เว็บไซต์ คู่แข่ง และ Google Business Profile แล้ววางแผน keyword ที่มี buyer intent สูง",
+    "SEO ภูเก็ตที่ได้ผลต้องทำทั้ง On-page, Technical SEO, Local SEO, Content และโครงสร้าง AEO/GEO ควบคู่กัน เพื่อให้โผล่ทั้ง Google Search, Google Maps และ AI Overview PhuketSEO ส่งมอบได้จริงด้วยแพ็กเกจ Lite ฿5,900, Pro ฿8,900 และ Pro Max ฿15,000 ต่อเดือน",
   ],
+  aeoSection: {
+    title: "AEO / GEO / AI Overview",
+    paragraphs: [
+      "AEO (Answer Engine Optimization) คือการจัดโครงสร้างเนื้อหาให้ Google AI Overview และ ChatGPT ดึงคำตอบจากเว็บคุณได้ง่าย — ด้วย FAQ, answer blocks, schema และ TLDR บนหน้าสำคัญ",
+      "GEO (Generative Engine Optimization) เน้นให้ AI อ้างอิงแบรนด์ของคุณเป็นหลัก — ด้วย entity ที่ชัด (NAP, about page, llms.txt) และเนื้อหาที่มีตัวเลขและหลักฐานจริง",
+      "แพ็กเกจ SEO Pro และ Pro Max รวม AEO/GEO structure ครบ — ลูกค้า Pro ได้ FAQ schema, answer blocks และ llms.txt setup ตั้งแต่เดือนแรก",
+    ],
+  },
   faqs: [
     {
       question: "SEO ภูเก็ตใช้เวลานานแค่ไหนถึงเห็นผล?",
@@ -29,7 +39,12 @@ export const seoPhuketContent = {
     {
       question: "ค่าบริการ SEO ภูเก็ตเริ่มต้นเท่าไหร่?",
       answer:
-        "แพ็กเกจ Starter เริ่มต้น ฿9,900 ต่อเดือน รวม keyword research, On-page SEO, Google Business Profile และรายงานรายเดือน ไม่มีสัญญาผูกมัด",
+        "แพ็กเกจ SEO Lite เริ่มต้น ฿5,900 ต่อเดือน (GBP + Social Proof) แพ็กเกจ SEO Pro ฿8,900 (เว็บ + SEO + AEO/GEO) และ SEO Pro Max ฿15,000 (รวม Ads) ไม่มีสัญญาผูกมัด",
+    },
+    {
+      question: "AEO และ GEO คืออะไร?",
+      answer:
+        "AEO คือการจัดโครงสร้างคำตอบให้ Google AI Overview ดึงไปใช้ GEO คือการทำให้ AI อย่าง ChatGPT อ้างอิงแบรนด์คุณ ทั้งสองรวมอยู่ในแพ็กเกจ SEO Pro ขึ้นไป",
     },
   ] satisfies ServiceFaq[],
 };
@@ -70,8 +85,8 @@ export const googleAdsContent = {
 
 export const webDesignContent = {
   intro: [
-    "บริการ Web Design ภูเก็ตจาก PhuketSEO เน้นเว็บไซต์ที่แปลง visitor เป็น lead หรือ booking จริง ไม่ใช่แค่ portfolio สวย เราออกแบบ mobile-first ด้วย Next.js และ Tailwind CSS พร้อมโครงสร้าง SEO ตั้งแต่ wireframe เพื่อให้ Google index ได้ตั้งแต่วัน launch",
-    "เหมาะสำหรับธุรกิจอสังหาริมทรัพย์ โรงแรม ร้านอาหาร และ agency ในภูเก็ตที่ต้องการเว็บภาษาไทย/อังกฤษ CTA ชัดเจน และความเร็วโหลดสูงบนมือถือ สามารถทำควบคู่กับบริการ SEO ภูเก็ตเป็นชุด",
+    "บริการทำเว็บไซต์ภูเก็ตจาก PhuketSEO เน้นเว็บที่เร็ว ติด Google และแปลง visitor เป็น lead จริง — ไม่ใช่แค่ portfolio สวย เราออกแบบ mobile-first ด้วย Next.js พร้อมโครงสร้าง SEO และ AEO ตั้งแต่วัน launch",
+    "เหมาะสำหรับร้านอาหาร สปา อสังหาริมทรัพย์ และ SME ในภูเก็ต ที่ต้องการเว็บภาษาไทย CTA ชัดเจน และความเร็วโหลดสูงบนมือถือ ทำควบคู่กับแพ็กเกจ SEO Pro ฿8,900/เดือน หรือ setup ครั้งเดียวตั้งแต่ ฿29,900",
   ],
   faqs: [
     {
@@ -92,12 +107,50 @@ export const webDesignContent = {
     {
       question: "ราคาเริ่มต้นเท่าไหร่?",
       answer:
-        "เว็บไซต์เริ่มต้น ฿15,000 ขึ้นกับจำนวนหน้า ฟีเจอร์ และภาษา ขอใบเสนอราคาฟรีเพื่อประเมิน scope ที่แม่นยำ",
+        "เว็บไซต์ setup ครั้งเดียวเริ่ม ฿29,900 (Landing 5 หน้า) ฿39,900 (Corporate 10 หน้า) หรือ ฿49,900 (15+ หน้า) ดูแลรายเดือนรวมในแพ็กเกจ SEO Pro ฿8,900",
     },
     {
       question: "PhuketSEO ดูแลหลัง launch ไหม?",
       answer:
         "มีแพ็กเกจดูแลและ SEO รายเดือน ครอบคลุม security update, content update และการ monitor performance หลัง launch",
+    },
+  ] satisfies ServiceFaq[],
+};
+
+export const aiSearchContent = {
+  answerBlock:
+    "AEO/GEO คือการจัดโครงสร้างเว็บและเนื้อหาให้ Google AI Overview, ChatGPT และ Perplexity ดึงคำตอบและอ้างอิงแบรนด์คุณได้ — รวมในแพ็ก SEO Pro ฿8,900/เดือน",
+  intro: [
+    "บริการ AI Search Visibility จาก PhuketSEO ช่วยธุรกิจในภูเก็ต โผล่ทั้ง Google Search, Google AI Overview และ AI chatbots ด้วยโครงสร้าง AEO (Answer Engine Optimization) และ GEO (Generative Engine Optimization)",
+    "เรา setup FAQ schema, answer blocks, TLDR, llms.txt และ entity optimization บนเว็บลูกค้า — ไม่ใช่แค่เขียนบทความ แต่ทำให้ AI อ่านและอ้างอิงได้จริง รวมในแพ็ก SEO Pro และ Pro Max",
+  ],
+  deliverables: [
+    "Audit: เว็บโผล่ AI Overview / ChatGPT หรือยัง",
+    "FAQ + answer blocks บนหน้าสำคัญ",
+    "FAQPage, HowTo, LocalBusiness schema",
+    "llms.txt + entity (NAP, sameAs, about)",
+    "รายงาน AI citation (manual quarterly)",
+  ],
+  faqs: [
+    {
+      question: "AEO คืออะไร?",
+      answer:
+        "AEO (Answer Engine Optimization) คือการจัดเนื้อหาให้ answer engines เช่น Google AI Overview ดึงคำตอบสั้นๆ ไปแสดง — ด้วย FAQ, schema และ answer blocks ใต้ H1",
+    },
+    {
+      question: "GEO ต่างจาก SEO อย่างไร?",
+      answer:
+        "SEO เน้นจัดอันดับบน Google Search GEO เน้นให้ generative AI (ChatGPT, Perplexity) อ้างอิงแบรนด์คุณเป็นหลัก — ต้องมี entity ชัด เนื้อหามีตัวเลข และ citation-worthy pages",
+    },
+    {
+      question: "AI Search Visibility รวมในแพ็กไหน?",
+      answer:
+        "รวมใน SEO Pro ฿8,900/เดือน และ SEO Pro Max ฿15,000/เดือน Lite ฿5,900 เน้น GBP + Social Proof ยังไม่รวม AEO/GEO structure บนเว็บ",
+    },
+    {
+      question: "วัดผล AI citation อย่างไร?",
+      answer:
+        "ทดสอบด้วยการถาม ChatGPT, Perplexity และ Google AI Overview ว่าอ้างอิงแบรนด์หรือไม่ รายงาน quarterly พร้อม checklist deliverables ที่ทำแล้ว",
     },
   ] satisfies ServiceFaq[],
 };

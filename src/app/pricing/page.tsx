@@ -1,22 +1,23 @@
-﻿import React from 'react';
-import Link from 'next/link';
-import { CheckCircle, XCircle, Star, Briefcase, TrendingUp } from 'lucide-react';
-import { siteConfig } from '@/lib/utils';
-import { organizationJsonLd } from '@/lib/schema';
+﻿import Link from "next/link";
+import { CheckCircle, XCircle, Star, Briefcase, TrendingUp } from "lucide-react";
+import { siteConfig } from "@/lib/utils";
+import { organizationJsonLd } from "@/lib/schema";
+import { pricingPackages, pricingComparison, webSetupPricing } from "@/lib/pricing-packages";
 
 export const metadata = {
-  title: 'ราคาบริการ - PhuketSEO | แผนการตลาดดิจิทัลสำหรับธุรกิจของคุณ',
-  description: 'สำรวจแผนราคาบริการ SEO และการตลาดดิจิทัลที่หลากหลายของเรา ออกแบบมาเพื่อธุรกิจทุกขนาดในภูเก็ตและทั่วประเทศไทย',
+  title: "ราคา SEO ภูเก็ต | Phuket Visibility Stack — Lite / Pro / Pro Max",
+  description:
+    "แพ็กเกจ SEO ภูเก็ต เริ่ม ฿5,900/เดือน (Lite) Pro ฿8,900 (เว็บ+SEO+AEO/GEO) Pro Max ฿15,000 (รวม Ads) ไม่มีสัญญาผูกมัด",
   alternates: {
-    canonical: 'https://www.phuketseo.com/pricing',
+    canonical: "https://phuketseo.com/pricing",
   },
   openGraph: {
-    title: 'ราคาบริการ - PhuketSEO | แผนการตลาดดิจิทัลสำหรับธุรกิจของคุณ',
-    description: 'สำรวจแผนราคาบริการ SEO และการตลาดดิจิทัลที่หลากหลายของเรา ออกแบบมาเพื่อธุรกิจทุกขนาดในภูเก็ตและทั่วประเทศไทย',
-    url: 'https://www.phuketseo.com/pricing',
-    siteName: 'PhuketSEO',
-    locale: 'th_TH',
-    type: 'website',
+    title: "ราคา SEO ภูเก็ต | Phuket Visibility Stack",
+    description: "แพ็กเกจ SEO Lite ฿5,900 / Pro ฿8,900 / Pro Max ฿15,000 ต่อเดือน",
+    url: "https://phuketseo.com/pricing",
+    siteName: "PhuketSEO",
+    locale: "th_TH",
+    type: "website",
   },
 };
 
@@ -25,20 +26,10 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "หน้าแรก",
-          "item": "https://www.phuketseo.com"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "ราคาบริการ",
-          "item": "https://www.phuketseo.com/pricing"
-        }
-      ]
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "หน้าแรก", item: "https://phuketseo.com" },
+        { "@type": "ListItem", position: 2, name: "ราคาบริการ", item: "https://phuketseo.com/pricing" },
+      ],
     },
     {
       ...organizationJsonLd,
@@ -48,136 +39,144 @@ const jsonLd = {
         email: siteConfig.email,
         contactType: "customer service",
       },
-    }
-  ]
+    },
+  ],
 };
 
-const PricingPage: React.FC = () => {
-  const features = [
-    { name: 'การวิเคราะห์ Keyword เบื้องต้น', starter: true, professional: true, enterprise: true },
-    { name: 'การปรับแต่ง On-Page SEO', starter: true, professional: true, enterprise: true },
-    { name: 'รายงานประสิทธิภาพรายเดือน', starter: true, professional: true, enterprise: true },
-    { name: 'การสร้าง Backlink คุณภาพ', starter: false, professional: true, enterprise: true },
-    { name: 'การจัดการ Google My Business', starter: false, professional: true, enterprise: true },
-    { name: 'การวิเคราะห์คู่แข่งเชิงลึก', starter: false, professional: true, enterprise: true },
-    { name: 'การตลาดเนื้อหา (Content Marketing)', starter: false, professional: false, enterprise: true },
-    { name: 'การจัดการโฆษณา Google Ads', starter: false, professional: false, enterprise: true },
-    { name: 'ที่ปรึกษา SEO ส่วนตัว', starter: false, professional: false, enterprise: true },
-    { name: 'การวิเคราะห์ Conversion Rate Optimization (CRO)', starter: false, professional: false, enterprise: true },
-  ];
+const icons = { lite: Star, pro: Briefcase, max: TrendingUp };
 
+export default function PricingPage() {
   return (
-    <div className="min-h-screen bg-white text-gray-800">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+    <div className="min-h-screen bg-white text-gray-800 pt-24">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <main className="container mx-auto px-4 py-16">
         <section className="text-center mb-16">
-          <h1 className="text-5xl font-serif font-bold text-blue-900 mb-6">ราคาบริการ</h1>
+          <p className="text-indigo-600 font-semibold text-sm uppercase tracking-wider mb-3">Phuket Visibility Stack™</p>
+          <h1 className="text-5xl font-serif font-bold text-blue-900 mb-6">ราคา SEO ภูเก็ต</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            PhuketSEO นำเสนอแผนการตลาดดิจิทัลที่ยืดหยุ่นและปรับแต่งได้ เพื่อตอบสนองความต้องการและงบประมาณของธุรกิจทุกขนาด
-            ไม่ว่าคุณจะเป็นธุรกิจขนาดเล็กที่เพิ่งเริ่มต้น หรือองค์กรขนาดใหญ่ที่ต้องการขยายตลาด เรามีแพ็กเกจที่เหมาะสมสำหรับคุณ
+            3 แพ็กเกจชัดเจน สำหรับธุรกิจไทยในภูเก็ต เริ่มจาก Google Maps ไปจนถึง SEO + เว็บ + AI Search + Ads
+            ไม่มีสัญญาผูกมัด
           </p>
         </section>
 
         <section className="grid md:grid-cols-3 gap-8 mb-16">
-          {/* Starter Plan */}
-          <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-lg shadow-lg flex flex-col items-center text-center border-t-4 border-blue-700">
-            <Star className="text-blue-700 w-12 h-12 mb-4" />
-            <h2 className="text-3xl font-serif font-bold text-blue-900 mb-4">Starter</h2>
-            <p className="text-5xl font-bold text-blue-800 mb-4">฿9,900<span className="text-xl font-normal">/เดือน</span></p>
-            <p className="text-gray-600 mb-6">เหมาะสำหรับธุรกิจขนาดเล็กที่ต้องการเริ่มต้นการตลาดดิจิทัล</p>
-            <ul className="text-left text-gray-700 mb-8 space-y-2">
-              <li className="flex items-center"><CheckCircle className="text-green-500 w-5 h-5 mr-2" /> การวิเคราะห์ Keyword เบื้องต้น</li>
-              <li className="flex items-center"><CheckCircle className="text-green-500 w-5 h-5 mr-2" /> การปรับแต่ง On-Page SEO</li>
-              <li className="flex items-center"><CheckCircle className="text-green-500 w-5 h-5 mr-2" /> รายงานประสิทธิภาพรายเดือน</li>
-              <li className="flex items-center text-gray-500"><XCircle className="text-red-500 w-5 h-5 mr-2" /> การสร้าง Backlink คุณภาพ</li>
-            </ul>
-            <Link href="/contact" className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 ease-in-out">
-              เลือกแพ็กเกจ
-            </Link>
-          </div>
+          {pricingPackages.map((pkg) => {
+            const Icon = icons[pkg.id];
+            return (
+              <div
+                key={pkg.id}
+                className={`p-8 rounded-2xl shadow-lg flex flex-col border-t-4 ${
+                  pkg.popular
+                    ? "bg-gradient-to-br from-indigo-600 to-violet-700 text-white border-green-400 scale-105"
+                    : "bg-gradient-to-br from-blue-50 to-blue-100 border-blue-700"
+                }`}
+              >
+                {pkg.popular && (
+                  <span className="self-center -mt-11 mb-4 bg-green-500 text-white text-xs font-bold px-4 py-1.5 rounded-full">
+                    แนะนำ
+                  </span>
+                )}
+                <Icon className={`w-10 h-10 mb-4 ${pkg.popular ? "text-green-300" : "text-blue-700"}`} />
+                <h2 className={`text-2xl font-serif font-bold mb-1 ${pkg.popular ? "text-white" : "text-blue-900"}`}>
+                  {pkg.name}
+                </h2>
+                <p className={`text-sm mb-4 ${pkg.popular ? "text-indigo-200" : "text-indigo-600"}`}>{pkg.tagline}</p>
+                <p className={`text-4xl font-bold mb-1 ${pkg.popular ? "text-white" : "text-blue-800"}`}>
+                  ฿{pkg.priceLabel}
+                  <span className="text-lg font-normal">/เดือน</span>
+                </p>
+                <p className={`text-sm mb-6 ${pkg.popular ? "text-indigo-100" : "text-gray-600"}`}>{pkg.desc}</p>
+                <ul className="text-left space-y-2 mb-8 flex-grow">
+                  {pkg.features.map((f) => (
+                    <li key={f} className="flex items-start gap-2 text-sm">
+                      <CheckCircle className={`w-5 h-5 shrink-0 ${pkg.popular ? "text-green-300" : "text-green-500"}`} />
+                      <span className={pkg.popular ? "text-indigo-50" : "text-gray-700"}>{f}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  href="/contact"
+                  className={`font-bold py-3 px-8 rounded-full text-center transition ${
+                    pkg.popular
+                      ? "bg-green-500 hover:bg-green-600 text-white"
+                      : "bg-green-500 hover:bg-green-600 text-white"
+                  }`}
+                >
+                  {pkg.cta}
+                </Link>
+              </div>
+            );
+          })}
+        </section>
 
-          {/* Professional Plan */}
-          <div className="bg-gradient-to-br from-blue-100 to-blue-200 p-8 rounded-lg shadow-xl flex flex-col items-center text-center border-t-4 border-green-500 transform scale-105">
-            <Briefcase className="text-green-600 w-12 h-12 mb-4" />
-            <h2 className="text-3xl font-serif font-bold text-blue-900 mb-4">Professional</h2>
-            <p className="text-5xl font-bold text-blue-800 mb-4">฿19,900<span className="text-xl font-normal">/เดือน</span></p>
-            <p className="text-gray-600 mb-6">สำหรับธุรกิจที่ต้องการเติบโตและขยายฐานลูกค้าอย่างจริงจัง</p>
-            <ul className="text-left text-gray-700 mb-8 space-y-2">
-              <li className="flex items-center"><CheckCircle className="text-green-500 w-5 h-5 mr-2" /> ทุกอย่างในแพ็กเกจ Starter</li>
-              <li className="flex items-center"><CheckCircle className="text-green-500 w-5 h-5 mr-2" /> การสร้าง Backlink คุณภาพ</li>
-              <li className="flex items-center"><CheckCircle className="text-green-500 w-5 h-5 mr-2" /> การจัดการ Google My Business</li>
-              <li className="flex items-center"><CheckCircle className="text-green-500 w-5 h-5 mr-2" /> การวิเคราะห์คู่แข่งเชิงลึก</li>
-            </ul>
-            <Link href="/contact" className="bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 px-8 rounded-full transition duration-300 ease-in-out">
-              เลือกแพ็กเกจ
-            </Link>
-          </div>
-
-          {/* Enterprise Plan */}
-          <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-lg shadow-lg flex flex-col items-center text-center border-t-4 border-blue-700">
-            <TrendingUp className="text-blue-700 w-12 h-12 mb-4" />
-            <h2 className="text-3xl font-serif font-bold text-blue-900 mb-4">Enterprise</h2>
-            <p className="text-5xl font-bold text-blue-800 mb-4">฿39,900<span className="text-xl font-normal">/เดือน</span></p>
-            <p className="text-gray-600 mb-6">โซลูชันครบวงจรสำหรับองค์กรขนาดใหญ่ที่ต้องการผลลัพธ์สูงสุด</p>
-            <ul className="text-left text-gray-700 mb-8 space-y-2">
-              <li className="flex items-center"><CheckCircle className="text-green-500 w-5 h-5 mr-2" /> ทุกอย่างในแพ็กเกจ Professional</li>
-              <li className="flex items-center"><CheckCircle className="text-green-500 w-5 h-5 mr-2" /> การตลาดเนื้อหา (Content Marketing)</li>
-              <li className="flex items-center"><CheckCircle className="text-green-500 w-5 h-5 mr-2" /> การจัดการโฆษณา Google Ads</li>
-              <li className="flex items-center"><CheckCircle className="text-green-500 w-5 h-5 mr-2" /> ที่ปรึกษา SEO ส่วนตัว</li>
-            </ul>
-            <Link href="/contact" className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 ease-in-out">
-              เลือกแพ็กเกจ
-            </Link>
+        <section className="mb-16 max-w-3xl mx-auto">
+          <h2 className="text-2xl font-serif font-bold text-blue-900 mb-4 text-center">ค่า Setup เว็บไซต์ (ครั้งเดียว)</h2>
+          <p className="text-gray-600 text-center mb-6 text-sm">
+            สำหรับลูกค้า Pro ที่ยังไม่มีเว็บ — ดูแลรายเดือนรวมใน SEO Pro ฿8,900
+          </p>
+          <div className="grid sm:grid-cols-3 gap-4">
+            {webSetupPricing.map((w) => (
+              <div key={w.name} className="bg-gray-50 rounded-xl p-4 text-center border border-gray-100">
+                <p className="font-semibold text-blue-950">{w.name}</p>
+                <p className="text-2xl font-bold text-green-600 mt-1">฿{w.price}</p>
+              </div>
+            ))}
           </div>
         </section>
 
         <section className="mb-16">
-          <h2 className="text-4xl font-serif font-bold text-blue-900 text-center mb-10">เปรียบเทียบคุณสมบัติ</h2>
+          <h2 className="text-3xl font-serif font-bold text-blue-900 text-center mb-10">เปรียบเทียบแพ็กเกจ</h2>
           <div className="overflow-x-auto">
             <table className="min-w-full bg-white rounded-lg shadow-lg">
               <thead>
                 <tr className="bg-blue-800 text-white">
-                  <th className="py-4 px-6 text-left text-lg font-semibold rounded-tl-lg">คุณสมบัติ</th>
-                  <th className="py-4 px-6 text-center text-lg font-semibold">Starter</th>
-                  <th className="py-4 px-6 text-center text-lg font-semibold bg-green-500">Professional</th>
-                  <th className="py-4 px-6 text-center text-lg font-semibold rounded-tr-lg">Enterprise</th>
+                  <th className="py-4 px-6 text-left">ฟีเจอร์</th>
+                  <th className="py-4 px-4 text-center">Lite</th>
+                  <th className="py-4 px-4 text-center bg-green-600">Pro</th>
+                  <th className="py-4 px-4 text-center">Pro Max</th>
                 </tr>
               </thead>
               <tbody>
-                {features.map((feature, index) => (
-                  <tr key={feature.name} className={index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}>
-                    <td className="py-4 px-6 text-left font-medium text-gray-700">{feature.name}</td>
-                    <td className="py-4 px-6 text-center">
-                      {feature.starter ? <CheckCircle className="text-green-500 w-6 h-6 mx-auto" /> : <XCircle className="text-red-500 w-6 h-6 mx-auto" />}
-                    </td>
-                    <td className="py-4 px-6 text-center">
-                      {feature.professional ? <CheckCircle className="text-green-500 w-6 h-6 mx-auto" /> : <XCircle className="text-red-500 w-6 h-6 mx-auto" />}
-                    </td>
-                    <td className="py-4 px-6 text-center">
-                      {feature.enterprise ? <CheckCircle className="text-green-500 w-6 h-6 mx-auto" /> : <XCircle className="text-red-500 w-6 h-6 mx-auto" />}
-                    </td>
+                {pricingComparison.map((row, i) => (
+                  <tr key={row.name} className={i % 2 === 0 ? "bg-gray-50" : "bg-white"}>
+                    <td className="py-3 px-6 font-medium text-gray-700">{row.name}</td>
+                    {(["lite", "pro", "max"] as const).map((tier) => {
+                      const val = row[tier];
+                      return (
+                        <td key={tier} className="py-3 px-4 text-center">
+                          {val === true ? (
+                            <CheckCircle className="text-green-500 w-5 h-5 mx-auto" />
+                          ) : val === false ? (
+                            <XCircle className="text-red-400 w-5 h-5 mx-auto" />
+                          ) : (
+                            <span className="text-sm font-medium">{val}</span>
+                          )}
+                        </td>
+                      );
+                    })}
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
+          <p className="text-center text-sm text-gray-500 mt-4">
+            Pro Max: ค่า ad spend Google (min ฿10,000) + Meta (min ฿5,000) แยกต่างหาก — ไม่รวมในราคา management
+          </p>
         </section>
 
-        <section className="text-center bg-blue-800 text-white p-12 rounded-lg shadow-lg">
-          <h2 className="text-4xl font-serif font-bold mb-6">ไม่แน่ใจว่าแพ็กเกจไหนเหมาะกับคุณ?</h2>
-          <p className="text-xl mb-8">
-            ทีมผู้เชี่ยวชาญของเราพร้อมให้คำปรึกษาฟรี เพื่อช่วยคุณเลือกแผนการตลาดดิจิทัลที่เหมาะสมที่สุดสำหรับเป้าหมายธุรกิจของคุณ
+        <section className="text-center bg-blue-800 text-white p-12 rounded-2xl">
+          <h2 className="text-3xl font-serif font-bold mb-4">ไม่แน่ใจว่าแพ็กไหนเหมาะ?</h2>
+          <p className="text-lg mb-8 text-blue-100 max-w-2xl mx-auto">
+            ปรึกษาฟรี 30 นาที เราจะแนะนำแพ็กเกจที่เหมาะกับธุรกิจและงบประมาณของคุณ
           </p>
-          <Link href="/contact" className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-10 rounded-full text-lg transition duration-300 ease-in-out">
-            ติดต่อเราเพื่อขอคำปรึกษาฟรี
+          <Link
+            href="/contact"
+            className="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-10 rounded-full text-lg transition"
+          >
+            ขอ SEO Audit ฟรี
           </Link>
         </section>
       </main>
     </div>
   );
-};
-
-export default PricingPage;
+}
