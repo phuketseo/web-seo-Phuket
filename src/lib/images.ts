@@ -1,6 +1,42 @@
 /**
  * Image assets — paths, alt text, dimensions
  * อ้างอิงจาก PhuketSEO.com - Image Assets Package.md
+ *
+ * ## Clean Purple Hero Template (มาตรฐาน blog 2026)
+ * - Layout: ข้อความซ้าย ~42% | ภาพ/mockup ขวา ~58%
+ * - พื้นหลัง: ขาว/เทาอ่อน + purple curve อ่อนมุม
+ * - สี: navy #1e3a8a · indigo/violet #6366f1–#7c3aed · accent 4 สี (purple/orange/green/blue)
+ * - หัวข้อ: keyword หลักเป็นสี purple, บรรทัดรอง navy
+ * - ซ้ายล่าง: ไอคอนกลม 4 จุด + label สั้น
+ * - ขวา: laptop/มือถือ + floating UI (search bar, keyword tags, stats card)
+ * - ขนาด: 3:2 → 2304×1536 px
+ * - ไฟล์ใหม่ใช้ suffix `-clean.png` เพื่อหลีกเลี่ยง Next.js image cache
+ * - ไม่ใส่ใบหน้าคนจริง
+ *
+ * ### บทความที่ใช้ Clean Purple แล้ว
+ * - seo-phuket-kue-arai (hero + stack inline)
+ * - local-seo-phuket-kue-arai (hero + maps + results inline)
+ * - rab-tam-web-phuket (hero + pricing + results inline)
+ * - raaka-seo-phuket (hero + pricing inline)
+ * - aeo-kue-arai (hero + compare inline)
+ * - ai-overview-kue-arai (hero + SERP inline)
+ * - geo-kue-arai (hero + steps inline)
+ * - seo-for-phuket-spas (hero + maps + case study inline)
+ * - gemini-hotel-competitor-analysis (hero + serp + results inline)
+ * - seo-for-phuket-hotels (hero + maps + results inline)
+ * - instagram-marketing-phuket-restaurants (hero + results inline)
+ * - web-design-phuket-real-estate (hero + results inline)
+ * - google-my-business-phuket (hero + results inline)
+ * - tiktok-marketing-phuket-services (hero + results inline)
+ * - content-marketing-phuket-foreigners (hero + results inline)
+ *
+ * ### QA: รัน `npm run check:images` ตรวจ path ทุกไฟล์
+ *
+ * ## Site-wide Clean Purple (Phase 7)
+ * - hero/ services/ icons/ case-studies/ team/ stats/ — ใช้ suffix `-clean.png`
+ * - Hero & service banners: 16:9 → 2560×1440
+ * - Icons & team avatars: 1:1 → 1920×1920
+ * - Case studies: 4:3 → 2176×1632
  */
 export type SiteImage = {
   src: string;
@@ -12,13 +48,13 @@ export type SiteImage = {
 export const siteImages = {
   hero: {
     home: {
-      src: "/images/hero/hero-seo-phuket-2025.png",
+      src: "/images/hero/hero-seo-phuket-clean.png",
       alt: "SEO Agency Phuket - บริษัท SEO ภูเก็ต ชั้นนำ",
       width: 2560,
       height: 1440,
     },
     about: {
-      src: "/images/hero/hero-about-team.png",
+      src: "/images/hero/hero-about-team-clean.png",
       alt: "ทีมงาน PhuketSEO ผู้เชี่ยวชาญ Digital Marketing ภูเก็ต",
       width: 2560,
       height: 1440,
@@ -26,25 +62,25 @@ export const siteImages = {
   },
   services: {
     seo: {
-      src: "/images/services/hero-service-seo.png",
+      src: "/images/services/hero-service-seo-clean.png",
       alt: "บริการ SEO ภูเก็ต เพิ่มอันดับ Google",
       width: 2560,
       height: 1440,
     },
     googleAds: {
-      src: "/images/services/hero-service-google-ads.png",
+      src: "/images/services/hero-service-google-ads-clean.png",
       alt: "บริการ Google Ads ภูเก็ต เพิ่ม ROI",
       width: 2560,
       height: 1440,
     },
     socialMedia: {
-      src: "/images/services/hero-service-social-media.png",
+      src: "/images/services/hero-service-social-media-clean.png",
       alt: "บริการ Social Media Marketing ภูเก็ต",
       width: 2560,
       height: 1440,
     },
     webDesign: {
-      src: "/images/services/hero-service-web-design.png",
+      src: "/images/services/hero-service-web-design-clean.png",
       alt: "บริการออกแบบเว็บไซต์ภูเก็ต",
       width: 2560,
       height: 1440,
@@ -52,25 +88,25 @@ export const siteImages = {
   },
   icons: {
     seo: {
-      src: "/images/icons/icon-seo-service.png",
+      src: "/images/icons/icon-seo-service-clean.png",
       alt: "ไอคอนบริการ SEO",
       width: 1920,
       height: 1920,
     },
     googleAds: {
-      src: "/images/icons/icon-google-ads.png",
+      src: "/images/icons/icon-google-ads-clean.png",
       alt: "ไอคอนบริการ Google Ads",
       width: 1920,
       height: 1920,
     },
     socialMedia: {
-      src: "/images/icons/icon-social-media.png",
+      src: "/images/icons/icon-social-media-clean.png",
       alt: "ไอคอนบริการ Social Media",
       width: 1920,
       height: 1920,
     },
     webDesign: {
-      src: "/images/icons/icon-web-design.png",
+      src: "/images/icons/icon-web-design-clean.png",
       alt: "ไอคอนบริการออกแบบเว็บไซต์",
       width: 1920,
       height: 1920,
@@ -78,25 +114,25 @@ export const siteImages = {
   },
   caseStudies: {
     hotel: {
-      src: "/images/case-studies/case-study-hotel.png",
+      src: "/images/case-studies/case-study-hotel-clean.png",
       alt: "ผลงาน SEO โรงแรมภูเก็ต เพิ่ม Traffic 250%",
       width: 2176,
       height: 1632,
     },
     realestate: {
-      src: "/images/case-studies/case-study-realestate.png",
+      src: "/images/case-studies/case-study-realestate-clean.png",
       alt: "ผลงาน SEO อสังหาริมทรัพย์ภูเก็ต เพิ่ม Leads 320%",
       width: 2176,
       height: 1632,
     },
     restaurant: {
-      src: "/images/case-studies/case-study-restaurant.png",
+      src: "/images/case-studies/case-study-restaurant-clean.png",
       alt: "ผลงาน SEO ร้านอาหารภูเก็ต เพิ่ม Bookings 180%",
       width: 2176,
       height: 1632,
     },
     clinic: {
-      src: "/images/case-studies/case-study-clinic.png",
+      src: "/images/case-studies/case-study-clinic-clean.png",
       alt: "ผลงาน SEO คลินิกภูเก็ต เพิ่ม Appointments 200%",
       width: 2176,
       height: 1632,
@@ -152,115 +188,115 @@ export const siteImages = {
       height: 1536,
     },
     seoSpa: {
-      src: "/images/blog/blog-thumb-seo-spa-phuket.png",
+      src: "/images/blog/blog-thumb-seo-spa-phuket-clean.png",
       alt: "SEO สำหรับ Spa & Wellness ภูเก็ต — เพิ่ม Direct Booking ไม่พึ่ง OTA",
       width: 2304,
       height: 1536,
     },
     spaLocalSeo: {
-      src: "/images/blog/blog-inline-spa-local-seo.png",
+      src: "/images/blog/blog-inline-spa-local-seo-clean.png",
       alt: "Google Maps 3-Pack สำหรับสปาภูเก็ต — ช่องทาง Direct Booking ที่ไม่เสีย commission",
       width: 2304,
       height: 1536,
     },
     spaCaseStudy: {
-      src: "/images/blog/blog-inline-spa-case-study.png",
+      src: "/images/blog/blog-inline-spa-case-study-clean.png",
       alt: "ผลลัพธ์จริง SEO สปาภูเก็ต — Direct Booking +60% Organic Traffic +190% ใน 5 เดือน",
       width: 2304,
       height: 1536,
     },
     geminiHotel: {
-      src: "/images/blog/blog-thumb-gemini-hotel.png",
+      src: "/images/blog/blog-thumb-gemini-hotel-clean.png",
       alt: "Gemini วิเคราะห์คู่แข่งโรงแรมภูเก็ต — แผน SEO 90 วัน",
       width: 2304,
       height: 1536,
     },
     seoHotelNew: {
-      src: "/images/blog/blog-thumb-seo-hotel.png",
+      src: "/images/blog/blog-thumb-seo-hotel-clean.png",
       alt: "SEO โรงแรมภูเก็ต — เพิ่ม Direct Booking ลด OTA commission",
       width: 2304,
       height: 1536,
     },
     instagramRestaurant: {
-      src: "/images/blog/blog-thumb-instagram-restaurant.png",
+      src: "/images/blog/blog-thumb-instagram-restaurant-clean.png",
       alt: "Instagram Marketing สำหรับร้านอาหารภูเก็ต — Walk-in +40%",
       width: 2304,
       height: 1536,
     },
     webDesignRealestate: {
-      src: "/images/blog/blog-thumb-web-design-realestate.png",
+      src: "/images/blog/blog-thumb-web-design-realestate-clean.png",
       alt: "เว็บไซต์อสังหาฯ ภูเก็ต ที่ดึงดูด Lead ได้จริง — Leads +320%",
       width: 2304,
       height: 1536,
     },
     gmbPhuket: {
-      src: "/images/blog/blog-thumb-gmb-phuket.png",
+      src: "/images/blog/blog-thumb-gmb-phuket-clean.png",
       alt: "Google My Business เครื่องมือสำคัญธุรกิจเล็กภูเก็ต — Maps Impressions +240%",
       width: 2304,
       height: 1536,
     },
     tiktokServices: {
-      src: "/images/blog/blog-thumb-tiktok-services.png",
+      src: "/images/blog/blog-thumb-tiktok-services-clean.png",
       alt: "TikTok Marketing สำหรับธุรกิจบริการภูเก็ต — Booking +55%",
       width: 2304,
       height: 1536,
     },
     contentForeigners: {
-      src: "/images/blog/blog-thumb-content-foreigners.png",
+      src: "/images/blog/blog-thumb-content-foreigners-clean.png",
       alt: "Content Marketing ดึงลูกค้าต่างชาติในภูเก็ต — Organic EN +210%",
       width: 2304,
       height: 1536,
     },
     geminiSerp: {
-      src: "/images/blog/blog-inline-gemini-serp.png",
+      src: "/images/blog/blog-inline-gemini-serp-clean.png",
       alt: "Competitive Audit ด้วย Gemini — มองเห็นช่องว่าง SEO ในโซนภูเก็ต",
       width: 2304,
       height: 1536,
     },
     geminiResults: {
-      src: "/images/blog/blog-inline-gemini-results.png",
+      src: "/images/blog/blog-inline-gemini-results-clean.png",
       alt: "ผลลัพธ์ 90 วัน หลัง Competitive Audit โรงแรมภูเก็ต",
       width: 2304,
       height: 1536,
     },
     hotelMaps: {
-      src: "/images/blog/blog-inline-hotel-maps.png",
+      src: "/images/blog/blog-inline-hotel-maps-clean.png",
       alt: "Google Maps 3-Pack — ช่องทาง Direct Booking โรงแรมภูเก็ต Maps Impressions +220%",
       width: 2304,
       height: 1536,
     },
     hotelResults: {
-      src: "/images/blog/blog-inline-hotel-results.png",
+      src: "/images/blog/blog-inline-hotel-results-clean.png",
       alt: "ผลลัพธ์ 6 เดือน SEO โรงแรมป่าตอง — Organic Traffic +180% Direct Booking +34%",
       width: 2304,
       height: 1536,
     },
     instagramResults: {
-      src: "/images/blog/blog-inline-instagram-results.png",
+      src: "/images/blog/blog-inline-instagram-results-clean.png",
       alt: "ผลลัพธ์ 90 วัน Instagram ร้านซีฟู้ดตลาดใหม่ภูเก็ต",
       width: 2304,
       height: 1536,
     },
     realestateResults: {
-      src: "/images/blog/blog-inline-realestate-results.png",
+      src: "/images/blog/blog-inline-realestate-results-clean.png",
       alt: "ผลลัพธ์ 4 เดือน Web + SEO อสังหาริมทรัพย์ภูเก็ต — Leads +320%",
       width: 2304,
       height: 1536,
     },
     gmbResults: {
-      src: "/images/blog/blog-inline-gmb-results.png",
+      src: "/images/blog/blog-inline-gmb-results-clean.png",
       alt: "ผลลัพธ์ 4 เดือน GBP ร้านกาแฟเมืองเก่าภูเก็ต — Maps Impressions +240%",
       width: 2304,
       height: 1536,
     },
     tiktokResults: {
-      src: "/images/blog/blog-inline-tiktok-results.png",
+      src: "/images/blog/blog-inline-tiktok-results-clean.png",
       alt: "ผลลัพธ์ 3 เดือน TikTok สปากะตะ — Booking วันธรรมดา +55%",
       width: 2304,
       height: 1536,
     },
     contentResults: {
-      src: "/images/blog/blog-inline-content-results.png",
+      src: "/images/blog/blog-inline-content-results-clean.png",
       alt: "ผลลัพธ์ 5 เดือน Content EN ดึงลูกค้าต่างชาติภูเก็ต — Organic EN +210%",
       width: 2304,
       height: 1536,
@@ -301,22 +337,70 @@ export const siteImages = {
       width: 2304,
       height: 1536,
     },
+    raakaSeoPillar: {
+      src: "/images/blog/blog-thumb-raaka-seo-phuket-clean.png",
+      alt: "ราคา SEO ภูเก็ต 2026 — Lite ฿5,900 Pro ฿8,900 Pro Max ฿15,000",
+      width: 2304,
+      height: 1536,
+    },
+    raakaSeoPricing: {
+      src: "/images/blog/blog-inline-raaka-seo-phuket-clean.png",
+      alt: "ราคา SEO ภูเก็ต 2026 — แพ็กรายเดือน + ค่า Setup เว็บไซต์",
+      width: 2304,
+      height: 1536,
+    },
+    aeoPillar: {
+      src: "/images/blog/blog-thumb-aeo-kue-arai-clean.png",
+      alt: "AEO คืออะไร — Answer Engine Optimization สำหรับธุรกิจในภูเก็ต",
+      width: 2304,
+      height: 1536,
+    },
+    aeoCompare: {
+      src: "/images/blog/blog-inline-aeo-kue-arai-clean.png",
+      alt: "AEO vs SEO vs GEO — เปรียบเทียบเป้าหมายและช่องทาง",
+      width: 2304,
+      height: 1536,
+    },
+    aiOverviewPillar: {
+      src: "/images/blog/blog-thumb-ai-overview-kue-arai-clean.png",
+      alt: "AI Overview คืออะไร — ผลกระทบต่อ SEO ภูเก็ตและวิธีปรับตัว",
+      width: 2304,
+      height: 1536,
+    },
+    aiOverviewInline: {
+      src: "/images/blog/blog-inline-ai-overview-kue-arai-clean.png",
+      alt: "Google AI Overview บน SERP — informational vs local queries",
+      width: 2304,
+      height: 1536,
+    },
+    geoPillar: {
+      src: "/images/blog/blog-thumb-geo-kue-arai-clean.png",
+      alt: "GEO คืออะไร — Generative Engine Optimization สำหรับธุรกิจภูเก็ต",
+      width: 2304,
+      height: 1536,
+    },
+    geoSteps: {
+      src: "/images/blog/blog-inline-geo-kue-arai-clean.png",
+      alt: "GEO 4 ขั้นตอน — Entity llms.txt Content FAQ Schema",
+      width: 2304,
+      height: 1536,
+    },
   },
   team: {
     somchai: {
-      src: "/images/team/team-somchai-digital.png",
+      src: "/images/team/team-somchai-digital-clean.png",
       alt: "สมชาย - ผู้เชี่ยวชาญ SEO และ Digital Marketing",
       width: 1920,
       height: 1920,
     },
     oranong: {
-      src: "/images/team/team-oranong-webmaster.png",
+      src: "/images/team/team-oranong-webmaster-clean.png",
       alt: "อรนงค์ - Web Designer และ Developer",
       width: 1920,
       height: 1920,
     },
     vichai: {
-      src: "/images/team/team-vichai-social.png",
+      src: "/images/team/team-vichai-social-clean.png",
       alt: "วิชัย - Social Media Marketing Manager",
       width: 1920,
       height: 1920,
@@ -324,7 +408,7 @@ export const siteImages = {
   },
   stats: {
     results: {
-      src: "/images/stats/stats-infographic-results.png",
+      src: "/images/stats/stats-infographic-results-clean.png",
       alt: "ผลลัพธ์ PhuketSEO: 500+ Projects, 95% Retention, 10+ Years, 3x ROI",
       width: 2560,
       height: 1440,
@@ -343,11 +427,11 @@ export const blogThumbnailBySlug: Record<string, SiteImage> = {
   "seo-for-phuket-spas": siteImages.blog.seoSpa,
   "seo-phuket-kue-arai": siteImages.blog.seoPhuketPillar,
   "local-seo-phuket-kue-arai": siteImages.blog.localSeoPillar,
-  "raaka-seo-phuket": siteImages.blog.gmbPhuket,
-  "aeo-kue-arai": siteImages.blog.geminiSerp,
-  "ai-overview-kue-arai": siteImages.blog.contentResults,
+  "raaka-seo-phuket": siteImages.blog.raakaSeoPillar,
+  "aeo-kue-arai": siteImages.blog.aeoPillar,
+  "ai-overview-kue-arai": siteImages.blog.aiOverviewPillar,
   "rab-tam-web-phuket": siteImages.blog.rabTamWebPillar,
-  "geo-kue-arai": siteImages.blog.geminiResults,
+  "geo-kue-arai": siteImages.blog.geoPillar,
 };
 
 export function getBlogThumbnail(slug: string): SiteImage {
@@ -380,6 +464,10 @@ export const blogInlineImages: Record<string, SiteImage> = {
   localSeoResults: siteImages.blog.localSeoResults,
   rabTamWebPricing: siteImages.blog.rabTamWebPricing,
   rabTamWebResults: siteImages.blog.rabTamWebResults,
+  raakaSeoPricing: siteImages.blog.raakaSeoPricing,
+  aeoCompare: siteImages.blog.aeoCompare,
+  aiOverviewInline: siteImages.blog.aiOverviewInline,
+  geoSteps: siteImages.blog.geoSteps,
 };
 
 export function resolveBlogInlineImage(key: string): SiteImage | null {

@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
+import { siteConfig } from "@/lib/utils";
 
 export default function robots(): MetadataRoute.Robots {
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? siteConfig.url;
   return {
     rules: [
       {
@@ -9,7 +11,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/admin/", "/api/"],
       },
     ],
-    sitemap: "https://phuketseo.com/sitemap.xml",
-    host: "https://phuketseo.com",
+    sitemap: `${baseUrl}/sitemap.xml`,
+    host: baseUrl,
   };
 }

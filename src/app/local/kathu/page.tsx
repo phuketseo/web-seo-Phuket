@@ -1,17 +1,18 @@
 import { Metadata } from 'next';
 import LocalSeoPage from '@/components/LocalSeoPage';
-import { faqSchema } from '@/lib/schema';
+import { faqSchema, buildBreadcrumb } from '@/lib/schema';
 import { localSeoContent } from '@/lib/local-seo-content';
+import { siteConfig } from '@/lib/utils';
 
-// Metadata for Kathu page
 export const metadata: Metadata = {
   title: 'SEO กะทู้ - เพิ่มการมองเห็นธุรกิจของคุณในภูเก็ต',
   description: 'บริการ SEO สำหรับธุรกิจในกะทู้ ภูเก็ต เช่น สนามกอล์ฟ รีสอร์ท ร้านอาหาร สปา และอสังหาฯ เพิ่มลูกค้าในพื้นที่ด้วยกลยุทธ์ SEO ท้องถิ่น',
   keywords: 'SEO กะทู้, สนามกอล์ฟภูเก็ต, รีสอร์ทกะทู้, อสังหาฯกะทู้, Phuket SEO, Local SEO Phuket',
+  alternates: { canonical: `${siteConfig.url}/local/kathu` },
   openGraph: {
     title: 'SEO กะทู้ - เพิ่มการมองเห็นธุรกิจของคุณในภูเก็ต',
     description: 'บริการ SEO สำหรับธุรกิจในกะทู้ ภูเก็ต เช่น สนามกอล์ฟ รีสอร์ท ร้านอาหาร สปา และอสังหาฯ เพิ่มลูกค้าในพื้นที่ด้วยกลยุทธ์ SEO ท้องถิ่น',
-    url: 'https://phuketseo.com/local/kathu',
+    url: `${siteConfig.url}/local/kathu`,
     type: 'website',
   },
   twitter: {
@@ -46,30 +47,10 @@ export default function KathuPage() {
     faqs: areaContent.faqs,
   };
 
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: 'หน้าแรก',
-        item: 'https://phuketseo.com/',
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: 'บริการ Local SEO',
-        item: 'https://phuketseo.com/local',
-      },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        name: 'กะทู้',
-        item: 'https://phuketseo.com/local/kathu',
-      },
-    ],
-  };
+  const breadcrumbSchema = buildBreadcrumb([
+    { name: 'หน้าแรก', url: siteConfig.url },
+    { name: 'Local SEO กะทู้', url: `${siteConfig.url}/local/kathu` },
+  ]);
 
   const serviceSchema = {
     '@context': 'https://schema.org',

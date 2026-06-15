@@ -5,6 +5,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import LineChat from "@/components/LineChat";
+import { defaultOgImage, siteConfig } from "@/lib/utils";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -25,8 +26,7 @@ export const metadata: Metadata = {
     default: "PhuketSEO | รับทำ SEO ภูเก็ต ติดอันดับ Google ได้จริง",
     template: "%s | PhuketSEO",
   },
-  description:
-    "บริการ SEO ภูเก็ต, Google Ads, Social Media Marketing และ Web Design สำหรับธุรกิจในภูเก็ต ดูแลธุรกิจมากกว่า 80 แห่ง ผลลัพธ์วัดได้จริง",
+  description: siteConfig.description,
   keywords: [
     "SEO ภูเก็ต",
     "รับทำ SEO ภูเก็ต",
@@ -46,27 +46,17 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "th_TH",
-    url: "https://phuketseo.com",
-    siteName: "PhuketSEO",
-    title: "PhuketSEO | รับทำ SEO ภูเก็ต ติดอันดับ Google ได้จริง",
-    description:
-      "บริการ SEO ภูเก็ต, Google Ads, Social Media Marketing และ Web Design สำหรับธุรกิจในภูเก็ต",
-    images: [
-      {
-        url: "https://phuketseo.com/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "PhuketSEO - Digital Marketing Agency Phuket",
-      },
-    ],
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    title: "PhuketSEO | รับทำ SEO + เว็บไซต์ภูเก็ต ติด Google พร้อม AI Search",
+    description: siteConfig.description,
+    images: [defaultOgImage],
   },
   twitter: {
     card: "summary_large_image",
-    title: "PhuketSEO | รับทำ SEO ภูเก็ต",
-    description: "บริการ SEO ภูเก็ต ติดอันดับ Google ได้จริง",
-  },
-  alternates: {
-    canonical: "https://phuketseo.com",
+    title: "PhuketSEO | รับทำ SEO + เว็บไซต์ภูเก็ต",
+    description: siteConfig.description,
+    images: [defaultOgImage.url],
   },
 };
 

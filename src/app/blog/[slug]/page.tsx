@@ -1298,7 +1298,7 @@ export default async function BlogPostPage({
     publisher: {
       "@type": "Organization",
       name: "PhuketSEO",
-      logo: { "@type": "ImageObject", url: `${siteConfig.url}/logo.png` },
+      logo: { "@type": "ImageObject", url: `${siteConfig.url}${siteConfig.logoPath}` },
     },
     mainEntityOfPage: { "@type": "WebPage", "@id": `${siteConfig.url}/blog/${slug}` },
   };

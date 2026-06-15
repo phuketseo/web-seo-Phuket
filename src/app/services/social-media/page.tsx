@@ -2,42 +2,32 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ChevronRight, Award, Users, TrendingUp, Lightbulb, Rocket, BarChart, DollarSign, HelpCircle, Share2, MessageCircle, Video } from 'lucide-react';
-import { siteConfig } from '@/lib/utils';
-import { organizationJsonLd } from '@/lib/schema';
+import { siteConfig, defaultOgImage } from '@/lib/utils';
+import { organizationJsonLd, buildBreadcrumb } from '@/lib/schema';
 import { siteImages } from '@/lib/images';
 
 export const metadata = {
   title: 'Social Media Marketing ภูเก็ต — เพิ่มยอดขาย | PhuketSEO',
   description: 'บริการ Social Media Marketing ภูเก็ต โดยผู้เชี่ยวชาญ เพิ่มการรับรู้แบรนด์ สร้างยอดขาย และเข้าถึงลูกค้าเป้าหมายของคุณ เริ่มต้นเพียง ฿7,900/เดือน',
+  alternates: { canonical: `${siteConfig.url}/services/social-media` },
+  openGraph: {
+    title: 'Social Media Marketing ภูเก็ต | PhuketSEO',
+    description: 'บริการ Social Media Marketing ภูเก็ต — เทคนิคเสริม SEO หลัก',
+    url: `${siteConfig.url}/services/social-media`,
+    type: 'website',
+    images: [defaultOgImage],
+  },
 };
 
 export default function SocialMediaPage() {
+  const breadcrumb = buildBreadcrumb([
+    { name: 'หน้าแรก', url: siteConfig.url },
+    { name: 'Social Media Marketing', url: `${siteConfig.url}/services/social-media` },
+  ]);
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
-      {
-        '@type': 'BreadcrumbList',
-        'itemListElement': [
-          {
-            '@type': 'ListItem',
-            'position': 1,
-            'name': 'หน้าแรก',
-            'item': 'https://phuketseo.com',
-          },
-          {
-            '@type': 'ListItem',
-            'position': 2,
-            'name': 'บริการ',
-            'item': 'https://phuketseo.com/services',
-          },
-          {
-            '@type': 'ListItem',
-            'position': 3,
-            'name': 'Social Media Marketing',
-            'item': 'https://phuketseo.com/services/social-media',
-          },
-        ],
-      },
+      { '@type': 'BreadcrumbList', itemListElement: breadcrumb.itemListElement },
       {
         '@type': 'Service',
         'serviceType': 'Social Media Marketing',

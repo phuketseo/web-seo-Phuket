@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   title: "PhuketSEO | รับทำ SEO + เว็บไซต์ภูเก็ต ติด Google พร้อม AI Search",
   description:
     "รับทำ SEO และเว็บไซต์ภูเก็ต สำหรับธุรกิจไทยในภูเก็ต ติด Google Maps, เว็บเร็ว, พร้อม AEO/GEO และ AI Overview เริ่มต้น ฿5,900/เดือน ปรึกษาฟรี!",
-  alternates: { canonical: "https://phuketseo.com" },
+  alternates: { canonical: siteConfig.url },
 };
 
 // ─── Schema Markup ────────────────────────────────────────────────────────────
@@ -31,12 +31,6 @@ const organizationSchema = {
   geo: geoCoordinatesSchema,
   openingHours: "Mo-Fr 09:00-18:00",
   priceRange: "฿฿",
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.9",
-    reviewCount: "52",
-    bestRating: "5",
-  },
   sameAs: organizationSameAs,
 };
 
@@ -329,10 +323,21 @@ export default function HomePage() {
               </Link>
             ))}
           </div>
+          <p className="text-center mt-8 text-sm text-slate-500">
+            <Link href="/services/ai-search-visibility" className="text-indigo-600 font-medium hover:underline">
+              AI Search Visibility (AEO/GEO)
+            </Link>
+            {" · "}
+            <Link href="/methodology/phuket-visibility-stack" className="text-indigo-600 font-medium hover:underline">
+              Phuket Visibility Stack™
+            </Link>
+            {" · "}
+            <Link href="/blog" className="text-indigo-600 font-medium hover:underline">
+              บทความ SEO
+            </Link>
+          </p>
         </div>
       </section>
-
-      {/* ── 3. METRICS ── */}
       <section className="py-16 bg-slate-50 border-y border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
@@ -521,6 +526,11 @@ export default function HomePage() {
             ))}
           </div>
           <p className="text-center text-gray-500 text-sm mt-6">
+            ดูรายละเอียดแพ็กเกจครบที่{" "}
+            <Link href="/pricing" className="text-blue-700 font-semibold hover:underline">
+              หน้าราคา
+            </Link>
+            {" · "}
             ต้องการแพ็กเกจพิเศษ?{" "}
             <Link href="/contact" className="text-blue-700 font-semibold hover:underline">
               ติดต่อเราเพื่อรับใบเสนอราคา

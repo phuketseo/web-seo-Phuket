@@ -1,8 +1,9 @@
 import type { MetadataRoute } from "next";
 import { blogPostsMeta } from "@/lib/blog-posts-meta";
+import { siteConfig } from "@/lib/utils";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://phuketseo.com";
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? siteConfig.url;
   const now = new Date();
 
   const staticPages: MetadataRoute.Sitemap = [
@@ -12,8 +13,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/contact`, priority: 0.9, changeFrequency: "monthly", lastModified: now },
     { url: `${baseUrl}/case-studies`, priority: 0.8, changeFrequency: "monthly", lastModified: now },
     { url: `${baseUrl}/blog`, priority: 0.8, changeFrequency: "weekly", lastModified: now },
-    { url: `${baseUrl}/privacy-policy`, priority: 0.3, changeFrequency: "yearly", lastModified: now },
-    { url: `${baseUrl}/terms`, priority: 0.3, changeFrequency: "yearly", lastModified: now },
   ];
 
   const servicePages: MetadataRoute.Sitemap = [

@@ -1,39 +1,21 @@
 import LocalSeoPage from "@/components/LocalSeoPage";
 import { Metadata } from "next";
-import { faqSchema } from "@/lib/schema";
+import { faqSchema, buildBreadcrumb } from "@/lib/schema";
 import { localSeoContent } from "@/lib/local-seo-content";
+import { siteConfig } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "SEO ป่าตอง - เพิ่มการมองเห็นธุรกิจในป่าตอง ภูเก็ต",
   description: "บริการ SEO สำหรับธุรกิจในป่าตอง ภูเก็ต เพิ่มการมองเห็นออนไลน์ของคุณสำหรับโรงแรม, บาร์, ร้านอาหาร, ร้านนวด, ทัวร์, และดำน้ำ",
+  alternates: { canonical: `${siteConfig.url}/local/patong` },
 };
 
 const areaContent = localSeoContent.patong;
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "หน้าแรก",
-      "item": "https://phuketseo.com/",
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Local SEO",
-      "item": "https://phuketseo.com/local",
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "ป่าตอง",
-      "item": "https://phuketseo.com/local/patong",
-    },
-  ],
-};
+const breadcrumbSchema = buildBreadcrumb([
+  { name: "หน้าแรก", url: siteConfig.url },
+  { name: "Local SEO ป่าตอง", url: `${siteConfig.url}/local/patong` },
+]);
 
 const serviceSchema = {
   "@context": "https://schema.org",

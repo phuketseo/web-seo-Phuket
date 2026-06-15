@@ -2,27 +2,23 @@
 import Link from "next/link";
 import Image from "next/image";
 import { CheckCircle, ArrowRight, Search, TrendingUp, Star, BarChart3, FileText, Link2, MapPin } from "lucide-react";
-import { localBusinessJsonLd, faqSchema } from "@/lib/schema";
+import { localBusinessJsonLd, faqSchema, buildBreadcrumb } from "@/lib/schema";
 import { siteImages } from "@/lib/images";
 import { seoPhuketContent } from "@/lib/service-content";
 import { ServiceFaqSection } from "@/components/ServiceFaqSection";
+import { siteConfig } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "รับทำ SEO ภูเก็ต | ติดอันดับ Google ได้จริง - PhuketSEO",
   description:
     "บริการ SEO ภูเก็ต ติดอันดับ Google หน้า 1 สำหรับธุรกิจในภูเก็ต โรงแรม อสังหาฯ ร้านอาหาร ผลลัพธ์วัดได้จริง ปรึกษาฟรี!",
-  alternates: { canonical: "https://phuketseo.com/services/seo-phuket" },
+  alternates: { canonical: `${siteConfig.url}/services/seo-phuket` },
 };
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "หน้าแรก", item: "https://phuketseo.com" },
-    { "@type": "ListItem", position: 2, name: "บริการของเรา", item: "https://phuketseo.com/services" },
-    { "@type": "ListItem", position: 3, name: "SEO ภูเก็ต", item: "https://phuketseo.com/services/seo-phuket" },
-  ],
-};
+const breadcrumbSchema = buildBreadcrumb([
+  { name: "หน้าแรก", url: siteConfig.url },
+  { name: "SEO ภูเก็ต", url: `${siteConfig.url}/services/seo-phuket` },
+]);
 
 const serviceSchema = {
   "@context": "https://schema.org",

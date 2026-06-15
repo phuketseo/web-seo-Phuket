@@ -246,6 +246,10 @@ Google Maps 3-Pack — ช่องทางลูกค้าท้องถิ
 | **SEO Pro** | ฿8,900 | SME ที่มี/จะมีเว็บ + ต้องการ AI Search |
 | **SEO Pro Max** | ฿15,000 | ต้องการ lead เร็ว + organic |
 
+:::image raakaSeoPricing
+ราคา SEO ภูเก็ต 2026 — แพ็กรายเดือน Lite/Pro/Pro Max + ค่า Setup เว็บไซต์
+:::
+
 ## ค่า Setup เว็บไซต์ (ครั้งเดียว)
 
 | ประเภท | ราคา |
@@ -336,6 +340,10 @@ Google Maps 3-Pack — ช่องทางลูกค้าท้องถิ
 
 **ทั้ง 3 ทำควบคู่กัน** — โดยเฉพาะธุรกิจในภูเก็ตที่ลูกค้าถามคำถามสั้นๆ ก่อนตัดสินใจ
 
+:::image aeoCompare
+AEO vs SEO vs GEO — เปรียบเทียบเป้าหมาย ช่องทาง และเครื่องมือ
+:::
+
 ## ทำไม AEO สำคัญในภูเก็ต
 
 - นักท่องเที่ยวถาม AI: "best spa in Kata" หรือ "ร้านอาหารป่าตอง แนะนำ"
@@ -420,6 +428,10 @@ AEO/GEO รวมใน **SEO Pro ฿8,900/เดือน** — คู่กั
 2. Google สร้างคำตอบสรุปด้วย AI
 3. แสดงลิงก์อ้างอิงไปยังแหล่งที่มา
 4. บาง query ผู้ใช้ได้คำตอบครบโดยไม่คลิก (zero-click)
+
+:::image aiOverviewInline
+Google AI Overview บน SERP — informational queries vs local booking queries
+:::
 
 ## ผลกระทบต่อธุรกิจในภูเก็ต
 
@@ -605,6 +617,10 @@ PhuketSEO ไม่แยก "ทำเว็บ" กับ "ทำ SEO" — ท
 | เป้าหมาย | ติด SERP | ถูกเลือกใน Google AI | ถูก AI chatbot อ้างอิง |
 | ช่องทาง | Google Search | AI Overview | ChatGPT, Perplexity |
 | เครื่องมือ | Title, links | Answer blocks, FAQ | llms.txt, entity |
+
+:::image geoSteps
+GEO 4 ขั้นตอน — Entity llms.txt Content FAQ Schema + ChatGPT อ้างอิงแบรนด์
+:::
 
 ## ทำไม GEO สำคัญในภูเก็ต
 

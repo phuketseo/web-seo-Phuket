@@ -27,7 +27,7 @@ export const organizationJsonLd = {
   "@type": "Organization",
   name: siteConfig.name,
   url: siteConfig.url,
-  logo: `${siteConfig.url}/logo.png`,
+  logo: `${siteConfig.url}${siteConfig.logoPath}`,
   email: siteConfig.email,
   telephone: siteConfig.phoneInternational,
   address: postalAddressSchema,
@@ -38,7 +38,7 @@ export const localBusinessJsonLd = {
   "@type": "LocalBusiness",
   "@id": siteConfig.url,
   name: siteConfig.name,
-  image: `${siteConfig.url}/og-image.png`,
+  image: `${siteConfig.url}${siteConfig.ogImagePath}`,
   url: siteConfig.url,
   telephone: siteConfig.phoneInternational,
   email: siteConfig.email,
@@ -83,13 +83,6 @@ export const localBusinessSchema = {
       closes: "13:00",
     },
   ],
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.9",
-    reviewCount: "47",
-    bestRating: "5",
-    worstRating: "1",
-  },
 };
 
 export const faqSchema = (faqs: { question: string; answer: string }[]) => ({

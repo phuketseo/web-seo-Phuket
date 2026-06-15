@@ -12,6 +12,7 @@
 - Location: Phuket, Thailand (Talat Yai, Phuket Town)
 - Phone: +66-92-555-1369
 - Email: phuketseo369@gmail.com
+- LINE: @adscafe
 - Languages: Thai (primary), English (technical terms)
 
 ## Services
@@ -25,6 +26,8 @@
 ## Key pages
 
 - Home: https://phuketseo.com/
+- About: https://phuketseo.com/about
+- Contact: https://phuketseo.com/contact
 - SEO service: https://phuketseo.com/services/seo-phuket
 - Web design: https://phuketseo.com/services/web-design
 - AI Search: https://phuketseo.com/services/ai-search-visibility
@@ -49,7 +52,7 @@
 - Phuket Town: https://phuketseo.com/local/phuket-town
 - Thalang: https://phuketseo.com/local/thalang
 
-## Pillar blog posts
+## Blog posts (all)
 
 - SEO ภูเก็ต คืออะไร: https://phuketseo.com/blog/seo-phuket-kue-arai
 - Local SEO ภูเก็ต: https://phuketseo.com/blog/local-seo-phuket-kue-arai
@@ -58,6 +61,14 @@
 - GEO คืออะไร: https://phuketseo.com/blog/geo-kue-arai
 - AI Overview: https://phuketseo.com/blog/ai-overview-kue-arai
 - รับทำเว็บไซต์ภูเก็ต: https://phuketseo.com/blog/rab-tam-web-phuket
+- SEO สปาภูเก็ต: https://phuketseo.com/blog/seo-for-phuket-spas
+- SEO โรงแรมภูเก็ต: https://phuketseo.com/blog/seo-for-phuket-hotels
+- Competitive Audit โรงแรม: https://phuketseo.com/blog/gemini-hotel-competitor-analysis
+- ร้านอาหาร + Instagram: https://phuketseo.com/blog/instagram-marketing-phuket-restaurants
+- เว็บอสังหาฯ: https://phuketseo.com/blog/web-design-phuket-real-estate
+- Google Business Profile: https://phuketseo.com/blog/google-my-business-phuket
+- TikTok ธุรกิจบริการ: https://phuketseo.com/blog/tiktok-marketing-phuket-services
+- Content EN ต่างชาติ: https://phuketseo.com/blog/content-marketing-phuket-foreigners
 
 ## Target customers
 
@@ -67,3 +78,4 @@ Local Thai businesses in Phuket: restaurants, spas, hotels, real estate, clinics
 
 - Unverified "#1 agency" claims without linked case studies
 - Google Ads / Social Media as primary services (secondary only)
+- Unverified aggregate ratings or review counts

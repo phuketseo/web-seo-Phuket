@@ -1,7 +1,7 @@
 ﻿import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "PhuketSEO - SEO ภูเก็ต ติดอันดับได้จริง";
+export const alt = "PhuketSEO — รับทำ SEO + เว็บไซต์ภูเก็ต ติด Google & AI Search";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -10,7 +10,7 @@ export default async function Image() {
     (
       <div
         style={{
-          background: "linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%)",
+          background: "linear-gradient(135deg, #1e3a8a 0%, #6366f1 50%, #7c3aed 100%)",
           width: "100%",
           height: "100%",
           display: "flex",
@@ -22,10 +22,10 @@ export default async function Image() {
       >
         <div
           style={{
-            fontSize: 72,
+            fontSize: 64,
             fontWeight: 700,
-            color: "#25D366",
-            marginBottom: 20,
+            color: "#ffffff",
+            marginBottom: 16,
             letterSpacing: "-2px",
           }}
         >
@@ -33,40 +33,40 @@ export default async function Image() {
         </div>
         <div
           style={{
-            fontSize: 36,
-            color: "#ffffff",
+            fontSize: 32,
+            color: "#e0e7ff",
             textAlign: "center",
-            marginBottom: 16,
+            marginBottom: 12,
           }}
         >
-          SEO ภูเก็ต ติดอันดับได้จริง
+          รับทำ SEO + เว็บไซต์ภูเก็ต
         </div>
         <div
           style={{
-            fontSize: 24,
-            color: "#93c5fd",
+            fontSize: 22,
+            color: "#c7d2fe",
             textAlign: "center",
           }}
         >
-          เพิ่มยอดขายให้ธุรกิจคุณด้วย Digital Marketing
+          ติด Google Maps · เว็บ Next.js เร็ว · AEO + GEO Ready
         </div>
         <div
           style={{
-            marginTop: 40,
+            marginTop: 36,
             display: "flex",
-            gap: 32,
+            gap: 24,
           }}
         >
-          {["50+ ลูกค้า", "⭐ 4.9/5", "10+ ปี ประสบการณ์"].map((text) => (
+          {["฿5,900/เดือน", "Audit 7 วัน", "AEO + GEO"].map((text) => (
             <div
               key={text}
               style={{
-                background: "rgba(255,255,255,0.1)",
-                border: "1px solid rgba(255,255,255,0.2)",
+                background: "rgba(255,255,255,0.15)",
+                border: "1px solid rgba(255,255,255,0.25)",
                 borderRadius: 12,
-                padding: "12px 24px",
+                padding: "10px 20px",
                 color: "#ffffff",
-                fontSize: 18,
+                fontSize: 16,
               }}
             >
               {text}

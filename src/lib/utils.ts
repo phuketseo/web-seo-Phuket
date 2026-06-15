@@ -14,7 +14,10 @@ export const siteConfig = {
   phone: "092-555-1369",
   phoneInternational: "+66-92-555-1369",
   email: "phuketseo369@gmail.com",
-  line: "@adscafe",
+  line: "@adscafe", // override via NEXT_PUBLIC_LINE_OA in .env.local
+  /** Dynamic OG image — used in schema until public/logo.png exists */
+  logoPath: "/opengraph-image",
+  ogImagePath: "/opengraph-image",
   address: "4/4 ซอย 6 ถนนพังงา ตำบลตลาดใหญ่ อำเภอเมือง จังหวัดภูเก็ต 83000",
   postalAddress: {
     streetAddress: "4/4 ซอย 6 ถนนพังงา",
@@ -34,3 +37,11 @@ export const siteConfig = {
     youtube: "https://youtube.com/@phuketseo",
   },
 };
+
+/** Default OG image — dynamic route at /opengraph-image */
+export const defaultOgImage = {
+  url: `${siteConfig.url}${siteConfig.ogImagePath}`,
+  width: 1200,
+  height: 630,
+  alt: `${siteConfig.name} — รับทำ SEO + เว็บไซต์ภูเก็ต`,
+} as const;

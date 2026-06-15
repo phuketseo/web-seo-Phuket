@@ -3,8 +3,8 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { CheckCircle, Code, Layout, ShoppingCart, Briefcase, PenTool, Phone } from 'lucide-react';
-import { siteConfig } from '@/lib/utils';
-import { organizationJsonLd, faqSchema } from '@/lib/schema';
+import { siteConfig, defaultOgImage } from '@/lib/utils';
+import { organizationJsonLd, faqSchema, buildBreadcrumb } from '@/lib/schema';
 import { siteImages } from '@/lib/images';
 import { webDesignContent } from '@/lib/service-content';
 import { ServiceFaqSection } from '@/components/ServiceFaqSection';
@@ -13,41 +13,25 @@ export const metadata: Metadata = {
   title: 'รับทำเว็บไซต์ภูเก็ต — เว็บเร็ว ติด Google | PhuketSEO',
   description: 'เว็บเร็ว ติด Google พร้อม SEO และ AI Search structure สำหรับธุรกิจในภูเก็ต Setup จาก ฿29,900 + ดูแลรายเดือนในแพ็ก Pro',
   keywords: ['รับทำเว็บไซต์ภูเก็ต', 'ออกแบบเว็บไซต์', 'สร้างเว็บไซต์', 'เว็บดีไซน์ภูเก็ต', 'PhuketSEO'],
+  alternates: { canonical: `${siteConfig.url}/services/web-design` },
   openGraph: {
-    title: 'รับทำเว็บไซต์ภูเก็ต ออกแบบเว็บมืออาชีพ | PhuketSEO',
-    description: 'บริการรับทำเว็บไซต์ ออกแบบเว็บสวยงาม ทันสมัย รองรับทุกอุปกรณ์ เพิ่มยอดขายให้ธุรกิจของคุณในภูเก็ต เริ่มต้นเพียง 15,000 บาท',
-    url: 'https://phuketseo.com/services/web-design',
+    title: 'รับทำเว็บไซต์ภูเก็ต — Next.js เร็ว ติด Google | PhuketSEO',
+    description: 'เว็บ Next.js mobile-first พร้อม SEO และ AEO structure Setup จาก ฿29,900',
+    url: `${siteConfig.url}/services/web-design`,
     type: 'website',
+    images: [defaultOgImage],
   },
 };
 
 export default function WebDesignServicePage() {
+  const breadcrumb = buildBreadcrumb([
+    { name: "หน้าแรก", url: siteConfig.url },
+    { name: "รับทำเว็บไซต์ภูเก็ต", url: `${siteConfig.url}/services/web-design` },
+  ]);
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "หน้าแรก",
-            "item": "https://phuketseo.com/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "บริการ",
-            "item": "https://phuketseo.com/services"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "รับทำเว็บไซต์",
-            "item": "https://phuketseo.com/services/web-design"
-          }
-        ]
-      },
+      { "@type": "BreadcrumbList", itemListElement: breadcrumb.itemListElement },
       {
         "@type": "Service",
         "serviceType": "Web Design Service",
@@ -61,8 +45,8 @@ export default function WebDesignServicePage() {
           },
         },
         "name": "รับทำเว็บไซต์ภูเก็ต",
-        "description": "บริการรับทำเว็บไซต์ ออกแบบเว็บสวยงาม ทันสมัย รองรับทุกอุปกรณ์ เพิ่มยอดขายให้ธุรกิจของคุณในภูเก็ต เริ่มต้นเพียง 15,000 บาท",
-        "url": "https://phuketseo.com/services/web-design",
+        "description": "เว็บ Next.js mobile-first พร้อม SEO และ AEO structure Setup จาก ฿29,900",
+        "url": `${siteConfig.url}/services/web-design`,
         "areaServed": {
           "@type": "Place",
           "name": "ภูเก็ต, ประเทศไทย"

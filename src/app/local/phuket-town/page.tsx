@@ -1,39 +1,21 @@
 import { Metadata } from 'next';
 import LocalSeoPage from "@/components/LocalSeoPage";
-import { faqSchema } from "@/lib/schema";
+import { faqSchema, buildBreadcrumb } from "@/lib/schema";
 import { localSeoContent } from "@/lib/local-seo-content";
+import { siteConfig } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: 'SEO ตัวเมืองภูเก็ต: เพิ่มการมองเห็นธุรกิจของคุณในย่านวัฒนธรรม',
   description: 'บริการ SEO สำหรับธุรกิจในตัวเมืองภูเก็ต ไม่ว่าจะเป็นร้านค้า ร้านอาหาร คลินิก หรือโรงแรมบูติก เพิ่มโอกาสให้ลูกค้าค้นพบคุณ',
+  alternates: { canonical: `${siteConfig.url}/local/phuket-town` },
 };
 
 const areaContent = localSeoContent["phuket-town"];
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "หน้าแรก",
-      "item": "https://phuketseo.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Local SEO",
-      "item": "https://phuketseo.com/local"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "ตัวเมืองภูเก็ต",
-      "item": "https://phuketseo.com/local/phuket-town"
-    }
-  ]
-};
+const breadcrumbSchema = buildBreadcrumb([
+  { name: "หน้าแรก", url: siteConfig.url },
+  { name: "Local SEO ตัวเมืองภูเก็ต", url: `${siteConfig.url}/local/phuket-town` },
+]);
 
 const serviceSchema = {
   "@context": "https://schema.org",

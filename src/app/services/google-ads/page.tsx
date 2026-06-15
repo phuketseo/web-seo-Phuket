@@ -3,25 +3,21 @@ import Link from "next/link";
 import Image from "next/image";
 import { CheckCircle, ArrowRight, Target, TrendingUp, BarChart3, Zap } from "lucide-react";
 import { siteImages } from "@/lib/images";
-import { faqSchema } from "@/lib/schema";
+import { faqSchema, buildBreadcrumb } from "@/lib/schema";
 import { googleAdsContent } from "@/lib/service-content";
 import { ServiceFaqSection } from "@/components/ServiceFaqSection";
+import { siteConfig } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "รับทำ Google Ads ภูเก็ต | ยิงแอดตรงกลุ่มเป้าหมาย - PhuketSEO",
   description: "บริการ Google Ads ภูเก็ต ยิงโฆษณาตรงกลุ่มเป้าหมาย ได้ผลลัพธ์ทันที ประหยัดงบประมาณ ROI สูงสุด ปรึกษาฟรี!",
-  alternates: { canonical: "https://phuketseo.com/services/google-ads" },
+  alternates: { canonical: `${siteConfig.url}/services/google-ads` },
 };
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "หน้าแรก", item: "https://phuketseo.com" },
-    { "@type": "ListItem", position: 2, name: "บริการ", item: "https://phuketseo.com/services" },
-    { "@type": "ListItem", position: 3, name: "Google Ads", item: "https://phuketseo.com/services/google-ads" },
-  ],
-};
+const breadcrumbSchema = buildBreadcrumb([
+  { name: "หน้าแรก", url: siteConfig.url },
+  { name: "Google Ads ภูเก็ต", url: `${siteConfig.url}/services/google-ads` },
+]);
 
 const faqSchemaJson = faqSchema(googleAdsContent.faqs);
 

@@ -1,11 +1,13 @@
 import { Metadata } from 'next';
 import LocalSeoPage from '@/components/LocalSeoPage';
-import { faqSchema } from '@/lib/schema';
+import { faqSchema, buildBreadcrumb } from '@/lib/schema';
 import { localSeoContent } from '@/lib/local-seo-content';
+import { siteConfig } from '@/lib/utils';
 
 export const metadata: Metadata = {
   title: 'SEO ถลาง - บริการเพิ่มอันดับธุรกิจในถลาง ภูเก็ต',
   description: 'เพิ่มการมองเห็นธุรกิจของคุณในถลาง ภูเก็ต ด้วยบริการ SEO ที่เชี่ยวชาญสำหรับโรงแรม, รีสอร์ท, อสังหาฯ, ร้านอาหาร, และสปา',
+  alternates: { canonical: `${siteConfig.url}/local/thalang` },
 };
 
 const areaContent = localSeoContent.thalang;
@@ -28,30 +30,10 @@ const thalangData = {
   faqs: areaContent.faqs,
 };
 
-const breadcrumbSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    {
-      '@type': 'ListItem',
-      position: 1,
-      name: 'หน้าแรก',
-        item: 'https://phuketseo.com/',
-    },
-    {
-      '@type': 'ListItem',
-      position: 2,
-      name: 'Local SEO',
-      item: 'https://phuketseo.com/local',
-    },
-    {
-      '@type': 'ListItem',
-      position: 3,
-      name: 'ถลาง',
-      item: 'https://phuketseo.com/local/thalang',
-    },
-  ],
-};
+const breadcrumbSchema = buildBreadcrumb([
+  { name: 'หน้าแรก', url: siteConfig.url },
+  { name: 'Local SEO ถลาง', url: `${siteConfig.url}/local/thalang` },
+]);
 
 const serviceSchema = {
   '@context': 'https://schema.org',
