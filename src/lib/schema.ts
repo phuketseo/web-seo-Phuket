@@ -125,7 +125,7 @@ export const reviewSchema = {
   },
   author: {
     "@type": "Person",
-    name: "คุณสมชาย โรงแรม Patong Beach",
+    name: "ลูกค้าโรงแรม",
   },
   reviewBody:
     "PhuketSEO ช่วยให้โรงแรมของเราติดอันดับ 1 บน Google ใน 4 เดือน Organic Traffic เพิ่มขึ้น 250% และ Booking เพิ่มขึ้น 180% ประทับใจมากครับ",

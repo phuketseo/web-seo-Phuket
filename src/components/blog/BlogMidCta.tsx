@@ -11,16 +11,16 @@ export function BlogMidCta({ theme = "default" }: Props) {
     return (
       <div className="my-12 rounded-lg border border-neutral-200 p-6 sm:p-7">
         <h3 className="text-base font-semibold text-neutral-900 mb-2 tracking-tight">
-          ต้องการให้ช่วยวางแผน SEO?
+          อยากให้ช่วยวางแผน SEO?
         </h3>
         <p className="text-neutral-500 text-[15px] leading-relaxed mb-5">
-          ทีม PhuketSEO ช่วยทำ SEO Audit และ Competitive Review ฟรี 30 นาที — ไม่มีข้อผูกมัด
+          ปรึกษาฟรี 30 นาที — ช่วยดูช่องว่าง GBP, keyword ในโซน และลำดับงานที่ควรทำก่อน ไม่มีข้อผูกมัด
         </p>
         <Link
           href="/contact"
-          className="inline-flex items-center gap-2 bg-neutral-900 hover:bg-neutral-800 text-white font-medium px-5 py-2.5 rounded-md transition-colors text-sm"
+          className="inline-flex items-center gap-2 text-neutral-900 hover:text-neutral-600 font-medium text-sm underline decoration-neutral-300 underline-offset-4 hover:decoration-neutral-600 transition-colors"
         >
-          ขอรับคำปรึกษาฟรี <ArrowRight size={15} />
+          ติดต่อปรึกษา <ArrowRight size={15} />
         </Link>
       </div>
     );
@@ -28,15 +28,15 @@ export function BlogMidCta({ theme = "default" }: Props) {
 
   return (
     <div className="my-10 rounded-2xl border border-indigo-100 bg-gradient-to-br from-indigo-50 to-white p-6 sm:p-8">
-      <h3 className="text-lg font-bold text-blue-950 font-serif mb-2">ต้องการให้ช่วยวางแผน SEO?</h3>
+      <h3 className="text-lg font-bold text-blue-950 font-serif mb-2">อยากให้ช่วยวางแผน SEO?</h3>
       <p className="text-slate-600 text-base leading-relaxed mb-4">
-        ทีม PhuketSEO ช่วยทำ SEO Audit และ Competitive Review ฟรี 30 นาที — ไม่มีข้อผูกมัด
+        ปรึกษาฟรี 30 นาที — ช่วยดูช่องว่าง GBP, keyword ในโซน และลำดับงานที่ควรทำก่อน ไม่มีข้อผูกมัด
       </p>
       <Link
         href="/contact"
-        className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm"
+        className="inline-flex items-center gap-2 text-indigo-700 hover:text-indigo-900 font-semibold text-sm underline underline-offset-4"
       >
-        ขอรับคำปรึกษาฟรี <ArrowRight size={15} />
+        ติดต่อปรึกษา <ArrowRight size={15} />
       </Link>
     </div>
   );

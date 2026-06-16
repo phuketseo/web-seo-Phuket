@@ -121,28 +121,17 @@ export function BlogVercelLayout({ post, thumbnail, headings, contentForRender }
         </div>
       </div>
 
-      <section className="border-t border-neutral-200/80 bg-white py-16 px-4">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-xl font-semibold tracking-tight text-neutral-900 mb-3">
-            ต้องการความช่วยเหลือด้าน SEO?
-          </h2>
-          <p className="text-neutral-500 mb-8 leading-relaxed">
-            ทีม PhuketSEO พร้อมให้คำปรึกษาฟรี 30 นาที — วิเคราะห์เว็บ SEO Local และแผน Digital Marketing สำหรับธุรกิจในภูเก็ต
+      <section className="border-t border-neutral-200/80 bg-neutral-50/50 py-14 px-4">
+        <div className="max-w-2xl mx-auto text-center">
+          <p className="text-neutral-600 mb-6 leading-relaxed text-[15px]">
+            อยากให้ช่วยวางแผน SEO ตามบริบทธุรกิจของคุณ? ปรึกษาฟรี 30 นาที — ไม่มีข้อผูกมัด
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center px-6 py-2.5 bg-neutral-900 hover:bg-neutral-800 text-white text-sm font-medium rounded-md transition-colors"
-            >
-              ขอรับ SEO Audit ฟรี
-            </Link>
-            <Link
-              href="/pricing"
-              className="inline-flex items-center justify-center px-6 py-2.5 border border-neutral-300 hover:border-neutral-900 text-neutral-900 text-sm font-medium rounded-md transition-colors"
-            >
-              ดูแพ็กเกจราคา
-            </Link>
-          </div>
+          <Link
+            href="/contact"
+            className="inline-flex items-center justify-center px-6 py-2.5 bg-neutral-900 hover:bg-neutral-800 text-white text-sm font-medium rounded-md transition-colors"
+          >
+            ติดต่อปรึกษา
+          </Link>
         </div>
       </section>
     </BlogGridBackground>

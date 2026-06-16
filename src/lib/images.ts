@@ -432,6 +432,9 @@ export const blogThumbnailBySlug: Record<string, SiteImage> = {
   "ai-overview-kue-arai": siteImages.blog.aiOverviewPillar,
   "rab-tam-web-phuket": siteImages.blog.rabTamWebPillar,
   "geo-kue-arai": siteImages.blog.geoPillar,
+  "google-ads-vs-seo-phuket": siteImages.services.googleAds,
+  "seo-clinic-phuket": siteImages.caseStudies.clinic,
+  "direct-booking-hotel-phuket": siteImages.blog.seoHotelNew,
 };
 
 export function getBlogThumbnail(slug: string): SiteImage {
@@ -468,6 +471,7 @@ export const blogInlineImages: Record<string, SiteImage> = {
   aeoCompare: siteImages.blog.aeoCompare,
   aiOverviewInline: siteImages.blog.aiOverviewInline,
   geoSteps: siteImages.blog.geoSteps,
+  serviceGoogleAds: siteImages.services.googleAds,
 };
 
 export function resolveBlogInlineImage(key: string): SiteImage | null {

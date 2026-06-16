@@ -141,20 +141,20 @@ const caseStudies = [
 
 const testimonials = [
   {
-    name: "คุณสมชาย วงศ์ทอง",
-    role: "เจ้าของ Patong Beach Resort",
+    name: "ลูกค้า",
+    role: "โรงแรม",
     text: "ทีม PhuketSEO ช่วยให้การจองโดยตรงเพิ่มขึ้น 3 เท่าใน 6 เดือน ประหยัดค่า Commission OTA ได้มหาศาล คุ้มค่ามากครับ",
     rating: 5,
   },
   {
-    name: "คุณนิภา รัตนชัย",
-    role: "ผู้บริหาร Phuket Property Co.",
+    name: "ลูกค้า",
+    role: "คลินิก",
     text: "จากที่ไม่มีตัวตนออนไลน์เลย ตอนนี้ติดอันดับ 1 ใน Google สำหรับคีย์เวิร์ดหลักทุกตัว Leads เข้ามาทุกวัน",
     rating: 5,
   },
   {
-    name: "คุณอาหมัด ซาลิม",
-    role: "เจ้าของ Kata Seafood Restaurant",
+    name: "ลูกค้า",
+    role: "ร้านอาหาร",
     text: "ลูกค้าเพิ่มขึ้นชัดเจนมาก โดยเฉพาะนักท่องเที่ยวต่างชาติที่ค้นหาร้านอาหารใน Google Maps ทีมงานดูแลดีมาก",
     rating: 5,
   },
@@ -550,12 +550,12 @@ export default function HomePage() {
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {testimonials.map((t) => (
-              <div key={t.name} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-lg transition-shadow">
+              <div key={t.role} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-lg transition-shadow">
                 <Quote size={28} className="text-blue-200 mb-4" />
                 <p className="text-gray-700 text-sm leading-relaxed mb-6 italic">&ldquo;{t.text}&rdquo;</p>
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 font-bold text-sm">
-                    {t.name.charAt(2)}
+                    {t.role.charAt(0)}
                   </div>
                   <div>
                     <div className="font-semibold text-blue-950 text-sm">{t.name}</div>

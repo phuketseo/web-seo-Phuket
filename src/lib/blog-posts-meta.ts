@@ -24,6 +24,33 @@ export const blogCategories = [
 
 export const blogPostsMeta: BlogPostMeta[] = [
   {
+    slug: "direct-booking-hotel-phuket",
+    title: "Direct Booking โรงแรมภูเก็ต 2026 — เมื่อ OTA กิน margin แล้วจองตรงเป็นอย่างไร",
+    category: "Industry Guide",
+    dateISO: "2026-06-19",
+    description:
+      "Direct Booking โรงแรมภูเก็ต ทำอย่างไรเมื่อ OTA กิน commission — ปัญหาช่องทางจองตรงที่พัง และทิศทางแก้สำหรับโรงแรมในภูเก็ต",
+    thumbnail: getBlogThumbnail("direct-booking-hotel-phuket"),
+  },
+  {
+    slug: "seo-clinic-phuket",
+    title: "SEO คลินิกภูเก็ต 2026 — เพิ่มการมองเห็นให้ลูกค้ารู้จักธุรกิจคุณมากขึ้น",
+    category: "Industry Guide",
+    dateISO: "2026-06-18",
+    description:
+      "SEO คลินิกภูเก็ต ทำอย่างไรให้โผล่ Google Maps และ Search สร้างการมองเห็นและความน่าเชื่อถือสำหรับคลินิกในภูเก็ต",
+    thumbnail: getBlogThumbnail("seo-clinic-phuket"),
+  },
+  {
+    slug: "google-ads-vs-seo-phuket",
+    title: "Google Ads vs SEO ภูเก็ต 2026 — ธุรกิจไหนควรเริ่มอะไรก่อน?",
+    category: "SEO ภูเก็ต",
+    dateISO: "2026-06-17",
+    description:
+      "Google Ads vs SEO ภูเก็ต เปรียบเทียบต้นทุน เวลา และแนวทางเริ่มต้นสำหรับโรงแรม ร้านอาหาร สปา และ SME",
+    thumbnail: getBlogThumbnail("google-ads-vs-seo-phuket"),
+  },
+  {
     slug: "rab-tam-web-phuket",
     title: "รับทำเว็บไซต์ภูเก็ต — เว็บ Next.js เร็ว ติด Google พร้อม SEO",
     category: "เว็บ Next.js",
@@ -60,7 +87,7 @@ export const blogPostsMeta: BlogPostMeta[] = [
     title: "SEO ภูเก็ต คืออะไร? คู่มือฉบับสมบูรณ์สำหรับธุรกิจในภูเก็ต",
     category: "SEO ภูเก็ต",
     dateISO: "2026-06-15",
-    description: "SEO ภูเก็ต คืออะไร ทำไมธุรกิจในภูเก็ตต้องทำ ใช้เวลานานแค่ไหร่ ราคาเท่าไหร่",
+    description: "SEO ภูเกต คืออะไร ทำไมธุรกิจในภูเกตต้องทำ และควรเริ่มจากอะไร",
     thumbnail: getBlogThumbnail("seo-phuket-kue-arai"),
   },
   {
@@ -68,7 +95,7 @@ export const blogPostsMeta: BlogPostMeta[] = [
     title: "Local SEO ภูเก็ต คืออะไร? วิธีให้ธุรกิจติด Google Maps",
     category: "Local SEO",
     dateISO: "2026-06-15",
-    description: "Local SEO ภูเก็ต ทำอย่างไรให้ติด Google Maps และ Local Pack",
+    description: "Local SEO ภูเกต ทำอย่างไรให้ธุรกิจโผล่ Google Maps ในโซนจริง",
     thumbnail: getBlogThumbnail("local-seo-phuket-kue-arai"),
   },
   {
@@ -85,7 +112,7 @@ export const blogPostsMeta: BlogPostMeta[] = [
     category: "Industry Guide",
     dateISO: "2026-06-17",
     description:
-      "SEO สปาภูเก็ต ทำอย่างไรให้ Direct Booking โต ลด OTA ด้วย Local SEO เว็บ Next.js และ AEO แพ็ก Pro ฿8,900",
+      "SEO สปาภูเกต ทำอย่างไรให้ Direct Booking โต ลด OTA ด้วย Local SEO และการมองเห็นบน Google",
     thumbnail: getBlogThumbnail("seo-for-phuket-spas"),
   },
   {
@@ -94,7 +121,7 @@ export const blogPostsMeta: BlogPostMeta[] = [
     category: "AEO & GEO",
     dateISO: "2026-06-17",
     description:
-      "Competitive Audit โรงแรมภูเก็ต ด้วย Gemini + ข้อมูลจริง วางแผน SEO AEO 90 วัน แพ็ก Pro ฿8,900",
+      "Competitive Audit โรงแรมภูเกต วิเคราะห์คู่แข่งในโซนและวางแผน SEO ตามข้อมูลจริง",
     thumbnail: getBlogThumbnail("gemini-hotel-competitor-analysis"),
   },
   {
@@ -103,7 +130,7 @@ export const blogPostsMeta: BlogPostMeta[] = [
     category: "Industry Guide",
     dateISO: "2026-06-17",
     description:
-      "SEO โรงแรมภูเก็ต ทำอย่างไรให้ Direct Booking โต ลด OTA ด้วย Local SEO เว็บ Next.js และ AEO แพ็ก Pro ฿8,900",
+      "SEO โรงแรมภูเกต ทำอย่างไรให้ Direct Booking โต ลด OTA ด้วยการมองเห็นบน Google",
     thumbnail: getBlogThumbnail("seo-for-phuket-hotels"),
   },
   {
@@ -112,7 +139,7 @@ export const blogPostsMeta: BlogPostMeta[] = [
     category: "Industry Guide",
     dateISO: "2026-06-17",
     description:
-      "ร้านอาหารภูเก็ต ทำ Local SEO + Google Maps ก่อน Instagram แพ็ก Lite ฿5,900 Social เป็นเทคนิคเสริม",
+      "ร้านอาหารภูเกต ทำ Google Maps ก่อน Instagram — Social เป็นเทคนิคเสริม",
     thumbnail: getBlogThumbnail("instagram-marketing-phuket-restaurants"),
   },
   {
@@ -121,7 +148,7 @@ export const blogPostsMeta: BlogPostMeta[] = [
     category: "เว็บ Next.js",
     dateISO: "2026-06-17",
     description:
-      "รับทำเว็บอสังหาฯ ภูเก็ต Next.js mobile-first พร้อม SEO lead gen setup ฿29,900 ขึ้นไป",
+      "เว็บอสังหาริมทรัพย์ภูเกต ที่ดึง lead ได้จริง — mobile-first และ SEO structure",
     thumbnail: getBlogThumbnail("web-design-phuket-real-estate"),
   },
   {
@@ -130,7 +157,7 @@ export const blogPostsMeta: BlogPostMeta[] = [
     category: "Local SEO",
     dateISO: "2026-06-17",
     description:
-      "Google Business Profile ภูเก็ต ทำอย่างไรให้โผล่ Maps รวมในแพ็ก SEO Lite ฿5,900/เดือน",
+      "Google Business Profile ภูเกต ทำอย่างไรให้ธุรกิจโผล่ Maps",
     thumbnail: getBlogThumbnail("google-my-business-phuket"),
   },
   {
@@ -139,7 +166,7 @@ export const blogPostsMeta: BlogPostMeta[] = [
     category: "Industry Guide",
     dateISO: "2026-06-17",
     description:
-      "สปาและธุรกิจบริการภูเก็ต ทำ Local SEO + Direct Booking ก่อน TikTok แพ็ก Pro ฿8,900",
+      "ธุรกิจบริการภูเกต ทำ Google Maps ก่อน TikTok — Social เป็นเทคนิคเสริม",
     thumbnail: getBlogThumbnail("tiktok-marketing-phuket-services"),
   },
   {
@@ -148,7 +175,7 @@ export const blogPostsMeta: BlogPostMeta[] = [
     category: "SEO ภูเก็ต",
     dateISO: "2026-06-17",
     description:
-      "Content EN สำหรับธุรกิจภูเก็ต ติด Google organic ลด dependency Ads รวมในแพ็ก Pro ฿8,900",
+      "Content EN สำหรับธุรกิจภูเกต ดึงลูกค้าต่างชาติจาก Google organic",
     thumbnail: getBlogThumbnail("content-marketing-phuket-foreigners"),
   },
 ];
