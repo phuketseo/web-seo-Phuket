@@ -5,6 +5,7 @@ import { siteConfig } from "@/lib/utils";
 import { pricingPackages } from "@/lib/pricing-packages";
 import { geoCoordinatesSchema, organizationSameAs, postalAddressSchema } from "@/lib/schema";
 import { siteImages } from "@/lib/images";
+import { caseStudies } from "@/lib/case-studies-data";
 import {
   Star, CheckCircle,
   ArrowRight, Phone, MessageCircle, Award, Users, BarChart3,
@@ -126,36 +127,23 @@ const whyUs = [
   { icon: Globe, title: "Ads เป็นเทคนิคเสริม", desc: "แพ็ก Pro Max รวม Ads แต่บริการหลักคือ SEO + เว็บที่ส่งมอบได้จริง" },
 ];
 
-const caseStudies = [
-  {
-    slug: "phuketseo-website-rebuild",
-    client: "PhuketSEO.com",
-    industry: "SEO Agency",
-    challenge: "เว็บเดิม positioning กระจาย ไม่ชัดว่าขายอะไร และยังไม่มีโครงสร้าง AEO/GEO",
-    result: "3 แพ็กราคาชัด · 11+ หน้า SEO-ready · FAQ + llms.txt · Phase 1 live 2 สัปดาห์",
-    duration: "Phase 1–2 (2026)",
-    services: ["Next.js", "SEO", "AEO/GEO"],
-    image: siteImages.services.webDesign,
-  },
-];
-
 const testimonials = [
   {
     name: "ลูกค้า",
     role: "โรงแรม",
-    text: "ทีม PhuketSEO ช่วยให้การจองโดยตรงเพิ่มขึ้น 3 เท่าใน 6 เดือน ประหยัดค่า Commission OTA ได้มหาศาล คุ้มค่ามากครับ",
+    text: "ทีมช่วยวางแผน Direct Booking และการมองเห็นบน Google ให้ชัดขึ้น ลดการพึ่ง OTA ลงได้ในระยะยาว",
     rating: 5,
   },
   {
     name: "ลูกค้า",
     role: "คลินิก",
-    text: "จากที่ไม่มีตัวตนออนไลน์เลย ตอนนี้ติดอันดับ 1 ใน Google สำหรับคีย์เวิร์ดหลักทุกตัว Leads เข้ามาทุกวัน",
+    text: "จากที่แทบไม่มีตัวตนออนไลน์ ตอนนี้ลูกค้าเจอเราบน Google Maps มากขึ้น และมีคนติดต่อเข้ามาสม่ำเสมอ",
     rating: 5,
   },
   {
     name: "ลูกค้า",
     role: "ร้านอาหาร",
-    text: "ลูกค้าเพิ่มขึ้นชัดเจนมาก โดยเฉพาะนักท่องเที่ยวต่างชาติที่ค้นหาร้านอาหารใน Google Maps ทีมงานดูแลดีมาก",
+    text: "ลูกค้าใหม่เพิ่มขึ้น โดยเฉพาะนักท่องเที่ยวที่ค้นหาร้านอาหารใน Google Maps ทีมงานดูแลและอธิบายผลให้เข้าใจ",
     rating: 5,
   },
 ];
@@ -208,19 +196,11 @@ export default function HomePage() {
 
       {/* ── 1. HERO ── */}
       <section className="relative min-h-screen hero-gradient flex items-center overflow-hidden">
-        <Image
-          src={siteImages.hero.home.src}
-          alt=""
-          fill
-          className="object-cover opacity-[0.07] pointer-events-none"
-          priority
-          sizes="100vw"
-          aria-hidden
-        />
-        {/* Soft blobs */}
-        <div className="absolute inset-0 pointer-events-none">
+        {/* Soft blobs — no background image (avoids text overlap from hero art) */}
+        <div className="absolute inset-0 pointer-events-none" aria-hidden>
           <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-indigo-200/40 rounded-full blur-3xl" />
           <div className="absolute bottom-1/4 left-1/4 w-72 h-72 bg-pink-200/30 rounded-full blur-3xl" />
+          <div className="absolute top-1/3 right-[8%] w-80 h-80 bg-violet-100/50 rounded-full blur-3xl hidden lg:block" />
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-36 grid lg:grid-cols-2 gap-16 items-center">
@@ -388,61 +368,90 @@ export default function HomePage() {
           <div className="text-center mb-14">
             <div className="text-indigo-500 font-semibold text-sm uppercase tracking-wider mb-2">ผลงาน</div>
             <h2 className="text-4xl font-bold text-slate-900 font-serif mb-4">
-              ผลลัพธ์จริงจากลูกค้าของเรา
+              เริ่มจากเว็บของเราเอง
             </h2>
+            <p className="text-slate-500 max-w-2xl mx-auto">
+              Case study แรกคือ PhuketSEO.com — แสดงวิธีที่เราทำ SEO + AEO/GEO บนเว็บจริง ก่อนขยายไปลูกค้าธุรกิจในภูเก็ต
+            </p>
           </div>
-          <div className="grid md:grid-cols-1 gap-8 max-w-2xl mx-auto">
+          <div className="grid md:grid-cols-1 gap-8 max-w-3xl mx-auto">
             {caseStudies.map((cs) => (
               <Link
-                key={cs.client}
+                key={cs.slug}
                 href={`/case-studies/${cs.slug}`}
                 className="relative bg-gradient-to-br from-indigo-600 to-violet-700 rounded-2xl p-8 text-white overflow-hidden block hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 group"
               >
-                <Image
-                  src={cs.image.src}
-                  alt=""
-                  fill
-                  className="object-cover opacity-20 pointer-events-none"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  aria-hidden
-                />
+                <div className="absolute inset-0 pointer-events-none" aria-hidden>
+                  <div className="absolute -right-20 -bottom-20 w-72 h-72 rounded-full bg-white/[0.06]" />
+                  <div className="absolute right-12 top-10 w-40 h-40 rounded-full bg-white/[0.04]" />
+                </div>
                 <div className="relative z-10">
-                <div className="flex items-start justify-between mb-6">
-                  <div>
-                    <h3 className="text-xl font-bold font-serif mb-1">{cs.client}</h3>
-                    <span className="text-indigo-200 text-sm">{cs.industry}</span>
-                  </div>
-                  <span className="bg-white/20 text-white text-xs px-3 py-1 rounded-full border border-white/20">
-                    {cs.duration}
-                  </span>
-                </div>
-                <div className="mb-4">
-                  <div className="text-indigo-200 text-xs uppercase tracking-wider mb-1">ปัญหาที่พบ</div>
-                  <p className="text-white/80 text-sm">{cs.challenge}</p>
-                </div>
-                <div className="mb-6">
-                  <div className="text-indigo-200 text-xs uppercase tracking-wider mb-1">ผลลัพธ์ที่ได้</div>
-                  <p className="text-green-300 font-semibold">{cs.result}</p>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {cs.services.map((sv) => (
-                    <span key={sv} className="bg-white/20 text-white text-xs px-3 py-1 rounded-full">
-                      {sv}
+                  <div className="flex items-start justify-between gap-4 mb-6">
+                    <div>
+                      {cs.isOwnProject && (
+                        <span className="inline-block bg-white/15 text-indigo-100 text-xs px-3 py-1 rounded-full border border-white/20 mb-3">
+                          Case study · เว็บ agency
+                        </span>
+                      )}
+                      <h3 className="text-xl font-bold font-serif mb-1">{cs.client}</h3>
+                      <span className="text-indigo-200 text-sm">{cs.industry}</span>
+                    </div>
+                    <span className="bg-white/20 text-white text-xs px-3 py-1 rounded-full border border-white/20 shrink-0">
+                      {cs.duration}
                     </span>
-                  ))}
-                </div>
-                <span className="inline-flex items-center gap-2 mt-4 text-green-300 text-sm font-semibold group-hover:gap-3 transition-all">
-                  อ่าน case study <ArrowRight size={14} />
-                </span>
+                  </div>
+
+                  <div className="mb-5">
+                    <div className="text-indigo-200 text-xs uppercase tracking-wider mb-1">ปัญหาที่พบ</div>
+                    <p className="text-white/90 text-sm leading-relaxed max-w-2xl">{cs.challenge}</p>
+                  </div>
+
+                  <div className="grid sm:grid-cols-2 gap-4 mb-6 max-w-2xl">
+                    <div>
+                      <div className="text-indigo-200 text-xs uppercase tracking-wider mb-2">สิ่งที่ส่งมอบ</div>
+                      <ul className="space-y-1.5">
+                        {cs.deliverables.map((item) => (
+                          <li key={item.label} className="text-sm text-white/90">
+                            <span className="font-semibold text-white">{item.metric}</span>
+                            <span className="text-indigo-100"> · {item.label}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div>
+                      <div className="text-indigo-200 text-xs uppercase tracking-wider mb-2">สัญญาณที่วัดได้</div>
+                      <ul className="space-y-1.5">
+                        {cs.outcomes.map((item) => (
+                          <li key={item.label} className="text-sm text-white/90">
+                            <span className="font-semibold text-white">{item.metric}</span>
+                            <span className="text-indigo-100"> · {item.label}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-wrap gap-2">
+                    {cs.services.map((sv) => (
+                      <span key={sv} className="bg-white/20 text-white text-xs px-3 py-1 rounded-full">
+                        {sv}
+                      </span>
+                    ))}
+                  </div>
+                  <span className="inline-flex items-center gap-2 mt-4 text-white text-sm font-semibold group-hover:gap-3 transition-all">
+                    อ่าน case study <ArrowRight size={14} />
+                  </span>
                 </div>
               </Link>
             ))}
           </div>
-          <div className="text-center mt-8">
-            <Link href="/case-studies" className="inline-flex items-center gap-2 text-blue-700 font-semibold hover:gap-3 transition-all">
-              ดูผลงานทั้งหมด <ArrowRight size={16} />
-            </Link>
-          </div>
+          {caseStudies.length > 1 && (
+            <div className="text-center mt-8">
+              <Link href="/case-studies" className="inline-flex items-center gap-2 text-blue-700 font-semibold hover:gap-3 transition-all">
+                ดูผลงานทั้งหมด <ArrowRight size={16} />
+              </Link>
+            </div>
+          )}
         </div>
       </section>
 

@@ -72,11 +72,23 @@ export default async function CaseStudyDetailPage({
         </section>
 
         <section>
-          <h2 className="text-xl font-bold text-blue-950 mb-4">ผลลัพธ์</h2>
+          <h2 className="text-xl font-bold text-blue-950 mb-4">สิ่งที่ส่งมอบ</h2>
           <div className="grid grid-cols-2 gap-4">
-            {study.results.map((r) => (
+            {study.deliverables.map((r) => (
               <div key={r.label} className="bg-gray-50 rounded-xl p-4 text-center border">
-                <div className="text-2xl font-bold text-green-600 font-serif">{r.metric}</div>
+                <div className="text-2xl font-bold text-indigo-700 font-serif">{r.metric}</div>
+                <div className="text-sm text-gray-600">{r.label}</div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-bold text-blue-950 mb-4">สัญญาณที่วัดได้</h2>
+          <div className="grid grid-cols-2 gap-4">
+            {study.outcomes.map((r) => (
+              <div key={r.label} className="bg-gray-50 rounded-xl p-4 text-center border">
+                <div className="text-2xl font-bold text-indigo-700 font-serif">{r.metric}</div>
                 <div className="text-sm text-gray-600">{r.label}</div>
               </div>
             ))}
@@ -94,7 +106,7 @@ export default async function CaseStudyDetailPage({
         </div>
 
         <Link href="/contact" className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold px-6 py-3 rounded-xl">
-          อยากได้ผลลัพธ์แบบนี้ <ArrowRight size={16} />
+          ปรึกษาวิเคราะห์ธุรกิจคุณ <ArrowRight size={16} />
         </Link>
       </main>
     </div>

@@ -8,7 +8,7 @@ import { caseStudies } from "@/lib/case-studies-data";
 export const metadata: Metadata = {
   title: "ผลงานของเรา - PhuketSEO | กรณีศึกษา SEO + AI Search",
   description:
-    "ดูผลงานและกรณีศึกษา SEO, เว็บ Next.js และ AEO/GEO ที่ PhuketSEO สร้างให้ธุรกิจในภูเก็ต",
+    "กรณีศึกษา SEO, เว็บ Next.js และ AEO/GEO จาก PhuketSEO — เริ่มจากเว็บ agency ของเราเอง",
   alternates: { canonical: "https://phuketseo.com/case-studies" },
 };
 
@@ -69,9 +69,12 @@ const CaseStudiesPage = () => {
 
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-6 max-w-4xl">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-center mb-12 text-[#1e3a8a]">
-            เรื่องราวความสำเร็จ
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-center mb-4 text-[#1e3a8a]">
+            Case study ที่มีอยู่
           </h2>
+          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+            ตอนนี้มี case study จากเว็บของเราเอง — กำลังเพิ่มเรื่องจากลูกค้าธุรกิจในภูเก็ตเมื่อพร้อมเผยแพร่
+          </p>
           <div className="space-y-8">
             {caseStudies.map((study) => (
               <Link
@@ -81,8 +84,15 @@ const CaseStudiesPage = () => {
               >
                 <div className="flex items-start justify-between gap-4 mb-4">
                   <div>
-                    <p className="text-indigo-200 text-sm mb-1">{study.client} · {study.industry}</p>
-                    <h3 className="text-2xl font-serif font-bold group-hover:text-green-200 transition-colors">
+                    {study.isOwnProject && (
+                      <span className="inline-block bg-white/15 text-indigo-100 text-xs px-3 py-1 rounded-full border border-white/20 mb-2">
+                        Case study · เว็บ agency
+                      </span>
+                    )}
+                    <p className="text-indigo-200 text-sm mb-1">
+                      {study.client} · {study.industry}
+                    </p>
+                    <h3 className="text-2xl font-serif font-bold group-hover:text-indigo-100 transition-colors">
                       {study.title}
                     </h3>
                   </div>
@@ -90,16 +100,32 @@ const CaseStudiesPage = () => {
                     {study.duration}
                   </span>
                 </div>
-                <p className="text-white/80 mb-6 leading-relaxed">{study.challenge}</p>
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
-                  {study.results.map((r) => (
-                    <div key={r.label} className="bg-white/10 rounded-lg p-3 text-center">
-                      <div className="text-xl font-bold text-green-300">{r.metric}</div>
-                      <div className="text-xs text-indigo-200">{r.label}</div>
+                <p className="text-white/90 mb-6 leading-relaxed">{study.challenge}</p>
+                <div className="grid sm:grid-cols-2 gap-6 mb-6">
+                  <div>
+                    <div className="text-indigo-200 text-xs uppercase tracking-wider mb-2">สิ่งที่ส่งมอบ</div>
+                    <div className="grid grid-cols-2 gap-3">
+                      {study.deliverables.map((r) => (
+                        <div key={r.label} className="bg-white/10 rounded-lg p-3 text-center">
+                          <div className="text-xl font-bold text-white">{r.metric}</div>
+                          <div className="text-xs text-indigo-200">{r.label}</div>
+                        </div>
+                      ))}
                     </div>
-                  ))}
+                  </div>
+                  <div>
+                    <div className="text-indigo-200 text-xs uppercase tracking-wider mb-2">สัญญาณที่วัดได้</div>
+                    <div className="grid grid-cols-2 gap-3">
+                      {study.outcomes.map((r) => (
+                        <div key={r.label} className="bg-white/10 rounded-lg p-3 text-center">
+                          <div className="text-xl font-bold text-white">{r.metric}</div>
+                          <div className="text-xs text-indigo-200">{r.label}</div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-                <span className="inline-flex items-center gap-2 text-green-300 font-semibold text-sm">
+                <span className="inline-flex items-center gap-2 text-white font-semibold text-sm">
                   อ่าน case study เต็ม <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                 </span>
               </Link>
@@ -111,7 +137,7 @@ const CaseStudiesPage = () => {
       <section className="py-16 md:py-24 bg-gray-100 text-center">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6 text-[#1e3a8a]">
-            พร้อมสร้างเรื่องราวความสำเร็จของคุณ?
+            อยากได้แผนแบบเดียวกันสำหรับธุรกิจคุณ?
           </h2>
           <p className="text-xl mb-8 text-gray-700 max-w-2xl mx-auto">
             เริ่มจาก SEO Audit ฟรี หรือดู{" "}
