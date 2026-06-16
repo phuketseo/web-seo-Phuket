@@ -24,6 +24,24 @@ export const blogCategories = [
 
 export const blogPostsMeta: BlogPostMeta[] = [
   {
+    slug: "seo-real-estate-phuket",
+    title: "SEO อสังหาริมทรัพย์ภูเก็ต 2026 — เมื่อ Lead มาจาก Portal แทน Google",
+    category: "Industry Guide",
+    dateISO: "2026-06-21",
+    description:
+      "SEO อสังหาริมทรัพย์ภูเก็ต ทำอย่างไรเมื่อ lead มาจาก portal แทน Google — ปัญหาการมองเห็นและ trust สำหรับ agent ในภูเก็ต",
+    thumbnail: getBlogThumbnail("seo-real-estate-phuket"),
+  },
+  {
+    slug: "google-reviews-phuket",
+    title: "Google Reviews ภูเก็ต 2026 — เมื่อรีวิวน้อย ลูกค้าเลือกคู่แข่งแทน",
+    category: "Local SEO",
+    dateISO: "2026-06-20",
+    description:
+      "Google Reviews ภูเก็ต ทำอย่างไรเมื่อรีวิวน้อยหรือไม่มีคนตอบ — ปัญหา trust บน Maps และทิศทางแก้สำหรับธุรกิจในภูเก็ต",
+    thumbnail: getBlogThumbnail("google-reviews-phuket"),
+  },
+  {
     slug: "direct-booking-hotel-phuket",
     title: "Direct Booking โรงแรมภูเก็ต 2026 — เมื่อ OTA กิน margin แล้วจองตรงเป็นอย่างไร",
     category: "Industry Guide",
@@ -87,7 +105,7 @@ export const blogPostsMeta: BlogPostMeta[] = [
     title: "SEO ภูเก็ต คืออะไร? คู่มือฉบับสมบูรณ์สำหรับธุรกิจในภูเก็ต",
     category: "SEO ภูเก็ต",
     dateISO: "2026-06-15",
-    description: "SEO ภูเกต คืออะไร ทำไมธุรกิจในภูเกตต้องทำ และควรเริ่มจากอะไร",
+    description: "SEO ภูเก็ต คืออะไร ทำไมธุรกิจในภูเก็ตต้องทำ และควรเริ่มจากอะไร",
     thumbnail: getBlogThumbnail("seo-phuket-kue-arai"),
   },
   {
@@ -95,7 +113,7 @@ export const blogPostsMeta: BlogPostMeta[] = [
     title: "Local SEO ภูเก็ต คืออะไร? วิธีให้ธุรกิจติด Google Maps",
     category: "Local SEO",
     dateISO: "2026-06-15",
-    description: "Local SEO ภูเกต ทำอย่างไรให้ธุรกิจโผล่ Google Maps ในโซนจริง",
+    description: "Local SEO ภูเก็ต ทำอย่างไรให้ธุรกิจโผล่ Google Maps ในโซนจริง",
     thumbnail: getBlogThumbnail("local-seo-phuket-kue-arai"),
   },
   {
@@ -112,7 +130,7 @@ export const blogPostsMeta: BlogPostMeta[] = [
     category: "Industry Guide",
     dateISO: "2026-06-17",
     description:
-      "SEO สปาภูเกต ทำอย่างไรให้ Direct Booking โต ลด OTA ด้วย Local SEO และการมองเห็นบน Google",
+      "SEO สปาภูเก็ต ทำอย่างไรให้ Direct Booking โต ลด OTA ด้วย Local SEO และการมองเห็นบน Google",
     thumbnail: getBlogThumbnail("seo-for-phuket-spas"),
   },
   {
@@ -121,7 +139,7 @@ export const blogPostsMeta: BlogPostMeta[] = [
     category: "AEO & GEO",
     dateISO: "2026-06-17",
     description:
-      "Competitive Audit โรงแรมภูเกต วิเคราะห์คู่แข่งในโซนและวางแผน SEO ตามข้อมูลจริง",
+      "Competitive Audit โรงแรมภูเก็ต วิเคราะห์คู่แข่งในโซนและวางแผน SEO ตามข้อมูลจริง",
     thumbnail: getBlogThumbnail("gemini-hotel-competitor-analysis"),
   },
   {
@@ -130,7 +148,7 @@ export const blogPostsMeta: BlogPostMeta[] = [
     category: "Industry Guide",
     dateISO: "2026-06-17",
     description:
-      "SEO โรงแรมภูเกต ทำอย่างไรให้ Direct Booking โต ลด OTA ด้วยการมองเห็นบน Google",
+      "SEO โรงแรมภูเก็ต ทำอย่างไรให้ Direct Booking โต ลด OTA ด้วยการมองเห็นบน Google",
     thumbnail: getBlogThumbnail("seo-for-phuket-hotels"),
   },
   {
@@ -139,7 +157,7 @@ export const blogPostsMeta: BlogPostMeta[] = [
     category: "Industry Guide",
     dateISO: "2026-06-17",
     description:
-      "ร้านอาหารภูเกต ทำ Google Maps ก่อน Instagram — Social เป็นเทคนิคเสริม",
+      "ร้านอาหารภูเก็ต ทำ Google Maps ก่อน Instagram — Social เป็นเทคนิคเสริม",
     thumbnail: getBlogThumbnail("instagram-marketing-phuket-restaurants"),
   },
   {
@@ -148,7 +166,7 @@ export const blogPostsMeta: BlogPostMeta[] = [
     category: "เว็บ Next.js",
     dateISO: "2026-06-17",
     description:
-      "เว็บอสังหาริมทรัพย์ภูเกต ที่ดึง lead ได้จริง — mobile-first และ SEO structure",
+      "เว็บอสังหาริมทรัพย์ภูเก็ต ที่ดึง lead ได้จริง — mobile-first และ SEO structure",
     thumbnail: getBlogThumbnail("web-design-phuket-real-estate"),
   },
   {
@@ -157,7 +175,7 @@ export const blogPostsMeta: BlogPostMeta[] = [
     category: "Local SEO",
     dateISO: "2026-06-17",
     description:
-      "Google Business Profile ภูเกต ทำอย่างไรให้ธุรกิจโผล่ Maps",
+      "Google Business Profile ภูเก็ต ทำอย่างไรให้ธุรกิจโผล่ Maps",
     thumbnail: getBlogThumbnail("google-my-business-phuket"),
   },
   {
@@ -166,7 +184,7 @@ export const blogPostsMeta: BlogPostMeta[] = [
     category: "Industry Guide",
     dateISO: "2026-06-17",
     description:
-      "ธุรกิจบริการภูเกต ทำ Google Maps ก่อน TikTok — Social เป็นเทคนิคเสริม",
+      "ธุรกิจบริการภูเก็ต ทำ Google Maps ก่อน TikTok — Social เป็นเทคนิคเสริม",
     thumbnail: getBlogThumbnail("tiktok-marketing-phuket-services"),
   },
   {
@@ -175,7 +193,7 @@ export const blogPostsMeta: BlogPostMeta[] = [
     category: "SEO ภูเก็ต",
     dateISO: "2026-06-17",
     description:
-      "Content EN สำหรับธุรกิจภูเกต ดึงลูกค้าต่างชาติจาก Google organic",
+      "Content EN สำหรับธุรกิจภูเก็ต ดึงลูกค้าต่างชาติจาก Google organic",
     thumbnail: getBlogThumbnail("content-marketing-phuket-foreigners"),
   },
 ];
