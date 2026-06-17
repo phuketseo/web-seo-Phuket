@@ -8,7 +8,6 @@ export type BlogPostMeta = {
   slug: string;
   title: string;
   category: string;
-  dateISO: string;
   description: string;
   thumbnail: SiteImage;
 };
@@ -27,7 +26,6 @@ export const blogPostsMeta: BlogPostMeta[] = [
     slug: "seo-sme-phuket",
     title: "SEO SME ภูเก็ต 2026 — ธุรกิจเล็กที่ยังไม่มีตัวตนบน Google",
     category: "SEO ภูเก็ต",
-    dateISO: "2026-06-17",
     description:
       "SEO SME ภูเก็ต ทำอย่างไรเมื่อธุรกิจเล็กยังไม่มีตัวตนบน Google — ปัญหาการมองเห็นและทิศทางเริ่มต้นสำหรับ SME ในภูเก็ต",
     thumbnail: getBlogThumbnail("seo-sme-phuket"),
@@ -36,7 +34,6 @@ export const blogPostsMeta: BlogPostMeta[] = [
     slug: "seo-restaurants-phuket",
     title: "SEO ร้านอาหารภูเก็ต 2026 — walk-in หายเพราะลูกค้าไม่เจอบน Google",
     category: "Industry Guide",
-    dateISO: "2026-06-16",
     description:
       "SEO ร้านอาหารภูเก็ต ทำอย่างไรเมื่อ walk-in ลดลง — ปัญหาการมองเห็นบน Maps และทิศทางแก้สำหรับร้านอาหารในภูเก็ต",
     thumbnail: getBlogThumbnail("seo-restaurants-phuket"),
@@ -45,7 +42,6 @@ export const blogPostsMeta: BlogPostMeta[] = [
     slug: "nap-local-seo-phuket",
     title: "NAP ไม่ตรง ฆ่า Local SEO ภูเก็ต — เมื่อ Google ไม่เชื่อข้อมูลร้านคุณ",
     category: "Local SEO",
-    dateISO: "2026-06-15",
     description:
       "NAP Local SEO ภูเก็ต ทำอย่างไรเมื่อชื่อ ที่อยู่ เบอร์โทรไม่ตรงกัน — ปัญหา listing ซ้ำและทิศทางแก้สำหรับธุรกิจ local",
     thumbnail: getBlogThumbnail("nap-local-seo-phuket"),
@@ -54,7 +50,6 @@ export const blogPostsMeta: BlogPostMeta[] = [
     slug: "local-seo-phuket-town",
     title: "Local SEO ตัวเมืองภูเก็ต 2026 — ลูกค้าไทยที่ค้นหาในเมือง",
     category: "Local SEO",
-    dateISO: "2026-06-14",
     description:
       "Local SEO ตัวเมืองภูเก็ต ทำอย่างไรให้ธุรกิจโผล่ Google Maps สำหรับลูกค้าไทยในโซนตัวเมือง — ปัญหาและทิศทางแก้",
     thumbnail: getBlogThumbnail("local-seo-phuket-town"),
@@ -63,7 +58,6 @@ export const blogPostsMeta: BlogPostMeta[] = [
     slug: "local-seo-kata-phuket",
     title: "Local SEO กะตะ 2026 — โซนครอบครัวที่แข่งต่างจากป่าตอง",
     category: "Local SEO",
-    dateISO: "2026-06-13",
     description:
       "Local SEO กะตะ ทำอย่างไรให้ธุรกิจโผล่ Google Maps ในโซนกะตะ/กะรน — ปัญหาและทิศทางแก้เมื่อแข่งกับป่าตองไม่ได้",
     thumbnail: getBlogThumbnail("local-seo-kata-phuket"),
@@ -72,7 +66,6 @@ export const blogPostsMeta: BlogPostMeta[] = [
     slug: "low-season-seo-phuket",
     title: "Low Season SEO ภูเก็ต — เมื่อ high season ผ่านไป แล้ว booking หาย",
     category: "SEO ภูเก็ต",
-    dateISO: "2026-06-12",
     description:
       "Low Season SEO ภูเก็ต ทำอย่างไรเมื่อ booking หายหลัง high season — ปัญหาการมองเห็นและทิศทางสำหรับธุรกิจท่องเที่ยว",
     thumbnail: getBlogThumbnail("low-season-seo-phuket"),
@@ -81,7 +74,6 @@ export const blogPostsMeta: BlogPostMeta[] = [
     slug: "near-me-seo-phuket",
     title: "Near Me SEO ภูเก็ต — ลูกค้าค้นหาใกล้ฉัน แต่ธุรกิจไม่โผล่",
     category: "Local SEO",
-    dateISO: "2026-06-11",
     description:
       "Near Me SEO ภูเก็ต ทำอย่างไรเมื่อลูกค้าค้นหา near me แต่ธุรกิจไม่โผล่ Maps — ปัญหาและทิศทางแก้สำหรับ local business",
     thumbnail: getBlogThumbnail("near-me-seo-phuket"),
@@ -90,7 +82,6 @@ export const blogPostsMeta: BlogPostMeta[] = [
     slug: "website-speed-seo-phuket",
     title: "เว็บช้าฆ่า SEO ภูเก็ต — เมื่อ Google มองไม่เห็นเพราะ Core Web Vitals",
     category: "เว็บ Next.js",
-    dateISO: "2026-06-10",
     description:
       "เว็บช้าส่งผล SEO ภูเก็ตอย่างไร — ปัญหา Core Web Vitals และทิศทางแก้เมื่อเว็บ WordPress หรือเว็บเก่าทำให้ ranking ไม่โต",
     thumbnail: getBlogThumbnail("website-speed-seo-phuket"),
@@ -99,7 +90,6 @@ export const blogPostsMeta: BlogPostMeta[] = [
     slug: "local-seo-patong-phuket",
     title: "Local SEO ป่าตอง 2026 — แข่งในโซนที่คนเยอะที่สุด",
     category: "Local SEO",
-    dateISO: "2026-06-09",
     description:
       "Local SEO ป่าตอง ทำอย่างไรให้ธุรกิจโผล่ Google Maps ในโซนที่แข่งสูง — ปัญหาและทิศทางแก้สำหรับธุรกิจในป่าตอง",
     thumbnail: getBlogThumbnail("local-seo-patong-phuket"),
@@ -108,7 +98,6 @@ export const blogPostsMeta: BlogPostMeta[] = [
     slug: "seo-tours-phuket",
     title: "SEO ทัวร์ภูเก็ต 2026 — เมื่อลูกค้าจองผ่าน OTA แทนเว็บคุณ",
     category: "Industry Guide",
-    dateISO: "2026-06-08",
     description:
       "SEO ทัวร์ภูเก็ต ทำอย่างไรเมื่อ booking มาจาก Klook/Viator แทน Google — ปัญหาการมองเห็นและ direct booking สำหรับ tour operator ในภูเก็ต",
     thumbnail: getBlogThumbnail("seo-tours-phuket"),
@@ -117,7 +106,6 @@ export const blogPostsMeta: BlogPostMeta[] = [
     slug: "seo-real-estate-phuket",
     title: "SEO อสังหาริมทรัพย์ภูเก็ต 2026 — เมื่อ Lead มาจาก Portal แทน Google",
     category: "Industry Guide",
-    dateISO: "2026-06-07",
     description:
       "SEO อสังหาริมทรัพย์ภูเก็ต ทำอย่างไรเมื่อ lead มาจาก portal แทน Google — ปัญหาการมองเห็นและ trust สำหรับ agent ในภูเก็ต",
     thumbnail: getBlogThumbnail("seo-real-estate-phuket"),
@@ -126,7 +114,6 @@ export const blogPostsMeta: BlogPostMeta[] = [
     slug: "google-reviews-phuket",
     title: "Google Reviews ภูเก็ต 2026 — เมื่อรีวิวน้อย ลูกค้าเลือกคู่แข่งแทน",
     category: "Local SEO",
-    dateISO: "2026-06-06",
     description:
       "Google Reviews ภูเก็ต ทำอย่างไรเมื่อรีวิวน้อยหรือไม่มีคนตอบ — ปัญหา trust บน Maps และทิศทางแก้สำหรับธุรกิจในภูเก็ต",
     thumbnail: getBlogThumbnail("google-reviews-phuket"),
@@ -135,7 +122,6 @@ export const blogPostsMeta: BlogPostMeta[] = [
     slug: "direct-booking-hotel-phuket",
     title: "Direct Booking โรงแรมภูเก็ต 2026 — เมื่อ OTA กิน margin แล้วจองตรงเป็นอย่างไร",
     category: "Industry Guide",
-    dateISO: "2026-06-05",
     description:
       "Direct Booking โรงแรมภูเก็ต ทำอย่างไรเมื่อ OTA กิน commission — ปัญหาช่องทางจองตรงที่พัง และทิศทางแก้สำหรับโรงแรมในภูเก็ต",
     thumbnail: getBlogThumbnail("direct-booking-hotel-phuket"),
@@ -144,7 +130,6 @@ export const blogPostsMeta: BlogPostMeta[] = [
     slug: "seo-clinic-phuket",
     title: "SEO คลินิกภูเก็ต 2026 — เพิ่มการมองเห็นให้ลูกค้ารู้จักธุรกิจคุณมากขึ้น",
     category: "Industry Guide",
-    dateISO: "2026-06-04",
     description:
       "SEO คลินิกภูเก็ต ทำอย่างไรให้โผล่ Google Maps และ Search สร้างการมองเห็นและความน่าเชื่อถือสำหรับคลินิกในภูเก็ต",
     thumbnail: getBlogThumbnail("seo-clinic-phuket"),
@@ -153,7 +138,6 @@ export const blogPostsMeta: BlogPostMeta[] = [
     slug: "google-ads-vs-seo-phuket",
     title: "Google Ads vs SEO ภูเก็ต 2026 — ธุรกิจไหนควรเริ่มอะไรก่อน?",
     category: "SEO ภูเก็ต",
-    dateISO: "2026-06-03",
     description:
       "Google Ads vs SEO ภูเก็ต เปรียบเทียบต้นทุน เวลา และแนวทางเริ่มต้นสำหรับโรงแรม ร้านอาหาร สปา และ SME",
     thumbnail: getBlogThumbnail("google-ads-vs-seo-phuket"),
@@ -162,7 +146,6 @@ export const blogPostsMeta: BlogPostMeta[] = [
     slug: "rab-tam-web-phuket",
     title: "รับทำเว็บไซต์ภูเก็ต — เว็บ Next.js เร็ว ติด Google พร้อม SEO",
     category: "เว็บ Next.js",
-    dateISO: "2026-06-02",
     description: "รับทำเว็บไซต์ภูเก็ต Next.js mobile-first พร้อม SEO AEO ราคา setup ฿29,900 ขึ้นไป",
     thumbnail: getBlogThumbnail("rab-tam-web-phuket"),
   },
@@ -170,7 +153,6 @@ export const blogPostsMeta: BlogPostMeta[] = [
     slug: "geo-kue-arai",
     title: "GEO คืออะไร? Generative Engine Optimization สำหรับธุรกิจภูเก็ต",
     category: "AEO & GEO",
-    dateISO: "2026-06-01",
     description: "GEO คืออะไร ทำอย่างไรให้ ChatGPT Perplexity อ้างอิงธุรกิจในภูเก็ต",
     thumbnail: getBlogThumbnail("geo-kue-arai"),
   },
@@ -178,7 +160,6 @@ export const blogPostsMeta: BlogPostMeta[] = [
     slug: "aeo-kue-arai",
     title: "AEO คืออะไร? Answer Engine Optimization สำหรับธุรกิจในภูเก็ต",
     category: "AEO & GEO",
-    dateISO: "2026-05-31",
     description: "AEO คืออะไร ต่างจาก SEO อย่างไร GEO llms.txt และวิธีเตรียมธุรกิจภูเก็ตให้ AI อ้างอิง",
     thumbnail: getBlogThumbnail("aeo-kue-arai"),
   },
@@ -186,7 +167,6 @@ export const blogPostsMeta: BlogPostMeta[] = [
     slug: "ai-overview-kue-arai",
     title: "AI Overview คืออะไร? ผลกระทบต่อ SEO ภูเก็ตและวิธีปรับตัว",
     category: "AEO & GEO",
-    dateISO: "2026-05-30",
     description: "Google AI Overview คืออะไร กระทบ SEO ภูเก็ตอย่างไร ธุรกิจท้องถิ่นควรทำอะไร",
     thumbnail: getBlogThumbnail("ai-overview-kue-arai"),
   },
@@ -194,7 +174,6 @@ export const blogPostsMeta: BlogPostMeta[] = [
     slug: "seo-phuket-kue-arai",
     title: "SEO ภูเก็ต คืออะไร? คู่มือฉบับสมบูรณ์สำหรับธุรกิจในภูเก็ต",
     category: "SEO ภูเก็ต",
-    dateISO: "2026-05-29",
     description: "SEO ภูเก็ต คืออะไร ทำไมธุรกิจในภูเก็ตต้องทำ และควรเริ่มจากอะไร",
     thumbnail: getBlogThumbnail("seo-phuket-kue-arai"),
   },
@@ -202,7 +181,6 @@ export const blogPostsMeta: BlogPostMeta[] = [
     slug: "local-seo-phuket-kue-arai",
     title: "Local SEO ภูเก็ต คืออะไร? วิธีให้ธุรกิจติด Google Maps",
     category: "Local SEO",
-    dateISO: "2026-05-28",
     description: "Local SEO ภูเก็ต ทำอย่างไรให้ธุรกิจโผล่ Google Maps ในโซนจริง",
     thumbnail: getBlogThumbnail("local-seo-phuket-kue-arai"),
   },
@@ -210,7 +188,6 @@ export const blogPostsMeta: BlogPostMeta[] = [
     slug: "raaka-seo-phuket",
     title: "ราคา SEO ภูเก็ต 2026 — ควรจ่ายเท่าไหร่ถึงคุ้มค่า?",
     category: "SEO ภูเก็ต",
-    dateISO: "2026-05-27",
     description: "ราคา SEO ภูเก็ต 2026 แพ็ก Lite ฿5,900 Pro ฿8,900 Pro Max ฿15,000",
     thumbnail: getBlogThumbnail("raaka-seo-phuket"),
   },
@@ -218,7 +195,6 @@ export const blogPostsMeta: BlogPostMeta[] = [
     slug: "seo-for-phuket-spas",
     title: "SEO สปาภูเก็ต: ดึง Direct Booking ไม่พึ่ง OTA",
     category: "Industry Guide",
-    dateISO: "2026-05-25",
     description:
       "SEO สปาภูเก็ต ทำอย่างไรให้ Direct Booking โต ลด OTA ด้วย Local SEO และการมองเห็นบน Google",
     thumbnail: getBlogThumbnail("seo-for-phuket-spas"),
@@ -227,7 +203,6 @@ export const blogPostsMeta: BlogPostMeta[] = [
     slug: "gemini-hotel-competitor-analysis",
     title: "Competitive Audit โรงแรมภูเก็ต: วิเคราะห์คู่แข่ง + วางแผน SEO 90 วัน",
     category: "AEO & GEO",
-    dateISO: "2026-05-24",
     description:
       "Competitive Audit โรงแรมภูเก็ต วิเคราะห์คู่แข่งในโซนและวางแผน SEO ตามข้อมูลจริง",
     thumbnail: getBlogThumbnail("gemini-hotel-competitor-analysis"),
@@ -236,7 +211,6 @@ export const blogPostsMeta: BlogPostMeta[] = [
     slug: "seo-for-phuket-hotels",
     title: "SEO โรงแรมภูเก็ต: เพิ่ม Direct Booking ลด OTA",
     category: "Industry Guide",
-    dateISO: "2026-05-26",
     description:
       "SEO โรงแรมภูเก็ต ทำอย่างไรให้ Direct Booking โต ลด OTA ด้วยการมองเห็นบน Google",
     thumbnail: getBlogThumbnail("seo-for-phuket-hotels"),
@@ -245,7 +219,6 @@ export const blogPostsMeta: BlogPostMeta[] = [
     slug: "instagram-marketing-phuket-restaurants",
     title: "ร้านอาหารภูเก็ต: ทำ Google Maps ก่อน Instagram",
     category: "Industry Guide",
-    dateISO: "2026-05-23",
     description:
       "ร้านอาหารภูเก็ต ทำ Google Maps ก่อน Instagram — Social เป็นเทคนิคเสริม",
     thumbnail: getBlogThumbnail("instagram-marketing-phuket-restaurants"),
@@ -254,7 +227,6 @@ export const blogPostsMeta: BlogPostMeta[] = [
     slug: "web-design-phuket-real-estate",
     title: "เว็บอสังหาริมทรัพย์ภูเก็ต: Next.js + SEO ดึง Lead จริง",
     category: "เว็บ Next.js",
-    dateISO: "2026-05-22",
     description:
       "เว็บอสังหาริมทรัพย์ภูเก็ต ที่ดึง lead ได้จริง — mobile-first และ SEO structure",
     thumbnail: getBlogThumbnail("web-design-phuket-real-estate"),
@@ -263,7 +235,6 @@ export const blogPostsMeta: BlogPostMeta[] = [
     slug: "google-my-business-phuket",
     title: "Google Business Profile ภูเก็ต: Quick Win แรกของ Local SEO",
     category: "Local SEO",
-    dateISO: "2026-05-21",
     description:
       "Google Business Profile ภูเก็ต ทำอย่างไรให้ธุรกิจโผล่ Maps",
     thumbnail: getBlogThumbnail("google-my-business-phuket"),
@@ -272,7 +243,6 @@ export const blogPostsMeta: BlogPostMeta[] = [
     slug: "tiktok-marketing-phuket-services",
     title: "ธุรกิจบริการภูเก็ต: ทำ Google Maps ก่อน TikTok",
     category: "Industry Guide",
-    dateISO: "2026-05-20",
     description:
       "ธุรกิจบริการภูเก็ต ทำ Google Maps ก่อน TikTok — Social เป็นเทคนิคเสริม",
     thumbnail: getBlogThumbnail("tiktok-marketing-phuket-services"),
@@ -281,7 +251,6 @@ export const blogPostsMeta: BlogPostMeta[] = [
     slug: "content-marketing-phuket-foreigners",
     title: "SEO Content EN ภูเก็ต: ดึงลูกค้าต่างชาติจาก Google",
     category: "SEO ภูเก็ต",
-    dateISO: "2026-05-19",
     description:
       "Content EN สำหรับธุรกิจภูเก็ต ดึงลูกค้าต่างชาติจาก Google organic",
     thumbnail: getBlogThumbnail("content-marketing-phuket-foreigners"),

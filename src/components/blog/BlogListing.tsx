@@ -6,14 +6,6 @@ import { useMemo, useState } from "react";
 import { ChevronRight, Home, Search } from "lucide-react";
 import { blogCategories, blogPostsMeta } from "@/lib/blog-posts-meta";
 
-function formatDate(iso: string) {
-  return new Date(iso).toLocaleDateString("th-TH", {
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-  });
-}
-
 export function BlogListing() {
   const [category, setCategory] = useState<string>("ทั้งหมด");
   const [query, setQuery] = useState("");
@@ -103,7 +95,7 @@ export function BlogListing() {
                 </div>
                 <div className="p-5 flex flex-col flex-grow">
                   <p className="text-xs font-medium uppercase tracking-wider text-neutral-500 mb-2">
-                    {post.category} · {formatDate(post.dateISO)}
+                    {post.category}
                   </p>
                   <h2 className="text-lg font-semibold tracking-tight text-neutral-900 mb-2 group-hover:underline decoration-neutral-300 underline-offset-4">
                     {post.title}

@@ -17,8 +17,6 @@ export type VercelBlogPost = {
   title: string;
   description: string;
   category: string;
-  date: string;
-  dateISO: string;
   readingTime: string;
   relatedServices: { name: string; href: string }[];
   faqs?: { q: string; a: string }[];
@@ -59,11 +57,7 @@ export function BlogVercelLayout({ post, thumbnail, headings, contentForRender, 
 
           <BlogAuthorBox name={author.name} role={author.role} />
 
-          <BlogArticleMeta
-            readingTime={post.readingTime}
-            date={post.date}
-            dateISO={post.dateISO}
-          />
+          <BlogArticleMeta readingTime={post.readingTime} />
         </div>
       </header>
 

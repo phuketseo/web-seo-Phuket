@@ -71,7 +71,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${baseUrl}/blog/${post.slug}`,
     priority: post.slug.includes("kue-arai") ? 0.95 : 0.9,
     changeFrequency: "monthly",
-    lastModified: new Date(post.dateISO),
+    lastModified: now,
   }));
 
   return [
