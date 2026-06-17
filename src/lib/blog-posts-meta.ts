@@ -289,3 +289,7 @@ export const blogPostsMeta: BlogPostMeta[] = [
 ];
 
 export const blogPostSlugs = blogPostsMeta.map((post) => post.slug);
+
+export function getBlogPostMetaBySlug(slug: string): BlogPostMeta | undefined {
+  return blogPostsMeta.find((post) => post.slug === slug);
+}

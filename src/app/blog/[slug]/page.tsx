@@ -8,6 +8,7 @@ import { getBlogThumbnail } from "@/lib/images";
 import { pillarBlogPosts } from "@/lib/blog-posts-pillar";
 import { blogPostsBatch2125 } from "@/lib/blog-posts-batch-21-25";
 import { blogPostsBatch2630 } from "@/lib/blog-posts-batch-26-30";
+import { getRelatedBlogPosts } from "@/lib/blog-related-posts";
 
 const defaultAuthor = { name: "ทีม PhuketSEO", role: "SEO Consultant · ภูเก็ต" };
 
@@ -1280,6 +1281,7 @@ export default async function BlogPostPage({
         thumbnail={thumbnail}
         headings={headings}
         contentForRender={contentForRender}
+        relatedPosts={getRelatedBlogPosts(slug)}
       />
     </>
   );

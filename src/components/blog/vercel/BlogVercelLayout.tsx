@@ -11,6 +11,7 @@ import { BlogTableOfContents } from "@/components/blog/BlogTableOfContents";
 import type { BlogHeading } from "@/lib/blog-content-utils";
 import { renderBlogContent } from "@/lib/render-blog-content";
 import type { SiteImage } from "@/lib/images";
+import type { RelatedBlogPost } from "@/lib/blog-related-posts";
 
 export type VercelBlogPost = {
   title: string;
@@ -31,10 +32,12 @@ type Props = {
   thumbnail: SiteImage;
   headings: BlogHeading[];
   contentForRender: string;
+  relatedPosts?: RelatedBlogPost[];
 };
 
-export function BlogVercelLayout({ post, thumbnail, headings, contentForRender }: Props) {
+export function BlogVercelLayout({ post, thumbnail, headings, contentForRender, relatedPosts = [] }: Props) {
   const author = post.author ?? { name: "ทีม PhuketSEO", role: "SEO Consultant · ภูเก็ต" };
+  const serviceLinks = post.relatedServices.filter((link) => !link.href.startsWith("/blog/"));
 
   return (
     <BlogGridBackground>
@@ -90,12 +93,38 @@ export function BlogVercelLayout({ post, thumbnail, headings, contentForRender }
 
             {post.faqs && <BlogFaqSection faqs={post.faqs} theme="vercel" />}
 
+            {relatedPosts.length > 0 && (
+              <section className="mt-14 pt-10 border-t border-neutral-200/80">
+                <h3 className="text-sm font-medium uppercase tracking-[0.1em] text-neutral-500 mb-4">
+                  บทความที่เกี่ยวข้อง
+                </h3>
+                <ul className="space-y-4">
+                  {relatedPosts.map((related) => (
+                    <li key={related.slug}>
+                      <Link
+                        href={related.href}
+                        className="group block rounded-lg border border-neutral-200/80 bg-white px-4 py-3 hover:border-neutral-300 transition-colors"
+                      >
+                        <span className="text-[11px] font-medium uppercase tracking-[0.08em] text-neutral-400">
+                          {related.category}
+                        </span>
+                        <span className="mt-1 block text-[15px] text-neutral-900 group-hover:underline decoration-neutral-300 underline-offset-4">
+                          {related.title}
+                        </span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
+
+            {serviceLinks.length > 0 && (
             <section className="mt-14 pt-10 border-t border-neutral-200/80">
               <h3 className="text-sm font-medium uppercase tracking-[0.1em] text-neutral-500 mb-4">
                 บริการที่เกี่ยวข้อง
               </h3>
               <ul className="space-y-3">
-                {post.relatedServices.map((s) => (
+                {serviceLinks.map((s) => (
                   <li key={s.href}>
                     <Link
                       href={s.href}
@@ -107,6 +136,7 @@ export function BlogVercelLayout({ post, thumbnail, headings, contentForRender }
                 ))}
               </ul>
             </section>
+            )}
 
             <div className="mt-10 pt-6 border-t border-neutral-200/80">
               <Link
