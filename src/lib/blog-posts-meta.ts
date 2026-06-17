@@ -24,6 +24,96 @@ export const blogCategories = [
 
 export const blogPostsMeta: BlogPostMeta[] = [
   {
+    slug: "seo-sme-phuket",
+    title: "SEO SME ภูเก็ต 2026 — ธุรกิจเล็กที่ยังไม่มีตัวตนบน Google",
+    category: "SEO ภูเก็ต",
+    dateISO: "2026-07-01",
+    description:
+      "SEO SME ภูเก็ต ทำอย่างไรเมื่อธุรกิจเล็กยังไม่มีตัวตนบน Google — ปัญหาการมองเห็นและทิศทางเริ่มต้นสำหรับ SME ในภูเก็ต",
+    thumbnail: getBlogThumbnail("seo-sme-phuket"),
+  },
+  {
+    slug: "seo-restaurants-phuket",
+    title: "SEO ร้านอาหารภูเก็ต 2026 — walk-in หายเพราะลูกค้าไม่เจอบน Google",
+    category: "Industry Guide",
+    dateISO: "2026-06-30",
+    description:
+      "SEO ร้านอาหารภูเก็ต ทำอย่างไรเมื่อ walk-in ลดลง — ปัญหาการมองเห็นบน Maps และทิศทางแก้สำหรับร้านอาหารในภูเก็ต",
+    thumbnail: getBlogThumbnail("seo-restaurants-phuket"),
+  },
+  {
+    slug: "nap-local-seo-phuket",
+    title: "NAP ไม่ตรง ฆ่า Local SEO ภูเก็ต — เมื่อ Google ไม่เชื่อข้อมูลร้านคุณ",
+    category: "Local SEO",
+    dateISO: "2026-06-29",
+    description:
+      "NAP Local SEO ภูเก็ต ทำอย่างไรเมื่อชื่อ ที่อยู่ เบอร์โทรไม่ตรงกัน — ปัญหา listing ซ้ำและทิศทางแก้สำหรับธุรกิจ local",
+    thumbnail: getBlogThumbnail("nap-local-seo-phuket"),
+  },
+  {
+    slug: "local-seo-phuket-town",
+    title: "Local SEO ตัวเมืองภูเก็ต 2026 — ลูกค้าไทยที่ค้นหาในเมือง",
+    category: "Local SEO",
+    dateISO: "2026-06-28",
+    description:
+      "Local SEO ตัวเมืองภูเก็ต ทำอย่างไรให้ธุรกิจโผล่ Google Maps สำหรับลูกค้าไทยในโซนตัวเมือง — ปัญหาและทิศทางแก้",
+    thumbnail: getBlogThumbnail("local-seo-phuket-town"),
+  },
+  {
+    slug: "local-seo-kata-phuket",
+    title: "Local SEO กะตะ 2026 — โซนครอบครัวที่แข่งต่างจากป่าตอง",
+    category: "Local SEO",
+    dateISO: "2026-06-27",
+    description:
+      "Local SEO กะตะ ทำอย่างไรให้ธุรกิจโผล่ Google Maps ในโซนกะตะ/กะรน — ปัญหาและทิศทางแก้เมื่อแข่งกับป่าตองไม่ได้",
+    thumbnail: getBlogThumbnail("local-seo-kata-phuket"),
+  },
+  {
+    slug: "low-season-seo-phuket",
+    title: "Low Season SEO ภูเก็ต — เมื่อ high season ผ่านไป แล้ว booking หาย",
+    category: "SEO ภูเก็ต",
+    dateISO: "2026-06-26",
+    description:
+      "Low Season SEO ภูเก็ต ทำอย่างไรเมื่อ booking หายหลัง high season — ปัญหาการมองเห็นและทิศทางสำหรับธุรกิจท่องเที่ยว",
+    thumbnail: getBlogThumbnail("low-season-seo-phuket"),
+  },
+  {
+    slug: "near-me-seo-phuket",
+    title: "Near Me SEO ภูเก็ต — ลูกค้าค้นหาใกล้ฉัน แต่ธุรกิจไม่โผล่",
+    category: "Local SEO",
+    dateISO: "2026-06-25",
+    description:
+      "Near Me SEO ภูเก็ต ทำอย่างไรเมื่อลูกค้าค้นหา near me แต่ธุรกิจไม่โผล่ Maps — ปัญหาและทิศทางแก้สำหรับ local business",
+    thumbnail: getBlogThumbnail("near-me-seo-phuket"),
+  },
+  {
+    slug: "website-speed-seo-phuket",
+    title: "เว็บช้าฆ่า SEO ภูเก็ต — เมื่อ Google มองไม่เห็นเพราะ Core Web Vitals",
+    category: "เว็บ Next.js",
+    dateISO: "2026-06-24",
+    description:
+      "เว็บช้าส่งผล SEO ภูเก็ตอย่างไร — ปัญหา Core Web Vitals และทิศทางแก้เมื่อเว็บ WordPress หรือเว็บเก่าทำให้ ranking ไม่โต",
+    thumbnail: getBlogThumbnail("website-speed-seo-phuket"),
+  },
+  {
+    slug: "local-seo-patong-phuket",
+    title: "Local SEO ป่าตอง 2026 — แข่งในโซนที่คนเยอะที่สุด",
+    category: "Local SEO",
+    dateISO: "2026-06-23",
+    description:
+      "Local SEO ป่าตอง ทำอย่างไรให้ธุรกิจโผล่ Google Maps ในโซนที่แข่งสูง — ปัญหาและทิศทางแก้สำหรับธุรกิจในป่าตอง",
+    thumbnail: getBlogThumbnail("local-seo-patong-phuket"),
+  },
+  {
+    slug: "seo-tours-phuket",
+    title: "SEO ทัวร์ภูเก็ต 2026 — เมื่อลูกค้าจองผ่าน OTA แทนเว็บคุณ",
+    category: "Industry Guide",
+    dateISO: "2026-06-22",
+    description:
+      "SEO ทัวร์ภูเก็ต ทำอย่างไรเมื่อ booking มาจาก Klook/Viator แทน Google — ปัญหาการมองเห็นและ direct booking สำหรับ tour operator ในภูเก็ต",
+    thumbnail: getBlogThumbnail("seo-tours-phuket"),
+  },
+  {
     slug: "seo-real-estate-phuket",
     title: "SEO อสังหาริมทรัพย์ภูเก็ต 2026 — เมื่อ Lead มาจาก Portal แทน Google",
     category: "Industry Guide",

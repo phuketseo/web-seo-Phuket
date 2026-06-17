@@ -437,6 +437,16 @@ export const blogThumbnailBySlug: Record<string, SiteImage> = {
   "direct-booking-hotel-phuket": siteImages.blog.seoHotelNew,
   "google-reviews-phuket": siteImages.blog.gmbPhuket,
   "seo-real-estate-phuket": siteImages.caseStudies.realestate,
+  "seo-tours-phuket": siteImages.blog.contentForeigners,
+  "local-seo-patong-phuket": siteImages.blog.localSeoPillar,
+  "website-speed-seo-phuket": siteImages.blog.rabTamWebPillar,
+  "near-me-seo-phuket": siteImages.blog.gmbPhuket,
+  "low-season-seo-phuket": siteImages.blog.seoPhuketPillar,
+  "local-seo-kata-phuket": siteImages.blog.seoSpa,
+  "local-seo-phuket-town": siteImages.blog.localSeoPillar,
+  "nap-local-seo-phuket": siteImages.blog.gmbPhuket,
+  "seo-restaurants-phuket": siteImages.blog.instagramRestaurant,
+  "seo-sme-phuket": siteImages.blog.seoPhuketStack,
 };
 
 export function getBlogThumbnail(slug: string): SiteImage {
