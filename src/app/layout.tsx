@@ -1,18 +1,28 @@
 import type { Metadata } from "next";
 import { Kanit } from "next/font/google";
-import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import DeferredLineChat from "@/components/DeferredLineChat";
+import DeferredGoogleAnalytics from "@/components/DeferredGoogleAnalytics";
 import { defaultOgImage, siteConfig } from "@/lib/utils";
 
-const kanit = Kanit({
+const kanitBold = Kanit({
   subsets: ["latin", "thai"],
-  weight: ["400", "700"],
-  variable: "--font-kanit",
+  weight: "700",
+  variable: "--font-kanit-bold",
   display: "swap",
   preload: true,
+  adjustFontFallback: true,
+  fallback: ["Tahoma", "Arial", "sans-serif"],
+});
+
+const kanitRegular = Kanit({
+  subsets: ["latin", "thai"],
+  weight: "400",
+  variable: "--font-kanit",
+  display: "swap",
+  preload: false,
   adjustFontFallback: true,
   fallback: ["Tahoma", "Arial", "sans-serif"],
 });
@@ -62,17 +72,17 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const gaId = process.env.NEXT_PUBLIC_GA_ID;
+
   return (
-    <html lang="th" className={kanit.variable}>
+    <html lang="th" className={`${kanitBold.variable} ${kanitRegular.variable}`}>
       <body className="antialiased">
         <Navbar />
         <main>{children}</main>
         <Footer />
         <DeferredLineChat />
       </body>
-      {process.env.NEXT_PUBLIC_GA_ID && (
-        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
-      )}
+      {gaId && <DeferredGoogleAnalytics gaId={gaId} />}
     </html>
   );
 }

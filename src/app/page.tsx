@@ -215,7 +215,7 @@ export default function HomePage() {
               <Zap size={13} />
               Phuket Visibility Stack™
             </div>
-            <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold text-slate-900 font-serif leading-[1.1] mb-6">
+            <h1 className="hero-lcp text-5xl lg:text-6xl xl:text-7xl font-bold text-slate-900 leading-[1.1] mb-6">
               รับทำ SEO +
               <br />
               <span className="text-gradient">เว็บไซต์ภูเก็ต</span>

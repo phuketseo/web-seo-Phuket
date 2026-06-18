@@ -25,7 +25,7 @@
   }
 
   h1, h2, h3, h4 {
-    font-family: var(--font-kanit), "Kanit", Tahoma, sans-serif;
+    font-family: var(--font-kanit-bold), "Kanit", Tahoma, sans-serif;
     font-weight: 700;
     line-height: 1.05;
     letter-spacing: -0.02em;
@@ -34,9 +34,17 @@
 
 @layer base {
   .font-serif {
-    font-family: var(--font-kanit), "Kanit", Tahoma, sans-serif !important;
+    font-family: var(--font-kanit-bold), "Kanit", Tahoma, sans-serif !important;
     font-weight: 700;
     letter-spacing: -0.02em;
+  }
+
+  /* LCP hero: system font only — paints before Kanit woff2 loads */
+  .hero-lcp {
+    font-family: Tahoma, "Segoe UI", sans-serif !important;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
   }
 }
 
