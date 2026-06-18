@@ -138,6 +138,7 @@ export default function ContactPage() {
                     id="name"
                     name="name"
                     required
+                    autoComplete="name"
                     className="block w-full px-4 py-2.5 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-green-400 focus:border-green-400 text-sm"
                     placeholder="ชื่อของคุณ"
                   />
@@ -152,6 +153,7 @@ export default function ContactPage() {
                       id="email"
                       name="email"
                       required
+                      autoComplete="email"
                       className="block w-full px-4 py-2.5 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-green-400 focus:border-green-400 text-sm"
                       placeholder="you@example.com"
                     />
@@ -165,6 +167,7 @@ export default function ContactPage() {
                       id="phone"
                       name="phone"
                       required
+                      autoComplete="tel"
                       className="block w-full px-4 py-2.5 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-green-400 focus:border-green-400 text-sm"
                       placeholder="08XXXXXXXX"
                     />
@@ -178,6 +181,7 @@ export default function ContactPage() {
                     type="text"
                     id="business"
                     name="business"
+                    autoComplete="organization"
                     className="block w-full px-4 py-2.5 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-green-400 focus:border-green-400 text-sm"
                     placeholder="ชื่อธุรกิจหรือองค์กร"
                   />

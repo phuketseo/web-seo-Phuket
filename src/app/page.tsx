@@ -3,7 +3,11 @@ import dynamic from "next/dynamic";
 import { siteConfig } from "@/lib/utils";
 import HomeHero from "@/components/HomeHero";
 
-const HomeBelowFold = dynamic(() => import("@/components/HomeBelowFold"));
+const HomeBelowFold = dynamic(() => import("@/components/HomeBelowFold"), {
+  loading: () => (
+    <div className="below-fold min-h-[2400px] bg-white" aria-hidden />
+  ),
+});
 
 export const metadata: Metadata = {
   title: "PhuketSEO | รับทำ SEO + เว็บไซต์ภูเก็ต ติด Google พร้อม AI Search",

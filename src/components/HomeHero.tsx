@@ -1,13 +1,13 @@
 const CRITICAL_HERO_CSS = `
-.hero-section{min-height:100svh;display:flex;align-items:center;background:#fff;position:relative;overflow:hidden}
+.hero-section{min-height:100svh;display:flex;align-items:center;position:relative;overflow:hidden;background:radial-gradient(ellipse 80% 60% at 60% -10%,#e0e7ff 0%,transparent 60%),radial-gradient(ellipse 60% 50% at -10% 80%,#fce7f3 0%,transparent 60%),#fff}
 .hero-inner{max-width:80rem;margin:0 auto;padding:9rem 1rem 3rem;width:100%;position:relative;z-index:1}
-.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:#eef2ff;border:1px solid #c7d2fe;color:#4f46e5;font-size:.875rem;font-weight:500;padding:.5rem 1rem;border-radius:9999px;margin-bottom:2rem}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:#eef2ff;border:1px solid #c7d2fe;color:#4f46e5;font-family:Tahoma,"Segoe UI",sans-serif;font-size:.875rem;font-weight:500;padding:.5rem 1rem;border-radius:9999px;margin-bottom:2rem}
 .hero-lcp{font-family:Tahoma,"Segoe UI",sans-serif;font-weight:700;color:#0f172a;font-size:3rem;line-height:1.1;margin:0 0 1.5rem}
 .hero-accent{color:#6366f1}
-.hero-lead{color:#64748b;font-size:1.125rem;line-height:1.625;margin:0 0 2.5rem;max-width:32rem}
+.hero-lead{font-family:Tahoma,"Segoe UI",sans-serif;color:#64748b;font-size:1.125rem;line-height:1.625;margin:0 0 2.5rem;max-width:32rem}
 .hero-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-bottom:2.5rem}
-.hero-btn-primary{display:inline-flex;align-items:center;gap:.5rem;background:#4f46e5;color:#fff;font-weight:600;padding:1rem 2rem;border-radius:9999px;text-decoration:none;font-size:1rem}
-.hero-btn-ghost{display:inline-flex;align-items:center;gap:.5rem;border:1px solid #e2e8f0;color:#334155;font-weight:500;padding:1rem 2rem;border-radius:9999px;text-decoration:none;font-size:1rem}
+.hero-btn-primary{display:inline-flex;align-items:center;gap:.5rem;background:#4f46e5;color:#fff;font-family:Tahoma,"Segoe UI",sans-serif;font-weight:600;padding:1rem 2rem;border-radius:9999px;text-decoration:none;font-size:1rem}
+.hero-btn-ghost{display:inline-flex;align-items:center;gap:.5rem;border:1px solid #e2e8f0;color:#334155;font-family:Tahoma,"Segoe UI",sans-serif;font-weight:500;padding:1rem 2rem;border-radius:9999px;text-decoration:none;font-size:1rem}
 @media(min-width:1024px){.hero-lcp{font-size:4.5rem}.hero-inner{padding-top:9rem}}
 `;
 

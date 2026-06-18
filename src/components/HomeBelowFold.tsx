@@ -199,7 +199,9 @@ export default function HomeBelowFold() {
                     alt={s.iconImage.alt}
                     width={48}
                     height={48}
-                    className="object-contain"
+                    sizes="48px"
+                    className="object-contain w-12 h-12"
+                    style={{ width: "auto", height: "auto" }}
                   />
                 </div>
                 <h3 className="font-bold text-blue-950 text-lg mb-2 font-serif">{s.title}</h3>

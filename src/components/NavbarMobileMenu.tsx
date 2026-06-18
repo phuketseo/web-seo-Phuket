@@ -2,9 +2,24 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
 import { siteConfig } from "@/lib/utils";
 import { localSeo, navLinks, primaryServices } from "@/components/nav-data";
+
+function MenuIcon() {
+  return (
+    <svg aria-hidden width={22} height={22} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round">
+      <path d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
+  );
+}
+
+function CloseIcon() {
+  return (
+    <svg aria-hidden width={22} height={22} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round">
+      <path d="M18 6L6 18M6 6l12 12" />
+    </svg>
+  );
+}
 
 export default function NavbarMobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,7 +32,7 @@ export default function NavbarMobileMenu() {
         aria-label="Toggle menu"
         aria-expanded={isOpen}
       >
-        {isOpen ? <X size={22} /> : <Menu size={22} />}
+        {isOpen ? <CloseIcon /> : <MenuIcon />}
       </button>
 
       {isOpen && (

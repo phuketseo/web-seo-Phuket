@@ -25,7 +25,12 @@ export default function LineChat() {
                 <p className="text-xs text-green-500">● ออนไลน์</p>
               </div>
             </div>
-            <button onClick={() => setIsOpen(false)} className="text-gray-400 hover:text-gray-600 transition-colors">
+            <button
+              type="button"
+              onClick={() => setIsOpen(false)}
+              aria-label="ปิดแชท LINE"
+              className="text-gray-400 hover:text-gray-600 transition-colors"
+            >
               <X size={16} />
             </button>
           </div>
@@ -48,9 +53,11 @@ export default function LineChat() {
       )}
 
       <button
+        type="button"
         onClick={() => setIsOpen(!isOpen)}
         className="w-14 h-14 bg-[#06C755] hover:bg-[#05a847] text-white rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 flex items-center justify-center"
-        aria-label="Chat via LINE"
+        aria-label={isOpen ? "ปิดแชท LINE" : "เปิดแชท LINE"}
+        aria-expanded={isOpen}
       >
         {isOpen ? <X size={22} /> : <MessageCircle size={24} />}
       </button>

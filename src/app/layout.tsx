@@ -67,6 +67,13 @@ export const metadata: Metadata = {
   },
 };
 
+const CRITICAL_SHELL_CSS = `
+[data-site-header]{position:fixed;top:0;left:0;right:0;z-index:50;background:#fff;box-shadow:0 1px 2px rgba(15,23,42,.06);border-bottom:1px solid #f1f5f9;padding:.625rem 0}
+[data-site-header] .min-h-\\[44px\\]{min-height:44px}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Tahoma,"Segoe UI",sans-serif;color:#0f172a;background:#fff;-webkit-font-smoothing:antialiased}
+`;
+
 export default function RootLayout({
   children,
 }: {
@@ -76,6 +83,10 @@ export default function RootLayout({
 
   return (
     <html lang="th" className={`${kanitBold.variable} ${kanitRegular.variable}`}>
+      <head>
+        <style dangerouslySetInnerHTML={{ __html: CRITICAL_SHELL_CSS }} />
+        <link rel="llms-txt" href="/llms.txt" type="text/plain" />
+      </head>
       <body className="antialiased">
         <Navbar />
         <main>{children}</main>
