@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { Phone, Mail, MapPin, Clock, MessageSquare, Search } from "lucide-react";
-import { siteConfig } from "@/lib/utils";
+import { Phone, Mail, MapPin, Clock, MessageSquare, Search, ExternalLink } from "lucide-react";
+import { lineContactUrl, siteConfig, businessHours } from "@/lib/utils";
 
 export function ContactChannels({ showAuditLink = true }: { showAuditLink?: boolean }) {
   return (
@@ -31,14 +31,15 @@ export function ContactChannels({ showAuditLink = true }: { showAuditLink?: bool
             icon: MessageSquare,
             title: "LINE",
             value: siteConfig.line,
-            href: `https://line.me/ti/p/${siteConfig.line}`,
+            href: lineContactUrl(),
+            external: true,
           },
-        ].map(({ icon: Icon, title, value, href }) => (
+        ].map(({ icon: Icon, title, value, href, external }) => (
           <a
             key={title}
             href={href}
-            target={title === "LINE" ? "_blank" : undefined}
-            rel={title === "LINE" ? "noopener noreferrer" : undefined}
+            target={external ? "_blank" : undefined}
+            rel={external ? "noopener noreferrer" : undefined}
             className="flex items-center gap-3 p-4 bg-gray-50 rounded-xl border border-gray-100 hover:border-green-200 hover:bg-green-50 transition-colors group"
           >
             <div className="w-9 h-9 bg-green-100 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-green-500 transition-colors">
@@ -52,15 +53,28 @@ export function ContactChannels({ showAuditLink = true }: { showAuditLink?: bool
         ))}
       </div>
 
-      <div className="flex items-start gap-3 p-4 bg-gray-50 border border-gray-100 rounded-xl text-sm text-gray-700">
-        <MapPin size={16} className="text-green-500 shrink-0 mt-0.5" />
-        <span>{siteConfig.address}</span>
+      <div className="p-4 bg-gray-50 border border-gray-100 rounded-xl text-sm text-gray-700 space-y-3">
+        <div className="flex items-start gap-3">
+          <MapPin size={16} className="text-green-500 shrink-0 mt-0.5" />
+          <div>
+            <p>{siteConfig.address}</p>
+            <a
+              href={siteConfig.googleReviewUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 mt-2 text-green-700 font-medium hover:underline"
+            >
+              เขียนรีวิวบน Google
+              <ExternalLink size={14} />
+            </a>
+          </div>
+        </div>
       </div>
 
       <div className="flex items-center gap-3 p-4 bg-green-50 border border-green-100 rounded-xl text-sm text-green-800">
         <Clock size={16} className="text-green-500 shrink-0" />
         <span>
-          <strong>เวลาทำการ:</strong> จันทร์–ศุกร์ 09:00–18:00 | เสาร์ 09:00–13:00
+          <strong>เวลาทำการ:</strong> {businessHours.label}
         </span>
       </div>
     </div>

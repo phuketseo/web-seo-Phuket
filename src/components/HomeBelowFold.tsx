@@ -1,9 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
-import { siteConfig } from "@/lib/utils";
+import { lineContactUrl, siteConfig, businessHours } from "@/lib/utils";
 import { pricingPackages, planContactHref } from "@/lib/pricing-packages";
 import { responseTimeCopy } from "@/lib/response-times";
-import { geoCoordinatesSchema, organizationSameAs, postalAddressSchema } from "@/lib/schema";
+import { organizationSameAs, postalAddressSchema } from "@/lib/schema";
 import { siteImages } from "@/lib/images";
 import { caseStudies } from "@/lib/case-studies-data";
 import {
@@ -22,8 +22,7 @@ const organizationSchema = {
   telephone: siteConfig.phoneInternational,
   email: siteConfig.email,
   address: postalAddressSchema,
-  geo: geoCoordinatesSchema,
-  openingHours: "Mo-Fr 09:00-18:00",
+  openingHours: businessHours.schemaOpeningHours,
   priceRange: "฿฿",
   sameAs: organizationSameAs,
 };
@@ -124,22 +123,16 @@ const whyUs = [
 
 const testimonials = [
   {
-    name: "ลูกค้า",
     role: "โรงแรม",
     text: "ทีมช่วยวางแผน Direct Booking และการมองเห็นบน Google ให้ชัดขึ้น ลดการพึ่ง OTA ลงได้ในระยะยาว",
-    rating: 5,
   },
   {
-    name: "ลูกค้า",
     role: "คลินิก",
     text: "จากที่แทบไม่มีตัวตนออนไลน์ ตอนนี้ลูกค้าเจอเราบน Google Maps มากขึ้น และมีคนติดต่อเข้ามาสม่ำเสมอ",
-    rating: 5,
   },
   {
-    name: "ลูกค้า",
     role: "ร้านอาหาร",
     text: "ลูกค้าใหม่เพิ่มขึ้น โดยเฉพาะนักท่องเที่ยวที่ค้นหาร้านอาหารใน Google Maps มีการดูแลและอธิบายผลให้เข้าใจ",
-    rating: 5,
   },
 ];
 
@@ -477,12 +470,12 @@ export default function HomeBelowFold() {
       <section className="py-20 bg-gray-50 below-fold">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <div className="text-indigo-500 font-semibold text-sm uppercase tracking-wider mb-2">รีวิวลูกค้า</div>
+            <div className="text-indigo-500 font-semibold text-sm uppercase tracking-wider mb-2">ประสบการณ์จากลูกค้า</div>
             <h2 className="text-4xl font-bold text-slate-900 font-serif mb-4">
               ลูกค้าพูดถึงเราอย่างไร
             </h2>
             <p className="text-slate-500 text-sm max-w-xl mx-auto">
-              ตัวอย่างจากลูกค้าจริง — ไม่ใช่รีวิวที่ยังไม่มีการยืนยันตัวตน
+              ตัวอย่างจากลูกค้าจริง — ไม่แสดงชื่อเพื่อความเป็นส่วนตัว · ไม่ใช่คะแนนรีวิวจาก Google
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
@@ -495,18 +488,32 @@ export default function HomeBelowFold() {
                     {t.role.charAt(0)}
                   </div>
                   <div>
-                    <div className="font-semibold text-blue-950 text-sm">{t.name}</div>
-                    <div className="text-gray-500 text-xs">{t.role}</div>
-                  </div>
-                  <div className="ml-auto flex gap-0.5">
-                    {Array.from({ length: t.rating }).map((_, i) => (
-                      <Star key={i} size={14} className="text-yellow-400 fill-yellow-400" />
-                    ))}
+                    <div className="font-semibold text-blue-950 text-sm">{t.role}</div>
+                    <div className="text-gray-500 text-xs">ประเภทธุรกิจ</div>
                   </div>
                 </div>
               </div>
             ))}
           </div>
+          <p className="text-center mt-8 text-sm text-slate-500">
+            <a
+              href={siteConfig.googleReviewUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-indigo-600 font-medium hover:underline"
+            >
+              เขียนรีวิวบน Google
+            </a>
+            {" · "}
+            <a
+              href={siteConfig.social.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-indigo-600 font-medium hover:underline"
+            >
+              Facebook
+            </a>
+          </p>
         </div>
       </section>
 
@@ -558,7 +565,7 @@ export default function HomeBelowFold() {
               <Phone size={17} /> ปรึกษาฟรี
             </Link>
             <a
-              href={`https://line.me/ti/p/${siteConfig.line}`}
+              href={lineContactUrl()}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-pill-ghost text-base px-9 py-4"

@@ -4,7 +4,7 @@
  * <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
  */
 
-import { siteConfig } from "@/lib/utils";
+import { siteConfig, businessHours } from "@/lib/utils";
 import { pricingPackages } from "@/lib/pricing-packages";
 
 export const postalAddressSchema = {
@@ -12,17 +12,7 @@ export const postalAddressSchema = {
   ...siteConfig.postalAddress,
 };
 
-export const geoCoordinatesSchema = {
-  "@type": "GeoCoordinates",
-  ...siteConfig.geo,
-};
-
-export const organizationSameAs = [
-  siteConfig.social.facebook,
-  siteConfig.social.instagram,
-  siteConfig.social.linkedin,
-  siteConfig.social.youtube,
-];
+export const organizationSameAs = [siteConfig.social.facebook];
 
 export const organizationJsonLd = {
   "@type": "Organization",
@@ -46,7 +36,6 @@ export const localBusinessJsonLd = {
   priceRange: "฿฿",
   description: siteConfig.description,
   address: postalAddressSchema,
-  geo: geoCoordinatesSchema,
   sameAs: organizationSameAs,
 };
 
@@ -70,20 +59,7 @@ export const localBusinessSchema = {
   priceRange: "฿฿฿",
   description:
     "Digital Marketing Agency ในภูเก็ต เชี่ยวชาญ SEO, Google Ads, Social Media และ Web Design สำหรับธุรกิจในภูเก็ต",
-  openingHoursSpecification: [
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      opens: "09:00",
-      closes: "18:00",
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: "Saturday",
-      opens: "09:00",
-      closes: "13:00",
-    },
-  ],
+  openingHoursSpecification: [businessHours.schemaSpecification],
 };
 
 export const faqSchema = (faqs: { question: string; answer: string }[]) => ({

@@ -14,7 +14,9 @@ export const siteConfig = {
   phone: "092-555-1369",
   phoneInternational: "+66-92-555-1369",
   email: "phuketseo369@gmail.com",
-  line: "@adscafe", // override via NEXT_PUBLIC_LINE_OA in .env.local
+  line: "@phuketseo",
+  /** Verified GBP — ลิงก์ขอรีวิว (ไม่มีปักหมุดบน Maps) */
+  googleReviewUrl: "https://g.page/r/CQ8yhsp4fL4jEAE/review",
   /** Dynamic OG image — used in schema until public/logo.png exists */
   logoPath: "/opengraph-image",
   ogImagePath: "/opengraph-image",
@@ -26,17 +28,39 @@ export const siteConfig = {
     postalCode: "83000",
     addressCountry: "TH",
   },
-  geo: {
-    latitude: 7.8804,
-    longitude: 98.3923,
-  },
   social: {
-    facebook: "https://facebook.com/phuketseo",
+    facebook: "https://www.facebook.com/phuketseoagency",
     instagram: "https://instagram.com/phuketseo",
     linkedin: "https://linkedin.com/company/phuketseo",
     youtube: "https://youtube.com/@phuketseo",
   },
 };
+
+/** เวลาทำการ — ตรง GBP (Open 24 hours) */
+export const businessHours = {
+  label: "เปิด 24 ชั่วโมง ทุกวัน",
+  schemaOpeningHours: "Mo-Su 00:00-23:59",
+  schemaSpecification: {
+    "@type": "OpeningHoursSpecification" as const,
+    dayOfWeek: [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday",
+    ],
+    opens: "00:00",
+    closes: "23:59",
+  },
+};
+
+/** LINE deep link — supports @phuketseo style IDs */
+export function lineContactUrl(lineId: string = siteConfig.line): string {
+  const normalized = lineId.startsWith("@") ? lineId : `@${lineId}`;
+  return `https://line.me/ti/p/${normalized}`;
+}
 
 /** Default OG image — dynamic route at /opengraph-image */
 export const defaultOgImage = {

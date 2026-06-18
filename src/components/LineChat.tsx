@@ -2,12 +2,12 @@
 
 import { useState } from "react";
 import { X, MessageCircle } from "lucide-react";
-import { siteConfig } from "@/lib/utils";
+import { lineContactUrl, siteConfig } from "@/lib/utils";
 
 export default function LineChat() {
   const [isOpen, setIsOpen] = useState(false);
   const lineOA = process.env.NEXT_PUBLIC_LINE_OA ?? siteConfig.line;
-  const lineUrl = `https://line.me/ti/p/${lineOA}`;
+  const lineUrl = lineContactUrl(lineOA);
 
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
