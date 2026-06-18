@@ -12,7 +12,7 @@ const kanitBold = Kanit({
   weight: "700",
   variable: "--font-kanit-bold",
   display: "swap",
-  preload: true,
+  preload: false,
   adjustFontFallback: true,
   fallback: ["Tahoma", "Arial", "sans-serif"],
 });
