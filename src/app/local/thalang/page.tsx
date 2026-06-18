@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import LocalSeoPage from '@/components/LocalSeoPage';
 import { faqSchema, buildBreadcrumb } from '@/lib/schema';
 import { localSeoContent } from '@/lib/local-seo-content';
+import { localSeoServiceStats } from '@/lib/local-seo-stats';
 import { siteConfig } from '@/lib/utils';
 
 export const metadata: Metadata = {
@@ -20,12 +21,7 @@ const thalangData = {
   businesses: ['โรงแรม', 'รีสอร์ท', 'อสังหาฯ', 'ร้านอาหาร', 'สปา'],
   keywords: ['SEO ถลาง', 'โรงแรมถลาง', 'อสังหาฯถลาง', 'รีสอร์ทถลาง'],
   landmarks: ['สนามบินภูเก็ต', 'หาดไม้ขาว', 'หาดนาทอน', 'อนุสาวรีย์วีรสตรี'],
-  stats: [
-    { metric: "+250%", label: "Organic Traffic" },
-    { metric: "Top 5", label: "ติดอันดับ Google" },
-    { metric: "4 เดือน", label: "เห็นผลลัพธ์" },
-    { metric: "40+", label: "ธุรกิจในถลาง" },
-  ],
+  stats: [...localSeoServiceStats],
   intro: areaContent.intro,
   faqs: areaContent.faqs,
 };

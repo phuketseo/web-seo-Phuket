@@ -5,6 +5,7 @@
  */
 
 import { siteConfig } from "@/lib/utils";
+import { pricingPackages } from "@/lib/pricing-packages";
 
 export const postalAddressSchema = {
   "@type": "PostalAddress",
@@ -130,3 +131,31 @@ export const reviewSchema = {
   reviewBody:
     "PhuketSEO ช่วยให้โรงแรมของเราติดอันดับ 1 บน Google ใน 4 เดือน Organic Traffic เพิ่มขึ้น 250% และ Booking เพิ่มขึ้น 180% ประทับใจมากครับ",
 };
+
+/** Service + Offer สำหรับแพ็กราคา — ใช้ที่ /pricing */
+export const pricingServicesJsonLd = pricingPackages.map((pkg) => ({
+  "@type": "Service",
+  name: pkg.name,
+  description: pkg.desc,
+  provider: {
+    "@type": "Organization",
+    name: siteConfig.name,
+    url: siteConfig.url,
+  },
+  areaServed: {
+    "@type": "AdministrativeArea",
+    name: "Phuket",
+  },
+  offers: {
+    "@type": "Offer",
+    price: pkg.price,
+    priceCurrency: "THB",
+    priceSpecification: {
+      "@type": "UnitPriceSpecification",
+      price: pkg.price,
+      priceCurrency: "THB",
+      unitText: "MONTH",
+    },
+    url: `${siteConfig.url}/pricing#${pkg.id}`,
+  },
+}));

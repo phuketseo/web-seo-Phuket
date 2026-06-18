@@ -2,6 +2,7 @@ import LocalSeoPage from "@/components/LocalSeoPage";
 import { Metadata } from "next";
 import { faqSchema, buildBreadcrumb } from "@/lib/schema";
 import { localSeoContent } from "@/lib/local-seo-content";
+import { localSeoServiceStats } from "@/lib/local-seo-stats";
 import { siteConfig } from "@/lib/utils";
 
 const areaContent = localSeoContent.kata;
@@ -33,12 +34,7 @@ export default function KataPage() {
         businesses={["สปา", "ร้านอาหาร", "โรงแรม Boutique", "รีสอร์ท", "ทัวร์ดำน้ำ", "ร้านนวด"]}
         keywords={["SEO กะตะ", "spa kata phuket", "restaurant kata beach", "hotel kata", "thai massage kata"]}
         landmarks={["หาดกะตะ", "หาดกะตะน้อย", "ถนนกะตะ", "จุดชมวิว Karon Viewpoint"]}
-        stats={[
-          { metric: "+180%", label: "Maps Impressions" },
-          { metric: "Top 3", label: "Local Pack" },
-          { metric: "3 เดือน", label: "เห็นผล" },
-          { metric: "฿5,900", label: "เริ่มต้น/เดือน" },
-        ]}
+        stats={[...localSeoServiceStats]}
         intro={areaContent.intro}
         faqs={areaContent.faqs}
       />

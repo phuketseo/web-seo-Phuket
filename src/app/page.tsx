@@ -1,8 +1,9 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { siteConfig } from "@/lib/utils";
-import { pricingPackages } from "@/lib/pricing-packages";
+import { pricingPackages, planContactHref } from "@/lib/pricing-packages";
+import { responseTimeCopy } from "@/lib/response-times";
 import { geoCoordinatesSchema, organizationSameAs, postalAddressSchema } from "@/lib/schema";
 import { siteImages } from "@/lib/images";
 import { caseStudies } from "@/lib/case-studies-data";
@@ -15,7 +16,7 @@ import {
 export const metadata: Metadata = {
   title: "PhuketSEO | รับทำ SEO + เว็บไซต์ภูเก็ต ติด Google พร้อม AI Search",
   description:
-    "รับทำ SEO และเว็บไซต์ภูเก็ต สำหรับธุรกิจไทยในภูเก็ต ติด Google Maps, เว็บเร็ว, พร้อม AEO/GEO และ AI Overview เริ่มต้น ฿5,900/เดือน ปรึกษาฟรี!",
+    "รับทำ SEO และเว็บไซต์ภูเก็ต ติด Google Maps เว็บเร็ว พร้อม AEO/GEO เริ่มต้น ฿5,900/เดือน ปรึกษาฟรี",
   alternates: { canonical: siteConfig.url },
 };
 
@@ -52,7 +53,7 @@ const faqSchema = {
       name: "ค่าบริการ SEO ภูเก็ต เริ่มต้นที่เท่าไหร่?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "แพ็กเกจ SEO Lite เริ่มต้น 5,900 บาท/เดือน (GBP + Social Proof) SEO Pro 8,900 บาท/เดือน (เว็บ + SEO + AEO/GEO) และ SEO Pro Max 15,000 บาท/เดือน (รวม Ads)",
+        text: "แพ็ก Lite เริ่มต้น 5,900 บาท/เดือน (GBP + Social Proof) แพ็ก Pro 8,900 บาท/เดือน (เว็บ + การมองเห็นบน Google + AEO/GEO) และ Pro Max 15,000 บาท/เดือน (รวม Ads)",
       },
     },
     {
@@ -90,6 +91,7 @@ const services = [
     desc: "ติด Google Maps และ Organic Search ด้วย Local SEO, On-page และ AEO/GEO structure",
     result: "เริ่มต้น ฿5,900/เดือน",
     href: "/services/seo-phuket",
+    linkLabel: "ดูบริการ SEO ภูเก็ต",
     color: "bg-blue-50 text-blue-700",
   },
   {
@@ -98,6 +100,7 @@ const services = [
     desc: "เว็บเร็ว mobile-first พร้อม SEO และ AI Search structure ตั้งแต่วัน launch",
     result: "Setup จาก ฿29,900",
     href: "/services/web-design",
+    linkLabel: "ดูบริการทำเว็บไซต์ + SEO",
     color: "bg-green-50 text-green-700",
   },
 ];
@@ -105,7 +108,7 @@ const services = [
 const industries = [
   { name: "โรงแรม & รีสอร์ท", icon: "🏨", desc: "Direct Booking ลด OTA commission", href: "/industries/seo-hotels-phuket" },
   { name: "อสังหาริมทรัพย์", icon: "🏢", desc: "ดึง Leads ผู้ซื้อและผู้เช่าคุณภาพสูง", href: "/industries/seo-real-estate-phuket" },
-  { name: "ร้านอาหาร & บาร์", icon: "🍽️", desc: "SEO + Maps สำหรับร้านอาหารภูเก็ต", href: "/industries/seo-restaurants-phuket" },
+  { name: "ร้านอาหาร & บาร์", icon: "🍽️", desc: "ติด Google Maps สำหรับร้านอาหารภูเก็ต", href: "/industries/seo-restaurants-phuket" },
   { name: "คลินิก & สปา", icon: "💆", desc: "Direct Booking ไม่พึ่ง OTA", href: "/industries/seo-spa-phuket" },
   { name: "ทัวร์ & กิจกรรม", icon: "🤿", desc: "เพิ่มการจองทัวร์และกิจกรรมในภูเก็ต", href: "/services/seo-phuket" },
   { name: "ร้านค้าปลีก", icon: "🛍️", desc: "เพิ่มยอดขายออนไลน์และหน้าร้าน", href: "/services/seo-phuket" },
@@ -113,7 +116,7 @@ const industries = [
 
 const metrics = [
   { value: "฿5,900", label: "เริ่มต้น/เดือน", icon: Users },
-  { value: "7 วัน", label: "ส่ง SEO Audit", icon: TrendingUp },
+  { value: "7 วัน", label: "ส่ง Audit รายงาน", icon: TrendingUp },
   { value: "3 แพ็ก", label: "Lite / Pro / Max", icon: Star },
   { value: "AI Ready", label: "AEO + GEO", icon: Award },
 ];
@@ -122,9 +125,9 @@ const whyUs = [
   { icon: Target, title: "โฟกัสธุรกิจไทยในภูเก็ต", desc: "เข้าใจตลาดท้องถิ่น ร้านอาหาร สปา อสังหาฯ และ SME ในแต่ละย่าน" },
   { icon: BarChart3, title: "ผลลัพธ์วัดได้จริง", desc: "รายงาน KPI รายเดือน — ranking, traffic, GBP views และ conversion" },
   { icon: Shield, title: "ไม่มีสัญญาผูกมัด", desc: "เชื่อมั่นในผลงาน ยกเลิกได้ทุกเดือน แนะนำขั้นต่ำ 3 เดือนเพื่อเห็นผล" },
-  { icon: Clock, title: "ส่งมอบเร็ว", desc: "SEO Audit ภายใน 7 วัน GBP setup ภายใน 14 วัน เห็น impression ใน 30–60 วัน" },
-  { icon: Zap, title: "SEO + เว็บ + AI Search", desc: "Phuket Visibility Stack — ติด Google, เว็บเร็ว, พร้อม AI Overview" },
-  { icon: Globe, title: "Ads เป็นเทคนิคเสริม", desc: "แพ็ก Pro Max รวม Ads แต่บริการหลักคือ SEO + เว็บที่ส่งมอบได้จริง" },
+  { icon: Clock, title: "ส่งมอบเร็ว", desc: "Audit รายงานภายใน 7 วัน GBP setup ภายใน 14 วัน เห็น impression ใน 30–60 วัน" },
+  { icon: Zap, title: "เว็บ + การมองเห็นบน Google", desc: "Phuket Visibility Stack — ติด Google, เว็บเร็ว, พร้อม AI Overview" },
+  { icon: Globe, title: "Ads เป็นเทคนิคเสริม", desc: "แพ็ก Pro Max รวม Ads แต่บริการหลักคือการมองเห็นบน Google + เว็บที่ส่งมอบได้จริง" },
 ];
 
 const testimonials = [
@@ -143,18 +146,20 @@ const testimonials = [
   {
     name: "ลูกค้า",
     role: "ร้านอาหาร",
-    text: "ลูกค้าใหม่เพิ่มขึ้น โดยเฉพาะนักท่องเที่ยวที่ค้นหาร้านอาหารใน Google Maps ทีมงานดูแลและอธิบายผลให้เข้าใจ",
+    text: "ลูกค้าใหม่เพิ่มขึ้น โดยเฉพาะนักท่องเที่ยวที่ค้นหาร้านอาหารใน Google Maps มีการดูแลและอธิบายผลให้เข้าใจ",
     rating: 5,
   },
 ];
 
 const pricing = pricingPackages.map((pkg) => ({
+  id: pkg.id,
   name: pkg.name,
   price: pkg.priceLabel,
   desc: pkg.desc,
   features: pkg.features.slice(0, 5),
   cta: pkg.cta,
   popular: pkg.popular,
+  badge: pkg.badge,
 }));
 
 const faqs = [
@@ -164,7 +169,7 @@ const faqs = [
   },
   {
     q: "ค่าบริการ SEO ภูเก็ต เริ่มต้นที่เท่าไหร่?",
-    a: "แพ็กเกจ SEO Lite เริ่ม 5,900 บาท/เดือน SEO Pro 8,900 บาท/เดือน และ SEO Pro Max 15,000 บาท/เดือน ดูรายละเอียดที่หน้าราคา",
+    a: "แพ็ก Lite เริ่มต้น 5,900 บาท/เดือน แพ็ก Pro 8,900 บาท/เดือน และ Pro Max 15,000 บาท/เดือน — ดูราคาแพ็ก SEO ภูเก็ต",
   },
   {
     q: "PhuketSEO ให้บริการธุรกิจประเภทไหนบ้าง?",
@@ -233,7 +238,9 @@ export default function HomePage() {
             <div className="flex flex-wrap gap-6 text-sm text-slate-500">
               <div className="flex items-center gap-1.5">
                 <Star size={15} className="text-yellow-400 fill-yellow-400" />
-                <span>SEO Lite จาก ฿5,900</span>
+                <Link href="/pricing#lite" className="hover:text-green-600 hover:underline">
+                  SEO Lite จาก ฿5,900
+                </Link>
               </div>
               <div className="flex items-center gap-1.5">
                 <Users size={15} className="text-indigo-400" />
@@ -250,7 +257,7 @@ export default function HomePage() {
           <div className="hidden lg:grid grid-cols-2 gap-4">
             {[
               { label: "แพ็ก SEO Pro", value: "฿8,900", sub: "เว็บ + SEO + AEO/GEO", color: "bg-indigo-600", light: false },
-              { label: "SEO Audit", value: "7 วัน", sub: "ส่งมอบหลังเริ่มงาน", color: "bg-white border border-slate-100 shadow-sm", light: true },
+              { label: "Audit รายงาน", value: "7 วัน", sub: "ส่งมอบหลังเริ่มงาน", color: "bg-white border border-slate-100 shadow-sm", light: true },
               { label: "GBP Views", value: "30-60 วัน", sub: "เริ่มเห็น impression", color: "bg-white border border-slate-100 shadow-sm", light: true },
               { label: "AI Search", value: "AEO+GEO", sub: "พร้อม AI Overview", color: "bg-green-500", light: false },
             ].map((stat) => (
@@ -265,7 +272,7 @@ export default function HomePage() {
       </section>
 
       {/* ── 2. SERVICES ── */}
-      <section id="services" className="py-20 bg-white">
+      <section id="services" className="py-20 bg-white below-fold">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <div className="text-indigo-500 font-semibold text-sm uppercase tracking-wider mb-2">บริการของเรา</div>
@@ -273,7 +280,7 @@ export default function HomePage() {
               บริการหลักของเรา
             </h2>
             <p className="text-slate-500 max-w-2xl mx-auto">
-              โฟกัส SEO + เว็บไซต์ที่ส่งมอบได้จริง สำหรับธุรกิจไทยในภูเก็ต
+              โฟกัสการมองเห็นบน Google + เว็บไซต์ที่ส่งมอบได้จริง สำหรับธุรกิจไทยในภูเก็ต
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
@@ -298,7 +305,7 @@ export default function HomePage() {
                   ✓ {s.result}
                 </div>
                 <div className="flex items-center gap-1 text-blue-600 text-sm font-medium mt-4 group-hover:gap-2 transition-all">
-                  ดูรายละเอียด <ArrowRight size={14} />
+                  {s.linkLabel} <ArrowRight size={14} />
                 </div>
               </Link>
             ))}
@@ -318,7 +325,7 @@ export default function HomePage() {
           </p>
         </div>
       </section>
-      <section className="py-16 bg-slate-50 border-y border-slate-100">
+      <section className="py-16 bg-slate-50 border-y border-slate-100 below-fold">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {metrics.map((m) => (
@@ -335,7 +342,7 @@ export default function HomePage() {
       </section>
 
       {/* ── 4. INDUSTRIES ── */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50 below-fold">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <div className="text-indigo-500 font-semibold text-sm uppercase tracking-wider mb-2">อุตสาหกรรม</div>
@@ -363,7 +370,7 @@ export default function HomePage() {
       </section>
 
       {/* ── 5. CASE STUDIES ── */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white below-fold">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <div className="text-indigo-500 font-semibold text-sm uppercase tracking-wider mb-2">ผลงาน</div>
@@ -439,7 +446,7 @@ export default function HomePage() {
                     ))}
                   </div>
                   <span className="inline-flex items-center gap-2 mt-4 text-white text-sm font-semibold group-hover:gap-3 transition-all">
-                    อ่าน case study <ArrowRight size={14} />
+                    ดู case study เว็บ agency <ArrowRight size={14} />
                   </span>
                 </div>
               </Link>
@@ -448,7 +455,7 @@ export default function HomePage() {
           {caseStudies.length > 1 && (
             <div className="text-center mt-8">
               <Link href="/case-studies" className="inline-flex items-center gap-2 text-blue-700 font-semibold hover:gap-3 transition-all">
-                ดูผลงานทั้งหมด <ArrowRight size={16} />
+                ดู case studies ทั้งหมด <ArrowRight size={16} />
               </Link>
             </div>
           )}
@@ -456,7 +463,7 @@ export default function HomePage() {
       </section>
 
       {/* ── 6. WHY US ── */}
-      <section className="py-20 bg-slate-50">
+      <section className="py-20 bg-slate-50 below-fold">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <div className="text-indigo-500 font-semibold text-sm uppercase tracking-wider mb-2">ทำไมต้องเลือกเรา</div>
@@ -479,14 +486,14 @@ export default function HomePage() {
       </section>
 
       {/* ── 7. PRICING ── */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white below-fold">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <div className="text-indigo-500 font-semibold text-sm uppercase tracking-wider mb-2">ราคา</div>
             <h2 className="text-4xl font-bold text-slate-900 font-serif mb-4">
               Phuket Visibility Stack™
             </h2>
-            <p className="text-slate-500">แพ็กเกจ SEO Lite / Pro / Pro Max — ไม่มีค่าใช้จ่ายซ่อนเร้น</p>
+            <p className="text-slate-500">แพ็ก Lite / Pro / Pro Max — ไม่มีค่าใช้จ่ายซ่อนเร้น</p>
           </div>
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {pricing.map((p) => (
@@ -495,9 +502,16 @@ export default function HomePage() {
                 className={`rounded-2xl p-8 border-2 relative ${
                   p.popular
                     ? "border-indigo-500 bg-gradient-to-br from-indigo-600 to-violet-700 text-white shadow-2xl shadow-indigo-200 scale-105"
-                    : "border-slate-100 bg-white"
+                    : p.id === "lite"
+                      ? "border-green-400 bg-green-50/50 ring-2 ring-green-400/30"
+                      : "border-slate-100 bg-white"
                 }`}
               >
+                {p.badge && !p.popular && (
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-emerald-600 text-white text-xs font-bold px-4 py-1.5 rounded-full">
+                    {p.badge}
+                  </div>
+                )}
                 {p.popular && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-green-500 text-white text-xs font-bold px-4 py-1.5 rounded-full">
                     ยอดนิยม
@@ -522,11 +536,13 @@ export default function HomePage() {
                   ))}
                 </ul>
                 <Link
-                  href="/contact"
+                  href={planContactHref(p.id)}
                   className={`block w-full text-center font-semibold py-3 rounded-xl transition-all duration-200 ${
                     p.popular
                       ? "bg-green-500 hover:bg-green-600 text-white"
-                      : "border-2 border-blue-700 text-blue-700 hover:bg-blue-700 hover:text-white"
+                      : p.id === "lite"
+                        ? "bg-green-500 hover:bg-green-600 text-white"
+                        : "border-2 border-blue-700 text-blue-700 hover:bg-blue-700 hover:text-white"
                   }`}
                 >
                   {p.cta}
@@ -535,9 +551,8 @@ export default function HomePage() {
             ))}
           </div>
           <p className="text-center text-gray-500 text-sm mt-6">
-            ดูรายละเอียดแพ็กเกจครบที่{" "}
             <Link href="/pricing" className="text-blue-700 font-semibold hover:underline">
-              หน้าราคา
+              ดูราคาแพ็ก SEO ภูเก็ต
             </Link>
             {" · "}
             ต้องการแพ็กเกจพิเศษ?{" "}
@@ -549,13 +564,16 @@ export default function HomePage() {
       </section>
 
       {/* ── 8. TESTIMONIALS ── */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50 below-fold">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <div className="text-indigo-500 font-semibold text-sm uppercase tracking-wider mb-2">รีวิวลูกค้า</div>
             <h2 className="text-4xl font-bold text-slate-900 font-serif mb-4">
               ลูกค้าพูดถึงเราอย่างไร
             </h2>
+            <p className="text-slate-500 text-sm max-w-xl mx-auto">
+              ตัวอย่างจากลูกค้าจริง — ไม่ใช่รีวิวที่ยังไม่มีการยืนยันตัวตน
+            </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {testimonials.map((t) => (
@@ -583,7 +601,7 @@ export default function HomePage() {
       </section>
 
       {/* ── 9. FAQ ── */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white below-fold">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <div className="text-indigo-500 font-semibold text-sm uppercase tracking-wider mb-2">FAQ</div>
@@ -609,7 +627,7 @@ export default function HomePage() {
       </section>
 
       {/* ── 10. FINAL CTA ── */}
-      <section className="py-24 relative overflow-hidden hero-gradient">
+      <section className="py-24 relative overflow-hidden hero-gradient below-fold">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-indigo-100/60 rounded-full blur-3xl" />
         </div>
@@ -641,7 +659,7 @@ export default function HomePage() {
           <div className="flex justify-center flex-wrap gap-6 mt-10 text-sm text-slate-400">
             <div className="flex items-center gap-1.5"><CheckCircle size={14} className="text-green-500" /> ไม่มีค่าใช้จ่าย</div>
             <div className="flex items-center gap-1.5"><CheckCircle size={14} className="text-green-500" /> ไม่มีข้อผูกมัด</div>
-            <div className="flex items-center gap-1.5"><CheckCircle size={14} className="text-green-500" /> ตอบภายใน 1 ชั่วโมง</div>
+            <div className="flex items-center gap-1.5"><CheckCircle size={14} className="text-green-500" /> {responseTimeCopy.contactReply}</div>
           </div>
         </div>
       </section>

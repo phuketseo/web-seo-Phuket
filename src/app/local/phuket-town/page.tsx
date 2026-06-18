@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import LocalSeoPage from "@/components/LocalSeoPage";
 import { faqSchema, buildBreadcrumb } from "@/lib/schema";
 import { localSeoContent } from "@/lib/local-seo-content";
+import { localSeoServiceStats } from "@/lib/local-seo-stats";
 import { siteConfig } from "@/lib/utils";
 
 export const metadata: Metadata = {
@@ -48,12 +49,7 @@ export default function PhuketTownPage() {
     businesses: ["ร้านค้า", "ร้านอาหาร", "คลินิก", "สำนักงาน", "โรงแรม Boutique"],
     keywords: ["SEO ตัวเมืองภูเก็ต", "ร้านอาหารภูเก็ต", "คลินิกภูเก็ต", "ธุรกิจภูเก็ต"],
     landmarks: ["ย่านเมืองเก่าภูเก็ต", "ถนนถลาง", "วัดมงคลนิมิตร", "ศาลหลักเมือง"],
-    stats: [
-      { metric: "+300%", label: "Organic Traffic" },
-      { metric: "Top 3", label: "ติดอันดับ Google" },
-      { metric: "5 เดือน", label: "เห็นผลลัพธ์" },
-      { metric: "60+", label: "ธุรกิจในตัวเมือง" },
-    ],
+    stats: [...localSeoServiceStats],
     intro: areaContent.intro,
     faqs: areaContent.faqs,
   };

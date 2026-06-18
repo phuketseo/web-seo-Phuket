@@ -10,7 +10,7 @@
  * - ซ้ายล่าง: ไอคอนกลม 4 จุด + label สั้น
  * - ขวา: laptop/มือถือ + floating UI (search bar, keyword tags, stats card)
  * - ขนาด: 3:2 → 2304×1536 px
- * - ไฟล์ใหม่ใช้ suffix `-clean.png` เพื่อหลีกเลี่ยง Next.js image cache
+ * - ไฟล์ใหม่ใช้ suffix `-clean.png` (v1) หรือ `-smooth.png` (v2 — ดู image-style-smooth-purple.ts)
  * - ไม่ใส่ใบหน้าคนจริง
  *
  * ### บทความที่ใช้ Clean Purple แล้ว
@@ -31,6 +31,13 @@
  * - content-marketing-phuket-foreigners (hero + results inline)
  *
  * ### QA: รัน `npm run check:images` ตรวจ path ทุกไฟล์
+ *
+ * ## Smooth Purple v2 (มาตรฐานใหม่ — gradient นุ่มแบบ Canva)
+ * - ไฟล์: `src/lib/image-style-smooth-purple.ts` → `buildSmoothPurplePrompt()`
+ * - Gradient: teal #06b6d4 → blue → indigo #6366f1 → violet #8b5cf6 (mesh/blob 12–20% opacity)
+ * - Glass cards + soft shadow · ไม่มี mascot/คน
+ * - Layout: 42/58 (blog) หรือ 25/75 + sidebar 5 การ์ด (pillar infographic)
+ * - Suffix: `-smooth.png`
  *
  * ## Site-wide Clean Purple (Phase 7)
  * - hero/ services/ icons/ case-studies/ team/ stats/ — ใช้ suffix `-clean.png`

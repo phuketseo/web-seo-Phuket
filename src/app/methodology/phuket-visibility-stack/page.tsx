@@ -101,7 +101,7 @@ export default function MethodologyPage() {
         <p className="text-gray-600 mb-6 max-w-xl mx-auto">
           Upsell path: Lite → Pro (+฿3,000) → Pro Max (+฿6,100) แนะนำขั้นต่ำ 3 เดือนต่อแพ็ก
         </p>
-        <Link href="/contact" className="inline-block bg-green-500 hover:bg-green-600 text-white font-bold px-8 py-3 rounded-xl">
+        <Link href="/seo-audit" className="inline-block bg-green-500 hover:bg-green-600 text-white font-bold px-8 py-3 rounded-xl">
           ขอ Audit ฟรี
         </Link>
       </section>

@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { CheckCircle, Clock, Target } from "lucide-react";
 import { siteConfig } from "@/lib/utils";
@@ -127,7 +127,10 @@ export default function AboutPage() {
             <Link href="/contact" className="bg-white text-green-600 font-bold px-8 py-3 rounded-xl hover:shadow-lg">
               ติดต่อเรา
             </Link>
-            <Link href="/pricing" className="border-2 border-white text-white font-bold px-8 py-3 rounded-xl hover:bg-white/10">
+            <Link href="/seo-audit" className="border-2 border-white text-white font-bold px-8 py-3 rounded-xl hover:bg-white/10">
+              ขอ SEO Audit ฟรี
+            </Link>
+            <Link href="/pricing" className="border-2 border-white/60 text-white font-bold px-8 py-3 rounded-xl hover:bg-white/10">
               ดูราคา
             </Link>
           </div>

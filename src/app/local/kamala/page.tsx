@@ -2,6 +2,7 @@ import LocalSeoPage from "@/components/LocalSeoPage";
 import { Metadata } from "next";
 import { faqSchema, buildBreadcrumb } from "@/lib/schema";
 import { localSeoContent } from "@/lib/local-seo-content";
+import { localSeoServiceStats } from "@/lib/local-seo-stats";
 import { siteConfig } from "@/lib/utils";
 
 const areaContent = localSeoContent.kamala;
@@ -33,12 +34,7 @@ export default function KamalaPage() {
         businesses={["อสังหาริมทรัพย์", "รีสอร์ท Luxury", "ร้านอาหาร Fine Dining", "สปา Premium", "คอนโด Sales Office"]}
         keywords={["SEO กมลา", "condo kamala phuket", "resort kamala", "restaurant kamala beach", "villa kamala"]}
         landmarks={["หาดกมลา", "Kamala Village", "Phuket FantaSea", "Luxury Zone Kamala"]}
-        stats={[
-          { metric: "+220%", label: "Organic Leads" },
-          { metric: "EN+RU", label: "Content" },
-          { metric: "4 เดือน", label: "เห็นผล" },
-          { metric: "฿8,900", label: "แพ็ก Pro" },
-        ]}
+        stats={[...localSeoServiceStats]}
         intro={areaContent.intro}
         faqs={areaContent.faqs}
       />

@@ -2,6 +2,7 @@ import LocalSeoPage from "@/components/LocalSeoPage";
 import { Metadata } from "next";
 import { faqSchema, buildBreadcrumb } from "@/lib/schema";
 import { localSeoContent } from "@/lib/local-seo-content";
+import { localSeoServiceStats } from "@/lib/local-seo-stats";
 import { siteConfig } from "@/lib/utils";
 
 export const metadata: Metadata = {
@@ -54,12 +55,7 @@ export default function PatongPage() {
     businesses: ["โรงแรม", "บาร์", "ร้านอาหาร", "ร้านนวด", "ทัวร์", "ดำน้ำ"],
     keywords: ["SEO ป่าตอง", "โรงแรมป่าตอง", "ร้านอาหารป่าตอง", "ทัวร์ป่าตอง"],
     landmarks: ["หาดป่าตอง", "ถนนบางลา", "จุดชมวิวป่าตอง", "วัดสุวรรณคีรีวงศ์"],
-    stats: [
-      { metric: "+280%", label: "Organic Traffic" },
-      { metric: "Top 3", label: "ติดอันดับ Google" },
-      { metric: "4 เดือน", label: "เห็นผลลัพธ์" },
-      { metric: "50+", label: "ธุรกิจในป่าตอง" },
-    ],
+    stats: [...localSeoServiceStats],
     intro: areaContent.intro,
     faqs: areaContent.faqs,
     answerBlock: areaContent.answerBlock,

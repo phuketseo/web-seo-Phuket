@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import LocalSeoPage from '@/components/LocalSeoPage';
 import { faqSchema, buildBreadcrumb } from '@/lib/schema';
 import { localSeoContent } from '@/lib/local-seo-content';
+import { localSeoServiceStats } from '@/lib/local-seo-stats';
 import { siteConfig } from '@/lib/utils';
 
 export const metadata: Metadata = {
@@ -37,12 +38,7 @@ export default function KathuPage() {
     businesses: ['สนามกอล์ฟ', 'รีสอร์ท', 'ร้านอาหาร', 'สปา', 'อสังหาฯ'],
     keywords: ['SEO กะทู้', 'สนามกอล์ฟภูเก็ต', 'รีสอร์ทกะทู้', 'อสังหาฯกะทู้'],
     landmarks: ['สนามกอล์ฟ Loch Palm', 'ห้างเซ็นทรัลภูเก็ต', 'ถนนวิชิตสงคราม'],
-    stats: [
-      { metric: "+220%", label: "Organic Traffic" },
-      { metric: "Top 3", label: "ติดอันดับ Google" },
-      { metric: "3 เดือน", label: "เห็นผลลัพธ์" },
-      { metric: "30+", label: "ธุรกิจในกะทู้" },
-    ],
+    stats: [...localSeoServiceStats],
     intro: areaContent.intro,
     faqs: areaContent.faqs,
   };

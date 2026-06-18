@@ -8,7 +8,11 @@ export type PricingPackage = {
   features: string[];
   cta: string;
   popular: boolean;
+  /** แสดง badge บนการ์ด (เช่น แพ็กเริ่มต้น) */
+  badge?: string;
 };
+
+export const planContactHref = (id: PricingPackage["id"]) => `/contact?plan=${id}`;
 
 export const pricingPackages: PricingPackage[] = [
   {
@@ -28,6 +32,7 @@ export const pricingPackages: PricingPackage[] = [
     ],
     cta: "เริ่มต้น Lite",
     popular: false,
+    badge: "แพ็กเริ่มต้น",
   },
   {
     id: "pro",

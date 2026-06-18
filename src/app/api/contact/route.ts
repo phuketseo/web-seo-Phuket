@@ -1,5 +1,6 @@
-﻿import { Resend } from "resend";
+import { Resend } from "resend";
 import { NextRequest, NextResponse } from "next/server";
+import { isAuditLead, responseTimeCopy } from "@/lib/response-times";
 
 export async function POST(req: NextRequest) {
   const resend = new Resend(process.env.RESEND_API_KEY ?? "");
@@ -49,12 +50,18 @@ export async function POST(req: NextRequest) {
     await resend.emails.send({
       from: "PhuketSEO <noreply@phuketseo.com>",
       to: [email],
-      subject: "ขอบคุณที่ติดต่อ PhuketSEO — เราจะติดต่อกลับเร็วๆ นี้",
+      subject: isAuditLead(service)
+        ? "ขอบคุณที่ขอ SEO Audit ฟรี — PhuketSEO"
+        : "ขอบคุณที่ติดต่อ PhuketSEO — เราจะติดต่อกลับเร็วๆ นี้",
       html: `
         <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #1e3a8a;">สวัสดีคุณ ${name} 👋</h2>
           <p>ขอบคุณที่ส่งข้อความมาหา PhuketSEO ครับ</p>
-          <p>เราได้รับข้อมูลของคุณแล้วและจะติดต่อกลับภายใน <strong>1 วันทำการ</strong></p>
+          ${
+            isAuditLead(service)
+              ? `<p>เราได้รับคำขอ SEO Audit แล้ว — ${responseTimeCopy.contactReplyThankYou} ${responseTimeCopy.auditReportThankYou}</p>`
+              : `<p>เราได้รับข้อมูลของคุณแล้วและ${responseTimeCopy.contactReplyThankYou}</p>`
+          }
           <p style="margin-top: 24px;">หากต้องการติดต่อด่วน สามารถ LINE มาได้เลยที่ <strong>${process.env.NEXT_PUBLIC_LINE_OA ?? "@phuketseo"}</strong></p>
           <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 24px 0;" />
           <p style="color: #6b7280; font-size: 12px;">PhuketSEO — Digital Marketing Agency ภูเก็ต</p>

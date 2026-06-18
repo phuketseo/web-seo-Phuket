@@ -1,23 +1,20 @@
 import type { Metadata } from "next";
-import { Inter, Kanit } from "next/font/google";
+import { Kanit } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import LineChat from "@/components/LineChat";
+import DeferredLineChat from "@/components/DeferredLineChat";
 import { defaultOgImage, siteConfig } from "@/lib/utils";
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
 
 const kanit = Kanit({
   subsets: ["latin", "thai"],
-  weight: ["400", "500", "600", "700", "800", "900"],
+  weight: ["400", "700"],
   variable: "--font-kanit",
   display: "swap",
+  preload: true,
+  adjustFontFallback: true,
+  fallback: ["Tahoma", "Arial", "sans-serif"],
 });
 
 export const metadata: Metadata = {
@@ -66,12 +63,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="th" className={`${inter.variable} ${kanit.variable}`}>
-      <body className="font-sans antialiased">
+    <html lang="th" className={kanit.variable}>
+      <body className="antialiased">
         <Navbar />
         <main>{children}</main>
         <Footer />
-        <LineChat />
+        <DeferredLineChat />
       </body>
       {process.env.NEXT_PUBLIC_GA_ID && (
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />

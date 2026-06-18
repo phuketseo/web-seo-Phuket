@@ -1,8 +1,8 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import { CheckCircle, XCircle, Star, Briefcase, TrendingUp } from "lucide-react";
 import { siteConfig } from "@/lib/utils";
-import { organizationJsonLd } from "@/lib/schema";
-import { pricingPackages, pricingComparison, webSetupPricing } from "@/lib/pricing-packages";
+import { organizationJsonLd, pricingServicesJsonLd } from "@/lib/schema";
+import { pricingPackages, pricingComparison, webSetupPricing, planContactHref } from "@/lib/pricing-packages";
 
 export const metadata = {
   title: "ราคา SEO ภูเก็ต | Phuket Visibility Stack — Lite / Pro / Pro Max",
@@ -40,6 +40,7 @@ const jsonLd = {
         contactType: "customer service",
       },
     },
+    ...pricingServicesJsonLd,
   ],
 };
 
@@ -54,8 +55,11 @@ export default function PricingPage() {
           <p className="text-indigo-600 font-semibold text-sm uppercase tracking-wider mb-3">Phuket Visibility Stack™</p>
           <h1 className="text-5xl font-serif font-bold text-blue-900 mb-6">ราคา SEO ภูเก็ต</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            3 แพ็กเกจชัดเจน สำหรับธุรกิจไทยในภูเก็ต เริ่มจาก Google Maps ไปจนถึง SEO + เว็บ + AI Search + Ads
-            ไม่มีสัญญาผูกมัด
+            3 แพ็กเกจชัดเจน สำหรับธุรกิจไทยในภูเก็ต — เริ่มจาก{" "}
+            <Link href="#lite" className="text-green-600 font-semibold hover:underline">
+              SEO Lite ฿5,900
+            </Link>{" "}
+            ไปจนถึง SEO + เว็บ + AI Search + Ads ไม่มีสัญญาผูกมัด
           </p>
         </section>
 
@@ -64,16 +68,23 @@ export default function PricingPage() {
             const Icon = icons[pkg.id];
             return (
               <div
+                id={pkg.id}
                 key={pkg.id}
-                className={`p-8 rounded-2xl shadow-lg flex flex-col border-t-4 ${
+                className={`scroll-mt-28 p-8 rounded-2xl shadow-lg flex flex-col border-t-4 ${
                   pkg.popular
                     ? "bg-gradient-to-br from-indigo-600 to-violet-700 text-white border-green-400 scale-105"
-                    : "bg-gradient-to-br from-blue-50 to-blue-100 border-blue-700"
+                    : pkg.id === "lite"
+                      ? "bg-gradient-to-br from-green-50 to-emerald-100 border-green-500 ring-2 ring-green-400/40"
+                      : "bg-gradient-to-br from-blue-50 to-blue-100 border-blue-700"
                 }`}
               >
-                {pkg.popular && (
-                  <span className="self-center -mt-11 mb-4 bg-green-500 text-white text-xs font-bold px-4 py-1.5 rounded-full">
-                    แนะนำ
+                {(pkg.badge || pkg.popular) && (
+                  <span
+                    className={`self-center -mt-11 mb-4 text-white text-xs font-bold px-4 py-1.5 rounded-full ${
+                      pkg.popular ? "bg-green-500" : "bg-emerald-600"
+                    }`}
+                  >
+                    {pkg.popular ? "แนะนำ" : pkg.badge}
                   </span>
                 )}
                 <Icon className={`w-10 h-10 mb-4 ${pkg.popular ? "text-green-300" : "text-blue-700"}`} />
@@ -95,12 +106,8 @@ export default function PricingPage() {
                   ))}
                 </ul>
                 <Link
-                  href="/contact"
-                  className={`font-bold py-3 px-8 rounded-full text-center transition ${
-                    pkg.popular
-                      ? "bg-green-500 hover:bg-green-600 text-white"
-                      : "bg-green-500 hover:bg-green-600 text-white"
-                  }`}
+                  href={planContactHref(pkg.id)}
+                  className="font-bold py-3 px-8 rounded-full text-center transition bg-green-500 hover:bg-green-600 text-white"
                 >
                   {pkg.cta}
                 </Link>
@@ -156,6 +163,19 @@ export default function PricingPage() {
                     })}
                   </tr>
                 ))}
+                <tr className="bg-blue-50 border-t-2 border-blue-100">
+                  <td className="py-4 px-6 font-semibold text-blue-900">สมัครแพ็ก</td>
+                  {pricingPackages.map((pkg) => (
+                    <td key={pkg.id} className="py-4 px-4 text-center">
+                      <Link
+                        href={planContactHref(pkg.id)}
+                        className="inline-block text-sm font-bold bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-full transition"
+                      >
+                        {pkg.cta}
+                      </Link>
+                    </td>
+                  ))}
+                </tr>
               </tbody>
             </table>
           </div>
@@ -170,7 +190,7 @@ export default function PricingPage() {
             ปรึกษาฟรี 30 นาที เราจะแนะนำแพ็กเกจที่เหมาะกับธุรกิจและงบประมาณของคุณ
           </p>
           <Link
-            href="/contact"
+            href="/seo-audit"
             className="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-10 rounded-full text-lg transition"
           >
             ขอ SEO Audit ฟรี

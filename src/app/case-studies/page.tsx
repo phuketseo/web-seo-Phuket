@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import { Metadata } from "next";
 import { ArrowRight } from "lucide-react";
 import { siteConfig } from "@/lib/utils";
@@ -147,10 +147,10 @@ const CaseStudiesPage = () => {
             ว่าเหมาะกับธุรกิจคุณแบบไหน
           </p>
           <Link
-            href="/contact"
+            href="/seo-audit"
             className="inline-block bg-[#25D366] hover:bg-green-600 text-white font-bold py-4 px-10 rounded-full transition duration-300 ease-in-out shadow-lg text-lg"
           >
-            ติดต่อเราวันนี้
+            ขอ SEO Audit ฟรี
           </Link>
         </div>
       </section>

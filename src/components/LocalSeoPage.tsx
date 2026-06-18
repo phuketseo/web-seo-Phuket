@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import { CheckCircle, ArrowRight, MapPin, Phone } from "lucide-react";
 import { BlogFaqSection } from "@/components/blog/BlogFaqSection";
 
@@ -69,13 +69,18 @@ export default function LocalSeoPage({
               ))}
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-4">
-            {stats.map((s) => (
-              <div key={s.label} className="bg-blue-800/40 border border-white/10 rounded-2xl p-5 text-center">
-                <div className="text-3xl font-bold text-green-400 font-serif mb-1">{s.metric}</div>
-                <div className="text-blue-200 text-sm">{s.label}</div>
-              </div>
-            ))}
+          <div>
+            <div className="grid grid-cols-2 gap-4">
+              {stats.map((s) => (
+                <div key={s.label} className="bg-blue-800/40 border border-white/10 rounded-2xl p-5 text-center">
+                  <div className="text-3xl font-bold text-green-400 font-serif mb-1">{s.metric}</div>
+                  <div className="text-blue-200 text-sm">{s.label}</div>
+                </div>
+              ))}
+            </div>
+            <p className="text-xs text-blue-300/70 mt-3 text-center leading-relaxed">
+              ขอบเขตบริการและแพ็ก — ไม่ใช่ผลลัพธ์จากลูกค้า
+            </p>
           </div>
         </div>
       </section>
