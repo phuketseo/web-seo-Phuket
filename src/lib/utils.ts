@@ -13,7 +13,8 @@ export const siteConfig = {
   url: "https://phuketseo.com",
   phone: "092-555-1369",
   phoneInternational: "+66-92-555-1369",
-  email: "phuketseo369@gmail.com",
+  /** อีเมลแสดงบนเว็บ + mailto — ตั้ง forward ไป Gmail ที่ DNS */
+  email: "hello@phuketseo.com",
   line: "@phuketseo",
   /** Verified GBP — ลิงก์ขอรีวิว (ไม่มีปักหมุดบน Maps) */
   googleReviewUrl: "https://g.page/r/CQ8yhsp4fL4jEAE/review",
