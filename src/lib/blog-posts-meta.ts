@@ -255,6 +255,14 @@ export const blogPostsMeta: BlogPostMeta[] = [
       "Content EN สำหรับธุรกิจภูเก็ต ดึงลูกค้าต่างชาติจาก Google organic",
     thumbnail: getBlogThumbnail("content-marketing-phuket-foreigners"),
   },
+  {
+    slug: "google-search-console-phuket",
+    title: "Google Search Console ภูเก็ต — วัดผล Local SEO หลังตั้ง GBP แล้ว",
+    category: "Local SEO",
+    description:
+      "Google Search Console ภูเก็ต ใช้อย่างไรวัดผล Local SEO หลังตั้ง Google Business Profile — indexing, query และ KPI ที่ควรดูจริง",
+    thumbnail: getBlogThumbnail("google-search-console-phuket"),
+  },
 ];
 
 export const blogPostSlugs = blogPostsMeta.map((post) => post.slug);

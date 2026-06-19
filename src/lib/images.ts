@@ -27,6 +27,7 @@
  * - instagram-marketing-phuket-restaurants (hero + results inline)
  * - web-design-phuket-real-estate (hero + results inline)
  * - google-my-business-phuket (hero + results inline)
+ * - google-search-console-phuket (hero + dashboard inline)
  * - tiktok-marketing-phuket-services (hero + results inline)
  * - content-marketing-phuket-foreigners (hero + results inline)
  *
@@ -242,6 +243,18 @@ export const siteImages = {
       width: 2304,
       height: 1536,
     },
+    gscPhuket: {
+      src: "/images/blog/blog-thumb-gsc-phuket-clean.png",
+      alt: "Google Search Console ภูเก็ต — วัดผล Local SEO หลังตั้ง GBP Performance Indexing Sitemap",
+      width: 2304,
+      height: 1536,
+    },
+    gscGbpCompare: {
+      src: "/images/blog/blog-inline-gsc-gbp-compare-clean.png",
+      alt: "เปรียบเทียบ Google Business Profile กับ Google Search Console — Maps vs organic search",
+      width: 2304,
+      height: 1536,
+    },
     tiktokServices: {
       src: "/images/blog/blog-thumb-tiktok-services-clean.png",
       alt: "TikTok Marketing สำหรับธุรกิจบริการภูเก็ต — Booking +55%",
@@ -454,6 +467,7 @@ export const blogThumbnailBySlug: Record<string, SiteImage> = {
   "nap-local-seo-phuket": siteImages.blog.gmbPhuket,
   "seo-restaurants-phuket": siteImages.blog.instagramRestaurant,
   "seo-sme-phuket": siteImages.blog.seoPhuketStack,
+  "google-search-console-phuket": siteImages.blog.gscPhuket,
 };
 
 export function getBlogThumbnail(slug: string): SiteImage {
@@ -479,6 +493,7 @@ export const blogInlineImages: Record<string, SiteImage> = {
   instagramResults: siteImages.blog.instagramResults,
   realestateResults: siteImages.blog.realestateResults,
   gmbResults: siteImages.blog.gmbResults,
+  gscGbpCompare: siteImages.blog.gscGbpCompare,
   tiktokResults: siteImages.blog.tiktokResults,
   contentResults: siteImages.blog.contentResults,
   seoPhuketStack: siteImages.blog.seoPhuketStack,

@@ -21,68 +21,102 @@ function CloseIcon() {
   );
 }
 
+function ChevronIcon({ open }: { open: boolean }) {
+  return (
+    <svg
+      aria-hidden
+      width={14}
+      height={14}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={`shrink-0 transition-transform ${open ? "rotate-180" : ""}`}
+    >
+      <path d="M6 9l6 6 6-6" />
+    </svg>
+  );
+}
+
+const itemClass =
+  "block px-3 py-2 text-slate-700 hover:text-indigo-600 hover:bg-indigo-50 rounded-lg text-sm transition-colors";
+
+function MobileDropdown({
+  label,
+  items,
+  onNavigate,
+}: {
+  label: string;
+  items: { name: string; href: string }[];
+  onNavigate: () => void;
+}) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div>
+      <button
+        type="button"
+        className="flex w-full items-center justify-between px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors"
+        onClick={() => setOpen(!open)}
+        aria-expanded={open}
+      >
+        {label}
+        <ChevronIcon open={open} />
+      </button>
+      {open && (
+        <div className="mt-0.5 ml-2 border-l border-slate-100 pl-2 space-y-0.5">
+          {items.map((s) => (
+            <Link key={s.href} href={s.href} className={itemClass} onClick={onNavigate}>
+              {s.name}
+            </Link>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 export default function NavbarMobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
+  const close = () => setIsOpen(false);
 
   return (
     <>
       <button
+        type="button"
         className="lg:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors shrink-0"
         onClick={() => setIsOpen(!isOpen)}
-        aria-label="Toggle menu"
+        aria-label={isOpen ? "ปิดเมนู" : "เปิดเมนู"}
         aria-expanded={isOpen}
       >
         {isOpen ? <CloseIcon /> : <MenuIcon />}
       </button>
 
       {isOpen && (
-        <div className="lg:hidden absolute top-full left-0 right-0 bg-white border-t border-slate-100 shadow-xl">
-          <div className="px-4 py-4 space-y-1">
-            <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider px-3 py-2">บริการหลัก</p>
-            {primaryServices.map((s) => (
-              <Link
-                key={s.href}
-                href={s.href}
-                className="block px-3 py-2.5 text-slate-700 hover:text-indigo-600 hover:bg-indigo-50 rounded-lg text-sm transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                {s.name}
+        <div className="lg:hidden absolute top-full left-0 right-0 bg-white border-t border-slate-100 shadow-xl max-h-[min(70vh,520px)] overflow-y-auto">
+          <div className="px-3 py-3 space-y-0.5">
+            <MobileDropdown label="บริการ" items={primaryServices} onNavigate={close} />
+            <MobileDropdown label="Local SEO" items={localSeo} onNavigate={close} />
+
+            {navLinks.map((item) => (
+              <Link key={item.href} href={item.href} className={itemClass} onClick={close}>
+                {item.name}
               </Link>
             ))}
-            <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider px-3 py-2 mt-2">Local SEO</p>
-            {localSeo.map((s) => (
-              <Link
-                key={s.href}
-                href={s.href}
-                className="block px-3 py-2.5 text-slate-700 hover:text-indigo-600 hover:bg-indigo-50 rounded-lg text-sm transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                {s.name}
-              </Link>
-            ))}
-            <div className="border-t border-slate-100 pt-3 mt-3 space-y-1">
-              {navLinks.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="block px-3 py-2.5 text-slate-700 hover:text-indigo-600 hover:bg-indigo-50 rounded-lg text-sm transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </div>
-            <div className="pt-3 space-y-2">
+
+            <div className="border-t border-slate-100 pt-2 mt-2 flex items-center gap-2">
               <a
                 href={`tel:${siteConfig.phone}`}
-                className="block text-center text-sm text-slate-500 hover:text-indigo-600"
+                className="flex-1 text-center text-sm text-slate-500 hover:text-indigo-600 py-2"
               >
                 {siteConfig.phone}
               </a>
               <Link
                 href="/contact"
-                className="block w-full text-center bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-5 py-3 rounded-full text-sm transition-colors"
-                onClick={() => setIsOpen(false)}
+                className="flex-1 text-center bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-4 py-2 rounded-full text-sm transition-colors"
+                onClick={close}
               >
                 ปรึกษาฟรี
               </Link>

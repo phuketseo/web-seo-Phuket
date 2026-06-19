@@ -90,10 +90,16 @@ const blogRelatedSlugs: Record<string, string[]> = {
     "google-reviews-phuket",
   ],
   "google-my-business-phuket": [
+    "google-search-console-phuket",
     "google-reviews-phuket",
     "local-seo-phuket-kue-arai",
     "nap-local-seo-phuket",
-    "near-me-seo-phuket",
+  ],
+  "google-search-console-phuket": [
+    "google-my-business-phuket",
+    "local-seo-phuket-kue-arai",
+    "website-speed-seo-phuket",
+    "google-reviews-phuket",
   ],
   "google-reviews-phuket": [
     "google-my-business-phuket",
