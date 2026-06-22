@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { ArrowLeft, ChevronRight } from "lucide-react";
 import { BlogArticleMeta } from "@/components/blog/vercel/BlogArticleMeta";
 import { BlogAuthorBox } from "@/components/blog/vercel/BlogAuthorBox";
@@ -74,11 +74,11 @@ export function BlogVercelLayout({ post, thumbnail, headings, contentForRender, 
               <BlogFeaturedImage image={thumbnail} theme="vercel" />
             </div>
 
-            {post.tldr && post.tldr.length > 0 && (
-              <BlogTldr title={post.tldrTitle} items={post.tldr} />
-            )}
+            <div className="blog-prose-vercel">
+              {post.tldr && post.tldr.length > 0 && (
+                <BlogTldr title={post.tldrTitle} items={post.tldr} />
+              )}
 
-            <div className="blog-prose blog-prose-vercel">
               {renderBlogContent(contentForRender, {
                 midCtaAfterSection: 5,
                 theme: "vercel",
@@ -148,7 +148,7 @@ export function BlogVercelLayout({ post, thumbnail, headings, contentForRender, 
       <section className="border-t border-neutral-200/80 bg-neutral-50/50 py-14 px-4">
         <div className="max-w-2xl mx-auto text-center">
           <p className="text-neutral-600 mb-6 leading-relaxed text-[15px]">
-            อยากให้ช่วยวางแผน SEO ตามบริบทธุรกิจของคุณ? ปรึกษาฟรี 30 นาที — ไม่มีข้อผูกมัด
+            อยากให้ช่วยวางแผน SEO ตามบริบทธุรกิจของคุณ? ขอคำปรึกษาฟรี — ไม่มีข้อผูกมัด
           </p>
           <Link
             href="/contact"

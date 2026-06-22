@@ -11,7 +11,7 @@ import { siteConfig } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "รับทำ SEO ภูเก็ต | ติดอันดับ Google ได้จริง - PhuketSEO",
   description:
-    "บริการ SEO ภูเก็ต ติดอันดับ Google หน้า 1 สำหรับธุรกิจในภูเก็ต โรงแรม อสังหาฯ ร้านอาหาร ผลลัพธ์วัดได้จริง ปรึกษาฟรี!",
+    "บริการ SEO ภูเก็ต ติดอันดับ Google หน้า 1 สำหรับธุรกิจในภูเก็ต โรงแรม อสังหาฯ ร้านอาหาร ผลลัพธ์วัดได้จริง ขอคำปรึกษาฟรี!",
   alternates: { canonical: `${siteConfig.url}/services/seo-phuket` },
 };
 
@@ -105,7 +105,7 @@ export default function SeoPhuketPage() {
             </p>
             <div className="flex flex-wrap gap-4 mb-8">
               <Link href="/contact" className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-xl transition-all hover:shadow-xl hover:-translate-y-0.5">
-                ปรึกษาฟรี <ArrowRight size={16} />
+                ขอคำปรึกษาฟรี <ArrowRight size={16} />
               </Link>
               <Link href="#process" className="inline-flex items-center gap-2 border-2 border-white/30 text-white hover:bg-white/10 font-semibold px-6 py-3 rounded-xl transition-all">
                 ดูขั้นตอนการทำงาน
@@ -241,7 +241,7 @@ export default function SeoPhuketPage() {
                 ))}
               </ul>
               <Link href="/contact" className="block w-full text-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 rounded-xl transition-colors">
-                ปรึกษาฟรี
+                ขอคำปรึกษาฟรี
               </Link>
               <p className="text-blue-300 text-xs text-center mt-3">ไม่มีสัญญาผูกมัด · ยกเลิกได้ทุกเมื่อ</p>
             </div>
@@ -255,10 +255,10 @@ export default function SeoPhuketPage() {
       <section className="py-16 bg-green-500">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white font-serif mb-4">พร้อมให้ธุรกิจของคุณติดอันดับ Google แล้วหรือยัง?</h2>
-          <p className="text-green-100 mb-6">ปรึกษาฟรี 30 นาที เราจะวิเคราะห์เว็บไซต์และแนะนำกลยุทธ์ SEO ที่เหมาะสม</p>
+          <p className="text-green-100 mb-6">ขอคำปรึกษาฟรี เราจะวิเคราะห์เว็บไซต์และแนะนำกลยุทธ์ SEO ที่เหมาะสม</p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link href="/contact" className="bg-white text-green-600 font-bold px-8 py-3 rounded-xl hover:shadow-lg transition-all">
-              ปรึกษาฟรี
+              ขอคำปรึกษาฟรี
             </Link>
             <Link href="/pricing" className="border-2 border-white text-white font-bold px-8 py-3 rounded-xl hover:bg-white/10 transition-all">
               ดูแพ็กเกจราคา

@@ -10,7 +10,7 @@ import { siteConfig } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "รับทำ Google Ads ภูเก็ต | ยิงแอดตรงกลุ่มเป้าหมาย - PhuketSEO",
-  description: "บริการ Google Ads ภูเก็ต ยิงโฆษณาตรงกลุ่มเป้าหมาย ได้ผลลัพธ์ทันที ประหยัดงบประมาณ ROI สูงสุด ปรึกษาฟรี!",
+  description: "บริการ Google Ads ภูเก็ต ยิงโฆษณาตรงกลุ่มเป้าหมาย ได้ผลลัพธ์ทันที ประหยัดงบประมาณ ROI สูงสุด ขอคำปรึกษาฟรี!",
   alternates: { canonical: `${siteConfig.url}/services/google-ads` },
 };
 
@@ -75,7 +75,7 @@ export default function GoogleAdsPage() {
             </p>
             <div className="flex flex-wrap gap-4">
               <Link href="/contact" className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-xl transition-all hover:shadow-xl hover:-translate-y-0.5">
-                ปรึกษาฟรี <ArrowRight size={16} />
+                ขอคำปรึกษาฟรี <ArrowRight size={16} />
               </Link>
             </div>
           </div>
@@ -170,7 +170,7 @@ export default function GoogleAdsPage() {
               ))}
             </ul>
             <Link href="/contact" className="block w-full text-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 rounded-xl transition-colors">
-              ปรึกษาฟรี
+              ขอคำปรึกษาฟรี
             </Link>
           </div>
         </div>
@@ -181,9 +181,9 @@ export default function GoogleAdsPage() {
       <section className="py-16 bg-green-500">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white font-serif mb-4">เริ่มต้น Google Ads วันนี้ เห็นผลภายใน 24 ชั่วโมง</h2>
-          <p className="text-green-100 mb-6">ปรึกษาฟรี เราจะวิเคราะห์ธุรกิจและแนะนำกลยุทธ์ Google Ads ที่เหมาะสม</p>
+          <p className="text-green-100 mb-6">ขอคำปรึกษาฟรี เราจะวิเคราะห์ธุรกิจและแนะนำกลยุทธ์ Google Ads ที่เหมาะสม</p>
           <Link href="/contact" className="inline-block bg-white text-green-600 font-bold px-8 py-3 rounded-xl hover:shadow-lg transition-all">
-            ปรึกษาฟรี
+            ขอคำปรึกษาฟรี
           </Link>
         </div>
       </section>

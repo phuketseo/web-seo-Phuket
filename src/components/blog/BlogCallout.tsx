@@ -40,7 +40,7 @@ export function BlogCallout({ type = "info", theme = "default", children }: Prop
         <p className="text-[11px] font-medium uppercase tracking-[0.12em] text-neutral-500 mb-2">
           {vercelLabels[type]}
         </p>
-        <div className="text-[15px] leading-relaxed text-neutral-700 [&_strong]:font-semibold [&_strong]:text-neutral-900">
+        <div className="leading-relaxed text-neutral-700 [&_strong]:font-semibold [&_strong]:text-neutral-900">
           {children}
         </div>
       </aside>

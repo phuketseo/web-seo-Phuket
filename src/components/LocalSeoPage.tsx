@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { CheckCircle, ArrowRight, MapPin, Phone } from "lucide-react";
 import { BlogFaqSection } from "@/components/blog/BlogFaqSection";
 
@@ -57,7 +57,7 @@ export default function LocalSeoPage({
             ) : null}
             <div className="flex flex-wrap gap-4 mb-8">
               <Link href="/contact" className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-xl transition-all hover:shadow-xl hover:-translate-y-0.5">
-                ปรึกษาฟรี <ArrowRight size={16} />
+                ขอคำปรึกษาฟรี <ArrowRight size={16} />
               </Link>
             </div>
             <div className="flex flex-wrap gap-4 text-sm text-blue-200">
@@ -177,10 +177,10 @@ export default function LocalSeoPage({
           <h2 className="text-3xl font-bold text-white font-serif mb-4">
             พร้อมให้ธุรกิจของคุณใน{area}ติดอันดับ Google?
           </h2>
-          <p className="text-blue-200 mb-8">ปรึกษาฟรี เราจะวิเคราะห์ตลาดใน{area}และแนะนำกลยุทธ์ที่เหมาะสม</p>
+          <p className="text-blue-200 mb-8">ขอคำปรึกษาฟรี เราจะวิเคราะห์ตลาดใน{area}และแนะนำกลยุทธ์ที่เหมาะสม</p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link href="/contact" className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold px-8 py-3.5 rounded-xl transition-all hover:shadow-xl">
-              <Phone size={18} /> ปรึกษาฟรี
+              <Phone size={18} /> ขอคำปรึกษาฟรี
             </Link>
             <Link href="/services/seo-phuket" className="inline-flex items-center gap-2 border-2 border-white/30 text-white hover:bg-white/10 font-semibold px-8 py-3.5 rounded-xl transition-all">
               ดูบริการ SEO ทั้งหมด

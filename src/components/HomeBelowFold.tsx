@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import Image from "next/image";
 import { lineContactUrl, siteConfig, businessHours } from "@/lib/utils";
 import { pricingPackages, planContactHref } from "@/lib/pricing-packages";
@@ -560,11 +560,11 @@ export default function HomeBelowFold() {
             <span className="text-gradient">ให้ธุรกิจคุณแล้วหรือยัง?</span>
           </h2>
           <p className="text-slate-500 text-lg mb-10 max-w-xl mx-auto">
-            ปรึกษาฟรี 30 นาที ไม่มีข้อผูกมัด เราจะวิเคราะห์เว็บไซต์และแนะนำกลยุทธ์ที่เหมาะกับธุรกิจของคุณ
+            ขอคำปรึกษาฟรี ไม่มีข้อผูกมัด เราจะวิเคราะห์เว็บไซต์และแนะนำกลยุทธ์ที่เหมาะกับธุรกิจของคุณ
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <Link href="/contact" className="btn-pill text-base px-9 py-4">
-              <Phone size={17} /> ปรึกษาฟรี
+              <Phone size={17} /> ขอคำปรึกษาฟรี
             </Link>
             <a
               href={lineContactUrl()}

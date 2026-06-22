@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { CheckCircle, XCircle, Star, Briefcase, TrendingUp } from "lucide-react";
 import { siteConfig } from "@/lib/utils";
 import { organizationJsonLd, pricingServicesJsonLd } from "@/lib/schema";
@@ -187,7 +187,7 @@ export default function PricingPage() {
         <section className="text-center bg-blue-800 text-white p-12 rounded-2xl">
           <h2 className="text-3xl font-serif font-bold mb-4">ไม่แน่ใจว่าแพ็กไหนเหมาะ?</h2>
           <p className="text-lg mb-8 text-blue-100 max-w-2xl mx-auto">
-            ปรึกษาฟรี 30 นาที เราจะแนะนำแพ็กเกจที่เหมาะกับธุรกิจและงบประมาณของคุณ
+            ขอคำปรึกษาฟรี เราจะแนะนำแพ็กเกจที่เหมาะกับธุรกิจและงบประมาณของคุณ
           </p>
           <Link
             href="/seo-audit"

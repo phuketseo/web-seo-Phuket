@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { CheckCircle, ArrowRight, Briefcase, Phone } from "lucide-react";
 import { BlogFaqSection } from "@/components/blog/BlogFaqSection";
 import type { IndustryContent } from "@/lib/industry-seo-content";
@@ -33,7 +33,7 @@ export default function IndustrySeoPage({ data }: { data: IndustryContent }) {
               {data.answerBlock}
             </p>
             <Link href="/contact" className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-xl transition-all">
-              ปรึกษาฟรี <ArrowRight size={16} />
+              ขอคำปรึกษาฟรี <ArrowRight size={16} />
             </Link>
           </div>
           <div className="grid grid-cols-2 gap-4">
@@ -118,7 +118,7 @@ export default function IndustrySeoPage({ data }: { data: IndustryContent }) {
           </h2>
           <div className="flex flex-wrap justify-center gap-4 mt-6">
             <Link href="/contact" className="inline-flex items-center gap-2 bg-white text-green-600 font-bold px-8 py-3 rounded-xl">
-              <Phone size={18} /> ปรึกษาฟรี
+              <Phone size={18} /> ขอคำปรึกษาฟรี
             </Link>
             <Link href="/services/seo-phuket" className="border-2 border-white text-white font-bold px-8 py-3 rounded-xl hover:bg-white/10">
               บริการ SEO ภูเก็ต

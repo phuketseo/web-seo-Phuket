@@ -27,7 +27,7 @@ export const blogPostsMeta: BlogPostMeta[] = [
     title: "SEO SME ภูเก็ต 2026 — ธุรกิจเล็กที่ยังไม่มีตัวตนบน Google",
     category: "SEO ภูเก็ต",
     description:
-      "SEO SME ภูเก็ต ทำอย่างไรเมื่อธุรกิจเล็กยังไม่มีตัวตนบน Google — ปัญหาการมองเห็นและทิศทางเริ่มต้นสำหรับ SME ในภูเก็ต",
+      "SEO SME ภูเก็ต — Pattern ที่ธุรกิจเล็กในภูเก็ตมักเจอเมื่อยังไม่มีตัวตนบน Google ทิศทางเริ่มต้นและจุดที่ SME มักติด (ไม่ใช่คู่มือ DIY)",
     thumbnail: getBlogThumbnail("seo-sme-phuket"),
   },
   {

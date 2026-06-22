@@ -13,9 +13,9 @@ export function BlogFaqSection({ faqs, theme = "default" }: Props) {
 
   if (theme === "vercel") {
     return (
-      <section className="mt-14 pt-10 border-t border-neutral-200">
+      <section className="mt-14 pt-10 border-t border-neutral-200 blog-prose-vercel">
         <h2
-          className="text-xl font-semibold tracking-tight text-neutral-900 mb-6 scroll-mt-28"
+          className="font-bold tracking-tight text-neutral-900 scroll-mt-28"
           id="faq"
         >
           คำถามที่พบบ่อย
@@ -23,14 +23,14 @@ export function BlogFaqSection({ faqs, theme = "default" }: Props) {
         <div className="divide-y divide-neutral-200 border-y border-neutral-200">
           {faqs.map((faq) => (
             <details key={faq.q} className="group">
-              <summary className="flex cursor-pointer items-center justify-between gap-4 py-4 font-medium text-neutral-900 hover:text-neutral-600 list-none text-[15px]">
+              <summary className="flex cursor-pointer items-center justify-between gap-4 py-4 font-medium text-neutral-900 hover:text-neutral-600 list-none">
                 <span>{faq.q}</span>
                 <ChevronDown
                   size={16}
                   className="shrink-0 text-neutral-400 transition-transform group-open:rotate-180"
                 />
               </summary>
-              <div className="pb-4 text-neutral-600 text-[15px] leading-relaxed pr-8">
+              <div className="pb-4 text-neutral-600 leading-relaxed pr-8">
                 {faq.a}
               </div>
             </details>

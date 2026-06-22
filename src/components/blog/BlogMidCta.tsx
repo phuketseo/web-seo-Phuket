@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import type { BlogTheme } from "@/lib/blog-theme";
 
@@ -10,11 +10,11 @@ export function BlogMidCta({ theme = "default" }: Props) {
   if (theme === "vercel") {
     return (
       <div className="my-12 rounded-lg border border-neutral-200 p-6 sm:p-7">
-        <h3 className="text-base font-semibold text-neutral-900 mb-2 tracking-tight">
+        <h3 className="font-semibold text-neutral-900 mb-2 tracking-tight">
           อยากให้ช่วยวางแผน SEO?
         </h3>
-        <p className="text-neutral-500 text-[15px] leading-relaxed mb-5">
-          ปรึกษาฟรี 30 นาที — ช่วยดูช่องว่าง GBP, keyword ในโซน และลำดับงานที่ควรทำก่อน ไม่มีข้อผูกมัด
+        <p className="text-neutral-500 leading-relaxed mb-5">
+          ขอคำปรึกษาฟรี — ช่วยดูช่องว่าง GBP, keyword ในโซน และลำดับงานที่ควรทำก่อน ไม่มีข้อผูกมัด
         </p>
         <Link
           href="/contact"
@@ -30,7 +30,7 @@ export function BlogMidCta({ theme = "default" }: Props) {
     <div className="my-10 rounded-2xl border border-indigo-100 bg-gradient-to-br from-indigo-50 to-white p-6 sm:p-8">
       <h3 className="text-lg font-bold text-blue-950 font-serif mb-2">อยากให้ช่วยวางแผน SEO?</h3>
       <p className="text-slate-600 text-base leading-relaxed mb-4">
-        ปรึกษาฟรี 30 นาที — ช่วยดูช่องว่าง GBP, keyword ในโซน และลำดับงานที่ควรทำก่อน ไม่มีข้อผูกมัด
+        ขอคำปรึกษาฟรี — ช่วยดูช่องว่าง GBP, keyword ในโซน และลำดับงานที่ควรทำก่อน ไม่มีข้อผูกมัด
       </p>
       <Link
         href="/contact"

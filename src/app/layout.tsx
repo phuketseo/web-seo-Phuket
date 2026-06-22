@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import DeferredLineChat from "@/components/DeferredLineChat";
 import DeferredGoogleAnalytics from "@/components/DeferredGoogleAnalytics";
+import CookieConsent from "@/components/CookieConsent";
 import { defaultOgImage, siteConfig } from "@/lib/utils";
 
 const kanitBold = Kanit({
@@ -92,8 +93,9 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <DeferredLineChat />
+        <CookieConsent />
+        {gaId && <DeferredGoogleAnalytics gaId={gaId} />}
       </body>
-      {gaId && <DeferredGoogleAnalytics gaId={gaId} />}
     </html>
   );
 }

@@ -128,7 +128,7 @@ export default function SocialMediaPage() {
             เพิ่มยอดขาย สร้างแบรนด์ให้เป็นที่รู้จัก และเข้าถึงลูกค้าเป้าหมายของคุณอย่างมีประสิทธิภาพ
           </p>
           <Link href="/contact" className="bg-white text-[#1e3a8a] hover:bg-gray-100 font-bold py-3 px-8 rounded-full text-lg transition duration-300 ease-in-out shadow-lg">
-            ปรึกษาฟรีวันนี้
+            ขอคำปรึกษาฟรี
           </Link>
         </div>
       </section>
@@ -401,7 +401,7 @@ export default function SocialMediaPage() {
             ปรึกษาผู้เชี่ยวชาญของเราวันนี้ เพื่อวางแผนกลยุทธ์ที่เหมาะสมกับธุรกิจของคุณ
           </p>
           <Link href="/contact" className="bg-white text-[#1e3a8a] hover:bg-gray-100 font-bold py-4 px-10 rounded-full text-xl transition duration-300 ease-in-out shadow-lg">
-            ปรึกษาฟรี ไม่มีค่าใช้จ่าย
+            ขอคำปรึกษาฟรี ไม่มีค่าใช้จ่าย
           </Link>
           <div className="mt-10 text-lg">
             <p>โทร: <a href={`tel:${siteConfig.phone}`} className="underline hover:text-gray-200">{siteConfig.phone}</a></p>

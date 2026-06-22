@@ -1,4 +1,4 @@
-const CRITICAL_HERO_CSS = `
+﻿const CRITICAL_HERO_CSS = `
 .hero-section{min-height:100svh;display:flex;align-items:center;position:relative;overflow:hidden;background:radial-gradient(ellipse 80% 60% at 60% -10%,#e0e7ff 0%,transparent 60%),radial-gradient(ellipse 60% 50% at -10% 80%,#fce7f3 0%,transparent 60%),#fff}
 .hero-inner{max-width:80rem;margin:0 auto;padding:9rem 1rem 3rem;width:100%;position:relative;z-index:1}
 .hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:#eef2ff;border:1px solid #c7d2fe;color:#4f46e5;font-family:Tahoma,"Segoe UI",sans-serif;font-size:.875rem;font-weight:500;padding:.5rem 1rem;border-radius:9999px;margin-bottom:2rem}
@@ -34,7 +34,7 @@ export default function HomeHero() {
             </p>
             <div className="hero-actions flex flex-wrap gap-3 mb-10">
               <a href="/contact" className="hero-btn-primary btn-pill text-base px-8 py-4">
-                ปรึกษาฟรี 30 นาที →
+                ขอคำปรึกษาฟรี →
               </a>
               <a href="#services" className="hero-btn-ghost btn-pill-ghost text-base px-8 py-4">
                 ดูบริการของเรา ↓

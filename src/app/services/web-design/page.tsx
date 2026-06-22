@@ -90,7 +90,7 @@ export default function WebDesignServicePage() {
             PhuketSEO ผู้เชี่ยวชาญด้านการออกแบบและพัฒนาเว็บไซต์ ที่จะช่วยให้ธุรกิจของคุณเติบโตอย่างยั่งยืนในภูเก็ตและทั่วโลก
           </p>
           <Link href="/contact" className="bg-[#25D366] hover:bg-green-600 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 ease-in-out transform hover:scale-105 shadow-lg opacity-0 animate-fade-in-up animation-delay-400">
-            ปรึกษาฟรี!
+            ขอคำปรึกษาฟรี!
           </Link>
         </div>
         {/* Abstract shapes for background effect */}

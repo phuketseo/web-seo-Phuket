@@ -81,8 +81,24 @@ export function renderBlogContent(content: string, options: RenderOptions = {}) 
   let key = 0;
   let h2Count = 0;
   let headingIndex = 0;
+  let listBuffer: { type: "ul" | "ol"; items: React.ReactNode[] } | null = null;
+
+  const flushList = () => {
+    if (!listBuffer?.items.length) {
+      listBuffer = null;
+      return;
+    }
+    const ListTag = listBuffer.type;
+    elements.push(
+      <ListTag key={key++} className={isVercel ? "blog-list" : "my-2 ml-5 list-outside"}>
+        {listBuffer.items}
+      </ListTag>
+    );
+    listBuffer = null;
+  };
 
   const flush = () => {
+    flushList();
     if (tableRows.length > 0) {
       elements.push(
         <div key={key++} className="overflow-x-auto my-8">
@@ -165,6 +181,7 @@ export function renderBlogContent(content: string, options: RenderOptions = {}) 
         codeLines = [];
         inCodeBlock = false;
       } else {
+        flush();
         inCodeBlock = true;
       }
       continue;
@@ -278,6 +295,7 @@ export function renderBlogContent(content: string, options: RenderOptions = {}) 
     if (inTable) flush();
 
     if (line.startsWith("## ")) {
+      flush();
       h2Count++;
       const headingText = line.slice(3);
       const id = slugifyHeading(headingText.replace(/\*\*/g, ""), headingIndex++);
@@ -287,7 +305,7 @@ export function renderBlogContent(content: string, options: RenderOptions = {}) 
           id={id}
           className={
             isVercel
-              ? "text-xl sm:text-2xl font-semibold tracking-tight text-neutral-900 mt-5 mb-5 scroll-mt-28 first:mt-0"
+              ? "scroll-mt-28 first:mt-0"
               : "text-2xl font-bold text-blue-950 mt-12 mb-5 font-serif scroll-mt-28 first:mt-0"
           }
         >
@@ -298,12 +316,13 @@ export function renderBlogContent(content: string, options: RenderOptions = {}) 
         elements.push(<BlogMidCta key={key++} theme={theme} />);
       }
     } else if (line.startsWith("### ")) {
+      flush();
       elements.push(
         <h3
           key={key++}
           className={
             isVercel
-              ? "text-lg font-semibold text-neutral-900 mt-10 mb-3 tracking-tight"
+              ? undefined
               : "text-xl font-semibold text-slate-900 mt-8 mb-3"
           }
         >
@@ -311,44 +330,39 @@ export function renderBlogContent(content: string, options: RenderOptions = {}) 
         </h3>
       );
     } else if (line.startsWith("- ")) {
-      elements.push(
-        <li
-          key={key++}
-          className={
-            isVercel
-              ? "ml-5 list-disc text-neutral-700 mb-2 leading-relaxed text-[15px]"
-              : "ml-5 list-disc text-slate-700 mb-2 leading-relaxed"
-          }
-        >
-          {renderInline(line.slice(2), `li-${key}`, theme)}
+      if (listBuffer?.type !== "ul") flushList();
+      if (!listBuffer) listBuffer = { type: "ul", items: [] };
+      const itemKey = key++;
+      listBuffer.items.push(
+        <li key={itemKey} className={isVercel ? undefined : "text-slate-700 mb-2 leading-relaxed"}>
+          {renderInline(line.slice(2), `li-${itemKey}`, theme)}
         </li>
       );
     } else if (/^\d+\. /.test(line)) {
-      elements.push(
-        <li
-          key={key++}
-          className={
-            isVercel
-              ? "ml-5 list-decimal text-neutral-700 mb-2 leading-relaxed text-[15px]"
-              : "ml-5 list-decimal text-slate-700 mb-2 leading-relaxed"
-          }
-        >
-          {renderInline(line.replace(/^\d+\. /, ""), `oli-${key}`, theme)}
+      if (listBuffer?.type !== "ol") flushList();
+      if (!listBuffer) listBuffer = { type: "ol", items: [] };
+      const itemKey = key++;
+      listBuffer.items.push(
+        <li key={itemKey} className={isVercel ? undefined : "text-slate-700 mb-2 leading-relaxed"}>
+          {renderInline(line.replace(/^\d+\. /, ""), `oli-${itemKey}`, theme)}
         </li>
       );
     } else if (line.startsWith("---")) {
+      flush();
       elements.push(
-        <hr key={key++} className={isVercel ? "border-neutral-200 my-4" : "border-slate-200 my-4"} />
+        <hr key={key++} className={isVercel ? undefined : "border-slate-200 my-4"} />
       );
     } else if (line.trim() === "") {
-      elements.push(<div key={key++} className="h-2" />);
+      if (listBuffer) continue;
+      if (!isVercel) elements.push(<div key={key++} className="h-2" />);
     } else {
+      flush();
       elements.push(
         <p
           key={key++}
           className={
             isVercel
-              ? "text-neutral-700 leading-[1.75] mb-4 text-[15px] sm:text-base"
+              ? undefined
               : "text-slate-700 leading-[1.7] mb-4 text-[17px]"
           }
         >

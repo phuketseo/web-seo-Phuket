@@ -10,12 +10,12 @@ export function BlogTldr({ title, items }: Props) {
   return (
     <section className="mb-8 pb-8 border-b border-neutral-200/80">
       {title && (
-        <h3 className="text-base font-semibold text-neutral-900 tracking-tight mb-4">{title}</h3>
+        <h3 className="font-semibold text-neutral-900 tracking-tight">{title}</h3>
       )}
-      <ul className="space-y-2">
+      <ul className="space-y-1.5">
         {items.map((item) => (
-          <li key={item} className="flex gap-3 text-[15px] leading-relaxed text-neutral-700">
-            <span className="mt-[9px] h-1 w-1 shrink-0 rounded-full bg-neutral-400" aria-hidden />
+          <li key={item} className="flex gap-3 leading-normal text-neutral-700">
+            <span className="mt-[0.55em] h-1 w-1 shrink-0 rounded-full bg-neutral-400" aria-hidden />
             <span>{item}</span>
           </li>
         ))}

@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+﻿import type { ReactNode } from "react";
 import Link from "next/link";
 import { siteConfig } from "@/lib/utils";
 import { localSeo, navLinks, primaryServices } from "@/components/nav-data";
@@ -111,7 +111,7 @@ export default function Navbar() {
               href="/contact"
               className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-4 xl:px-5 py-2 xl:py-2.5 rounded-full text-[13px] xl:text-sm transition-all duration-200 hover:shadow-lg hover:shadow-indigo-100 hover:-translate-y-0.5 whitespace-nowrap"
             >
-              ปรึกษาฟรี
+              ขอคำปรึกษาฟรี
             </Link>
           </div>
 

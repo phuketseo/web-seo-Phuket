@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { CheckCircle, ArrowRight, Sparkles, Brain, Search } from "lucide-react";
 import { localBusinessJsonLd, faqSchema, buildBreadcrumb } from "@/lib/schema";
@@ -62,7 +62,7 @@ export default function AiSearchVisibilityPage() {
             <p className="text-indigo-200 text-lg mb-4">{aiSearchContent.intro[0]}</p>
             <p className="text-white/90 bg-white/10 border border-white/20 rounded-xl px-4 py-3 mb-8">{aiSearchContent.answerBlock}</p>
             <Link href="/contact" className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-xl">
-              ปรึกษาฟรี <ArrowRight size={16} />
+              ขอคำปรึกษาฟรี <ArrowRight size={16} />
             </Link>
           </div>
           <div className="grid gap-4">
@@ -116,7 +116,7 @@ export default function AiSearchVisibilityPage() {
         <h2 className="text-3xl font-serif font-bold mb-4">รวมในแพ็ก SEO Pro ฿8,900/เดือน</h2>
         <div className="flex flex-wrap justify-center gap-4 mt-6">
           <Link href="/pricing" className="bg-white text-indigo-700 font-bold px-8 py-3 rounded-xl">ดูราคา</Link>
-          <Link href="/contact" className="border-2 border-white font-bold px-8 py-3 rounded-xl hover:bg-white/10">ปรึกษาฟรี</Link>
+          <Link href="/contact" className="border-2 border-white font-bold px-8 py-3 rounded-xl hover:bg-white/10">ขอคำปรึกษาฟรี</Link>
         </div>
       </section>
     </>
