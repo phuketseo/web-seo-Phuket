@@ -753,9 +753,9 @@ PhuketSEO ทำ [Web Design + SEO ภูเก็ต](/services/web-design) ค
     `,
   },
   "google-my-business-phuket": {
-    title: "Google Business Profile ภูเก็ต: Quick Win แรกของ Local SEO",
+    title: "Google Business Profile คืออะไร? Quick Win Local SEO ภูเก็ต",
     description:
-      "Google Business Profile ภูเก็ต คืออะไร ทำอย่างไรให้ธุรกิจโผล่ Maps เมื่อลูกค้าค้นหาในโซน",
+      "Google Business Profile คืออะไร ทำอย่างไรให้ธุรกิจโผล่ Google Maps เมื่อลูกค้าค้นหาในโซน — คู่มือ GBP ภูเก็ต",
     category: "Local SEO",
     date: "21 พฤษภาคม 2569",
     dateISO: "2026-05-21",
@@ -769,7 +769,7 @@ PhuketSEO ทำ [Web Design + SEO ภูเก็ต](/services/web-design) ค
       "ทิศทางแก้: listing ถูกต้อง + trust ก่อน → เว็บเมื่อพร้อม",
       "แต่ละธุรกิจ/โซนต่างกัน — ต้องวิเคราะห์ก่อนลงมือ",
     ],
-    keywords: ["Google Business Profile ภูเก็ต", "Local SEO ภูเก็ต", "Google Maps ภูเก็ต", "GBP ภูเก็ต"],
+    keywords: ["Google Business Profile คืออะไร", "Google Business Profile ภูเก็ต", "Local SEO ภูเก็ต", "Google Maps ภูเก็ต", "GBP ภูเก็ต"],
     relatedServices: [
       { name: "Local SEO ภูเก็ต", href: "/blog/local-seo-phuket-kue-arai" },
       { name: "Local SEO ตัวเมือง", href: "/local/phuket-town" },
@@ -777,6 +777,10 @@ PhuketSEO ทำ [Web Design + SEO ภูเก็ต](/services/web-design) ค
       { name: "Phuket Visibility Stack", href: "/methodology/phuket-visibility-stack" },
     ],
     faqs: [
+      {
+        q: "Google Business Profile คืออะไร?",
+        a: "Google Business Profile (GBP) คือ listing ฟรีบน Google Maps และ Google Search ที่แสดงชื่อธุรกิจ ที่อยู่ เบอร์โทร เวลาเปิด รูปภาพ และรีวิว — ช่วยให้ลูกค้าในโซนเจอธุรกิจเมื่อค้นหาบน Google",
+      },
       {
         q: "Google Business Profile กับ SEO เว็บไซต์ ต่างกันอย่างไร?",
         a: "GBP ทำให้ธุรกิจโผล่ Google Maps และ Local Pack เมื่อค้นหาในโซน SEO เว็บไซต์เน้น organic search ธุรกิจ local มักเริ่มจาก GBP ก่อนเพราะเห็นผลเร็วและฟรี",
@@ -807,6 +811,12 @@ PhuketSEO ทำ [Web Design + SEO ภูเก็ต](/services/web-design) ค
 Google Business Profile คือ Quick Win แรกของ Local SEO — ฟรี เห็นผลเร็ว และวัด phone call ได้
 — ทีม PhuketSEO, Local SEO · ภูเก็ต
 :::
+
+---
+
+## Google Business Profile คืออะไร?
+
+**Google Business Profile (GBP)** คือหน้าโปรไฟล์ธุรกิจฟรีบน Google Maps และ Google Search — แสดงชื่อร้าน ที่อยู่ เบอร์โทร เวลาเปิด รูปภาพ บริการ และรีวิว เมื่อลูกค้าค้นหาธุรกิจในโซนหรือค้นหาชื่อร้าน การตั้ง GBP ที่ถูกต้องคือขั้นตอนแรกของ [Local SEO ภูเก็ต](/blog/local-seo-phuket-kue-arai)
 
 ---
 

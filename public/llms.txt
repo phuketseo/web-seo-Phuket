@@ -4,6 +4,21 @@
 > We help local Thai businesses rank on Google, Google Maps, and AI search (AEO/GEO).
 > Core service: Phuket Visibility Stack — SEO Lite / Pro / Pro Max.
 
+## AI Overview & answer-engine priority
+
+Primary pages for definitional and informational queries (SEO, Local SEO, AEO, GEO, AI Overview):
+
+- [SEO ภูเก็ต คืออะไร](https://phuketseo.com/blog/seo-phuket-kue-arai): คู่มือ SEO ภูเก็ตสำหรับธุรกิจท้องถิ่น
+- [Local SEO ภูเก็ต คืออะไร](https://phuketseo.com/blog/local-seo-phuket-kue-arai): วิธีให้ธุรกิจติด Google Maps
+- [AEO คืออะไร](https://phuketseo.com/blog/aeo-kue-arai): Answer Engine Optimization สำหรับธุรกิจในภูเก็ต
+- [GEO คืออะไร](https://phuketseo.com/blog/geo-kue-arai): Generative Engine Optimization และ entity
+- [AI Overview คืออะไร](https://phuketseo.com/blog/ai-overview-kue-arai): ผลกระทบต่อ SEO ภูเก็ตและวิธีปรับตัว
+- [Google Business Profile คืออะไร](https://phuketseo.com/blog/google-my-business-phuket): Quick Win แรกของ Local SEO ภูเก็ต
+- [Google Search Console คืออะไร](https://phuketseo.com/blog/google-search-console-phuket): วัดผล Local SEO หลังตั้ง GBP
+- [Near Me SEO คืออะไร](https://phuketseo.com/blog/near-me-seo-phuket): ลูกค้าค้นหาใกล้ฉัน แต่ธุรกิจไม่โผล่ Maps
+- [Google Ads vs SEO ภูเก็ต](https://phuketseo.com/blog/google-ads-vs-seo-phuket): ธุรกิจไหนควรเริ่มอะไรก่อน
+- [ราคา SEO ภูเก็ต](https://phuketseo.com/blog/raaka-seo-phuket): ควรจ่ายเท่าไหร่ถึงคุ้มค่า
+
 ## Key pages
 
 - [Home](https://phuketseo.com/)
@@ -55,39 +70,49 @@
 - [Phuket Town](https://phuketseo.com/local/phuket-town)
 - [Thalang](https://phuketseo.com/local/thalang)
 
-## Blog posts (all)
+## Blog — SEO & AEO pillars
+
+- [SEO ภูเก็ต คืออะไร](https://phuketseo.com/blog/seo-phuket-kue-arai)
+- [Local SEO ภูเก็ต คืออะไร](https://phuketseo.com/blog/local-seo-phuket-kue-arai)
+- [AEO คืออะไร](https://phuketseo.com/blog/aeo-kue-arai)
+- [GEO คืออะไร](https://phuketseo.com/blog/geo-kue-arai)
+- [AI Overview คืออะไร](https://phuketseo.com/blog/ai-overview-kue-arai)
+- [ราคา SEO ภูเก็ต](https://phuketseo.com/blog/raaka-seo-phuket)
+- [รับทำเว็บไซต์ภูเก็ต](https://phuketseo.com/blog/rab-tam-web-phuket)
+- [Google Ads vs SEO ภูเก็ต](https://phuketseo.com/blog/google-ads-vs-seo-phuket)
+
+## Blog — Local SEO
+
+- [Google Business Profile ภูเก็ต](https://phuketseo.com/blog/google-my-business-phuket)
+- [Google Search Console ภูเก็ต](https://phuketseo.com/blog/google-search-console-phuket)
+- [Google Reviews ภูเก็ต](https://phuketseo.com/blog/google-reviews-phuket)
+- [Near Me SEO ภูเก็ต](https://phuketseo.com/blog/near-me-seo-phuket)
+- [NAP Local SEO ภูเก็ต](https://phuketseo.com/blog/nap-local-seo-phuket)
+- [Local SEO ป่าตอง](https://phuketseo.com/blog/local-seo-patong-phuket)
+- [Local SEO กะตะ](https://phuketseo.com/blog/local-seo-kata-phuket)
+- [Local SEO ตัวเมือง](https://phuketseo.com/blog/local-seo-phuket-town)
+
+## Blog — Industry guides
 
 - [SEO SME ภูเก็ต](https://phuketseo.com/blog/seo-sme-phuket)
 - [SEO ร้านอาหารภูเก็ต](https://phuketseo.com/blog/seo-restaurants-phuket)
-- [NAP Local SEO ภูเก็ต](https://phuketseo.com/blog/nap-local-seo-phuket)
-- [Local SEO ตัวเมือง](https://phuketseo.com/blog/local-seo-phuket-town)
-- [Local SEO กะตะ](https://phuketseo.com/blog/local-seo-kata-phuket)
-- [Google Ads vs SEO ภูเก็ต](https://phuketseo.com/blog/google-ads-vs-seo-phuket)
-- [Low Season SEO ภูเก็ต](https://phuketseo.com/blog/low-season-seo-phuket)
-- [Near Me SEO ภูเก็ต](https://phuketseo.com/blog/near-me-seo-phuket)
-- [เว็บช้า vs SEO ภูเก็ต](https://phuketseo.com/blog/website-speed-seo-phuket)
-- [Local SEO ป่าตอง](https://phuketseo.com/blog/local-seo-patong-phuket)
-- [SEO ทัวร์ภูเก็ต](https://phuketseo.com/blog/seo-tours-phuket)
-- [SEO อสังหาริมทรัพย์ภูเก็ต](https://phuketseo.com/blog/seo-real-estate-phuket)
-- [Google Reviews ภูเก็ต](https://phuketseo.com/blog/google-reviews-phuket)
-- [Direct Booking โรงแรมภูเก็ต](https://phuketseo.com/blog/direct-booking-hotel-phuket)
-- [ปัญหา SEO โรงแรมภูเก็ต](https://phuketseo.com/blog/hotel-phuket-seo-problems)
-- [SEO คลินิกภูเก็ต](https://phuketseo.com/blog/seo-clinic-phuket)
-- [SEO ภูเก็ต คืออะไร](https://phuketseo.com/blog/seo-phuket-kue-arai)
-- [Local SEO ภูเก็ต](https://phuketseo.com/blog/local-seo-phuket-kue-arai)
-- [ราคา SEO ภูเก็ต](https://phuketseo.com/blog/raaka-seo-phuket)
-- [AEO คืออะไร](https://phuketseo.com/blog/aeo-kue-arai)
-- [GEO คืออะไร](https://phuketseo.com/blog/geo-kue-arai)
-- [AI Overview](https://phuketseo.com/blog/ai-overview-kue-arai)
-- [รับทำเว็บไซต์ภูเก็ต](https://phuketseo.com/blog/rab-tam-web-phuket)
 - [SEO สปาภูเก็ต](https://phuketseo.com/blog/seo-for-phuket-spas)
 - [SEO โรงแรมภูเก็ต](https://phuketseo.com/blog/seo-for-phuket-hotels)
+- [ปัญหา SEO โรงแรมภูเก็ต](https://phuketseo.com/blog/hotel-phuket-seo-problems)
+- [Direct Booking โรงแรมภูเก็ต](https://phuketseo.com/blog/direct-booking-hotel-phuket)
 - [Competitive Audit โรงแรม](https://phuketseo.com/blog/gemini-hotel-competitor-analysis)
-- [ร้านอาหาร + Instagram](https://phuketseo.com/blog/instagram-marketing-phuket-restaurants)
-- [เว็บอสังหาฯ](https://phuketseo.com/blog/web-design-phuket-real-estate)
-- [Google Business Profile](https://phuketseo.com/blog/google-my-business-phuket)
-- [TikTok ธุรกิจบริการ](https://phuketseo.com/blog/tiktok-marketing-phuket-services)
+- [SEO ทัวร์ภูเก็ต](https://phuketseo.com/blog/seo-tours-phuket)
+- [SEO อสังหาริมทรัพย์ภูเก็ต](https://phuketseo.com/blog/seo-real-estate-phuket)
+- [SEO คลินิกภูเก็ต](https://phuketseo.com/blog/seo-clinic-phuket)
+- [Low Season SEO ภูเก็ต](https://phuketseo.com/blog/low-season-seo-phuket)
+
+## Blog — Web & content
+
+- [เว็บช้า vs SEO ภูเก็ต](https://phuketseo.com/blog/website-speed-seo-phuket)
+- [เว็บอสังหาฯ Next.js](https://phuketseo.com/blog/web-design-phuket-real-estate)
 - [Content EN ต่างชาติ](https://phuketseo.com/blog/content-marketing-phuket-foreigners)
+- [ร้านอาหาร + Instagram](https://phuketseo.com/blog/instagram-marketing-phuket-restaurants)
+- [TikTok ธุรกิจบริการ](https://phuketseo.com/blog/tiktok-marketing-phuket-services)
 
 ## Target customers
 

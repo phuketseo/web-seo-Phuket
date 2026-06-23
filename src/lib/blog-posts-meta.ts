@@ -241,10 +241,10 @@ export const blogPostsMeta: BlogPostMeta[] = [
   },
   {
     slug: "google-my-business-phuket",
-    title: "Google Business Profile ภูเก็ต: Quick Win แรกของ Local SEO",
+    title: "Google Business Profile คืออะไร? Quick Win Local SEO ภูเก็ต",
     category: "Local SEO",
     description:
-      "Google Business Profile ภูเก็ต ทำอย่างไรให้ธุรกิจโผล่ Maps",
+      "Google Business Profile คืออะไร ทำอย่างไรให้ธุรกิจโผล่ Google Maps เมื่อลูกค้าค้นหาในโซน — คู่มือ GBP ภูเก็ต",
     thumbnail: getBlogThumbnail("google-my-business-phuket"),
   },
   {
@@ -265,10 +265,10 @@ export const blogPostsMeta: BlogPostMeta[] = [
   },
   {
     slug: "google-search-console-phuket",
-    title: "Google Search Console ภูเก็ต — วัดผล Local SEO หลังตั้ง GBP แล้ว",
+    title: "Google Search Console คืออะไร? วัดผล Local SEO ภูเก็ต",
     category: "Local SEO",
     description:
-      "Google Search Console ภูเก็ต ใช้อย่างไรวัดผล Local SEO หลังตั้ง Google Business Profile — indexing, query และ KPI ที่ควรดูจริง",
+      "Google Search Console คืออะไร ใช้อย่างไรวัดผล Local SEO หลังตั้ง Google Business Profile — indexing, query และ KPI ที่ควรดูจริง",
     thumbnail: getBlogThumbnail("google-search-console-phuket"),
   },
 ];

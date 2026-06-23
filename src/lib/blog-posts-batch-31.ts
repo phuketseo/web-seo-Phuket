@@ -1,9 +1,9 @@
 ﻿/** Blog post #31 — Google Search Console after GBP */
 export const blogPostsBatch31 = {
   "google-search-console-phuket": {
-    title: "Google Search Console ภูเก็ต — วัดผล Local SEO หลังตั้ง GBP แล้ว",
+    title: "Google Search Console คืออะไร? วัดผล Local SEO ภูเก็ต",
     description:
-      "Google Search Console ภูเก็ต ใช้อย่างไรวัดผล Local SEO หลังตั้ง Google Business Profile — ดู indexing, query และสัญญาณที่ควรติดตามจริง",
+      "Google Search Console คืออะไร ใช้อย่างไรวัดผล Local SEO หลังตั้ง Google Business Profile — indexing, query และ KPI ที่ควรดูจริง",
     category: "Local SEO",
     date: "19 มิถุนายน 2569",
     dateISO: "2026-06-19",
@@ -18,6 +18,7 @@ export const blogPostsBatch31 = {
       "GBP Insights กับ GSC ต่างกัน — ใช้คู่กัน ไม่ใช่แทนกัน",
     ],
     keywords: [
+      "Google Search Console คืออะไร",
       "Google Search Console ภูเก็ต",
       "GSC ภูเก็ต",
       "วัดผล Local SEO",
@@ -31,6 +32,10 @@ export const blogPostsBatch31 = {
       { name: "บริการ SEO ภูเก็ต", href: "/services/seo-phuket" },
     ],
     faqs: [
+      {
+        q: "Google Search Console คืออะไร?",
+        a: "Google Search Console (GSC) คือเครื่องมือฟรีจาก Google สำหรับเจ้าของเว็บไซต์ ใช้ดูว่า Google index หน้าไหน คนค้นหาคำอะไรแล้วคลิกเข้าเว็บ มี error indexing หรือไม่ และส่ง sitemap ได้ — ต่างจาก Google Business Profile ที่ดู Maps",
+      },
       {
         q: "Google Search Console กับ Google Business Profile ต่างกันอย่างไร?",
         a: "GBP คือ listing บน Maps — ดู impression, โทร, เส้นทาง และรีวิว GSC คือเครื่องมือดูเว็บไซต์บน Google Search — query, click, indexing และ sitemap ทั้งสองใช้คู่กัน ไม่ใช่ตัวเดียวกัน",
