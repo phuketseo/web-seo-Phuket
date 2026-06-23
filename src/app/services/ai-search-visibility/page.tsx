@@ -1,7 +1,7 @@
 ﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { CheckCircle, ArrowRight, Sparkles, Brain, Search } from "lucide-react";
-import { localBusinessJsonLd, faqSchema, buildBreadcrumb } from "@/lib/schema";
+import { localServiceProvider, areaServedPhuket, faqSchema, buildBreadcrumb } from "@/lib/schema";
 import { aiSearchContent } from "@/lib/service-content";
 import { ServiceFaqSection } from "@/components/ServiceFaqSection";
 import { siteConfig } from "@/lib/utils";
@@ -22,9 +22,9 @@ const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   name: "AI Search Visibility (AEO / GEO)",
-  provider: localBusinessJsonLd,
+  provider: localServiceProvider,
   description: aiSearchContent.answerBlock,
-  areaServed: { "@type": "City", name: "ภูเก็ต" },
+  areaServed: areaServedPhuket,
   offers: {
     "@type": "Offer",
     priceCurrency: "THB",

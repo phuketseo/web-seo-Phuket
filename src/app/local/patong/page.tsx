@@ -1,6 +1,6 @@
 import LocalSeoPage from "@/components/LocalSeoPage";
 import { Metadata } from "next";
-import { faqSchema, buildBreadcrumb } from "@/lib/schema";
+import { faqSchema, buildBreadcrumb, localServiceProvider } from "@/lib/schema";
 import { localSeoContent } from "@/lib/local-seo-content";
 import { localSeoServiceStats } from "@/lib/local-seo-stats";
 import { siteConfig } from "@/lib/utils";
@@ -22,11 +22,7 @@ const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   "serviceType": "Local SEO Service in Patong",
-  "provider": {
-    "@type": "Organization",
-    "name": "PhuketSEO",
-    "url": "https://phuketseo.com",
-  },
+  provider: localServiceProvider,
   "areaServed": {
     "@type": "Place",
     "name": "ป่าตอง",

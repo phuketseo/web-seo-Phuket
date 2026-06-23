@@ -21,6 +21,19 @@ export const siteConfig = {
   /** Google Maps embed — พื้นที่ให้บริการ (Share → Embed a map) */
   googleMapsEmbedUrl:
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d505924.05084961606!2d98.04095496188312!3d7.839289301577946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4c997b641d724c57%3A0x23be7c78ca86320f!2sPhuket%20Seo!5e0!3m2!1sth!2sth!4v1782175964062!5m2!1sth!2sth",
+  /** หน้า Google Maps (GBP entity) — ใช้ใน schema hasMap */
+  googleMapsPlaceUrl:
+    "https://www.google.com/maps/place/Phuket+Seo/@7.8392893,98.040955,10z/data=!4m6!3m5!1s0x4c997b641d724c57:0x23be7c78ca86320f",
+  /** SAB — พื้นที่ให้บริการ (ตรง GBP service area) */
+  serviceArea: {
+    name: "ภูเก็ต",
+    nameEn: "Phuket",
+  },
+  /** พิกัดที่อยู่จดทะเบียน (ตลาดใหญ่) — NAP ตรง GBP ไม่ใช่หมุดหน้าร้าน */
+  geo: {
+    latitude: 7.8804,
+    longitude: 98.3923,
+  },
   /** Dynamic OG image — used in schema until public/logo.png exists */
   logoPath: "/opengraph-image",
   ogImagePath: "/opengraph-image",

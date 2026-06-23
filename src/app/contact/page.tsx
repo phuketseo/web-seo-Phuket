@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Home, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 import { siteConfig } from "@/lib/utils";
-import { organizationJsonLd } from "@/lib/schema";
+import { contactPageJsonLd } from "@/lib/schema";
 import { pricingPackages } from "@/lib/pricing-packages";
 import { responseTimeCopy } from "@/lib/response-times";
 import { ContactChannels } from "@/components/ContactChannels";
@@ -13,29 +13,7 @@ const planLabels = Object.fromEntries(
   pricingPackages.map((pkg) => [pkg.id, `${pkg.name} ฿${pkg.priceLabel}/เดือน`])
 ) as Record<string, string>;
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "BreadcrumbList",
-      itemListElement: [
-        { "@type": "ListItem", position: 1, name: "หน้าแรก", item: `${siteConfig.url}/` },
-        { "@type": "ListItem", position: 2, name: "ติดต่อเรา", item: `${siteConfig.url}/contact` },
-      ],
-    },
-    {
-      ...organizationJsonLd,
-      contactPoint: {
-        "@type": "ContactPoint",
-        telephone: siteConfig.phoneInternational,
-        email: siteConfig.email,
-        contactType: "customer service",
-        areaServed: "TH",
-        availableLanguage: ["Thai", "English"],
-      },
-    },
-  ],
-};
+const jsonLd = contactPageJsonLd;
 
 type FormStatus = "idle" | "loading" | "success" | "error";
 

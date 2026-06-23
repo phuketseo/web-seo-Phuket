@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Home, CheckCircle, AlertCircle, Loader2, Search, Globe, MapPin, BarChart3 } from "lucide-react";
+import { localServiceProvider } from "@/lib/schema";
 import { siteConfig } from "@/lib/utils";
 import { responseTimeCopy } from "@/lib/response-times";
 import { ContactChannels } from "@/components/ContactChannels";
@@ -13,11 +14,7 @@ const jsonLd = {
   name: "ขอ SEO Audit ฟรี — PhuketSEO",
   description: "วิเคราะห์ SEO เว็บไซต์และ Google Maps สำหรับธุรกิจในภูเก็ต",
   url: `${siteConfig.url}/seo-audit`,
-  provider: {
-    "@type": "Organization",
-    name: "PhuketSEO",
-    url: siteConfig.url,
-  },
+  provider: localServiceProvider,
 };
 
 const auditIncludes = [

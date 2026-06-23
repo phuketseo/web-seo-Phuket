@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import LocalSeoPage from '@/components/LocalSeoPage';
-import { faqSchema, buildBreadcrumb } from '@/lib/schema';
+import { faqSchema, buildBreadcrumb, localServiceProvider } from '@/lib/schema';
 import { localSeoContent } from '@/lib/local-seo-content';
 import { localSeoServiceStats } from '@/lib/local-seo-stats';
 import { siteConfig } from '@/lib/utils';
@@ -41,11 +41,7 @@ const serviceSchema = {
     '@type': 'Place',
     name: 'ถลาง, ภูเก็ต',
   },
-  provider: {
-    '@type': 'Organization',
-    name: 'PhuketSEO',
-    url: 'https://phuketseo.com',
-  },
+  provider: localServiceProvider,
 };
 
 const faqSchemaJson = faqSchema(

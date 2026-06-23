@@ -1,32 +1,18 @@
 ﻿import Link from "next/link";
 import Image from "next/image";
-import { lineContactUrl, siteConfig, businessHours } from "@/lib/utils";
-import { pricingPackages, planContactHref } from "@/lib/pricing-packages";
-import { responseTimeCopy } from "@/lib/response-times";
-import { organizationSameAs, postalAddressSchema } from "@/lib/schema";
+import { localBusinessSchema } from "@/lib/schema";
 import { siteImages } from "@/lib/images";
 import { caseStudies } from "@/lib/case-studies-data";
+import { siteConfig, lineContactUrl } from "@/lib/utils";
+import { pricingPackages, planContactHref } from "@/lib/pricing-packages";
+import { responseTimeCopy } from "@/lib/response-times";
 import {
   Star, CheckCircle,
   ArrowRight, Phone, MessageCircle, Award, Users, BarChart3,
   Globe, ChevronDown, Quote, Zap, Shield, Target, Clock, TrendingUp
 } from "lucide-react";
 
-// ─── Schema Markup ────────────────────────────────────────────────────────────
-const organizationSchema = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  name: siteConfig.name,
-  description: "รับทำ SEO + เว็บไซต์ภูเก็ต สำหรับธุรกิจไทยท้องถิ่น ติด Google Maps และ AI Search",
-  url: siteConfig.url,
-  telephone: siteConfig.phoneInternational,
-  email: siteConfig.email,
-  address: postalAddressSchema,
-  openingHours: businessHours.schemaOpeningHours,
-  priceRange: "฿฿",
-  sameAs: organizationSameAs,
-};
-
+// ─── Schema Markup (SAB LocalBusiness — ดู src/lib/schema.ts) ───────────────
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -585,7 +571,7 @@ export default function HomeBelowFold() {
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
       />
       <script
         type="application/ld+json"

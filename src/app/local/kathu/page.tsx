@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import LocalSeoPage from '@/components/LocalSeoPage';
-import { faqSchema, buildBreadcrumb } from '@/lib/schema';
+import { faqSchema, buildBreadcrumb, localServiceProvider } from '@/lib/schema';
 import { localSeoContent } from '@/lib/local-seo-content';
 import { localSeoServiceStats } from '@/lib/local-seo-stats';
 import { siteConfig } from '@/lib/utils';
@@ -54,11 +54,7 @@ export default function KathuPage() {
     serviceType: 'Local SEO',
     name: 'บริการ SEO สำหรับธุรกิจในกะทู้ ภูเก็ต',
     description: 'เพิ่มการมองเห็นธุรกิจของคุณในกะทู้ ภูเก็ต ด้วยกลยุทธ์ SEO ท้องถิ่นที่ปรับแต่งมาโดยเฉพาะสำหรับสนามกอล์ฟ รีสอร์ท ร้านอาหาร สปา และอสังหาฯ',
-    provider: {
-      '@type': 'Organization',
-      name: 'PhuketSEO',
-      url: 'https://phuketseo.com',
-    },
+    provider: localServiceProvider,
     areaServed: {
       '@type': 'AdministrativeArea',
       name: 'กะทู้',

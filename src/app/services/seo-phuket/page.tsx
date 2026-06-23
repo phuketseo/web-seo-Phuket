@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { CheckCircle, ArrowRight, Search, TrendingUp, Star, BarChart3, FileText, Link2, MapPin } from "lucide-react";
-import { localBusinessJsonLd, faqSchema, buildBreadcrumb } from "@/lib/schema";
+import { localServiceProvider, areaServedPhuket, faqSchema, buildBreadcrumb } from "@/lib/schema";
 import { siteImages } from "@/lib/images";
 import { seoPhuketContent } from "@/lib/service-content";
 import { ServiceFaqSection } from "@/components/ServiceFaqSection";
@@ -24,9 +24,9 @@ const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   name: "บริการ SEO ภูเก็ต",
-  provider: localBusinessJsonLd,
+  provider: localServiceProvider,
   description: "บริการ SEO สำหรับธุรกิจในภูเก็ต ติดอันดับ Google หน้า 1",
-  areaServed: { "@type": "City", name: "ภูเก็ต" },
+  areaServed: areaServedPhuket,
   offers: {
     "@type": "Offer",
     priceCurrency: "THB",
