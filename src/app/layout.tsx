@@ -66,6 +66,13 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     images: [defaultOgImage.url],
   },
+  icons: {
+    icon: [
+      { url: "/icon", type: "image/png", sizes: "48x48" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: [{ url: "/apple-icon", type: "image/png", sizes: "180x180" }],
+  },
 };
 
 const CRITICAL_SHELL_CSS = `

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="PhuketSEO">
+  <defs>
+    <linearGradient id="ps-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4f46e5"/>
+      <stop offset="55%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+  </defs>
+  <rect width="48" height="48" rx="12" fill="url(#ps-bg)"/>
+  <text x="24" y="31" text-anchor="middle" fill="#fff" font-family="Tahoma, Segoe UI, sans-serif" font-size="20" font-weight="700">PS</text>
+</svg>
