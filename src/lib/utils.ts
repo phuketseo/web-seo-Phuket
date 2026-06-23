@@ -18,6 +18,9 @@ export const siteConfig = {
   line: "@phuketseo",
   /** Verified GBP — ลิงก์ขอรีวิว (ไม่มีปักหมุดบน Maps) */
   googleReviewUrl: "https://g.page/r/CQ8yhsp4fL4jEAE/review",
+  /** Google Maps embed — พื้นที่ให้บริการ (Share → Embed a map) */
+  googleMapsEmbedUrl:
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d505924.05084961606!2d98.04095496188312!3d7.839289301577946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4c997b641d724c57%3A0x23be7c78ca86320f!2sPhuket%20Seo!5e0!3m2!1sth!2sth!4v1782175964062!5m2!1sth!2sth",
   /** Dynamic OG image — used in schema until public/logo.png exists */
   logoPath: "/opengraph-image",
   ogImagePath: "/opengraph-image",

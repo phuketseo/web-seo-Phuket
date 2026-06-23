@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Phone, Mail, MapPin, Clock, MessageSquare, Search, ExternalLink } from "lucide-react";
 import { lineContactUrl, siteConfig, businessHours } from "@/lib/utils";
+import { ContactMap } from "@/components/ContactMap";
 
 export function ContactChannels({ showAuditLink = true }: { showAuditLink?: boolean }) {
   return (
@@ -52,6 +53,8 @@ export function ContactChannels({ showAuditLink = true }: { showAuditLink?: bool
           </a>
         ))}
       </div>
+
+      <ContactMap />
 
       <div className="p-4 bg-gray-50 border border-gray-100 rounded-xl text-sm text-gray-700 space-y-3">
         <div className="flex items-start gap-3">
