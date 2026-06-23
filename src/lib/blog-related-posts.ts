@@ -109,11 +109,17 @@ const blogRelatedSlugs: Record<string, string[]> = {
   ],
 
   // Hotels & tours
+  "hotel-phuket-seo-problems": [
+    "seo-for-phuket-hotels",
+    "direct-booking-hotel-phuket",
+    "gemini-hotel-competitor-analysis",
+    "google-reviews-phuket",
+  ],
   "seo-for-phuket-hotels": [
+    "hotel-phuket-seo-problems",
     "direct-booking-hotel-phuket",
     "gemini-hotel-competitor-analysis",
     "low-season-seo-phuket",
-    "google-reviews-phuket",
   ],
   "direct-booking-hotel-phuket": [
     "seo-for-phuket-hotels",

@@ -438,6 +438,7 @@ export const siteImages = {
 
 export const blogThumbnailBySlug: Record<string, SiteImage> = {
   "gemini-hotel-competitor-analysis": siteImages.blog.geminiHotel,
+  "hotel-phuket-seo-problems": siteImages.blog.seoHotelNew,
   "seo-for-phuket-hotels": siteImages.blog.seoHotelNew,
   "instagram-marketing-phuket-restaurants": siteImages.blog.instagramRestaurant,
   "web-design-phuket-real-estate": siteImages.blog.webDesignRealestate,

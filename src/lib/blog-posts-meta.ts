@@ -208,6 +208,14 @@ export const blogPostsMeta: BlogPostMeta[] = [
     thumbnail: getBlogThumbnail("gemini-hotel-competitor-analysis"),
   },
   {
+    slug: "hotel-phuket-seo-problems",
+    title: "ปัญหา SEO โรงแรมภูเก็ต — เมื่อลูกค้าค้นหาแล้วไปจอง OTA แทน",
+    category: "Industry Guide",
+    description:
+      "ปัญหา SEO โรงแรมภูเก็ตที่พบบ่อย — ไม่โผล่ Maps, เว็บไม่ตอบโซน, แข่ง keyword ผิด และ Direct Booking ไม่โต",
+    thumbnail: getBlogThumbnail("hotel-phuket-seo-problems"),
+  },
+  {
     slug: "seo-for-phuket-hotels",
     title: "SEO โรงแรมภูเก็ต: เพิ่ม Direct Booking ลด OTA",
     category: "Industry Guide",

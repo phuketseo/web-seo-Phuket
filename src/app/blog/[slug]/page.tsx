@@ -1182,7 +1182,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const post = blogPosts[slug];
-  if (!post) return { title: "ไม่พบบทความ" };
+  if (!post) notFound();
 
   const thumbnail = getBlogThumbnail(slug);
   const ogImage = `${siteConfig.url}${thumbnail.src}`;
