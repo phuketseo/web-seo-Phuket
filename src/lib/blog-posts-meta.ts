@@ -179,10 +179,10 @@ export const blogPostsMeta: BlogPostMeta[] = [
   },
   {
     slug: "local-seo-phuket",
-    title: "Local SEO Phuket: How to Rank on Google Maps (2026 Guide)",
+    title: "Local SEO Phuket คืออะไร? วิธีติด Google Maps ภูเก็ต (2026)",
     category: "Local SEO",
     description:
-      "Local SEO Phuket — rank on Google Maps and the Local Pack. GBP, reviews, NAP, zones, and pricing for Patong, Kata, Phuket Town.",
+      "Local SEO Phuket คืออะไร — วิธีติด Google Maps และ Local Pack ป่าตอง กะตะ ตัวเมือง GBP รีวิว NAP และราคาแพ็ก",
     thumbnail: getBlogThumbnail("local-seo-phuket"),
   },
   {
