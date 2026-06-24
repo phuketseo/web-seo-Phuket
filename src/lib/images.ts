@@ -448,6 +448,7 @@ export const blogThumbnailBySlug: Record<string, SiteImage> = {
   "seo-for-phuket-spas": siteImages.blog.seoSpa,
   "seo-phuket-kue-arai": siteImages.blog.seoPhuketPillar,
   "local-seo-phuket-kue-arai": siteImages.blog.localSeoPillar,
+  "local-seo-phuket": siteImages.blog.localSeoPillar,
   "raaka-seo-phuket": siteImages.blog.raakaSeoPillar,
   "aeo-kue-arai": siteImages.blog.aeoPillar,
   "ai-overview-kue-arai": siteImages.blog.aiOverviewPillar,

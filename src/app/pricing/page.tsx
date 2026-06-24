@@ -105,6 +105,20 @@ export default function PricingPage() {
                 >
                   {pkg.cta}
                 </Link>
+                <Link
+                  href={
+                    pkg.id === "lite"
+                      ? "/packages/seo-lite"
+                      : pkg.id === "pro"
+                        ? "/packages/seo-pro"
+                        : "/packages/seo-pro-max"
+                  }
+                  className={`mt-3 block text-center text-sm font-semibold underline-offset-2 hover:underline ${
+                    pkg.popular ? "text-green-200" : "text-blue-700"
+                  }`}
+                >
+                  ดูรายละเอียดแพ็ก →
+                </Link>
               </div>
             );
           })}

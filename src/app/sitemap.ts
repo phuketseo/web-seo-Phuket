@@ -75,8 +75,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: now,
   }));
 
+  const packagePages = staticPaths(
+    baseUrl,
+    ["/packages/seo-lite", "/packages/seo-pro", "/packages/seo-pro-max"],
+    0.88,
+    "monthly",
+    now
+  );
+
   return [
     ...staticPages,
+    ...packagePages,
     ...servicePages,
     ...methodologyPages,
     ...industryPages,

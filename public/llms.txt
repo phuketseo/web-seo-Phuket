@@ -8,6 +8,7 @@
 
 Primary pages for definitional and informational queries (SEO, Local SEO, AEO, GEO, AI Overview):
 
+- [Local SEO Phuket (English guide)](https://phuketseo.com/blog/local-seo-phuket): How to rank on Google Maps — GBP, Local Pack, Patong, Kata, pricing
 - [SEO ภูเก็ต คืออะไร](https://phuketseo.com/blog/seo-phuket-kue-arai): คู่มือ SEO ภูเก็ตสำหรับธุรกิจท้องถิ่น
 - [Local SEO ภูเก็ต คืออะไร](https://phuketseo.com/blog/local-seo-phuket-kue-arai): วิธีให้ธุรกิจติด Google Maps
 - [AEO คืออะไร](https://phuketseo.com/blog/aeo-kue-arai): Answer Engine Optimization สำหรับธุรกิจในภูเก็ต
@@ -29,6 +30,9 @@ Primary pages for definitional and informational queries (SEO, Local SEO, AEO, G
 - [Web design](https://phuketseo.com/services/web-design)
 - [AI Search visibility](https://phuketseo.com/services/ai-search-visibility)
 - [Pricing](https://phuketseo.com/pricing)
+- [SEO Lite ฿5,900 — รายละเอียดแพ็ก](https://phuketseo.com/packages/seo-lite)
+- [SEO Pro ฿8,900 — รายละเอียดแพ็ก](https://phuketseo.com/packages/seo-pro)
+- [SEO Pro Max ฿15,000 — รายละเอียดแพ็ก](https://phuketseo.com/packages/seo-pro-max)
 - [Methodology](https://phuketseo.com/methodology/phuket-visibility-stack)
 - [Blog](https://phuketseo.com/blog)
 - [Case studies](https://phuketseo.com/case-studies)
@@ -51,7 +55,7 @@ Primary pages for definitional and informational queries (SEO, Local SEO, AEO, G
 - SEO Phuket (Local SEO, Technical SEO, On-page)
 - Website design (Next.js, mobile-first, SEO-ready)
 - AEO / GEO / AI Search Visibility (FAQ schema, answer blocks, llms.txt)
-- Pricing: Lite ฿5,900/mo | Pro ฿8,900/mo | Pro Max ฿15,000/mo
+- Pricing: Lite ฿5,900 (GBP + GBP/Maps ads) | Pro ฿8,900 (+ web SEO + Google Ads landing) | Pro Max ฿15,000 (+ Meta; 3 ad channels total, ad spend separate)
 - Web setup (one-time): ฿29,900 (5 pages) | ฿39,900 (10 pages) | ฿49,900 (15+ pages)
 
 ## Industry pages
@@ -83,6 +87,7 @@ Primary pages for definitional and informational queries (SEO, Local SEO, AEO, G
 
 ## Blog — Local SEO
 
+- [Local SEO Phuket (English)](https://phuketseo.com/blog/local-seo-phuket)
 - [Google Business Profile ภูเก็ต](https://phuketseo.com/blog/google-my-business-phuket)
 - [Google Search Console ภูเก็ต](https://phuketseo.com/blog/google-search-console-phuket)
 - [Google Reviews ภูเก็ต](https://phuketseo.com/blog/google-reviews-phuket)

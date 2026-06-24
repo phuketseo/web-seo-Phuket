@@ -22,6 +22,7 @@ export const pillarBlogPosts = {
     keywords: ["SEO ภูเก็ต", "SEO ภูเก็ต คืออะไร", "รับทำ SEO ภูเก็ต", "SEO agency phuket"],
     relatedServices: [
       { name: "บริการ SEO ภูเก็ต", href: "/services/seo-phuket" },
+      { name: "Local SEO Phuket (EN)", href: "/blog/local-seo-phuket" },
       { name: "Local SEO ภูเก็ต", href: "/blog/local-seo-phuket-kue-arai" },
       { name: "ราคา SEO ภูเก็ต", href: "/blog/raaka-seo-phuket" },
       { name: "Phuket Visibility Stack", href: "/methodology/phuket-visibility-stack" },
@@ -282,7 +283,260 @@ Google Maps 3-Pack — ช่องทางลูกค้าท้องถิ
 
 **Local SEO ภูเก็ต** คือการแก้ปัญหา "ลูกค้าในโซนไม่เจอคุณ" บน Google Maps — เริ่มจาก listing ที่ครบและน่าเชื่อถือ แล้วค่อยขยายเมื่อพร้อม
 
-[Local SEO ป่าตอง](/local/patong) · [SEO ภูเก็ต คืออะไร](/blog/seo-phuket-kue-arai) · [บริการ SEO ภูเก็ต](/services/seo-phuket)
+[Local SEO ป่าตอง](/local/patong) · [SEO ภูเก็ต คืออะไร](/blog/seo-phuket-kue-arai) · [บริการ SEO ภูเก็ต](/services/seo-phuket) · [Local SEO Phuket (English guide)](/blog/local-seo-phuket)
+    `,
+  },
+
+  "local-seo-phuket": {
+    title: "Local SEO Phuket: How to Rank on Google Maps (2026 Guide)",
+    description:
+      "Local SEO Phuket explained — how businesses rank on Google Maps and the Local Pack in Patong, Kata, and Phuket Town. GBP setup, reviews, NAP, and pricing from PhuketSEO.",
+    category: "Local SEO",
+    date: "16 มิถุนายน 2569",
+    dateISO: "2026-06-16",
+    readingTime: "8 นาที",
+    layout: "vercel" as const,
+    author: { name: "PhuketSEO Team", role: "Local SEO Consultant · Phuket, Thailand" },
+    tldrTitle: "Local SEO Phuket",
+    tldr: [
+      "Local SEO Phuket = getting your business visible on Google Maps when customers search in your area.",
+      "The Local Pack (top 3 map results) drives most calls, directions, and walk-ins for restaurants, spas, and clinics.",
+      "Google Business Profile (GBP) is the core asset — verify it, fix NAP, collect reviews, post updates.",
+      "Phuket is zone-based — Patong, Kata, Kamala, and Phuket Town need different local strategies.",
+      "PhuketSEO Lite ฿5,900/mo includes GBP management + Maps ads (ad spend separate).",
+    ],
+    keywords: [
+      "local seo phuket",
+      "Local SEO Phuket",
+      "Google Maps Phuket",
+      "Google Business Profile Phuket",
+      "local seo agency phuket",
+      "phuket local pack",
+    ],
+    relatedServices: [
+      { name: "SEO Phuket Service", href: "/services/seo-phuket" },
+      { name: "SEO Lite Package", href: "/packages/seo-lite" },
+      { name: "Google Business Profile Guide", href: "/blog/google-my-business-phuket" },
+      { name: "Local SEO Patong", href: "/local/patong" },
+    ],
+    faqs: [
+      {
+        q: "What is Local SEO in Phuket?",
+        a: "Local SEO in Phuket is the process of optimizing a business to appear in Google Maps and the Local Pack when people search for services in a specific Phuket area — such as Patong, Kata, Kamala, or Phuket Town. The goal is visibility, calls, and directions from nearby customers.",
+      },
+      {
+        q: "Why is Google Business Profile important for Local SEO Phuket?",
+        a: "Google Business Profile (GBP) is the primary listing for local search in Phuket. Most customers call, request directions, or visit directly from Maps without opening a website. A complete, verified GBP with consistent NAP, photos, and reviews is the fastest path to local visibility.",
+      },
+      {
+        q: "How long does Local SEO take in Phuket?",
+        a: "GBP improvements (verification, categories, photos, reviews) can show more impressions within weeks. Competing for the Local Pack in high-competition zones like Patong often takes 2–4+ months depending on reviews, relevance, and competitors. There is no fixed guarantee for ranking position.",
+      },
+      {
+        q: "Do I need a website for Local SEO in Phuket?",
+        a: "Not required for basic Maps visibility — many walk-in businesses get leads from GBP alone. A fast, mobile-friendly website helps when customers click through for details, bookings, or trust signals. Hotels, tours, and real estate typically need both Maps and a website.",
+      },
+      {
+        q: "What is the difference between Local SEO and Google Ads in Phuket?",
+        a: "Local SEO builds organic Maps visibility and trust over time (reviews, listing quality, local relevance). Google Ads can promote your GBP or a landing page for faster top placement when you pay ad spend. Many Phuket businesses use both — organic foundation plus paid promotion in peak season.",
+      },
+      {
+        q: "How much does Local SEO cost in Phuket?",
+        a: "PhuketSEO starts at ฿5,900/month (SEO Lite — GBP management + GBP/Maps ads management; ad spend billed separately). SEO Pro ฿8,900 adds website SEO and Google Ads to a landing page. See full pricing at phuketseo.com/pricing.",
+      },
+      {
+        q: "Which Phuket areas matter most for Local SEO?",
+        a: "It depends on your business location and customers. Tourist zones (Patong, Kata, Karon, Kamala) compete heavily for hospitality and spa queries. Phuket Town suits Thai-local and clinic searches. Target the zone where your customers actually search — not all of Phuket at once.",
+      },
+    ],
+    content: `
+## Quick answer
+
+**Local SEO Phuket** is how businesses get found on **Google Maps** and in the **Local Pack** (the top map results) when people search for services in Phuket — for example *"restaurant Patong"*, *"spa near me Kata"*, or *"clinic Phuket Town"*.
+
+The foundation is a verified **Google Business Profile (GBP)** with accurate name, address, phone (NAP), reviews, and zone-relevant categories. Most walk-in businesses in Phuket get calls and directions from Maps before they ever visit a website.
+
+---
+
+## What is Local SEO in Phuket?
+
+**Local SEO in Phuket** means optimizing your business for **location-based Google searches** in Thailand's largest island province. Unlike national SEO, local SEO targets:
+
+- **Google Maps** listings and the **3-Pack / Local Pack**
+- **"Near me"** and **zone keywords** (Patong, Kata, Kamala, Phuket Town, Thalang)
+- **Trust signals** — reviews, photos, consistent business data
+
+Phuket is not one market. Search behaviour in **Patong** (tourist nightlife) differs from **Phuket Town** (Thai local services) and **Kamala** (luxury beachfront). Effective Local SEO Phuket strategy matches **your real service area**, not generic island-wide keywords.
+
+:::quote
+Customers search on mobile, compare the top map results, and call the first business they trust. If you are not in that short list, you are invisible — regardless of how good your service is.
+— PhuketSEO Team, Local SEO Consultant · Phuket
+:::
+
+---
+
+## Why Local SEO matters in Phuket
+
+| Factor | Why it matters |
+|--------|----------------|
+| **Tourism + locals** | Mixed Thai and international search intent (TH and EN queries) |
+| **Mobile-first** | Most local searches happen on phones — Maps is the default UI |
+| **Zone competition** | Hundreds of restaurants, spas, and hotels per beach area |
+| **High-intent traffic** | "Near me" searchers often call or visit the same day |
+| **OTA dependency** | Hotels and spas that skip Maps lose discovery to Agoda, Klook, etc. |
+
+For restaurants, spas, clinics, and retail walk-ins, **Local SEO Phuket often outperforms website-only SEO** in the first 90 days — because customers decide on Maps.
+
+:::image localSeoMaps
+Google Maps Local Pack — where Phuket customers choose restaurants, spas, and services after a local search
+:::
+
+---
+
+## Google Business Profile (GBP) — the core of Local SEO Phuket
+
+**Google Business Profile** (formerly Google My Business) is the free listing that powers your presence on Maps and local search results.
+
+### GBP checklist for Phuket businesses
+
+1. **Claim and verify** the listing (postcard, phone, or video — depending on eligibility)
+2. **Primary category** — match your actual service (e.g. Thai restaurant, day spa, hotel)
+3. **NAP consistency** — same name, address, phone on GBP, website, and directories
+4. **Service area or pin** — correct for your Phuket zone; avoid misleading locations
+5. **Photos** — exterior, interior, team, products; updated regularly
+6. **Google Posts** — offers, updates, events (2×/month is a practical minimum)
+7. **Reviews** — request from real customers; respond to all reviews
+8. **Hours and attributes** — accurate seasonal hours matter in tourism
+
+A incomplete GBP is the #1 reason businesses **do not appear** in the Local Pack. See our detailed [Google Business Profile guide](/blog/google-my-business-phuket) (Thai).
+
+---
+
+## Local Pack vs organic search results
+
+| | **Local Pack (Maps 3-Pack)** | **Organic blue links** |
+|--|------------------------------|------------------------|
+| **Where** | Top of mobile search, Maps app | Below ads and local pack |
+| **Driven by** | GBP, relevance, distance, reviews | Website content, backlinks, technical SEO |
+| **Best for** | Walk-in, calls, directions | Research, bookings, content-heavy decisions |
+| **Phuket example** | "massage near me Patong" | "best family hotel phuket comparison" |
+
+**Local SEO Phuket** primarily targets the Local Pack. Website SEO supports clicks after discovery — especially for [hotels](/blog/seo-for-phuket-hotels), [tours](/industries/seo-tours-phuket), and [real estate](/industries/seo-real-estate-phuket).
+
+---
+
+## How to improve Local SEO in Phuket (step by step)
+
+### Step 1 — Audit your current Maps presence
+
+Search your business name and main keywords in your zone. Note: ranking position, review count vs competitors, duplicate listings, wrong category.
+
+### Step 2 — Fix GBP fundamentals
+
+Verify, merge duplicates, correct NAP, add photos, set the right categories. Read [NAP consistency for Phuket](/blog/nap-local-seo-phuket) if data conflicts across channels.
+
+### Step 3 — Build review velocity
+
+Ask happy customers in person (QR code works well). Respond professionally to negative reviews — silence hurts trust.
+
+### Step 4 — Publish zone-relevant updates
+
+Posts about seasonal menus, promotions, or new services signal an active business. Tie content to **your Phuket area**, not generic island copy.
+
+### Step 5 — Add local landing pages (when you have a website)
+
+Pages like [Local SEO Patong](/local/patong) or [Kata](/local/kata) reinforce zone intent. Link them from your site footer and GBP website field.
+
+### Step 6 — Measure with GBP Insights + Search Console
+
+GBP Insights shows calls, direction requests, and profile views. When you have a website, [Google Search Console](/blog/google-search-console-phuket) shows queries and clicks. Use both — they measure different channels.
+
+:::image localSeoResults
+Local SEO results — impressions and engagement grow when GBP is complete and review trust increases (varies by zone and competition)
+:::
+
+---
+
+## Local SEO Phuket by business type
+
+| Business | Local SEO priority | Notes |
+|----------|-------------------|-------|
+| **Restaurant** | Very high | Maps drives walk-ins and reservations calls |
+| **Spa / massage** | Very high | "Near me" + zone keywords; compete on reviews |
+| **Clinic / dental** | High | YMYL — accuracy and trust critical |
+| **Hotel / resort** | High + website | Maps + direct booking; OTA competition |
+| **Tour operator** | Medium–high | Often needs EN content + website |
+| **Real estate** | Website-led | Maps for office location; buyers research online |
+
+Industry guides: [restaurants](/industries/seo-restaurants-phuket) · [spas](/industries/seo-spa-phuket) · [hotels](/industries/seo-hotels-phuket)
+
+---
+
+## Local SEO vs Google Ads in Phuket
+
+**Local SEO** compounds over time — reviews, listing quality, and relevance build organic Maps presence.
+
+**Google Ads** can promote your GBP listing or a [landing page](/packages/seo-pro) for faster top-of-results placement when you pay **ad spend** (separate from management fees).
+
+PhuketSEO **SEO Lite (฿5,900/mo)** includes GBP care plus **GBP/Maps ads management** — ad spend paid directly to Google. **SEO Pro** adds Google Ads to a single landing page. **Pro Max** adds Meta Ads across all three channels. Details: [Google Ads vs SEO Phuket](/blog/google-ads-vs-seo-phuket).
+
+---
+
+## Common Local SEO mistakes in Phuket
+
+- **Targeting all of Phuket** with one keyword set — zones matter
+- **NAP mismatch** between Facebook, website, and GBP
+- **Ignoring reviews** — competitors with 200+ reviews win the comparison
+- **Set-and-forget GBP** — no photos, no posts, stale hours
+- **Expecting instant #1** — competition in Patong and beach zones is intense
+- **No website when customers need proof** — especially for higher-ticket services
+
+---
+
+## Local SEO pricing in Phuket (2026)
+
+| Package | Monthly (management) | Includes |
+|---------|---------------------|----------|
+| **SEO Lite** | ฿5,900 | GBP + reviews + GBP/Maps ads (1 campaign) |
+| **SEO Pro** | ฿8,900 | Lite + website SEO + Google Ads → 1 landing page |
+| **SEO Pro Max** | ฿15,000 | Pro + Meta Ads — GBP, Google, Meta (1 campaign each) |
+
+Ad spend is **not included** — billed to Google/Meta directly. Full comparison: [pricing](/pricing) · [SEO Lite details](/packages/seo-lite).
+
+---
+
+## Can you do Local SEO yourself?
+
+Yes, for basics: claim GBP, fix hours, upload photos, ask for reviews. Many businesses get stuck on:
+
+- **Duplicate or suspended listings**
+- **Wrong categories** for multi-service businesses
+- **No time for monthly posts and review replies**
+- **Zone competition analysis** — not knowing who owns the Local Pack
+
+SMEs often hire a [Phuket SEO agency](/services/seo-phuket) for audit, execution, and monthly reporting. [Free SEO audit](/seo-audit) available.
+
+---
+
+## How PhuketSEO helps with Local SEO Phuket
+
+PhuketSEO is a **Phuket-based SEO and web agency** (Phuket Town). We use the **Phuket Visibility Stack** — Local visibility (Maps) → owned website asset → paid acceleration when ready.
+
+When you [contact us](/contact), we typically:
+
+1. **Audit** your GBP, competitors in your zone, and NAP consistency
+2. **Prioritize** Maps fixes vs website vs ads based on business type
+3. **Execute monthly** — posts, reviews system, ads (per package), KPI reports
+
+We serve businesses across [Patong](/local/patong), [Kata](/local/kata), [Kamala](/local/kamala), [Phuket Town](/local/phuket-town), and [Thalang](/local/thalang).
+
+---
+
+## Summary
+
+**Local SEO Phuket** means winning visibility where customers actually decide — **Google Maps and the Local Pack**. Start with a verified, complete **Google Business Profile**, consistent **NAP**, and **reviews**. Add a website and paid promotion when your foundation is ready.
+
+Thai-language deep dive: [Local SEO ภูเก็ต คืออะไร](/blog/local-seo-phuket-kue-arai) · [Near Me SEO](/blog/near-me-seo-phuket) · [Phuket Visibility Stack](/methodology/phuket-visibility-stack)
     `,
   },
 
@@ -1456,6 +1710,7 @@ PhuketSEO ทำงานกับธุรกิจในภูเก็ตโ�
     ],
     relatedServices: [
       { name: "Google Business Profile", href: "/blog/google-my-business-phuket" },
+      { name: "Local SEO Phuket (EN)", href: "/blog/local-seo-phuket" },
       { name: "Local SEO ภูเก็ต", href: "/blog/local-seo-phuket-kue-arai" },
       { name: "บริการ SEO ภูเก็ต", href: "/services/seo-phuket" },
       { name: "Local SEO ป่าตอง", href: "/local/patong" },

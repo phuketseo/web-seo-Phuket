@@ -6,6 +6,7 @@
 
 import { siteConfig, businessHours } from "@/lib/utils";
 import { pricingPackages } from "@/lib/pricing-packages";
+import { packagePaths } from "@/lib/package-pages-content";
 
 export const businessEntityId = `${siteConfig.url}/#localbusiness`;
 
@@ -177,7 +178,7 @@ export const pricingServicesJsonLd = pricingPackages.map((pkg) => ({
       priceCurrency: "THB",
       unitText: "MONTH",
     },
-    url: `${siteConfig.url}/pricing#${pkg.id}`,
+    url: `${siteConfig.url}${packagePaths[pkg.id]}`,
   },
 }));
 

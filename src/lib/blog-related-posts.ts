@@ -17,10 +17,16 @@ const blogRelatedSlugs: Record<string, string[]> = {
     "seo-sme-phuket",
   ],
   "local-seo-phuket-kue-arai": [
+    "local-seo-phuket",
     "google-my-business-phuket",
     "near-me-seo-phuket",
     "nap-local-seo-phuket",
-    "google-reviews-phuket",
+  ],
+  "local-seo-phuket": [
+    "local-seo-phuket-kue-arai",
+    "google-my-business-phuket",
+    "near-me-seo-phuket",
+    "nap-local-seo-phuket",
   ],
   "raaka-seo-phuket": [
     "seo-phuket-kue-arai",

@@ -145,6 +145,10 @@ export default function SeoPhuketPage() {
               SEO ภูเก็ต คืออะไร
             </Link>
             {" · "}
+            <Link href="/blog/local-seo-phuket" className="text-blue-700 hover:underline">
+              Local SEO Phuket
+            </Link>
+            {" · "}
             <Link href="/blog/local-seo-phuket-kue-arai" className="text-blue-700 hover:underline">
               Local SEO ภูเก็ต
             </Link>
