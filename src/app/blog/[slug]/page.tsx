@@ -1261,6 +1261,8 @@ export default async function BlogPostPage({
     title: post.title,
     description: post.description,
     imageUrl: `${siteConfig.url}${thumbnail.src}`,
+    imageWidth: thumbnail.width,
+    imageHeight: thumbnail.height,
     datePublished: post.dateISO,
     author,
     category: post.category,

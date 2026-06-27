@@ -55,17 +55,27 @@ export const contactPointBase = {
   availableLanguage: ["Thai", "English"],
 };
 
+/** Logo สำหรับ publisher / Organization — ใช้ OG image ที่ deploy แล้วและ crawl ได้ */
+export const publisherLogoSchema = {
+  "@type": "ImageObject",
+  url: `${siteConfig.url}${siteConfig.ogImagePath}`,
+  width: 1200,
+  height: 630,
+};
+
 export const organizationJsonLd = {
   "@type": "Organization",
   "@id": `${siteConfig.url}/#organization`,
   name: siteConfig.name,
   url: siteConfig.url,
-  logo: `${siteConfig.url}${siteConfig.logoPath}`,
+  logo: publisherLogoSchema,
+  image: `${siteConfig.url}${siteConfig.ogImagePath}`,
   email: siteConfig.email,
   telephone: siteConfig.phoneInternational,
   address: postalAddressSchema,
   areaServed: areaServedPhuket,
   sameAs: organizationSameAs,
+  openingHoursSpecification: [businessHours.schemaSpecification],
 };
 
 export const localBusinessJsonLd = {
@@ -155,6 +165,8 @@ export function buildArticleSchema(params: {
   title: string;
   description: string;
   imageUrl: string;
+  imageWidth: number;
+  imageHeight: number;
   datePublished: string;
   dateModified?: string;
   author: { name: string; role: string };
@@ -167,7 +179,12 @@ export function buildArticleSchema(params: {
     "@id": `${pageUrl}#article`,
     headline: params.title,
     description: params.description,
-    image: params.imageUrl,
+    image: {
+      "@type": "ImageObject",
+      url: params.imageUrl,
+      width: params.imageWidth,
+      height: params.imageHeight,
+    },
     datePublished: params.datePublished,
     dateModified: params.dateModified ?? params.datePublished,
     inLanguage: "th-TH",
@@ -178,7 +195,12 @@ export function buildArticleSchema(params: {
       jobTitle: params.author.role,
       url: `${siteConfig.url}/about`,
     },
-    publisher: { "@id": `${siteConfig.url}/#organization` },
+    publisher: {
+      "@type": "Organization",
+      "@id": `${siteConfig.url}/#organization`,
+      name: siteConfig.name,
+      logo: publisherLogoSchema,
+    },
     mainEntityOfPage: { "@type": "WebPage", "@id": pageUrl },
     url: pageUrl,
   };
