@@ -29,6 +29,7 @@ const blogRelatedSlugs: Record<string, string[]> = {
     "nap-local-seo-phuket",
   ],
   "raaka-seo-phuket": [
+    "rab-tam-seo-phuket",
     "seo-phuket-kue-arai",
     "google-ads-vs-seo-phuket",
     "rab-tam-web-phuket",
@@ -57,6 +58,12 @@ const blogRelatedSlugs: Record<string, string[]> = {
     "google-my-business-phuket",
     "local-seo-phuket-kue-arai",
     "nap-local-seo-phuket",
+  ],
+  "rab-tam-seo-phuket": [
+    "seo-phuket-kue-arai",
+    "raaka-seo-phuket",
+    "seo-sme-phuket",
+    "google-my-business-phuket",
   ],
 
   // AEO / GEO

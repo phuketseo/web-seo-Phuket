@@ -469,6 +469,7 @@ export const blogThumbnailBySlug: Record<string, SiteImage> = {
   "nap-local-seo-phuket": siteImages.blog.gmbPhuket,
   "seo-restaurants-phuket": siteImages.blog.instagramRestaurant,
   "seo-sme-phuket": siteImages.blog.seoPhuketStack,
+  "rab-tam-seo-phuket": siteImages.services.seo,
   "google-search-console-phuket": siteImages.blog.gscPhuket,
 };
 

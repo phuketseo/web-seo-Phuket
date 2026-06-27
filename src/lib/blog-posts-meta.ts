@@ -23,6 +23,14 @@ export const blogCategories = [
 
 export const blogPostsMeta: BlogPostMeta[] = [
   {
+    slug: "rab-tam-seo-phuket",
+    title: "รับทำ SEO ภูเก็ต 2026 — เลือกจ้างอย่างไรไม่เสียเงินฟรี",
+    category: "SEO ภูเก็ต",
+    description:
+      "รับทำ SEO ภูเก็ต — สิ่งที่ควรเช็กก่อนจ้างเอเจนซี่ Local SEO ในภูเก็ต สัญญาณเตือน ลำดับงานที่ถูก และคำถามที่ควรถามก่อนลงนาม",
+    thumbnail: getBlogThumbnail("rab-tam-seo-phuket"),
+  },
+  {
     slug: "seo-sme-phuket",
     title: "SEO SME ภูเก็ต 2026 — ธุรกิจเล็กที่ยังไม่มีตัวตนบน Google",
     category: "SEO ภูเก็ต",
