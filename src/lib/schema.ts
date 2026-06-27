@@ -160,6 +160,12 @@ export function plainTextForSchema(text: string): string {
     .trim();
 }
 
+/** แปลง YYYY-MM-DD เป็น ISO 8601 พร้อม timezone ไทย (+07:00) สำหรับ Google Rich Results */
+export function toSchemaDateTime(dateISO: string): string {
+  if (dateISO.includes("T")) return dateISO;
+  return `${dateISO}T00:00:00+07:00`;
+}
+
 export function buildArticleSchema(params: {
   slug: string;
   title: string;
@@ -185,8 +191,8 @@ export function buildArticleSchema(params: {
       width: params.imageWidth,
       height: params.imageHeight,
     },
-    datePublished: params.datePublished,
-    dateModified: params.dateModified ?? params.datePublished,
+    datePublished: toSchemaDateTime(params.datePublished),
+    dateModified: toSchemaDateTime(params.dateModified ?? params.datePublished),
     inLanguage: "th-TH",
     articleSection: params.category,
     author: {
