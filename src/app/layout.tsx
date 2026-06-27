@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import DeferredLineChat from "@/components/DeferredLineChat";
 import DeferredGoogleAnalytics from "@/components/DeferredGoogleAnalytics";
 import CookieConsent from "@/components/CookieConsent";
+import { organizationSchema } from "@/lib/schema";
 import { defaultOgImage, siteConfig } from "@/lib/utils";
 
 const kanitBold = Kanit({
@@ -96,6 +97,10 @@ export default function RootLayout({
         <link rel="llms-txt" href="/llms.txt" type="text/plain" />
       </head>
       <body className="antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
         <Navbar />
         <main>{children}</main>
         <Footer />

@@ -5,7 +5,6 @@ import {
   buildArticleSchema,
   buildBreadcrumb,
   buildRelatedArticlesItemList,
-  organizationSchema,
   plainTextForSchema,
 } from "@/lib/schema";
 import { siteConfig } from "@/lib/utils";
@@ -1290,7 +1289,6 @@ export default async function BlogPostPage({
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       {relatedArticlesSchema && (
