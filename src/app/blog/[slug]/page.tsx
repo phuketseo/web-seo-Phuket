@@ -1,7 +1,13 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { extractHeadings, stripMarkdownSections } from "@/lib/blog-content-utils";
-import { buildBreadcrumb } from "@/lib/schema";
+import {
+  buildArticleSchema,
+  buildBreadcrumb,
+  buildRelatedArticlesItemList,
+  organizationSchema,
+  plainTextForSchema,
+} from "@/lib/schema";
 import { siteConfig } from "@/lib/utils";
 import { BlogVercelLayout } from "@/components/blog/vercel/BlogVercelLayout";
 import { getBlogThumbnail } from "@/lib/images";
@@ -1206,6 +1212,8 @@ export async function generateMetadata({
       description: post.description,
       type: "article",
       url: `${siteConfig.url}/blog/${slug}`,
+      publishedTime: post.dateISO,
+      modifiedTime: post.dateISO,
       images: [
         {
           url: ogImage,
@@ -1235,36 +1243,36 @@ export default async function BlogPostPage({
   if (!post) notFound();
 
   const thumbnail = getBlogThumbnail(slug);
+  const pageUrl = `${siteConfig.url}/blog/${slug}`;
   const skipSections = post.faqs?.length ? ["คำถามที่พบบ่อย"] : [];
   const contentForRender = stripMarkdownSections(post.content, skipSections);
   const headings = extractHeadings(contentForRender, skipSections);
   const author = post.author ?? defaultAuthor;
+  const relatedPosts = getRelatedBlogPosts(slug);
 
   const breadcrumbSchema = buildBreadcrumb([
     { name: "หน้าแรก", url: siteConfig.url },
     { name: "บล็อก", url: `${siteConfig.url}/blog` },
-    { name: post.title, url: `${siteConfig.url}/blog/${slug}` },
+    { name: post.title, url: pageUrl },
   ]);
 
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline: post.title,
+  const articleSchema = buildArticleSchema({
+    slug,
+    title: post.title,
     description: post.description,
-    image: `${siteConfig.url}${thumbnail.src}`,
-    author: {
-      "@type": "Person",
-      name: author.name,
-      jobTitle: author.role,
-      url: `${siteConfig.url}/about`,
-    },
-    publisher: {
-      "@type": "Organization",
-      name: "PhuketSEO",
-      logo: { "@type": "ImageObject", url: `${siteConfig.url}${siteConfig.logoPath}` },
-    },
-    mainEntityOfPage: { "@type": "WebPage", "@id": `${siteConfig.url}/blog/${slug}` },
-  };
+    imageUrl: `${siteConfig.url}${thumbnail.src}`,
+    datePublished: post.dateISO,
+    author,
+    category: post.category,
+  });
+
+  const relatedArticlesSchema = buildRelatedArticlesItemList(
+    relatedPosts.map((related) => ({
+      title: related.title,
+      url: `${siteConfig.url}${related.href}`,
+    })),
+    pageUrl
+  );
 
   const faqSchema = post.faqs?.length
     ? {
@@ -1273,15 +1281,19 @@ export default async function BlogPostPage({
         mainEntity: post.faqs.map((faq) => ({
           "@type": "Question",
           name: faq.q,
-          acceptedAnswer: { "@type": "Answer", text: faq.a },
+          acceptedAnswer: { "@type": "Answer", text: plainTextForSchema(faq.a) },
         })),
       }
     : null;
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      {relatedArticlesSchema && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(relatedArticlesSchema) }} />
+      )}
       {faqSchema && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       )}
@@ -1290,7 +1302,7 @@ export default async function BlogPostPage({
         thumbnail={thumbnail}
         headings={headings}
         contentForRender={contentForRender}
-        relatedPosts={getRelatedBlogPosts(slug)}
+        relatedPosts={relatedPosts}
       />
     </>
   );

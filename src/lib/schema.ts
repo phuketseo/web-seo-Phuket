@@ -142,6 +142,67 @@ export const buildBreadcrumb = (
   })),
 });
 
+/** แปลง markdown ในคำตอบ FAQ เป็นข้อความล้วนสำหรับ Schema */
+export function plainTextForSchema(text: string): string {
+  return text
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, "$1 ($2)")
+    .replace(/\*\*([^*]+)\*\*/g, "$1")
+    .trim();
+}
+
+export function buildArticleSchema(params: {
+  slug: string;
+  title: string;
+  description: string;
+  imageUrl: string;
+  datePublished: string;
+  dateModified?: string;
+  author: { name: string; role: string };
+  category: string;
+}) {
+  const pageUrl = `${siteConfig.url}/blog/${params.slug}`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "@id": `${pageUrl}#article`,
+    headline: params.title,
+    description: params.description,
+    image: params.imageUrl,
+    datePublished: params.datePublished,
+    dateModified: params.dateModified ?? params.datePublished,
+    inLanguage: "th-TH",
+    articleSection: params.category,
+    author: {
+      "@type": "Person",
+      name: params.author.name,
+      jobTitle: params.author.role,
+      url: `${siteConfig.url}/about`,
+    },
+    publisher: { "@id": `${siteConfig.url}/#organization` },
+    mainEntityOfPage: { "@type": "WebPage", "@id": pageUrl },
+    url: pageUrl,
+  };
+}
+
+export function buildRelatedArticlesItemList(
+  items: { title: string; url: string }[],
+  pageUrl: string
+) {
+  if (!items.length) return null;
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "บทความที่เกี่ยวข้อง",
+    url: pageUrl,
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.title,
+      url: item.url,
+    })),
+  };
+}
+
 export const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Review",
