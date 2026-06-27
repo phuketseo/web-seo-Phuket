@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import DeferredLineChat from "@/components/DeferredLineChat";
 import DeferredGoogleAnalytics from "@/components/DeferredGoogleAnalytics";
 import CookieConsent from "@/components/CookieConsent";
-import { organizationSchema } from "@/lib/schema";
+import { siteEntityGraphSchema } from "@/lib/schema";
 import { defaultOgImage, siteConfig } from "@/lib/utils";
 
 const kanitBold = Kanit({
@@ -99,7 +99,7 @@ export default function RootLayout({
       <body className="antialiased">
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteEntityGraphSchema) }}
         />
         <Navbar />
         <main>{children}</main>

@@ -1,6 +1,5 @@
 ﻿import Link from "next/link";
 import Image from "next/image";
-import { localBusinessSchema } from "@/lib/schema";
 import { siteImages } from "@/lib/images";
 import { caseStudies } from "@/lib/case-studies-data";
 import { siteConfig, lineContactUrl } from "@/lib/utils";
@@ -12,7 +11,7 @@ import {
   Globe, ChevronDown, Quote, Zap, Shield, Target, Clock, TrendingUp
 } from "lucide-react";
 
-// ─── Schema Markup (SAB LocalBusiness — ดู src/lib/schema.ts) ───────────────
+// ─── Schema Markup (FAQ หน้าแรก — Organization/LocalBusiness อยู่ใน layout @graph) ─
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -569,10 +568,6 @@ export default function HomeBelowFold() {
         </div>
       </section>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}

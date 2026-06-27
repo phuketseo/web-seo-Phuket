@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { CheckCircle, Code, Layout, ShoppingCart, Briefcase, PenTool, Phone } from 'lucide-react';
 import { siteConfig, defaultOgImage } from '@/lib/utils';
-import { organizationJsonLd, faqSchema, buildBreadcrumb } from '@/lib/schema';
+import { faqSchema, buildBreadcrumb, localServiceProvider } from '@/lib/schema';
 import { siteImages } from '@/lib/images';
 import { webDesignContent } from '@/lib/service-content';
 import { ServiceFaqSection } from '@/components/ServiceFaqSection';
@@ -35,15 +35,7 @@ export default function WebDesignServicePage() {
       {
         "@type": "Service",
         "serviceType": "Web Design Service",
-        "provider": {
-          ...organizationJsonLd,
-          contactPoint: {
-            "@type": "ContactPoint",
-            telephone: siteConfig.phoneInternational,
-            email: siteConfig.email,
-            contactType: "customer service",
-          },
-        },
+        "provider": localServiceProvider,
         "name": "รับทำเว็บไซต์ภูเก็ต",
         "description": "เว็บ Next.js mobile-first พร้อม SEO และ AEO structure Setup จาก ฿29,900",
         "url": `${siteConfig.url}/services/web-design`,

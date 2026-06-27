@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ChevronRight, Award, Users, TrendingUp, Lightbulb, Rocket, BarChart, DollarSign, HelpCircle, Share2, MessageCircle, Video } from 'lucide-react';
 import { siteConfig, defaultOgImage } from '@/lib/utils';
-import { organizationJsonLd, buildBreadcrumb } from '@/lib/schema';
+import { buildBreadcrumb, localServiceProvider } from '@/lib/schema';
 import { siteImages } from '@/lib/images';
 
 export const metadata = {
@@ -31,15 +31,7 @@ export default function SocialMediaPage() {
       {
         '@type': 'Service',
         'serviceType': 'Social Media Marketing',
-        'provider': {
-          ...organizationJsonLd,
-          contactPoint: {
-            '@type': 'ContactPoint',
-            telephone: siteConfig.phoneInternational,
-            email: siteConfig.email,
-            contactType: 'customer service',
-          },
-        },
+        'provider': localServiceProvider,
         'areaServed': {
           '@type': 'Place',
           'name': 'ภูเก็ต',

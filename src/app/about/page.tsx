@@ -2,7 +2,6 @@
 import Link from "next/link";
 import { CheckCircle, Clock, Target } from "lucide-react";
 import { siteConfig } from "@/lib/utils";
-import { organizationJsonLd } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "เกี่ยวกับเรา - PhuketSEO | SEO + เว็บไซต์ภูเก็ต",
@@ -34,7 +33,6 @@ export default function AboutPage() {
                   { "@type": "ListItem", position: 2, name: "เกี่ยวกับเรา", item: `${siteConfig.url}/about` },
                 ],
               },
-              { "@context": "https://schema.org", ...organizationJsonLd },
             ],
           }),
         }}

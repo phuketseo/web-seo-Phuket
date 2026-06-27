@@ -9,6 +9,9 @@ import { pricingPackages } from "@/lib/pricing-packages";
 import { packagePaths } from "@/lib/package-pages-content";
 
 export const businessEntityId = `${siteConfig.url}/#localbusiness`;
+export const organizationEntityId = `${siteConfig.url}/#organization`;
+
+export const organizationRef = { "@id": organizationEntityId };
 
 export const postalAddressSchema = {
   "@type": "PostalAddress",
@@ -33,10 +36,11 @@ export const areaServedPhuket = [
   },
 ];
 
-/** ฟิลด์ SAB ที่ใช้ร่วมกับ LocalBusiness / ProfessionalService */
+/** ฟิลด์ SAB ที่ใช้ร่วมกับ LocalBusiness */
 export const sabSchemaFields = {
   "@id": businessEntityId,
-  "@type": ["LocalBusiness", "ProfessionalService"],
+  "@type": "LocalBusiness",
+  additionalType: "https://schema.org/ProfessionalService",
   areaServed: areaServedPhuket,
   geo: {
     "@type": "GeoCoordinates",
@@ -65,7 +69,7 @@ export const publisherLogoSchema = {
 
 export const organizationJsonLd = {
   "@type": "Organization",
-  "@id": `${siteConfig.url}/#organization`,
+  "@id": organizationEntityId,
   name: siteConfig.name,
   url: siteConfig.url,
   logo: publisherLogoSchema,
@@ -100,13 +104,31 @@ export const organizationSchema = {
   contactPoint: contactPointBase,
 };
 
-export const localBusinessSchema = {
-  "@context": "https://schema.org",
+const organizationGraphNode = {
+  ...organizationJsonLd,
+  description:
+    "บริษัท Digital Marketing Agency ในภูเก็ต ให้บริการ SEO, Google Ads, Social Media Marketing และ Web Design",
+  contactPoint: contactPointBase,
+};
+
+const localBusinessGraphNode = {
   ...localBusinessJsonLd,
+  parentOrganization: organizationRef,
   priceRange: "฿฿฿",
   description:
     "รับทำ SEO + เว็บไซต์ภูเก็ต สำหรับธุรกิจไทยท้องถิ่น (Service Area Business) ให้บริการทั่วจังหวัดภูเก็ต ติด Google Maps และ AI Search",
   contactPoint: contactPointBase,
+};
+
+/** Organization + LocalBusiness เชื่อมกัน — ใส่ใน root layout ทั้งไซต์ */
+export const siteEntityGraphSchema = {
+  "@context": "https://schema.org",
+  "@graph": [organizationGraphNode, localBusinessGraphNode],
+};
+
+export const localBusinessSchema = {
+  "@context": "https://schema.org",
+  ...localBusinessGraphNode,
 };
 
 export const contactPageJsonLd = {
@@ -120,8 +142,7 @@ export const contactPageJsonLd = {
       ],
     },
     {
-      ...localBusinessJsonLd,
-      contactPoint: contactPointBase,
+      "@id": businessEntityId,
     },
   ],
 };
@@ -203,7 +224,7 @@ export function buildArticleSchema(params: {
     },
     publisher: {
       "@type": "Organization",
-      "@id": `${siteConfig.url}/#organization`,
+      "@id": organizationEntityId,
       name: siteConfig.name,
       logo: publisherLogoSchema,
     },

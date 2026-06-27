@@ -1,6 +1,6 @@
 ﻿import Link from "next/link";
 import { CheckCircle, XCircle, Star, Briefcase, TrendingUp } from "lucide-react";
-import { localBusinessJsonLd, contactPointBase, pricingServicesJsonLd } from "@/lib/schema";
+import { businessEntityId, pricingServicesJsonLd } from "@/lib/schema";
 import { pricingPackages, pricingComparison, webSetupPricing, planContactHref } from "@/lib/pricing-packages";
 
 export const metadata = {
@@ -31,8 +31,7 @@ const jsonLd = {
       ],
     },
     {
-      ...localBusinessJsonLd,
-      contactPoint: contactPointBase,
+      "@id": businessEntityId,
     },
     ...pricingServicesJsonLd,
   ],

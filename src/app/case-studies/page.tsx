@@ -2,7 +2,6 @@ import Link from "next/link";
 import { Metadata } from "next";
 import { ArrowRight } from "lucide-react";
 import { siteConfig } from "@/lib/utils";
-import { organizationJsonLd } from "@/lib/schema";
 import { caseStudies } from "@/lib/case-studies-data";
 
 export const metadata: Metadata = {
@@ -16,18 +15,6 @@ const CaseStudiesPage = () => {
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        ...organizationJsonLd,
-        url: `${siteConfig.url}/case-studies`,
-        contactPoint: {
-          "@type": "ContactPoint",
-          telephone: siteConfig.phoneInternational,
-          email: siteConfig.email,
-          contactType: "customer service",
-          areaServed: "TH",
-          availableLanguage: "Thai",
-        },
-      },
       {
         "@type": "BreadcrumbList",
         itemListElement: [
