@@ -429,6 +429,30 @@ export const siteImages = {
       width: 3840,
       height: 2560,
     },
+    thalangHero: {
+      src: "/images/blog/blog-thumb-local-seo-thalang-clean.png",
+      alt: "Local SEO ถลาง 2026 — โรงแรมใกล้สนามบิน หาดไม้ขาว หาดนาทอน อสังหาริมทรัพย์ อำเภอถลางภูเก็ต",
+      width: 3840,
+      height: 2560,
+    },
+    thalangAirportPhoto: {
+      src: "/images/blog/blog-inline-thalang-zone-infographic-clean.png",
+      alt: "แผนที่โซนถลาง — สนามบินภูเก็ต หาดไม้ขาว หาดในทอน โรงแรมใกล้สนามบิน รีสอร์ท อสังหาริมทรัพย์",
+      width: 3840,
+      height: 2560,
+    },
+    thalangZones: {
+      src: "/images/blog/blog-inline-thalang-zones-clean.png",
+      alt: "เปรียบเทียบโซนภูเก็ต — ป่าตอง nightlife · กมลา luxury condo · ถลาง airport hotel mai khao",
+      width: 3840,
+      height: 2560,
+    },
+    thalangMaps: {
+      src: "/images/blog/blog-inline-thalang-maps-clean.png",
+      alt: "Google Maps ถลาง Local Pack — ค้นหา hotel near phuket airport Maps Impressions Direction Requests",
+      width: 3840,
+      height: 2560,
+    },
   },
   team: {
     somchai: {
@@ -496,6 +520,7 @@ export const blogThumbnailBySlug: Record<string, SiteImage> = {
   "rab-tam-seo-phuket": siteImages.services.seo,
   "google-search-console-phuket": siteImages.blog.gscPhuket,
   "local-seo-kamala-phuket": siteImages.blog.kamalaHero,
+  "local-seo-thalang-phuket": siteImages.blog.thalangHero,
 };
 
 export function getBlogThumbnail(slug: string): SiteImage {
@@ -536,6 +561,9 @@ export const blogInlineImages: Record<string, SiteImage> = {
   kamalaZones: siteImages.blog.kamalaZones,
   kamalaMaps: siteImages.blog.kamalaMaps,
   kamalaBuyer: siteImages.blog.kamalaBuyer,
+  thalangAirportPhoto: siteImages.blog.thalangAirportPhoto,
+  thalangZones: siteImages.blog.thalangZones,
+  thalangMaps: siteImages.blog.thalangMaps,
   serviceGoogleAds: siteImages.services.googleAds,
 };
 

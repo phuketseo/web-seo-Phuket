@@ -23,6 +23,14 @@ export const blogCategories = [
 
 export const blogPostsMeta: BlogPostMeta[] = [
   {
+    slug: "local-seo-thalang-phuket",
+    title: "Local SEO ถลาง 2026 — โซนสนามบิน หาดไม้ขาว และหาดในทอน",
+    category: "Local SEO",
+    description:
+      "Local SEO ถลาง 2026 คือการทำให้ธุรกิจในอำเภอถลางโผล่ Google Maps และ Search เมื่อลูกค้าค้นหาโรงแรมใกล้สนามบิน รีสอร์ทหาดไม้ขาว หรืออสังหาฯ ในโซนนี้",
+    thumbnail: getBlogThumbnail("local-seo-thalang-phuket"),
+  },
+  {
     slug: "local-seo-kamala-phuket",
     title: "Local SEO กมลา 2026 — โซน luxury ที่แข่งต่างจากป่าตองและกะตะ",
     category: "Local SEO",
