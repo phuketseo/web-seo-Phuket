@@ -405,6 +405,30 @@ export const siteImages = {
       width: 2304,
       height: 1536,
     },
+    kamalaHero: {
+      src: "/images/blog/blog-thumb-local-seo-kamala-clean.png",
+      alt: "Local SEO กมลา 2026 — luxury beachfront condo resort fine dining EN buyer โซนหาดกมลา",
+      width: 2304,
+      height: 1536,
+    },
+    kamalaZones: {
+      src: "/images/blog/blog-inline-kamala-zones-clean.png",
+      alt: "เปรียบเทียบโซนภูเก็ต — ป่าตอง nightlife walk-in · กะตะ family resort · กมลา luxury condo EN buyer",
+      width: 2304,
+      height: 1536,
+    },
+    kamalaMaps: {
+      src: "/images/blog/blog-inline-kamala-maps-clean.png",
+      alt: "Google Maps กมลา Local Pack — guest ค้นหา spa restaurant ในโซน Maps Impressions +240%",
+      width: 2304,
+      height: 1536,
+    },
+    kamalaBuyer: {
+      src: "/images/blog/blog-inline-kamala-buyer-clean.png",
+      alt: "Buyer ต่างชาติค้นหาในกมลา — condo kamala phuket villa kamala resort kamala beach EN RU keyword",
+      width: 2304,
+      height: 1536,
+    },
   },
   team: {
     somchai: {
@@ -471,7 +495,7 @@ export const blogThumbnailBySlug: Record<string, SiteImage> = {
   "seo-sme-phuket": siteImages.blog.seoPhuketStack,
   "rab-tam-seo-phuket": siteImages.services.seo,
   "google-search-console-phuket": siteImages.blog.gscPhuket,
-  "local-seo-kamala-phuket": siteImages.caseStudies.realestate,
+  "local-seo-kamala-phuket": siteImages.blog.kamalaHero,
 };
 
 export function getBlogThumbnail(slug: string): SiteImage {
@@ -509,6 +533,9 @@ export const blogInlineImages: Record<string, SiteImage> = {
   aeoCompare: siteImages.blog.aeoCompare,
   aiOverviewInline: siteImages.blog.aiOverviewInline,
   geoSteps: siteImages.blog.geoSteps,
+  kamalaZones: siteImages.blog.kamalaZones,
+  kamalaMaps: siteImages.blog.kamalaMaps,
+  kamalaBuyer: siteImages.blog.kamalaBuyer,
   serviceGoogleAds: siteImages.services.googleAds,
 };
 

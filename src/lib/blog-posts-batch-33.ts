@@ -7,15 +7,15 @@ export const blogPostsBatch33 = {
     category: "Local SEO",
     date: "28 มิถุนายน 2569",
     dateISO: "2026-06-28",
-    readingTime: "6 นาที",
+    readingTime: "7 นาที",
     layout: "vercel" as const,
     author: { name: "ทีม PhuketSEO", role: "SEO Consultant · ภูเก็ต" },
     tldrTitle: "Local SEO กมลา",
     tldr: [
       "กมลา = luxury beachfront + condo/resort — intent ต่างจากป่าตอง (nightlife) และกะตะ (family)",
-      "ปัญหาหลัก: target keyword ทั้งเกาะ · GBP ไม่ครบ · ไม่มี content EN/RU ตาม buyer mix",
-      "ทิศทางแก้: โฟกัสโซนกมลา + trust → เว็บ/landing เมื่อพร้อม",
-      "แต่ละธุรกิจในกมลาต่างกัน — ต้องวิเคราะห์ listing และคู่แข่งในโซนก่อน",
+      "ปัญหาหลัก: target keyword ทั้งเกาะ · GBP ไม่ครบ · listing ไม่ตอบ EN/RU buyer",
+      "Guest ในโซนค้นหาบน Maps ก่อนจอง — ไม่โผล่ Local Pack = ไม่มีโอกาส",
+      "ทิศทางแก้: โฟกัส micro-zone กมลา + trust → content ตาม buyer mix",
     ],
     keywords: [
       "Local SEO กมลา",
@@ -58,6 +58,8 @@ export const blogPostsBatch33 = {
 
 **Local SEO กมลา** คือการทำให้ธุรกิจ **โผล่ Google Maps และ Search ในโซนหาดกมลา** — luxury zone ที่ search behavior **ไม่เหมือนป่าตองหรือกะตะ**
 
+รูป hero ด้านบนสรุปโซน: **condo · resort · fine dining · EN buyer** — 4 ประเภทที่แข่งกันบน Maps ในกมลา ไม่ใช่ keyword "phuket" รวมๆ
+
 :::quote
 Copy กลยุทธ์จากป่าตองมาใช้กมลา = งบไปผิดทาง — buyer mix และ intent ต่างกัน
 — ทีม PhuketSEO, SEO Consultant · ภูเก็ต
@@ -71,47 +73,57 @@ Copy กลยุทธ์จากป่าตองมาใช้กมลา
 
 Agency อสังหาริมทรัพย์ รีสอร์ท หรือร้าน fine dining หลายแห่ง optimize แค่ "phuket hotel" หรือ "phuket property" — **ไม่ตรง intent** ของ buyer ที่ค้นหา condo kamala, villa kamala หรือ restaurant kamala beach
 
-### Buyer ต่างชาติค้นหา แต่ listing เป็นภาษาไทยอย่างเดียว
+### Copy กลยุทธ์จากโซนอื่น
 
-โซนกมลามี buyer และ guest mix จากยุโรป รัสเซีย และเอเชีย — ธุรกิจที่ **GBP และเว็บไม่ตอบ query EN** มักถูกข้ามเมื่อเปรียบเทียบกับคู่แข่งใน [กมลา](/local/kamala)
+โรงแรม boutique ที่ target แบบ [ป่าตอง](/blog/local-seo-patong-phuket) หรือ family keyword แบบ [กะตะ](/blog/local-seo-kata-phuket) — ในกมลา **ไม่ work** เพราะ guest profile และ buyer mix ต่างกัน
 
-### ลูกค้าพักในโซน แต่ไม่เจอบน Maps
-
-Guest ที่พัก resort หรือ condo ในกมลา ค้นหา spa, restaurant หรือ service ในโซน — ธุรกิจที่ **ไม่โผล่ Local Pack** ไม่มีโอกาส แม้มี location ดี
-
-### รีวิวและ listing ไม่พอ
-
-[Google Business Profile](/blog/google-my-business-phuket) ไม่ครบ รีวิวน้อย รูปไม่ update — คู่แข่งใน luxury zone **ดูน่าเชื่อถือกว่า** โดยเฉพาะเมื่อลูกค้าเปรียบเทียบก่อนจอง
-
-:::image localSeoMaps
-Google Maps กมลา — buyer และ guest ในโซนค้นหาก่อนตัดสินใจ
+:::image kamalaZones
+เปรียบเทียบ 3 โซน — ป่าตอง (nightlife walk-in) · กะตะ (family resort) · กมลา (luxury condo EN buyer)
 :::
 
 ---
 
-## ทำไมกมลาต่างจากป่าตองและกะตะ
+## Guest ในโซนค้นหา แต่ไม่เจอบน Maps
 
-กมลาเน้น **luxury beachfront, condo/resort และ fine dining** — ไม่ใช่ nightlife walk-in แบบ [ป่าตอง](/blog/local-seo-patong-phuket) หรือ family beach แบบ [กะตะ](/blog/local-seo-kata-phuket)
+Guest ที่พัก resort หรือ condo ในกมลา ค้นหา spa, restaurant หรือ service ในโซน — ธุรกิจที่ **ไม่โผล่ Local Pack** ไม่มีโอกาส แม้ location ดี
 
-- **Buyer intent** — condo buyer, resort guest, investor ค้นหาโซนกมลาโดยตรง
-- **ภาษา** — EN (และบาง segment RU) สำคัญกว่าโซนที่เน้นลูกค้าไทย
-- **คู่แข่ง** — แข่งใน micro-zone กมลา ไม่ใช่ "phuket" รวมๆ
+[Google Business Profile](/blog/google-my-business-phuket) ไม่ครบ รีวิวน้อย รูปไม่ update — คู่แข่งใน luxury zone **ดูน่าเชื่อถือกว่า** โดยเฉพาะเมื่อลูกค้าเปรียบเทียบก่อนจอง
 
-ดู [SEO อสังหาริมทรัพย์ภูเก็ต](/blog/seo-real-estate-phuket) สำหรับ context ตลาด property — แต่แผนในกมลาต้องเฉพาะโซน
+:::image kamalaMaps
+Google Maps กมลา — guest ค้นหา "spa near me kamala" หรือ "restaurant kamala beach" แล้วเลือกจาก Local Pack
+:::
+
+---
+
+## Buyer ต่างชาติค้นหา แต่ listing ไม่ตอบ
+
+โซนกมลามี buyer และ guest mix จากยุโรป รัสเซีย และเอเชีย — ธุรกิจที่ **GBP และเว็บไม่ตอบ query EN** มักถูกข้ามเมื่อเปรียบเทียบกับคู่แข่งใน [กมลา](/local/kamala)
+
+Keyword ที่มี commercial intent จริงมักเป็นแบบนี้ — ไม่ใช่ "phuket" กว้างๆ:
+
+- **condo kamala phuket** / **villa kamala**
+- **resort kamala beach**
+- **restaurant kamala** / **spa kamala**
+
+:::image kamalaBuyer
+Buyer ต่างชาติค้นหา EN keyword ในกมลา — listing ภาษาไทยอย่างเดียวมักถูกข้าม
+:::
 
 ---
 
 ## ทิศทางแก้เบื้องต้น
 
-**1. โฟกัสโซนกมลา + บริการ/property จริง**
+**1. โฟกัส micro-zone กมลา** — ไม่แข่ง keyword ทั้งเกาะ แต่ชนะใน luxury beachfront zone
 
 **2. สร้าง trust บน Maps** — listing ครบ NAP ตรง รีวิว ([Google Reviews](/blog/google-reviews-phuket)) รูปและข้อมูลครบ
 
-**3. Content ตาม buyer mix** — EN keyword ที่ตรง condo, resort, restaurant ในโซน ไม่ใช่ copy จากโซนอื่น
+**3. Content ตาม buyer mix** — EN (และบาง segment RU) ที่ตรง condo, resort, restaurant ในโซน
 
 **4. เว็บหรือ landing รองรับเมื่อลูกค้าอยากดูรายละเอียด** — โดยเฉพาะ [อสังหาริมทรัพย์](/industries/seo-real-estate-phuket) และรีสอร์ท
 
 ลำดับงานควรสอดคล้อง [Phuket Visibility Stack](/methodology/phuket-visibility-stack) — Maps + trust ก่อน rebuild เว็บ
+
+ดู [SEO อสังหาริมทรัพย์ภูเก็ต](/blog/seo-real-estate-phuket) สำหรับ context ตลาด property — แต่แผนในกมลาต้องเฉพาะโซน
 
 [ขอคำปรึกษาฟรี](/contact) — วิเคราะห์ Local SEO กมลาของธุรกิจคุณ
 
