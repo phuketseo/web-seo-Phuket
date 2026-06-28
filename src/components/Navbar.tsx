@@ -3,6 +3,7 @@ import Link from "next/link";
 import { siteConfig } from "@/lib/utils";
 import { localSeo, navLinks, primaryServices } from "@/components/nav-data";
 import NavbarMobileMenuLazy from "@/components/NavbarMobileMenuLazy";
+import { Logo } from "@/components/Logo";
 
 const navLinkClass =
   "px-2.5 xl:px-3 py-2 rounded-lg text-[13px] xl:text-sm font-medium text-slate-600 hover:text-indigo-600 hover:bg-indigo-50 transition-colors whitespace-nowrap shrink-0";
@@ -54,19 +55,12 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="flex items-center justify-between gap-3 min-h-[44px]">
-          <Link href="/" className="flex items-center gap-2 shrink-0 min-w-0">
-            <div className="w-9 h-9 bg-indigo-600 rounded-xl flex items-center justify-center shrink-0">
-              <span className="text-white font-bold text-xs tracking-tight">PS</span>
-            </div>
-            <div className="hidden sm:block min-w-0">
-              <div className="font-bold text-base leading-tight text-slate-900 whitespace-nowrap [font-family:Tahoma,'Segoe_UI',sans-serif]">
-                PhuketSEO
-              </div>
-              <div className="text-[10px] tracking-widest uppercase text-slate-400 whitespace-nowrap [font-family:Tahoma,'Segoe_UI',sans-serif]">
-                SEO + Web ภูเก็ต
-              </div>
-            </div>
-          </Link>
+          <div className="sm:hidden">
+            <Logo variant="icon" priority />
+          </div>
+          <div className="hidden sm:block">
+            <Logo variant="horizontal" priority />
+          </div>
 
           <nav className="hidden lg:flex items-center justify-center gap-0.5 xl:gap-1 flex-1 min-w-0 flex-nowrap overflow-visible">
             <NavDropdown label="บริการ">
@@ -109,7 +103,8 @@ export default function Navbar() {
             </a>
             <Link
               href="/contact"
-              className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-4 xl:px-5 py-2 xl:py-2.5 rounded-full text-[13px] xl:text-sm transition-all duration-200 hover:shadow-lg hover:shadow-indigo-100 hover:-translate-y-0.5 whitespace-nowrap"
+              data-nav-cta
+              className="nav-cta px-4 xl:px-5 py-2 xl:py-2.5 rounded-full text-[13px] xl:text-sm hover:shadow-lg hover:shadow-indigo-100 hover:-translate-y-0.5"
             >
               ขอคำปรึกษาฟรี
             </Link>

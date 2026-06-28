@@ -115,7 +115,8 @@ export default function NavbarMobileMenu() {
               </a>
               <Link
                 href="/contact"
-                className="flex-1 text-center bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-4 py-2 rounded-full text-sm transition-colors"
+                data-nav-cta
+                className="nav-cta flex-1 text-center px-4 py-2 rounded-full text-sm"
                 onClick={close}
               >
                 ขอคำปรึกษาฟรี

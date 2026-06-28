@@ -1,6 +1,7 @@
 ﻿import Link from "next/link";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { siteConfig } from "@/lib/utils";
+import { Logo } from "@/components/Logo";
 
 const FacebookIcon = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
@@ -73,15 +74,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">PS</span>
-              </div>
-              <div>
-                <div className="font-bold text-lg leading-tight font-serif">PhuketSEO</div>
-                <div className="text-xs tracking-widest uppercase text-blue-300">SEO + Web ภูเก็ต</div>
-              </div>
-            </Link>
+            <div className="mb-4 inline-block rounded-xl bg-white px-3 py-2">
+              <Logo variant="footer" />
+            </div>
             <p className="text-blue-200 text-sm leading-relaxed mb-6 max-w-xs">
               รับทำ SEO + เว็บไซต์ภูเก็ต สำหรับธุรกิจไทยท้องถิ่น ติด Google Maps, เว็บเร็ว, พร้อม AEO/GEO และ AI Search
             </p>

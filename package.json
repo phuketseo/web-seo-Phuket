@@ -11,6 +11,7 @@
     "check:images": "node scripts/check-images.mjs"
   },
   "dependencies": {
+    "@fontsource/google-sans": "^5.2.1",
     "@next/third-parties": "^16.2.7",
     "clsx": "^2.1.1",
     "lucide-react": "^1.17.0",

@@ -34,8 +34,11 @@ export const siteConfig = {
     latitude: 7.8804,
     longitude: 98.3923,
   },
-  /** Dynamic OG image — used in schema until public/logo.png exists */
-  logoPath: "/opengraph-image",
+  logo: {
+    horizontal: "/images/brand/logo-horizontal.png",
+    icon: "/images/brand/logo-icon.png",
+  },
+  logoPath: "/images/brand/logo-horizontal.png",
   ogImagePath: "/opengraph-image",
   address: "4/4 ซอย 6 ถนนพังงา ตำบลตลาดใหญ่ อำเภอเมือง จังหวัดภูเก็ต 83000",
   postalAddress: {

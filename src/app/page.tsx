@@ -1,13 +1,9 @@
 ﻿import type { Metadata } from "next";
-import dynamic from "next/dynamic";
 import { siteConfig } from "@/lib/utils";
 import HomeHero from "@/components/HomeHero";
-
-const HomeBelowFold = dynamic(() => import("@/components/HomeBelowFold"), {
-  loading: () => (
-    <div className="below-fold min-h-[2400px] bg-white" aria-hidden />
-  ),
-});
+import HomeBelowFold from "@/components/HomeBelowFold";
+import { HomeBodyClass } from "@/components/HomeBodyClass";
+import { HomeGoogleSans } from "@/components/HomeGoogleSans";
 
 export const metadata: Metadata = {
   title: "PhuketSEO | รับทำ SEO + เว็บไซต์ภูเก็ต ติด Google พร้อม AI Search",
@@ -19,8 +15,12 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
-      <HomeHero />
-      <HomeBelowFold />
+      <HomeGoogleSans />
+      <HomeBodyClass />
+      <div className="home-google-sans">
+        <HomeHero />
+        <HomeBelowFold />
+      </div>
     </>
   );
 }
