@@ -26,6 +26,7 @@ export function BlogFeaturedImage({ image, priority = true, theme = "default" }:
           fill
           className="object-cover"
           priority={priority}
+          quality={95}
           sizes="(max-width: 768px) 100vw, 768px"
         />
       </div>

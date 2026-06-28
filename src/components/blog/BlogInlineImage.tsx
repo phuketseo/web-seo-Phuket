@@ -27,6 +27,7 @@ export function BlogInlineImage({ image, caption, theme = "default" }: Props) {
             fill
             className="object-cover"
             loading="lazy"
+            quality={95}
             sizes="(max-width: 768px) 100vw, 65ch"
           />
         </div>
