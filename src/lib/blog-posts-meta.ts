@@ -23,6 +23,14 @@ export const blogCategories = [
 
 export const blogPostsMeta: BlogPostMeta[] = [
   {
+    slug: "local-seo-kamala-phuket",
+    title: "Local SEO กมลา 2026 — โซน luxury ที่แข่งต่างจากป่าตองและกะตะ",
+    category: "Local SEO",
+    description:
+      "Local SEO กมลา ทำอย่างไรให้ธุรกิจโผล่ Google Maps ในโซนหาดกมลา — ปัญหาและทิศทางแก้เมื่อ buyer ต่างชาติค้นหา condo, resort และ fine dining ใน Kamala",
+    thumbnail: getBlogThumbnail("local-seo-kamala-phuket"),
+  },
+  {
     slug: "rab-tam-seo-phuket",
     title: "รับทำ SEO ภูเก็ต 2026 — เลือกจ้างอย่างไรไม่เสียเงินฟรี",
     category: "SEO ภูเก็ต",

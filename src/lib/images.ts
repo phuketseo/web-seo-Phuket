@@ -471,6 +471,7 @@ export const blogThumbnailBySlug: Record<string, SiteImage> = {
   "seo-sme-phuket": siteImages.blog.seoPhuketStack,
   "rab-tam-seo-phuket": siteImages.services.seo,
   "google-search-console-phuket": siteImages.blog.gscPhuket,
+  "local-seo-kamala-phuket": siteImages.caseStudies.realestate,
 };
 
 export function getBlogThumbnail(slug: string): SiteImage {
