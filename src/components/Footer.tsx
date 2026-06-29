@@ -29,6 +29,9 @@ const YoutubeIcon = () => (
   </svg>
 );
 
+const linkClass = "text-slate-600 hover:text-violet-600 text-sm transition-colors";
+const headingClass = "text-[11px] font-semibold uppercase tracking-[0.12em] text-indigo-600 mb-4";
+
 const services = [
   { name: "SEO ภูเก็ต", href: "/services/seo-phuket" },
   { name: "ทำเว็บไซต์ + SEO", href: "/services/web-design" },
@@ -68,34 +71,35 @@ const company = [
 
 export default function Footer() {
   return (
-    <footer className="bg-blue-950 text-white">
-      {/* Main Footer */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <footer className="border-t border-slate-200 home-section-bg-muted">
+      <div className="container-custom py-14 sm:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
-          {/* Brand */}
           <div className="lg:col-span-2">
-            <div className="mb-4 inline-block rounded-xl bg-white px-3 py-2">
+            <div className="mb-4">
               <Logo variant="footer" />
             </div>
-            <p className="text-blue-200 text-sm leading-relaxed mb-6 max-w-xs">
+            <p className="text-slate-600 text-sm leading-relaxed mb-6 max-w-xs">
               รับทำ SEO + เว็บไซต์ภูเก็ต สำหรับธุรกิจไทยท้องถิ่น ติด Google Maps, เว็บเร็ว, พร้อม AEO/GEO และ AI Search
             </p>
-            <div className="space-y-3 text-sm text-blue-200">
+            <div className="space-y-3 text-sm text-slate-600">
               <div className="flex items-start gap-2">
-                <MapPin size={16} className="mt-0.5 text-green-400 shrink-0" />
+                <MapPin size={16} className="mt-0.5 text-indigo-500 shrink-0" />
                 <span>{siteConfig.address}</span>
               </div>
               <div className="flex items-center gap-2">
-                <Phone size={16} className="text-green-400 shrink-0" />
-                <a href={`tel:${siteConfig.phone}`} className="hover:text-white transition-colors">{siteConfig.phone}</a>
+                <Phone size={16} className="text-indigo-500 shrink-0" />
+                <a href={`tel:${siteConfig.phone}`} className="hover:text-violet-600 transition-colors">
+                  {siteConfig.phone}
+                </a>
               </div>
               <div className="flex items-center gap-2">
-                <Mail size={16} className="text-green-400 shrink-0" />
-                <a href={`mailto:${siteConfig.email}`} className="hover:text-white transition-colors">{siteConfig.email}</a>
+                <Mail size={16} className="text-indigo-500 shrink-0" />
+                <a href={`mailto:${siteConfig.email}`} className="hover:text-violet-600 transition-colors">
+                  {siteConfig.email}
+                </a>
               </div>
             </div>
-            {/* Social */}
-            <div className="flex gap-3 mt-6">
+            <div className="flex gap-2.5 mt-6">
               {[
                 { icon: FacebookIcon, href: siteConfig.social.facebook, label: "Facebook" },
                 { icon: InstagramIcon, href: siteConfig.social.instagram, label: "Instagram" },
@@ -108,7 +112,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="w-9 h-9 bg-blue-800 hover:bg-green-500 rounded-lg flex items-center justify-center transition-colors"
+                  className="w-9 h-9 rounded-lg border border-slate-200 bg-white text-slate-600 hover:border-violet-200 hover:text-violet-600 flex items-center justify-center transition-colors"
                 >
                   <Icon />
                 </a>
@@ -116,23 +120,22 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Services */}
           <div>
-            <h3 className="font-semibold text-white mb-4 text-sm uppercase tracking-wider">บริการของเรา</h3>
+            <h3 className={headingClass}>บริการของเรา</h3>
             <ul className="space-y-2.5">
               {services.map((s) => (
                 <li key={s.href}>
-                  <Link href={s.href} className="text-blue-200 hover:text-green-400 text-sm transition-colors">
+                  <Link href={s.href} className={linkClass}>
                     {s.name}
                   </Link>
                 </li>
               ))}
             </ul>
-            <p className="text-blue-400 text-xs uppercase tracking-wider mt-6 mb-3">บริการเสริม</p>
+            <p className={`${headingClass} mt-6 mb-3`}>บริการเสริม</p>
             <ul className="space-y-2.5">
               {secondaryServices.map((s) => (
                 <li key={s.href}>
-                  <Link href={s.href} className="text-blue-300 hover:text-green-400 text-sm transition-colors">
+                  <Link href={s.href} className={linkClass}>
                     {s.name}
                   </Link>
                 </li>
@@ -140,23 +143,22 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Local SEO */}
           <div>
-            <h3 className="font-semibold text-white mb-4 text-sm uppercase tracking-wider">Local SEO</h3>
+            <h3 className={headingClass}>Local SEO</h3>
             <ul className="space-y-2.5">
               {localSeo.map((s) => (
                 <li key={s.href}>
-                  <Link href={s.href} className="text-blue-200 hover:text-green-400 text-sm transition-colors">
+                  <Link href={s.href} className={linkClass}>
                     {s.name}
                   </Link>
                 </li>
               ))}
             </ul>
-            <p className="text-blue-400 text-xs uppercase tracking-wider mt-6 mb-3">อุตสาหกรรม</p>
+            <p className={`${headingClass} mt-6 mb-3`}>อุตสาหกรรม</p>
             <ul className="space-y-2.5">
               {industries.map((s) => (
                 <li key={s.href}>
-                  <Link href={s.href} className="text-blue-200 hover:text-green-400 text-sm transition-colors">
+                  <Link href={s.href} className={linkClass}>
                     {s.name}
                   </Link>
                 </li>
@@ -164,13 +166,12 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Company */}
           <div>
-            <h3 className="font-semibold text-white mb-4 text-sm uppercase tracking-wider">บริษัท</h3>
+            <h3 className={headingClass}>บริษัท</h3>
             <ul className="space-y-2.5">
               {company.map((s) => (
                 <li key={s.href}>
-                  <Link href={s.href} className="text-blue-200 hover:text-green-400 text-sm transition-colors">
+                  <Link href={s.href} className={linkClass}>
                     {s.name}
                   </Link>
                 </li>
@@ -180,13 +181,16 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom Bar */}
-      <div className="border-t border-blue-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-blue-300">
+      <div className="border-t border-slate-200 bg-white">
+        <div className="container-custom py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-slate-500">
           <p>© {new Date().getFullYear()} PhuketSEO. สงวนลิขสิทธิ์ทั้งหมด.</p>
           <div className="flex gap-4">
-            <Link href="/privacy-policy" className="hover:text-white transition-colors">นโยบายความเป็นส่วนตัว</Link>
-            <Link href="/terms" className="hover:text-white transition-colors">ข้อกำหนดการใช้งาน</Link>
+            <Link href="/privacy-policy" className="hover:text-violet-600 transition-colors">
+              นโยบายความเป็นส่วนตัว
+            </Link>
+            <Link href="/terms" className="hover:text-violet-600 transition-colors">
+              ข้อกำหนดการใช้งาน
+            </Link>
           </div>
         </div>
       </div>
