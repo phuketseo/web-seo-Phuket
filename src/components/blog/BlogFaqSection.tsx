@@ -1,5 +1,7 @@
 import { ChevronDown } from "lucide-react";
 import type { BlogTheme } from "@/lib/blog-theme";
+import { isAngaTheme } from "@/lib/blog-theme";
+import { renderBlogInline } from "@/lib/render-blog-content";
 
 type FaqItem = { q: string; a: string };
 
@@ -11,27 +13,30 @@ type Props = {
 export function BlogFaqSection({ faqs, theme = "default" }: Props) {
   if (!faqs?.length) return null;
 
-  if (theme === "vercel") {
+  if (isAngaTheme(theme)) {
     return (
-      <section className="mt-14 pt-10 border-t border-neutral-200 blog-prose-vercel">
+      <section className="mt-14 pt-10 border-t border-slate-200 blog-prose-anga">
         <h2
-          className="font-bold tracking-tight text-neutral-900 scroll-mt-28"
+          className="text-2xl font-bold text-slate-900 tracking-tight scroll-mt-28 border-gradient-brand pl-4 !mt-0"
           id="faq"
         >
           คำถามที่พบบ่อย
         </h2>
-        <div className="divide-y divide-neutral-200 border-y border-neutral-200">
+        <div className="space-y-3 mt-6">
           {faqs.map((faq) => (
-            <details key={faq.q} className="group">
-              <summary className="flex cursor-pointer items-center justify-between gap-4 py-4 font-medium text-neutral-900 hover:text-neutral-600 list-none">
+            <details
+              key={faq.q}
+              className="group rounded-2xl border border-slate-200/90 bg-white shadow-sm overflow-hidden open:border-violet-200 open:ring-1 open:ring-violet-100"
+            >
+              <summary className="flex cursor-pointer items-center justify-between gap-4 px-5 py-4 font-semibold text-slate-900 hover:bg-violet-50/40 list-none transition-colors">
                 <span>{faq.q}</span>
                 <ChevronDown
-                  size={16}
-                  className="shrink-0 text-neutral-400 transition-transform group-open:rotate-180"
+                  size={18}
+                  className="shrink-0 text-violet-400 transition-transform group-open:rotate-180"
                 />
               </summary>
-              <div className="pb-4 text-neutral-600 leading-relaxed pr-8">
-                {faq.a}
+              <div className="px-5 pb-4 text-slate-600 leading-relaxed border-t border-violet-50 pt-3">
+                {renderBlogInline(faq.a, `faq-a-${faq.q}`, theme)}
               </div>
             </details>
           ))}
@@ -42,7 +47,7 @@ export function BlogFaqSection({ faqs, theme = "default" }: Props) {
 
   return (
     <section className="mt-12 pt-10 border-t border-slate-200">
-      <h2 className="text-2xl font-bold text-blue-950 font-serif mb-6 scroll-mt-28" id="faq">
+      <h2 className="text-2xl font-bold text-slate-900 tracking-tight mb-6 scroll-mt-28" id="faq">
         คำถามที่พบบ่อย
       </h2>
       <div className="space-y-3">
@@ -59,7 +64,7 @@ export function BlogFaqSection({ faqs, theme = "default" }: Props) {
               />
             </summary>
             <div className="px-5 pb-4 text-slate-600 text-base leading-relaxed border-t border-slate-100 pt-3">
-              {faq.a}
+              {renderBlogInline(faq.a, `faq-a-${faq.q}`, theme)}
             </div>
           </details>
         ))}

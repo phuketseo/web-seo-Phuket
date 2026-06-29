@@ -8,7 +8,7 @@ import {
   plainTextForSchema,
 } from "@/lib/schema";
 import { siteConfig } from "@/lib/utils";
-import { BlogVercelLayout } from "@/components/blog/vercel/BlogVercelLayout";
+import { BlogAngaLayout } from "@/components/blog/anga/BlogAngaLayout";
 import { getBlogThumbnail } from "@/lib/images";
 import { pillarBlogPosts } from "@/lib/blog-posts-pillar";
 import { blogPostsBatch2125 } from "@/lib/blog-posts-batch-21-25";
@@ -34,7 +34,7 @@ const blogPosts: Record<
     relatedServices: { name: string; href: string }[];
     keywords: string[];
     faqs?: { q: string; a: string }[];
-    layout?: "vercel";
+    layout?: "anga" | "vercel";
     tldr?: string[];
     tldrTitle?: string;
     author?: { name: string; role: string };
@@ -1303,12 +1303,13 @@ export default async function BlogPostPage({
       {faqSchema && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       )}
-      <BlogVercelLayout
+      <BlogAngaLayout
         post={post}
         thumbnail={thumbnail}
         headings={headings}
         contentForRender={contentForRender}
         relatedPosts={relatedPosts}
+        pageUrl={pageUrl}
       />
     </>
   );

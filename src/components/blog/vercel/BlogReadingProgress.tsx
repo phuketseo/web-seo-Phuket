@@ -6,26 +6,29 @@ export function BlogReadingProgress() {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const update = () => {
+    function onScroll() {
       const el = document.documentElement;
-      const scrollTop = el.scrollTop || document.body.scrollTop;
+      const scrollTop = el.scrollTop;
       const scrollHeight = el.scrollHeight - el.clientHeight;
       setProgress(scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0);
-    };
+    }
 
-    update();
-    window.addEventListener("scroll", update, { passive: true });
-    return () => window.removeEventListener("scroll", update);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
     <div
-      className="fixed top-16 left-0 right-0 z-[60] h-[2px] bg-neutral-200/80"
+      className="fixed top-16 left-0 right-0 z-[60] h-[2px] bg-slate-200/80"
       aria-hidden
     >
       <div
-        className="h-full bg-neutral-900 transition-[width] duration-150 ease-out"
-        style={{ width: `${progress}%` }}
+        className="h-full transition-[width] duration-150 ease-out"
+        style={{
+          width: `${progress}%`,
+          background: "linear-gradient(90deg, #9333ea 0%, #7c3aed 35%, #6366f1 65%, #2563eb 100%)",
+        }}
       />
     </div>
   );

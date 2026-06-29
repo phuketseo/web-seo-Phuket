@@ -530,6 +530,7 @@ export function getBlogThumbnail(slug: string): SiteImage {
 /** Keys for :::image blocks in blog markdown */
 export const blogInlineImages: Record<string, SiteImage> = {
   localSeo: siteImages.blog.localSeo,
+  localSeoPillar: siteImages.blog.localSeoPillar,
   caseStudyHotel: siteImages.caseStudies.hotel,
   caseStudyRestaurant: siteImages.caseStudies.restaurant,
   caseStudyRealestate: siteImages.caseStudies.realestate,

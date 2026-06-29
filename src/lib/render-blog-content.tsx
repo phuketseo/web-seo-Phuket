@@ -6,12 +6,18 @@ import { BlogMidCta } from "@/components/blog/BlogMidCta";
 import { BlogStatRow, parseStatLine } from "@/components/blog/BlogStatRow";
 import { slugifyHeading } from "@/lib/blog-content-utils";
 import type { BlogTheme } from "@/lib/blog-theme";
+import { isAngaTheme } from "@/lib/blog-theme";
 import { resolveBlogInlineImage } from "@/lib/images";
 
-function renderInline(text: string, keyPrefix: string, theme: BlogTheme = "default"): React.ReactNode {
+/** Inline markdown: **bold** and [label](/path) links */
+export function renderBlogInline(
+  text: string,
+  keyPrefix: string,
+  theme: BlogTheme = "default"
+): React.ReactNode {
   const linkClass =
-    theme === "vercel"
-      ? "text-neutral-900 underline decoration-neutral-300 underline-offset-4 hover:decoration-neutral-900 font-medium"
+    isAngaTheme(theme)
+      ? "text-violet-600 font-medium hover:underline underline-offset-2"
       : "text-indigo-700 font-semibold hover:underline";
 
   const parts: React.ReactNode[] = [];
@@ -69,7 +75,7 @@ type RenderOptions = {
 
 export function renderBlogContent(content: string, options: RenderOptions = {}) {
   const theme = options.theme ?? "default";
-  const isVercel = theme === "vercel";
+  const isAnga = isAngaTheme(theme);
 
   const lines = content.trim().split("\n");
   const elements: React.ReactNode[] = [];
@@ -90,7 +96,7 @@ export function renderBlogContent(content: string, options: RenderOptions = {}) 
     }
     const ListTag = listBuffer.type;
     elements.push(
-      <ListTag key={key++} className={isVercel ? "blog-list" : "my-2 ml-5 list-outside"}>
+      <ListTag key={key++} className={isAnga ? "blog-list" : "my-2 ml-5 list-outside"}>
         {listBuffer.items}
       </ListTag>
     );
@@ -104,23 +110,23 @@ export function renderBlogContent(content: string, options: RenderOptions = {}) 
         <div key={key++} className="overflow-x-auto my-8">
           <table
             className={
-              isVercel
-                ? "w-full border-collapse text-sm border border-neutral-200"
+              isAnga
+                ? "w-full border-collapse text-sm border border-slate-200 rounded-xl overflow-hidden"
                 : "w-full border-collapse text-sm"
             }
           >
             <thead>
-              <tr className={isVercel ? "bg-neutral-100 border-b border-neutral-200" : "bg-blue-950 text-white"}>
+              <tr className={isAnga ? "bg-slate-50 border-b border-slate-200" : "bg-blue-950 text-white"}>
                 {tableHeaders.map((h, i) => (
                   <th
                     key={i}
                     className={
-                      isVercel
-                        ? "px-4 py-3 text-left font-medium text-neutral-900"
+                      isAnga
+                        ? "px-4 py-3 text-left font-semibold text-slate-900"
                         : "px-4 py-3 text-left font-semibold"
                     }
                   >
-                    {renderInline(h.trim(), `th-${key}-${i}`, theme)}
+                    {renderBlogInline(h.trim(), `th-${key}-${i}`, theme)}
                   </th>
                 ))}
               </tr>
@@ -130,8 +136,8 @@ export function renderBlogContent(content: string, options: RenderOptions = {}) 
                 <tr
                   key={i}
                   className={
-                    isVercel
-                      ? "border-b border-neutral-200 last:border-b-0"
+                    isAnga
+                      ? "border-b border-slate-200 last:border-b-0"
                       : i % 2 === 0
                         ? "bg-white"
                         : "bg-slate-50"
@@ -141,12 +147,12 @@ export function renderBlogContent(content: string, options: RenderOptions = {}) 
                     <td
                       key={j}
                       className={
-                        isVercel
-                          ? "px-4 py-3 text-neutral-700"
+                        isAnga
+                          ? "px-4 py-3 text-slate-700"
                           : "px-4 py-3 border-b border-slate-200"
                       }
                     >
-                      {renderInline(cell.trim(), `td-${key}-${i}-${j}`, theme)}
+                      {renderBlogInline(cell.trim(), `td-${key}-${i}-${j}`, theme)}
                     </td>
                   ))}
                 </tr>
@@ -170,8 +176,8 @@ export function renderBlogContent(content: string, options: RenderOptions = {}) 
           <pre
             key={key++}
             className={
-              isVercel
-                ? "bg-neutral-950 text-neutral-100 p-5 rounded-lg overflow-x-auto my-8 text-[13px] font-mono leading-relaxed border border-neutral-800"
+              isAnga
+                ? "bg-slate-900 text-slate-100 p-5 rounded-xl overflow-x-auto my-8 text-[13px] font-mono leading-relaxed border border-slate-800"
                 : "bg-slate-900 text-green-400 p-5 rounded-xl overflow-x-auto my-6 text-sm font-mono leading-relaxed"
             }
           >
@@ -221,7 +227,7 @@ export function renderBlogContent(content: string, options: RenderOptions = {}) 
         if (calloutText) {
           elements.push(
             <BlogCallout key={key++} type={calloutType} theme={theme}>
-              {renderInline(calloutText, `callout-${key}`, theme)}
+              {renderBlogInline(calloutText, `callout-${key}`, theme)}
             </BlogCallout>
           );
         }
@@ -275,7 +281,7 @@ export function renderBlogContent(content: string, options: RenderOptions = {}) 
         if (quoteText) {
           elements.push(
             <BlogPullQuote key={key++} attribution={attribution}>
-              {renderInline(quoteText, `quote-${key}`, theme)}
+              {renderBlogInline(quoteText, `quote-${key}`, theme)}
             </BlogPullQuote>
           );
         }
@@ -304,12 +310,12 @@ export function renderBlogContent(content: string, options: RenderOptions = {}) 
           key={key++}
           id={id}
           className={
-            isVercel
+            isAnga
               ? "scroll-mt-28 first:mt-0"
               : "text-2xl font-bold text-blue-950 mt-12 mb-5 font-serif scroll-mt-28 first:mt-0"
           }
         >
-          {renderInline(headingText, `h2-${key}`, theme)}
+          {renderBlogInline(headingText, `h2-${key}`, theme)}
         </h2>
       );
       if (options.midCtaAfterSection && h2Count === options.midCtaAfterSection) {
@@ -321,12 +327,12 @@ export function renderBlogContent(content: string, options: RenderOptions = {}) 
         <h3
           key={key++}
           className={
-            isVercel
-              ? undefined
+            isAnga
+              ? "blog-anga-subhead scroll-mt-28"
               : "text-xl font-semibold text-slate-900 mt-8 mb-3"
           }
         >
-          {renderInline(line.slice(4), `h3-${key}`, theme)}
+          {renderBlogInline(line.slice(4), `h3-${key}`, theme)}
         </h3>
       );
     } else if (line.startsWith("- ")) {
@@ -334,8 +340,8 @@ export function renderBlogContent(content: string, options: RenderOptions = {}) 
       if (!listBuffer) listBuffer = { type: "ul", items: [] };
       const itemKey = key++;
       listBuffer.items.push(
-        <li key={itemKey} className={isVercel ? undefined : "text-slate-700 mb-2 leading-relaxed"}>
-          {renderInline(line.slice(2), `li-${itemKey}`, theme)}
+        <li key={itemKey} className={isAnga ? undefined : "text-slate-700 mb-2 leading-relaxed"}>
+          {renderBlogInline(line.slice(2), `li-${itemKey}`, theme)}
         </li>
       );
     } else if (/^\d+\. /.test(line)) {
@@ -343,30 +349,30 @@ export function renderBlogContent(content: string, options: RenderOptions = {}) 
       if (!listBuffer) listBuffer = { type: "ol", items: [] };
       const itemKey = key++;
       listBuffer.items.push(
-        <li key={itemKey} className={isVercel ? undefined : "text-slate-700 mb-2 leading-relaxed"}>
-          {renderInline(line.replace(/^\d+\. /, ""), `oli-${itemKey}`, theme)}
+        <li key={itemKey} className={isAnga ? undefined : "text-slate-700 mb-2 leading-relaxed"}>
+          {renderBlogInline(line.replace(/^\d+\. /, ""), `oli-${itemKey}`, theme)}
         </li>
       );
     } else if (line.startsWith("---")) {
       flush();
       elements.push(
-        <hr key={key++} className={isVercel ? undefined : "border-slate-200 my-4"} />
+        <hr key={key++} className={isAnga ? undefined : "border-slate-200 my-4"} />
       );
     } else if (line.trim() === "") {
       if (listBuffer) continue;
-      if (!isVercel) elements.push(<div key={key++} className="h-2" />);
+      if (!isAnga) elements.push(<div key={key++} className="h-2" />);
     } else {
       flush();
       elements.push(
         <p
           key={key++}
           className={
-            isVercel
+            isAnga
               ? undefined
               : "text-slate-700 leading-[1.7] mb-4 text-[17px]"
           }
         >
-          {renderInline(line, `p-${key}`, theme)}
+          {renderBlogInline(line, `p-${key}`, theme)}
         </p>
       );
     }

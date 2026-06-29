@@ -2,7 +2,7 @@ import { siteConfig } from "@/lib/utils";
 
 export function ContactMap() {
   return (
-    <div className="overflow-hidden rounded-2xl border border-gray-100 shadow-sm bg-gray-50">
+    <div className="overflow-hidden rounded-xl border border-slate-200 bg-slate-50/50 shadow-sm">
       <iframe
         src={siteConfig.googleMapsEmbedUrl}
         title="แผนที่พื้นที่ให้บริการ PhuketSEO ภูเก็ต"

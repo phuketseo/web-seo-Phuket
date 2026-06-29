@@ -203,17 +203,17 @@ export const blogPostsMeta: BlogPostMeta[] = [
   },
   {
     slug: "local-seo-phuket",
-    title: "Local SEO Phuket คืออะไร? วิธีติด Google Maps ภูเก็ต (2026)",
+    title: "Local SEO ภูเก็ต คืออะไร? วิธีติด Google Maps (2026)",
     category: "Local SEO",
     description:
-      "Local SEO Phuket คืออะไร — วิธีติด Google Maps และ Local Pack ป่าตอง กะตะ ตัวเมือง GBP รีวิว NAP และราคาแพ็ก",
+      "Local SEO ภูเก็ต คืออะไร ทำไมธุรกิจต้องติดอันดับบน Google Maps ในป่าตอง กะตะ กมลา ตัวเมือง — เริ่มจาก Google Business Profile รีวิว และคำค้นโซนจริง",
     thumbnail: getBlogThumbnail("local-seo-phuket"),
   },
   {
     slug: "local-seo-phuket-kue-arai",
     title: "Local SEO ภูเก็ต คืออะไร? วิธีให้ธุรกิจติด Google Maps",
     category: "Local SEO",
-    description: "Local SEO ภูเก็ต ทำอย่างไรให้ธุรกิจโผล่ Google Maps ในโซนจริง",
+    description: "Local SEO ภูเก็ต คืออะไร ประโยชน์หลัก เริ่มจากอะไร และปัญหาที่ธุรกิจมักเจอเมื่อค้นหา Google Maps",
     thumbnail: getBlogThumbnail("local-seo-phuket-kue-arai"),
   },
   {

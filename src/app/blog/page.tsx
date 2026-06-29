@@ -1,5 +1,6 @@
 ﻿import type { Metadata } from "next";
 import { BlogListing } from "@/components/blog/BlogListing";
+import { BrandGradientDefs } from "@/components/BrandGradientDefs";
 import { siteConfig } from "@/lib/utils";
 
 export const metadata: Metadata = {
@@ -18,6 +19,7 @@ export const metadata: Metadata = {
 export default function BlogPage() {
   return (
     <>
+      <BrandGradientDefs />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

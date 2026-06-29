@@ -1,5 +1,6 @@
 import { AlertTriangle, Info, Lightbulb } from "lucide-react";
 import type { BlogTheme } from "@/lib/blog-theme";
+import { isAngaTheme } from "@/lib/blog-theme";
 
 type CalloutType = "tip" | "warning" | "info";
 
@@ -34,13 +35,13 @@ type Props = {
 };
 
 export function BlogCallout({ type = "info", theme = "default", children }: Props) {
-  if (theme === "vercel") {
+  if (isAngaTheme(theme)) {
     return (
-      <aside className="my-8 rounded-lg border border-neutral-200 bg-neutral-50/80 p-5">
-        <p className="text-[11px] font-medium uppercase tracking-[0.12em] text-neutral-500 mb-2">
+      <aside className="my-8 rounded-2xl border border-violet-100 bg-gradient-to-br from-violet-50/60 to-indigo-50/30 p-5 ring-1 ring-violet-100/50">
+        <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-gradient-brand mb-2">
           {vercelLabels[type]}
         </p>
-        <div className="leading-relaxed text-neutral-700 [&_strong]:font-semibold [&_strong]:text-neutral-900">
+        <div className="leading-relaxed text-slate-700 [&_strong]:font-semibold [&_strong]:text-slate-900">
           {children}
         </div>
       </aside>

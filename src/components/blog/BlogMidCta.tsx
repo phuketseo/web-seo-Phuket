@@ -1,43 +1,40 @@
-﻿import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+﻿import { ArrowRight } from "lucide-react";
+import { GradientButton } from "@/components/GradientButton";
 import type { BlogTheme } from "@/lib/blog-theme";
+import { isAngaTheme } from "@/lib/blog-theme";
 
 type Props = {
   theme?: BlogTheme;
 };
 
 export function BlogMidCta({ theme = "default" }: Props) {
-  if (theme === "vercel") {
+  if (isAngaTheme(theme)) {
     return (
-      <div className="my-12 rounded-lg border border-neutral-200 p-6 sm:p-7">
-        <h3 className="font-semibold text-neutral-900 mb-2 tracking-tight">
-          อยากให้ช่วยวางแผน SEO?
+      <div className="blog-anga-block-cta my-12 rounded-2xl border border-violet-100 bg-gradient-to-br from-violet-50/80 via-white to-indigo-50/40 p-6 sm:p-8 shadow-sm">
+        <h3 className="text-lg font-bold text-slate-900 mb-2 tracking-tight">
+          อยากให้ช่วยวางแผน <span className="text-gradient-brand">SEO</span>?
         </h3>
-        <p className="text-neutral-500 leading-relaxed mb-5">
-          ขอคำปรึกษาฟรี — ช่วยดูช่องว่าง GBP, keyword ในโซน และลำดับงานที่ควรทำก่อน ไม่มีข้อผูกมัด
+        <p className="text-slate-600 leading-relaxed mb-6 text-sm sm:text-base">
+          ขอคำปรึกษาฟรี — ช่วยดูช่องว่างหน้าร้านบน Maps คำค้นในโซน และลำดับงานที่ควรทำก่อน
         </p>
-        <Link
-          href="/contact"
-          className="inline-flex items-center gap-2 text-neutral-900 hover:text-neutral-600 font-medium text-sm underline decoration-neutral-300 underline-offset-4 hover:decoration-neutral-600 transition-colors"
-        >
-          ติดต่อปรึกษา <ArrowRight size={15} />
-        </Link>
+        <GradientButton href="/contact" className="gap-2 px-5 py-2.5">
+          ปรึกษาฟรี
+          <ArrowRight size={15} aria-hidden className="text-white" />
+        </GradientButton>
       </div>
     );
   }
 
   return (
-    <div className="my-10 rounded-2xl border border-indigo-100 bg-gradient-to-br from-indigo-50 to-white p-6 sm:p-8">
-      <h3 className="text-lg font-bold text-blue-950 font-serif mb-2">อยากให้ช่วยวางแผน SEO?</h3>
+    <div className="my-10 rounded-xl border border-violet-100 bg-gradient-to-br from-violet-50/80 to-white p-6 sm:p-8">
+      <h3 className="text-lg font-bold text-slate-900 mb-2">อยากให้ช่วยวางแผน SEO?</h3>
       <p className="text-slate-600 text-base leading-relaxed mb-4">
         ขอคำปรึกษาฟรี — ช่วยดูช่องว่าง GBP, keyword ในโซน และลำดับงานที่ควรทำก่อน ไม่มีข้อผูกมัด
       </p>
-      <Link
-        href="/contact"
-        className="inline-flex items-center gap-2 text-indigo-700 hover:text-indigo-900 font-semibold text-sm underline underline-offset-4"
-      >
-        ติดต่อปรึกษา <ArrowRight size={15} />
-      </Link>
+      <GradientButton href="/contact" className="gap-2 px-5 py-2.5">
+        ปรึกษาฟรี
+        <ArrowRight size={15} aria-hidden className="text-white" />
+      </GradientButton>
     </div>
   );
 }

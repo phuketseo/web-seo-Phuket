@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { SiteImage } from "@/lib/images";
 import type { BlogTheme } from "@/lib/blog-theme";
+import { isAngaTheme } from "@/lib/blog-theme";
 
 type Props = {
   image: SiteImage;
@@ -8,15 +9,15 @@ type Props = {
   theme?: BlogTheme;
 };
 
-export function BlogFeaturedImage({ image, priority = true, theme = "default" }: Props) {
-  const isVercel = theme === "vercel";
+export function BlogFeaturedImage({ image, priority = true, theme }: Props) {
+  const anga = isAngaTheme(theme);
 
   return (
     <figure
       className={
-        isVercel
-          ? "overflow-hidden rounded-lg border border-neutral-200 bg-white"
-          : "overflow-hidden rounded-2xl shadow-xl border border-slate-200/80 bg-white"
+        anga
+          ? "blog-anga-figure overflow-hidden w-full"
+          : "overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm"
       }
     >
       <div className="relative aspect-[3/2] w-full">
@@ -27,7 +28,11 @@ export function BlogFeaturedImage({ image, priority = true, theme = "default" }:
           className="object-cover"
           priority={priority}
           quality={95}
-          sizes="(max-width: 768px) 100vw, 768px"
+          sizes={
+            anga
+              ? "(max-width: 639px) calc(100vw - 2.5rem), (max-width: 1023px) calc(100vw - 3rem), 748px"
+              : "(max-width: 768px) 100vw, 768px"
+          }
         />
       </div>
     </figure>

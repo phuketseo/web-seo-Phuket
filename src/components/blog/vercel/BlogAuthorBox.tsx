@@ -9,7 +9,7 @@ type Props = {
 export function BlogAuthorBox({ name, role }: Props) {
   return (
     <div className="flex flex-col items-center gap-3 mt-8">
-      <div className="relative h-10 w-10 overflow-hidden rounded-full border border-neutral-200 bg-white">
+      <div className="relative h-10 w-10 overflow-hidden rounded-full border border-slate-200 bg-white">
         <Image
           src={siteImages.team.somchai.src}
           alt=""
@@ -19,8 +19,8 @@ export function BlogAuthorBox({ name, role }: Props) {
         />
       </div>
       <div className="text-center">
-        <p className="text-sm font-medium text-neutral-900">{name}</p>
-        <p className="text-sm text-neutral-500">{role}</p>
+        <p className="text-sm font-medium text-slate-900">{name}</p>
+        <p className="text-sm text-slate-500">{role}</p>
       </div>
     </div>
   );

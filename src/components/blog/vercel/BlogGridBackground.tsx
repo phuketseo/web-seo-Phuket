@@ -1,4 +1,4 @@
-/** Vercel-style article background — flat #FAFAFA */
+/** Article shell — inherits site marketing background */
 export function BlogGridBackground({ children }: { children: React.ReactNode }) {
-  return <div className="min-h-screen bg-[#FAFAFA] text-neutral-900">{children}</div>;
+  return <div className="min-h-screen text-slate-900">{children}</div>;
 }

@@ -1,5 +1,14 @@
-export type BlogTheme = "default" | "vercel";
+export type BlogTheme = "default" | "anga" | "vercel";
 
-export function blogThemeClass(theme: BlogTheme | undefined, defaultCls: string, vercelCls: string): string {
-  return theme === "vercel" ? vercelCls : defaultCls;
+/** Article layout theme (anga replaces legacy vercel alias) */
+export function isAngaTheme(theme: BlogTheme | undefined): boolean {
+  return theme === "anga" || theme === "vercel";
+}
+
+export function blogThemeClass(
+  theme: BlogTheme | undefined,
+  defaultCls: string,
+  angaCls: string
+): string {
+  return isAngaTheme(theme) ? angaCls : defaultCls;
 }

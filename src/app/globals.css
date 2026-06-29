@@ -71,15 +71,21 @@
   }
   .btn-gradient-brand {
     background: linear-gradient(90deg, #9333ea 0%, #7c3aed 35%, #6366f1 65%, #2563eb 100%);
-    color: #fff;
+    background-clip: border-box;
+    -webkit-background-clip: border-box;
+    color: #ffffff;
+    -webkit-text-fill-color: #ffffff;
     font-weight: 600;
     border-radius: 12px;
     box-shadow: 0 4px 14px rgba(99, 102, 241, 0.22);
     transition: filter 0.15s ease, box-shadow 0.15s ease;
+    text-decoration: none;
   }
   .btn-gradient-brand:hover {
     filter: brightness(1.06);
     box-shadow: 0 6px 20px rgba(99, 102, 241, 0.32);
+    color: #ffffff;
+    -webkit-text-fill-color: #ffffff;
   }
   /* Navbar CTA — default pill; gradient on homepage */
   .nav-cta {
@@ -163,6 +169,61 @@
     border-image: linear-gradient(180deg, #9333ea, #6366f1, #2563eb) 1;
   }
   .container-custom { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; }
+
+  /* Blog article — 3 columns: empty left | content 748px | empty right */
+  .blog-anga-frame {
+    @apply w-full;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    padding-inline: 1.25rem;
+  }
+
+  @media (min-width: 640px) {
+    .blog-anga-frame {
+      padding-inline: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .blog-anga-frame {
+      /* ซ้ายว่าง (พื้นที่เดิม sidebar ANGA) | เนื้อหา 748px | ขวาว่าง */
+      grid-template-columns: minmax(200px, 260px) minmax(0, 748px) minmax(200px, 1fr);
+      column-gap: clamp(1.25rem, 2.5vw, 2.5rem);
+      padding-inline: clamp(1.25rem, 2.5vw, 2.5rem);
+    }
+  }
+
+  .blog-anga-col-side {
+    display: none;
+    min-width: 0;
+  }
+
+  @media (min-width: 1024px) {
+    .blog-anga-col-side {
+      display: block;
+    }
+  }
+
+  .blog-anga-col-main {
+    min-width: 0;
+    width: 100%;
+    grid-column: 1;
+  }
+
+  @media (min-width: 1024px) {
+    .blog-anga-col-main {
+      grid-column: 2;
+    }
+  }
+
+  .blog-anga-media {
+    @apply w-full;
+  }
+
+  .blog-anga-media figure,
+  .blog-anga-media .blog-anga-figure {
+    @apply w-full;
+  }
   .card-hover { @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1; }
   .below-fold {
     content-visibility: auto;
@@ -183,19 +244,208 @@
     @apply text-indigo-500;
   }
 
-  /* Article body — 1.125rem base, paragraph rhythm like Southern Whale prose-lg */
+  /* Article body — PhuketSEO brand on ANGA column layout */
+  .blog-prose-anga {
+    max-width: none;
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    color: #334155;
+  }
+
+  .blog-prose-anga p {
+    margin-top: 0;
+    margin-bottom: 1.35em;
+    line-height: 1.75;
+    color: #334155;
+  }
+
+  .blog-prose-anga p:last-child {
+    margin-bottom: 0;
+  }
+
+  .blog-prose-anga h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #0f172a;
+    margin-top: 2.25em;
+    margin-bottom: 0.85em;
+    line-height: 1.35;
+    scroll-margin-top: 7rem;
+    padding-left: 1rem;
+    border-left: 3px solid transparent;
+    border-image: linear-gradient(180deg, #9333ea, #6366f1, #2563eb) 1;
+  }
+
+  .blog-prose-anga h2:first-child {
+    margin-top: 0;
+  }
+
+  .blog-prose-anga h3 {
+    font-size: 1.0625rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: #0f172a;
+    margin-top: 1.25em;
+    margin-bottom: 0.5em;
+    line-height: 1.4;
+  }
+
+  /* H3 + ย่อหน้าถัดไป = การ์ด "อาการปัญหา" (ไม่ใช่ถาม-ตอบ) */
+  .blog-prose-anga h3.blog-anga-subhead {
+    margin-top: 1rem;
+    margin-bottom: 0;
+    padding: 0.7rem 1rem 0.6rem;
+    background: linear-gradient(135deg, rgba(245, 243, 255, 0.95) 0%, rgba(255, 255, 255, 0.92) 100%);
+    border: 1px solid #e9d5ff;
+    border-bottom: none;
+    border-radius: 0.75rem 0.75rem 0 0;
+  }
+
+  .blog-prose-anga h2 + h3.blog-anga-subhead {
+    margin-top: 1rem;
+  }
+
+  .blog-prose-anga h3.blog-anga-subhead + p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    padding: 0.65rem 1rem 1rem;
+    background: #fafafa;
+    border: 1px solid #e9d5ff;
+    border-top: 1px solid #f3e8ff;
+    border-radius: 0 0 0.75rem 0.75rem;
+  }
+
+  /* H3 + รายการ (เช่น คำค้นแยกประเภทธุรกิจ) */
+  .blog-prose-anga h3.blog-anga-subhead:has(+ ul),
+  .blog-prose-anga h3.blog-anga-subhead:has(+ ol) {
+    border-bottom: 1px solid #e9d5ff;
+    margin-bottom: 0;
+  }
+
+  .blog-prose-anga h3.blog-anga-subhead + ul,
+  .blog-prose-anga h3.blog-anga-subhead + ol {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem 1rem 2rem;
+    background: #fafafa;
+    border: 1px solid #e9d5ff;
+    border-top: none;
+    border-radius: 0 0 0.75rem 0.75rem;
+  }
+
+  .blog-prose-anga > section:first-child > h3:first-child {
+    margin-top: 0;
+  }
+
+  .blog-prose-anga a {
+    color: #7c3aed;
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: rgba(124, 58, 237, 0.35);
+    transition: color 0.15s ease, text-decoration-color 0.15s ease;
+  }
+
+  .blog-prose-anga a:hover {
+    color: #4f46e5;
+    text-decoration-color: rgba(79, 70, 229, 0.55);
+  }
+
+  /* ปุ่ม CTA ใน prose — อย่าให้สไตล์ลิงก์ทับสีขาวบน gradient */
+  .blog-prose-anga .blog-anga-block-cta a,
+  .blog-prose-anga a.btn-gradient-brand {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    background-clip: border-box !important;
+    -webkit-background-clip: border-box !important;
+    text-decoration: none !important;
+    font-weight: 600;
+  }
+
+  .blog-prose-anga .blog-anga-block-cta a:hover,
+  .blog-prose-anga a.btn-gradient-brand:hover {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    text-decoration: none !important;
+  }
+
+  .blog-prose-anga a.btn-pill-ghost {
+    text-decoration: none;
+  }
+
+  .blog-prose-anga ol,
+  .blog-prose-anga ul,
+  .blog-prose-anga .blog-list {
+    margin-top: 0.35em;
+    margin-bottom: 1.35em;
+    padding-left: 1.35em;
+    list-style-position: outside;
+  }
+
+  .blog-prose-anga ol.blog-list {
+    list-style-type: decimal;
+  }
+
+  .blog-prose-anga ul.blog-list {
+    list-style-type: disc;
+  }
+
+  .blog-prose-anga li {
+    margin-bottom: 0.45em;
+    line-height: 1.75;
+    color: #334155;
+  }
+
+  .blog-prose-anga li:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ไฮไลต์เฉพาะข้อความนำ (ประโยคเปิด) — ไม่ใส่ทุก strong ในย่อหน้า */
+  .blog-prose-anga p > strong:first-child:last-child,
+  .blog-prose-anga p > strong:first-child:not(:last-child) {
+    font-weight: 600;
+    color: #0f172a;
+    background: linear-gradient(transparent 62%, rgba(167, 139, 250, 0.28) 62%);
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+
+  .blog-prose-anga h3.blog-anga-subhead + p strong,
+  .blog-prose-anga strong {
+    font-weight: 600;
+    color: #0f172a;
+    background: none;
+  }
+
+  .blog-prose-anga hr {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #e9d5ff 20%, #c7d2fe 50%, #e9d5ff 80%, transparent);
+    margin: 1.75em 0;
+  }
+
+  .blog-prose-anga li::marker {
+    color: #8b5cf6;
+  }
+
+  .blog-anga-figure {
+    @apply rounded-2xl ring-1 ring-violet-100/80 shadow-sm;
+  }
+
+  /* Legacy alias — keep until all references migrated */
   .blog-prose-vercel {
     max-width: 65ch;
     font-size: 1.125rem;
     line-height: 1.625;
-    color: #374151;
+    color: #475569;
   }
 
   .blog-prose-vercel p {
     margin-top: 0;
     margin-bottom: 1.25em;
     line-height: 1.625;
-    color: #374151;
+    color: #475569;
   }
 
   .blog-prose-vercel p:last-child {
@@ -206,7 +456,7 @@
     font-size: 1.6666667em;
     font-weight: 700;
     letter-spacing: -0.02em;
-    color: #111827;
+    color: #0f172a;
     margin-top: 2em;
     margin-bottom: 0.75em;
     line-height: 1.3;
@@ -221,7 +471,7 @@
     font-size: 1.3333333em;
     font-weight: 600;
     letter-spacing: -0.01em;
-    color: #111827;
+    color: #0f172a;
     margin-top: 1.5em;
     margin-bottom: 0.5em;
     line-height: 1.4;
@@ -251,7 +501,7 @@
   .blog-prose-vercel li {
     margin-bottom: 0.35em;
     line-height: 1.625;
-    color: #374151;
+    color: #475569;
   }
 
   .blog-prose-vercel li:last-child {
@@ -261,21 +511,21 @@
   /* Case-study / objection blocks: bold label at start only (Southern Whale pattern) */
   .blog-prose-vercel p > strong:first-child {
     font-weight: 700;
-    color: #111827;
+    color: #0f172a;
   }
 
   .blog-prose-vercel hr {
     border: 0;
-    border-top: 1px solid #e5e7eb;
+    border-top: 1px solid #e2e8f0;
     margin: 1.25em 0;
   }
 
   .blog-prose-vercel strong {
-    @apply font-semibold text-neutral-900;
+    @apply font-semibold text-slate-900;
   }
 
   .blog-prose-vercel li::marker {
-    @apply text-neutral-400;
+    @apply text-indigo-500;
   }
 
   /* Homepage mobile: +20% type scale (presbyopia-friendly) */
