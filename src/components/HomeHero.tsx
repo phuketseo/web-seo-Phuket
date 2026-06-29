@@ -24,9 +24,10 @@ export default function HomeHero() {
                 alt={heroImage.alt}
                 width={heroImage.width}
                 height={heroImage.height}
-                sizes="(max-width: 1024px) 100vw, 480px"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 480px"
                 className="w-full h-auto object-cover"
                 priority
+                fetchPriority="high"
               />
             </div>
           </div>

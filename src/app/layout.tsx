@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { GoogleSansFonts } from "@/components/GoogleSansFonts";
+import { googleSans } from "@/lib/google-sans-font";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import DeferredLineChat from "@/components/DeferredLineChat";
@@ -76,8 +76,7 @@ export default function RootLayout({
         <style dangerouslySetInnerHTML={{ __html: CRITICAL_SHELL_CSS }} />
         <link rel="llms-txt" href="/llms.txt" type="text/plain" />
       </head>
-      <body className="antialiased">
-        <GoogleSansFonts />
+      <body className={`${googleSans.className} antialiased`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(siteEntityGraphSchema) }}
