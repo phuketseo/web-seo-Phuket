@@ -1,16 +1,22 @@
 ﻿import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
-import { CheckCircle, ArrowRight, Target, TrendingUp, BarChart3, Zap } from "lucide-react";
+import { Target, TrendingUp, BarChart3, Zap, type LucideIcon } from "lucide-react";
 import { siteImages } from "@/lib/images";
 import { faqSchema, buildBreadcrumb } from "@/lib/schema";
 import { googleAdsContent } from "@/lib/service-content";
 import { ServiceFaqSection } from "@/components/ServiceFaqSection";
 import { siteConfig } from "@/lib/utils";
+import { BrandGradientDefs } from "@/components/BrandGradientDefs";
+import { HomeSection, HomeSectionHeader } from "@/components/home/HomeSection";
+import { ServiceBreadcrumb } from "@/components/services/ServiceBreadcrumb";
+import { ServiceMarketingHero } from "@/components/services/ServiceMarketingHero";
+import { ServicePricingTeaser } from "@/components/services/ServicePricingTeaser";
+import { ServicePageCta } from "@/components/services/ServicePageCta";
 
 export const metadata: Metadata = {
   title: "รับทำ Google Ads ภูเก็ต | ยิงแอดตรงกลุ่มเป้าหมาย - PhuketSEO",
-  description: "บริการ Google Ads ภูเก็ต ยิงโฆษณาตรงกลุ่มเป้าหมาย ได้ผลลัพธ์ทันที ประหยัดงบประมาณ ROI สูงสุด ขอคำปรึกษาฟรี!",
+  description:
+    "บริการ Google Ads ภูเก็ต ยิงโฆษณาตรงกลุ่มเป้าหมาย ได้ผลลัพธ์ทันที ประหยัดงบประมาณ ROI สูงสุด ขอคำปรึกษาฟรี!",
   alternates: { canonical: `${siteConfig.url}/services/google-ads` },
 };
 
@@ -21,172 +27,124 @@ const breadcrumbSchema = buildBreadcrumb([
 
 const faqSchemaJson = faqSchema(googleAdsContent.faqs);
 
-const features = [
+const features: { icon: LucideIcon; title: string; desc: string }[] = [
   { icon: Target, title: "Search Ads", desc: "โฆษณาบน Google Search ตรงกับคนที่กำลังค้นหาสินค้า/บริการของคุณ" },
   { icon: BarChart3, title: "Display Ads", desc: "Banner โฆษณาบนเว็บไซต์พันธมิตร Google เพิ่ม Brand Awareness" },
   { icon: TrendingUp, title: "Shopping Ads", desc: "แสดงสินค้าพร้อมราคาบน Google Shopping เพิ่ม Conversion" },
   { icon: Zap, title: "Remarketing", desc: "ติดตามผู้เยี่ยมชมเว็บไซต์และแสดงโฆษณาซ้ำเพื่อเพิ่ม Conversion" },
 ];
 
+const includedItems = [
+  "Campaign Setup & Strategy",
+  "Keyword Research & Bidding",
+  "Ad Copywriting (A/B Testing)",
+  "Landing Page Optimization",
+  "Conversion Tracking Setup",
+  "Audience Targeting & Remarketing",
+  "Budget Management & Optimization",
+  "Weekly & Monthly Reporting",
+  "Competitor Ad Analysis",
+  "Quality Score Improvement",
+];
+
 export default function GoogleAdsPage() {
   return (
-    <>
+    <div>
+      <BrandGradientDefs />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchemaJson) }} />
 
-      <div className="bg-gray-50 border-b border-gray-100 pt-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-          <nav className="flex items-center gap-2 text-sm text-gray-500">
-            <Link href="/" className="hover:text-blue-700">หน้าแรก</Link>
-            <span>/</span>
-            <span className="text-gray-400">บริการ</span>
-            <span>/</span>
-            <span className="text-blue-700 font-medium">Google Ads</span>
-          </nav>
-        </div>
-      </div>
+      <ServiceBreadcrumb serviceName="Google Ads" />
 
-      <section className="relative bg-gradient-to-br from-blue-950 to-blue-900 py-20 overflow-hidden">
-        <Image
-          src={siteImages.services.googleAds.src}
-          alt=""
-          fill
-          className="object-cover opacity-20 pointer-events-none"
-          priority
-          sizes="100vw"
-          aria-hidden
-        />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <div className="inline-flex items-center gap-2 bg-green-500/20 border border-green-400/30 text-green-300 text-sm font-medium px-4 py-2 rounded-full mb-6">
-              <Target size={14} />
-              Google Ads Management
-            </div>
-            <h1 className="text-4xl lg:text-5xl font-bold text-white font-serif leading-tight mb-4">
-              Google Ads ภูเก็ต
-              <br />
-              <span className="text-green-400">ยิงแอดตรงกลุ่ม</span>
-              <br />
-              ได้ผลทันที
-            </h1>
-            <p className="text-blue-200 text-lg leading-relaxed mb-8">
-              บริหารจัดการ Google Ads อย่างมืออาชีพ ลด CPC เพิ่ม Conversion
-              ให้ทุกบาทที่ลงทุนได้ผลตอบแทนสูงสุด
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Link href="/contact" className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-xl transition-all hover:shadow-xl hover:-translate-y-0.5">
-                ขอคำปรึกษาฟรี <ArrowRight size={16} />
-              </Link>
-            </div>
-          </div>
-          <div className="grid grid-cols-2 gap-4">
-            {[
-              { metric: "-40%", label: "ลด CPC เฉลี่ย" },
-              { metric: "+300%", label: "เพิ่ม Conversion Rate" },
-              { metric: "5x", label: "ROAS เฉลี่ย" },
-              { metric: "24hr", label: "เห็นผลลัพธ์แรก" },
-            ].map((s) => (
-              <div key={s.label} className="bg-blue-800/40 border border-white/10 rounded-2xl p-5 text-center">
-                <div className="text-3xl font-bold text-green-400 font-serif mb-1">{s.metric}</div>
-                <div className="text-blue-200 text-sm">{s.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServiceMarketingHero
+        eyebrow="Google Ads Management"
+        title="Google Ads ภูเก็ต"
+        titleAccent="ยิงแอดตรงกลุ่มได้ผลทันที"
+        description="บริหารจัดการ Google Ads อย่างมืออาชีพ ลด CPC เพิ่ม Conversion ให้ทุกบาทที่ลงทุนได้ผลตอบแทนสูงสุด"
+        answerBlock={googleAdsContent.answerBlock}
+        image={siteImages.services.googleAds}
+        stats={[
+          { value: "-40%", label: "ลด CPC เฉลี่ย" },
+          { value: "+300%", label: "เพิ่ม Conversion Rate" },
+          { value: "5x", label: "ROAS เฉลี่ย" },
+          { value: "24hr", label: "เห็นผลลัพธ์แรก" },
+        ]}
+        trustBadges={["ไม่รวม Ad Spend", "Campaign Setup ฟรี", "รายงานรายสัปดาห์", "Dedicated Manager"]}
+        secondaryHref="#features"
+        secondaryLabel="ดูประเภทแอด"
+      />
 
-      <section className="py-16 bg-white border-b border-gray-100">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+      <HomeSection variant="muted" className="border-t-0">
+        <div className="space-y-4 text-slate-700 leading-relaxed text-sm sm:text-base">
           {googleAdsContent.intro.map((paragraph) => (
-            <p key={paragraph.slice(0, 40)} className="text-gray-700 text-lg leading-relaxed">
-              {paragraph}
-            </p>
+            <p key={paragraph.slice(0, 40)}>{paragraph}</p>
           ))}
-          <p className="text-gray-600 leading-relaxed">
+          <p className="text-slate-600">
             อ่านเพิ่ม:{" "}
-            <Link href="/services/seo-phuket" className="text-blue-700 hover:underline">
+            <Link href="/services/seo-phuket" className="text-violet-600 font-medium hover:underline underline-offset-2">
               บริการ SEO ภูเก็ต
             </Link>
             {" · "}
-            <Link href="/blog/seo-for-phuket-hotels" className="text-blue-700 hover:underline">
-              SEO โรงแรมภูเก็ต
+            <Link href="/packages/seo-pro-max" className="text-violet-600 font-medium hover:underline underline-offset-2">
+              SEO Pro Max (รวม Ads)
             </Link>
           </p>
         </div>
-      </section>
+      </HomeSection>
 
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <h2 className="text-4xl font-bold text-blue-950 font-serif mb-4">ประเภท Google Ads ที่เราจัดการ</h2>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {features.map((f) => (
-              <div key={f.title} className="bg-gray-50 rounded-2xl p-6 border border-gray-100 hover:shadow-lg transition-shadow text-center">
-                <div className="w-12 h-12 bg-blue-700 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <f.icon size={22} className="text-white" />
-                </div>
-                <h3 className="font-bold text-blue-950 mb-2">{f.title}</h3>
-                <p className="text-gray-600 text-sm">{f.desc}</p>
+      <HomeSection id="features" variant="white" containerClass="max-w-6xl">
+        <HomeSectionHeader
+          title="ประเภท Google Ads"
+          titleAccent="ที่เราจัดการ"
+          centered
+          className="mx-auto"
+        />
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
+          {features.map((f) => (
+            <div
+              key={f.title}
+              className="rounded-xl border border-slate-200 bg-white p-5 sm:p-6 shadow-sm text-center hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
+            >
+              <div className="w-10 h-10 bg-indigo-50 text-indigo-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <f.icon size={20} />
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="text-4xl font-bold text-blue-950 font-serif mb-6">สิ่งที่รวมอยู่ในบริการ</h2>
-            <div className="space-y-3">
-              {[
-                "Campaign Setup & Strategy",
-                "Keyword Research & Bidding",
-                "Ad Copywriting (A/B Testing)",
-                "Landing Page Optimization",
-                "Conversion Tracking Setup",
-                "Audience Targeting & Remarketing",
-                "Budget Management & Optimization",
-                "Weekly & Monthly Reporting",
-                "Competitor Ad Analysis",
-                "Quality Score Improvement",
-              ].map((item) => (
-                <div key={item} className="flex items-center gap-3 text-gray-700">
-                  <CheckCircle size={18} className="text-green-500 shrink-0" />
-                  <span>{item}</span>
-                </div>
-              ))}
+              <h3 className="font-semibold text-slate-900 mb-2">{f.title}</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">{f.desc}</p>
             </div>
-          </div>
-          <div className="bg-blue-950 rounded-2xl p-8 text-white">
-            <h3 className="text-2xl font-bold font-serif mb-2">ค่าบริการเริ่มต้น</h3>
-            <div className="text-5xl font-bold text-green-400 font-serif mb-1">฿5,900</div>
-            <div className="text-blue-300 mb-6">/เดือน (Management Fee)</div>
-            <ul className="space-y-2 mb-8 text-sm text-blue-100">
-              {["ไม่รวม Ad Spend", "Campaign Setup ฟรี", "รายงานรายสัปดาห์", "Dedicated Account Manager"].map((f) => (
-                <li key={f} className="flex items-center gap-2">
-                  <CheckCircle size={14} className="text-green-400" /> {f}
+          ))}
+        </div>
+      </HomeSection>
+
+      <HomeSection variant="muted" containerClass="max-w-6xl">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+          <div>
+            <HomeSectionHeader title="สิ่งที่รวมอยู่" titleAccent="ในบริการ" className="mb-6" />
+            <ul className="space-y-2.5">
+              {includedItems.map((item) => (
+                <li key={item} className="flex items-start gap-2.5 text-sm sm:text-base text-slate-700">
+                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-indigo-500 shrink-0" />
+                  {item}
                 </li>
               ))}
             </ul>
-            <Link href="/contact" className="block w-full text-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 rounded-xl transition-colors">
-              ขอคำปรึกษาฟรี
-            </Link>
           </div>
+          <ServicePricingTeaser
+            priceLabel="5,900"
+            planName="Management Fee"
+            features={["ไม่รวม Ad Spend", "Campaign Setup ฟรี", "รายงานรายสัปดาห์", "Pro Max รวม Ads ฿15,000"]}
+            proNote="แนะนำทำควบคู่ SEO เพื่อ traffic ระยะสั้น + ยั่งยืน"
+          />
         </div>
-      </section>
+      </HomeSection>
 
       <ServiceFaqSection faqs={googleAdsContent.faqs} />
 
-      <section className="py-16 bg-green-500">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-white font-serif mb-4">เริ่มต้น Google Ads วันนี้ เห็นผลภายใน 24 ชั่วโมง</h2>
-          <p className="text-green-100 mb-6">ขอคำปรึกษาฟรี เราจะวิเคราะห์ธุรกิจและแนะนำกลยุทธ์ Google Ads ที่เหมาะสม</p>
-          <Link href="/contact" className="inline-block bg-white text-green-600 font-bold px-8 py-3 rounded-xl hover:shadow-lg transition-all">
-            ขอคำปรึกษาฟรี
-          </Link>
-        </div>
-      </section>
-    </>
+      <ServicePageCta
+        title="เริ่มต้น Google Ads"
+        titleAccent="วันนี้?"
+        description="ขอคำปรึกษาฟรี เราจะวิเคราะห์ธุรกิจและแนะนำกลยุทธ์ Google Ads ที่เหมาะสม — เห็นผลภายใน 24 ชั่วโมง"
+        secondaryHref="/pricing"
+      />
+    </div>
   );
 }
