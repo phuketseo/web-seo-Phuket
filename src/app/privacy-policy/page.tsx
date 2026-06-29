@@ -1,6 +1,6 @@
 ﻿import type { Metadata } from "next";
-import Link from "next/link";
 import { siteConfig } from "@/lib/utils";
+import { LegalPageLayout } from "@/components/LegalPageLayout";
 
 export const metadata: Metadata = {
   title: "นโยบายความเป็นส่วนตัว",
@@ -41,41 +41,16 @@ const sections = [
 
 export default function PrivacyPolicyPage() {
   return (
-    <div className="min-h-screen bg-white">
-      <div className="bg-blue-950 pt-32 pb-12 px-4">
-        <div className="max-w-3xl mx-auto">
-          <nav className="flex items-center gap-2 text-sm text-blue-300 mb-4">
-            <Link href="/" className="hover:text-white transition-colors">หน้าแรก</Link>
-            <span>/</span>
-            <span className="text-white">นโยบายความเป็นส่วนตัว</span>
-          </nav>
-          <h1 className="text-3xl sm:text-4xl font-bold font-serif text-white">นโยบายความเป็นส่วนตัว</h1>
-          <p className="text-blue-300 mt-3 text-sm">อัปเดตล่าสุด: มิถุนายน 2569</p>
-        </div>
-      </div>
-
-      <div className="max-w-3xl mx-auto px-4 py-14">
-        <p className="text-gray-600 leading-relaxed mb-10 text-sm border-l-4 border-green-400 pl-4">
-          PhuketSEO ให้ความสำคัญกับความเป็นส่วนตัวของคุณ นโยบายนี้อธิบายวิธีที่เราเก็บรวบรวม ใช้ และปกป้องข้อมูลส่วนบุคคลของคุณเมื่อใช้บริการของเรา
-        </p>
-
-        <div className="space-y-10">
-          {sections.map((s) => (
-            <section key={s.title}>
-              <h2 className="text-lg font-bold text-blue-950 mb-3 font-serif">{s.title}</h2>
-              <p className="text-gray-600 leading-relaxed text-sm">{s.content}</p>
-            </section>
-          ))}
-        </div>
-
-        <div className="mt-12 p-6 bg-gray-50 rounded-2xl border border-gray-100">
-          <h3 className="font-bold text-gray-900 mb-2">ติดต่อเรา</h3>
-          <p className="text-sm text-gray-600">หากมีคำถามเกี่ยวกับนโยบายความเป็นส่วนตัว ติดต่อได้ที่</p>
-          <a href={`mailto:${siteConfig.email}`} className="text-blue-700 hover:underline text-sm font-medium mt-1 block">
-            {siteConfig.email}
-          </a>
-        </div>
-      </div>
-    </div>
+    <LegalPageLayout
+      title="นโยบายความเป็นส่วนตัว"
+      breadcrumbLabel="นโยบายความเป็นส่วนตัว"
+      lastUpdated="มิถุนายน 2569"
+      intro="PhuketSEO ให้ความสำคัญกับความเป็นส่วนตัวของคุณ นโยบายนี้อธิบายวิธีที่เราเก็บรวบรวม ใช้ และปกป้องข้อมูลส่วนบุคคลของคุณเมื่อใช้บริการของเรา"
+      sections={sections}
+      footerLinks={[
+        { href: "/terms", label: "ข้อกำหนดการใช้งาน" },
+        { href: "/contact", label: "ติดต่อเรา" },
+      ]}
+    />
   );
 }

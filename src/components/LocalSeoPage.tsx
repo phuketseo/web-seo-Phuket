@@ -1,6 +1,12 @@
 ﻿import Link from "next/link";
-import { CheckCircle, ArrowRight, MapPin, Phone } from "lucide-react";
-import { BlogFaqSection } from "@/components/blog/BlogFaqSection";
+import { MapPin } from "lucide-react";
+import { siteImages } from "@/lib/images";
+import type { SiteImage } from "@/lib/images";
+import { BrandGradientDefs } from "@/components/BrandGradientDefs";
+import { HomeSection, HomeSectionHeader } from "@/components/home/HomeSection";
+import { MarketingBreadcrumb } from "@/components/MarketingBreadcrumb";
+import { LocalSeoHero } from "@/components/local/LocalSeoHero";
+import { ServiceFaqSection } from "@/components/ServiceFaqSection";
 
 interface LocalSeoPageProps {
   area: string;
@@ -16,178 +22,166 @@ interface LocalSeoPageProps {
   faqs?: { q: string; a: string }[];
 }
 
+const localHeroImages: Record<string, SiteImage> = {
+  kamala: siteImages.blog.kamalaHero,
+  thalang: siteImages.blog.thalangHero,
+  patong: siteImages.blog.localSeoPillar,
+  kata: siteImages.blog.localSeoPillar,
+  kathu: siteImages.blog.localSeoPillar,
+  "phuket-town": siteImages.blog.localSeoPillar,
+};
+
 export default function LocalSeoPage({
-  area, areaEn, slug, description, answerBlock, businesses, keywords, landmarks, stats, intro, faqs,
+  area,
+  areaEn,
+  slug,
+  description,
+  answerBlock,
+  businesses,
+  keywords,
+  landmarks,
+  stats,
+  intro,
+  faqs,
 }: LocalSeoPageProps) {
+  const heroImage = localHeroImages[slug];
+  const faqItems = faqs?.map((f) => ({ question: f.q, answer: f.a })) ?? [];
+
   return (
-    <>
-      {/* Breadcrumb */}
-      <div className="bg-gray-50 border-b border-gray-100 pt-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-          <nav className="flex items-center gap-2 text-sm text-gray-500">
-            <Link href="/" className="hover:text-blue-700">หน้าแรก</Link>
-            <span>/</span>
-            <span className="text-gray-400">Local SEO</span>
-            <span>/</span>
-            <span className="text-blue-700 font-medium">SEO {area}</span>
-          </nav>
+    <div>
+      <BrandGradientDefs />
+
+      <div className="border-b border-slate-100/80 bg-white pt-24">
+        <div className="container-custom py-3">
+          <MarketingBreadcrumb
+            items={[
+              { label: "หน้าแรก", href: "/" },
+              { label: "Local SEO" },
+              { label: `SEO ${area}` },
+            ]}
+          />
         </div>
       </div>
 
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-blue-950 to-blue-900 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <div className="inline-flex items-center gap-2 bg-green-500/20 border border-green-400/30 text-green-300 text-sm font-medium px-4 py-2 rounded-full mb-6">
-              <MapPin size={14} />
-              Local SEO {area}
-            </div>
-            <h1 className="text-4xl lg:text-5xl font-bold text-white font-serif leading-tight mb-4">
-              SEO {area}
-              <br />
-              <span className="text-green-400">ติดอันดับ Google</span>
-              <br />
-              ในพื้นที่ {area}
-            </h1>
-            <p className="text-blue-200 text-lg leading-relaxed mb-4">{description}</p>
-            {answerBlock ? (
-              <p className="text-white/90 text-base leading-relaxed mb-8 bg-white/10 border border-white/20 rounded-xl px-4 py-3">
-                {answerBlock}
-              </p>
-            ) : null}
-            <div className="flex flex-wrap gap-4 mb-8">
-              <Link href="/contact" className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-xl transition-all hover:shadow-xl hover:-translate-y-0.5">
-                ขอคำปรึกษาฟรี <ArrowRight size={16} />
-              </Link>
-            </div>
-            <div className="flex flex-wrap gap-4 text-sm text-blue-200">
-              {["เชี่ยวชาญตลาด " + area, "Google Maps Optimization", "Local Pack Rankings"].map((b) => (
-                <div key={b} className="flex items-center gap-1.5">
-                  <CheckCircle size={14} className="text-green-400" />
-                  {b}
-                </div>
-              ))}
-            </div>
-          </div>
-          <div>
-            <div className="grid grid-cols-2 gap-4">
-              {stats.map((s) => (
-                <div key={s.label} className="bg-blue-800/40 border border-white/10 rounded-2xl p-5 text-center">
-                  <div className="text-3xl font-bold text-green-400 font-serif mb-1">{s.metric}</div>
-                  <div className="text-blue-200 text-sm">{s.label}</div>
-                </div>
-              ))}
-            </div>
-            <p className="text-xs text-blue-300/70 mt-3 text-center leading-relaxed">
-              ขอบเขตบริการและแพ็ก — ไม่ใช่ผลลัพธ์จากลูกค้า
-            </p>
-          </div>
-        </div>
-      </section>
+      <LocalSeoHero
+        area={area}
+        areaEn={areaEn}
+        description={description}
+        answerBlock={answerBlock}
+        stats={stats.map((s) => ({ value: s.metric, label: s.label }))}
+        image={heroImage}
+        secondaryHref="#businesses"
+        secondaryLabel="ดูธุรกิจในโซน"
+      />
 
       {intro?.length ? (
-        <section className="py-16 bg-white border-b border-gray-100">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+        <HomeSection variant="muted" className="border-t-0">
+          <div className="space-y-4 text-slate-700 leading-relaxed text-sm sm:text-base">
             {intro.map((paragraph) => (
-              <p key={paragraph.slice(0, 40)} className="text-gray-700 text-lg leading-relaxed">
-                {paragraph}
-              </p>
+              <p key={paragraph.slice(0, 40)}>{paragraph}</p>
             ))}
-            <p className="text-gray-600 leading-relaxed">
+            <p className="text-slate-600">
               อ่านเพิ่ม:{" "}
-              <Link href="/blog/google-my-business-phuket" className="text-blue-700 hover:underline">
+              <Link
+                href="/blog/google-my-business-phuket"
+                className="text-violet-600 font-medium hover:underline underline-offset-2"
+              >
                 Google Business Profile ภูเก็ต
               </Link>
               {" · "}
-              <Link href="/services/seo-phuket" className="text-blue-700 hover:underline">
+              <Link
+                href="/services/seo-phuket"
+                className="text-violet-600 font-medium hover:underline underline-offset-2"
+              >
                 บริการ SEO ภูเก็ต
               </Link>
             </p>
           </div>
-        </section>
+        </HomeSection>
       ) : null}
 
-      {/* Businesses */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <h2 className="text-4xl font-bold text-blue-950 font-serif mb-4">
-              ธุรกิจที่เราดูแลใน{area}
-            </h2>
-            <p className="text-gray-600">เราเข้าใจตลาด{area}เป็นอย่างดี พร้อมกลยุทธ์ที่ตรงกับกลุ่มเป้าหมายในพื้นที่</p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {businesses.map((b) => (
-              <div key={b} className="bg-gray-50 rounded-xl p-4 border border-gray-100 text-center hover:shadow-md hover:border-blue-200 transition-all">
-                <div className="text-blue-950 font-semibold text-sm">{b}</div>
-              </div>
-            ))}
-          </div>
+      <HomeSection id="businesses" variant="white" containerClass="max-w-6xl">
+        <HomeSectionHeader
+          title={`ธุรกิจที่เราดูแลใน${area}`}
+          description={`เราเข้าใจตลาด${area}เป็นอย่างดี พร้อมกลยุทธ์ที่ตรงกับกลุ่มเป้าหมายในพื้นที่`}
+          centered
+          className="mx-auto max-w-2xl"
+        />
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+          {businesses.map((b) => (
+            <div
+              key={b}
+              className="rounded-xl border border-slate-200 bg-white p-4 text-center shadow-sm hover:border-green-200 hover:shadow-md transition-all duration-300"
+            >
+              <div className="text-slate-800 font-medium text-sm">{b}</div>
+            </div>
+          ))}
         </div>
-      </section>
+      </HomeSection>
 
-      {/* Keywords */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-blue-950 font-serif mb-3">
-              Keywords ที่เราดันอันดับใน{area}
-            </h2>
-          </div>
-          <div className="flex flex-wrap justify-center gap-3">
-            {keywords.map((kw) => (
-              <span key={kw} className="bg-white border border-blue-200 text-blue-700 px-4 py-2 rounded-full text-sm font-medium hover:bg-blue-50 transition-colors">
-                {kw}
-              </span>
-            ))}
-          </div>
+      <HomeSection variant="muted" containerClass="max-w-4xl">
+        <HomeSectionHeader
+          title={`Keywords ใน${area}`}
+          titleAccent="ที่เราดัน"
+          centered
+          className="mx-auto"
+        />
+        <div className="flex flex-wrap justify-center gap-2">
+          {keywords.map((kw) => (
+            <span
+              key={kw}
+              className="bg-white border border-slate-200 text-slate-700 px-3.5 py-1.5 rounded-full text-xs sm:text-sm hover:border-green-200 transition-colors"
+            >
+              {kw}
+            </span>
+          ))}
         </div>
-      </section>
+      </HomeSection>
 
-      {/* Landmarks */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-blue-950 font-serif mb-3">
-              พื้นที่ที่เราให้บริการใน{area}
-            </h2>
-          </div>
-          <div className="flex flex-wrap justify-center gap-3">
-            {landmarks.map((lm) => (
-              <div key={lm} className="flex items-center gap-1.5 bg-gray-50 border border-gray-200 px-4 py-2 rounded-full text-sm text-gray-700">
-                <MapPin size={13} className="text-green-500" />
-                {lm}
-              </div>
-            ))}
-          </div>
+      <HomeSection variant="white" containerClass="max-w-4xl">
+        <HomeSectionHeader
+          title={`พื้นที่บริการใน${area}`}
+          centered
+          className="mx-auto"
+        />
+        <div className="flex flex-wrap justify-center gap-2">
+          {landmarks.map((lm) => (
+            <span
+              key={lm}
+              className="inline-flex items-center gap-1.5 bg-slate-50 border border-slate-200 px-3.5 py-1.5 rounded-full text-xs sm:text-sm text-slate-700"
+            >
+              <MapPin size={13} className="text-green-600 shrink-0" />
+              {lm}
+            </span>
+          ))}
         </div>
-      </section>
+      </HomeSection>
 
-      {faqs?.length ? (
-        <section className="py-16 bg-gray-50">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <BlogFaqSection faqs={faqs} />
-          </div>
-        </section>
-      ) : null}
+      {faqItems.length > 0 && (
+        <ServiceFaqSection title="คำถามเกี่ยวกับ" titleAccent={`SEO ${area}`} faqs={faqItems} />
+      )}
 
-      {/* CTA */}
-      <section className="py-16 bg-blue-950">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-white font-serif mb-4">
-            พร้อมให้ธุรกิจของคุณใน{area}ติดอันดับ Google?
+      <section className="home-section bg-gradient-to-br from-blue-950 to-blue-900 border-t border-blue-900/50">
+        <div className="container-custom max-w-2xl text-center">
+          <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-3">
+            พร้อมให้ธุรกิจใน{area}ติด Google?
           </h2>
-          <p className="text-blue-200 mb-8">ขอคำปรึกษาฟรี เราจะวิเคราะห์ตลาดใน{area}และแนะนำกลยุทธ์ที่เหมาะสม</p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/contact" className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold px-8 py-3.5 rounded-xl transition-all hover:shadow-xl">
-              <Phone size={18} /> ขอคำปรึกษาฟรี
+          <p className="text-blue-200/90 text-sm sm:text-base leading-relaxed mb-7 max-w-lg mx-auto">
+            ขอคำปรึกษาฟรี เราจะวิเคราะห์ตลาดใน{area}และแนะนำกลยุทธ์ที่เหมาะสม
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <Link href="/contact" className="btn-pill-green px-7">
+              ขอคำปรึกษาฟรี
             </Link>
-            <Link href="/services/seo-phuket" className="inline-flex items-center gap-2 border-2 border-white/30 text-white hover:bg-white/10 font-semibold px-8 py-3.5 rounded-xl transition-all">
+            <Link
+              href="/services/seo-phuket"
+              className="inline-flex items-center justify-center text-sm font-medium px-6 py-3 rounded-xl border border-white/25 text-white hover:bg-white/10 transition-colors"
+            >
               ดูบริการ SEO ทั้งหมด
             </Link>
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }

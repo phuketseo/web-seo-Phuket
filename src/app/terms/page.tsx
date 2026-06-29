@@ -1,6 +1,5 @@
 ﻿import type { Metadata } from "next";
-import Link from "next/link";
-import { siteConfig } from "@/lib/utils";
+import { LegalPageLayout } from "@/components/LegalPageLayout";
 
 export const metadata: Metadata = {
   title: "ข้อกำหนดการใช้งาน",
@@ -45,45 +44,16 @@ const sections = [
 
 export default function TermsPage() {
   return (
-    <div className="min-h-screen bg-white">
-      <div className="bg-blue-950 pt-32 pb-12 px-4">
-        <div className="max-w-3xl mx-auto">
-          <nav className="flex items-center gap-2 text-sm text-blue-300 mb-4">
-            <Link href="/" className="hover:text-white transition-colors">หน้าแรก</Link>
-            <span>/</span>
-            <span className="text-white">ข้อกำหนดการใช้งาน</span>
-          </nav>
-          <h1 className="text-3xl sm:text-4xl font-bold font-serif text-white">ข้อกำหนดการใช้งาน</h1>
-          <p className="text-blue-300 mt-3 text-sm">อัปเดตล่าสุด: มิถุนายน 2569</p>
-        </div>
-      </div>
-
-      <div className="max-w-3xl mx-auto px-4 py-14">
-        <p className="text-gray-600 leading-relaxed mb-10 text-sm border-l-4 border-green-400 pl-4">
-          กรุณาอ่านข้อกำหนดการใช้งานเหล่านี้อย่างละเอียดก่อนใช้บริการของ PhuketSEO การใช้งานเว็บไซต์และบริการของเราถือว่าคุณยอมรับข้อกำหนดเหล่านี้
-        </p>
-
-        <div className="space-y-10">
-          {sections.map((s) => (
-            <section key={s.title}>
-              <h2 className="text-lg font-bold text-blue-950 mb-3 font-serif">{s.title}</h2>
-              <p className="text-gray-600 leading-relaxed text-sm">{s.content}</p>
-            </section>
-          ))}
-        </div>
-
-        <div className="mt-12 p-6 bg-gray-50 rounded-2xl border border-gray-100">
-          <h3 className="font-bold text-gray-900 mb-2">ติดต่อเรา</h3>
-          <p className="text-sm text-gray-600">หากมีคำถามเกี่ยวกับข้อกำหนดการใช้งาน ติดต่อได้ที่</p>
-          <a href={`mailto:${siteConfig.email}`} className="text-blue-700 hover:underline text-sm font-medium mt-1 block">
-            {siteConfig.email}
-          </a>
-          <div className="flex gap-4 mt-4">
-            <Link href="/privacy-policy" className="text-sm text-blue-600 hover:underline">นโยบายความเป็นส่วนตัว</Link>
-            <Link href="/contact" className="text-sm text-blue-600 hover:underline">ติดต่อเรา</Link>
-          </div>
-        </div>
-      </div>
-    </div>
+    <LegalPageLayout
+      title="ข้อกำหนดการใช้งาน"
+      breadcrumbLabel="ข้อกำหนดการใช้งาน"
+      lastUpdated="มิถุนายน 2569"
+      intro="กรุณาอ่านข้อกำหนดการใช้งานเหล่านี้อย่างละเอียดก่อนใช้บริการของ PhuketSEO การใช้งานเว็บไซต์และบริการของเราถือว่าคุณยอมรับข้อกำหนดเหล่านี้"
+      sections={sections}
+      footerLinks={[
+        { href: "/privacy-policy", label: "นโยบายความเป็นส่วนตัว" },
+        { href: "/contact", label: "ติดต่อเรา" },
+      ]}
+    />
   );
 }

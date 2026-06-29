@@ -1,131 +1,155 @@
 ﻿import Link from "next/link";
-import { CheckCircle, ArrowRight, Briefcase, Phone } from "lucide-react";
-import { BlogFaqSection } from "@/components/blog/BlogFaqSection";
+import { X } from "lucide-react";
+import { siteImages } from "@/lib/images";
+import type { SiteImage } from "@/lib/images";
 import type { IndustryContent } from "@/lib/industry-seo-content";
+import { BrandGradientDefs } from "@/components/BrandGradientDefs";
+import { HomeSection, HomeSectionHeader } from "@/components/home/HomeSection";
+import { MarketingBreadcrumb } from "@/components/MarketingBreadcrumb";
+import { ServiceMarketingHero } from "@/components/services/ServiceMarketingHero";
+import { ServicePricingTeaser } from "@/components/services/ServicePricingTeaser";
+import { ServicePageCta } from "@/components/services/ServicePageCta";
+import { ServiceFaqSection } from "@/components/ServiceFaqSection";
+
+const industryHeroImages: Record<string, SiteImage> = {
+  "seo-restaurants-phuket": siteImages.caseStudies.restaurant,
+  "seo-spa-phuket": siteImages.blog.seoSpa,
+  "seo-hotels-phuket": siteImages.caseStudies.hotel,
+  "seo-real-estate-phuket": siteImages.caseStudies.realestate,
+};
+
+function pricingForIndustry(data: IndustryContent) {
+  const priceStat = data.stats.find((s) => s.metric.includes("฿"));
+  if (priceStat?.metric.includes("5,900")) {
+    return {
+      priceLabel: "5,900",
+      planName: "SEO Lite",
+      features: ["GBP + Social Proof", "โพสต์ GBP", "ระบบขอรีวิว", "Pro ฿8,900 (+เว็บ+AEO)"],
+    };
+  }
+  return {
+    priceLabel: "8,900",
+    planName: "SEO Pro",
+    features: ["เว็บ + SEO รายเดือน", "AEO/GEO structure", "บทความ SEO 1 ชิ้น/เดือน", "Pro Max ฿15,000 (+Ads)"],
+  };
+}
 
 export default function IndustrySeoPage({ data }: { data: IndustryContent }) {
+  const heroImage = industryHeroImages[data.slug] ?? siteImages.services.seo;
+  const pricing = pricingForIndustry(data);
+  const faqs = data.faqs.map((f) => ({ question: f.q, answer: f.a }));
+
   return (
-    <>
-      <div className="bg-gray-50 border-b border-gray-100 pt-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-          <nav className="flex items-center gap-2 text-sm text-gray-500">
-            <Link href="/" className="hover:text-blue-700">หน้าแรก</Link>
-            <span>/</span>
-            <span className="text-gray-400">Industry</span>
-            <span>/</span>
-            <span className="text-blue-700 font-medium">{data.headline}</span>
-          </nav>
+    <div>
+      <BrandGradientDefs />
+
+      <div className="border-b border-slate-100/80 bg-white pt-24">
+        <div className="container-custom py-3">
+          <MarketingBreadcrumb
+            items={[
+              { label: "หน้าแรก", href: "/" },
+              { label: "Industry" },
+              { label: data.headline },
+            ]}
+          />
         </div>
       </div>
 
-      <section className="bg-gradient-to-br from-blue-950 to-indigo-900 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <div className="inline-flex items-center gap-2 bg-green-500/20 border border-green-400/30 text-green-300 text-sm font-medium px-4 py-2 rounded-full mb-6">
-              <Briefcase size={14} />
-              {data.industryEn}
-            </div>
-            <h1 className="text-4xl lg:text-5xl font-bold text-white font-serif leading-tight mb-4">
-              {data.headline}
-            </h1>
-            <p className="text-blue-200 text-lg leading-relaxed mb-4">{data.description}</p>
-            <p className="text-white/90 text-base leading-relaxed mb-8 bg-white/10 border border-white/20 rounded-xl px-4 py-3">
-              {data.answerBlock}
-            </p>
-            <Link href="/contact" className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-xl transition-all">
-              ขอคำปรึกษาฟรี <ArrowRight size={16} />
-            </Link>
-          </div>
-          <div className="grid grid-cols-2 gap-4">
-            {data.stats.map((s) => (
-              <div key={s.label} className="bg-blue-800/40 border border-white/10 rounded-2xl p-5 text-center">
-                <div className="text-3xl font-bold text-green-400 font-serif mb-1">{s.metric}</div>
-                <div className="text-blue-200 text-sm">{s.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServiceMarketingHero
+        eyebrow={data.industryEn}
+        title={data.headline}
+        titleAccent="ภูเก็ต"
+        description={data.description}
+        answerBlock={data.answerBlock}
+        image={heroImage}
+        stats={data.stats.map((s) => ({ value: s.metric, label: s.label }))}
+        trustBadges={["ผลลัพธ์วัดได้จริง", "โซนภูเก็ตจริง", "ไม่มีสัญญาผูกมัด", "ขอ Audit ฟรี"]}
+        secondaryHref="#pain-points"
+        secondaryLabel="ดู pain points"
+      />
 
-      <section className="py-16 bg-white border-b border-gray-100">
-        <div className="max-w-3xl mx-auto px-4 space-y-4">
+      <HomeSection variant="muted" className="border-t-0">
+        <div className="space-y-4 text-slate-700 leading-relaxed text-sm sm:text-base">
           {data.intro.map((p) => (
-            <p key={p.slice(0, 40)} className="text-gray-700 text-lg leading-relaxed">{p}</p>
+            <p key={p.slice(0, 40)}>{p}</p>
           ))}
           {data.relatedBlog && (
-            <p className="text-gray-600">
+            <p className="text-slate-600">
               อ่านเพิ่ม:{" "}
-              <Link href={data.relatedBlog.href} className="text-blue-700 hover:underline">
+              <Link
+                href={data.relatedBlog.href}
+                className="text-violet-600 font-medium hover:underline underline-offset-2"
+              >
                 {data.relatedBlog.name}
               </Link>
               {" · "}
-              <Link href="/pricing" className="text-blue-700 hover:underline">ดูราคา</Link>
+              <Link href="/pricing" className="text-violet-600 font-medium hover:underline underline-offset-2">
+                ดูราคา
+              </Link>
             </p>
           )}
         </div>
-      </section>
+      </HomeSection>
 
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12">
+      <HomeSection id="pain-points" variant="white" containerClass="max-w-6xl">
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
           <div>
-            <h2 className="text-2xl font-bold text-blue-950 font-serif mb-4">Pain Points ที่เราแก้</h2>
-            <ul className="space-y-3">
+            <HomeSectionHeader title="Pain Points" titleAccent="ที่เราแก้" className="mb-6" />
+            <ul className="space-y-2.5">
               {data.painPoints.map((p) => (
-                <li key={p} className="flex gap-2 text-gray-700">
-                  <CheckCircle size={18} className="text-red-400 shrink-0 mt-0.5" />
+                <li key={p} className="flex items-start gap-2.5 text-sm sm:text-base text-slate-700">
+                  <X size={16} className="text-red-400 shrink-0 mt-0.5" strokeWidth={2} />
                   {p}
                 </li>
               ))}
             </ul>
           </div>
           <div>
-            <h2 className="text-2xl font-bold text-blue-950 font-serif mb-4">สิ่งที่รวมในแพ็กเกจ</h2>
-            <ul className="space-y-3">
+            <HomeSectionHeader title="สิ่งที่รวม" titleAccent="ในแพ็กเกจ" className="mb-6" />
+            <ul className="space-y-2.5">
               {data.services.map((s) => (
-                <li key={s} className="flex gap-2 text-gray-700">
-                  <CheckCircle size={18} className="text-green-500 shrink-0 mt-0.5" />
+                <li key={s} className="flex items-start gap-2.5 text-sm sm:text-base text-slate-700">
+                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-indigo-500 shrink-0" />
                   {s}
                 </li>
               ))}
             </ul>
           </div>
         </div>
-      </section>
+      </HomeSection>
 
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <h2 className="text-2xl font-bold text-blue-950 font-serif mb-6">Keywords เป้าหมาย</h2>
-          <div className="flex flex-wrap justify-center gap-3">
-            {data.keywords.map((kw) => (
-              <span key={kw} className="bg-blue-50 border border-blue-200 text-blue-700 px-4 py-2 rounded-full text-sm">
-                {kw}
-              </span>
-            ))}
-          </div>
+      <HomeSection variant="muted" containerClass="max-w-4xl">
+        <HomeSectionHeader title="Keywords" titleAccent="เป้าหมาย" centered className="mx-auto" />
+        <div className="flex flex-wrap justify-center gap-2">
+          {data.keywords.map((kw) => (
+            <span
+              key={kw}
+              className="bg-white border border-slate-200 text-slate-700 px-3.5 py-1.5 rounded-full text-xs sm:text-sm"
+            >
+              {kw}
+            </span>
+          ))}
         </div>
-      </section>
+      </HomeSection>
 
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-3xl mx-auto px-4">
-          <BlogFaqSection faqs={data.faqs} />
-        </div>
-      </section>
+      <HomeSection variant="white" containerClass="max-w-lg mx-auto">
+        <ServicePricingTeaser
+          priceLabel={pricing.priceLabel}
+          planName={pricing.planName}
+          features={pricing.features}
+          proNote={`เหมาะกับ${data.industry}ในภูเก็ต — อัปเกรดได้ทุกเมื่อ`}
+        />
+      </HomeSection>
 
-      <section className="py-16 bg-green-500">
-        <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-white font-serif mb-4">
-            พร้อมให้{data.industry}ของคุณติด Google?
-          </h2>
-          <div className="flex flex-wrap justify-center gap-4 mt-6">
-            <Link href="/contact" className="inline-flex items-center gap-2 bg-white text-green-600 font-bold px-8 py-3 rounded-xl">
-              <Phone size={18} /> ขอคำปรึกษาฟรี
-            </Link>
-            <Link href="/services/seo-phuket" className="border-2 border-white text-white font-bold px-8 py-3 rounded-xl hover:bg-white/10">
-              บริการ SEO ภูเก็ต
-            </Link>
-          </div>
-        </div>
-      </section>
-    </>
+      <ServiceFaqSection title="คำถามเกี่ยวกับ" titleAccent={data.industry} faqs={faqs} />
+
+      <ServicePageCta
+        title={`พร้อมให้${data.industry}`}
+        titleAccent="ติด Google?"
+        description="ขอคำปรึกษาฟรี เราจะวิเคราะห์โซน คู่แข่ง และแนะนำแพ็กที่เหมาะกับธุรกิจคุณ"
+        secondaryHref="/services/seo-phuket"
+        secondaryLabel="บริการ SEO ภูเก็ต"
+      />
+    </div>
   );
 }
