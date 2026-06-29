@@ -14,7 +14,7 @@
  * - ไม่ใส่ใบหน้าคนจริง
  *
  * ### บทความที่ใช้ Clean Purple แล้ว
- * - seo-phuket-kue-arai (hero + stack inline)
+ * - seo-phuket-kue-arai (hero + search/maps + stack + zones inline)
  * - local-seo-phuket-kue-arai (hero + maps + results inline)
  * - rab-tam-web-phuket (hero + pricing + results inline)
  * - raaka-seo-phuket (hero + pricing inline)
@@ -328,16 +328,28 @@ export const siteImages = {
       height: 1536,
     },
     seoPhuketPillar: {
-      src: "/images/blog/blog-thumb-seo-phuket-kue-arai-clean.png",
-      alt: "SEO ภูเก็ต คืออะไร — เพิ่มการมองเห็น ติด Google Organic Traffic +180%",
-      width: 2304,
-      height: 1536,
+      src: "/images/blog/blog-thumb-seo-phuket-kue-arai-2026-clean.png",
+      alt: "SEO ภูเก็ต คืออะไร — Google Search และ Maps สำหรับธุรกิจในภูเก็ต",
+      width: 3840,
+      height: 2560,
+    },
+    seoPhuketSearchMaps: {
+      src: "/images/blog/blog-inline-seo-phuket-search-maps-clean.png",
+      alt: "SEO ภูเก็ต — ลูกค้าค้นหาทั้งบน Google Search และ Google Maps ในโซนจริง",
+      width: 3840,
+      height: 2560,
     },
     seoPhuketStack: {
-      src: "/images/blog/blog-inline-seo-phuket-stack-clean.png",
-      alt: "Phuket Visibility Stack — แพ็ก SEO Lite ฿5,900 Pro ฿8,900 Pro Max ฿15,000",
-      width: 2304,
-      height: 1536,
+      src: "/images/blog/blog-inline-seo-phuket-stack-2026-clean.png",
+      alt: "Phuket Visibility Stack — ลำดับงาน SEO ภูเก็ต จาก Maps ไปจนถึง AI Search",
+      width: 3840,
+      height: 2560,
+    },
+    seoPhuketZones: {
+      src: "/images/blog/blog-inline-seo-phuket-zones-clean.png",
+      alt: "โซนภูเก็ตต่างกัน — ป่าตอง กะตะ ตัวเมือง ถลาง กมลา",
+      width: 3840,
+      height: 2560,
     },
     rabTamWebPillar: {
       src: "/images/blog/blog-thumb-rab-tam-web-phuket-clean.png",
@@ -551,6 +563,8 @@ export const blogInlineImages: Record<string, SiteImage> = {
   tiktokResults: siteImages.blog.tiktokResults,
   contentResults: siteImages.blog.contentResults,
   seoPhuketStack: siteImages.blog.seoPhuketStack,
+  seoPhuketSearchMaps: siteImages.blog.seoPhuketSearchMaps,
+  seoPhuketZones: siteImages.blog.seoPhuketZones,
   localSeoMaps: siteImages.blog.localSeoMaps,
   localSeoResults: siteImages.blog.localSeoResults,
   rabTamWebPricing: siteImages.blog.rabTamWebPricing,

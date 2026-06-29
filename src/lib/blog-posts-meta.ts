@@ -196,9 +196,9 @@ export const blogPostsMeta: BlogPostMeta[] = [
   },
   {
     slug: "seo-phuket-kue-arai",
-    title: "SEO ภูเก็ต คืออะไร? คู่มือฉบับสมบูรณ์สำหรับธุรกิจในภูเก็ต",
+    title: "SEO ภูเก็ต คืออะไร? คู่มือสำหรับธุรกิจในภูเก็ต",
     category: "SEO ภูเก็ต",
-    description: "SEO ภูเก็ต คืออะไร ทำไมธุรกิจในภูเก็ตต้องทำ และควรเริ่มจากอะไร",
+    description: "SEO ภูเก็ต คืออะไร ประโยชน์หลัก เริ่มจากอะไร และปัญหาที่ธุรกิจมักเจอเมื่อลูกค้าค้นหาบน Google",
     thumbnail: getBlogThumbnail("seo-phuket-kue-arai"),
   },
   {
