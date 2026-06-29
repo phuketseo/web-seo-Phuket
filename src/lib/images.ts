@@ -56,10 +56,10 @@ export type SiteImage = {
 export const siteImages = {
   hero: {
     home: {
-      src: "/images/hero/hero-seo-phuket-clean.png",
-      alt: "SEO Agency Phuket - บริษัท SEO ภูเก็ต ชั้นนำ",
-      width: 2560,
-      height: 1440,
+      src: "/images/hero/hero-home-visibility-stack-smooth.png",
+      alt: "รับทำ SEO และเว็บไซต์ภูเก็ต — ติด Google Maps และ AI Search",
+      width: 1536,
+      height: 1024,
     },
     about: {
       src: "/images/hero/hero-about-team-clean.png",

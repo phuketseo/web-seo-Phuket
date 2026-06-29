@@ -4,6 +4,7 @@ import HomeHero from "@/components/HomeHero";
 import HomeBelowFold from "@/components/HomeBelowFold";
 import { HomeBodyClass } from "@/components/HomeBodyClass";
 import { HomeGoogleSans } from "@/components/HomeGoogleSans";
+import { BrandGradientDefs } from "@/components/BrandGradientDefs";
 
 export const metadata: Metadata = {
   title: "PhuketSEO | รับทำ SEO + เว็บไซต์ภูเก็ต ติด Google พร้อม AI Search",
@@ -18,6 +19,7 @@ export default function HomePage() {
       <HomeGoogleSans />
       <HomeBodyClass />
       <div className="home-google-sans">
+        <BrandGradientDefs />
         <HomeHero />
         <HomeBelowFold />
       </div>

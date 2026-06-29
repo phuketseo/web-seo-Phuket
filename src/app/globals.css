@@ -59,20 +59,20 @@
   .home-google-sans h3,
   .home-google-sans h4 {
     font-family: "Google Sans", Tahoma, "Segoe UI", sans-serif;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: -0.015em;
     line-height: 1.15;
   }
 
   .home-google-sans .hero-lcp {
     font-family: "Google Sans", Tahoma, "Segoe UI", sans-serif !important;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: -0.02em;
   }
 
-  /* Google Sans reads lighter than Kanit at 700 */
+  /* Google Sans: keep bold headings sharp — gradient is accent-only */
   .home-google-sans :is(h1, h2, h3, h4).font-bold {
-    font-weight: 600;
+    font-weight: 700;
   }
 }
 
@@ -144,6 +144,51 @@
     background-color: #1ebe57;
   }
   .section-padding { @apply py-20 md:py-28; }
+
+  /* Homepage sections — rhythm + soft gradient backgrounds */
+  .home-section {
+    @apply py-14 sm:py-16 md:py-20;
+  }
+  .home-section-header {
+    @apply mb-8 md:mb-10 max-w-xl;
+  }
+  .home-section-bg-white {
+    background:
+      radial-gradient(ellipse 75% 55% at 100% 0%, rgba(99, 102, 241, 0.07) 0%, transparent 58%),
+      #ffffff;
+  }
+  .home-section-bg-muted {
+    background:
+      radial-gradient(ellipse 65% 50% at 0% 100%, rgba(147, 51, 234, 0.06) 0%, transparent 52%),
+      #f8fafc;
+  }
+  .home-section-bg-gradient {
+    background: linear-gradient(
+      165deg,
+      #faf5ff 0%,
+      #ffffff 38%,
+      #f5f3ff 72%,
+      #f8fafc 100%
+    );
+  }
+  .home-accent-bar {
+    width: 2.5rem;
+    height: 3px;
+    border-radius: 9999px;
+    background: linear-gradient(90deg, #9333ea 0%, #6366f1 50%, #2563eb 100%);
+    margin-bottom: 1rem;
+  }
+  .home-accent-bar-center {
+    width: 2.5rem;
+    height: 3px;
+    border-radius: 9999px;
+    background: linear-gradient(90deg, #9333ea 0%, #6366f1 50%, #2563eb 100%);
+    margin: 0 auto 1rem;
+  }
+  .border-gradient-brand {
+    border-left: 3px solid transparent;
+    border-image: linear-gradient(180deg, #9333ea, #6366f1, #2563eb) 1;
+  }
   .container-custom { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; }
   .card-hover { @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1; }
   .below-fold {
@@ -258,5 +303,28 @@
 
   .blog-prose-vercel li::marker {
     @apply text-neutral-400;
+  }
+
+  /* Homepage mobile: +20% type scale (presbyopia-friendly) */
+  @media (max-width: 639px) {
+    .home-google-sans {
+      font-size: 1.2rem;
+    }
+
+    .home-google-sans :where(.text-xs) { font-size: 0.9rem; }
+    .home-google-sans :where(.text-sm) { font-size: 1.05rem; }
+    .home-google-sans :where(.text-base) { font-size: 1.2rem; }
+    .home-google-sans :where(.text-lg) { font-size: 1.35rem; }
+    .home-google-sans :where(.text-xl) { font-size: 1.5rem; }
+    .home-google-sans :where(.text-2xl) { font-size: 1.8rem; }
+    .home-google-sans :where(.text-3xl) { font-size: 2.25rem; }
+
+    .home-google-sans h1.hero-lcp {
+      font-size: 2.4rem;
+      font-weight: 700;
+    }
+
+    .home-google-sans [class*="text-[10px]"] { font-size: 12px; }
+    .home-google-sans [class*="text-[11px]"] { font-size: 13.2px; }
   }
 }
