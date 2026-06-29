@@ -5,7 +5,9 @@ import type { SiteImage } from "@/lib/images";
 import { BrandGradientDefs } from "@/components/BrandGradientDefs";
 import { HomeSection, HomeSectionHeader } from "@/components/home/HomeSection";
 import { MarketingBreadcrumb } from "@/components/MarketingBreadcrumb";
-import { LocalSeoHero } from "@/components/local/LocalSeoHero";
+import { ServiceMarketingHero } from "@/components/services/ServiceMarketingHero";
+import { ServicePricingTeaser } from "@/components/services/ServicePricingTeaser";
+import { ServicePageCta } from "@/components/services/ServicePageCta";
 import { ServiceFaqSection } from "@/components/ServiceFaqSection";
 
 interface LocalSeoPageProps {
@@ -44,7 +46,7 @@ export default function LocalSeoPage({
   intro,
   faqs,
 }: LocalSeoPageProps) {
-  const heroImage = localHeroImages[slug];
+  const heroImage = localHeroImages[slug] ?? siteImages.services.seo;
   const faqItems = faqs?.map((f) => ({ question: f.q, answer: f.a })) ?? [];
 
   return (
@@ -63,13 +65,20 @@ export default function LocalSeoPage({
         </div>
       </div>
 
-      <LocalSeoHero
-        area={area}
-        areaEn={areaEn}
+      <ServiceMarketingHero
+        eyebrow={`Local SEO ${areaEn}`}
+        title={`SEO ${area}`}
+        titleAccent="ติดอันดับ Google"
         description={description}
         answerBlock={answerBlock}
-        stats={stats.map((s) => ({ value: s.metric, label: s.label }))}
         image={heroImage}
+        stats={stats.map((s) => ({ value: s.metric, label: s.label }))}
+        trustBadges={[
+          `เชี่ยวชาญตลาด ${area}`,
+          "Google Maps Optimization",
+          "Local Pack Rankings",
+          "ขอ Audit ฟรี",
+        ]}
         secondaryHref="#businesses"
         secondaryLabel="ดูธุรกิจในโซน"
       />
@@ -111,7 +120,7 @@ export default function LocalSeoPage({
           {businesses.map((b) => (
             <div
               key={b}
-              className="rounded-xl border border-slate-200 bg-white p-4 text-center shadow-sm hover:border-green-200 hover:shadow-md transition-all duration-300"
+              className="rounded-xl border border-slate-200 bg-white p-4 text-center shadow-sm hover:border-violet-200 hover:shadow-md transition-all duration-300"
             >
               <div className="text-slate-800 font-medium text-sm">{b}</div>
             </div>
@@ -130,7 +139,7 @@ export default function LocalSeoPage({
           {keywords.map((kw) => (
             <span
               key={kw}
-              className="bg-white border border-slate-200 text-slate-700 px-3.5 py-1.5 rounded-full text-xs sm:text-sm hover:border-green-200 transition-colors"
+              className="bg-white border border-slate-200 text-slate-700 px-3.5 py-1.5 rounded-full text-xs sm:text-sm hover:border-violet-200 transition-colors"
             >
               {kw}
             </span>
@@ -150,38 +159,38 @@ export default function LocalSeoPage({
               key={lm}
               className="inline-flex items-center gap-1.5 bg-slate-50 border border-slate-200 px-3.5 py-1.5 rounded-full text-xs sm:text-sm text-slate-700"
             >
-              <MapPin size={13} className="text-green-600 shrink-0" />
+              <MapPin size={13} className="text-indigo-500 shrink-0" />
               {lm}
             </span>
           ))}
         </div>
       </HomeSection>
 
+      <HomeSection variant="muted" containerClass="max-w-lg mx-auto">
+        <ServicePricingTeaser
+          priceLabel="5,900"
+          planName="SEO Lite"
+          features={[
+            "Google Business Profile + รีวิว",
+            "โพสต์ GBP รายเดือน",
+            "ระบบขอรีวิวอัตโนมัติ",
+            "Pro ฿8,900 (+เว็บ + AEO)",
+          ]}
+          proNote={`เหมาะกับธุรกิจใน${area} — อัปเกรดได้ทุกเมื่อ`}
+        />
+      </HomeSection>
+
       {faqItems.length > 0 && (
         <ServiceFaqSection title="คำถามเกี่ยวกับ" titleAccent={`SEO ${area}`} faqs={faqItems} />
       )}
 
-      <section className="home-section bg-gradient-to-br from-blue-950 to-blue-900 border-t border-blue-900/50">
-        <div className="container-custom max-w-2xl text-center">
-          <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-3">
-            พร้อมให้ธุรกิจใน{area}ติด Google?
-          </h2>
-          <p className="text-blue-200/90 text-sm sm:text-base leading-relaxed mb-7 max-w-lg mx-auto">
-            ขอคำปรึกษาฟรี เราจะวิเคราะห์ตลาดใน{area}และแนะนำกลยุทธ์ที่เหมาะสม
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <Link href="/contact" className="btn-pill-green px-7">
-              ขอคำปรึกษาฟรี
-            </Link>
-            <Link
-              href="/services/seo-phuket"
-              className="inline-flex items-center justify-center text-sm font-medium px-6 py-3 rounded-xl border border-white/25 text-white hover:bg-white/10 transition-colors"
-            >
-              ดูบริการ SEO ทั้งหมด
-            </Link>
-          </div>
-        </div>
-      </section>
+      <ServicePageCta
+        title={`พร้อมให้ธุรกิจใน${area}`}
+        titleAccent="ติด Google?"
+        description={`ขอคำปรึกษาฟรี เราจะวิเคราะห์ตลาดใน${area}และแนะนำกลยุทธ์ที่เหมาะสม`}
+        secondaryHref="/services/seo-phuket"
+        secondaryLabel="ดูบริการ SEO ทั้งหมด"
+      />
     </div>
   );
 }
