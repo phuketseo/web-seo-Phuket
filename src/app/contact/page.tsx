@@ -6,6 +6,7 @@ import { Home, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 import { contactPageJsonLd } from "@/lib/schema";
 import { pricingPackages } from "@/lib/pricing-packages";
 import { responseTimeCopy } from "@/lib/response-times";
+import { formInputClass } from "@/lib/form-styles";
 import { ContactChannels } from "@/components/ContactChannels";
 import { BrandGradientDefs } from "@/components/BrandGradientDefs";
 import { HomeSection, HomeSectionHeader } from "@/components/home/HomeSection";
@@ -17,9 +18,6 @@ const planLabels = Object.fromEntries(
 const jsonLd = contactPageJsonLd;
 
 type FormStatus = "idle" | "loading" | "success" | "error";
-
-const inputClass =
-  "block w-full px-4 py-2.5 border border-slate-200 rounded-lg bg-white text-sm text-slate-900 placeholder:text-slate-400 focus:ring-2 focus:ring-violet-500/30 focus:border-violet-400 outline-none transition-colors";
 
 export default function ContactPage() {
   const [status, setStatus] = useState<FormStatus>("idle");
@@ -135,7 +133,7 @@ export default function ContactPage() {
                     name="name"
                     required
                     autoComplete="name"
-                    className={inputClass}
+                    className={formInputClass}
                     placeholder="ชื่อของคุณ"
                   />
                 </div>
@@ -150,7 +148,7 @@ export default function ContactPage() {
                       name="email"
                       required
                       autoComplete="email"
-                      className={inputClass}
+                      className={formInputClass}
                       placeholder="you@example.com"
                     />
                   </div>
@@ -164,7 +162,7 @@ export default function ContactPage() {
                       name="phone"
                       required
                       autoComplete="tel"
-                      className={inputClass}
+                      className={formInputClass}
                       placeholder="08XXXXXXXX"
                     />
                   </div>
@@ -178,7 +176,7 @@ export default function ContactPage() {
                     id="business"
                     name="business"
                     autoComplete="organization"
-                    className={inputClass}
+                    className={formInputClass}
                     placeholder="ชื่อธุรกิจหรือองค์กร"
                   />
                 </div>
@@ -191,7 +189,7 @@ export default function ContactPage() {
                     name="message"
                     rows={4}
                     required
-                    className={inputClass}
+                    className={formInputClass}
                     placeholder="รายละเอียดเกี่ยวกับโครงการหรือคำถามของคุณ"
                   />
                 </div>
