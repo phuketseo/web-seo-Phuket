@@ -47,7 +47,7 @@ export function HomeSectionHeader({
   eyebrow?: string;
   title: string;
   titleAccent?: string;
-  description?: string;
+  description?: ReactNode;
   className?: string;
   centered?: boolean;
 }) {
@@ -74,7 +74,7 @@ export function HomeSectionHeader({
         )}
       </h2>
       {description && (
-        <p className="text-slate-600 leading-relaxed text-sm sm:text-base">{description}</p>
+        <div className="text-slate-600 leading-relaxed text-sm sm:text-base">{description}</div>
       )}
     </div>
   );

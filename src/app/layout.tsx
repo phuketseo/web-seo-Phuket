@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { Kanit } from "next/font/google";
 import "./globals.css";
+import { GoogleSansFonts } from "@/components/GoogleSansFonts";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import DeferredLineChat from "@/components/DeferredLineChat";
@@ -8,26 +8,6 @@ import DeferredGoogleAnalytics from "@/components/DeferredGoogleAnalytics";
 import CookieConsent from "@/components/CookieConsent";
 import { siteEntityGraphSchema } from "@/lib/schema";
 import { defaultOgImage, siteConfig } from "@/lib/utils";
-
-const kanitBold = Kanit({
-  subsets: ["latin", "thai"],
-  weight: "700",
-  variable: "--font-kanit-bold",
-  display: "swap",
-  preload: false,
-  adjustFontFallback: true,
-  fallback: ["Tahoma", "Arial", "sans-serif"],
-});
-
-const kanitRegular = Kanit({
-  subsets: ["latin", "thai"],
-  weight: "400",
-  variable: "--font-kanit",
-  display: "swap",
-  preload: false,
-  adjustFontFallback: true,
-  fallback: ["Tahoma", "Arial", "sans-serif"],
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://phuketseo.com"),
@@ -91,12 +71,13 @@ export default function RootLayout({
   const gaId = process.env.NEXT_PUBLIC_GA_ID;
 
   return (
-    <html lang="th" className={`${kanitBold.variable} ${kanitRegular.variable}`}>
+    <html lang="th">
       <head>
         <style dangerouslySetInnerHTML={{ __html: CRITICAL_SHELL_CSS }} />
         <link rel="llms-txt" href="/llms.txt" type="text/plain" />
       </head>
       <body className="antialiased">
+        <GoogleSansFonts />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(siteEntityGraphSchema) }}

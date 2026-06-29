@@ -3,11 +3,12 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Home, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
-import { siteConfig } from "@/lib/utils";
 import { contactPageJsonLd } from "@/lib/schema";
 import { pricingPackages } from "@/lib/pricing-packages";
 import { responseTimeCopy } from "@/lib/response-times";
 import { ContactChannels } from "@/components/ContactChannels";
+import { BrandGradientDefs } from "@/components/BrandGradientDefs";
+import { HomeSection, HomeSectionHeader } from "@/components/home/HomeSection";
 
 const planLabels = Object.fromEntries(
   pricingPackages.map((pkg) => [pkg.id, `${pkg.name} ฿${pkg.priceLabel}/เดือน`])
@@ -16,6 +17,9 @@ const planLabels = Object.fromEntries(
 const jsonLd = contactPageJsonLd;
 
 type FormStatus = "idle" | "loading" | "success" | "error";
+
+const inputClass =
+  "block w-full px-4 py-2.5 border border-slate-200 rounded-lg bg-white text-sm text-slate-900 placeholder:text-slate-400 focus:ring-2 focus:ring-violet-500/30 focus:border-violet-400 outline-none transition-colors";
 
 export default function ContactPage() {
   const [status, setStatus] = useState<FormStatus>("idle");
@@ -62,45 +66,59 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="min-h-screen bg-white text-gray-800">
+    <div className="pt-24">
+      <BrandGradientDefs />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-      <section className="bg-gradient-to-r from-blue-950 to-blue-800 pt-32 pb-16 text-white px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <nav className="flex items-center justify-center gap-2 text-sm text-blue-300 mb-6">
-            <Link href="/" className="flex items-center gap-1 hover:text-white transition-colors">
+      <section className="home-section-bg-white border-b border-slate-100/80">
+        <div className="container-custom max-w-4xl py-10 sm:py-12">
+          <nav className="flex items-center gap-2 text-sm text-slate-500 mb-6">
+            <Link
+              href="/"
+              className="inline-flex items-center gap-1 hover:text-violet-600 transition-colors touch-manipulation"
+            >
               <Home size={13} /> หน้าแรก
             </Link>
-            <span>/</span>
-            <span className="text-white">ติดต่อเรา</span>
+            <span aria-hidden>/</span>
+            <span className="text-slate-900">ติดต่อเรา</span>
           </nav>
-          <h1 className="text-4xl sm:text-5xl font-serif font-bold mb-4">ติดต่อเรา</h1>
-          <p className="text-xl text-blue-200">{responseTimeCopy.contactReply}</p>
+          <HomeSectionHeader
+            eyebrow="ติดต่อ"
+            title="ปรึกษา SEO"
+            titleAccent="ภูเก็ต ฟรี"
+            description={responseTimeCopy.contactReply}
+            className="mb-0"
+          />
         </div>
       </section>
 
-      <main className="max-w-7xl mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <section className="bg-gray-50 p-8 rounded-2xl shadow-sm border border-gray-100">
-            <h2 className="text-2xl font-serif font-bold text-blue-950 mb-2">แบบฟอร์มติดต่อ</h2>
+      <HomeSection variant="muted" className="border-t-0" containerClass="max-w-6xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
+          <div className="rounded-xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm">
+            <h2 className="text-xl font-bold text-slate-900 mb-2">แบบฟอร์มติดต่อ</h2>
             {selectedPlanLabel && (
-              <div className="mb-4 rounded-xl bg-emerald-50 border border-emerald-200 px-4 py-3 text-sm text-emerald-900">
+              <div className="mb-4 rounded-lg bg-violet-50 border border-violet-200 px-4 py-3 text-sm text-slate-800">
                 สนใจแพ็ก: <strong>{selectedPlanLabel}</strong>{" "}
-                <Link href="/pricing" className="text-emerald-700 underline ml-1">
+                <Link href="/pricing" className="text-violet-600 underline underline-offset-2 ml-1">
                   ดูรายละเอียดแพ็ก
                 </Link>
               </div>
             )}
-            <p className="text-gray-500 text-sm mb-6">กรอกข้อมูลด้านล่าง — {responseTimeCopy.contactReply}</p>
+            <p className="text-slate-600 text-sm mb-6 leading-relaxed">
+              กรอกข้อมูลด้านล่าง — {responseTimeCopy.contactReply}
+            </p>
 
             {status === "success" ? (
               <div className="flex flex-col items-center justify-center py-12 text-center">
-                <CheckCircle className="w-16 h-16 text-green-500 mb-4" />
-                <h3 className="text-xl font-bold text-gray-900 mb-2">ส่งข้อความสำเร็จ!</h3>
-                <p className="text-gray-500 mb-6">ขอบคุณที่ติดต่อมาครับ {responseTimeCopy.contactReplyThankYou}</p>
+                <CheckCircle className="w-14 h-14 text-violet-600 mb-4" />
+                <h3 className="text-xl font-bold text-slate-900 mb-2">ส่งข้อความสำเร็จ</h3>
+                <p className="text-slate-600 mb-6 text-sm leading-relaxed">
+                  ขอบคุณที่ติดต่อมาครับ {responseTimeCopy.contactReplyThankYou}
+                </p>
                 <button
+                  type="button"
                   onClick={() => setStatus("idle")}
-                  className="px-6 py-2 bg-blue-950 text-white rounded-lg hover:bg-blue-900 transition-colors"
+                  className="btn-gradient-brand px-6 py-2.5 text-sm"
                 >
                   ส่งข้อความอื่น
                 </button>
@@ -108,7 +126,7 @@ export default function ContactPage() {
             ) : (
               <form onSubmit={handleContactSubmit} className="space-y-5">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1.5">
+                  <label htmlFor="name" className="block text-sm font-medium text-slate-800 mb-1.5">
                     ชื่อ-นามสกุล <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -117,13 +135,13 @@ export default function ContactPage() {
                     name="name"
                     required
                     autoComplete="name"
-                    className="block w-full px-4 py-2.5 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-green-400 focus:border-green-400 text-sm"
+                    className={inputClass}
                     placeholder="ชื่อของคุณ"
                   />
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1.5">
+                    <label htmlFor="email" className="block text-sm font-medium text-slate-800 mb-1.5">
                       อีเมล <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -132,12 +150,12 @@ export default function ContactPage() {
                       name="email"
                       required
                       autoComplete="email"
-                      className="block w-full px-4 py-2.5 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-green-400 focus:border-green-400 text-sm"
+                      className={inputClass}
                       placeholder="you@example.com"
                     />
                   </div>
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1.5">
+                    <label htmlFor="phone" className="block text-sm font-medium text-slate-800 mb-1.5">
                       เบอร์โทร <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -146,13 +164,13 @@ export default function ContactPage() {
                       name="phone"
                       required
                       autoComplete="tel"
-                      className="block w-full px-4 py-2.5 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-green-400 focus:border-green-400 text-sm"
+                      className={inputClass}
                       placeholder="08XXXXXXXX"
                     />
                   </div>
                 </div>
                 <div>
-                  <label htmlFor="business" className="block text-sm font-medium text-gray-700 mb-1.5">
+                  <label htmlFor="business" className="block text-sm font-medium text-slate-800 mb-1.5">
                     ชื่อธุรกิจ
                   </label>
                   <input
@@ -160,12 +178,12 @@ export default function ContactPage() {
                     id="business"
                     name="business"
                     autoComplete="organization"
-                    className="block w-full px-4 py-2.5 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-green-400 focus:border-green-400 text-sm"
+                    className={inputClass}
                     placeholder="ชื่อธุรกิจหรือองค์กร"
                   />
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1.5">
+                  <label htmlFor="message" className="block text-sm font-medium text-slate-800 mb-1.5">
                     ข้อความ <span className="text-red-500">*</span>
                   </label>
                   <textarea
@@ -173,21 +191,21 @@ export default function ContactPage() {
                     name="message"
                     rows={4}
                     required
-                    className="block w-full px-4 py-2.5 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-green-400 focus:border-green-400 text-sm"
+                    className={inputClass}
                     placeholder="รายละเอียดเกี่ยวกับโครงการหรือคำถามของคุณ"
                   />
                 </div>
 
                 {status === "error" && (
-                  <div className="flex items-center gap-2 text-red-600 text-sm bg-red-50 border border-red-200 rounded-lg px-4 py-3">
-                    <AlertCircle size={16} /> {errorMsg}
+                  <div className="flex items-center gap-2 text-red-700 text-sm bg-red-50 border border-red-200 rounded-lg px-4 py-3">
+                    <AlertCircle size={16} className="shrink-0" /> {errorMsg}
                   </div>
                 )}
 
                 <button
                   type="submit"
                   disabled={status === "loading"}
-                  className="w-full flex items-center justify-center gap-2 py-3 px-6 bg-green-500 hover:bg-green-600 disabled:opacity-60 text-white font-semibold rounded-lg transition-colors text-sm"
+                  className="btn-gradient-brand w-full flex items-center justify-center gap-2 py-3 px-6 text-sm disabled:opacity-60"
                 >
                   {status === "loading" ? (
                     <>
@@ -199,14 +217,14 @@ export default function ContactPage() {
                 </button>
               </form>
             )}
-          </section>
+          </div>
 
-          <section>
-            <h2 className="text-2xl font-serif font-bold text-blue-950 mb-4 sr-only">ช่องทางติดต่อ</h2>
+          <div>
+            <h2 className="text-xl font-bold text-slate-900 mb-4 sr-only">ช่องทางติดต่อ</h2>
             <ContactChannels />
-          </section>
+          </div>
         </div>
-      </main>
+      </HomeSection>
     </div>
   );
 }

@@ -1,11 +1,12 @@
 ﻿import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Check, ChevronDown } from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
 import { siteImages, type SiteImage } from "@/lib/images";
 import { caseStudies } from "@/lib/case-studies-data";
-import { pricingPackages, planContactHref } from "@/lib/pricing-packages";
+import { pricingPackages } from "@/lib/pricing-packages";
 import { GradientButton } from "@/components/GradientButton";
 import { HomeSection, HomeSectionHeader } from "@/components/home/HomeSection";
+import { PricingPlanGrid } from "@/components/pricing/PricingPlanGrid";
 
 const services: {
   num: string;
@@ -90,16 +91,6 @@ const faqSchema = {
 
 export default function HomeBelowFold() {
   const cs = caseStudies[0];
-  const pricing = pricingPackages.map((pkg) => ({
-    id: pkg.id,
-    name: pkg.name,
-    price: pkg.priceLabel,
-    tagline: pkg.tagline,
-    features: pkg.features.slice(0, 5),
-    cta: pkg.cta,
-    popular: pkg.popular,
-    adsNote: pkg.id === "lite" ? "ค่ายิงแอด GBP/Maps แยกจากค่าจัดการ" : undefined,
-  }));
 
   return (
     <>
@@ -263,62 +254,7 @@ export default function HomeBelowFold() {
             description="ไม่มีค่าใช้จ่ายซ่อนเร้น — ยกเลิกได้ทุกเดือน"
           />
 
-          <div className="grid md:grid-cols-3 gap-3 md:gap-4">
-            {pricing.map((p) => (
-              <div
-                key={p.name}
-                className={`flex flex-col rounded-xl border bg-white p-6 shadow-sm md:rounded-lg md:shadow-none ${
-                  p.popular
-                    ? "border-violet-400 ring-1 ring-violet-400 md:border-violet-500 md:ring-violet-500"
-                    : "border-slate-300 md:border-slate-200"
-                }`}
-              >
-                {p.popular && (
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-gradient-brand mb-3">
-                    แนะนำ
-                  </p>
-                )}
-                <h3 className="text-base font-semibold text-slate-900">{p.name}</h3>
-                <p className="text-xs text-slate-600 md:text-slate-500 mt-1 mb-4">{p.tagline}</p>
-                <div className="mb-1">
-                  <span
-                    className={`text-3xl font-bold tabular-nums tracking-tight ${
-                      p.popular ? "text-gradient-brand" : "text-slate-900"
-                    }`}
-                  >
-                    ฿{p.price}
-                  </span>
-                  <span className="text-sm text-slate-500 md:text-slate-400 ml-1">/เดือน</span>
-                </div>
-                {p.adsNote && (
-                  <p className="text-[11px] text-slate-500 md:text-slate-400 mb-4 leading-relaxed">{p.adsNote}</p>
-                )}
-                {!p.adsNote && <div className="mb-4" />}
-                <ul className="space-y-2.5 mb-8 flex-1">
-                  {p.features.map((f) => (
-                    <li key={f} className="flex items-start gap-2 text-sm text-slate-700 md:text-slate-600">
-                      <Check
-                        size={14}
-                        className="shrink-0 mt-0.5 stroke-[url(#brand-gradient)]"
-                        strokeWidth={2.5}
-                      />
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-                <Link
-                  href={planContactHref(p.id)}
-                  className={
-                    p.popular
-                      ? "btn-gradient-brand relative z-10 block w-full text-center text-sm py-2.5"
-                      : "relative z-10 block w-full text-center text-sm font-medium py-2.5 rounded-lg border border-slate-200 text-slate-700 touch-manipulation active:bg-violet-50 active:border-violet-300 active:text-violet-700 sm:hover:border-violet-200 sm:hover:bg-violet-50/50 transition-colors duration-150"
-                  }
-                >
-                  {p.cta}
-                </Link>
-              </div>
-            ))}
-          </div>
+          <PricingPlanGrid packages={pricingPackages} featureLimit={5} />
           <p className="mt-6 md:mt-8 text-sm text-slate-600 text-center md:text-left">
             <Link
               href="/pricing"

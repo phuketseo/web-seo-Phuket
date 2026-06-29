@@ -12,12 +12,13 @@
     --bg-light: #f8fafc;
     --bg-white: #ffffff;
     --border: #e2e8f0;
+    --font-google-sans: "Google Sans", Tahoma, "Segoe UI", sans-serif;
   }
 
   html { scroll-behavior: smooth; }
 
   body {
-    font-family: var(--font-kanit), "Kanit", Tahoma, sans-serif;
+    font-family: var(--font-google-sans);
     color: var(--text-dark);
     background: var(--bg-white);
     -webkit-font-smoothing: antialiased;
@@ -25,54 +26,26 @@
   }
 
   h1, h2, h3, h4 {
-    font-family: var(--font-kanit-bold), "Kanit", Tahoma, sans-serif;
+    font-family: var(--font-google-sans);
     font-weight: 700;
-    line-height: 1.05;
-    letter-spacing: -0.02em;
+    line-height: 1.15;
+    letter-spacing: -0.015em;
   }
 }
 
 @layer base {
   .font-serif {
-    font-family: var(--font-kanit-bold), "Kanit", Tahoma, sans-serif !important;
+    font-family: var(--font-google-sans) !important;
     font-weight: 700;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.015em;
   }
 
-  /* LCP hero: system font only — paints before Kanit woff2 loads */
+  /* Hero LCP: system fallback until Google Sans swap */
   .hero-lcp {
-    font-family: Tahoma, "Segoe UI", sans-serif !important;
+    font-family: var(--font-google-sans) !important;
     font-weight: 700;
     letter-spacing: -0.02em;
     line-height: 1.1;
-  }
-
-  /* Homepage: Google Sans (AIO-style readability) — Navbar/Footer stay Kanit */
-  .home-google-sans {
-    font-family: "Google Sans", Tahoma, "Segoe UI", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
-  }
-
-  .home-google-sans h1,
-  .home-google-sans h2,
-  .home-google-sans h3,
-  .home-google-sans h4 {
-    font-family: "Google Sans", Tahoma, "Segoe UI", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.015em;
-    line-height: 1.15;
-  }
-
-  .home-google-sans .hero-lcp {
-    font-family: "Google Sans", Tahoma, "Segoe UI", sans-serif !important;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-  }
-
-  /* Google Sans: keep bold headings sharp — gradient is accent-only */
-  .home-google-sans :is(h1, h2, h3, h4).font-bold {
-    font-weight: 700;
   }
 }
 
@@ -307,24 +280,24 @@
 
   /* Homepage mobile: +20% type scale (presbyopia-friendly) */
   @media (max-width: 639px) {
-    .home-google-sans {
+    .home-mobile-type {
       font-size: 1.2rem;
     }
 
-    .home-google-sans :where(.text-xs) { font-size: 0.9rem; }
-    .home-google-sans :where(.text-sm) { font-size: 1.05rem; }
-    .home-google-sans :where(.text-base) { font-size: 1.2rem; }
-    .home-google-sans :where(.text-lg) { font-size: 1.35rem; }
-    .home-google-sans :where(.text-xl) { font-size: 1.5rem; }
-    .home-google-sans :where(.text-2xl) { font-size: 1.8rem; }
-    .home-google-sans :where(.text-3xl) { font-size: 2.25rem; }
+    .home-mobile-type :where(.text-xs) { font-size: 0.9rem; }
+    .home-mobile-type :where(.text-sm) { font-size: 1.05rem; }
+    .home-mobile-type :where(.text-base) { font-size: 1.2rem; }
+    .home-mobile-type :where(.text-lg) { font-size: 1.35rem; }
+    .home-mobile-type :where(.text-xl) { font-size: 1.5rem; }
+    .home-mobile-type :where(.text-2xl) { font-size: 1.8rem; }
+    .home-mobile-type :where(.text-3xl) { font-size: 2.25rem; }
 
-    .home-google-sans h1.hero-lcp {
+    .home-mobile-type h1.hero-lcp {
       font-size: 2.4rem;
       font-weight: 700;
     }
 
-    .home-google-sans [class*="text-[10px]"] { font-size: 12px; }
-    .home-google-sans [class*="text-[11px]"] { font-size: 13.2px; }
+    .home-mobile-type [class*="text-[10px]"] { font-size: 12px; }
+    .home-mobile-type [class*="text-[11px]"] { font-size: 13.2px; }
   }
 }

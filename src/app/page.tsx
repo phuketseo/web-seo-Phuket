@@ -3,7 +3,6 @@ import { siteConfig } from "@/lib/utils";
 import HomeHero from "@/components/HomeHero";
 import HomeBelowFold from "@/components/HomeBelowFold";
 import { HomeBodyClass } from "@/components/HomeBodyClass";
-import { HomeGoogleSans } from "@/components/HomeGoogleSans";
 import { BrandGradientDefs } from "@/components/BrandGradientDefs";
 
 export const metadata: Metadata = {
@@ -16,9 +15,8 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
-      <HomeGoogleSans />
       <HomeBodyClass />
-      <div className="home-google-sans">
+      <div className="home-mobile-type">
         <BrandGradientDefs />
         <HomeHero />
         <HomeBelowFold />
