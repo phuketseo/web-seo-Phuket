@@ -347,7 +347,7 @@ export const siteImages = {
     },
     seoPhuketZones: {
       src: "/images/blog/blog-inline-seo-phuket-zones-clean.png",
-      alt: "โซนภูเก็ตต่างกัน — ป่าตอง กะตะ ตัวเมือง ถลาง กมลา",
+      alt: "SEO ภูเก็ต — โซนป่าตอง กะตะ ตัวเมือง ถลาง กมลา กะทู้ ใช้คำค้นและแผนไม่เหมือนกัน",
       width: 3840,
       height: 2560,
     },
