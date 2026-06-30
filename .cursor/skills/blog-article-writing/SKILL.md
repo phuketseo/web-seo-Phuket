@@ -12,8 +12,8 @@ description: >-
 เขียนบทความ `/blog/[slug]` แบบ **ตอบคำถามชัด (Google AI Overview)** + **ภาษาไทยอ่านง่าย** + **โทนที่ปรึกษา** (ไม่สอน DIY ยาว)
 
 อ่านร่วมกับ:
+- `.cursorrules` — กฎหลัก SEO/AEO/GEO content editor (โทน โครงสร้าง FAQ สิ่งที่ห้าม)
 - `.cursor/skills/blog-rich-results-schema/SKILL.md` — schema / Rich Results
-- `.cursor/rules/blog-content-tone.mdc` — North Star: โชว์ปัญหาก่อน ไม่ขายหนัก
 
 อ้างอิงบทความที่ผ่านแล้ว: `local-seo-thalang-phuket`, `local-seo-kamala-phuket`
 
