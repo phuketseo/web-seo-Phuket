@@ -37,6 +37,7 @@ export default function KataPage() {
         stats={[...localSeoServiceStats]}
         intro={areaContent.intro}
         faqs={areaContent.faqs}
+        relatedIndustries={areaContent.relatedIndustries}
       />
     </>
   );

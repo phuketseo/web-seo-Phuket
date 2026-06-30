@@ -14,6 +14,7 @@ export type IndustryContent = {
   intro: string[];
   faqs: IndustryFaq[];
   relatedBlog?: { name: string; href: string };
+  relatedLinks?: { name: string; href: string }[];
 };
 
 export const industrySeoContent: Record<string, IndustryContent> = {
@@ -240,5 +241,80 @@ export const industrySeoContent: Record<string, IndustryContent> = {
       },
     ],
     relatedBlog: { name: "Web Design อสังหาฯ ภูเก็ต", href: "/blog/web-design-phuket-real-estate" },
+  },
+  tour: {
+    slug: "seo-tours-phuket",
+    industry: "บริษัททัวร์",
+    industryEn: "Tour Operators",
+    headline: "SEO บริษัททัวร์ภูเก็ต",
+    description:
+      "รับทำ SEO ทัวร์ภูเก็ต — แข่ง OTA ด้วย Local SEO และ Direct Booking สำหรับ island tour, ดำน้ำ และเรือทัวร์ ขอคำปรึกษาฟรี",
+    answerBlock:
+      "SEO บริษัททัวร์ภูเก็ต คือการทำให้ tour operator โผล่ Google เมื่อลูกค้าค้นหากิจกรรมในโซนจริง — เป้าหมายคือ direct booking ที่ margin ดีกว่า OTA PhuketSEO เริ่มจาก GBP จุดขึ้นเรือ + เว็บ EN แพ็ก Pro ฿8,900/เดือน",
+    painPoints: [
+      "แข่ง OTA งบสูง (Klook, Viator, KKday, GetYourGuide) — commission กัด margin ทุก booking",
+      "ฤดูกาลผันผวน — พึ่งแอดอย่างเดียว organic หายเมื่อหยุดจ่าย",
+      "รีวิวสำคัญมาก — experience-based purchase ลูกค้าเปรียบเทียบ rating ก่อนจอง",
+      "ลูกค้าค้นหา Google แต่ไม่เจอ — แม้ boat และ guide ดี",
+      "มี Facebook แต่ไม่มี brand บน Google / ไม่มีเว็บ EN",
+    ],
+    services: [
+      "Long-tail + local intent (ทัวร์เกาะพีพีรับจากป่าตอง, เรือทัวร์ออกจากท่าฉลอง)",
+      "GBP + Local Pack สำหรับจุดขึ้นเรือ/จุดนัดพบ",
+      "Direct booking landing — ไม่เสีย commission ให้ตัวกลาง",
+      "เนื้อหา EN สำหรับ tourist search intent",
+      "Review campaign + AEO FAQ schema",
+      "Pro Max: Google Ads ช่วง high season",
+    ],
+    keywords: [
+      "SEO บริษัททัวร์ภูเก็ต",
+      "รับทำ SEO ทัวร์ภูเก็ต",
+      "การตลาดออนไลน์ทัวร์ภูเก็ต",
+      "SEO เรือทัวร์ภูเก็ต",
+      "ทัวร์ใกล้ฉัน ภูเก็ต",
+      "ทัวร์เกาะพีพีรับจากป่าตอง",
+    ],
+    stats: [
+      { metric: "+Direct", label: "Booking ไม่ผ่าน OTA" },
+      { metric: "3–6 เดือน", label: "เห็น organic ชัด" },
+      { metric: "฿8,900", label: "แพ็ก Pro" },
+      { metric: "EN+TH", label: "Content" },
+    ],
+    intro: [
+      "บริษัททัวร์ในภูเก็ตแข่งกับ OTA ที่มีงบโฆษณาสูง — ลูกค้าค้นหากิจกรรมบน Google ก่อนจอง (เช่น island tour, snorkeling trip) PhuketSEO ช่วย optimize GBP ที่จุดขึ้นเรือในโซนป่าตองและกะตะ สร้าง direct booking landing และ long-tail ที่ OTA ไม่ได้เจาะจง",
+      "ประเภททัวร์ที่ดูแล: ทัวร์เกาะ (พีพี, สิมิลัน) · ทัวร์ดำน้ำ · รถเช่า/รถรับส่ง — แต่ละ activity มี search intent ต่างกัน ต้องวิเคราะห์ก่อนลงมือ",
+    ],
+    faqs: [
+      {
+        q: "SEO บริษัททัวร์ภูเก็ต เริ่มจากอะไร?",
+        a: "เริ่มจาก audit ช่องทาง booking ปัจจุบัน (OTA vs direct) แล้ว optimize Google Business Profile ที่จุดขึ้นเรือ/จุดนัดพบ พร้อม long-tail keyword ตาม activity และโซน เช่น ทัวร์เกาะพีพีรับจากป่าตอง",
+      },
+      {
+        q: "ยังใช้ Klook/Viator ได้ไหมถ้าทำ SEO?",
+        a: "ใช้ได้ — OTA ช่วย exposure ในช่วง peak แต่เป้าหมาย SEO คือเพิ่ม direct booking ที่ margin ดีกว่า ไม่ต้องเลิก OTA ในวันเดียว",
+      },
+      {
+        q: "SEO ทัวร์ vs Google Ads อะไรเหมาะกว่า?",
+        a: "SEO สร้าง organic ยั่งยืน — เหมาะกับ low season และ long-tail local intent Ads เร่ง booking ใน high season แพ็ก Pro Max รวมทั้งสองได้",
+      },
+      {
+        q: "ทัวร์ต้องมีเว็บภาษาอังกฤษไหม?",
+        a: "ควรมี — ลูกค้าต่างชาติค้นหา EN keyword เป็นหลัก แพ็ก Pro รวมเว็บ + SEO content EN/TH และ direct booking landing",
+      },
+      {
+        q: "ใช้เวลานานแค่ไหนถึงเห็น direct booking โต?",
+        a: "โดยทั่วไป 3–6 เดือนหลัง GBP + เว็บ EN + review campaign ครบ ขึ้นกับ activity ที่แข่งและ conversion ของช่องทางจองตรง",
+      },
+      {
+        q: "หยุดทำ SEO แล้วผลจะหายไหม?",
+        a: "Organic ที่สะสมแล้วมักยังอยู่ แต่คู่แข่งและ OTA ไม่หยุด — หยุดทำ content และ GBP ระยะยาว ranking มักถอยลง",
+      },
+    ],
+    relatedBlog: { name: "SEO ทัวร์ภูเก็ต", href: "/blog/seo-tours-phuket" },
+    relatedLinks: [
+      { name: "Local SEO ป่าตอง", href: "/local/patong" },
+      { name: "Local SEO กะตะ", href: "/local/kata" },
+      { name: "Google Ads ภูเก็ต", href: "/services/google-ads" },
+    ],
   },
 };

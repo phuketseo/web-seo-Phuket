@@ -16,6 +16,7 @@ const industryHeroImages: Record<string, SiteImage> = {
   "seo-spa-phuket": siteImages.blog.seoSpa,
   "seo-hotels-phuket": siteImages.caseStudies.hotel,
   "seo-real-estate-phuket": siteImages.caseStudies.realestate,
+  "seo-tours-phuket": siteImages.blog.contentForeigners,
 };
 
 function pricingForIndustry(data: IndustryContent) {
@@ -73,16 +74,32 @@ export default function IndustrySeoPage({ data }: { data: IndustryContent }) {
           {data.intro.map((p) => (
             <p key={p.slice(0, 40)}>{p}</p>
           ))}
-          {data.relatedBlog && (
+          {(data.relatedBlog || data.relatedLinks?.length) && (
             <p className="text-slate-600">
               อ่านเพิ่ม:{" "}
-              <Link
-                href={data.relatedBlog.href}
-                className="text-violet-600 font-medium hover:underline underline-offset-2"
-              >
-                {data.relatedBlog.name}
-              </Link>
-              {" · "}
+              {data.relatedBlog && (
+                <>
+                  <Link
+                    href={data.relatedBlog.href}
+                    className="text-violet-600 font-medium hover:underline underline-offset-2"
+                  >
+                    {data.relatedBlog.name}
+                  </Link>
+                  {" · "}
+                </>
+              )}
+              {data.relatedLinks?.map((link, i) => (
+                <span key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-violet-600 font-medium hover:underline underline-offset-2"
+                  >
+                    {link.name}
+                  </Link>
+                  {i < (data.relatedLinks?.length ?? 0) - 1 ? " · " : ""}
+                </span>
+              ))}
+              {data.relatedLinks?.length ? " · " : null}
               <Link href="/pricing" className="text-violet-600 font-medium hover:underline underline-offset-2">
                 ดูราคา
               </Link>

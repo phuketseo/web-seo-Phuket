@@ -44,6 +44,7 @@ const industries = [
   { name: "SEO สปาภูเก็ต", href: "/industries/seo-spa-phuket" },
   { name: "SEO โรงแรมภูเก็ต", href: "/industries/seo-hotels-phuket" },
   { name: "SEO อสังหาฯ ภูเก็ต", href: "/industries/seo-real-estate-phuket" },
+  { name: "SEO บริษัททัวร์ภูเก็ต", href: "/industries/seo-tours-phuket" },
 ];
 
 const secondaryServices = [

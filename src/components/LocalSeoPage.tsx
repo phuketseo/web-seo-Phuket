@@ -22,6 +22,7 @@ interface LocalSeoPageProps {
   stats: { metric: string; label: string }[];
   intro?: string[];
   faqs?: { q: string; a: string }[];
+  relatedIndustries?: { name: string; href: string }[];
 }
 
 const localHeroImages: Record<string, SiteImage> = {
@@ -45,6 +46,7 @@ export default function LocalSeoPage({
   stats,
   intro,
   faqs,
+  relatedIndustries,
 }: LocalSeoPageProps) {
   const heroImage = localHeroImages[slug] ?? siteImages.services.seo;
   const faqItems = faqs?.map((f) => ({ question: f.q, answer: f.a })) ?? [];
@@ -104,6 +106,17 @@ export default function LocalSeoPage({
               >
                 บริการ SEO ภูเก็ต
               </Link>
+              {relatedIndustries?.map((link) => (
+                <span key={link.href}>
+                  {" · "}
+                  <Link
+                    href={link.href}
+                    className="text-violet-600 font-medium hover:underline underline-offset-2"
+                  >
+                    {link.name}
+                  </Link>
+                </span>
+              ))}
             </p>
           </div>
         </HomeSection>

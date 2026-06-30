@@ -4,6 +4,7 @@ export type LocalAreaContent = {
   answerBlock?: string;
   intro: string[];
   faqs: LocalAreaFaq[];
+  relatedIndustries?: { name: string; href: string }[];
 };
 
 export const localSeoContent: Record<string, LocalAreaContent> = {
@@ -12,8 +13,9 @@ export const localSeoContent: Record<string, LocalAreaContent> = {
       "Local SEO ป่าตอง คือการทำให้ธุรกิจในโซนหาดป่าตอง ถนนบางลา และย่านท่องเที่ยวโผล่ Google Maps เมื่อลูกค้าค้นหา โรงแรมป่าตอง ร้านอาหารป่าตอง หรือทัวร์ป่าตอง PhuketSEO เริ่มจาก GBP แพ็ก Lite ฿5,900/เดือน",
     intro: [
       "Local SEO ป่าตองจาก PhuketSEO ช่วยให้ธุรกิจในโซนหาดป่าตอง ถนนบางลา และย่านท่องเที่ยวหลักโผล่ Google Maps และ organic search เมื่อลูกค้าค้นหา โรงแรมป่าตอง ร้านอาหารป่าตอง หรือทัวร์ป่าตอง ตลาดป่าตองแข่งสูงมาก การไล่ keyword ทั้งเกาะจึงไม่ realistic — เราเน้น long-tail ในโซนจริง",
-      "บริการครอบคลุม Google Business Profile optimization, NAP consistency, review strategy และ landing page ตาม Content Gap ในโซนป่าตอง อ่านเพิ่มเกี่ยวกับ SEO โรงแรมและ Google Business Profile ในบล็อกของเรา",
+      "บริการครอบคลุม Google Business Profile optimization, NAP consistency, review strategy และ landing page ตาม Content Gap ในโซนป่าตอง — รวมถึงจุดรับ-ส่งทัวร์และท่าเรือในโซน",
     ],
+    relatedIndustries: [{ name: "SEO บริษัททัวร์ภูเก็ต", href: "/industries/seo-tours-phuket" }],
     faqs: [
       {
         q: "SEO ป่าตองต่างจาก SEO ภูเก็ตทั้งเกาะอย่างไร?",
@@ -110,8 +112,9 @@ export const localSeoContent: Record<string, LocalAreaContent> = {
       "Local SEO กะตะ คือการ optimize ให้ธุรกิจในโซนหาดกะตะ กะตะน้อย และถนนกะตะโผล่ Google Maps และ Search เมื่อลูกค้าค้นหา spa kata, restaurant kata หรือ hotel kata beach PhuketSEO แพ็ก Lite ฿5,900/เดือน",
     intro: [
       "Local SEO กะตะจาก PhuketSEO เน้นธุรกิจในโซนหาดกะตะ กะตะน้อย และถนนกะตะ — ย่านที่ผสม family tourist, สปา และร้านอาหารริมหาด ลูกค้าค้นหา spa kata phuket, thai massage kata หรือ restaurant kata beach บน Google ก่อนจอง",
-      "เราช่วย optimize Google Business Profile สร้าง landing ตาม keyword gap ในโซนกะตะ และเชื่อมกับ industry pages สำหรับสปาและร้านอาหาร",
+      "เราช่วย optimize Google Business Profile สร้าง landing ตาม keyword gap ในโซนกะตะ — รวมทัวร์ดำน้ำและจุดนัดพบกิจกรรมริมหาด",
     ],
+    relatedIndustries: [{ name: "SEO บริษัททัวร์ภูเก็ต", href: "/industries/seo-tours-phuket" }],
     faqs: [
       {
         q: "SEO กะตะต่างจากป่าตองอย่างไร?",

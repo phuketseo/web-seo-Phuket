@@ -56,6 +56,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       "/industries/seo-spa-phuket",
       "/industries/seo-hotels-phuket",
       "/industries/seo-real-estate-phuket",
+      "/industries/seo-tours-phuket",
     ],
     0.85
   );

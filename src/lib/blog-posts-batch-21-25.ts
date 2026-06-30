@@ -25,6 +25,7 @@ export const blogPostsBatch2125 = {
       "Klook Viator ภูเก็ต",
     ],
     relatedServices: [
+      { name: "SEO บริษัททัวร์ (Industry)", href: "/industries/seo-tours-phuket" },
       { name: "Content EN ภูเก็ต", href: "/blog/content-marketing-phuket-foreigners" },
       { name: "Google Business Profile", href: "/blog/google-my-business-phuket" },
       { name: "บริการ SEO ภูเก็ต", href: "/services/seo-phuket" },
