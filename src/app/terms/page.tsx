@@ -1,9 +1,11 @@
 ﻿import type { Metadata } from "next";
 import { LegalPageLayout } from "@/components/LegalPageLayout";
+import { siteConfig } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "ข้อกำหนดการใช้งาน",
   description: "ข้อกำหนดการใช้งานเว็บไซต์และบริการของ PhuketSEO",
+  alternates: { canonical: `${siteConfig.url}/terms` },
   robots: { index: false, follow: false },
 };
 

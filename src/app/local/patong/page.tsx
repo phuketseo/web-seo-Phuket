@@ -35,7 +35,7 @@ const serviceSchema = {
   },
   "description": "บริการ SEO สำหรับธุรกิจในป่าตอง ภูเก็ต เพื่อเพิ่มการมองเห็นและลูกค้าในพื้นที่",
   "name": "บริการ Local SEO ป่าตอง",
-  "url": "https://phuketseo.com/local/patong",
+  url: `${siteConfig.url}/local/patong`,
 };
 
 const faqSchemaJson = faqSchema(

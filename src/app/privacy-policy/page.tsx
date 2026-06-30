@@ -5,6 +5,7 @@ import { LegalPageLayout } from "@/components/LegalPageLayout";
 export const metadata: Metadata = {
   title: "นโยบายความเป็นส่วนตัว",
   description: "นโยบายความเป็นส่วนตัวของ PhuketSEO — วิธีที่เราเก็บรวบรวม ใช้ และปกป้องข้อมูลส่วนบุคคลของคุณ",
+  alternates: { canonical: `${siteConfig.url}/privacy-policy` },
   robots: { index: false, follow: false },
 };
 

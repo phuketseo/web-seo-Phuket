@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: "Phuket Visibility Stack™ — กรอบงาน SEO ภูเก็ต | PhuketSEO",
   description:
     "Phuket Visibility Stack คือกรอบงาน 3 ชั้นสำหรับธุรกิจในภูเก็ต — Local Visibility → Owned Asset → Acceleration วางลำดับ SEO ก่อนขยาย Ads",
-  alternates: { canonical: "https://phuketseo.com/methodology/phuket-visibility-stack" },
+  alternates: { canonical: `${siteConfig.url}/methodology/phuket-visibility-stack` },
 };
 
 const layers = [

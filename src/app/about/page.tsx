@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: "เกี่ยวกับเรา - PhuketSEO | SEO + เว็บไซต์ภูเก็ต",
   description:
     "PhuketSEO ทีม SEO + Web ในภูเก็ต โฟกัสธุรกิจไทยท้องถิ่น ส่ง SEO Audit ใน 7 วัน แพ็กเกจ Lite ฿5,900 / Pro ฿8,900 / Pro Max ฿15,000",
-  alternates: { canonical: "https://phuketseo.com/about" },
+  alternates: { canonical: `${siteConfig.url}/about` },
 };
 
 const deliveryTimeline = [

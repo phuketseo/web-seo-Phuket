@@ -11,18 +11,21 @@ import { BrandGradientDefs } from "@/components/BrandGradientDefs";
 import { HomeSection, HomeSectionHeader } from "@/components/home/HomeSection";
 import { PricingPlanGrid } from "@/components/pricing/PricingPlanGrid";
 import { GradientButton } from "@/components/GradientButton";
+import { siteConfig } from "@/lib/utils";
+
+const pricingPageUrl = `${siteConfig.url}/pricing`;
 
 export const metadata = {
   title: "ราคา SEO ภูเก็ต | Phuket Visibility Stack — Lite / Pro / Pro Max",
   description:
     "แพ็กเกจ SEO ภูเก็ต เริ่ม ฿5,900/เดือน (Lite) Pro ฿8,900 (เว็บ+SEO+AEO/GEO) Pro Max ฿15,000 (รวม Ads) ไม่มีสัญญาผูกมัด",
   alternates: {
-    canonical: "https://phuketseo.com/pricing",
+    canonical: pricingPageUrl,
   },
   openGraph: {
     title: "ราคา SEO ภูเก็ต | Phuket Visibility Stack",
     description: "แพ็กเกจ SEO Lite ฿5,900 / Pro ฿8,900 / Pro Max ฿15,000 ต่อเดือน",
-    url: "https://phuketseo.com/pricing",
+    url: pricingPageUrl,
     siteName: "PhuketSEO",
     locale: "th_TH",
     type: "website",
@@ -35,8 +38,8 @@ const jsonLd = {
     {
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "หน้าแรก", item: "https://phuketseo.com" },
-        { "@type": "ListItem", position: 2, name: "ราคาบริการ", item: "https://phuketseo.com/pricing" },
+        { "@type": "ListItem", position: 1, name: "หน้าแรก", item: siteConfig.url },
+        { "@type": "ListItem", position: 2, name: "ราคาบริการ", item: pricingPageUrl },
       ],
     },
     { "@id": businessEntityId },

@@ -10,7 +10,7 @@ import { siteEntityGraphSchema } from "@/lib/schema";
 import { defaultOgImage, siteConfig } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://phuketseo.com"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? siteConfig.url),
   title: {
     default: "PhuketSEO | รับทำ SEO ภูเก็ต ติดอันดับ Google ได้จริง",
     template: "%s | PhuketSEO",

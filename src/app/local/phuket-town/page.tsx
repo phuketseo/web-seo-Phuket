@@ -28,7 +28,7 @@ const serviceSchema = {
     "name": "ตัวเมืองภูเก็ต"
   },
   "description": "บริการ SEO สำหรับธุรกิจในตัวเมืองภูเก็ต เพื่อเพิ่มการมองเห็นและดึงดูดลูกค้าในพื้นที่",
-  "url": "https://phuketseo.com/local/phuket-town",
+  url: `${siteConfig.url}/local/phuket-town`,
   "name": "Local SEO ตัวเมืองภูเก็ต"
 };
 

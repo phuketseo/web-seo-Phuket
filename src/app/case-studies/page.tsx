@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: "ผลงานของเรา - PhuketSEO | กรณีศึกษา SEO + AI Search",
   description:
     "กรณีศึกษา SEO, เว็บ Next.js และ AEO/GEO จาก PhuketSEO — เริ่มจากเว็บ agency ของเราเอง",
-  alternates: { canonical: "https://phuketseo.com/case-studies" },
+  alternates: { canonical: `${siteConfig.url}/case-studies` },
 };
 
 export default function CaseStudiesPage() {
