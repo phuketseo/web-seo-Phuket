@@ -489,6 +489,54 @@ export const siteImages = {
       width: 3840,
       height: 2560,
     },
+    bangtaoHero: {
+      src: "/images/blog/blog-thumb-local-seo-bang-tao-clean.png",
+      alt: "Local SEO บางเทา 2026 — ลากูนา villa beach club fine dining โซนหาดบางเทา",
+      width: 3840,
+      height: 2560,
+    },
+    bangtaoMaps: {
+      src: "/images/blog/blog-inline-bang-tao-maps-clean.png",
+      alt: "Google Maps บางเทา — ลูกค้าค้นหาแล้วเลือกจากรายการบนแผนที่ ตรงคำค้น อยู่ใกล้ รีวิวดี",
+      width: 3840,
+      height: 2560,
+    },
+    bangtaoZones: {
+      src: "/images/blog/blog-inline-bang-tao-zones-clean.png",
+      alt: "เปรียบเทียบโซนภูเก็ต — ป่าตองชายหาด · กมลา condo ริมหาด · บางเทาลากูนา villa",
+      width: 3840,
+      height: 2560,
+    },
+    bangtaoKeywords: {
+      src: "/images/blog/blog-inline-bang-tao-keywords-clean.png",
+      alt: "คำค้นในบางเทา — villa bang tao restaurant laguna beach club condo bang tao",
+      width: 3840,
+      height: 2560,
+    },
+    rawaiHero: {
+      src: "/images/blog/blog-thumb-local-seo-rawai-clean.png",
+      alt: "Local SEO ราไวย์ 2026 — ร้านอาหารทะเล มารีน่า villa สปา โซนราไวย์ฉลอง",
+      width: 3840,
+      height: 2560,
+    },
+    rawaiMaps: {
+      src: "/images/blog/blog-inline-rawai-maps-clean.png",
+      alt: "Google Maps ราไวย์ — ลูกค้าค้นหาแล้วเลือกจากรายการบนแผนที่ ตรงคำค้น อยู่ใกล้ รีวิวดี",
+      width: 3840,
+      height: 2560,
+    },
+    rawaiZones: {
+      src: "/images/blog/blog-inline-rawai-zones-clean.png",
+      alt: "เปรียบเทียบโซนภูเก็ต — กะตะครอบครัวริมหาด · ตัวเมืองลูกค้าไทย · ราไวย์ทะเลมารีน่า villa",
+      width: 3840,
+      height: 2560,
+    },
+    rawaiKeywords: {
+      src: "/images/blog/blog-inline-rawai-keywords-clean.png",
+      alt: "คำค้นในราไวย์ — seafood rawai villa rawai phuket marina phuket cafe rawai",
+      width: 3840,
+      height: 2560,
+    },
   },
   team: {
     somchai: {
@@ -558,6 +606,8 @@ export const blogThumbnailBySlug: Record<string, SiteImage> = {
   "local-seo-kamala-phuket": siteImages.blog.kamalaHero,
   "local-seo-thalang-phuket": siteImages.blog.thalangHero,
   "local-seo-kathu-phuket": siteImages.blog.kathuHero,
+  "local-seo-bang-tao-phuket": siteImages.blog.bangtaoHero,
+  "local-seo-rawai-phuket": siteImages.blog.rawaiHero,
 };
 
 export function getBlogThumbnail(slug: string): SiteImage {
@@ -608,6 +658,14 @@ export const blogInlineImages: Record<string, SiteImage> = {
   kathuMaps: siteImages.blog.kathuMaps,
   kathuZones: siteImages.blog.kathuZones,
   kathuKeywords: siteImages.blog.kathuKeywords,
+  bangtaoHero: siteImages.blog.bangtaoHero,
+  bangtaoMaps: siteImages.blog.bangtaoMaps,
+  bangtaoZones: siteImages.blog.bangtaoZones,
+  bangtaoKeywords: siteImages.blog.bangtaoKeywords,
+  rawaiHero: siteImages.blog.rawaiHero,
+  rawaiMaps: siteImages.blog.rawaiMaps,
+  rawaiZones: siteImages.blog.rawaiZones,
+  rawaiKeywords: siteImages.blog.rawaiKeywords,
   serviceGoogleAds: siteImages.services.googleAds,
 };
 

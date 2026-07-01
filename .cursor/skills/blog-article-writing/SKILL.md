@@ -208,8 +208,8 @@ Post data ต้องมี: `dateISO`, `layout: "vercel"`, `author`, `tldr`, `
 |---|------------|
 | 1 | `local-seo-thalang-phuket` ✅ |
 | 2 | `local-seo-kathu-phuket` ✅ |
-| 3 | `local-seo-bang-tao-phuket` |
-| 4 | `local-seo-rawai-phuket` |
+| 3 | `local-seo-bang-tao-phuket` ✅ |
+| 4 | `local-seo-rawai-phuket` ✅ |
 | 5 | `google-business-profile-setup-phuket` |
 | 6 | `how-to-get-google-reviews-phuket` |
 | 7 | `phuket-hotel-online-marketing` |

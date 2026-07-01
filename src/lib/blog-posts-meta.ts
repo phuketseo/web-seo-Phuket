@@ -23,6 +23,22 @@ export const blogCategories = [
 
 export const blogPostsMeta: BlogPostMeta[] = [
   {
+    slug: "local-seo-rawai-phuket",
+    title: "Local SEO ราไวย์ 2026 — คู่มือทำให้ธุรกิจโผล่ Google Maps",
+    category: "Local SEO",
+    description:
+      "Local SEO ราไวย์ คืออะไร ทำไมสำคัญ และทำอย่างไรให้ธุรกิจในโซนราไวย์ ฉลอง และปลายใต้เกาะโผล่ Google Maps — อ่านง่าย ไม่ซับซ้อน",
+    thumbnail: getBlogThumbnail("local-seo-rawai-phuket"),
+  },
+  {
+    slug: "local-seo-bang-tao-phuket",
+    title: "Local SEO บางเทา 2026 — คู่มือทำให้ธุรกิจโผล่ Google Maps",
+    category: "Local SEO",
+    description:
+      "Local SEO บางเทา คืออะไร ทำไมสำคัญ และทำอย่างไรให้ธุรกิจในโซนลากูนา บางเทา และเชิงทะเลโผล่ Google Maps — อ่านง่าย ไม่ซับซ้อน",
+    thumbnail: getBlogThumbnail("local-seo-bang-tao-phuket"),
+  },
+  {
     slug: "local-seo-kathu-phuket",
     title: "Local SEO กะทู้ 2026 — คู่มือทำให้ธุรกิจโผล่ Google Maps",
     category: "Local SEO",
