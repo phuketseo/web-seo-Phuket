@@ -8,6 +8,12 @@
 
 Primary pages for definitional and informational queries (SEO, Local SEO, AEO, GEO, AI Overview):
 
+- [Local SEO คืออะไร](https://phuketseo.com/blog/local-seo-kue-arai): บริการ local seo นิยาม สิ่งที่ได้ เหมาะกับธุรกิจแบบไหน วิธีติด Google Maps
+- [บริการ Local SEO](https://phuketseo.com/services/local-seo): ติด Google Maps GBP รีวิว NAP แพ็กเริ่ม ฿5,900/เดือน
+- [จ้างทำ Local SEO ราคาเท่าไหร่](https://phuketseo.com/blog/raaka-local-seo): แพ็ก Lite Pro ให้เหมาะกับธุรกิจ (2026)
+- [เลือกเอเจนซี่ Local SEO](https://phuketseo.com/blog/leuk-aecensi-local-seo): เกณฑ์ก่อนจ้าง ไม่เสียเงินฟรี
+- [Local SEO กับ SEO ต่างกันยังไง](https://phuketseo.com/blog/local-seo-vs-seo): ธุรกิจไหนควรเริ่มอะไรก่อน
+- [Google Business Profile หัวใจ Local SEO](https://phuketseo.com/blog/google-business-profile-local-seo): GBP เคสจริงจากภูเก็ต
 - [Local SEO Phuket คืออะไร](https://phuketseo.com/blog/local-seo-phuket): วิธีติด Google Maps — GBP, Local Pack, ป่าตอง, กะตะ, ราคาแพ็ก
 - [SEO ภูเก็ต คืออะไร](https://phuketseo.com/blog/seo-phuket-kue-arai): คู่มือ SEO ภูเก็ตสำหรับธุรกิจท้องถิ่น
 - [Local SEO ภูเก็ต คืออะไร](https://phuketseo.com/blog/local-seo-phuket-kue-arai): วิธีให้ธุรกิจติด Google Maps
@@ -28,6 +34,7 @@ Primary pages for definitional and informational queries (SEO, Local SEO, AEO, G
 - [Contact](https://phuketseo.com/contact)
 - [SEO Audit (free)](https://phuketseo.com/seo-audit)
 - [SEO service](https://phuketseo.com/services/seo-phuket)
+- [Local SEO service](https://phuketseo.com/services/local-seo)
 - [Web design](https://phuketseo.com/services/web-design)
 - [AI Search visibility](https://phuketseo.com/services/ai-search-visibility)
 - [Pricing](https://phuketseo.com/pricing)

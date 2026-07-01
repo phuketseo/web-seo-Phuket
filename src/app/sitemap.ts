@@ -38,6 +38,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const servicePages = staticPaths(
     baseUrl,
     [
+      "/services/local-seo",
       "/services/seo-phuket",
       "/services/web-design",
       "/services/ai-search-visibility",

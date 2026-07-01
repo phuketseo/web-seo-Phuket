@@ -294,3 +294,44 @@ export const pricingServicesJsonLd = pricingPackages.map((pkg) => ({
 
 /** Provider node สำหรับหน้า Local SEO — อ้างอิง entity เดียวกับ homepage */
 export const localServiceProvider = { "@id": businessEntityId };
+
+/** พื้นที่ให้บริการระดับประเทศ — ใช้กับบทความบริการ Local SEO ทั่วไทย */
+export const areaServedThailand = {
+  "@type": "Country",
+  name: "Thailand",
+};
+
+/** Service schema สำหรับ pillar บริการ Local SEO บนบล็อก */
+export function buildBlogLocalSeoServiceSchema(params: {
+  slug: string;
+  name: string;
+  description: string;
+}) {
+  const pageUrl = `${siteConfig.url}/blog/${params.slug}`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${pageUrl}#service`,
+    name: params.name,
+    description: params.description,
+    provider: { "@id": businessEntityId },
+    areaServed: areaServedThailand,
+    serviceType: "Local SEO",
+    url: pageUrl,
+    offers: {
+      "@type": "Offer",
+      price: "5900",
+      priceCurrency: "THB",
+      priceSpecification: {
+        "@type": "UnitPriceSpecification",
+        price: "5900",
+        priceCurrency: "THB",
+        unitText: "MONTH",
+      },
+      url: `${siteConfig.url}/packages/seo-lite`,
+    },
+  };
+}
+
+/** Slugs ที่ใส่ Service schema เพิ่มจาก Article */
+export const blogLocalSeoServiceSchemaSlugs = new Set(["local-seo-kue-arai"]);

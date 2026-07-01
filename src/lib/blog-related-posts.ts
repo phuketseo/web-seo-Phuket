@@ -28,6 +28,39 @@ const blogRelatedSlugs: Record<string, string[]> = {
     "near-me-seo-phuket",
     "nap-local-seo-phuket",
   ],
+
+  // Local SEO ทั่วประเทศ — pillar + cluster
+  "local-seo-kue-arai": [
+    "raaka-local-seo",
+    "leuk-aecensi-local-seo",
+    "local-seo-vs-seo",
+    "google-business-profile-local-seo",
+  ],
+  "raaka-local-seo": [
+    "local-seo-kue-arai",
+    "leuk-aecensi-local-seo",
+    "local-seo-vs-seo",
+    "google-business-profile-local-seo",
+  ],
+  "leuk-aecensi-local-seo": [
+    "local-seo-kue-arai",
+    "raaka-local-seo",
+    "local-seo-vs-seo",
+    "google-business-profile-local-seo",
+  ],
+  "local-seo-vs-seo": [
+    "local-seo-kue-arai",
+    "google-business-profile-local-seo",
+    "raaka-local-seo",
+    "seo-phuket-kue-arai",
+  ],
+  "google-business-profile-local-seo": [
+    "local-seo-kue-arai",
+    "google-my-business-phuket",
+    "google-reviews-phuket",
+    "raaka-local-seo",
+  ],
+
   "raaka-seo-phuket": [
     "rab-tam-seo-phuket",
     "seo-phuket-kue-arai",

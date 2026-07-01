@@ -1,4 +1,5 @@
 export const primaryServices = [
+  { name: "บริการ Local SEO", href: "/services/local-seo" },
   { name: "บริการ SEO ภูเก็ต", href: "/services/seo-phuket" },
   { name: "ทำเว็บไซต์ + SEO", href: "/services/web-design" },
   { name: "AI Search (AEO/GEO)", href: "/services/ai-search-visibility" },

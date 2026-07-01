@@ -3,8 +3,10 @@ import type { Metadata } from "next";
 import { extractHeadings, stripMarkdownSections } from "@/lib/blog-content-utils";
 import {
   buildArticleSchema,
+  buildBlogLocalSeoServiceSchema,
   buildBreadcrumb,
   buildRelatedArticlesItemList,
+  blogLocalSeoServiceSchemaSlugs,
   plainTextForSchema,
 } from "@/lib/schema";
 import { siteConfig } from "@/lib/utils";
@@ -19,6 +21,7 @@ import { blogPostsBatch33 } from "@/lib/blog-posts-batch-33";
 import { blogPostsBatch34 } from "@/lib/blog-posts-batch-34";
 import { blogPostsBatch35 } from "@/lib/blog-posts-batch-35";
 import { blogPostsBatch36 } from "@/lib/blog-posts-batch-36";
+import { blogPostsBatch37 } from "@/lib/blog-posts-batch-37";
 import { getRelatedBlogPosts } from "@/lib/blog-related-posts";
 
 const defaultAuthor = { name: "ทีม PhuketSEO", role: "SEO Consultant · ภูเก็ต" };
@@ -51,6 +54,7 @@ const blogPosts: Record<
   ...blogPostsBatch34,
   ...blogPostsBatch35,
   ...blogPostsBatch36,
+  ...blogPostsBatch37,
   "seo-for-phuket-spas": {
     title: "SEO สปาภูเก็ต: ดึง Direct Booking ไม่พึ่ง OTA",
     description:
@@ -1340,10 +1344,21 @@ export default async function BlogPostPage({
       }
     : null;
 
+  const serviceSchema = blogLocalSeoServiceSchemaSlugs.has(slug)
+    ? buildBlogLocalSeoServiceSchema({
+        slug,
+        name: "บริการ Local SEO",
+        description: post.description,
+      })
+    : null;
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      {serviceSchema && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      )}
       {relatedArticlesSchema && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(relatedArticlesSchema) }} />
       )}

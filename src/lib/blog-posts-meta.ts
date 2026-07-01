@@ -23,6 +23,46 @@ export const blogCategories = [
 
 export const blogPostsMeta: BlogPostMeta[] = [
   {
+    slug: "google-business-profile-local-seo",
+    title: "Google Business Profile คืออะไร? หัวใจของบริการ Local SEO",
+    category: "Local SEO",
+    description:
+      "Google Business Profile คือ listing บน Google Maps ที่ทุกบริการ Local SEO เริ่มจากที่นี่ — ตั้งค่า รีวิว คำผิดที่ธุรกิจมักทำ พร้อมเคสจริงจากภูเก็ต",
+    thumbnail: getBlogThumbnail("google-business-profile-local-seo"),
+  },
+  {
+    slug: "local-seo-vs-seo",
+    title: "Local SEO กับ SEO ต่างกันยังไง? ธุรกิจไหนควรเริ่มอะไรก่อน",
+    category: "Local SEO",
+    description:
+      "Local SEO กับ SEO ต่างกันตรงไหน — เมื่อไหร่ควรเน้น Google Maps ก่อน เมื่อไหร่ต้องทำเว็บ และธุรกิจแบบไหนควรเริ่มจากบริการ local seo",
+    thumbnail: getBlogThumbnail("local-seo-vs-seo"),
+  },
+  {
+    slug: "leuk-aecensi-local-seo",
+    title: "เลือกเอเจนซี่ Local SEO ยังไงไม่ให้เสียเงินฟรี",
+    category: "Local SEO",
+    description:
+      "เลือกเอเจนซี่ Local SEO ควรดูอะไรก่อนจ้าง — red flag deliverable KPI และคำถามก่อนเซ็น สำหรับธุรกิจที่หาบริการ local seo ในประเทศไทย",
+    thumbnail: getBlogThumbnail("leuk-aecensi-local-seo"),
+  },
+  {
+    slug: "raaka-local-seo",
+    title: "จ้างทำ Local SEO ราคาเท่าไหร่ ให้เหมาะกับธุรกิจ (2026)",
+    category: "Local SEO",
+    description:
+      "จ้างทำ Local SEO ราคาเท่าไหร่ แพ็ก Lite Pro ต่างกันยังไง จ่ายเท่าไหร่ถึงคุ้ม — เปรียบเทียบขอบเขตงาน GBP Maps รีวิว สำหรับธุรกิจในประเทศไทย",
+    thumbnail: getBlogThumbnail("raaka-local-seo"),
+  },
+  {
+    slug: "local-seo-kue-arai",
+    title: "Local SEO คืออะไร? วิธีให้ธุรกิจติด Google Maps",
+    category: "Local SEO",
+    description:
+      "Local SEO คืออะไร บริการ local seo ได้อะไร เหมาะกับธุรกิจแบบไหน และทำอย่างไรให้ติด Google Maps — คู่มือสำหรับธุรกิจในประเทศไทย",
+    thumbnail: getBlogThumbnail("local-seo-kue-arai"),
+  },
+  {
     slug: "local-seo-rawai-phuket",
     title: "Local SEO ราไวย์ 2026 — คู่มือทำให้ธุรกิจโผล่ Google Maps",
     category: "Local SEO",
