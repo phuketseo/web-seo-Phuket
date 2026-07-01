@@ -23,6 +23,14 @@ export const blogCategories = [
 
 export const blogPostsMeta: BlogPostMeta[] = [
   {
+    slug: "local-seo-kathu-phuket",
+    title: "Local SEO กะทู้ 2026 — คู่มือทำให้ธุรกิจโผล่ Google Maps",
+    category: "Local SEO",
+    description:
+      "Local SEO กะทู้ คืออะไร ทำไมสำคัญ และทำอย่างไรให้ธุรกิจในโซนกะทู้ ห้างเซ็นทรัลภูเก็ต และสนามกอล์ฟโผล่ Google Maps — อ่านง่าย ไม่ซับซ้อน",
+    thumbnail: getBlogThumbnail("local-seo-kathu-phuket"),
+  },
+  {
     slug: "local-seo-thalang-phuket",
     title: "Local SEO ถลาง 2026 — โซนสนามบิน หาดไม้ขาว และหาดในทอน",
     category: "Local SEO",
@@ -40,10 +48,10 @@ export const blogPostsMeta: BlogPostMeta[] = [
   },
   {
     slug: "rab-tam-seo-phuket",
-    title: "รับทำ SEO ภูเก็ต 2026 — เลือกจ้างอย่างไรไม่เสียเงินฟรี",
+    title: "รับทำ SEO ภูเก็ต 2026 — เลือกเอเจนซี่อย่างไรก่อนจ้าง?",
     category: "SEO ภูเก็ต",
     description:
-      "รับทำ SEO ภูเก็ต — สิ่งที่ควรเช็กก่อนจ้างเอเจนซี่ Local SEO ในภูเก็ต สัญญาณเตือน ลำดับงานที่ถูก และคำถามที่ควรถามก่อนลงนาม",
+      "รับทำ SEO ภูเก็ต — เปรียบเทียบสิ่งที่ควรดูก่อนจ้าง: ความเชี่ยวชาญโซน รูปแบบราคา ผลลัพธ์ที่วัดได้ และข้อควรระวังในตลาดท่องเที่ยวภูเก็ต ขอคำปรึกษาฟรี",
     thumbnail: getBlogThumbnail("rab-tam-seo-phuket"),
   },
   {

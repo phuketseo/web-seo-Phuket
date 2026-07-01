@@ -15,11 +15,34 @@ description: >-
 - `.cursorrules` — กฎหลัก SEO/AEO/GEO content editor (โทน โครงสร้าง FAQ สิ่งที่ห้าม)
 - `.cursor/skills/blog-rich-results-schema/SKILL.md` — schema / Rich Results
 
-อ้างอิงบทความที่ผ่านแล้ว: `local-seo-thalang-phuket`, `local-seo-kamala-phuket`
+อ้างอิงบทความที่ผ่านแล้ว: **`local-seo-kathu-phuket`** (มาตรฐานหลัก — หัวข้อ + สำนวน Semrush-style), `local-seo-thalang-phuket`, `local-seo-kamala-phuket`
 
 ---
 
-## โทนและภาษา
+## โทนและภาษา (มาตรฐาน `local-seo-kathu-phuket`)
+
+แบบอย่าง: `/blog/local-seo-kathu-phuket` — อ่านง่ายเหมือนคู่มือ Semrush แต่เป็นภาษาไทย + โซนภูเก็ต
+
+### หัวข้อ (H2) ที่ใช้
+
+เรียงตามลำดับนี้เมื่อเขียน Local SEO / คู่มือทั่วไป:
+
+1. **`[หัวข้อ] คืออะไร`** — ย่อหน้าเดียวตอบครบ (Maps + Search + โซน + GBP)
+2. **`ทำไม [หัวข้อ] สำคัญ`** — อธิบายว่าลูกค้าค้นหาก่อนตัดสินใจ ไม่โผล่ = เสียลูกค้า
+3. **`Google จัดอันดับธุรกิจท้องถิ่นอย่างไร`** — ตาราง 3 แถว ภาษาง่าย (ตรงคำค้น / อยู่ใกล้ / น่าเชื่อถือ) **ห้าม** ใช้ Relevance, Distance, Prominence
+4. **`ทำอย่างไรให้ธุรกิจใน[โซน]โผล่ Google Maps`** — ขั้น **1. 2. 3. 4.** ชื่อขั้นชัด ประโยคสั้น
+5. **`ทำไม[โซน]ต้องทำแยกจาก[โซนอื่น]`** — bullet เปรียบเทียบ 2–3 โซน
+6. **`ลูกค้าค้นหาคำว่าอะไรในโซน[ชื่อ]`** — แยก `###` ตามประเภทธุรกิจ + bullet คำค้น
+7. **`ข้อมูลเชิงลึก — สิ่งที่ธุรกิจ[โซน]มักพลาด`** — bullet 3–4 ข้อ
+8. **`สรุป`** — 1 ประโยค + ลิงก์ local page / บริการ
+
+### สำนวนที่ใช้
+
+- ประโยคสั้น ตรงประเด็น — **ไม่ฟุ่มเฟือย ไม่ agency-speak**
+- แทนศัพท์เทคนิค: “รายการบนแผนที่” แทน Local Pack · “ตรงกับคำค้น” แทน relevance/intent
+- อธิบายเหตุผลก่อนวิธีทำ — อ่านแล้วเข้าใจ *ทำไม* ก่อน *ทำอย่างไร*
+- รูป inline ต้อง **ตรงหัวข้อทันที** (Maps หลังอธิบายการจัดอันดับ · เปรียบเทียบโซนหลัง “ทำไมแยก” · คำค้นหลัง “ลูกค้าค้นหาอะไร”)
+- `tldrTitle`: **"คำตอบสั้นๆ"**
 
 ### ทำ (Google AI + คนไทยอ่านง่าย)
 
@@ -46,14 +69,33 @@ description: >-
 
 ---
 
-## โครงสร้างเนื้อหา (template)
+## โครงสร้างเนื้อหา (template — ตาม `local-seo-kathu-phuket`)
 
 ```markdown
 ## [หัวข้อ] คืออะไร
 [ย่อหน้าตอบ — Maps + Search + โซนภูเก็ต + GBP เป็นหัวใจ]
 
 :::image [heroKey]
-[caption สั้น ภาษาไทย]
+[caption สั้น ภาษาไทย ตรงโซน/ธุรกิจ]
+:::
+
+---
+
+## ทำไม [หัวข้อ] สำคัญ
+[2–3 ประโยค — ลูกค้าค้นหาก่อนตัดสินใจ ไม่โผล่ = ไปคู่แข่ง]
+
+---
+
+## Google จัดอันดับธุรกิจท้องถิ่นอย่างไร
+
+| สิ่งที่ Google ดู | ความหมายง่ายๆ |
+|---|---|
+| **ตรงกับที่ค้นหาไหม** | ... |
+| **อยู่ใกล้ลูกค้าแค่ไหน** | ... |
+| **น่าเชื่อถือแค่ไหน** | ... |
+
+:::image [mapsKey]
+[caption Maps / รายการบนแผนที่]
 :::
 
 ---
@@ -121,7 +163,7 @@ description: >-
 
 - **Smooth Purple** — อ่าน `src/lib/image-style-smooth-purple.ts` → `buildSmoothPurplePrompt()`
 - สร้างใหม่ทุกบทความ — **ห้าม reuse รูปจากบทอื่น**
-- Upscale **3840×2560** ด้วย `sharp` (Lanczos3 + sharpen) — ดู `scripts/upscale-kamala-images.mjs` หรือ `scripts/upscale-thalang-images.mjs`
+- Upscale **3840×2560** ด้วย `sharp` (Lanczos3 + sharpen) — ดู `scripts/upscale-kathu-images.mjs`, `upscale-kamala-images.mjs` หรือ `upscale-thalang-images.mjs`
 - ตั้ง `width`/`height` ใน `src/lib/images.ts` ให้ตรงไฟล์จริง
 - ชื่อไฟล์: `public/images/blog/blog-thumb-{slug-short}-clean.png`, `blog-inline-{topic}-clean.png`
 - รัน `npm run check:images` ก่อน commit
@@ -165,7 +207,7 @@ Post data ต้องมี: `dateISO`, `layout: "vercel"`, `author`, `tldr`, `
 | # | slug (แผน) |
 |---|------------|
 | 1 | `local-seo-thalang-phuket` ✅ |
-| 2 | `local-seo-kathu-phuket` |
+| 2 | `local-seo-kathu-phuket` ✅ |
 | 3 | `local-seo-bang-tao-phuket` |
 | 4 | `local-seo-rawai-phuket` |
 | 5 | `google-business-profile-setup-phuket` |

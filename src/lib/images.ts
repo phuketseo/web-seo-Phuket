@@ -465,6 +465,30 @@ export const siteImages = {
       width: 3840,
       height: 2560,
     },
+    kathuHero: {
+      src: "/images/blog/blog-thumb-local-seo-kathu-clean.png",
+      alt: "Local SEO กะทู้ 2026 — สนามกอล์ฟ เซ็นทรัลภูเก็ต รีสอร์ท สปา โซนกะทู้ภูเก็ต",
+      width: 3840,
+      height: 2560,
+    },
+    kathuMaps: {
+      src: "/images/blog/blog-inline-kathu-maps-clean.png",
+      alt: "Google Maps กะทู้ — ลูกค้าค้นหาแล้วเลือกจากรายการบนแผนที่ ตรงกับคำค้น อยู่ใกล้ รีวิวดี",
+      width: 3840,
+      height: 2560,
+    },
+    kathuZones: {
+      src: "/images/blog/blog-inline-kathu-zones-clean.png",
+      alt: "เปรียบเทียบโซนภูเก็ต — ป่าตองชายหาด · ตัวเมืองลูกค้าไทย · กะทู้กอล์ฟเซ็นทรัลรีสอร์ท",
+      width: 3840,
+      height: 2560,
+    },
+    kathuKeywords: {
+      src: "/images/blog/blog-inline-kathu-keywords-clean.png",
+      alt: "คำค้นในกะทู้ — สนามกอล์ฟภูเก็ต รีสอร์ทกะทู้ สปากะทู้ ร้านอาหารใกล้เซ็นทรัลภูเก็ต",
+      width: 3840,
+      height: 2560,
+    },
   },
   team: {
     somchai: {
@@ -533,6 +557,7 @@ export const blogThumbnailBySlug: Record<string, SiteImage> = {
   "google-search-console-phuket": siteImages.blog.gscPhuket,
   "local-seo-kamala-phuket": siteImages.blog.kamalaHero,
   "local-seo-thalang-phuket": siteImages.blog.thalangHero,
+  "local-seo-kathu-phuket": siteImages.blog.kathuHero,
 };
 
 export function getBlogThumbnail(slug: string): SiteImage {
@@ -579,6 +604,10 @@ export const blogInlineImages: Record<string, SiteImage> = {
   thalangAirportPhoto: siteImages.blog.thalangAirportPhoto,
   thalangZones: siteImages.blog.thalangZones,
   thalangMaps: siteImages.blog.thalangMaps,
+  kathuHero: siteImages.blog.kathuHero,
+  kathuMaps: siteImages.blog.kathuMaps,
+  kathuZones: siteImages.blog.kathuZones,
+  kathuKeywords: siteImages.blog.kathuKeywords,
   serviceGoogleAds: siteImages.services.googleAds,
 };
 

@@ -92,6 +92,12 @@ const blogRelatedSlugs: Record<string, string[]> = {
     "local-seo-patong-phuket",
     "google-my-business-phuket",
   ],
+  "local-seo-kathu-phuket": [
+    "local-seo-kata-phuket",
+    "local-seo-patong-phuket",
+    "google-my-business-phuket",
+    "local-seo-phuket-kue-arai",
+  ],
   "local-seo-thalang-phuket": [
     "seo-real-estate-phuket",
     "local-seo-kamala-phuket",
