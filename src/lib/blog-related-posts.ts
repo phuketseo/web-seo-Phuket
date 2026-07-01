@@ -29,8 +29,41 @@ const blogRelatedSlugs: Record<string, string[]> = {
     "nap-local-seo-phuket",
   ],
 
+  // Local SEO ร้านค้า — vertical pillar + cluster
+  "tam-local-seo-rang-kha": [
+    "raaka-local-seo-rang-kha",
+    "gbp-rang-kha-local-seo",
+    "kham-kha-local-seo-rang-kha",
+    "local-seo-rang-kha-mistakes",
+  ],
+  "raaka-local-seo-rang-kha": [
+    "tam-local-seo-rang-kha",
+    "gbp-rang-kha-local-seo",
+    "kham-kha-local-seo-rang-kha",
+    "local-seo-rang-kha-mistakes",
+  ],
+  "gbp-rang-kha-local-seo": [
+    "tam-local-seo-rang-kha",
+    "google-business-profile-local-seo",
+    "kham-kha-local-seo-rang-kha",
+    "raaka-local-seo-rang-kha",
+  ],
+  "kham-kha-local-seo-rang-kha": [
+    "tam-local-seo-rang-kha",
+    "gbp-rang-kha-local-seo",
+    "near-me-seo-phuket",
+    "local-seo-rang-kha-mistakes",
+  ],
+  "local-seo-rang-kha-mistakes": [
+    "tam-local-seo-rang-kha",
+    "gbp-rang-kha-local-seo",
+    "leuk-aecensi-local-seo",
+    "raaka-local-seo-rang-kha",
+  ],
+
   // Local SEO ทั่วประเทศ — pillar + cluster
   "local-seo-kue-arai": [
+    "tam-local-seo-rang-kha",
     "raaka-local-seo",
     "leuk-aecensi-local-seo",
     "local-seo-vs-seo",

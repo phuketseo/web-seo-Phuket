@@ -23,6 +23,46 @@ export const blogCategories = [
 
 export const blogPostsMeta: BlogPostMeta[] = [
   {
+    slug: "local-seo-rang-kha-mistakes",
+    title: "ข้อผิดพลาด Local SEO ร้านค้า ที่ทำให้ไม่ติด Google Maps",
+    category: "Local SEO",
+    description:
+      "ข้อผิดพลาด Local SEO ร้านค้าที่มักเจอ — หมวด GBP ผิด ไม่มีรูปสินค้า NAP ไม่ตรง รีวิวน้อย และทำ local seo ร้านค้าแล้วลืมดูแล",
+    thumbnail: getBlogThumbnail("local-seo-rang-kha-mistakes"),
+  },
+  {
+    slug: "kham-kha-local-seo-rang-kha",
+    title: "ลูกค้าค้นหาร้านค้าด้วยคำว่าอะไร? คำค้น Local SEO ร้านค้า",
+    category: "Local SEO",
+    description:
+      "ลูกค้าค้นหาร้านค้าด้วยคำว่าอะไร — คำค้น near me ร้านขายของ ร้านเสื้อผ้า ร้านมือถือ ตามย่าน สำหรับทำ local seo ร้านค้า",
+    thumbnail: getBlogThumbnail("kham-kha-local-seo-rang-kha"),
+  },
+  {
+    slug: "gbp-rang-kha-local-seo",
+    title: "Google Business Profile สำหรับร้านค้า — ตั้งค่ายังไงให้ติด Maps",
+    category: "Local SEO",
+    description:
+      "Google Business Profile สำหรับร้านค้า ตั้งค่ายังไง หมวดหมู่ รูปสินค้า รีวิว และข้อผิดพลาดที่ร้านขายของ ร้านเสื้อผ้า มักทำ",
+    thumbnail: getBlogThumbnail("gbp-rang-kha-local-seo"),
+  },
+  {
+    slug: "raaka-local-seo-rang-kha",
+    title: "จ้างทำ Local SEO ร้านค้า ราคาเท่าไหร่ ให้เหมาะกับร้าน (2026)",
+    category: "Local SEO",
+    description:
+      "จ้างทำ Local SEO ร้านค้า ราคาเท่าไหร่ แพ็ก Lite Pro ต่างกันยังไง ร้านขายของ ร้านเสื้อผ้า ควรเลือกแพ็กไหน",
+    thumbnail: getBlogThumbnail("raaka-local-seo-rang-kha"),
+  },
+  {
+    slug: "tam-local-seo-rang-kha",
+    title: "ทำ Local SEO ร้านค้าอย่างไรให้ติด Google Maps",
+    category: "Local SEO",
+    description:
+      "ทำ Local SEO ร้านค้าอย่างไรให้ลูกค้าในโซนเจอบน Google Maps — ขั้นตอน GBP รีวิว คำค้น near me สำหรับร้านขายของ ร้านเสื้อผ้า SME",
+    thumbnail: getBlogThumbnail("tam-local-seo-rang-kha"),
+  },
+  {
     slug: "google-business-profile-local-seo",
     title: "Google Business Profile คืออะไร? หัวใจของบริการ Local SEO",
     category: "Local SEO",
