@@ -271,10 +271,16 @@ const blogRelatedSlugs: Record<string, string[]> = {
     "tiktok-marketing-phuket-services",
   ],
   "seo-for-phuket-spas": [
+    "kan-marketing-ran-nuad-phaen-thai",
     "local-seo-kata-phuket",
     "google-reviews-phuket",
     "direct-booking-hotel-phuket",
-    "content-marketing-phuket-foreigners",
+  ],
+  "kan-marketing-ran-nuad-phaen-thai": [
+    "seo-for-phuket-spas",
+    "google-reviews-phuket",
+    "google-my-business-phuket",
+    "near-me-seo-phuket",
   ],
   "seo-clinic-phuket": [
     "local-seo-phuket-town",

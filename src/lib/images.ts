@@ -783,6 +783,30 @@ export const siteImages = {
       width: 3840,
       height: 2560,
     },
+    massageMarketingHero: {
+      src: "/images/blog/blog-thumb-kan-marketing-ran-nuad-phaen-thai-clean.png",
+      alt: "การตลาดร้านนวดแผนไทย — Google Maps รีวิว LINE โปรโมชัน",
+      width: 3840,
+      height: 2560,
+    },
+    massageMarketingChannels: {
+      src: "/images/blog/blog-inline-kan-marketing-nuad-channels-clean.png",
+      alt: "การตลาดร้านนวดแผนไทย — แหล่งลูกค้าและช่องทางตัดสินใจจอง",
+      width: 3840,
+      height: 2560,
+    },
+    massageMarketingReviews: {
+      src: "/images/blog/blog-inline-kan-marketing-nuad-reviews-clean.png",
+      alt: "การตลาดร้านนวดแผนไทย — รีวิว Google Maps และความน่าเชื่อถือ",
+      width: 3840,
+      height: 2560,
+    },
+    massageMarketingSteps: {
+      src: "/images/blog/blog-inline-kan-marketing-nuad-steps-clean.png",
+      alt: "ลำดับการตลาดร้านนวดแผนไทย 7 ขั้น — GBP รีวิว LINE",
+      width: 3840,
+      height: 2560,
+    },
   },
   team: {
     somchai: {
@@ -864,6 +888,7 @@ export const blogThumbnailBySlug: Record<string, SiteImage> = {
   "gbp-rang-kha-local-seo": siteImages.blog.gbpRetailHero,
   "kham-kha-local-seo-rang-kha": siteImages.blog.retailKwHero,
   "local-seo-rang-kha-mistakes": siteImages.blog.retailMistakesHero,
+  "kan-marketing-ran-nuad-phaen-thai": siteImages.blog.massageMarketingHero,
 };
 
 export function getBlogThumbnail(slug: string): SiteImage {
@@ -962,6 +987,9 @@ export const blogInlineImages: Record<string, SiteImage> = {
   retailMistakesNap: siteImages.blog.retailMistakesNap,
   retailMistakesCompare: siteImages.blog.retailMistakesCompare,
   retailMistakesFix: siteImages.blog.retailMistakesFix,
+  massageMarketingChannels: siteImages.blog.massageMarketingChannels,
+  massageMarketingReviews: siteImages.blog.massageMarketingReviews,
+  massageMarketingSteps: siteImages.blog.massageMarketingSteps,
   serviceGoogleAds: siteImages.services.googleAds,
 };
 

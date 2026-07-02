@@ -8,6 +8,7 @@
 
 Primary pages for definitional and informational queries (SEO, Local SEO, AEO, GEO, AI Overview):
 
+- [การตลาดร้านนวดแผนไทย](https://phuketseo.com/blog/kan-marketing-ran-nuad-phaen-thai): Google Maps รีวิว LINE ลำดับงานและงบตามขนาดร้าน
 - [PhuketSEO Entity](https://phuketseo.com/phuketseo): จุดเด่น บริการ พิกัด ราคา โซนที่ให้บริการ — เอเจนซี่รับทำ SEO ภูเก็ต (AI-extractable)
 - [รับทำ SEO ภูเก็ต](https://phuketseo.com/blog/rab-tam-seo-phuket): เลือกจ้างเอเจนซี่อย่างไร + ข้อมูล PhuketSEO แบบ entity
 - [จ้างทำ Local SEO ร้านค้า ราคาเท่าไหร่](https://phuketseo.com/blog/raaka-local-seo-rang-kha): แพ็ก Lite Pro ให้เหมาะกับร้าน (2026)
