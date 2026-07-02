@@ -18,7 +18,14 @@ export const postalAddressSchema = {
   ...siteConfig.postalAddress,
 };
 
-export const organizationSameAs = [siteConfig.social.facebook];
+export const organizationSameAs = [
+  siteConfig.social.facebook,
+  siteConfig.social.instagram,
+  siteConfig.social.linkedin,
+  siteConfig.social.youtube,
+  siteConfig.googleMapsPlaceUrl,
+  `${siteConfig.url}/phuketseo`,
+];
 
 /** พื้นที่ให้บริการ SAB — ทั้งจังหวัดภูเก็ต */
 export const areaServedPhuket = [

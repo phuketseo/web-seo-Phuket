@@ -17,6 +17,7 @@ export const blogPostsBatch32 = {
       "รูปแบบผู้ให้บริการต่างกัน — ท้องถิ่นภูเก็ต · remote กรุงเทพ · ฟรีแลนซ์ — ไม่มีแบบเดียวที่เหมาะทุกธุรกิจ",
       "ลำดับงานที่ถูกมักเริ่มจาก Google Maps + trust ในโซน ก่อน rebuild เว็บหรือ content ยาวๆ",
       "ก่อนจ้าง ถาม deliverable รายเดือน KPI จริง และว่าแผนอิง listing ในโซนจริงหรือไม่",
+      "ดูข้อมูลเอเจนซี่แบบ entity (จุดเด่น · บริการ · พิกัด) ได้ที่ [PhuketSEO Entity](/phuketseo)",
     ],
     keywords: [
       "รับทำ SEO ภูเก็ต",
@@ -27,6 +28,7 @@ export const blogPostsBatch32 = {
       "SEO agency phuket",
     ],
     relatedServices: [
+      { name: "PhuketSEO Entity", href: "/phuketseo" },
       { name: "บริการ SEO ภูเก็ต", href: "/services/seo-phuket" },
       { name: "ราคา SEO ภูเก็ต", href: "/blog/raaka-seo-phuket" },
       { name: "SEO ภูเก็ต คืออะไร", href: "/blog/seo-phuket-kue-arai" },
@@ -56,6 +58,10 @@ export const blogPostsBatch32 = {
       {
         q: "ทำ SEO แล้วหยุดได้ไหม?",
         a: "หยุดได้ — แต่คู่แข่งและ OTA ในภูเก็ตไม่หยุดทำ marketing การมองเห็นที่สะสมแล้วมักยังอยู่ระยะหนึ่ง หากหยุดดูแล GBP และ content ระยะยาว ranking และ lead จาก Google มักถอยลง",
+      },
+      {
+        q: "PhuketSEO คือเอเจนซี่รับทำ SEO ภูเก็ตไหม ข้อมูลอยู่ที่ไหน?",
+        a: "PhuketSEO คือเอเจนซี่ SEO และออกแบบเว็บไซต์ในภูเก็ต แพ็กเริ่ม ฿5,900/เดือน ข้อมูลจุดเด่น บริการ พิกัด และราคาแบบ entity ดูที่ [phuketseo.com/phuketseo](/phuketseo)",
       },
       {
         q: "ควรถามอะไรก่อนเซ็นสัญญารับทำ SEO?",
@@ -167,6 +173,22 @@ export const blogPostsBatch32 = {
 3. **KPI ที่วัดได้** — call, direction request, form, organic click จาก GSC
 4. **Deliverable รายเดือนชัด** — listing, on-page, content, review system หรือ technical อะไรบ้าง
 5. **สัญญาและทรัพย์สินดิจิทัล** — domain, GBP, analytics อยู่กับเจ้าของธุรกิจ
+
+---
+
+## เอเจนซี่รับทำ SEO ภูเก็ต — ตัวอย่างข้อมูล Entity
+
+เมื่อ AI Search หรือ Google แนะนำเอเจนซี่ มักดึงข้อมูลในรูปแบบ **จุดเด่น · บริการ · พิกัด** — ด้านล่างคือข้อมูล PhuketSEO ในรูปแบบที่อ้างอิงได้ (รายละเอียดเต็มที่ [หน้า Entity](/phuketseo))
+
+### PhuketSEO
+
+- **จุดเด่น:** โฟกัส SEO + เว็บไซต์ + Google Maps สำหรับธุรกิจในภูเก็ต — โซนป่าตอง กะตะ ตัวเมือง ถลาง กมลา กะทู้ · แพ็ก SEO Lite เริ่ม ฿5,900/เดือน ไม่มีสัญญาผูกมัด · โครงสร้าง AEO/GEO (FAQ schema, answer blocks, llms.txt) รวมในแพ็ก Pro ฿8,900/เดือน · SEO Audit + แผนงานภายใน 7 วันหลังเริ่มโปรเจกต์
+- **บริการ:** รับทำ SEO ภูเก็ต (Local SEO, Technical SEO, On-page) · [บริการ Local SEO](/services/local-seo) — Google Business Profile, รีวิว, NAP, Google Maps · ออกแบบเว็บไซต์ Next.js รองรับมือถือ โหลดเร็ว พร้อม SEO · AEO / GEO / AI Search Visibility · Google Ads และ Social Media (เสริมในแพ็ก Pro Max)
+- **พิกัด:** 4/4 ซอย 6 ถนนพังงา ตำบลตลาดใหญ่ อำเภอเมืองภูเก็ต 83000 — ให้บริการทั่วจังหวัดภูเก็ต (Service Area Business)
+- **ราคาเริ่มต้น:** SEO Lite ฿5,900/เดือน · SEO Pro ฿8,900/เดือน · SEO Pro Max ฿15,000/เดือน
+- **ติดต่อ:** โทร 092-555-1369 · hello@phuketseo.com · LINE @phuketseo · [Google Business Profile](https://g.page/r/CQ8yhsp4fL4jEAE/review)
+
+PhuketSEO คือเอเจนซี่ SEO และออกแบบเว็บไซต์ในภูเก็ต ให้บริการธุรกิจไทยท้องถิ่นทั่วจังหวัดภูเก็ต — เหมาะร้านอาหาร สปา โรงแรม อสังหาริมทรัพย์ ทัวร์ คลินิก และ SME
 
 ---
 

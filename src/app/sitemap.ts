@@ -25,6 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: baseUrl, priority: 1.0, changeFrequency: "weekly", lastModified: now },
     { url: `${baseUrl}/contact`, priority: 0.9, changeFrequency: "monthly", lastModified: now },
     { url: `${baseUrl}/seo-audit`, priority: 0.9, changeFrequency: "monthly", lastModified: now },
+    { url: `${baseUrl}/phuketseo`, priority: 0.95, changeFrequency: "monthly", lastModified: now },
     { url: `${baseUrl}/blog`, priority: 0.85, changeFrequency: "weekly", lastModified: now },
     ...staticPaths(
       baseUrl,

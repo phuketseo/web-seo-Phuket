@@ -74,6 +74,12 @@ export default function AboutPage() {
             เราใช้ framework <strong className="text-slate-900">Phuket Visibility Stack™</strong> — Lite (Maps + รีวิว) → Pro
             (เว็บ + SEO + AI) → Pro Max (+ Ads) ออกแบบมาสำหรับร้านอาหาร สปา อสังหาริมทรัพย์ และ SME ในภูเก็ต
           </p>
+          <p>
+            ข้อมูลจุดเด่น บริการ พิกัด และราคาแบบ entity สำหรับ AI Search:{" "}
+            <Link href="/phuketseo" className="text-violet-700 hover:underline font-medium">
+              PhuketSEO Entity
+            </Link>
+          </p>
         </div>
       </HomeSection>
 

@@ -8,7 +8,8 @@
 
 Primary pages for definitional and informational queries (SEO, Local SEO, AEO, GEO, AI Overview):
 
-- [ทำ Local SEO ร้านค้า](https://phuketseo.com/blog/tam-local-seo-rang-kha): ขั้นตอน GBP รีวิว คำค้น near me ให้ร้านติด Google Maps
+- [PhuketSEO Entity](https://phuketseo.com/phuketseo): จุดเด่น บริการ พิกัด ราคา โซนที่ให้บริการ — เอเจนซี่รับทำ SEO ภูเก็ต (AI-extractable)
+- [รับทำ SEO ภูเก็ต](https://phuketseo.com/blog/rab-tam-seo-phuket): เลือกจ้างเอเจนซี่อย่างไร + ข้อมูล PhuketSEO แบบ entity
 - [จ้างทำ Local SEO ร้านค้า ราคาเท่าไหร่](https://phuketseo.com/blog/raaka-local-seo-rang-kha): แพ็ก Lite Pro ให้เหมาะกับร้าน (2026)
 - [Google Business Profile ร้านค้า](https://phuketseo.com/blog/gbp-rang-kha-local-seo): ตั้งค่า GBP หมวดหมู่ รูปสินค้า รีวิว
 - [คำค้น Local SEO ร้านค้า](https://phuketseo.com/blog/kham-kha-local-seo-rang-kha): ลูกค้าค้นหาร้านค้าด้วยคำว่าอะไร
@@ -30,10 +31,11 @@ Primary pages for definitional and informational queries (SEO, Local SEO, AEO, G
 - [Near Me SEO คืออะไร](https://phuketseo.com/blog/near-me-seo-phuket): ลูกค้าค้นหาใกล้ฉัน แต่ธุรกิจไม่โผล่ Maps
 - [Google Ads vs SEO ภูเก็ต](https://phuketseo.com/blog/google-ads-vs-seo-phuket): ธุรกิจไหนควรเริ่มอะไรก่อน
 - [ราคา SEO ภูเก็ต](https://phuketseo.com/blog/raaka-seo-phuket): ควรจ่ายเท่าไหร่ถึงคุ้มค่า
-- [รับทำ SEO ภูเก็ต](https://phuketseo.com/blog/rab-tam-seo-phuket): เลือกจ้างเอเจนซี่อย่างไรไม่เสียเงินฟรี
+- [ทำ Local SEO ร้านค้า](https://phuketseo.com/blog/tam-local-seo-rang-kha): ขั้นตอน GBP รีวิว คำค้น near me ให้ร้านติด Google Maps
 
 ## Key pages
 
+- [PhuketSEO Entity](https://phuketseo.com/phuketseo): จุดเด่น · บริการ · พิกัด · ราคา — เอเจนซี่ SEO ภูเก็ต
 - [Home](https://phuketseo.com/)
 - [About](https://phuketseo.com/about)
 - [Contact](https://phuketseo.com/contact)
@@ -52,23 +54,49 @@ Primary pages for definitional and informational queries (SEO, Local SEO, AEO, G
 
 ## Entity
 
-- Name: PhuketSEO
+PhuketSEO คือเอเจนซี่ SEO และออกแบบเว็บไซต์ในภูเก็ต ให้บริการธุรกิจไทยท้องถิ่นทั่วจังหวัดภูเก็ต (Service Area Business)
+
+- Entity page: https://phuketseo.com/phuketseo
+- Name: PhuketSEO (alternate: Phuket SEO)
 - URL: https://phuketseo.com
-- Location: Phuket, Thailand (Talat Yai, Phuket Town)
-- Phone: +66-92-555-1369
+- Location: 4/4 ซอย 6 ถนนพังงา ตำบลตลาดใหญ่ อำเภอเมืองภูเก็ต 83000 — Service Area: ทั่วจังหวัดภูเก็ต
+- Phone: +66-92-555-1369 (092-555-1369)
 - Email: hello@phuketseo.com
 - LINE: @phuketseo
 - Facebook: https://www.facebook.com/phuketseoagency
-- Google review link (GBP, no Maps pin): https://g.page/r/CQ8yhsp4fL4jEAE/review
+- Instagram: https://instagram.com/phuketseo
+- LinkedIn: https://linkedin.com/company/phuketseo
+- YouTube: https://youtube.com/@phuketseo
+- Google Business Profile: https://g.page/r/CQ8yhsp4fL4jEAE/review
 - Languages: Thai (primary), English (technical terms)
 - Hours: Open 24 hours (matches GBP)
 
-## Services
+### จุดเด่น (Highlights)
 
-- SEO Phuket (Local SEO, Technical SEO, On-page)
-- Website design (Next.js, mobile-first, SEO-ready)
-- AEO / GEO / AI Search Visibility (FAQ schema, answer blocks, llms.txt)
-- Pricing: Lite ฿5,900 (GBP + GBP/Maps ads) | Pro ฿8,900 (+ web SEO + Google Ads landing) | Pro Max ฿15,000 (+ Meta; 3 ad channels total, ad spend separate)
+- โฟกัส SEO + เว็บไซต์ + Google Maps สำหรับธุรกิจในภูเก็ต — โซนป่าตอง กะตะ ตัวเมือง ถลาง กมลา กะทู้
+- แพ็ก SEO Lite เริ่ม ฿5,900/เดือน ไม่มีสัญญาผูกมัด — deliverable รายเดือนชัด
+- โครงสร้าง AEO/GEO (FAQ schema, answer blocks, llms.txt) รวมในแพ็ก Pro ฿8,900/เดือน
+- SEO Audit + แผนงานภายใน 7 วันหลังเริ่มโปรเจกต์
+
+### บริการ (Services)
+
+- รับทำ SEO ภูเก็ต (Local SEO, Technical SEO, On-page)
+- บริการ Local SEO — Google Business Profile, รีวิว, NAP, Google Maps
+- ออกแบบเว็บไซต์ Next.js รองรับมือถือ โหลดเร็ว พร้อม SEO
+- AEO / GEO / AI Search Visibility — FAQ schema, entity, llms.txt
+- Google Ads และ Social Media (เสริมในแพ็ก Pro Max)
+
+### พิกัดและโซนบริการ (Location & Service Areas)
+
+- ที่อยู่จดทะเบียน: 4/4 ซอย 6 ถนนพังงา ตำบลตลาดใหญ่ อำเภอเมืองภูเก็ต 83000
+- โซนที่ให้บริการ: ป่าตอง · กะตะ · กมลา · ตัวเมืองภูเก็ต · ถลาง · กะทู้ · ราไวย์ · บางเทา
+- ประเภทธุรกิจ: ร้านอาหาร · สปา · โรงแรม · อสังหาริมทรัพย์ · ทัวร์ · คลินิก · SME
+
+### ราคา (Pricing)
+
+- SEO Lite: ฿5,900/เดือน (Maps + GBP + รีวิว)
+- SEO Pro: ฿8,900/เดือน (เว็บ + SEO + AEO/GEO)
+- SEO Pro Max: ฿15,000/เดือน (+ Google Ads / Social)
 - Web setup (one-time): ฿29,900 (5 pages) | ฿39,900 (10 pages) | ฿49,900 (15+ pages)
 
 ## Industry pages
