@@ -24,7 +24,7 @@ export const blogCategories = [
 export const blogPostsMeta: BlogPostMeta[] = [
   {
     slug: "kan-marketing-ran-nuad-phaen-thai",
-    title: "การตลาดร้านนวดแผนไทย — คู่มือเจอลูกค้า ไว้ใจ และกลับมา",
+    title: "การตลาดร้านนวดแผนไทย — หาลูกค้าใหม่บน Google Maps",
     category: "Industry Guide",
     description:
       "การตลาดร้านนวดแผนไทย — Google Maps รีวิว LINE โปรโมชัน ลำดับงานและงบตามขนาดร้าน จากสำรวจ 12 ร้านโซนท่องเที่ยว",
