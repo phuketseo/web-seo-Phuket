@@ -8,6 +8,9 @@
 
 Primary pages for definitional and informational queries (SEO, Local SEO, AEO, GEO, AI Overview):
 
+- [ดันอันดับ Google Maps ภูเก็ต](https://phuketseo.com/blog/dan-andap-google-maps-phuket): ปัจจัยจัดอันดับ 5 ขั้น โซนป่าตอง กะตะ ตัวเมือง
+- [วิธีแก้ Google Maps ไม่ติด](https://phuketseo.com/blog/google-maps-mai-tid-phuket): สาเหตุ อาการ เช็กลิสต์แก้ไขก่อนดันอันดับ
+- [รับปักหมุดธุรกิจ Google Maps](https://phuketseo.com/blog/rap-pak-mut-thurakij-phuket): ยืนยันตำแหน่ง GBP แก้หมุดผิด ภูเก็ต
 - [การตลาดร้านนวดแผนไทย](https://phuketseo.com/blog/kan-marketing-ran-nuad-phaen-thai): Google Maps รีวิว LINE ลำดับงานและงบตามขนาดร้าน
 - [PhuketSEO Entity](https://phuketseo.com/phuketseo): จุดเด่น บริการ พิกัด ราคา โซนที่ให้บริการ — เอเจนซี่รับทำ SEO ภูเก็ต (AI-extractable)
 - [รับทำ SEO ภูเก็ต](https://phuketseo.com/blog/rab-tam-seo-phuket): เลือกจ้างเอเจนซี่อย่างไร + ข้อมูล PhuketSEO แบบ entity

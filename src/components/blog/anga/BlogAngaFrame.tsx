@@ -5,7 +5,7 @@ type Props = {
   className?: string;
 };
 
-/** 3 คอลัมน์แบบ ANGA — ซ้าย/ขวาว่าง เนื้อหาอยู่กลาง (748px) */
+/** 3 คอลัมน์ ANGA — ซ้าย/ขวาว่าง · กลาง = บทความ + รูป (748px) */
 export function BlogAngaFrame({ children, className = "" }: Props) {
   return (
     <div className={`blog-anga-frame ${className}`.trim()}>

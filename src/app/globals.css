@@ -186,7 +186,6 @@
 
   @media (min-width: 1024px) {
     .blog-anga-frame {
-      /* ซ้ายว่าง (พื้นที่เดิม sidebar ANGA) | เนื้อหา 748px | ขวาว่าง */
       grid-template-columns: minmax(200px, 260px) minmax(0, 748px) minmax(200px, 1fr);
       column-gap: clamp(1.25rem, 2.5vw, 2.5rem);
       padding-inline: clamp(1.25rem, 2.5vw, 2.5rem);
@@ -207,6 +206,8 @@
   .blog-anga-col-main {
     min-width: 0;
     width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
     grid-column: 1;
   }
 
@@ -217,12 +218,39 @@
   }
 
   .blog-anga-media {
-    @apply w-full;
+    @apply w-full max-w-full min-w-0 overflow-x-hidden;
+  }
+
+  .blog-anga-media .blog-section-split,
+  .blog-anga-media .figure-portrait,
+  .blog-anga-media .figure-portrait__frame {
+    min-width: 0;
+    max-width: 100%;
   }
 
   .blog-anga-media figure,
   .blog-anga-media .blog-anga-figure {
-    @apply w-full;
+    @apply w-full max-w-full min-w-0;
+  }
+
+  /* Portrait inline — ย่อตามความกว้างคอลัมน์ รักษาสัดส่วน (4:5) */
+  .blog-anga-portrait {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin-inline: 0;
+    padding: 0;
+  }
+
+  .blog-anga-portrait__frame {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .blog-anga-portrait__img {
+    object-fit: contain;
   }
   .card-hover { @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1; }
   .below-fold {
@@ -247,6 +275,8 @@
   /* Article body — PhuketSEO brand on ANGA column layout */
   .blog-prose-anga {
     max-width: none;
+    width: 100%;
+    min-width: 0;
     font-size: 1.0625rem;
     line-height: 1.75;
     color: #334155;
@@ -431,6 +461,140 @@
 
   .blog-anga-figure {
     @apply rounded-2xl ring-1 ring-violet-100/80 shadow-sm;
+  }
+
+  /* Homepage-style text + image sections in blog articles */
+  .blog-section-split {
+    @apply w-full min-w-0 max-w-full;
+  }
+
+  .blog-section-split .figure-portrait {
+    margin-bottom: 1.25rem;
+  }
+
+  .blog-section-split .blog-split-prose {
+    margin-top: 0;
+  }
+
+  .blog-section-split__heading {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 0.85em;
+    line-height: 1.35;
+    padding-left: 1rem;
+    border-left: 3px solid transparent;
+    border-image: linear-gradient(180deg, #9333ea, #6366f1, #2563eb) 1;
+  }
+
+  .blog-split-prose > *:first-child {
+    margin-top: 0;
+  }
+
+  .blog-split-prose p {
+    margin-bottom: 1em;
+  }
+
+  .blog-split-prose p:last-child {
+    margin-bottom: 0;
+  }
+
+  .blog-split-prose ul,
+  .blog-split-prose ol {
+    margin-top: 0.5em;
+    margin-bottom: 0;
+  }
+
+  /* FigurePortrait — inline infographic 4:5 / 9:16 */
+  .figure-portrait {
+    width: 100%;
+    max-width: 420px;
+    margin-inline: auto;
+    min-width: 0;
+  }
+
+  .figure-portrait--split {
+    width: 100%;
+    max-width: 100%;
+    margin-inline: 0;
+  }
+
+  .figure-portrait--split .figure-portrait__frame--flush {
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+  }
+
+  .figure-portrait__img--flush {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    display: block;
+  }
+
+  .figure-portrait--grid-item {
+    width: 100%;
+    max-width: 100%;
+    margin-inline: 0;
+  }
+
+  .figure-portrait--float {
+    float: right;
+    margin: 0 0 1rem 1.5rem;
+    shape-outside: margin-box;
+  }
+
+  .figure-portrait__frame {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  /* fill layout — รูปถูกบังคับอยู่ใน frame ที่มี aspect-ratio ไม่ล้น intrinsic 1440px */
+  .figure-portrait__img {
+    object-fit: contain;
+  }
+
+  @media (max-width: 767px) {
+    .figure-portrait:not(.figure-portrait--split) {
+      max-width: 100%;
+      width: 100%;
+      margin-inline: auto;
+    }
+
+    .figure-portrait--split {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .figure-portrait--split .figure-portrait__frame {
+      max-height: none;
+      width: 100%;
+      margin-inline: 0;
+    }
+
+    .figure-portrait[data-ratio="9:16"] .figure-portrait__frame {
+      width: min(100%, calc(85vh * 9 / 16));
+    }
+  }
+
+  .figure-portrait-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    width: 100%;
+    margin-block: 2rem;
+  }
+
+  @media (min-width: 1024px) {
+    .figure-portrait-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 2rem;
+    }
   }
 
   /* Legacy alias — keep until all references migrated */

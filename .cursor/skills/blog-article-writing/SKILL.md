@@ -150,25 +150,65 @@ description: >-
 
 ---
 
-## รูปภาพ (บังคับ 4 รูป / บทความ)
+## รูปภาพ
+
+### แบบ A — Landscape 3:2 (บทความเดิม)
 
 | # | ประเภท | ใช้ที่ |
 |---|--------|--------|
-| 1 | Infographic hero | Featured thumbnail |
-| 2 | Infographic หรือภาพโซน | หลัง “คืออะไร” |
-| 3 | Infographic เปรียบเทียบโซน | หลัง “ทำไมแยกจาก…” |
-| 4 | Infographic Maps / คำค้น | หลัง “ทำอย่างไร” หรือ “ค้นหาคำว่าอะไร” |
+| 1 | Infographic hero | Featured thumbnail (ยังใช้ 3:2) |
+| 2–4 | Inline landscape | หลัง section หลัก |
 
-### สไตล์และขนาด
+- **Smooth Purple** — `src/lib/image-style-smooth-purple.ts` → `buildSmoothPurplePrompt()`
+- Upscale **3840×2560** — `scripts/upscale-*-images.mjs`
+- Markdown: `:::image key` + caption
 
-- **Smooth Purple** — อ่าน `src/lib/image-style-smooth-purple.ts` → `buildSmoothPurplePrompt()`
+### แบบ B — Portrait 9:16 mobile-first (บทความใหม่ตั้งแต่ ก.ค. 2026)
+
+ออกแบบให้อ่านบนมือถือก่อน — การ์ดซ้อนลง หัวข้อใหญ่ ไม่เกิน 5–6 จุดต่อรูป
+
+| จุด | ค่า |
+|-----|-----|
+| สัดส่วน | **9:16** (แนวตั้ง ไม่ใช่ 16:9) |
+| Prompt | `src/lib/image-style-blog-portrait.ts` → `buildBlogPortraitPrompt()` |
+| ขนาดต้นฉบับ | 1536×2730 → upscale **2160×3840** |
+| Brand bar | `node scripts/compose-phuketseo-brand-bar.mjs assets/<folder>` |
+| Upscale | `node scripts/upscale-blog-portrait-images.mjs assets/<folder> '{"src":"...","out":"..."}'` |
+| `images.ts` | `layout: "portrait"`, `width: 2160`, `height: 3840` |
+
+**แสดงผลใน blog (แนะนำ — แบบหน้าแรก):**
+
+ใช้ `:::split` — ข้อความ + รูปคู่กันในแต่ละ section:
+
+```
+## หัวข้อ section
+
+:::split mapsBoostFactors
+ย่อหน้าอธิบายที่เกี่ยวกับรูป — รองรับ **bold** และ [ลิงก์](/path)
+
+- bullet ได้
+:::
+
+```
+
+| จอ | เลย์เอาต์ |
+|----|-----------|
+| มือถือ | รูปอยู่**บน** ข้อความอยู่**ล่าง** |
+| Desktop (lg+) | ข้อความ**ซ้าย** รูป**ขวา** (เหมือน HomeHero) |
+
+**ทางเลือก — `:::image-grid`:** รูป portrait 2 รูปเคียงกันบน desktop (ไม่มีข้อความคู่) — ใช้เมื่อไม่มี copy คู่
+
+รูปเดี่ยว landscape ใช้ `:::image key` ได้ (เต็มความกว้าง)
+
+Thumbnail ใน `/blog` listing ยังเป็น **3:2** — crop จาก hero หรือทำ thumb แยก
+
+### ร่วมกันทุกแบบ
+
 - สร้างใหม่ทุกบทความ — **ห้าม reuse รูปจากบทอื่น**
-- Upscale **3840×2560** ด้วย `sharp` (Lanczos3 + sharpen) — ดู `scripts/upscale-kathu-images.mjs`, `upscale-kamala-images.mjs` หรือ `upscale-thalang-images.mjs`
-- ตั้ง `width`/`height` ใน `src/lib/images.ts` ให้ตรงไฟล์จริง
-- ชื่อไฟล์: `public/images/blog/blog-thumb-{slug-short}-clean.png`, `blog-inline-{topic}-clean.png`
+- ชื่อไฟล์: `blog-thumb-{slug}-clean.png`, `blog-inline-{topic}-clean.png`
 - รัน `npm run check:images` ก่อน commit
 
-### Inline images ใน markdown
+### Inline images ใน markdown (landscape เดี่ยว)
 
 ```
 :::image kamalaMaps

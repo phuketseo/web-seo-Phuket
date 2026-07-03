@@ -2,6 +2,8 @@ import Link from "next/link";
 import { BlogPullQuote } from "@/components/blog/vercel/BlogPullQuote";
 import { BlogCallout } from "@/components/blog/BlogCallout";
 import { BlogInlineImage } from "@/components/blog/BlogInlineImage";
+import { BlogInfographicGrid } from "@/components/blog/BlogInfographicGrid";
+import { BlogTextImageSplit } from "@/components/blog/BlogTextImageSplit";
 import { BlogMidCta } from "@/components/blog/BlogMidCta";
 import { BlogStatRow, parseStatLine } from "@/components/blog/BlogStatRow";
 import { slugifyHeading } from "@/lib/blog-content-utils";
@@ -88,6 +90,29 @@ export function renderBlogContent(content: string, options: RenderOptions = {}) 
   let h2Count = 0;
   let headingIndex = 0;
   let listBuffer: { type: "ul" | "ol"; items: React.ReactNode[] } | null = null;
+  let pendingH2: { text: string; id: string; key: number } | null = null;
+
+  const flushPendingH2 = () => {
+    if (!pendingH2) return;
+    h2Count++;
+    elements.push(
+      <h2
+        key={pendingH2.key}
+        id={pendingH2.id}
+        className={
+          isAnga
+            ? "scroll-mt-28 first:mt-0"
+            : "text-2xl font-bold text-blue-950 mt-12 mb-5 font-serif scroll-mt-28 first:mt-0"
+        }
+      >
+        {renderBlogInline(pendingH2.text, `h2-${pendingH2.key}`, theme)}
+      </h2>
+    );
+    if (options.midCtaAfterSection && h2Count === options.midCtaAfterSection) {
+      elements.push(<BlogMidCta key={key++} theme={theme} />);
+    }
+    pendingH2 = null;
+  };
 
   const flushList = () => {
     if (!listBuffer?.items.length) {
@@ -103,7 +128,8 @@ export function renderBlogContent(content: string, options: RenderOptions = {}) 
     listBuffer = null;
   };
 
-  const flush = () => {
+  const flush = (opts?: { keepPendingH2?: boolean }) => {
+    if (!opts?.keepPendingH2) flushPendingH2();
     flushList();
     if (tableRows.length > 0) {
       elements.push(
@@ -198,8 +224,9 @@ export function renderBlogContent(content: string, options: RenderOptions = {}) 
     }
 
     if (line.startsWith(":::")) {
-      flush();
       const directive = line.slice(3).trim();
+      const isSplitDirective = /^split(?:\s+\w+)?$/.test(directive);
+      flush({ keepPendingH2: isSplitDirective });
       if (directive === "stat") {
         const statLines: string[] = [];
         lineIdx++;
@@ -229,6 +256,84 @@ export function renderBlogContent(content: string, options: RenderOptions = {}) 
             <BlogCallout key={key++} type={calloutType} theme={theme}>
               {renderBlogInline(calloutText, `callout-${key}`, theme)}
             </BlogCallout>
+          );
+        }
+        continue;
+      }
+
+      const splitMatch = directive.match(/^split(?:\s+(\w+))?$/);
+      if (splitMatch) {
+        const imageKey = splitMatch[1];
+        const bodyLines: string[] = [];
+        lineIdx++;
+        while (lineIdx < lines.length && !lines[lineIdx].startsWith(":::")) {
+          bodyLines.push(lines[lineIdx]);
+          lineIdx++;
+        }
+        const bodyText = bodyLines.join("\n").trim();
+        if (imageKey && bodyText) {
+          const image = resolveBlogInlineImage(imageKey);
+          if (image) {
+            const sectionHeading = pendingH2;
+            pendingH2 = null;
+            if (sectionHeading) {
+              h2Count++;
+              if (options.midCtaAfterSection && h2Count === options.midCtaAfterSection) {
+                elements.push(<BlogMidCta key={key++} theme={theme} />);
+              }
+            }
+            elements.push(
+              <BlogTextImageSplit
+                key={key++}
+                image={image}
+                theme={theme}
+                headingId={sectionHeading?.id}
+                heading={
+                  sectionHeading
+                    ? renderBlogInline(sectionHeading.text, `h2-${sectionHeading.key}`, theme)
+                    : undefined
+                }
+              >
+                {renderBlogContent(bodyText, { theme })}
+              </BlogTextImageSplit>
+            );
+          }
+        }
+        continue;
+      }
+
+      const imageGridMatch = directive.match(/^image-grid$/);
+      if (imageGridMatch) {
+        const gridLines: string[] = [];
+        lineIdx++;
+        while (lineIdx < lines.length && !lines[lineIdx].startsWith(":::")) {
+          gridLines.push(lines[lineIdx]);
+          lineIdx++;
+        }
+        const gridItems: { key: string; caption?: string }[] = [];
+        let current: { key: string; caption?: string } | null = null;
+        for (const raw of gridLines) {
+          const trimmed = raw.trim();
+          if (!trimmed) continue;
+          if (/^[a-zA-Z][a-zA-Z0-9]*$/.test(trimmed)) {
+            if (current) gridItems.push(current);
+            current = { key: trimmed };
+          } else if (current) {
+            current.caption = current.caption ? `${current.caption} ${trimmed}` : trimmed;
+          }
+        }
+        if (current) gridItems.push(current);
+
+        const resolved = gridItems
+          .map((item) => {
+            const image = resolveBlogInlineImage(item.key);
+            return image ? { image, caption: item.caption } : null;
+          })
+          .filter(Boolean) as { image: NonNullable<ReturnType<typeof resolveBlogInlineImage>>; caption?: string }[];
+
+        if (resolved.length) {
+          elements.push(
+            <BlogInfographicGrid key={key++} items={resolved} theme={theme} />
           );
         }
         continue;
@@ -302,25 +407,9 @@ export function renderBlogContent(content: string, options: RenderOptions = {}) 
 
     if (line.startsWith("## ")) {
       flush();
-      h2Count++;
       const headingText = line.slice(3);
       const id = slugifyHeading(headingText.replace(/\*\*/g, ""), headingIndex++);
-      elements.push(
-        <h2
-          key={key++}
-          id={id}
-          className={
-            isAnga
-              ? "scroll-mt-28 first:mt-0"
-              : "text-2xl font-bold text-blue-950 mt-12 mb-5 font-serif scroll-mt-28 first:mt-0"
-          }
-        >
-          {renderBlogInline(headingText, `h2-${key}`, theme)}
-        </h2>
-      );
-      if (options.midCtaAfterSection && h2Count === options.midCtaAfterSection) {
-        elements.push(<BlogMidCta key={key++} theme={theme} />);
-      }
+      pendingH2 = { text: headingText, id, key: key++ };
     } else if (line.startsWith("### ")) {
       flush();
       elements.push(

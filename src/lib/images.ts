@@ -51,7 +51,20 @@ export type SiteImage = {
   alt: string;
   width: number;
   height: number;
+  /** landscape = 3:2 (default) · portrait = infographic แนวตั้ง */
+  layout?: "landscape" | "portrait";
+  /** portrait only — 4:5 Facebook-style (default ใหม่) · 9:16 สำหรับ :::split */
+  ratio?: "4:5" | "9:16";
+  /** bump เมื่อเปลี่ยนไฟล์รูป — bust browser / Next image cache (?v=) */
+  rev?: number;
 };
+
+/** URL สำหรับ next/image — ใส่ ?v= เมื่อมี rev */
+export function resolveImageSrc(image: Pick<SiteImage, "src" | "rev">): string {
+  if (!image.rev) return image.src;
+  const joiner = image.src.includes("?") ? "&" : "?";
+  return `${image.src}${joiner}v=${image.rev}`;
+}
 
 export const siteImages = {
   hero: {
@@ -825,6 +838,90 @@ export const siteImages = {
       width: 3840,
       height: 2560,
     },
+    mapsBoostHero: {
+      src: "/images/blog/blog-thumb-dan-andap-google-maps-phuket-clean.png",
+      alt: "ดันอันดับ Google Maps ภูเก็ต — ให้ธุรกิจโผล่ต้นๆบนแผนที่",
+      width: 3840,
+      height: 2560,
+      rev: 2,
+    },
+    mapsBoostFactors: {
+      src: "/images/blog/blog-inline-dan-andap-google-maps-phuket-factors-clean.png",
+      alt: "ปัจจัยดันอันดับ Google Maps — ตรงคำค้น ระยะทาง ความน่าเชื่อถือ",
+      width: 3840,
+      height: 2560,
+      rev: 2,
+    },
+    mapsBoostSteps: {
+      src: "/images/blog/blog-inline-dan-andap-google-maps-phuket-steps-clean.png",
+      alt: "5 วิธีดันอันดับ Google Maps ภูเก็ต — GBP รีวิว รูป คำค้นโซน",
+      width: 3840,
+      height: 2560,
+      rev: 2,
+    },
+    mapsBoostZones: {
+      src: "/images/blog/blog-inline-dan-andap-google-maps-phuket-zones-clean.png",
+      alt: "ดันอันดับ Google Maps แยกโซนภูเก็ต — ป่าตอง กะตะ ตัวเมือง ถลาง",
+      width: 3840,
+      height: 2560,
+      rev: 2,
+    },
+    mapsFixHero: {
+      src: "/images/blog/blog-thumb-google-maps-mai-tid-phuket-clean.png",
+      alt: "วิธีแก้ Google Maps ไม่ติด — ธุรกิจไม่โผล่บนแผนที่",
+      width: 3840,
+      height: 2560,
+      rev: 2,
+    },
+    mapsFixSymptoms: {
+      src: "/images/blog/blog-inline-google-maps-mai-tid-phuket-symptoms-clean.png",
+      alt: "อาการ Google Maps ไม่ติด — ค้นไม่เจอ อันดับต่ำ โทรจาก Maps น้อย",
+      width: 3840,
+      height: 2560,
+      rev: 2,
+    },
+    mapsFixCauses: {
+      src: "/images/blog/blog-inline-google-maps-mai-tid-phuket-causes-clean.png",
+      alt: "สาเหตุ Google Maps ไม่ติด — GBP ปักหมุด NAP รีวิว",
+      width: 3840,
+      height: 2560,
+      rev: 2,
+    },
+    mapsFixChecklist: {
+      src: "/images/blog/blog-inline-google-maps-mai-tid-phuket-fix-clean.png",
+      alt: "เช็กลิสต์แก้ Google Maps ไม่ติด — ก่อนดันอันดับ",
+      width: 3840,
+      height: 2560,
+      rev: 2,
+    },
+    mapsPinHero: {
+      src: "/images/blog/blog-thumb-rap-pak-mut-thurakij-phuket-clean.png",
+      alt: "รับปักหมุดธุรกิจ Google Maps ภูเก็ต — ยืนยันตำแหน่งร้าน",
+      width: 3840,
+      height: 2560,
+      rev: 2,
+    },
+    mapsPinWrong: {
+      src: "/images/blog/blog-inline-rap-pak-mut-thurakij-phuket-wrong-clean.png",
+      alt: "ปักหมุดธุรกิจผิด — ผลกระทบต่อ Google Maps",
+      width: 3840,
+      height: 2560,
+      rev: 2,
+    },
+    mapsPinVerify: {
+      src: "/images/blog/blog-inline-rap-pak-mut-thurakij-phuket-verify-clean.png",
+      alt: "ขั้นตอนยืนยันตัวตน Google Business Profile",
+      width: 3840,
+      height: 2560,
+      rev: 2,
+    },
+    mapsPinZones: {
+      src: "/images/blog/blog-inline-rap-pak-mut-thurakij-phuket-zones-clean.png",
+      alt: "รับปักหมุดธุรกิจ — โซนบริการภูเก็ต ป่าตอง ตัวเมือง ถลาง",
+      width: 3840,
+      height: 2560,
+      rev: 2,
+    },
   },
   team: {
     somchai: {
@@ -907,11 +1004,17 @@ export const blogThumbnailBySlug: Record<string, SiteImage> = {
   "kham-kha-local-seo-rang-kha": siteImages.blog.retailKwHero,
   "local-seo-rang-kha-mistakes": siteImages.blog.retailMistakesHero,
   "kan-marketing-ran-nuad-phaen-thai": siteImages.blog.massageMarketingHero,
+  "dan-andap-google-maps-phuket": siteImages.blog.mapsBoostHero,
+  "google-maps-mai-tid-phuket": siteImages.blog.mapsFixHero,
+  "rap-pak-mut-thurakij-phuket": siteImages.blog.mapsPinHero,
 };
 
 export function getBlogThumbnail(slug: string): SiteImage {
   return blogThumbnailBySlug[slug] ?? siteImages.blog.seoHotel;
 }
+
+/** ไฟล์ 4:5 สำหรับโพสต์ native บนเพจ Facebook — ไม่ render บนหน้าเว็บ */
+export const blogFbPostBySlug: Record<string, SiteImage> = {};
 
 /** Keys for :::image blocks in blog markdown */
 export const blogInlineImages: Record<string, SiteImage> = {
@@ -1011,6 +1114,15 @@ export const blogInlineImages: Record<string, SiteImage> = {
   massageMarketingSteps: siteImages.blog.massageMarketingSteps,
   massageMarketingBudget: siteImages.blog.massageMarketingBudget,
   massageMarketingMistakes: siteImages.blog.massageMarketingMistakes,
+  mapsBoostFactors: siteImages.blog.mapsBoostFactors,
+  mapsBoostSteps: siteImages.blog.mapsBoostSteps,
+  mapsBoostZones: siteImages.blog.mapsBoostZones,
+  mapsFixSymptoms: siteImages.blog.mapsFixSymptoms,
+  mapsFixCauses: siteImages.blog.mapsFixCauses,
+  mapsFixChecklist: siteImages.blog.mapsFixChecklist,
+  mapsPinWrong: siteImages.blog.mapsPinWrong,
+  mapsPinVerify: siteImages.blog.mapsPinVerify,
+  mapsPinZones: siteImages.blog.mapsPinZones,
   serviceGoogleAds: siteImages.services.googleAds,
 };
 

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { getBlogThumbnail } from "@/lib/images";
+import { getBlogThumbnail, resolveImageSrc } from "@/lib/images";
 import type { RelatedBlogPost } from "@/lib/blog-related-posts";
 
 type Props = {
@@ -36,7 +36,7 @@ export function BlogAngaRelatedPosts({ posts }: Props) {
             >
               <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-100">
                 <Image
-                  src={thumb.src}
+                  src={resolveImageSrc(thumb)}
                   alt={thumb.alt}
                   fill
                   className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"

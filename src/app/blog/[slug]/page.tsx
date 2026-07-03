@@ -11,7 +11,7 @@ import {
 } from "@/lib/schema";
 import { siteConfig } from "@/lib/utils";
 import { BlogAngaLayout } from "@/components/blog/anga/BlogAngaLayout";
-import { getBlogThumbnail } from "@/lib/images";
+import { getBlogThumbnail, resolveImageSrc } from "@/lib/images";
 import { pillarBlogPosts } from "@/lib/blog-posts-pillar";
 import { blogPostsBatch2125 } from "@/lib/blog-posts-batch-21-25";
 import { blogPostsBatch2630 } from "@/lib/blog-posts-batch-26-30";
@@ -24,6 +24,7 @@ import { blogPostsBatch36 } from "@/lib/blog-posts-batch-36";
 import { blogPostsBatch37 } from "@/lib/blog-posts-batch-37";
 import { blogPostsBatch38 } from "@/lib/blog-posts-batch-38";
 import { blogPostsBatch39 } from "@/lib/blog-posts-batch-39";
+import { blogPostsBatch42 } from "@/lib/blog-posts-batch-42";
 import { getRelatedBlogPosts } from "@/lib/blog-related-posts";
 
 const defaultAuthor = { name: "ทีม PhuketSEO", role: "SEO Consultant · ภูเก็ต" };
@@ -59,6 +60,7 @@ const blogPosts: Record<
   ...blogPostsBatch37,
   ...blogPostsBatch38,
   ...blogPostsBatch39,
+  ...blogPostsBatch42,
   "seo-for-phuket-spas": {
     title: "SEO สปาภูเก็ต: ดึง Direct Booking ไม่พึ่ง OTA",
     description:
@@ -1261,7 +1263,7 @@ export async function generateMetadata({
   if (!post) notFound();
 
   const thumbnail = getBlogThumbnail(slug);
-  const ogImage = `${siteConfig.url}${thumbnail.src}`;
+  const ogImage = `${siteConfig.url}${resolveImageSrc(thumbnail)}`;
 
   return {
     title: post.title,
@@ -1320,7 +1322,7 @@ export default async function BlogPostPage({
     slug,
     title: post.title,
     description: post.description,
-    imageUrl: `${siteConfig.url}${thumbnail.src}`,
+    imageUrl: `${siteConfig.url}${resolveImageSrc(thumbnail)}`,
     imageWidth: thumbnail.width,
     imageHeight: thumbnail.height,
     datePublished: post.dateISO,

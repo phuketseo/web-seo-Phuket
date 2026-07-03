@@ -23,6 +23,30 @@ export const blogCategories = [
 
 export const blogPostsMeta: BlogPostMeta[] = [
   {
+    slug: "dan-andap-google-maps-phuket",
+    title: "ดันอันดับ Google Maps ภูเก็ต — วิธีให้ธุรกิจโผล่ต้นๆ",
+    category: "Local SEO",
+    description:
+      "ดันอันดับ Google Maps ภูเก็ต — ปัจจัยที่ Google ใช้จัดอันดับ 5 ขั้นที่ทำได้จริง และข้อผิดพลาดในโซนป่าตอง กะตะ ตัวเมือง",
+    thumbnail: getBlogThumbnail("dan-andap-google-maps-phuket"),
+  },
+  {
+    slug: "google-maps-mai-tid-phuket",
+    title: "วิธีแก้ Google Maps ไม่ติด — ทำไมธุรกิจไม่โผล่บนแผนที่",
+    category: "Local SEO",
+    description:
+      "วิธีแก้ Google Maps ไม่ติด — สาเหตุ อาการ และเช็กลิสต์แก้ไขก่อนจ้างดันอันดับในภูเก็ต",
+    thumbnail: getBlogThumbnail("google-maps-mai-tid-phuket"),
+  },
+  {
+    slug: "rap-pak-mut-thurakij-phuket",
+    title: "รับปักหมุดธุรกิจ Google Maps ภูเก็ต — ยืนยันตำแหน่งร้านให้ถูกต้อง",
+    category: "Local SEO",
+    description:
+      "รับปักหมุดธุรกิจ Google Maps ภูเก็ต — แก้หมุดผิด ยืนยันตัวตน GBP โซนป่าตอง ตัวเมือง ถลาง ก่อนดันอันดับ",
+    thumbnail: getBlogThumbnail("rap-pak-mut-thurakij-phuket"),
+  },
+  {
     slug: "kan-marketing-ran-nuad-phaen-thai",
     title: "การตลาดร้านนวดแผนไทย — หาลูกค้าใหม่บน Google Maps",
     category: "Industry Guide",

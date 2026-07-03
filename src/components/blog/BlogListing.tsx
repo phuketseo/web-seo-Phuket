@@ -8,6 +8,7 @@ import { blogCategories, blogPostsMeta } from "@/lib/blog-posts-meta";
 import { HomeSectionHeader } from "@/components/home/HomeSection";
 import { MarketingBreadcrumb } from "@/components/MarketingBreadcrumb";
 import { formInputClass } from "@/lib/form-styles";
+import { resolveImageSrc } from "@/lib/images";
 
 const POSTS_PER_PAGE = 3;
 
@@ -130,7 +131,7 @@ export function BlogListing() {
                   >
                     <div className="relative w-full aspect-[3/2] bg-slate-100">
                       <Image
-                        src={post.thumbnail.src}
+                        src={resolveImageSrc(post.thumbnail)}
                         alt={post.thumbnail.alt}
                         fill
                         className="object-cover group-hover:scale-[1.02] transition-transform duration-300"

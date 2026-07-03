@@ -53,7 +53,7 @@ export function BlogAngaLayout({
   const serviceLinks = post.relatedServices.filter((link) => !link.href.startsWith("/blog/"));
 
   return (
-    <div className="blog-anga-page min-h-screen bg-white home-section-bg-white">
+    <div className="min-h-screen bg-white home-section-bg-white overflow-x-hidden">
       <BrandGradientDefs />
       <BlogReadingProgress />
 

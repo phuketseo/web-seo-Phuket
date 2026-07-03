@@ -259,6 +259,7 @@ const blogRelatedSlugs: Record<string, string[]> = {
 
   // Restaurants & services
   "seo-restaurants-phuket": [
+    "dan-andap-google-maps-phuket",
     "instagram-marketing-phuket-restaurants",
     "near-me-seo-phuket",
     "google-reviews-phuket",
@@ -279,6 +280,24 @@ const blogRelatedSlugs: Record<string, string[]> = {
   "kan-marketing-ran-nuad-phaen-thai": [
     "seo-for-phuket-spas",
     "google-reviews-phuket",
+    "google-my-business-phuket",
+    "near-me-seo-phuket",
+  ],
+  "dan-andap-google-maps-phuket": [
+    "google-maps-mai-tid-phuket",
+    "rap-pak-mut-thurakij-phuket",
+    "google-my-business-phuket",
+    "local-seo-phuket",
+  ],
+  "google-maps-mai-tid-phuket": [
+    "dan-andap-google-maps-phuket",
+    "rap-pak-mut-thurakij-phuket",
+    "nap-local-seo-phuket",
+    "local-seo-rang-kha-mistakes",
+  ],
+  "rap-pak-mut-thurakij-phuket": [
+    "dan-andap-google-maps-phuket",
+    "google-maps-mai-tid-phuket",
     "google-my-business-phuket",
     "near-me-seo-phuket",
   ],
