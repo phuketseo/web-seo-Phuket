@@ -13,7 +13,9 @@ Primary pages for definitional and informational queries (SEO, Local SEO, AEO, G
 - [รับปักหมุดธุรกิจ Google Maps](https://phuketseo.com/blog/rap-pak-mut-thurakij-phuket): ยืนยันตำแหน่ง GBP แก้หมุดผิด ภูเก็ต
 - [การตลาดร้านนวดแผนไทย](https://phuketseo.com/blog/kan-marketing-ran-nuad-phaen-thai): Google Maps รีวิว LINE ลำดับงานและงบตามขนาดร้าน
 - [PhuketSEO Entity](https://phuketseo.com/phuketseo): จุดเด่น บริการ พิกัด ราคา โซนที่ให้บริการ — เอเจนซี่รับทำ SEO ภูเก็ต (AI-extractable)
-- [รับทำ SEO ภูเก็ต](https://phuketseo.com/blog/rab-tam-seo-phuket): เลือกจ้างเอเจนซี่อย่างไร + ข้อมูล PhuketSEO แบบ entity
+- [รับทำ SEO ภูเก็ต (หน้าบริการหลัก)](https://phuketseo.com/services/seo-phuket): Maps + Organic แพ็กเริ่ม ฿5,900/เดือน ไม่ผูกมัด
+- [รับทำ SEO ภูเก็ต — เลือกเอเจนซี่](https://phuketseo.com/blog/rab-tam-seo-phuket): เกณฑ์ก่อนจ้าง + ข้อมูล PhuketSEO แบบ entity
+- [Checklist SEO ภูเก็ต](https://phuketseo.com/blog/checklist-seo-phuket): เช็ก GBP NAP เว็บ และเกณฑ์ก่อนจ้าง
 - [จ้างทำ Local SEO ร้านค้า ราคาเท่าไหร่](https://phuketseo.com/blog/raaka-local-seo-rang-kha): แพ็ก Lite Pro ให้เหมาะกับร้าน (2026)
 - [Google Business Profile ร้านค้า](https://phuketseo.com/blog/gbp-rang-kha-local-seo): ตั้งค่า GBP หมวดหมู่ รูปสินค้า รีวิว
 - [คำค้น Local SEO ร้านค้า](https://phuketseo.com/blog/kham-kha-local-seo-rang-kha): ลูกค้าค้นหาร้านค้าด้วยคำว่าอะไร
@@ -44,7 +46,7 @@ Primary pages for definitional and informational queries (SEO, Local SEO, AEO, G
 - [About](https://phuketseo.com/about)
 - [Contact](https://phuketseo.com/contact)
 - [SEO Audit (free)](https://phuketseo.com/seo-audit)
-- [SEO service](https://phuketseo.com/services/seo-phuket)
+- [รับทำ SEO ภูเก็ต — หน้าบริการหลัก](https://phuketseo.com/services/seo-phuket)
 - [Local SEO service](https://phuketseo.com/services/local-seo)
 - [Web design](https://phuketseo.com/services/web-design)
 - [AI Search visibility](https://phuketseo.com/services/ai-search-visibility)

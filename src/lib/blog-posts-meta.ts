@@ -175,6 +175,14 @@ export const blogPostsMeta: BlogPostMeta[] = [
     thumbnail: getBlogThumbnail("local-seo-kamala-phuket"),
   },
   {
+    slug: "checklist-seo-phuket",
+    title: "Checklist SEO ภูเก็ต 2026 — เจ้าของธุรกิจเช็กอะไรก่อนจ้างหรือทำเอง",
+    category: "SEO ภูเก็ต",
+    description:
+      "Checklist SEO ภูเก็ตสำหรับเจ้าของธุรกิจ — เช็ก Google Maps, GBP, NAP, เว็บ และเกณฑ์ก่อนจ้างรับทำ SEO ภูเก็ต โดยไม่ต้องเป็นนักการตลาด",
+    thumbnail: getBlogThumbnail("checklist-seo-phuket"),
+  },
+  {
     slug: "rab-tam-seo-phuket",
     title: "รับทำ SEO ภูเก็ต 2026 — เลือกเอเจนซี่อย่างไรก่อนจ้าง?",
     category: "SEO ภูเก็ต",

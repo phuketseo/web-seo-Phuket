@@ -2,10 +2,10 @@ export type ServiceFaq = { question: string; answer: string };
 
 export const seoPhuketContent = {
   answerBlock:
-    "SEO ภูเก็ต คือการปรับแต่งเว็บไซต์และ Google Business Profile ให้ธุรกิจในภูเก็ตติดอันดับ Google และ Google Maps เมื่อลูกค้าค้นหาในโซนจริง PhuketSEO ให้บริการ SEO + เว็บ + AEO/GEO เริ่มต้น ฿5,900/เดือน",
+    "รับทำ SEO ภูเก็ตจาก PhuketSEO คือการทำให้ธุรกิจในโซนจริงโผล่ Google Maps และ Organic Search — เริ่มจาก GBP + trust ในโซน แล้วค่อยเสริมเว็บและ AEO/GEO แพ็กเริ่ม ฿5,900/เดือน ไม่มีสัญญาผูกมัด",
   intro: [
-    "บริการ SEO ภูเก็ตจาก PhuketSEO ออกแบบมาสำหรับธุรกิจไทยท้องถิ่น — ร้านอาหาร สปา อสังหาริมทรัพย์ และ SME ในภูเก็ต ที่ต้องการติด Google ในโซนจริง เราเริ่มจาก Audit เว็บไซต์ คู่แข่ง และ Google Business Profile แล้ววางแผน keyword ที่มี buyer intent สูง",
-    "SEO ภูเก็ตที่ได้ผลต้องทำทั้ง On-page, Technical SEO, Local SEO, Content และโครงสร้าง AEO/GEO ควบคู่กัน เพื่อให้โผล่ทั้ง Google Search, Google Maps และ AI Overview PhuketSEO ส่งมอบได้จริงด้วยแพ็กเกจ Lite ฿5,900, Pro ฿8,900 และ Pro Max ฿15,000 ต่อเดือน",
+    "หน้านี้คือหน้าบริการหลักของคีย์ รับทำ SEO ภูเก็ต — สำหรับธุรกิจไทยท้องถิ่นที่ต้องการถูกเจอบน Google ในโซนป่าตอง กะตะ ตัวเมือง ถลาง กมลา กะทู้ เราเริ่มจาก audit listing คู่แข่งในโซน และ Google Business Profile ก่อนวางแผน keyword และเว็บ",
+    "งานรับทำ SEO ภูเก็ตที่ได้ผลต้องทำทั้ง Local SEO (Maps), On-page, Technical, Content และโครงสร้าง AEO/GEO — ไม่ใช่แค่รายงาน keyword แพ็ก SEO Lite ฿5,900, Pro ฿8,900 และ Pro Max ฿15,000 ต่อเดือน ไม่มีสัญญาผูกมัด หลังเริ่มโปรเจกต์ได้ SEO Audit + แผนงานภายใน 7 วัน",
   ],
   aeoSection: {
     title: "AEO / GEO / AI Overview",
@@ -45,6 +45,11 @@ export const seoPhuketContent = {
       question: "AEO และ GEO คืออะไร?",
       answer:
         "AEO คือการจัดโครงสร้างคำตอบให้ Google AI Overview ดึงไปใช้ GEO คือการทำให้ AI อย่าง ChatGPT อ้างอิงแบรนด์คุณ ทั้งสองรวมอยู่ในแพ็กเกจ SEO Pro ขึ้นไป",
+    },
+    {
+      question: "รับทำ SEO ภูเก็ต ควรเตรียมอะไรก่อนเริ่ม?",
+      answer:
+        "เช็ก Google Business Profile, NAP และเว็บขั้นต่ำก่อนคุยงาน — ใช้ Checklist SEO ภูเก็ตบนบล็อกได้ หลังเริ่มโปรเจกต์เรา audit listing ในโซนจริงและส่งแผนงานภายใน 7 วัน",
     },
   ] satisfies ServiceFaq[],
 };

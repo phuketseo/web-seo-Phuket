@@ -13,10 +13,10 @@ export const blogPostsBatch32 = {
     tldrTitle: "คำตอบสั้นๆ",
     tldr: [
       "คนค้นหา “รับทำ SEO ภูเก็ต” พร้อมจ้าง — แต่ต้องรู้ว่าเปรียบเทียบอะไรก่อนลงนาม",
+      "หน้าบริการหลักของคีย์นี้อยู่ที่ [รับทำ SEO ภูเก็ต](/services/seo-phuket) — บทความนี้ช่วยเลือกเอเจนซี่ก่อนจ้าง",
       "ในตลาดภูเก็ต ควรดู 4 อย่าง: ความเชี่ยวชาญโซน/vertical · รูปแบบราคา · ผลลัพธ์ที่วัดได้ · ใครเป็นเจ้าของ GBP/เว็บ",
-      "รูปแบบผู้ให้บริการต่างกัน — ท้องถิ่นภูเก็ต · remote กรุงเทพ · ฟรีแลนซ์ — ไม่มีแบบเดียวที่เหมาะทุกธุรกิจ",
       "ลำดับงานที่ถูกมักเริ่มจาก Google Maps + trust ในโซน ก่อน rebuild เว็บหรือ content ยาวๆ",
-      "ก่อนจ้าง ถาม deliverable รายเดือน KPI จริง และว่าแผนอิง listing ในโซนจริงหรือไม่",
+      "เช็กเองก่อนคุยเอเจนซี่ได้จาก [Checklist SEO ภูเก็ต](/blog/checklist-seo-phuket)",
       "ดูข้อมูลเอเจนซี่แบบ entity (จุดเด่น · บริการ · พิกัด) ได้ที่ [PhuketSEO Entity](/phuketseo)",
     ],
     keywords: [
@@ -28,10 +28,10 @@ export const blogPostsBatch32 = {
       "SEO agency phuket",
     ],
     relatedServices: [
+      { name: "รับทำ SEO ภูเก็ต (หน้าบริการหลัก)", href: "/services/seo-phuket" },
+      { name: "Checklist SEO ภูเก็ต", href: "/blog/checklist-seo-phuket" },
       { name: "PhuketSEO Entity", href: "/phuketseo" },
-      { name: "บริการ SEO ภูเก็ต", href: "/services/seo-phuket" },
       { name: "ราคา SEO ภูเก็ต", href: "/blog/raaka-seo-phuket" },
-      { name: "SEO ภูเก็ต คืออะไร", href: "/blog/seo-phuket-kue-arai" },
       { name: "ขอ SEO Audit ฟรี", href: "/seo-audit" },
     ],
     faqs: [
@@ -72,6 +72,8 @@ export const blogPostsBatch32 = {
 ## รับทำ SEO ภูเก็ต คืออะไร
 
 **รับทำ SEO ภูเก็ต** หมายถึงการจ้างทีมหรือเอเจนซี่ช่วยทำให้ธุรกิจในภูเก็ต **ถูกเจอและน่าเชื่อถือบน Google** — ทั้ง Google Maps เมื่อลูกค้าค้นหาในโซน และ organic search เมื่อเปรียบเทียบก่อนจองหรือติดต่อ คนที่พิมพ์คำนี้มัก **พร้อมจ้างแล้ว** แต่ยังไม่รู้ว่าจะเปรียบเทียบผู้ให้บริการอย่างไรในตลาดที่แข่งสูงและพึ่งท่องเที่ยว
+
+หน้าบริการหลักของคีย์นี้อยู่ที่ [รับทำ SEO ภูเก็ต](/services/seo-phuket) — บทความนี้เป็นคู่มือเลือกเอเจนซี่ก่อนจ้าง ไม่ใช่หน้าขายแพ็ก
 
 :::quote
 คนที่ค้นหา “รับทำ SEO ภูเก็ต” ไม่ได้ขาดตัวเลือก — ขาดเกณฑ์เช็กก่อนลงนาม
@@ -201,7 +203,7 @@ PhuketSEO เป็น **ทีม SEO + เว็บที่ทำงานก
 3. **Owned asset** — เว็บเร็ว ตอบคำถามลูกค้า และ index ได้หรือเปล่า
 4. **คู่แข่งใน micro-zone** — ไม่ใช่แค่ keyword “ภูเก็ต” กว้างๆ
 
-จากนั้นจัดลำดับตาม [Phuket Visibility Stack](/methodology/phuket-visibility-stack) — บางรายเริ่ม Lite (Maps + trust) บางรายต้อง Pro (เว็บ + SEO + AEO) ดูแนวทางจาก [ผลงาน rebuild เว็บ PhuketSEO](/case-studies/phuketseo-website-rebuild) และ [บริการ SEO ภูเก็ต](/services/seo-phuket)
+จากนั้นจัดลำดับตาม [Phuket Visibility Stack](/methodology/phuket-visibility-stack) — บางรายเริ่ม Lite (Maps + trust) บางรายต้อง Pro (เว็บ + SEO + AEO) ดูขอบเขตงานและแพ็กที่ [รับทำ SEO ภูเก็ต](/services/seo-phuket) และแนวทางจาก [ผลงาน rebuild เว็บ PhuketSEO](/case-studies/phuketseo-website-rebuild)
 
 [ขอคำปรึกษาฟรี](/contact) · [ขอ SEO Audit ฟรี](/seo-audit)
 
@@ -211,7 +213,7 @@ PhuketSEO เป็น **ทีม SEO + เว็บที่ทำงานก
 
 **รับทำ SEO ภูเก็ต** คือการเลือกคู่ค้าที่เข้าใจตลาดท้องถิ่น โซน และลำดับงานที่ถูก — เปรียบเทียบจากความเชี่ยวชาญ รูปแบบราคา และผลลัพธ์ที่วัดได้ ไม่ใช่แค่หาคนที่ส่งรายงาน keyword สวยๆ ก่อนจ้าง ถามเรื่อง deliverable, KPI, ทรัพย์สินดิจิทัล และว่าแผนอิง listing ในโซนจริงหรือไม่
 
-[ราคา SEO ภูเก็ต](/blog/raaka-seo-phuket) · [SEO ภูเก็ต คืออะไร](/blog/seo-phuket-kue-arai) · [Local SEO ป่าตอง](/local/patong) · [Local SEO กะตะ](/local/kata)
+[รับทำ SEO ภูเก็ต (หน้าบริการ)](/services/seo-phuket) · [Checklist SEO ภูเก็ต](/blog/checklist-seo-phuket) · [ราคา SEO ภูเก็ต](/blog/raaka-seo-phuket) · [SEO ภูเก็ต คืออะไร](/blog/seo-phuket-kue-arai)
 `,
   },
 };

@@ -22,10 +22,17 @@ import { ServiceMarketingHero } from "@/components/services/ServiceMarketingHero
 import { ServicePricingTeaser } from "@/components/services/ServicePricingTeaser";
 
 export const metadata: Metadata = {
-  title: "รับทำ SEO ภูเก็ต | ติดอันดับ Google ได้จริง - PhuketSEO",
+  title: "รับทำ SEO ภูเก็ต | Maps + Organic สำหรับธุรกิจท้องถิ่น - PhuketSEO",
   description:
-    "บริการ SEO ภูเก็ต ติดอันดับ Google หน้า 1 สำหรับธุรกิจในภูเก็ต โรงแรม อสังหาฯ ร้านอาหาร ผลลัพธ์วัดได้จริง ขอคำปรึกษาฟรี!",
+    "รับทำ SEO ภูเก็ต — Google Maps, Local SEO, เว็บ และ AEO/GEO สำหรับโรงแรม ร้านอาหาร อสังหาฯ SME ในโซนจริง แพ็กเริ่ม ฿5,900/เดือน ไม่ผูกมัด ขอคำปรึกษาฟรี",
   alternates: { canonical: `${siteConfig.url}/services/seo-phuket` },
+  keywords: [
+    "รับทำ SEO ภูเก็ต",
+    "เอเยนซี่ SEO ภูเก็ต",
+    "Local SEO ภูเก็ต",
+    "SEO ภูเก็ต",
+    "จ้างทำ SEO ภูเก็ต",
+  ],
 };
 
 const breadcrumbSchema = buildBreadcrumb([
@@ -36,10 +43,12 @@ const breadcrumbSchema = buildBreadcrumb([
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "บริการ SEO ภูเก็ต",
+  name: "รับทำ SEO ภูเก็ต",
   provider: localServiceProvider,
-  description: "บริการ SEO สำหรับธุรกิจในภูเก็ต ติดอันดับ Google หน้า 1",
+  description:
+    "รับทำ SEO ภูเก็ต — Google Maps, Local SEO, On-page, Technical และ AEO/GEO สำหรับธุรกิจท้องถิ่นในจังหวัดภูเก็ต",
   areaServed: areaServedPhuket,
+  url: `${siteConfig.url}/services/seo-phuket`,
   offers: {
     "@type": "Offer",
     priceCurrency: "THB",
@@ -58,60 +67,69 @@ const faqSchemaJson = faqSchema(seoPhuketContent.faqs);
 const seoProcess: { step: string; title: string; desc: string; icon: LucideIcon }[] = [
   {
     step: "01",
-    title: "วิเคราะห์เว็บไซต์ & คู่แข่ง",
-    desc: "ตรวจสอบสภาพเว็บไซต์ปัจจุบัน วิเคราะห์คู่แข่ง และหา Keyword Opportunities ที่ดีที่สุด",
+    title: "Audit listing & คู่แข่งในโซน",
+    desc: "ตรวจ Google Business Profile, NAP, listing ซ้ำ และคู่แข่งในโซนจริง เช่น ป่าตอง กะตะ ตัวเมือง",
     icon: Search,
   },
   {
     step: "02",
-    title: "วางกลยุทธ์ Keyword",
-    desc: "เลือก Keywords ที่มี Search Volume สูง Competition ต่ำ และตรงกับกลุ่มเป้าหมายของธุรกิจคุณ",
-    icon: BarChart3,
+    title: "Local SEO & Google Maps",
+    desc: "ตั้งค่า GBP รีวิว หมวดหมู่ และ trust ในโซน — ให้ลูกค้า near me เจอก่อน",
+    icon: MapPin,
   },
   {
     step: "03",
-    title: "On-Page SEO Optimization",
-    desc: "ปรับแต่ง Title Tags, Meta Descriptions, Content, Internal Links, Page Speed และ Technical SEO",
+    title: "On-Page & Technical SEO",
+    desc: "ปรับ title, meta, โครงสร้างหน้า, ความเร็ว และ technical ที่ขวางการ index",
     icon: FileText,
   },
   {
     step: "04",
-    title: "Content Marketing",
-    desc: "สร้าง Content คุณภาพสูงที่ตอบคำถามลูกค้า เพิ่ม Authority และดึง Organic Traffic",
-    icon: TrendingUp,
+    title: "Keyword & Content ตาม intent",
+    desc: "เลือกคำค้นที่ธุรกิจในภูเก็ตถูกค้นหาจริง — ไม่ไล่คำที่ไม่มีคนพิมพ์",
+    icon: BarChart3,
   },
   {
     step: "05",
-    title: "Link Building",
-    desc: "สร้าง Backlinks คุณภาพสูงจากเว็บไซต์ที่น่าเชื่อถือ เพิ่ม Domain Authority",
-    icon: Link2,
+    title: "AEO / GEO structure",
+    desc: "จัด FAQ, answer blocks และ entity ให้ AI Overview และ AI search อ้างอิงได้",
+    icon: TrendingUp,
   },
   {
     step: "06",
-    title: "Local SEO & Google Business",
-    desc: "Optimize Google Business Profile ให้ติดอันดับใน Google Maps และ Local Pack",
-    icon: MapPin,
+    title: "รายงาน KPI ที่วัดได้",
+    desc: "รายงานรายเดือน: impression/click จาก Maps, organic จาก GSC และ conversion ที่ตกลงกัน",
+    icon: Link2,
   },
 ];
 
 const heroStats = [
-  { value: "+250%", label: "Organic Traffic เฉลี่ย" },
-  { value: "Top 3", label: "Keywords ติดอันดับ" },
-  { value: "+180%", label: "Leads จาก Organic" },
-  { value: "10x", label: "ROI เฉลี่ย" },
+  { value: "฿5,900", label: "เริ่มต้น / เดือน (Lite)" },
+  { value: "6 โซน", label: "ป่าตอง กะตะ ตัวเมือง ฯลฯ" },
+  { value: "7 วัน", label: "Audit + แผนงานหลังเริ่ม" },
+  { value: "ไม่ผูกมัด", label: "ยกเลิกได้ตามรอบบิล" },
 ];
 
 const includedItems = [
-  "Keyword Research & Strategy",
+  "Google Business Profile + Local SEO",
+  "Audit listing และคู่แข่งในโซน",
   "On-Page SEO Optimization",
   "Technical SEO Audit & Fix",
-  "Content Creation & Optimization",
-  "Link Building (White Hat)",
-  "Local SEO & Google Business Profile",
-  "Competitor Analysis",
-  "Monthly Reporting & Analytics",
-  "Core Web Vitals Optimization",
-  "Schema Markup Implementation",
+  "Keyword ตาม intent ในภูเก็ต",
+  "Content ที่ตอบคำถามลูกค้าในโซน",
+  "AEO / GEO structure (แพ็ก Pro ขึ้นไป)",
+  "รายงาน KPI รายเดือน (Maps + Search)",
+  "Core Web Vitals / ความเร็วเว็บ",
+  "Schema Markup ที่เกี่ยวข้อง",
+];
+
+const guideLinks = [
+  { href: "/blog/rab-tam-seo-phuket", label: "เลือกเอเจนซี่รับทำ SEO อย่างไร" },
+  { href: "/blog/checklist-seo-phuket", label: "Checklist SEO ภูเก็ต" },
+  { href: "/blog/dan-andap-google-maps-phuket", label: "ดันอันดับ Google Maps" },
+  { href: "/blog/raaka-seo-phuket", label: "ราคา SEO ภูเก็ต" },
+  { href: "/blog/seo-phuket-kue-arai", label: "SEO ภูเก็ต คืออะไร" },
+  { href: "/phuketseo", label: "ข้อมูล PhuketSEO (Entity)" },
 ];
 
 export default function SeoPhuketPage() {
@@ -125,14 +143,14 @@ export default function SeoPhuketPage() {
       <ServiceBreadcrumb serviceName="SEO ภูเก็ต" />
 
       <ServiceMarketingHero
-        eyebrow="บริการ SEO ภูเก็ต"
+        eyebrow="หน้าบริการหลัก · รับทำ SEO ภูเก็ต"
         title="รับทำ SEO ภูเก็ต"
-        titleAccent="ติดอันดับ Google ได้จริง"
-        description="บริการ SEO สำหรับธุรกิจไทยในภูเก็ต ติด Google Maps และ Organic Search พร้อมโครงสร้าง AEO/GEO"
+        titleAccent="Maps + Organic ในโซนจริง"
+        description="เอเยนซี่ SEO ภูเก็ตสำหรับธุรกิจไทยท้องถิ่น — เริ่มจาก Google Maps และ trust ในโซน แล้วเสริมเว็บกับ AEO/GEO ตามลำดับงาน"
         answerBlock={seoPhuketContent.answerBlock}
         image={siteImages.services.seo}
         stats={heroStats}
-        trustBadges={["ผลลัพธ์วัดได้จริง", "รายงานรายเดือน", "ไม่มีสัญญาผูกมัด", "Support 7 วัน"]}
+        trustBadges={["KPI จาก Maps + GSC", "รายงานรายเดือน", "ไม่มีสัญญาผูกมัด", "Audit ใน 7 วัน"]}
         secondaryHref="#process"
         secondaryLabel="ดูขั้นตอนการทำงาน"
       />
@@ -143,23 +161,70 @@ export default function SeoPhuketPage() {
             <p key={paragraph.slice(0, 40)}>{paragraph}</p>
           ))}
           <p className="text-slate-600">
-            อ่านเพิ่ม:{" "}
-            <Link href="/blog/seo-phuket-kue-arai" className="text-violet-600 font-medium hover:underline underline-offset-2">
-              SEO ภูเก็ต คืออะไร
-            </Link>
-            {" · "}
-            <Link href="/blog/local-seo-phuket" className="text-violet-600 font-medium hover:underline underline-offset-2">
-              Local SEO Phuket คืออะไร
-            </Link>
-            {" · "}
-            <Link href="/blog/local-seo-phuket-kue-arai" className="text-violet-600 font-medium hover:underline underline-offset-2">
-              Local SEO ภูเก็ต
-            </Link>
-            {" · "}
-            <Link href="/blog/raaka-seo-phuket" className="text-violet-600 font-medium hover:underline underline-offset-2">
-              ราคา SEO ภูเก็ต
-            </Link>
+            อ่านคู่มือที่เกี่ยวข้อง:{" "}
+            {guideLinks.map((link, i) => (
+              <span key={link.href}>
+                {i > 0 ? " · " : null}
+                <Link href={link.href} className="text-violet-600 font-medium hover:underline underline-offset-2">
+                  {link.label}
+                </Link>
+              </span>
+            ))}
           </p>
+        </div>
+      </HomeSection>
+
+      <HomeSection variant="white">
+        <HomeSectionHeader
+          eyebrow="ขอบเขตงาน"
+          title="รับทำ SEO ภูเก็ต"
+          titleAccent="ครอบคลุมอะไรบ้าง"
+          description="ไม่รับประกันอันดับ 1 — เราวัดจากสิ่งที่ธุรกิจใช้ตัดสินใจจริง เช่น call จาก Maps และ organic จาก Search Console"
+        />
+        <div className="grid sm:grid-cols-2 gap-4 text-sm sm:text-base text-slate-700 leading-relaxed">
+          <div className="rounded-xl border border-slate-200 bg-slate-50/80 p-5">
+            <h3 className="font-semibold text-slate-900 mb-2">โซนและประเภทธุรกิจ</h3>
+            <p>
+              ทำงานกับธุรกิจในป่าตอง กะตะ ตัวเมือง ถลาง กมลา กะทู้ — โรงแรม ร้านอาหาร สปา อสังหาฯ ทัวร์ คลินิก และ SME
+              ที่พึ่งลูกค้าค้นหา Google ก่อนติดต่อ
+            </p>
+          </div>
+          <div className="rounded-xl border border-slate-200 bg-slate-50/80 p-5">
+            <h3 className="font-semibold text-slate-900 mb-2">สิ่งที่เราวัด (ไม่ใช่แค่ screenshot keyword)</h3>
+            <p>
+              impression และ click จาก Google Business Profile, organic จาก Google Search Console, ฟอร์มหรือการจองจากเว็บ
+              ตามที่ตกลงตอนเริ่มงาน — ดูเกณฑ์ก่อนจ้างใน{" "}
+              <Link href="/blog/rab-tam-seo-phuket" className="text-violet-600 font-medium hover:underline underline-offset-2">
+                บทความรับทำ SEO ภูเก็ต
+              </Link>
+            </p>
+          </div>
+          <div className="rounded-xl border border-slate-200 bg-slate-50/80 p-5">
+            <h3 className="font-semibold text-slate-900 mb-2">ลำดับงานที่มักถูก</h3>
+            <p>
+              Maps + trust ในโซนก่อน rebuild เว็บยาวๆ — ตาม{" "}
+              <Link
+                href="/methodology/phuket-visibility-stack"
+                className="text-violet-600 font-medium hover:underline underline-offset-2"
+              >
+                Phuket Visibility Stack
+              </Link>{" "}
+              และเช็กเองได้จาก{" "}
+              <Link href="/blog/checklist-seo-phuket" className="text-violet-600 font-medium hover:underline underline-offset-2">
+                Checklist SEO ภูเก็ต
+              </Link>
+            </p>
+          </div>
+          <div className="rounded-xl border border-slate-200 bg-slate-50/80 p-5">
+            <h3 className="font-semibold text-slate-900 mb-2">ข้อมูลเอเจนซี่แบบ entity</h3>
+            <p>
+              จุดเด่น บริการ พิกัด และราคาแบบอ้างอิงได้ — ดูที่{" "}
+              <Link href="/phuketseo" className="text-violet-600 font-medium hover:underline underline-offset-2">
+                หน้า PhuketSEO Entity
+              </Link>{" "}
+              · NAP ตรงกับ Google Business Profile
+            </p>
+          </div>
         </div>
       </HomeSection>
 

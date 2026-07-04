@@ -11,10 +11,10 @@ export type RelatedBlogPost = {
 const blogRelatedSlugs: Record<string, string[]> = {
   // Pillars & foundations
   "seo-phuket-kue-arai": [
-    "local-seo-phuket-kue-arai",
+    "rab-tam-seo-phuket",
+    "checklist-seo-phuket",
     "raaka-seo-phuket",
-    "google-my-business-phuket",
-    "seo-sme-phuket",
+    "local-seo-phuket-kue-arai",
   ],
   "local-seo-phuket-kue-arai": [
     "local-seo-phuket",
@@ -96,9 +96,9 @@ const blogRelatedSlugs: Record<string, string[]> = {
 
   "raaka-seo-phuket": [
     "rab-tam-seo-phuket",
+    "checklist-seo-phuket",
     "seo-phuket-kue-arai",
     "google-ads-vs-seo-phuket",
-    "rab-tam-web-phuket",
     "seo-sme-phuket",
   ],
   "rab-tam-web-phuket": [
@@ -120,15 +120,21 @@ const blogRelatedSlugs: Record<string, string[]> = {
     "seo-sme-phuket",
   ],
   "seo-sme-phuket": [
+    "checklist-seo-phuket",
     "seo-phuket-kue-arai",
     "google-my-business-phuket",
     "local-seo-phuket-kue-arai",
-    "nap-local-seo-phuket",
   ],
   "rab-tam-seo-phuket": [
-    "seo-phuket-kue-arai",
+    "checklist-seo-phuket",
     "raaka-seo-phuket",
-    "seo-sme-phuket",
+    "seo-phuket-kue-arai",
+    "dan-andap-google-maps-phuket",
+  ],
+  "checklist-seo-phuket": [
+    "rab-tam-seo-phuket",
+    "dan-andap-google-maps-phuket",
+    "raaka-seo-phuket",
     "google-my-business-phuket",
   ],
 
@@ -286,8 +292,8 @@ const blogRelatedSlugs: Record<string, string[]> = {
   "dan-andap-google-maps-phuket": [
     "google-maps-mai-tid-phuket",
     "rap-pak-mut-thurakij-phuket",
+    "checklist-seo-phuket",
     "google-my-business-phuket",
-    "local-seo-phuket",
   ],
   "google-maps-mai-tid-phuket": [
     "dan-andap-google-maps-phuket",
