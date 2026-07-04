@@ -908,7 +908,7 @@ export const siteImages = {
       height: 1800,
       layout: "portrait",
       ratio: "4:5",
-      rev: 1,
+      rev: 2,
     },
     mapsPinWrong: {
       src: "/images/blog/blog-inline-rap-pak-mut-thurakij-phuket-wrong-clean.png",
