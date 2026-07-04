@@ -98,7 +98,7 @@ export function BlogAngaLayout({
             )}
 
             {renderBlogContent(contentForRender, {
-              midCtaAfterSection: 5,
+              // CTA อยู่ท้ายบท (สรุป) เท่านั้น — ไม่แทรกกลางบท
               theme: "anga",
             })}
           </div>

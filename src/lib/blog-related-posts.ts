@@ -23,10 +23,10 @@ const blogRelatedSlugs: Record<string, string[]> = {
     "nap-local-seo-phuket",
   ],
   "local-seo-phuket": [
+    "checklist-seo-phuket",
     "local-seo-phuket-kue-arai",
     "google-my-business-phuket",
     "near-me-seo-phuket",
-    "nap-local-seo-phuket",
   ],
 
   // Local SEO ร้านค้า — vertical pillar + cluster
