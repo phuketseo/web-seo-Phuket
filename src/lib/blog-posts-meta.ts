@@ -23,6 +23,22 @@ export const blogCategories = [
 
 export const blogPostsMeta: BlogPostMeta[] = [
   {
+    slug: "witi-kae-web-don-core-update",
+    title: "วิธีแก้ปัญหาเว็บโดน Core Update",
+    category: "SEO ภูเก็ต",
+    description:
+      "วิธีแก้ปัญหาเว็บโดน Core Update — คอนเฟิร์มจากวันที่ Google ประกาศ playbook คุณภาพทั้งไซต์ สิ่งที่ห้ามทำ และระยะเวลาที่สมจริงหลังอัปเดต",
+    thumbnail: getBlogThumbnail("witi-kae-web-don-core-update"),
+  },
+  {
+    slug: "andap-google-tok-kuen-nai-30-wan",
+    title: "อันดับ Google ตก เช็ควิธีกู้คืนใน 30 วัน",
+    category: "SEO ภูเก็ต",
+    description:
+      "อันดับ Google ตก เช็ควิธีกู้คืนใน 30 วัน — แยกสาเหตุก่อนแก้ แผนสัปดาห์ที่ 1–4 สัญญาณฟื้น และข้อผิดพลาดที่ทำให้ตกซ้ำ",
+    thumbnail: getBlogThumbnail("andap-google-tok-kuen-nai-30-wan"),
+  },
+  {
     slug: "dan-andap-google-maps-phuket",
     title: "ดันอันดับ Google Maps ภูเก็ต — วิธีให้ธุรกิจโผล่ต้นๆ",
     category: "Local SEO",

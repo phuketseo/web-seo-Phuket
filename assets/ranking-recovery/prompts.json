@@ -1,0 +1,109 @@
+{
+  "andap-google-tok-kuen-nai-30-wan-hero": {
+    "headlinePrimary": "อันดับ Google ตก",
+    "headlineSecondary": "เช็ควิธีกู้คืนใน 30 วัน",
+    "badge": "กู้คืนอันดับ · 30 วัน",
+    "mockupFocus": "seo-dashboard",
+    "mockupTitle": "Ranking Recovery 30 Days",
+    "sidebarItems": [
+      { "title": "ยืนยันว่าตกจริง", "description": "ดู trend 7–14 วันใน Search Console" },
+      { "title": "แยก 5 กลุ่มสาเหตุ", "description": "เทคนิค เนื้อหา UX คู่แข่ง อัลกอริทึม" },
+      { "title": "72 ชั่วโมงแรก", "description": "Stabilize และเก็บหลักฐานก่อนแก้ใหญ่" },
+      { "title": "แผนรายสัปดาห์", "description": "สัปดาห์ 1–4 วัด click ไม่ใช่ screenshot" }
+    ]
+  },
+  "andap-google-tok-kuen-nai-30-wan-causes": {
+    "headlinePrimary": "อันดับตกเพราะอะไร?",
+    "headlineSecondary": "แยก 5 กลุ่มก่อนลงมือ",
+    "badge": "วินิจฉัยก่อนแก้",
+    "mockupFocus": "seo-dashboard",
+    "mockupTitle": "Cause Diagnosis",
+    "sidebarItems": [
+      { "title": "เทคนิค / index", "description": "404 noindex เว็บช้า sitemap พัง" },
+      { "title": "เนื้อหาหน้าเงิน", "description": "ตอบ intent ไม่ครบ คู่แข่งดีกว่า" },
+      { "title": "โครงสร้าง / UX", "description": "เมนูพัง ฟอร์มเสีย มือถือใช้ไม่ได้" },
+      { "title": "คู่แข่งแซง", "description": "impression คงที่ ตำแหน่งแย่ลงทีละน้อย" },
+      { "title": "อัลกอริทึมใหญ่", "description": "หลายคำตกพร้อมกันหลังวันที่ปล่อยอัปเดต" }
+    ]
+  },
+  "andap-google-tok-kuen-nai-30-wan-plan": {
+    "headlinePrimary": "กู้คืนอันดับ Google",
+    "headlineSecondary": "แผนรายสัปดาห์ที่ 1–4",
+    "badge": "แผนกู้คืน 30 วัน",
+    "mockupFocus": "seo-dashboard",
+    "mockupTitle": "Week 1–4 Recovery Plan",
+    "sidebarItems": [
+      { "title": "สัปดาห์ 1 Stabilize", "description": "แก้ 404 index CTA พัง ห้ามย้ายโครงสร้าง" },
+      { "title": "สัปดาห์ 2 หน้าเงิน", "description": "ตอบ intent ชัด ใส่ FAQ ตัดซ้ำ" },
+      { "title": "สัปดาห์ 3 Trust", "description": "เสริมความน่าเชื่อถือ ลด cannibalization" },
+      { "title": "สัปดาห์ 4 วัดผล", "description": "เทียบ baseline ตัดสินใจต่อหรือเปลี่ยนทาง" }
+    ]
+  },
+  "andap-google-tok-kuen-nai-30-wan-mistakes": {
+    "headlinePrimary": "อย่าทำตอนอันดับตก",
+    "headlineSecondary": "ข้อผิดพลาดที่ทำให้แย่ลง",
+    "badge": "ข้อผิดพลาดที่พบบ่อย",
+    "mockupFocus": "website-ui",
+    "mockupTitle": "Recovery Mistakes",
+    "sidebarItems": [
+      { "title": "รีไรต์ทั้งเว็บทันที", "description": "เปลี่ยนหลายอย่างพร้อมกัน วัดผลไม่ได้" },
+      { "title": "ซื้อลิงก์จำนวนมาก", "description": "เพิ่มความเสี่ยงโดยไม่แก้หน้าเงิน" },
+      { "title": "ลบหน้าที่มี impression", "description": "บางหน้าเป็นทางเข้า long-tail ที่ยังมีประโยชน์" },
+      { "title": "ย้ายโดเมนระหว่างกู้", "description": "สร้างปัญหาใหม่ทับปัญหาเดิม" }
+    ]
+  },
+  "witi-kae-web-don-core-update-hero": {
+    "headlinePrimary": "วิธีแก้ปัญหาเว็บ",
+    "headlineSecondary": "โดน Core Update",
+    "badge": "Core Update Playbook",
+    "mockupFocus": "aeo-serp",
+    "mockupTitle": "Core Update Recovery",
+    "sidebarItems": [
+      { "title": "คอนเฟิร์ม 4 ข้อ", "description": "ตรงวันที่ประกาศ กระทบวงกว้าง ตัดเทคนิค" },
+      { "title": "ห้ามรีไรต์มั่ว", "description": "ช่วง rollout ยังผันผวน อย่าเปลี่ยนทั้งเว็บ" },
+      { "title": "คุณภาพทั้งไซต์", "description": "เสริม รวม ตัดหน้า ไม่ใช่แก้หน้าเดียว" },
+      { "title": "วัดรอบอัปเดต", "description": "มักนานกว่า 30 วัน อาจชัดหลังรอบถัดไป" }
+    ]
+  },
+  "witi-kae-web-don-core-update-confirm": {
+    "headlinePrimary": "ใช่ Core Update จริง?",
+    "headlineSecondary": "เช็ก 4 ข้อให้ครบก่อนแก้",
+    "badge": "ยืนยันก่อนแก้",
+    "mockupFocus": "seo-dashboard",
+    "mockupTitle": "Confirm Core Update",
+    "sidebarItems": [
+      { "title": "ตรงวันที่ประกาศ", "description": "เทียบกราฟกับวันที่ Google ปล่อยอัปเดต" },
+      { "title": "กระทบวงกว้าง", "description": "หลายคำและหลายหน้าลดพร้อมกัน" },
+      { "title": "ตัดสาเหตุอื่น", "description": "หน้าเงินยัง index เว็บไม่พัง ไม่มี manual action" },
+      { "title": "คู่แข่งขยับ", "description": "บางรายได้ บางรายเสียในช่วง rollout เดียวกัน" }
+    ]
+  },
+  "witi-kae-web-don-core-update-playbook": {
+    "headlinePrimary": "Playbook หลังโดน",
+    "headlineSecondary": "Core Update 5 ชั้น",
+    "badge": "Playbook 5 ชั้น",
+    "mockupFocus": "website-ui",
+    "mockupTitle": "Site-wide Quality Playbook",
+    "sidebarItems": [
+      { "title": "ชั้น 1 รอ rollout นิ่ง", "description": "เก็บหลักฐานวันเริ่ม–จบ อย่าตัดสินกลาง rollout" },
+      { "title": "ชั้น 2 ประเมินทั้งไซต์", "description": "จัดหน้าเป็นถัง เสริม รวม ตัด" },
+      { "title": "ชั้น 3 เสริมหน้าเงิน", "description": "มีประโยชน์และน่าเชื่อถือกว่าคู่แข่งที่ยังอยู่" },
+      { "title": "ชั้น 4 ลดหน้า thin", "description": "ซ้ำ สแปมคำค้น ไม่มีประสบการณ์จริง" },
+      { "title": "ชั้น 5 วัดรอบอัปเดต", "description": "เทียบก่อน–หลัง เตรียมก่อนรอบถัดไป" }
+    ]
+  },
+  "witi-kae-web-don-core-update-donts": {
+    "headlinePrimary": "สิ่งที่ห้ามทำ",
+    "headlineSecondary": "หลังรู้ว่าโดน Core Update",
+    "badge": "สิ่งที่ห้ามทำ",
+    "mockupFocus": "seo-dashboard",
+    "mockupTitle": "Core Update Don'ts",
+    "sidebarItems": [
+      { "title": "รีไรต์ทั้งเว็บตอน rollout", "description": "กราฟยังผันผวน อ่านผลยาก" },
+      { "title": "ซื้อแบ็คลิงก์จำนวนมาก", "description": "ไม่แก้คุณภาพ และเพิ่มความเสี่ยง" },
+      { "title": "ลบหน้า impression ทั้งก้อน", "description": "แยกหน้า thin จริงออกจาก long-tail" },
+      { "title": "ย้ายโดเมนหรือเปลี่ยน CMS", "description": "สร้างปัญหาเทคนิคทับปัญหาคุณภาพ" },
+      { "title": "รออย่างเดียวไม่ประเมิน", "description": "รอบถัดไปไม่ได้ล้างหน้า thin ให้ดีเอง" }
+    ]
+  }
+}
