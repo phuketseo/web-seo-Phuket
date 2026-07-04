@@ -324,6 +324,48 @@ export const siteImages = {
       height: 2560,
       rev: 3,
     },
+    aiOverviewPaoMaiHero: {
+      src: "/images/blog/blog-thumb-ai-overview-pao-mai-seo-clean.png",
+      alt: "AI Overview เป้าหมายใหม่ของคนทำ SEO — กล่องสรุปคำตอบบน Google",
+      width: 3840,
+      height: 2560,
+      rev: 2,
+    },
+    aiOverviewPaoMaiWhat: {
+      src: "/images/blog/blog-inline-ai-overview-pao-mai-seo-what-clean.png",
+      alt: "AI Overview คืออะไร — กล่องสรุปคำตอบบน Google ที่อาจพูดถึงชื่อธุรกิจ",
+      width: 3840,
+      height: 2560,
+      rev: 1,
+    },
+    aiOverviewPaoMaiWhy: {
+      src: "/images/blog/blog-inline-ai-overview-pao-mai-seo-why-clean.png",
+      alt: "ทำไมต้องสนใจ AI Overview — ไม่พอแค่ติดหน้าแรก ต้องถูกพูดถึงในสรุปด้วย",
+      width: 3840,
+      height: 2560,
+      rev: 1,
+    },
+    aiOverviewPaoMaiBenefit: {
+      src: "/images/blog/blog-inline-ai-overview-pao-mai-seo-benefit-clean.png",
+      alt: "AI Overview ช่วยธุรกิจอย่างไร — เห็นชื่อแบรนด์เร็วขึ้นตอนลูกค้าค้นหา",
+      width: 3840,
+      height: 2560,
+      rev: 1,
+    },
+    aiOverviewCaseScreenshot: {
+      src: "/images/blog/blog-inline-ai-overview-pao-mai-seo-screenshot-clean.png",
+      alt: "ตัวอย่างจริง AI Overview คำค้นรับทำ SEO สปาภูเก็ต — PhuketSEO ถูกพูดถึงในกล่องสรุป",
+      width: 1600,
+      height: 1012,
+      rev: 1,
+    },
+    aiOverviewCaseScreenshotAlt: {
+      src: "/images/blog/blog-inline-ai-overview-pao-mai-seo-screenshot-alt-clean.png",
+      alt: "หลักฐาน AI Overview — รายชื่อเอเจนซี่ในกล่องข้อมูลภาพรวมโดย AI",
+      width: 1600,
+      height: 928,
+      rev: 1,
+    },
     gscGbpCompare: {
       src: "/images/blog/blog-inline-gsc-gbp-compare-clean.png",
       alt: "เปรียบเทียบ Google Business Profile กับ Google Search Console — Maps vs organic search",
@@ -1075,6 +1117,7 @@ export const blogThumbnailBySlug: Record<string, SiteImage> = {
   "rap-pak-mut-thurakij-phuket": siteImages.blog.mapsPinHero,
   "andap-google-tok-kuen-nai-30-wan": siteImages.blog.rankingRecovery30dHero,
   "witi-kae-web-don-core-update": siteImages.blog.coreUpdateHero,
+  "ai-overview-pao-mai-seo": siteImages.blog.aiOverviewPaoMaiHero,
 };
 
 export function getBlogThumbnail(slug: string): SiteImage {
@@ -1199,6 +1242,11 @@ export const blogInlineImages: Record<string, SiteImage> = {
   coreUpdateConfirm: siteImages.blog.coreUpdateConfirm,
   coreUpdatePlaybook: siteImages.blog.coreUpdatePlaybook,
   coreUpdateDonts: siteImages.blog.coreUpdateDonts,
+  aiOverviewPaoMaiWhat: siteImages.blog.aiOverviewPaoMaiWhat,
+  aiOverviewPaoMaiWhy: siteImages.blog.aiOverviewPaoMaiWhy,
+  aiOverviewPaoMaiBenefit: siteImages.blog.aiOverviewPaoMaiBenefit,
+  aiOverviewCaseScreenshot: siteImages.blog.aiOverviewCaseScreenshot,
+  aiOverviewCaseScreenshotAlt: siteImages.blog.aiOverviewCaseScreenshotAlt,
   serviceGoogleAds: siteImages.services.googleAds,
 };
 

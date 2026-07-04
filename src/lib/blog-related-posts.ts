@@ -9,6 +9,13 @@ export type RelatedBlogPost = {
 
 /** Curated blog-to-blog links by topic cluster */
 const blogRelatedSlugs: Record<string, string[]> = {
+  "ai-overview-pao-mai-seo": [
+    "aeo-kue-arai",
+    "ai-overview-kue-arai",
+    "seo-for-phuket-spas",
+    "seo-phuket-kue-arai",
+  ],
+
   // Ranking recovery cluster (pillar andap-web-tok-ai-search — ทีหลัง)
   "andap-google-tok-kuen-nai-30-wan": [
     "witi-kae-web-don-core-update",

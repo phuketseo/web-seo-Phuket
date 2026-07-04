@@ -23,6 +23,14 @@ export const blogCategories = [
 
 export const blogPostsMeta: BlogPostMeta[] = [
   {
+    slug: "ai-overview-pao-mai-seo",
+    title: "AI Overview เป้าหมายใหม่ของคนทำ SEO",
+    category: "AEO & GEO",
+    description:
+      "AI Overview คือเป้าหมายใหม่ของคนทำ SEO — ไม่ใช่แค่ติดหน้าแรก แต่ให้ระบบสรุปคำตอบอ้างอิงแบรนด์ได้ พร้อมตัวอย่างคำค้น SEO สปาภูเก็ต",
+    thumbnail: getBlogThumbnail("ai-overview-pao-mai-seo"),
+  },
+  {
     slug: "witi-kae-web-don-core-update",
     title: "วิธีแก้ปัญหาเว็บโดน Core Update",
     category: "SEO ภูเก็ต",
