@@ -901,6 +901,15 @@ export const siteImages = {
       height: 2560,
       rev: 2,
     },
+    mapsPinFbPost: {
+      src: "/images/blog/blog-fb-rap-pak-mut-thurakij-phuket-4x5.png",
+      alt: "รับปักหมุดธุรกิจ Google Maps ภูเก็ต — ยืนยันตำแหน่งร้าน (โพสต์ Facebook 4:5)",
+      width: 1440,
+      height: 1800,
+      layout: "portrait",
+      ratio: "4:5",
+      rev: 1,
+    },
     mapsPinWrong: {
       src: "/images/blog/blog-inline-rap-pak-mut-thurakij-phuket-wrong-clean.png",
       alt: "ปักหมุดธุรกิจผิด — ผลกระทบต่อ Google Maps",
@@ -1015,7 +1024,9 @@ export function getBlogThumbnail(slug: string): SiteImage {
 }
 
 /** ไฟล์ 4:5 สำหรับโพสต์ native บนเพจ Facebook — ไม่ render บนหน้าเว็บ */
-export const blogFbPostBySlug: Record<string, SiteImage> = {};
+export const blogFbPostBySlug: Record<string, SiteImage> = {
+  "rap-pak-mut-thurakij-phuket": siteImages.blog.mapsPinFbPost,
+};
 
 /** Keys for :::image blocks in blog markdown */
 export const blogInlineImages: Record<string, SiteImage> = {
