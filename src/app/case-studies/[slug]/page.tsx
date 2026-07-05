@@ -58,7 +58,7 @@ export default async function CaseStudyDetailPage({
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(caseStudyJsonLd(study)) }} />
 
-      <div className="border-b border-slate-100/80 bg-white pt-24">
+      <div className="border-b border-slate-100/80 bg-white pt-[var(--site-header-height)]">
         <div className="container-custom py-3">
           <MarketingBreadcrumb
             items={[

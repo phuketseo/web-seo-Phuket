@@ -20,7 +20,7 @@ export function BlogReadingProgress() {
 
   return (
     <div
-      className="fixed top-16 left-0 right-0 z-[60] h-[2px] bg-slate-200/80"
+      className="fixed left-0 right-0 z-40 h-[2px] bg-slate-200/80 top-[var(--site-header-height)]"
       aria-hidden
     >
       <div

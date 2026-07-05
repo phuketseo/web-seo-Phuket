@@ -12,7 +12,7 @@ export function BlogAuthorBox({ name, role }: Props) {
       <div className="relative h-10 w-10 overflow-hidden rounded-full border border-slate-200 bg-white">
         <Image
           src={siteImages.team.somchai.src}
-          alt=""
+          alt={`รูปโปรไฟล์ ${name} — ${role}`}
           fill
           className="object-cover"
           sizes="40px"

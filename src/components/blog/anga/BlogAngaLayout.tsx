@@ -57,16 +57,18 @@ export function BlogAngaLayout({
       <BrandGradientDefs />
       <BlogReadingProgress />
 
-      <div className="border-b border-slate-100 bg-white pt-24">
-        <BlogAngaFrame className="py-3">
-          <MarketingBreadcrumb
-            items={[
-              { label: "หน้าแรก", href: "/" },
-              { label: "บล็อก", href: "/blog" },
-              { label: post.title },
-            ]}
-          />
-        </BlogAngaFrame>
+      <div className="pt-[var(--site-header-height)]">
+        <div className="border-b border-slate-100 bg-white">
+          <BlogAngaFrame className="py-3">
+            <MarketingBreadcrumb
+              items={[
+                { label: "หน้าแรก", href: "/" },
+                { label: "บล็อก", href: "/blog" },
+                { label: post.title },
+              ]}
+            />
+          </BlogAngaFrame>
+        </div>
       </div>
 
       <article className="pb-16 sm:pb-20">

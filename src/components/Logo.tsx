@@ -7,19 +7,20 @@ type LogoVariant = "horizontal" | "icon" | "footer";
 
 const sizes: Record<LogoVariant, { width: number; height: number; className: string }> = {
   horizontal: {
-    width: 240,
-    height: 56,
-    className: "h-9 sm:h-10 w-auto max-w-[200px] sm:max-w-[240px]",
+    width: 720,
+    height: 168,
+    className:
+      "h-[108px] sm:h-[120px] w-auto max-w-[min(100%,600px)] sm:max-w-[720px]",
   },
   icon: {
-    width: 40,
-    height: 40,
-    className: "h-9 w-9",
+    width: 120,
+    height: 120,
+    className: "h-[108px] w-[108px]",
   },
   footer: {
-    width: 220,
-    height: 52,
-    className: "h-11 w-auto max-w-[220px]",
+    width: 660,
+    height: 156,
+    className: "h-[132px] w-auto max-w-[660px]",
   },
 };
 

@@ -3,7 +3,7 @@ export const rankingPillarPost = {
   "andap-web-tok-ai-search": {
     title: "อันดับเว็บตก — ปรับตัวรับ AI Search",
     description:
-      "อันดับเว็บตกเพราะอะไร แยกสาเหตุก่อนแก้ รู้ได้ยังไงว่าโดน Core Update และปรับตัวรับ AI Search อย่างไร — hub วินิจฉัยสั้นจาก PhuketSEO",
+      "อันดับเว็บตกเพราะอะไร แยกสาเหตุ 5 กลุ่มก่อนแก้ รู้ได้ยังไงว่าโดน Core Update ปรับตัวรับ AI Search อย่างไร — hub วินิจฉัยจาก PhuketSEO รับทำ SEO ภูเก็ต · SEO Audit ฟรี",
     category: "SEO ภูเก็ต",
     date: "5 กรกฎาคม 2569",
     dateISO: "2026-07-05",

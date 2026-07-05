@@ -22,7 +22,7 @@ export function LegalPageLayout({
   footerLinks?: { href: string; label: string }[];
 }) {
   return (
-    <div className="pt-24">
+    <div className="pt-[var(--site-header-height)]">
       <BrandGradientDefs />
 
       <section className="home-section-bg-white border-b border-slate-100/80">

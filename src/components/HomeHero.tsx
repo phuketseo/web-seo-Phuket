@@ -15,7 +15,7 @@ export default function HomeHero() {
 
   return (
     <section className="home-section-bg-white border-b border-slate-100/80">
-      <div className="container-custom pt-28 pb-12 sm:pt-32 sm:pb-14 lg:pt-36 lg:pb-20">
+      <div className="container-custom pt-[calc(var(--site-header-height)+3rem)] pb-12 sm:pt-[calc(var(--site-header-height)+4rem)] sm:pb-14 lg:pt-[calc(var(--site-header-height)+5rem)] lg:pb-20">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center max-w-6xl mx-auto">
           <div className="relative lg:pl-4 order-1 lg:order-2">
             <div className="overflow-hidden rounded-xl border border-slate-200 bg-slate-50 shadow-sm">

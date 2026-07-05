@@ -27,7 +27,7 @@ export const blogPostsMeta: BlogPostMeta[] = [
     title: "อันดับเว็บตก — ปรับตัวรับ AI Search",
     category: "SEO ภูเก็ต",
     description:
-      "อันดับเว็บตกเพราะอะไร แยกสาเหตุก่อนแก้ รู้ได้ยังไงว่าโดน Core Update และปรับตัวรับ AI Search — hub วินิจฉัยสั้นจาก PhuketSEO",
+      "อันดับเว็บตกเพราะอะไร แยกสาเหตุ 5 กลุ่มก่อนแก้ รู้ได้ยังไงว่าโดน Core Update ปรับตัวรับ AI Search อย่างไร — hub วินิจฉัยจาก PhuketSEO รับทำ SEO ภูเก็ต · SEO Audit ฟรี",
     thumbnail: getBlogThumbnail("andap-web-tok-ai-search"),
   },
   {

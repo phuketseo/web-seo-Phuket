@@ -66,7 +66,7 @@ export default function SeoAuditPage() {
   }
 
   return (
-    <div className="pt-24">
+    <div className="pt-[var(--site-header-height)]">
       <BrandGradientDefs />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 

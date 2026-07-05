@@ -18,7 +18,7 @@ export function BlogAngaAuthorFooter({ name, role }: Props) {
         <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-full ring-2 ring-violet-100 bg-white">
           <Image
             src={siteImages.team.somchai.src}
-            alt=""
+            alt={`รูปโปรไฟล์ ${name} — ${role}`}
             fill
             className="object-cover"
             sizes="64px"

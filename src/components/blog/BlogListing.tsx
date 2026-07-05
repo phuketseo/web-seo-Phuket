@@ -73,7 +73,7 @@ export function BlogListing() {
   }
 
   return (
-    <div className="pt-24">
+    <div className="pt-[var(--site-header-height)]">
       <section className="home-section-bg-white border-b border-slate-100/80">
         <div className="container-custom max-w-4xl py-10 sm:py-12">
           <MarketingBreadcrumb items={[{ label: "หน้าแรก", href: "/" }, { label: "บล็อก" }]} />

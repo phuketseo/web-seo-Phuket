@@ -57,8 +57,9 @@ export const metadata: Metadata = {
 };
 
 const CRITICAL_SHELL_CSS = `
+:root{--site-header-height:152px}
 [data-site-header]{position:fixed;top:0;left:0;right:0;z-index:50;background:#fff;box-shadow:0 1px 2px rgba(15,23,42,.06);border-bottom:1px solid #f1f5f9;padding:.625rem 0}
-[data-site-header] .min-h-\\[44px\\]{min-height:44px}
+[data-site-header] .min-h-\\[132px\\]{min-height:132px}
 html{scroll-behavior:smooth}
 body{margin:0;font-family:Tahoma,"Segoe UI",sans-serif;color:#0f172a;background:#fff;-webkit-font-smoothing:antialiased}
 `;
