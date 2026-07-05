@@ -216,63 +216,38 @@ description: >-
 
 ## รูปภาพ
 
-### แบบ A — Landscape 3:2 (บทความเดิม)
+### มาตรฐานเดียว — Smooth Purple Landscape 3:2
 
 | # | ประเภท | ใช้ที่ |
 |---|--------|--------|
-| 1 | Infographic hero | Featured thumbnail (ยังใช้ 3:2) |
+| 1 | Infographic hero | Featured thumbnail |
 | 2–4 | Inline landscape | หลัง section หลัก |
 
-- **Smooth Purple** — `src/lib/image-style-smooth-purple.ts` → `buildSmoothPurplePrompt()`
-- Upscale **3840×2560** — `scripts/upscale-*-images.mjs`
-- Markdown: `:::image key` + caption
+- **Prompt** — `src/lib/image-style-smooth-purple.ts` → `buildSmoothPurplePrompt()`
+- **Upscale** — 3840×2560 (`scripts/upscale-ranking-recovery-images.mjs` หรือ upscale ตาม cluster)
+- **Workflow ranking cluster** — `assets/ranking-recovery/prompts.json` → `node scripts/ranking-recovery-image-briefs.mjs` → AI generate → `brand-bar-pillar-only.mjs` หรือ `compose-phuketseo-brand-bar.mjs` → upscale
+- **Post-process (ถ้าต้องการ)** — `compose-maps-cluster-frame.mjs`, `compose-phuketseo-brand-bar.mjs` หลัง AI generate แล้ว
+- **Markdown** — `:::image key` + caption
 
-### แบบ B — Portrait 9:16 mobile-first (บทความใหม่ตั้งแต่ ก.ค. 2026)
+**ไม่มีสกิลสร้างรูปแยกไฟล์** — workflow อยู่ในส่วนนี้ + `.cursor/rules/image-layout-standard.mdc`
 
-ออกแบบให้อ่านบนมือถือก่อน — การ์ดซ้อนลง หัวข้อใหญ่ ไม่เกิน 5–6 จุดต่อรูป
+### ห้ามใช้ (เลิกแล้ว)
 
-| จุด | ค่า |
-|-----|-----|
-| สัดส่วน | **9:16** (แนวตั้ง ไม่ใช่ 16:9) |
-| Prompt | `src/lib/image-style-blog-portrait.ts` → `buildBlogPortraitPrompt()` |
-| ขนาดต้นฉบับ | 1536×2730 → upscale **2160×3840** |
-| Brand bar | `node scripts/compose-phuketseo-brand-bar.mjs assets/<folder>` |
-| Upscale | `node scripts/upscale-blog-portrait-images.mjs assets/<folder> '{"src":"...","out":"..."}'` |
-| `images.ts` | `layout: "portrait"`, `width: 2160`, `height: 3840` |
+| แบบ | ไฟล์ที่ลบแล้ว |
+|-----|----------------|
+| Portrait 9:16 + `:::split` | `image-style-blog-portrait.ts` |
+| Portrait 4:5 (FB) | `image-style-blog-4x5.ts` |
+| Sharp card-stack | **ลบแล้ว** — `compose-ranking-recovery-images.mjs` ไม่มีใน repo |
 
-**แสดงผลใน blog (แนะนำ — แบบหน้าแรก):**
+ถ้าต้องการรูปแนว “5 กลุ่มสาเหตุ” → ใช้ `buildSmoothPurplePrompt` + `sidebarItems` หรือ mockup dashboard (landscape 3:2)
 
-ใช้ `:::split` — ข้อความ + รูปคู่กันในแต่ละ section:
-
-```
-## หัวข้อ section
-
-:::split mapsBoostFactors
-ย่อหน้าอธิบายที่เกี่ยวกับรูป — รองรับ **bold** และ [ลิงก์](/path)
-
-- bullet ได้
-:::
-
-```
-
-| จอ | เลย์เอาต์ |
-|----|-----------|
-| มือถือ | รูปอยู่**บน** ข้อความอยู่**ล่าง** |
-| Desktop (lg+) | ข้อความ**ซ้าย** รูป**ขวา** (เหมือน HomeHero) |
-
-**ทางเลือก — `:::image-grid`:** รูป portrait 2 รูปเคียงกันบน desktop (ไม่มีข้อความคู่) — ใช้เมื่อไม่มี copy คู่
-
-รูปเดี่ยว landscape ใช้ `:::image key` ได้ (เต็มความกว้าง)
-
-Thumbnail ใน `/blog` listing ยังเป็น **3:2** — crop จาก hero หรือทำ thumb แยก
-
-### ร่วมกันทุกแบบ
+### ร่วมกันทุกบทความ
 
 - สร้างใหม่ทุกบทความ — **ห้าม reuse รูปจากบทอื่น**
 - ชื่อไฟล์: `blog-thumb-{slug}-clean.png`, `blog-inline-{topic}-clean.png`
 - รัน `npm run check:images` ก่อน commit
 
-### Inline images ใน markdown (landscape เดี่ยว)
+### Inline images ใน markdown
 
 ```
 :::image kamalaMaps

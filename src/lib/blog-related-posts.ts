@@ -16,14 +16,21 @@ const blogRelatedSlugs: Record<string, string[]> = {
     "seo-phuket-kue-arai",
   ],
 
-  // Ranking recovery cluster (pillar andap-web-tok-ai-search — ทีหลัง)
+  "andap-web-tok-ai-search": [
+    "andap-google-tok-kuen-nai-30-wan",
+    "witi-kae-web-don-core-update",
+    "aeo-kue-arai",
+    "ai-overview-pao-mai-seo",
+  ],
   "andap-google-tok-kuen-nai-30-wan": [
+    "andap-web-tok-ai-search",
     "witi-kae-web-don-core-update",
     "google-search-console-phuket",
     "checklist-seo-phuket",
     "aeo-kue-arai",
   ],
   "witi-kae-web-don-core-update": [
+    "andap-web-tok-ai-search",
     "andap-google-tok-kuen-nai-30-wan",
     "aeo-kue-arai",
     "checklist-seo-phuket",

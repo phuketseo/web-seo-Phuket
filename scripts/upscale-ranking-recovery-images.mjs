@@ -19,6 +19,10 @@ const jobs = [
   { src: "witi-kae-web-don-core-update-confirm-branded.png", out: "blog-inline-witi-kae-web-don-core-update-confirm-clean.png" },
   { src: "witi-kae-web-don-core-update-playbook-branded.png", out: "blog-inline-witi-kae-web-don-core-update-playbook-clean.png" },
   { src: "witi-kae-web-don-core-update-donts-branded.png", out: "blog-inline-witi-kae-web-don-core-update-donts-clean.png" },
+  { src: "andap-web-tok-ai-search-hero-branded.png", out: "blog-thumb-andap-web-tok-ai-search-clean.png" },
+  { src: "andap-web-tok-ai-search-causes-branded.png", out: "blog-inline-andap-web-tok-ai-search-causes-clean.png" },
+  { src: "andap-web-tok-ai-search-ai-prep-branded.png", out: "blog-inline-andap-web-tok-ai-search-ai-prep-clean.png" },
+  { src: "andap-web-tok-ai-search-hub-branded.png", out: "blog-inline-andap-web-tok-ai-search-hub-clean.png" },
 ];
 
 for (const { src, out } of jobs) {

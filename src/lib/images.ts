@@ -38,7 +38,11 @@
  * - Gradient: teal #06b6d4 → blue → indigo #6366f1 → violet #8b5cf6 (mesh/blob 12–20% opacity)
  * - Glass cards + soft shadow · ไม่มี mascot/คน
  * - Layout: 42/58 (blog) หรือ 25/75 + sidebar 5 การ์ด (pillar infographic)
- * - Suffix: `-smooth.png`
+ * - Suffix: `-smooth.png` (หรือ `-clean.png` หลัง upscale)
+ *
+ * ## ห้ามใช้ — Sharp Card-Stack Compose (ลบแล้ว)
+ * - สคริปต์ compose-ranking-recovery-images.mjs ถูกลบออกจาก repo
+ * - ใช้ buildSmoothPurplePrompt + ranking-recovery-image-briefs.mjs แทน
  *
  * ## Site-wide Clean Purple (Phase 7)
  * - hero/ services/ icons/ case-studies/ team/ stats/ — ใช้ suffix `-clean.png`
@@ -51,9 +55,9 @@ export type SiteImage = {
   alt: string;
   width: number;
   height: number;
-  /** landscape = 3:2 (default) · portrait = infographic แนวตั้ง */
+  /** landscape = 3:2 (default) · portrait = legacy เท่านั้น */
   layout?: "landscape" | "portrait";
-  /** portrait only — 4:5 Facebook-style (default ใหม่) · 9:16 สำหรับ :::split */
+  /** @deprecated legacy — บทใหม่ใช้ landscape 3:2 เท่านั้น */
   ratio?: "4:5" | "9:16";
   /** bump เมื่อเปลี่ยนไฟล์รูป — bust browser / Next image cache (?v=) */
   rev?: number;
@@ -273,56 +277,84 @@ export const siteImages = {
       alt: "อันดับ Google ตก — เช็ควิธีกู้คืนใน 30 วัน แยกสาเหตุและแผนรายสัปดาห์",
       width: 3840,
       height: 2560,
-      rev: 3,
+      rev: 4,
     },
     rankingRecovery30dCauses: {
       src: "/images/blog/blog-inline-andap-google-tok-kuen-nai-30-wan-causes-clean.png",
       alt: "อันดับ Google ตกเพราะอะไร — แยก 5 กลุ่มสาเหตุก่อนลงมือกู้คืน",
       width: 3840,
       height: 2560,
-      rev: 3,
+      rev: 4,
     },
     rankingRecovery30dPlan: {
       src: "/images/blog/blog-inline-andap-google-tok-kuen-nai-30-wan-plan-clean.png",
       alt: "แผนกู้คืนอันดับ Google รายสัปดาห์ที่ 1–4 — stabilize แก้หน้าเงิน วัดผล",
       width: 3840,
       height: 2560,
-      rev: 3,
+      rev: 4,
     },
     rankingRecovery30dMistakes: {
       src: "/images/blog/blog-inline-andap-google-tok-kuen-nai-30-wan-mistakes-clean.png",
       alt: "ข้อผิดพลาดตอนอันดับ Google ตก — รีไรต์ทั้งเว็บ ซื้อลิงก์ ย้ายโดเมน",
       width: 3840,
       height: 2560,
-      rev: 3,
+      rev: 4,
     },
     coreUpdateHero: {
       src: "/images/blog/blog-thumb-witi-kae-web-don-core-update-clean.png",
       alt: "วิธีแก้ปัญหาเว็บโดน Core Update — คอนเฟิร์มวันที่ประกาศและ playbook คุณภาพทั้งไซต์",
       width: 3840,
       height: 2560,
-      rev: 3,
+      rev: 4,
     },
     coreUpdateConfirm: {
       src: "/images/blog/blog-inline-witi-kae-web-don-core-update-confirm-clean.png",
       alt: "คอนเฟิร์มว่าโดน Core Update จริง — เช็ก 4 ข้อก่อนลงมือแก้",
       width: 3840,
       height: 2560,
-      rev: 3,
+      rev: 4,
     },
     coreUpdatePlaybook: {
       src: "/images/blog/blog-inline-witi-kae-web-don-core-update-playbook-clean.png",
       alt: "Playbook แก้เว็บโดน Core Update 5 ชั้น — ประเมินคุณภาพทั้งไซต์",
       width: 3840,
       height: 2560,
-      rev: 3,
+      rev: 4,
     },
     coreUpdateDonts: {
       src: "/images/blog/blog-inline-witi-kae-web-don-core-update-donts-clean.png",
       alt: "สิ่งที่ห้ามทำหลังโดน Core Update — รีไรต์มั่ว ซื้อลิงก์ รออย่างเดียว",
       width: 3840,
       height: 2560,
-      rev: 3,
+      rev: 4,
+    },
+    rankingPillarHero: {
+      src: "/images/blog/blog-thumb-andap-web-tok-ai-search-clean.png",
+      alt: "อันดับเว็บตก — ปรับตัวรับ AI Search hub วินิจฉัยสาเหตุและเลือกเส้นทางคลัสเตอร์",
+      width: 3840,
+      height: 2560,
+      rev: 4,
+    },
+    rankingPillarCauses: {
+      src: "/images/blog/blog-inline-andap-web-tok-ai-search-causes-clean.png",
+      alt: "อันดับเว็บตกเพราะอะไร — แยก 5 กลุ่มสาเหตุก่อนลงมือแก้",
+      width: 3840,
+      height: 2560,
+      rev: 4,
+    },
+    rankingPillarAiPrep: {
+      src: "/images/blog/blog-inline-andap-web-tok-ai-search-ai-prep-clean.png",
+      alt: "ปรับตัวรับ AI Search — Answer-First entity และ FAQ schema ควบคู่กู้คืนอันดับ",
+      width: 3840,
+      height: 2560,
+      rev: 4,
+    },
+    rankingPillarHub: {
+      src: "/images/blog/blog-inline-andap-web-tok-ai-search-hub-clean.png",
+      alt: "แผนงานตามสถานการณ์ — hub คลัสเตอร์อันดับเว็บตก Core Update AEO และ Local SEO",
+      width: 3840,
+      height: 2560,
+      rev: 4,
     },
     aiOverviewPaoMaiHero: {
       src: "/images/blog/blog-thumb-ai-overview-pao-mai-seo-clean.png",
@@ -1118,6 +1150,7 @@ export const blogThumbnailBySlug: Record<string, SiteImage> = {
   "andap-google-tok-kuen-nai-30-wan": siteImages.blog.rankingRecovery30dHero,
   "witi-kae-web-don-core-update": siteImages.blog.coreUpdateHero,
   "ai-overview-pao-mai-seo": siteImages.blog.aiOverviewPaoMaiHero,
+  "andap-web-tok-ai-search": siteImages.blog.rankingPillarHero,
 };
 
 export function getBlogThumbnail(slug: string): SiteImage {
@@ -1247,6 +1280,10 @@ export const blogInlineImages: Record<string, SiteImage> = {
   aiOverviewPaoMaiBenefit: siteImages.blog.aiOverviewPaoMaiBenefit,
   aiOverviewCaseScreenshot: siteImages.blog.aiOverviewCaseScreenshot,
   aiOverviewCaseScreenshotAlt: siteImages.blog.aiOverviewCaseScreenshotAlt,
+  rankingPillarHero: siteImages.blog.rankingPillarHero,
+  rankingPillarCauses: siteImages.blog.rankingPillarCauses,
+  rankingPillarAiPrep: siteImages.blog.rankingPillarAiPrep,
+  rankingPillarHub: siteImages.blog.rankingPillarHub,
   serviceGoogleAds: siteImages.services.googleAds,
 };
 

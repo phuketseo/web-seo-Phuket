@@ -23,6 +23,14 @@ export const blogCategories = [
 
 export const blogPostsMeta: BlogPostMeta[] = [
   {
+    slug: "andap-web-tok-ai-search",
+    title: "อันดับเว็บตก — ปรับตัวรับ AI Search",
+    category: "SEO ภูเก็ต",
+    description:
+      "อันดับเว็บตกเพราะอะไร แยกสาเหตุก่อนแก้ รู้ได้ยังไงว่าโดน Core Update และปรับตัวรับ AI Search — hub วินิจฉัยสั้นจาก PhuketSEO",
+    thumbnail: getBlogThumbnail("andap-web-tok-ai-search"),
+  },
+  {
     slug: "ai-overview-pao-mai-seo",
     title: "AI Overview เป้าหมายใหม่ของคนทำ SEO",
     category: "AEO & GEO",

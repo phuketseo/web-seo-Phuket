@@ -13,6 +13,7 @@ import { siteConfig } from "@/lib/utils";
 import { BlogAngaLayout } from "@/components/blog/anga/BlogAngaLayout";
 import { getBlogThumbnail, resolveImageSrc } from "@/lib/images";
 import { pillarBlogPosts } from "@/lib/blog-posts-pillar";
+import { rankingPillarPost } from "@/lib/blog-posts-pillar-ranking";
 import { blogPostsBatch2125 } from "@/lib/blog-posts-batch-21-25";
 import { blogPostsBatch2630 } from "@/lib/blog-posts-batch-26-30";
 import { blogPostsBatch31 } from "@/lib/blog-posts-batch-31";
@@ -52,6 +53,7 @@ const blogPosts: Record<
   }
 > = {
   ...pillarBlogPosts,
+  ...rankingPillarPost,
   ...blogPostsBatch2125,
   ...blogPostsBatch2630,
   ...blogPostsBatch31,

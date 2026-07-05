@@ -105,5 +105,58 @@
       { "title": "ย้ายโดเมนหรือเปลี่ยน CMS", "description": "สร้างปัญหาเทคนิคทับปัญหาคุณภาพ" },
       { "title": "รออย่างเดียวไม่ประเมิน", "description": "รอบถัดไปไม่ได้ล้างหน้า thin ให้ดีเอง" }
     ]
+  },
+  "andap-web-tok-ai-search-hero": {
+    "headlinePrimary": "อันดับเว็บตก",
+    "headlineSecondary": "ปรับตัวรับ AI Search",
+    "badge": "Hub · อันดับเว็บตก",
+    "mockupFocus": "aeo-serp",
+    "mockupTitle": "Ranking + AI Overview Hub",
+    "sidebarItems": [
+      { "title": "วินิจฉัยก่อนแก้", "description": "5 กลุ่มสาเหตุ trend 7–14 วัน" },
+      { "title": "Core Update แยกต่างหาก", "description": "คอนเฟิร์มวันที่ประกาศก่อนแก้" },
+      { "title": "กู้คืน 3 เฟส", "description": "Stabilize Recover Sustain" },
+      { "title": "AI Search ควบคู่", "description": "ถูกอ้างอิงในสรุป AI ไม่ใช่แค่ลิงก์" }
+    ]
+  },
+  "andap-web-tok-ai-search-causes": {
+    "headlinePrimary": "อันดับเว็บตกเพราะอะไร?",
+    "headlineSecondary": "แยก 5 กลุ่มก่อนลงมือ",
+    "badge": "แยกสาเหตุก่อนแก้",
+    "mockupFocus": "seo-dashboard",
+    "mockupTitle": "Cause Diagnosis Hub",
+    "sidebarItems": [
+      { "title": "เทคนิค / index", "description": "404 noindex เว็บช้า sitemap" },
+      { "title": "เนื้อหา / intent", "description": "ตอบไม่ครบ ล้าสมัย คู่แข่งดีกว่า" },
+      { "title": "โครงสร้าง / UX", "description": "เมนูพัง มือถือใช้ยาก ฟอร์มเสีย" },
+      { "title": "คู่แข่งแซง", "description": "impression คงที่ ตำแหน่งแย่ลง" },
+      { "title": "อัลกอริทึมใหญ่", "description": "หลายคำตกพร้อมกันหลังอัปเดต" }
+    ]
+  },
+  "andap-web-tok-ai-search-ai-prep": {
+    "headlinePrimary": "ปรับตัวรับ AI Search",
+    "headlineSecondary": "เตรียมอะไรบ้าง?",
+    "badge": "AI Search Readiness",
+    "mockupFocus": "aeo-serp",
+    "mockupTitle": "AEO / GEO Preparation",
+    "sidebarItems": [
+      { "title": "Answer-First", "description": "ย่อหน้าเปิดตอบได้ในตัวเอง" },
+      { "title": "Entity / E-E-A-T", "description": "ชื่อธุรกิจ โซน บริการสอดคล้อง" },
+      { "title": "FAQ schema", "description": "หัวข้อชัด ตาราง parse ได้" },
+      { "title": "SEO พื้นฐาน", "description": "index ได้ เร็ว หน้าเงินตรง intent" }
+    ]
+  },
+  "andap-web-tok-ai-search-hub": {
+    "headlinePrimary": "แผนงานตามสถานการณ์",
+    "headlineSecondary": "Hub คลัสเตอร์",
+    "badge": "เลือกเส้นทาง",
+    "mockupFocus": "seo-dashboard",
+    "mockupTitle": "Cluster Hub Map",
+    "sidebarItems": [
+      { "title": "ไม่รู้สาเหตุ", "description": "→ กู้คืนอันดับ 30 วัน" },
+      { "title": "โดน Core Update", "description": "→ Playbook คุณภาพทั้งไซต์" },
+      { "title": "อยากถูก AI อ้างอิง", "description": "→ AEO + AI Overview" },
+      { "title": "ธุรกิจหน้าร้าน", "description": "→ Local SEO Maps ภูเก็ต" }
+    ]
   }
 }

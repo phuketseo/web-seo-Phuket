@@ -6,178 +6,56 @@ globs: ["src/app/blog/**", "src/components/blog/**", "src/lib/images.ts", "src/l
 
 # มาตรฐาน Layout รูปภาพ — Blog Article (PhuketSEO)
 
-ใช้กับบทความ `/blog/[slug]` บน Next.js + Vercel  
-**ห้าม reuse ไฟล์เดียวข้ามประเภท** — แต่ละ variant ต้องมีไฟล์ generate แยก
+ใช้กับบทความ `/blog/[slug]` บน Next.js + Vercel
 
-## เป้าหมายหลัก (North Star)
+## มาตรฐานเดียว — Smooth Purple Landscape 3:2
 
-**โปรโมทบทความบน Facebook ผ่าน native photo post** — ไม่พึ่ง link post
+บทความใหม่ใช้ **landscape 3:2 เท่านั้น** — สร้างด้วย `buildSmoothPurplePrompt()` ใน `src/lib/image-style-smooth-purple.ts`
 
-```
-❌ วิธีเดิม: แชร์ลิงก์ → FB แสดง preview เล็ก + algorithm ไม่ favor
-✅ วิธีใหม่: โพสต์รูป 4:5 ตรงบนเพจ → ลิงก์บทความใน caption หรือ comment แรก
-```
+| ประเภท | สัดส่วน | Naming | Component |
+|--------|---------|--------|-----------|
+| Featured / thumbnail | 3:2 | `blog-thumb-{slug}-clean.png` | `BlogFeaturedImage` |
+| Inline | 3:2 | `blog-inline-{slug}-{topic}-clean.png` | `:::image key` → `FigureLandscape` |
+| ขนาดสุดท้าย | upscale **3840×2560** | suffix `-clean.png` | — |
 
-เหตุผล: Facebook algorithm **favor native photo** มากกว่า link post → reach สูงกว่า, รูป 4:5 กินฟีดเต็มจอบนมือถือ
-
-**ช่องทาง social: Facebook เท่านั้น**
-
----
-
-## 1. Facebook Native Post Image (4:5)
-
-ไฟล์สำหรับ **อัปโหลดเป็นรูปภาพบนเพจ** — ไม่ใช่ `og:image` สำหรับ link preview
-
-| กฎ | รายละเอียด |
-|----|------------|
-| ขนาด | **1080×1350 px (4:5)** หรือ **1440×1800 px (retina)** |
-| ไฟล์ | generate แยก — ห้าม crop จาก featured landscape |
-| Naming | `blog-fb-{slug}-4x5.png` หรือ reuse infographic หลักของบทความ |
-| ออกแบบ | อ่านได้ในฟีดโดยไม่คลิก — หัวข้อ + hook + branding PhuketSEO |
-| โพสต์ | อัปโหลดเป็น **Photo** บนเพจ (ไม่ใช่ Link post) |
-| ลิงก์ | ใส่ใน **caption** หรือ **comment แรก** ทันทีหลังโพสต์ |
-
-### Caption template (copy-paste)
+Markdown:
 
 ```
-[หัวข้อบทความ — 1 บรรทัด hook]
-
-อ่านเต็ม: https://phuketseo.com/blog/{slug}
-
-#SEOภูเก็ต #LocalSEO #PhuketSEO
-```
-
-### ความสัมพันธ์กับ infographic ในบทความ
-
-- infographic 4:5 แรกของบทความ **อาจเป็นไฟล์เดียวกับ** FB post image ได้
-- ถ้าใช้ไฟล์เดียวกัน ต้องออกแบบให้อ่านได้ทั้งในฟีด FB (เต็ม 1080px) และในบทความ (ย่อ ~420px)
-- หรือสร้าง `blog-fb-{slug}-4x5.png` แยก — hook สั้นกว่า, ไม่มีรายละเอียดย่อย
-
-### og:image (ลำดับความสำคัญต่ำ)
-
-- ใช้ featured landscape 3:2 ที่มีอยู่ — สำหรับกรณีมีคนแชร์ลิงก์เอง
-- **ไม่ต้อง** optimize `og:image` เป็น 4:5 หรือสร้าง `getBlogShareImage()` แยก
-- ไม่ต้อง `twitter:image`
-
----
-
-## 2. Featured Image (บนหน้าบทความ)
-
-| กฎ | รายละเอียด |
-|----|------------|
-| สัดส่วน | 3:2 landscape |
-| Component | `BlogFeaturedImage` / `variant: "featured"` |
-| บทบาท | hero บนหน้าบทความ + `og:image` fallback เมื่อมีคนแชร์ลิงก์ |
-| Naming | `blog-thumb-{slug}-landscape.png` |
-| ห้าม | ใช้ไฟล์ 4:5 FB post เป็น featured |
-
----
-
-## 3. Inline Landscape
-
-| กฎ | รายละเอียด |
-|----|------------|
-| ความกว้าง | เต็ม prose container (`max-w-3xl` / `48rem`) |
-| Component | `FigureLandscape` |
-| next/image | intrinsic `width`/`height` จริง — ห้าม hardcode ถ้าไฟล์ไม่ตรง |
-| Caption | italic ใต้ภาพ |
-| สัดส่วน | 3:2 |
-| Naming | `blog-inline-{slug}-{topic}-landscape.png` |
-| ไฟล์ | PNG ถ้ามีตัวอักษร/กราฟิก |
-
----
-
-## 4. Inline Portrait / Infographic — `FigurePortrait`
-
-Component **`FigurePortrait`** แยกจาก landscape **โดยสิ้นเชิง**
-
-### สัดส่วน
-
-| Ratio | ใช้เมื่อ | ขนาด source |
-|-------|---------|-------------|
-| **4:5** (default) | infographic ทั่วไป + FB native post | 1080×1350 หรือ 1440×1800 |
-| 9:16 | `:::split` บทความ mobile-first เท่านั้น | 1080×1920 หรือ 2160×3840 |
-
-### Desktop (≥768px)
-
-- `max-width: 420px`, `margin: 0 auto`
-- float ชิดขวา + `shape-outside` ในพารากราฟยาว (ถ้าต้องการ)
-- หลายภาพ: `grid-template-columns: repeat(2, 1fr)`
-
-### Mobile (<768px)
-
-- เต็ม viewport ลบ padding
-- `max-height: 85vh`, `object-fit: cover`
-- grid 2 คอลัมน์ → 1 คอลัมน์
-
-- CSS `aspect-ratio: 4/5` หรือ `9/16` — ไม่พึ่ง intrinsic ของ next/image
-- Naming: `blog-inline-{slug}-{topic}-portrait.png`
-
----
-
-## 5. Section Split (editorial exception)
-
-`:::split` + `BlogTextImageSplit` = ข้อความซ้าย + infographic ขวา (เต็ม `max-w-6xl`)
-
-- ใช้กับบทความ infographic-heavy
-- Portrait ใน split ใช้ `FigurePortrait` ภายใน — ไม่ duplicate logic
-
----
-
-## TypeScript — Discriminated Union
-
-```typescript
-type ArticleImage =
-  | { variant: "featured"; width: number; height: number; src: string; alt: string }
-  | { variant: "fbNative"; width: 1080; height: 1350; src: string; alt: string }
-  | { variant: "landscape"; width: number; height: number; src: string; alt: string; caption?: string }
-  | { variant: "portrait"; ratio: "4:5" | "9:16"; src: string; alt: string; caption?: string };
-```
-
-- `fbNative` = ไฟล์สำหรับอัปโหลดโพสต์บนเพจ FB (อ้างอิงใน `images.ts`, ไม่ render บนหน้าเว็บ)
-- Component รับ `variant` → render class อัตโนมัติ — ห้ามเลือก class ใน markdown เอง
-
-### Helper (optional)
-
-```typescript
-/** path ไฟล์ 4:5 สำหรับโพสต์ native บนเพจ Facebook — ไม่ใช่ og:image */
-function getBlogFbPostImage(slug: string): ArticleImage & { variant: "fbNative" }
+:::image myInlineKey
+คำอธิบายรูปสั้นๆ ภาษาไทย
+:::
 ```
 
 ---
 
-## Workflow ก่อน publish บทความ
+## ห้ามใช้ (เลิกแล้ว)
 
-### บนเว็บ
-- [ ] Featured landscape 3:2 แยกไฟล์
-- [ ] Inline infographic 4:5 ใช้ `FigurePortrait`
-- [ ] ตัวอักษรอ่านออกเมื่อย่อ ~420px ในบทความ
-- [ ] Mobile: ไม่สูงเกิน 85vh ต่อภาพ
-- [ ] `alt` บรรยายเนื้อหาจริง (AEO/GEO)
+| แบบ | เหตุผล |
+|-----|--------|
+| Portrait 9:16 + `:::split` | ลบ pipeline — ไม่สร้างบทใหม่ |
+| Portrait 4:5 / FB native post pipeline | ลบ pipeline — ไม่สร้างบทใหม่ |
+| Sharp card-stack | **ลบแล้ว** — ใช้ Smooth Purple AI + briefs แทน |
+
+Post-process ที่ยังใช้ได้: `compose-maps-cluster-frame.mjs`, `compose-phuketseo-brand-bar.mjs` (ใส่กรอบ/bar **หลัง** AI generate landscape แล้ว)
+
+---
+
+## Workflow ก่อน publish
+
+- [ ] รูปใหม่ 3–4 ไฟล์ landscape Smooth Purple (hero + inline)
+- [ ] ลงทะเบียนใน `blogInlineImages` + `blogThumbnailBySlug` (`images.ts`)
+- [ ] `alt` มี keyword + บริบท (AEO/GEO)
 - [ ] รัน `npm run check:images`
-
-### บน Facebook (หลัง publish)
-- [ ] มีไฟล์ `blog-fb-{slug}-4x5.png` (1080×1350) พร้อมอัปโหลด
-- [ ] โพสต์เป็น **Photo** บนเพจ (ไม่ใช่ Link)
-- [ ] ใส่ลิงก์บทความใน caption หรือ comment แรกภายใน 1 นาที
-- [ ] ตรวจในฟีดมือถือว่าอ่านง่าย + รูปเต็มจอ
+- [ ] **ห้าม** portrait 9:16 / 4:5 สำหรับบทความใหม่
 
 ---
 
-## สถานะโปรเจกต์ (migration)
+## og:image / แชร์ลิงก์
 
-| หัวข้อ | ปัจจุบัน | เป้าหมาย |
-|--------|----------|----------|
-| FB promotion | ไม่มี workflow | native photo 4:5 + ลิงก์ใน caption |
-| og:image | thumbnail 3:2 | คง landscape — ไม่ optimize 4:5 |
-| `getBlogShareImage()` | ยังไม่มี | **ยกเลิก** — ใช้ `getBlogFbPostImage()` แทน (asset ref only) |
-| Portrait component | `BlogInlineImage` รวม | `FigurePortrait` แยก |
-| Default ratio | 9:16 | **4:5** บทความใหม่ |
+ใช้ featured landscape 3:2 — ไม่ต้องสร้าง og แยกหรือรูป 4:5
 
-### ลำดับ implement
+---
 
-1. `FigurePortrait.tsx` + `FigureLandscape.tsx` — layout ในบทความ
-2. `ArticleImage` type + `getBlogFbPostImage(slug)` — อ้างอิงไฟล์ 4:5 สำหรับทีม content
-3. อัปเดต `render-blog-content.tsx` route variant อัตโนมัติ
-4. Refactor `BlogTextImageSplit` → ใช้ `FigurePortrait`
-5. บทความใหม่: infographic 4:5 + เตรียม `blog-fb-{slug}-4x5.png` ตาม workflow ด้านบน
+## Legacy (โค้ดเก่าใน repo)
+
+`FigurePortrait`, `:::split`, `blogFbPostBySlug` ยังอยู่สำหรับ asset เก่า (เช่น `rap-pak-mut`) — **อย่าเพิ่มบทความใหม่ด้วย pipeline เหล่านี้**
