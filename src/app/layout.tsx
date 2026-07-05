@@ -49,17 +49,17 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/icon.png", type: "image/png", sizes: "48x48" },
       { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/icon.png", type: "image/png", sizes: "48x48" },
     ],
     apple: [{ url: "/apple-icon.png", type: "image/png", sizes: "180x180" }],
   },
 };
 
 const CRITICAL_SHELL_CSS = `
-:root{--site-header-height:152px}
-[data-site-header]{position:fixed;top:0;left:0;right:0;z-index:50;background:#fff;box-shadow:0 1px 2px rgba(15,23,42,.06);border-bottom:1px solid #f1f5f9;padding:.625rem 0}
-[data-site-header] .min-h-\\[132px\\]{min-height:132px}
+:root{--site-header-height:76px}
+[data-site-header]{position:fixed;top:0;left:0;right:0;z-index:50;background:#fff;box-shadow:0 1px 2px rgba(15,23,42,.06);border-bottom:1px solid #f1f5f9;padding:.375rem 0}
+[data-site-header] .min-h-\\[66px\\]{min-height:66px}
 html{scroll-behavior:smooth}
 body{margin:0;font-family:Tahoma,"Segoe UI",sans-serif;color:#0f172a;background:#fff;-webkit-font-smoothing:antialiased}
 `;
