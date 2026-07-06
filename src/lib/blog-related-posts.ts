@@ -312,10 +312,16 @@ const blogRelatedSlugs: Record<string, string[]> = {
     "direct-booking-hotel-phuket",
   ],
   "kan-marketing-ran-nuad-phaen-thai": [
+    "promote-ran-nuad-thai-phuket",
     "seo-for-phuket-spas",
     "google-reviews-phuket",
     "google-my-business-phuket",
-    "near-me-seo-phuket",
+  ],
+  "promote-ran-nuad-thai-phuket": [
+    "kan-marketing-ran-nuad-phaen-thai",
+    "dan-andap-google-maps-phuket",
+    "google-reviews-phuket",
+    "seo-for-phuket-spas",
   ],
   "dan-andap-google-maps-phuket": [
     "google-maps-mai-tid-phuket",

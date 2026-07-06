@@ -1,6 +1,6 @@
 /**
  * AI briefs — Google Maps pillar cluster (landscape 3:2)
- * Style: white background, purple-blue accents, NO logo (added in compose-maps-cluster-frame.mjs)
+ * Style: white background, purple-blue accents, NO logo (logo added in compose-maps-cluster-frame.mjs — no border)
  *
  * 1. Generate *-ai.png from prompts below → assets/google-maps-cluster/
  * 2. node scripts/compose-maps-cluster-frame.mjs assets/google-maps-cluster

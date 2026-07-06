@@ -11,8 +11,21 @@ description: >-
 
 เขียนบทความ `/blog/[slug]` แบบ **ตอบคำถามชัด (Google AI Overview)** + **ภาษาไทยอ่านง่าย** + **โทนที่ปรึกษา** (ไม่สอน DIY ยาว)
 
+## Workflow บังคับ — ห้ามลงเว็บก่อนอนุมัติ
+
+**ทุกบทความใหม่ / rewrite** ต้องทำตาม `.cursor/rules/aio-article-rigger.mdc` ก่อนเสมอ:
+
+| ขั้น | ทำอะไร | แก้ repo? |
+|------|--------|----------|
+| 1 | ส่ง outline + core snippets + FAQ draft + metadata วางแผน | **ไม่** |
+| 2 | ผู้ใช้เช็คกับ Gemini แล้วอนุมัติ | — |
+| 3 | implement ลง `blog-posts*.ts`, รูป, schema | **ใช่** |
+
+ห้ามข้ามขั้น 1 แม้ผู้ใช้จะบอกหัวข้อสั้นๆ — ถ้ายังไม่อนุมัติ ให้ตอบเป็นโครงร่างในแชทเท่านั้น
+
 อ่านร่วมกับ:
 - `.cursorrules` — กฎหลัก SEO/AEO/GEO content editor (โทน โครงสร้าง FAQ สิ่งที่ห้าม)
+- `.cursor/rules/aio-article-rigger.mdc` — workflow โครงร่างก่อนลงเว็บ (บังคับ)
 - `.cursor/skills/blog-rich-results-schema/SKILL.md` — schema / Rich Results
 
 อ้างอิงบทความที่ผ่านแล้ว:
@@ -214,38 +227,25 @@ description: >-
 
 ---
 
-## รูปภาพ
+## รูปภาพ — Smooth Purple + Cursor GenerateImage (มาตรฐาน premium)
 
-### มาตรฐานเดียว — Smooth Purple Landscape 3:2
+อ้างอิง: `.cursor/rules/image-layout-standard.mdc` · ตัวอย่าง: `/blog/andap-web-tok-ai-search`
 
-| # | ประเภท | ใช้ที่ |
-|---|--------|--------|
-| 1 | Infographic hero | Featured thumbnail |
-| 2–4 | Inline landscape | หลัง section หลัก |
+**บทความ premium / ranking-recovery / industry guide** ใช้ pipeline นี้ — **ห้าม** SVG programmatic หรือ Gemini API เป็นค่าเริ่มต้น
 
-- **Prompt** — `src/lib/image-style-smooth-purple.ts` → `buildSmoothPurplePrompt()`
-- **Upscale** — 3840×2560 (`scripts/upscale-ranking-recovery-images.mjs` หรือ upscale ตาม cluster)
-- **Workflow ranking cluster** — `assets/ranking-recovery/prompts.json` → `node scripts/ranking-recovery-image-briefs.mjs` → AI generate → `brand-bar-pillar-only.mjs` หรือ `compose-phuketseo-brand-bar.mjs` → upscale
-- **Post-process (ถ้าต้องการ)** — `compose-maps-cluster-frame.mjs`, `compose-phuketseo-brand-bar.mjs` หลัง AI generate แล้ว
-- **Markdown** — `:::image key` + caption
+| ขั้น | ทำอะไร |
+|------|--------|
+| 0 | Agent mode + โมเดลที่รองรับ `GenerateImage` (หลีกเลี่ยง Auto/Codex-only ถ้า tool ไม่ขึ้น) |
+| 1 | `prompts.json` → `node scripts/promote-ran-nuad-smooth-purple-briefs.mjs` (หรือ `{cluster}-image-briefs.mjs`) |
+| 2 | **Cursor `GenerateImage`** จาก `briefs.json` + reference `andap-web-tok-ai-search-hero-branded.png` หรือ hero ชุดเดียวกัน |
+| 3 | copy → `assets/{slug}/*-src.png` |
+| 4 | `node scripts/process-smooth-purple-images.mjs assets/{slug}` — ตรวจ 3:2 → brand bar → upscale 3840×2560 |
+| 5 | bump `rev` ใน `images.ts` · `npm run check:images` |
 
-**ไม่มีสกิลสร้างรูปแยกไฟล์** — workflow อยู่ในส่วนนี้ + `.cursor/rules/image-layout-standard.mdc`
-
-### ห้ามใช้ (เลิกแล้ว)
-
-| แบบ | ไฟล์ที่ลบแล้ว |
-|-----|----------------|
-| Portrait 9:16 + `:::split` | `image-style-blog-portrait.ts` |
-| Portrait 4:5 (FB) | `image-style-blog-4x5.ts` |
-| Sharp card-stack | **ลบแล้ว** — `compose-ranking-recovery-images.mjs` ไม่มีใน repo |
-
-ถ้าต้องการรูปแนว “5 กลุ่มสาเหตุ” → ใช้ `buildSmoothPurplePrompt` + `sidebarItems` หรือ mockup dashboard (landscape 3:2)
-
-### ร่วมกันทุกบทความ
-
-- สร้างใหม่ทุกบทความ — **ห้าม reuse รูปจากบทอื่น**
-- ชื่อไฟล์: `blog-thumb-{slug}-clean.png`, `blog-inline-{topic}-clean.png`
-- รัน `npm run check:images` ก่อน commit
+- สัดส่วน: **3:2 landscape** — src เป้า **2304×1536** · publish **3840×2560**
+- สไตล์: mesh `#f8fafc` · sidebar 25% + mockup 75% · 3D icons · แถบ PhuketSEO ล่าง (brand bar script)
+- 1 slug = 1 ชุดรูปใหม่ — ห้าม reuse key/path ข้ามบทความ
+- **Maps-cluster** (พื้นขาว) ใช้เฉพาะบท Google Maps cluster — ดู rule แยก
 
 ### Inline images ใน markdown
 

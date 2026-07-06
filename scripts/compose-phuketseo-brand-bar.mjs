@@ -1,3 +1,4 @@
+/** @deprecated ใช้ compose-maps-cluster-frame.mjs แทน */
 import sharp from "sharp";
 import { existsSync, readdirSync } from "node:fs";
 import { dirname, join, basename } from "node:path";

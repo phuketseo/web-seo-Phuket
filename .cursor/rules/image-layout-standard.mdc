@@ -8,15 +8,26 @@ globs: ["src/app/blog/**", "src/components/blog/**", "src/lib/images.ts", "src/l
 
 ใช้กับบทความ `/blog/[slug]` บน Next.js + Vercel
 
-## มาตรฐานเดียว — Smooth Purple Landscape 3:2
+## Pipeline หลัก — Smooth Purple + Cursor GenerateImage
 
-บทความใหม่ใช้ **landscape 3:2 เท่านั้น** — สร้างด้วย `buildSmoothPurplePrompt()` ใน `src/lib/image-style-smooth-purple.ts`
+บทความ **premium / pillar / industry guide / ranking-recovery** ใช้ pipeline นี้ (ตัวอย่าง: `andap-web-tok-ai-search`, `promote-ran-nuad-thai-phuket`):
 
-| ประเภท | สัดส่วน | Naming | Component |
-|--------|---------|--------|-----------|
-| Featured / thumbnail | 3:2 | `blog-thumb-{slug}-clean.png` | `BlogFeaturedImage` |
-| Inline | 3:2 | `blog-inline-{slug}-{topic}-clean.png` | `:::image key` → `FigureLandscape` |
-| ขนาดสุดท้าย | upscale **3840×2560** | suffix `-clean.png` | — |
+| ขั้น | ทำอะไร |
+|------|--------|
+| 1 | `{slug}/prompts.json` → `*-smooth-purple-briefs.mjs` → `briefs.json` |
+| 2 | **Cursor Agent `GenerateImage`** ใน Agent mode (โมเดลที่รองรับ image tool) |
+| 3 | copy → `assets/{slug}/*-src.png` |
+| 4 | `node scripts/process-smooth-purple-images.mjs assets/{slug}` |
+| 5 | bump `rev` ใน `images.ts` · `npm run check:images` |
+
+**สไตล์:** mesh `#f8fafc` · sidebar 25% + mockup 75% · 3D icons · frosted glass · แถบ PhuketSEO ล่าง (`brand-bar` ใน process script)
+
+| ประเภท | สัดส่วน | Src เป้า | Publish |
+|--------|---------|----------|---------|
+| Featured / thumbnail | **3:2 landscape** | 2304×1536 | 3840×2560 |
+| Inline | **3:2 landscape** | 2304×1536 | 3840×2560 |
+
+`process-smooth-purple-images.mjs` บังคับ crop **3:2** ก่อน brand bar ถ้า AI ส่งสัดส่วนผิด
 
 Markdown:
 
@@ -28,34 +39,39 @@ Markdown:
 
 ---
 
-## ห้ามใช้ (เลิกแล้ว)
+## Pipeline รอง — Maps Cluster (บท Google Maps เท่านั้น)
 
-| แบบ | เหตุผล |
-|-----|--------|
-| Portrait 9:16 + `:::split` | ลบ pipeline — ไม่สร้างบทใหม่ |
-| Portrait 4:5 / FB native post pipeline | ลบ pipeline — ไม่สร้างบทใหม่ |
-| Sharp card-stack | **ลบแล้ว** — ใช้ Smooth Purple AI + briefs แทน |
+| ขั้น | สคริปต์ |
+|------|---------|
+| 1 | `maps-cluster-image-briefs.mjs` → `*-ai.png` |
+| 2 | `compose-maps-cluster-frame.mjs` — พื้นขาว + โลโก้ล่าง |
+| 3 | `upscale-*-images.mjs` → 3840×2560 |
 
-Post-process ที่ยังใช้ได้: `compose-maps-cluster-frame.mjs`, `compose-phuketseo-brand-bar.mjs` (ใส่กรอบ/bar **หลัง** AI generate landscape แล้ว)
+พื้นขาว `#ffffff` · ไม่มีกรอบม่วงรอบภาพ
+
+---
+
+## ห้ามใช้เป็นค่าเริ่มต้น
+
+| Pipeline | เหตุผล |
+|----------|--------|
+| SVG programmatic (`generate-*-smooth-purple.mjs`, `compose-*-infographics.mjs`) | placeholder เท่านั้น |
+| Gemini API โดยไม่สั่ง | ใช้เมื่อมี `GEMINI_API_KEY` และ user ขอชัด |
+| Reuse รูป/key ข้ามบทความ | cannibalization + ไม่ unique |
+| Portrait 9:16 / 4:5 / `:::split` | เลิกแล้ว |
 
 ---
 
 ## Workflow ก่อน publish
 
-- [ ] รูปใหม่ 3–4 ไฟล์ landscape Smooth Purple (hero + inline)
-- [ ] ลงทะเบียนใน `blogInlineImages` + `blogThumbnailBySlug` (`images.ts`)
-- [ ] `alt` มี keyword + บริบท (AEO/GEO)
-- [ ] รัน `npm run check:images`
-- [ ] **ห้าม** portrait 9:16 / 4:5 สำหรับบทความใหม่
+- [ ] brief ใน `assets/{slug}/prompts.json`
+- [ ] GenerateImage ครบ hero + inline · reference จาก cluster เดียวกัน
+- [ ] process-smooth-purple → ตรวจ 3:2
+- [ ] `alt` มี keyword + บริบท
+- [ ] `npm run check:images`
 
 ---
 
-## og:image / แชร์ลิงก์
+## ห้ามใช้รูปซ้ำข้ามบทความ
 
-ใช้ featured landscape 3:2 — ไม่ต้องสร้าง og แยกหรือรูป 4:5
-
----
-
-## Legacy (โค้ดเก่าใน repo)
-
-`FigurePortrait`, `:::split`, `blogFbPostBySlug` ยังอยู่สำหรับ asset เก่า (เช่น `rap-pak-mut`) — **อย่าเพิ่มบทความใหม่ด้วย pipeline เหล่านี้**
+1 slug = 1 ชุด hero + inline — ห้าม reuse `:::image` key หรือ path PNG จากบทอื่น

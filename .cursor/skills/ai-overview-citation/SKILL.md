@@ -15,6 +15,7 @@ description: >-
 - `.cursor/skills/content-seo-aeo-geo/SKILL.md` — Answer-First / Manus process
 - `.cursor/skills/blog-article-writing/SKILL.md` — โทนและรูป blog
 - `.cursor/rules/ai-overview-citation.mdc` — กฎสั้นบังคับตอนแก้ไฟล์เนื้อหา
+- `.cursor/rules/aio-article-rigger.mdc` — workflow โครงร่างก่อนเขียนบทความเต็ม
 
 **หลักการ:** จำนวนบทความมากช่วย index ได้ แต่ **ไม่ใช่สูตรให้ถูกอ้างใน Overview** — สูตรที่ชนะคือ **ข้อเท็จจริง quote ได้ + คลัสเตอร์ตรงคำค้น + entity ชัด**
 

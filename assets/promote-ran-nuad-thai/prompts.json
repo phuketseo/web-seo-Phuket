@@ -1,0 +1,80 @@
+{
+  "promote-ran-nuad-thai-phuket-hero": {
+    "headlinePrimary": "โปรโมทร้านนวดไทยอย่างไรดี",
+    "headlineSecondary": "ลำดับช่องทางที่ทำได้จริง · ภูเก็ต",
+    "badge": "Industry Guide",
+    "mockupFocus": "google-maps",
+    "mockupTitle": "Thai Massage Near Me",
+    "sidebarItems": [
+      { "title": "Google Maps ก่อน", "description": "โผล่ near me ในโซนท่องเที่ยว" },
+      { "title": "รีวิวจริง", "description": "ขอหลังนวดทุกครั้ง" },
+      { "title": "ราคาชัด TH/EN", "description": "เมนูอ่านง่ายบนมือถือ" },
+      { "title": "LINE จอง", "description": "ตอบคิวภายใน 1 ชม." }
+    ]
+  },
+  "promote-ran-nuad-thai-steps": {
+    "headlinePrimary": "ลำดับโปรโมท 5 ขั้น",
+    "headlineSecondary": "ทำตามลำดับ — อย่าเริ่มจากแอด",
+    "badge": "Local SEO ภูเก็ต",
+    "mockupFocus": "google-maps",
+    "mockupTitle": "GBP Checklist",
+    "sidebarItems": [
+      { "title": "1. ยืนยัน GBP", "description": "หมวดนวด/สปา · รูปจริง" },
+      { "title": "2. ราคาชัด", "description": "60/90/120 นาที · EN" },
+      { "title": "3. ขอรีวิว", "description": "QR หน้าเคาน์เตอร์" },
+      { "title": "4. LINE โทร", "description": "บน Maps และป้ายร้าน" }
+    ]
+  },
+  "promote-ran-nuad-thai-channels": {
+    "headlinePrimary": "ช่องทางที่ได้ลูกค้าจริง",
+    "headlineSecondary": "ร้านนวดในโซนท่องเที่ยวภูเก็ต",
+    "badge": "35–50% จาก Maps",
+    "mockupFocus": "seo-dashboard",
+    "mockupTitle": "Channel Mix",
+    "sidebarItems": [
+      { "title": "Google Maps 48%", "description": "near me ก่อน walk-in" },
+      { "title": "เดินผ่าน 28%", "description": "ป้ายหน้าร้านซอยท่องเที่ยว" },
+      { "title": "โรงแรม 18%", "description": "ทัวร์ · reception" },
+      { "title": "ลูกค้าซ้ำ 22%", "description": "LINE · repeat" }
+    ]
+  },
+  "promote-ran-nuad-thai-keywords": {
+    "headlinePrimary": "ลูกค้าค้นหาคำว่าอะไร",
+    "headlineSecondary": "นักท่องเที่ยว vs คนท้องถิ่น",
+    "badge": "คำค้นโซน",
+    "mockupFocus": "aeo-serp",
+    "mockupTitle": "Search Intent Split",
+    "sidebarItems": [
+      { "title": "นักท่องเที่ยว", "description": "thai massage patong · spa near me" },
+      { "title": "คนท้องถิ่น", "description": "นวดไทย ภูเก็ต · massage กะตะ" },
+      { "title": "ใส่ใน GBP", "description": "ป่าตอง กะตะ กมลา" },
+      { "title": "ไม่แข่งคำกว้าง", "description": "เลี่ยงแค่ ภูเก็ต ทั้งจังหวัด" }
+    ]
+  },
+  "promote-ran-nuad-thai-compare": {
+    "headlinePrimary": "เปรียบเทียบแนวทางโปรโมท",
+    "headlineSecondary": "ทำถูกลำดับ vs สิ่งที่มักพลาด",
+    "badge": "Local SEO",
+    "mockupFocus": "website-ui",
+    "mockupTitle": "Right vs Wrong",
+    "sidebarItems": [
+      { "title": "จุดเริ่ม", "description": "Maps + รีวิวก่อน" },
+      { "title": "สิ่งที่ขาย", "description": "ความไว้วางใจ ไม่ใช่แค่ราคา" },
+      { "title": "เห็นสัญญาณ", "description": "4–8 สัปดาห์หลัง listing" },
+      { "title": "งบเริ่มต้น", "description": "ทำ listing เองได้ก่อน" }
+    ]
+  },
+  "promote-ran-nuad-thai-mistakes": {
+    "headlinePrimary": "ข้อผิดพลาดที่พบบ่อย",
+    "headlineSecondary": "และสิ่งที่ควรทำก่อนโปรโมชัน",
+    "badge": "เช็กก่อนโปร",
+    "mockupFocus": "google-maps",
+    "mockupTitle": "Trust First",
+    "sidebarItems": [
+      { "title": "ห้ามลดราคาก่อนรีวิว", "description": "ดึงลูกค้าครั้งเดียว" },
+      { "title": "ห้ามหมวด GBP ผิด", "description": "โผล่คำค้นผิดกลุ่ม" },
+      { "title": "ทำ GBP ครบ", "description": "ยืนยัน · รูปจริง" },
+      { "title": "ตอบ LINE 1 ชม.", "description": "ก่อนยิงแอด" }
+    ]
+  }
+}

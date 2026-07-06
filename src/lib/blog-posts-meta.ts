@@ -87,6 +87,14 @@ export const blogPostsMeta: BlogPostMeta[] = [
     thumbnail: getBlogThumbnail("kan-marketing-ran-nuad-phaen-thai"),
   },
   {
+    slug: "promote-ran-nuad-thai-phuket",
+    title: "โปรโมทร้านนวดไทยอย่างไรดี — ลำดับช่องทางที่ทำได้จริงในภูเก็ต",
+    category: "Industry Guide",
+    description:
+      "โปรโมทร้านนวดไทยอย่างไรดี — เริ่มจาก Google Maps รีวิว และราคาชัด ก่อนโปรโมชัน สำหรับร้านในโซนป่าตอง กะตะ กมลา และ SME ภูเก็ต",
+    thumbnail: getBlogThumbnail("promote-ran-nuad-thai-phuket"),
+  },
+  {
     slug: "local-seo-rang-kha-mistakes",
     title: "ข้อผิดพลาด Local SEO ร้านค้า ที่ทำให้ไม่ติด Google Maps",
     category: "Local SEO",
