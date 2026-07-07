@@ -95,6 +95,14 @@ export const blogPostsMeta: BlogPostMeta[] = [
     thumbnail: getBlogThumbnail("promote-ran-nuad-thai-phuket"),
   },
   {
+    slug: "ying-aep-thi-phak-lek-ngoen-noi",
+    title: "ยิงแอดที่พักเล็กๆ งบน้อย ทำยังไง — ลำดับช่องทางที่ทำได้จริง",
+    category: "Industry Guide",
+    description:
+      "ยิงแอดที่พักเล็กๆ ภูเก็ต งบน้อย — ลำดับช่องทาง TikTok Facebook Google Maps ช่วงงบ ฿3,000–10,000 และสิ่งที่ควรทำก่อนยิงแอด",
+    thumbnail: getBlogThumbnail("ying-aep-thi-phak-lek-ngoen-noi"),
+  },
+  {
     slug: "ran-nuad-mai-mee-luk-kha-tham-yang-ngai",
     title: "ร้านนวดไม่มีลูกค้า ทำยังไง — วิธีแก้ที่ทำได้จริง",
     category: "Industry Guide",
