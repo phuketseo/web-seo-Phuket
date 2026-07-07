@@ -95,6 +95,14 @@ export const blogPostsMeta: BlogPostMeta[] = [
     thumbnail: getBlogThumbnail("promote-ran-nuad-thai-phuket"),
   },
   {
+    slug: "thipak-mai-mee-luk-kha-tham-yang-ngai",
+    title: "ที่พักไม่มีลูกค้า ทำยังไง — วิธีแก้ที่ทำได้จริง",
+    category: "Industry Guide",
+    description:
+      "ที่พักไม่มีลูกค้า ทำยังไง — สาเหตุที่พบบ่อยใน guesthouse โฮมสเตย์ ภูเก็ต โซนป่าตอง กะตะ ตัวเมือง และลำดับแก้จาก Google Maps รีวิว ราคาชัด ก่อนยิงแอด",
+    thumbnail: getBlogThumbnail("thipak-mai-mee-luk-kha-tham-yang-ngai"),
+  },
+  {
     slug: "ying-aep-thi-phak-lek-ngoen-noi",
     title: "ยิงแอดที่พักเล็กๆ งบน้อย ทำยังไง — ลำดับช่องทางที่ทำได้จริง",
     category: "Industry Guide",

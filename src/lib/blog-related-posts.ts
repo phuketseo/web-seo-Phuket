@@ -136,6 +136,7 @@ const blogRelatedSlugs: Record<string, string[]> = {
     "web-design-phuket-real-estate",
   ],
   "google-ads-vs-seo-phuket": [
+    "thipak-mai-mee-luk-kha-tham-yang-ngai",
     "ying-aep-thi-phak-lek-ngoen-noi",
     "raaka-seo-phuket",
     "low-season-seo-phuket",
@@ -256,19 +257,29 @@ const blogRelatedSlugs: Record<string, string[]> = {
 
   // Hotels & tours
   "hotel-phuket-seo-problems": [
+    "thipak-mai-mee-luk-kha-tham-yang-ngai",
     "ying-aep-thi-phak-lek-ngoen-noi",
     "seo-for-phuket-hotels",
     "direct-booking-hotel-phuket",
     "gemini-hotel-competitor-analysis",
     "google-reviews-phuket",
   ],
+  "thipak-mai-mee-luk-kha-tham-yang-ngai": [
+    "seo-for-phuket-hotels",
+    "ying-aep-thi-phak-lek-ngoen-noi",
+    "direct-booking-hotel-phuket",
+    "hotel-phuket-seo-problems",
+    "google-my-business-phuket",
+  ],
   "ying-aep-thi-phak-lek-ngoen-noi": [
+    "thipak-mai-mee-luk-kha-tham-yang-ngai",
     "seo-for-phuket-hotels",
     "google-ads-vs-seo-phuket",
     "direct-booking-hotel-phuket",
     "google-my-business-phuket",
   ],
   "seo-for-phuket-hotels": [
+    "thipak-mai-mee-luk-kha-tham-yang-ngai",
     "ying-aep-thi-phak-lek-ngoen-noi",
     "hotel-phuket-seo-problems",
     "direct-booking-hotel-phuket",
@@ -276,6 +287,7 @@ const blogRelatedSlugs: Record<string, string[]> = {
     "low-season-seo-phuket",
   ],
   "direct-booking-hotel-phuket": [
+    "thipak-mai-mee-luk-kha-tham-yang-ngai",
     "ying-aep-thi-phak-lek-ngoen-noi",
     "seo-for-phuket-hotels",
     "low-season-seo-phuket",
@@ -283,6 +295,7 @@ const blogRelatedSlugs: Record<string, string[]> = {
     "gemini-hotel-competitor-analysis",
   ],
   "gemini-hotel-competitor-analysis": [
+    "thipak-mai-mee-luk-kha-tham-yang-ngai",
     "seo-for-phuket-hotels",
     "direct-booking-hotel-phuket",
     "local-seo-patong-phuket",
