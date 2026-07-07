@@ -17,7 +17,7 @@ description: >-
 - [anti-patterns.md](anti-patterns.md) — สิ่งที่ห้าม
 
 สกิลที่เกี่ยวข้อง (ไม่ duplicate):
-- `.cursor/skills/blog-article-writing/` — เนื้อหา + Smooth Purple images
+- `.cursor/skills/content-seo-aeo-geo/` — เนื้อหา + Smooth Purple images
 - `.cursor/skills/blog-rich-results-schema/` — JSON-LD
 
 ---

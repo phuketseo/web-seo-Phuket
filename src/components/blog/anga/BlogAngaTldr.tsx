@@ -1,3 +1,5 @@
+import { renderBlogInline } from "@/lib/render-blog-content";
+
 type Props = {
   title?: string;
   items: string[];
@@ -15,13 +17,13 @@ export function BlogAngaTldr({ title, items }: Props) {
         </h3>
       )}
       <ul className="space-y-2.5">
-        {items.map((item) => (
-          <li key={item} className="flex gap-3 text-[15px] leading-relaxed text-slate-700">
+        {items.map((item, index) => (
+          <li key={index} className="flex gap-3 text-[15px] leading-relaxed text-slate-700">
             <span
               className="mt-2 h-2 w-2 shrink-0 rounded-full bg-gradient-to-br from-violet-500 to-indigo-500"
               aria-hidden
             />
-            <span>{item}</span>
+            <span>{renderBlogInline(item, `tldr-${index}`, "anga")}</span>
           </li>
         ))}
       </ul>

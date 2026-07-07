@@ -1,4 +1,4 @@
-/** Blog post — อันดับ Google ตก เช็ควิธีกู้คืนใน 30 วัน (C1.1 · Manus SEO/AEO/GEO) */
+/** Blog post — อันดับ Google ตก เช็ควิธีกู้คืนใน 30 วัน (content-seo-aeo-geo skill) */
 export const blogPostsBatch44 = {
   "andap-google-tok-kuen-nai-30-wan": {
     title: "อันดับ Google ตก เช็ควิธีกู้คืนใน 30 วัน",

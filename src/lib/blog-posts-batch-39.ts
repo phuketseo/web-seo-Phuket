@@ -1,4 +1,4 @@
-/** Blog post #47 — การตลาดร้านนวดแผนไทย (Manus SEO/AEO/GEO skill) */
+/** Blog post — การตลาดร้านนวดแผนไทย (content-seo-aeo-geo skill) */
 export const blogPostsBatch39 = {
   "kan-marketing-ran-nuad-phaen-thai": {
     title: "การตลาดร้านนวดแผนไทย — หาลูกค้าใหม่บน Google Maps",

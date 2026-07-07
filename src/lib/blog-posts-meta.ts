@@ -95,6 +95,14 @@ export const blogPostsMeta: BlogPostMeta[] = [
     thumbnail: getBlogThumbnail("promote-ran-nuad-thai-phuket"),
   },
   {
+    slug: "ran-nuad-mai-mee-luk-kha-tham-yang-ngai",
+    title: "ร้านนวดไม่มีลูกค้า ทำยังไง — วิธีแก้ที่ทำได้จริง",
+    category: "Industry Guide",
+    description:
+      "ร้านนวดไม่มีลูกค้า ทำยังไง — สาเหตุที่พบบ่อยในโซนป่าตอง กะตะ กมลา และลำดับแก้จาก Google Maps รีวิว ราคาชัด ก่อนโปรโมชัน",
+    thumbnail: getBlogThumbnail("ran-nuad-mai-mee-luk-kha-tham-yang-ngai"),
+  },
+  {
     slug: "local-seo-rang-kha-mistakes",
     title: "ข้อผิดพลาด Local SEO ร้านค้า ที่ทำให้ไม่ติด Google Maps",
     category: "Local SEO",

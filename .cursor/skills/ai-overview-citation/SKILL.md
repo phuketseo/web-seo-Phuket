@@ -12,8 +12,7 @@ description: >-
 ต้นแบบจากเคสจริง: คำค้น **รับทำ seo สปา ภูเก็ต** — AI Overview อ้าง PhuketSEO ด้วยข้อเท็จจริงสั้น (SME ในภูเก็ต · SEO Audit ฟรี · ปรึกษาฟรี) ไม่ใช่ยกคู่มือยาวทั้งบท
 
 อ่านร่วมกับ:
-- `.cursor/skills/content-seo-aeo-geo/SKILL.md` — Answer-First / Manus process
-- `.cursor/skills/blog-article-writing/SKILL.md` — โทนและรูป blog
+- `.cursor/skills/content-seo-aeo-geo/SKILL.md` — มาตรฐานสำนวนและโครงสร้างบทความ (ตัวอย่าง การตลาดออนไลน์นวดแผนไทย)
 - `.cursor/rules/ai-overview-citation.mdc` — กฎสั้นบังคับตอนแก้ไฟล์เนื้อหา
 - `.cursor/rules/aio-article-rigger.mdc` — workflow โครงร่างก่อนเขียนบทความเต็ม
 
