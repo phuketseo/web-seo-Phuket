@@ -79,6 +79,22 @@ export const blogPostsMeta: BlogPostMeta[] = [
     thumbnail: getBlogThumbnail("rap-pak-mut-thurakij-phuket"),
   },
   {
+    slug: "poet-ran-nuad-mai-mai-mee-luk-kha-tham-yang-ngai",
+    title: "เปิดร้านนวดใหม่ ไม่มีลูกค้า ทำอย่างไร — ลำดับ 30 วันแรกที่ทำได้จริง",
+    category: "Industry Guide",
+    description:
+      "เปิดร้านนวดใหม่ ไม่มีลูกค้า ทำอย่างไร — ลำดับ 30 วันแรกในโซนป่าตอง กะตะ กมลา ภูเก็ต จาก Google Maps รีวิว ราคาชัด ก่อนโปรโมชัน",
+    thumbnail: getBlogThumbnail("poet-ran-nuad-mai-mai-mee-luk-kha-tham-yang-ngai"),
+  },
+  {
+    slug: "ran-nuad-kap-spa-promote-tang-kan-yang-ngai",
+    title: "ร้านนวดกับสปา โปรโมตต่างกันอย่างไร — ช่องทางและลำดับที่ไม่ควรสลับกัน",
+    category: "Industry Guide",
+    description:
+      "ร้านนวดกับสปา โปรโมตต่างกันอย่างไร — ช่องทาง Google Maps ราคา รีวิว และลูกค้าเป้าหมายในโซนป่าตอง กะตะ ภูเก็ต",
+    thumbnail: getBlogThumbnail("ran-nuad-kap-spa-promote-tang-kan-yang-ngai"),
+  },
+  {
     slug: "kan-marketing-ran-nuad-phaen-thai",
     title: "การตลาดร้านนวดแผนไทย — หาลูกค้าใหม่บน Google Maps",
     category: "Industry Guide",
