@@ -79,6 +79,22 @@ export const blogPostsMeta: BlogPostMeta[] = [
     thumbnail: getBlogThumbnail("rap-pak-mut-thurakij-phuket"),
   },
   {
+    slug: "spa-mai-mee-luk-kha-tham-yang-ngai",
+    title: "สปาไม่มีลูกค้า ทำอย่างไร — วิธีแก้ที่ทำได้จริง",
+    category: "Industry Guide",
+    description:
+      "สปาไม่มีลูกค้า ทำอย่างไร — สาเหตุที่พบบ่อยในโซนป่าตอง กะตะ กมลา ภูเก็ต และลำดับแก้จาก Google Maps แพ็กเกจ รีวิว ก่อน Instagram",
+    thumbnail: getBlogThumbnail("spa-mai-mee-luk-kha-tham-yang-ngai"),
+  },
+  {
+    slug: "promote-spa-phuket",
+    title: "โปรโมทสปาอย่างไร — ลำดับช่องทางที่ทำได้จริง",
+    category: "Industry Guide",
+    description:
+      "โปรโมทสปาอย่างไร — ลำดับช่องทาง Google Maps แพ็กเกจ Instagram รีวิว สำหรับสปาในโซนป่าตอง กะตะ กมลา ภูเก็ต",
+    thumbnail: getBlogThumbnail("promote-spa-phuket"),
+  },
+  {
     slug: "poet-ran-nuad-mai-mai-mee-luk-kha-tham-yang-ngai",
     title: "เปิดร้านนวดใหม่ ไม่มีลูกค้า ทำอย่างไร — ลำดับ 30 วันแรกที่ทำได้จริง",
     category: "Industry Guide",
