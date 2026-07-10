@@ -12,6 +12,7 @@ description: >-
 
 อ่านร่วมกับ:
 - `.cursor/rules/aio-article-rigger.mdc` — workflow โครงร่างก่อนลงเว็บ (บังคับ)
+- `.cursor/skills/thai-article-prose/SKILL.md` — สำนวนภาษาไทย (ลด dash, ศัพท์สมูท, ตารางเป็นประโยค) บังคับทุกครั้งที่เขียน/แก้บทไทย
 - `.cursor/skills/ai-overview-citation/SKILL.md` — entity แบรนด์ + คลัสเตอร์ 3 ชั้น
 - `.cursor/skills/blog-rich-results-schema/SKILL.md` — JSON-LD / Rich Results
 - `.cursorrules` — SEO keyword, FAQ, entity โซนภูเก็ต (ไม่ใช้ template โครงสร้าง 7 ชั้นเก่า)
