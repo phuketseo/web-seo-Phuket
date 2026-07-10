@@ -79,6 +79,14 @@ export const blogPostsMeta: BlogPostMeta[] = [
     thumbnail: getBlogThumbnail("rap-pak-mut-thurakij-phuket"),
   },
   {
+    slug: "nuad-thai-klai-chan",
+    title: "นวดไทย ใกล้ฉัน — วิธีทำให้ร้านนวดโผล่บน Google Maps",
+    category: "Industry Guide",
+    description:
+      "นวดไทย ใกล้ฉัน — วิธีให้ร้านนวดโผล่บน Google Maps จาก Google Business Profile คำค้น near me รีวิว และราคาชัด ก่อนยิงแอดหรือลดราคา",
+    thumbnail: getBlogThumbnail("nuad-thai-klai-chan"),
+  },
+  {
     slug: "spa-mai-mee-luk-kha-tham-yang-ngai",
     title: "สปาไม่มีลูกค้า ทำอย่างไร — วิธีแก้ที่ทำได้จริง",
     category: "Industry Guide",

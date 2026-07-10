@@ -1,0 +1,67 @@
+{
+  "nuad-thai-klai-chan-hero": {
+    "headlinePrimary": "นวดไทย ใกล้ฉัน",
+    "headlineSecondary": "ร้านนวดโผล่บน Google ยังไง",
+    "badge": "Industry Guide",
+    "mockupFocus": "google-maps",
+    "mockupTitle": "Thai Massage Near Me",
+    "sidebarItems": [
+      { "title": "โผล่ 3 อันดับแรก", "description": "ลูกค้า walk-in ค้นบนมือถือ" },
+      { "title": "GBP ครบ", "description": "หมวดนวด · ราคา · รูปจริง" },
+      { "title": "รีวิวจริง", "description": "ขอหลังนวดทุกครั้ง" },
+      { "title": "ตอบ LINE เร็ว", "description": "ภายใน 1–2 ชม." }
+    ]
+  },
+  "nuad-thai-klai-chan-search": {
+    "headlinePrimary": "ลูกค้าค้นแล้วเลือกยังไง",
+    "headlineSecondary": "3 ขั้นตัดสินใจบนมือถือ",
+    "badge": "Near Me",
+    "mockupFocus": "aeo-serp",
+    "mockupTitle": "Search → Filter → Call",
+    "sidebarItems": [
+      { "title": "1. ค้นหา", "description": "นวดไทย ใกล้ฉัน" },
+      { "title": "2. กรอง", "description": "ดาว · ราคา · รูป" },
+      { "title": "3. ตัดสินใจ", "description": "โทร / LINE ใน 15 นาที" },
+      { "title": "35–50%", "description": "ลูกค้าใหม่เริ่มจาก Maps" }
+    ]
+  },
+  "nuad-thai-klai-chan-causes": {
+    "headlinePrimary": "ทำไมถึงไม่โผล่ใกล้ฉัน",
+    "headlineSecondary": "6 สาเหตุที่พบบ่อย",
+    "badge": "Local SEO",
+    "mockupFocus": "google-maps",
+    "mockupTitle": "Why Missing",
+    "sidebarItems": [
+      { "title": "หมวดผิด", "description": "ลงสปาแทนนวด" },
+      { "title": "ไม่ยืนยัน GBP", "description": "ไม่ขึ้นแผนที่เต็ม" },
+      { "title": "รีวิวน้อย", "description": "ต่ำกว่า 4 ดาว" },
+      { "title": "ไม่มีราคา", "description": "ลูกค้าไม่กล้าเข้า" }
+    ]
+  },
+  "nuad-thai-klai-chan-steps": {
+    "headlinePrimary": "ลำดับตั้ง GBP 7 ขั้น",
+    "headlineSecondary": "ทำตามลำดับ — อย่าเริ่มจากแอด",
+    "badge": "Checklist",
+    "mockupFocus": "google-maps",
+    "mockupTitle": "GBP Setup",
+    "sidebarItems": [
+      { "title": "1. ยืนยัน GBP", "description": "หมวดนวดแผนไทย" },
+      { "title": "2. NAP ตรง", "description": "ชื่อ ที่อยู่ เบอร์" },
+      { "title": "3. ราคาชัด", "description": "60/90/120 · TH/EN" },
+      { "title": "4. รูป + รีวิว", "description": "ห้องจริง · ข้อความจริง" }
+    ]
+  },
+  "nuad-thai-klai-chan-compare": {
+    "headlinePrimary": "Maps ก่อน vs แอดก่อน",
+    "headlineSecondary": "เปรียบเทียบผลและงบ",
+    "badge": "Decision",
+    "mockupFocus": "seo-dashboard",
+    "mockupTitle": "Maps First",
+    "sidebarItems": [
+      { "title": "Maps ก่อน", "description": "สะสมรีวิวและอันดับ" },
+      { "title": "แอดก่อน", "description": "ได้คลิกแต่ไม่ walk-in" },
+      { "title": "เหมาะเมื่อ", "description": "listing ครบมีรีวิว 5+" },
+      { "title": "สัญญาณแรก", "description": "4–8 สัปดาห์หลัง listing" }
+    ]
+  }
+}

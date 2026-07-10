@@ -35,6 +35,7 @@ import { blogPostsBatch48 } from "@/lib/blog-posts-batch-48";
 import { blogPostsBatch49 } from "@/lib/blog-posts-batch-49";
 import { blogPostsBatch50 } from "@/lib/blog-posts-batch-50";
 import { blogPostsBatch51 } from "@/lib/blog-posts-batch-51";
+import { blogPostsBatch52 } from "@/lib/blog-posts-batch-52";
 import { getRelatedBlogPosts } from "@/lib/blog-related-posts";
 
 const defaultAuthor = { name: "ทีม PhuketSEO", role: "SEO Consultant · ภูเก็ต" };
@@ -81,6 +82,7 @@ const blogPosts: Record<
   ...blogPostsBatch49,
   ...blogPostsBatch50,
   ...blogPostsBatch51,
+  ...blogPostsBatch52,
   "seo-for-phuket-spas": {
     title: "SEO สปาภูเก็ต: ดึง Direct Booking ไม่พึ่ง OTA",
     description:

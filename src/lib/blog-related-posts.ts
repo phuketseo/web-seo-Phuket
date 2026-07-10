@@ -225,6 +225,7 @@ const blogRelatedSlugs: Record<string, string[]> = {
     "seo-clinic-phuket",
   ],
   "near-me-seo-phuket": [
+    "nuad-thai-klai-chan",
     "google-my-business-phuket",
     "nap-local-seo-phuket",
     "local-seo-phuket-kue-arai",
@@ -359,13 +360,22 @@ const blogRelatedSlugs: Record<string, string[]> = {
     "google-reviews-phuket",
   ],
   "promote-ran-nuad-thai-phuket": [
+    "nuad-thai-klai-chan",
     "ran-nuad-kap-spa-promote-tang-kan-yang-ngai",
     "poet-ran-nuad-mai-mai-mee-luk-kha-tham-yang-ngai",
     "ran-nuad-mai-mee-luk-kha-tham-yang-ngai",
     "kan-marketing-ran-nuad-phaen-thai",
     "dan-andap-google-maps-phuket",
   ],
+  "nuad-thai-klai-chan": [
+    "ran-nuad-mai-mee-luk-kha-tham-yang-ngai",
+    "promote-ran-nuad-thai-phuket",
+    "near-me-seo-phuket",
+    "google-my-business-phuket",
+    "google-reviews-phuket",
+  ],
   "ran-nuad-mai-mee-luk-kha-tham-yang-ngai": [
+    "nuad-thai-klai-chan",
     "poet-ran-nuad-mai-mai-mee-luk-kha-tham-yang-ngai",
     "promote-ran-nuad-thai-phuket",
     "google-maps-mai-tid-phuket",
