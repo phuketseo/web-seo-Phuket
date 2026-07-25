@@ -2,7 +2,8 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    qualities: [75, 95],
+    // Pre-optimized WebP in public/images — bypass Vercel Image Optimization (Image Cache Writes).
+    unoptimized: true,
     localPatterns: [
       { pathname: "/images/**", search: "" },
       { pathname: "/images/**" },

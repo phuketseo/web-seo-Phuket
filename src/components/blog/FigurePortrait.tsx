@@ -64,7 +64,6 @@ export function FigurePortrait({
             fill
             className="figure-portrait__img figure-portrait__img--flush object-cover"
             loading="lazy"
-            quality={95}
             sizes={SIZES[display]}
           />
         </div>
@@ -89,7 +88,6 @@ export function FigurePortrait({
           fill
           className="figure-portrait__img object-contain"
           loading="lazy"
-          quality={95}
           sizes={SIZES[display]}
         />
       </div>

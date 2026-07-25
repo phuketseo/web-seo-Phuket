@@ -8,7 +8,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "check:images": "node scripts/check-images.mjs"
+    "check:images": "node scripts/check-images.mjs",
+    "convert:images": "node scripts/convert-public-images-to-webp.mjs"
   },
   "dependencies": {
     "@fontsource/google-sans": "^5.2.1",

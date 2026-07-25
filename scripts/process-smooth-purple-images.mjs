@@ -106,4 +106,4 @@ if (existsSync(upscaleScript) && assetsDir.includes("promote-ran-nuad-thai")) {
   if (r.status !== 0) process.exit(r.status ?? 1);
 }
 
-console.log("\nDone — verify 3:2 publish files at 3840×2560.");
+console.log("\nDone — verify 3:2 publish files at 3840×2560 WebP (run upscale-*-images.mjs).");

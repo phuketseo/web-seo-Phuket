@@ -42,7 +42,6 @@ export function BlogInlineImage({
               fill
               className="blog-anga-portrait__img object-contain"
               loading="lazy"
-              quality={95}
               sizes={ANGA_IMAGE_SIZES}
             />
           </div>
@@ -89,7 +88,6 @@ export function BlogInlineImage({
           fill
           className="object-cover"
           loading="lazy"
-          quality={95}
           sizes={sizes}
         />
       </div>

@@ -1,6 +1,6 @@
-import sharp from "sharp";
-import { readFileSync, existsSync } from "node:fs";
+import { existsSync } from "node:fs";
 import { dirname, join } from "node:path";
+import { publishWebpImage } from "./lib/publish-image.mjs";
 import { fileURLToPath } from "node:url";
 
 const TARGET_W = 3840;
@@ -11,10 +11,10 @@ const assetsDir = join(root, "assets");
 const outDir = join(root, "public", "images", "blog");
 
 const jobs = [
-  { src: "thalang-hero-src.png", out: "blog-thumb-local-seo-thalang-clean.png" },
-  { src: "thalang-zone-infographic-src.png", out: "blog-inline-thalang-zone-infographic-clean.png" },
-  { src: "thalang-zones-src.png", out: "blog-inline-thalang-zones-clean.png" },
-  { src: "thalang-maps-src.png", out: "blog-inline-thalang-maps-clean.png" },
+  { src: "thalang-hero-src.png", out: "blog-thumb-local-seo-thalang-clean.webp" },
+  { src: "thalang-zone-infographic-src.png", out: "blog-inline-thalang-zone-infographic-clean.webp" },
+  { src: "thalang-zones-src.png", out: "blog-inline-thalang-zones-clean.webp" },
+  { src: "thalang-maps-src.png", out: "blog-inline-thalang-maps-clean.webp" },
 ];
 
 for (const { src, out } of jobs) {

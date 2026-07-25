@@ -1,6 +1,6 @@
-import sharp from "sharp";
 import { existsSync } from "node:fs";
 import { dirname, join } from "node:path";
+import { publishWebpImage } from "./lib/publish-image.mjs";
 import { fileURLToPath } from "node:url";
 import { seoPhuketKueAraiImages } from "./seo-phuket-kue-arai-image-briefs.mjs";
 

@@ -1,6 +1,6 @@
-import sharp from "sharp";
-import { readFileSync, existsSync } from "node:fs";
+import { existsSync } from "node:fs";
 import { dirname, join } from "node:path";
+import { publishWebpImage } from "./lib/publish-image.mjs";
 import { fileURLToPath } from "node:url";
 
 const TARGET_W = 3840;
@@ -11,18 +11,18 @@ const assetsDir = join(root, "assets", "ranking-recovery");
 const outDir = join(root, "public", "images", "blog");
 
 const jobs = [
-  { src: "andap-google-tok-kuen-nai-30-wan-hero-branded.png", out: "blog-thumb-andap-google-tok-kuen-nai-30-wan-clean.png" },
-  { src: "andap-google-tok-kuen-nai-30-wan-causes-branded.png", out: "blog-inline-andap-google-tok-kuen-nai-30-wan-causes-clean.png" },
-  { src: "andap-google-tok-kuen-nai-30-wan-plan-branded.png", out: "blog-inline-andap-google-tok-kuen-nai-30-wan-plan-clean.png" },
-  { src: "andap-google-tok-kuen-nai-30-wan-mistakes-branded.png", out: "blog-inline-andap-google-tok-kuen-nai-30-wan-mistakes-clean.png" },
-  { src: "witi-kae-web-don-core-update-hero-branded.png", out: "blog-thumb-witi-kae-web-don-core-update-clean.png" },
-  { src: "witi-kae-web-don-core-update-confirm-branded.png", out: "blog-inline-witi-kae-web-don-core-update-confirm-clean.png" },
-  { src: "witi-kae-web-don-core-update-playbook-branded.png", out: "blog-inline-witi-kae-web-don-core-update-playbook-clean.png" },
-  { src: "witi-kae-web-don-core-update-donts-branded.png", out: "blog-inline-witi-kae-web-don-core-update-donts-clean.png" },
-  { src: "andap-web-tok-ai-search-hero-branded.png", out: "blog-thumb-andap-web-tok-ai-search-clean.png" },
-  { src: "andap-web-tok-ai-search-causes-branded.png", out: "blog-inline-andap-web-tok-ai-search-causes-clean.png" },
-  { src: "andap-web-tok-ai-search-ai-prep-branded.png", out: "blog-inline-andap-web-tok-ai-search-ai-prep-clean.png" },
-  { src: "andap-web-tok-ai-search-hub-branded.png", out: "blog-inline-andap-web-tok-ai-search-hub-clean.png" },
+  { src: "andap-google-tok-kuen-nai-30-wan-hero-branded.png", out: "blog-thumb-andap-google-tok-kuen-nai-30-wan-clean.webp" },
+  { src: "andap-google-tok-kuen-nai-30-wan-causes-branded.png", out: "blog-inline-andap-google-tok-kuen-nai-30-wan-causes-clean.webp" },
+  { src: "andap-google-tok-kuen-nai-30-wan-plan-branded.png", out: "blog-inline-andap-google-tok-kuen-nai-30-wan-plan-clean.webp" },
+  { src: "andap-google-tok-kuen-nai-30-wan-mistakes-branded.png", out: "blog-inline-andap-google-tok-kuen-nai-30-wan-mistakes-clean.webp" },
+  { src: "witi-kae-web-don-core-update-hero-branded.png", out: "blog-thumb-witi-kae-web-don-core-update-clean.webp" },
+  { src: "witi-kae-web-don-core-update-confirm-branded.png", out: "blog-inline-witi-kae-web-don-core-update-confirm-clean.webp" },
+  { src: "witi-kae-web-don-core-update-playbook-branded.png", out: "blog-inline-witi-kae-web-don-core-update-playbook-clean.webp" },
+  { src: "witi-kae-web-don-core-update-donts-branded.png", out: "blog-inline-witi-kae-web-don-core-update-donts-clean.webp" },
+  { src: "andap-web-tok-ai-search-hero-branded.png", out: "blog-thumb-andap-web-tok-ai-search-clean.webp" },
+  { src: "andap-web-tok-ai-search-causes-branded.png", out: "blog-inline-andap-web-tok-ai-search-causes-clean.webp" },
+  { src: "andap-web-tok-ai-search-ai-prep-branded.png", out: "blog-inline-andap-web-tok-ai-search-ai-prep-clean.webp" },
+  { src: "andap-web-tok-ai-search-hub-branded.png", out: "blog-inline-andap-web-tok-ai-search-hub-clean.webp" },
 ];
 
 for (const { src, out } of jobs) {

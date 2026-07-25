@@ -32,7 +32,6 @@ export function BlogFeaturedImage({ image, priority = true, theme }: Props) {
             fill
             className="blog-anga-portrait__img object-contain"
             priority={priority}
-            quality={95}
             sizes={sizes}
           />
         </div>
@@ -55,7 +54,6 @@ export function BlogFeaturedImage({ image, priority = true, theme }: Props) {
           fill
           className="object-cover"
           priority={priority}
-          quality={95}
           sizes={sizes}
         />
       </div>

@@ -1,6 +1,6 @@
-import sharp from "sharp";
-import { readFileSync, existsSync } from "node:fs";
+import { existsSync } from "node:fs";
 import { dirname, join } from "node:path";
+import { publishWebpImage } from "./lib/publish-image.mjs";
 import { fileURLToPath } from "node:url";
 
 const TARGET_W = 3840;
@@ -11,10 +11,10 @@ const assetsDir = join(root, "assets");
 const outDir = join(root, "public", "images", "blog");
 
 const jobs = [
-  { src: "kathu-hero-src.png", out: "blog-thumb-local-seo-kathu-clean.png" },
-  { src: "kathu-maps-src.png", out: "blog-inline-kathu-maps-clean.png" },
-  { src: "kathu-zones-src.png", out: "blog-inline-kathu-zones-clean.png" },
-  { src: "kathu-keywords-src.png", out: "blog-inline-kathu-keywords-clean.png" },
+  { src: "kathu-hero-src.png", out: "blog-thumb-local-seo-kathu-clean.webp" },
+  { src: "kathu-maps-src.png", out: "blog-inline-kathu-maps-clean.webp" },
+  { src: "kathu-zones-src.png", out: "blog-inline-kathu-zones-clean.webp" },
+  { src: "kathu-keywords-src.png", out: "blog-inline-kathu-keywords-clean.webp" },
 ];
 
 for (const { src, out } of jobs) {
