@@ -6,9 +6,9 @@ import { HomeBodyClass } from "@/components/HomeBodyClass";
 import { BrandGradientDefs } from "@/components/BrandGradientDefs";
 
 export const metadata: Metadata = {
-  title: "PhuketSEO | รับทำ SEO + เว็บไซต์ภูเก็ต ติด Google พร้อม AI Search",
+  title: "PhuketSEO | รับยิงแอด Google & Meta ภูเก็ต เริ่ม ฿6,500",
   description:
-    "รับทำ SEO และเว็บไซต์ภูเก็ต ติด Google Maps เว็บเร็ว พร้อม AEO/GEO เริ่มต้น ฿5,900/เดือน ขอคำปรึกษาฟรี",
+    "รับยิงแอด Google และ Facebook ภูเก็ต — จัดการ 1 แคมเปญ เริ่ม ฿6,500/เดือน ทำเว็บ Starter ฿6,500 แยกจากแอด ขอคำปรึกษาฟรี",
   alternates: { canonical: siteConfig.url },
 };
 

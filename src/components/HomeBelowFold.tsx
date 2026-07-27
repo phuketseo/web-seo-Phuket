@@ -35,10 +35,10 @@ const services: {
   {
     num: "03",
     iconImage: siteImages.icons.seo,
-    title: "SEO ภูเก็ต",
-    desc: "Local SEO, Maps และ organic ระยะยาว — เสริมหลังแอดหรือเว็บพร้อม",
-    meta: "จาก ฿5,900/เดือน",
-    href: "/services/seo-phuket",
+    title: "SEO Add-on",
+    desc: "บวกกับแพ็กเว็บ — Local SEO, Maps, on-page ไม่ขายแยกจากเว็บ",
+    meta: "+฿6,500/เดือน · ขั้นต่ำ 1 ปี",
+    href: "/packages/seo-addon",
   },
   {
     num: "04",
@@ -59,31 +59,31 @@ const whyUs = [
     desc: "รายงาน KPI รายเดือน: ranking, traffic, GBP views, conversion",
   },
   {
-    title: "ไม่มีสัญญาผูกมัด",
-    desc: "ยกเลิกได้ทุกเดือน — แนะนำขั้นต่ำ 3 เดือนเพื่อเห็นผล",
+    title: "แพ็กแอดยืดหยุ่น",
+    desc: "Ads Starter ยกเลิกได้ทุกเดือน — SEO Add-on ขั้นต่ำ 12 เดือนเมื่อบวกกับเว็บ",
   },
 ];
 
 const faqs = [
   {
-    q: "SEO ภูเก็ต ใช้เวลานานแค่ไหนถึงจะเห็นผล?",
-    a: "โดยทั่วไปจะเริ่มเห็นผลลัพธ์ที่ชัดเจนภายใน 3–6 เดือน ขึ้นอยู่กับความแข่งขันของ keyword และสภาพเว็บเดิม บางคีย์เวิร์ดอาจเห็นผลเร็วกว่า",
+    q: "รับยิงแอด Google/Meta เริ่มเท่าไหร่?",
+    a: "แพ็ก Ads Starter ฿6,500/เดือน — เลือก Google Ads (Search/Maps) หรือ Meta Ads (Facebook/Instagram) 1 แคมเปญ ค่ายิงแอดแยก ยกเลิกได้ทุกเดือน",
   },
   {
-    q: "ค่าบริการ SEO ภูเก็ต เริ่มต้นที่เท่าไหร่?",
-    a: "แพ็ก Ads Starter เริ่ม ฿6,500/เดือน (Google หรือ Meta 1 แคมเปญ) เว็บ Starter ฿6,500 ครั้งเดียว แพ็ก SEO Lite ฿5,900/เดือน — ค่ายิงแอดแยกจากค่าจัดการ",
+    q: "ทำเว็บไซต์ภูเก็ตเท่าไหร่?",
+    a: "แพ็กเว็บ Starter ฿6,500 ครั้งเดียว ไม่เกิน 10 หน้า ดูแลโดเมน/โฮสต์ ฿4,500/ปี แยกจากแพ็กยิงแอด",
   },
   {
-    q: "PhuketSEO ให้บริการธุรกิจประเภทไหนบ้าง?",
-    a: "โรงแรม รีสอร์ท อสังหาริมทรัพย์ ร้านอาหาร คลินิก สปา ทัวร์ และ SME ท้องถิ่นในภูเก็ต",
+    q: "SEO ขายแยกจากเว็บได้ไหม?",
+    a: "ไม่ได้ — SEO Add-on +฿6,500/เดือน บวกกับแพ็กเว็บ Starter หรือเว็บจาก PhuketSEO เท่านั้น สัญญาขั้นต่ำ 12 เดือน",
   },
   {
-    q: "SEO ต่างจาก Google Ads อย่างไร?",
-    a: "SEO คือการติดอันดับ Organic ไม่เสียค่าต่อคลิก ผลยั่งยืนแต่ใช้เวลา Google Ads ให้ผลทันทีแต่ต้องจ่ายตลอด",
+    q: "Google Ads กับ SEO ต่างกันอย่างไร?",
+    a: "Google Ads ได้ lead เร็วแต่จ่าย ad spend ต่อเนื่อง SEO compound ช้ากว่าแต่ยั่งยืน — หลายธุรกิจเริ่มแอดก่อน แล้วบวก SEO เมื่อมีเว็บ",
   },
   {
     q: "มีรายงานผลให้ดูไหม?",
-    a: "ส่งรายงานรายเดือน — keyword rankings, organic traffic, GBP views และ conversion พร้อมคำแนะนำเดือนถัดไป",
+    a: "แพ็กแอดส่งรายงานรายเดือน (คลิก, lead, ค่าใช้จ่าย) SEO Add-on ส่งรายงาน GSC + GBP Insights รายเดือน",
   },
 ];
 
@@ -112,7 +112,7 @@ export default function HomeBelowFold() {
           eyebrow="บริการ"
           title="การมองเห็นบน Google"
           titleAccent="+ แอด & เว็บ"
-          description="แพ็กแยกชัด — ยิงแอด ทำเว็บ หรือ SEO ระยะยาว ตามงบธุรกิจในภูเก็ต"
+          description="แพ็กแยกชัด — ยิงแอด ทำเว็บ SEO บวกกับเว็บเท่านั้น"
         />
 
           <ul className="flex flex-col gap-3 sm:gap-0 sm:divide-y sm:divide-slate-200 sm:border-y sm:border-slate-200 sm:bg-white sm:rounded-lg sm:overflow-hidden">
@@ -258,8 +258,8 @@ export default function HomeBelowFold() {
           <HomeSectionHeader
             eyebrow="ราคา"
             title="แพ็ก"
-            titleAccent="Ads / เว็บ / ดูแลรายปี"
-            description="แยกแอดกับเว็บชัดเจน — ดูแพ็ก SEO ระยะยาวที่หน้าราคา"
+            titleAccent="Ads / เว็บ / SEO Add-on"
+            description="SEO บวกกับเว็บเท่านั้น — ดูรายละเอียดที่หน้าราคา"
           />
 
           <PricingPlanGrid packages={pricingPackages} featureLimit={5} />
@@ -303,7 +303,7 @@ export default function HomeBelowFold() {
             <HomeSectionHeader
               title="วิเคราะห์ธุรกิจของคุณ"
               titleAccent="ก่อนเริ่ม"
-              description="ขอคำปรึกษาฟรี ไม่มีค่าใช้จ่าย ไม่มีสัญญาผูกมัด — เราจะดูโซน คู่แข่ง และแพ็กที่เหมาะก่อน"
+              description="ขอคำปรึกษาฟรี — แพ็กแอดยกเลิกได้ทุกเดือน SEO Add-on ขั้นต่ำ 12 เดือนเมื่อบวกกับเว็บ"
               centered
               className="mb-7 md:mb-8"
             />

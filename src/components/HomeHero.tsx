@@ -4,10 +4,10 @@ import { siteImages } from "@/lib/images";
 import { GradientButton } from "@/components/GradientButton";
 
 const proofStats = [
-  { value: "฿5,900", label: "เริ่มต้น/เดือน" },
-  { value: "7 วัน", label: "ส่ง Audit" },
-  { value: "30–60 วัน", label: "GBP impression" },
-  { value: "AEO+GEO", label: "AI Search ready" },
+  { value: "฿6,500", label: "ค่าจัดการแอด" },
+  { value: "Google/Meta", label: "เลือก 1 แพลตฟอร์ม" },
+  { value: "24 ชม.", label: "แคมเปญเปิด" },
+  { value: "฿6,500", label: "เว็บ Starter" },
 ];
 
 export default function HomeHero() {
@@ -34,25 +34,26 @@ export default function HomeHero() {
 
           <div className="min-w-0 order-2 lg:order-1">
             <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-indigo-600 mb-4 sm:mb-5">
-              Phuket Visibility Stack™
+              รับยิงแอด Google & Meta ภูเก็ต
             </p>
             <h1 className="hero-lcp text-[2rem] sm:text-5xl lg:text-[3.25rem] font-bold text-slate-900 leading-[1.08] tracking-[-0.03em] mb-4 sm:mb-6">
-              รับทำ SEO และ{" "}
-              <span className="text-gradient-brand">เว็บไซต์ภูเก็ต</span>
+              รับยิงแอดโฆษณา{" "}
+              <span className="text-gradient-brand">ภูเก็ต</span>
               <span className="text-slate-400 font-bold"> — </span>
-              ติด Google และ AI Search
+              Google หรือ Facebook
             </h1>
             <p className="text-base sm:text-lg text-slate-600 leading-[1.7] max-w-xl mb-7 sm:mb-9">
-              ช่วยธุรกิจไทยในภูเก็ตให้ติด Google Maps มีเว็บเร็วที่ Google ชอบ
-              และพร้อมโผล่ AI Overview เริ่มต้น ฿5,900/เดือน ไม่มีสัญญาผูกมัด
+              จัดการ Google Ads (Search, Maps) หรือ Meta Ads (Facebook, Instagram) 1 แคมเปญ
+              สำหรับธุรกิจในโซนป่าตอง กะตะ ตัวเมือง — แยกจากค่าทำเว็บ เริ่ม ฿6,500/เดือน
+              ไม่มีสัญญาผูกมัด
             </p>
             <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-5 mb-8 sm:mb-10">
               <GradientButton href="/contact">ขอคำปรึกษาฟรี</GradientButton>
               <a
-                href="#services"
+                href="/pricing"
                 className="inline-flex items-center gap-1.5 text-sm font-medium text-violet-600 sm:text-slate-600 touch-manipulation active:text-violet-700 sm:hover:text-violet-600 transition-colors"
               >
-                ดูบริการ
+                ดูแพ็กราคา
                 <ArrowRight size={14} />
               </a>
             </div>

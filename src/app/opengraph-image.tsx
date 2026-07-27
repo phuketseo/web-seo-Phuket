@@ -1,7 +1,7 @@
 ﻿import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "PhuketSEO — รับทำ SEO + เว็บไซต์ภูเก็ต ติด Google & AI Search";
+export const alt = "PhuketSEO — รับยิงแอด Google & Meta ภูเก็ต เริ่ม ฿6,500";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -39,7 +39,7 @@ export default async function Image() {
             marginBottom: 12,
           }}
         >
-          รับทำ SEO + เว็บไซต์ภูเก็ต
+          รับยิงแอด Google & Meta ภูเก็ต
         </div>
         <div
           style={{
@@ -48,7 +48,7 @@ export default async function Image() {
             textAlign: "center",
           }}
         >
-          ติด Google Maps · เว็บ Next.js เร็ว · AEO + GEO Ready
+          Google หรือ Facebook · 1 แคมเปญ · แยกจากค่าทำเว็บ
         </div>
         <div
           style={{
@@ -57,7 +57,7 @@ export default async function Image() {
             gap: 24,
           }}
         >
-          {["฿5,900/เดือน", "Audit 7 วัน", "AEO + GEO"].map((text) => (
+          {["฿6,500/เดือน", "24 ชม. เปิดแคมเปญ", "เว็บ ฿6,500"].map((text) => (
             <div
               key={text}
               style={{

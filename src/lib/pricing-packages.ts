@@ -1,8 +1,9 @@
 export type PricingBillingPeriod = "month" | "once" | "year";
 
 export type PrimaryPackageId = "ads-starter" | "web-starter" | "annual-care";
-export type SeoPackageId = "lite" | "pro" | "max";
-export type PricingPackageId = PrimaryPackageId | SeoPackageId;
+export type SeoAddonPackageId = "seo-addon";
+export type LegacySeoPackageId = "lite" | "pro" | "max";
+export type PricingPackageId = PrimaryPackageId | SeoAddonPackageId | LegacySeoPackageId;
 
 export type PricingPackage = {
   id: PricingPackageId;
@@ -73,7 +74,7 @@ export const primaryPricingPackages: PricingPackage[] = [
     ],
     cta: "สั่งทำเว็บ",
     popular: false,
-    footnote: "ไม่รวม SEO รายเดือน — เพิ่มได้ที่แพ็ก SEO Lite ขึ้นไป",
+    footnote: "SEO รายเดือนเพิ่มได้ +฿6,500/เดือน (ขั้นต่ำ 12 เดือน) — ดู SEO Add-on",
     detailHref: "/packages/web-starter",
   },
   {
@@ -93,12 +94,36 @@ export const primaryPricingPackages: PricingPackage[] = [
     ],
     cta: "สมัครดูแลรายปี",
     popular: false,
-    footnote: "ไม่รวมแก้ข้อความ/รูป — งาน content คิดแยกหรืออัปเป็นแพ็ก SEO",
+    footnote: "ไม่รวมแก้ข้อความ/รูป — งาน content คิดแยกหรือผ่าน SEO Add-on",
     detailHref: "/packages/annual-care",
   },
 ];
 
-export const seoPricingPackages: PricingPackage[] = [
+/** บวกกับแพ็กเว็บเท่านั้น — ไม่ขาย SEO แยก */
+export const seoAddonPackage: PricingPackage = {
+  id: "seo-addon",
+  name: "SEO Add-on",
+  tagline: "บวกกับแพ็กเว็บ · ขั้นต่ำ 1 ปี",
+  price: 6500,
+  priceLabel: "6,500",
+  billingPeriod: "month",
+  desc: "SEO รายเดือนสำหรับลูกค้าที่มีแพ็กเว็บ Starter หรือเว็บจาก PhuketSEO — Local SEO, GBP, on-page ไม่ขายแยกจากเว็บ",
+  features: [
+    "ดูแล Google Business Profile + โพสต์ GBP",
+    "On-page SEO และ technical check รายเดือน",
+    "ระบบขอรีวิว + ติดตามรีวิว",
+    "รายงาน GSC + GBP Insights รายเดือน",
+    "สัญญาขั้นต่ำ 12 เดือน (บวกกับแพ็กเว็บ)",
+  ],
+  cta: "เพิ่ม SEO",
+  popular: false,
+  badge: "เพิ่มกับเว็บ",
+  footnote: "ต้องมีแพ็กเว็บก่อน — แพ็กแอดยิงแอดแยกที่ Ads Starter ฿6,500/เดือน",
+  detailHref: "/packages/seo-addon",
+};
+
+/** แพ็กเก่า — คงหน้ารายละเอียดเดิม ไม่แสดงบนหน้าราคาหลัก */
+export const legacySeoPackages: PricingPackage[] = [
   {
     id: "lite",
     name: "SEO Lite",
@@ -106,18 +131,10 @@ export const seoPricingPackages: PricingPackage[] = [
     price: 5900,
     priceLabel: "5,900",
     billingPeriod: "month",
-    desc: "ดูแล GBP + ยิงแอดโปรโมตบน Maps เน้นตำแหน่งบนสุด — ฿5,900 ค่าจัดการ ค่ายิงแอดแยก",
-    features: [
-      "Google Business Profile setup + ดูแล",
-      "โพสต์ GBP 2 ครั้ง/เดือน",
-      "ระบบขอรีวิว (QR + template)",
-      "แคมเปญขอรีวิว 1 รอบ/เดือน",
-      "Google Ads โปรโมต GBP/Maps 1 แคมเปญ",
-      "รายงาน GBP Insights + แอด รายเดือน",
-    ],
+    desc: "ดูแล GBP + ยิงแอดโปรโมตบน Maps",
+    features: [],
     cta: "เริ่มต้น Lite",
     popular: false,
-    badge: "SEO ระยะยาว",
     detailHref: "/packages/seo-lite",
   },
   {
@@ -127,17 +144,8 @@ export const seoPricingPackages: PricingPackage[] = [
     price: 8900,
     priceLabel: "8,900",
     billingPeriod: "month",
-    desc: "รวม Lite + เว็บ organic/AEO/GEO + Google Ads ยิง landing 1 หน้า — ค่ายิงแอดแยก ไม่มี Meta",
-    features: [
-      "ทุกอย่างใน SEO Lite",
-      "ดูแลเว็บไซต์ 2 หน้า/เดือน",
-      "On-page SEO 10 หน้า/เดือน",
-      "บทความ SEO 1 ชิ้น/เดือน",
-      "AEO: FAQ + schema + answer blocks",
-      "GEO: entity + llms.txt",
-      "Google Ads → landing 1 หน้า 1 แคมเปญ",
-      "รายงาน GSC + GBP + แอด รายเดือน",
-    ],
+    desc: "รวม Lite + เว็บ organic/AEO/GEO",
+    features: [],
     cta: "เลือก Pro",
     popular: false,
     detailHref: "/packages/seo-pro",
@@ -149,13 +157,8 @@ export const seoPricingPackages: PricingPackage[] = [
     price: 15000,
     priceLabel: "15,000",
     billingPeriod: "month",
-    desc: "ครบทุกอย่างใน Pro + Meta Ads — จัดการแอด GBP, Google (landing), Meta อย่างละ 1 แคมเปญ (ad spend แยก)",
-    features: [
-      "ทุกอย่างใน SEO Pro",
-      "บทความ SEO 2 ชิ้น/เดือน",
-      "Meta Ads 1 แคมเปญ",
-      "รายงาน ROAS รวม GBP + Google + Meta",
-    ],
+    desc: "ครบทุกอย่างใน Pro + Meta Ads",
+    features: [],
     cta: "ติดต่อ Pro Max",
     popular: false,
     detailHref: "/packages/seo-pro-max",
@@ -165,7 +168,16 @@ export const seoPricingPackages: PricingPackage[] = [
 /** แพ็กหลักบนหน้าแรกและ hero ราคา — โฟกัสแอด */
 export const pricingPackages = primaryPricingPackages;
 
-export const allPricingPackages: PricingPackage[] = [...primaryPricingPackages, ...seoPricingPackages];
+/** แพ็กที่เปิดขายปัจจุบัน (contact + schema) */
+export const activePricingPackages: PricingPackage[] = [
+  ...primaryPricingPackages,
+  seoAddonPackage,
+];
+
+export const allPricingPackages: PricingPackage[] = [
+  ...activePricingPackages,
+  ...legacySeoPackages,
+];
 
 export function getPricingPackage(id: PricingPackageId): PricingPackage {
   const pkg = allPricingPackages.find((p) => p.id === id);
@@ -181,9 +193,25 @@ export const primaryPricingComparison = [
   { name: "โดเมน + โฮสติ้ง", ads: false, web: false, annual: true },
   { name: "SSL + security update", ads: false, web: false, annual: true },
   { name: "รายงานแอดรายเดือน", ads: true, web: false, annual: false },
-  { name: "SEO / GBP รายเดือน", ads: false, web: false, annual: false },
+  {
+    name: "SEO รายเดือน (+฿6,500 ขั้นต่ำ 1 ปี)",
+    ads: false,
+    web: "เพิ่มได้",
+    annual: false,
+  },
 ] as const;
 
+export const seoAddonFeatures = [
+  { name: "ดูแล Google Business Profile", included: true },
+  { name: "On-page + technical SEO รายเดือน", included: true },
+  { name: "ระบบขอรีวิว + ติดตามรีวิว", included: true },
+  { name: "รายงาน GSC + GBP รายเดือน", included: true },
+  { name: "ต้องมีแพ็กเว็บก่อน", included: true },
+  { name: "สัญญาขั้นต่ำ 12 เดือน", included: true },
+  { name: "ยิงแอด Google/Meta", included: false },
+] as const;
+
+/** @deprecated */
 export const seoPricingComparison = [
   { name: "Google Business Profile", lite: true, pro: true, max: true },
   { name: "Social Proof / ขอรีวิว", lite: true, pro: true, max: true },
@@ -196,10 +224,14 @@ export const seoPricingComparison = [
   { name: "Meta Ads management", lite: false, pro: false, max: true },
 ];
 
-/** @deprecated ใช้ primary + seo แยกบนหน้าราคา */
+/** @deprecated */
+export const seoPricingPackages = legacySeoPackages;
+
+/** @deprecated */
 export const pricingComparison = seoPricingComparison;
 
 export const webSetupPricing = [
   { name: "เว็บ Starter", price: "6,500", note: "ไม่เกิน 10 หน้า" },
+  { name: "SEO Add-on", price: "+6,500/เดือน", note: "บวกกับเว็บ · ขั้นต่ำ 1 ปี" },
   { name: "งานขนาดใหญ่ 15+ หน้า", price: "ติดต่อ", note: "ใบเสนอราคาแยก" },
 ];

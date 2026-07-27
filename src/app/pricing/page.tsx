@@ -3,9 +3,9 @@ import { Check, X } from "lucide-react";
 import { businessEntityId, pricingServicesJsonLd } from "@/lib/schema";
 import {
   primaryPricingPackages,
-  seoPricingPackages,
+  seoAddonPackage,
+  seoAddonFeatures,
   primaryPricingComparison,
-  seoPricingComparison,
   planContactHref,
 } from "@/lib/pricing-packages";
 import { BrandGradientDefs } from "@/components/BrandGradientDefs";
@@ -158,61 +158,63 @@ export default function PricingPage() {
         </p>
       </HomeSection>
 
-      <HomeSection variant="muted">
+      <HomeSection id="seo-addon" variant="muted">
         <HomeSectionHeader
-          eyebrow="ระยะยาว"
-          title="แพ็ก SEO"
-          titleAccent="Lite / Pro / Pro Max"
-          description="สำหรับธุรกิจที่ต้องการ Maps, organic และ AEO/GEO ควบคู่กับแอด — ไม่บังคับสัญญา"
+          eyebrow="บวกกับเว็บ"
+          title="SEO Add-on"
+          titleAccent="+฿6,500/เดือน"
+          description="ขายพร้อมแพ็กเว็บเท่านั้น — สัญญาขั้นต่ำ 12 เดือน ไม่ขาย SEO แยก"
         />
-        <PricingPlanGrid packages={seoPricingPackages} />
-      </HomeSection>
-
-      <HomeSection variant="white">
-        <HomeSectionHeader eyebrow="เปรียบเทียบ" title="ฟีเจอร์" titleAccent="แพ็ก SEO" />
-        <div className="overflow-x-auto rounded-xl border border-slate-200 bg-white shadow-sm">
+        <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-start">
+          <PricingPlanGrid packages={[seoAddonPackage]} />
+          <div className="rounded-xl border border-slate-200 bg-white p-5 sm:p-6 shadow-sm">
+            <h3 className="font-semibold text-slate-900 mb-4">สรุปแพ็กเว็บ + SEO</h3>
+            <ul className="space-y-3 text-sm text-slate-700">
+              <li className="flex justify-between gap-4">
+                <span>เว็บ Starter (ครั้งเดียว)</span>
+                <span className="font-semibold tabular-nums">฿6,500</span>
+              </li>
+              <li className="flex justify-between gap-4">
+                <span>SEO Add-on × 12 เดือน</span>
+                <span className="font-semibold tabular-nums">฿78,000</span>
+              </li>
+              <li className="flex justify-between gap-4">
+                <span>ดูแลรายปี (โดเมน+โฮสต์)</span>
+                <span className="font-semibold tabular-nums">฿4,500/ปี</span>
+              </li>
+            </ul>
+            <p className="text-xs text-slate-500 mt-4 leading-relaxed">
+              แพ็กยิงแอด Ads Starter ฿6,500/เดือน แยก — ยกเลิกได้ทุกเดือน ไม่รวม ad spend
+            </p>
+            <Link
+              href="/packages/seo-addon"
+              className="mt-4 inline-block text-sm font-medium text-violet-600 hover:underline underline-offset-2"
+            >
+              ดูรายละเอียด SEO Add-on →
+            </Link>
+          </div>
+        </div>
+        <div className="mt-6 overflow-x-auto rounded-xl border border-slate-200 bg-white shadow-sm">
           <table className="min-w-full text-sm">
             <thead>
               <tr className="border-b border-slate-200 bg-slate-50">
-                <th className="py-3.5 px-4 sm:px-6 text-left font-semibold text-slate-900">ฟีเจอร์</th>
-                <th className="py-3.5 px-3 sm:px-4 text-center font-semibold text-slate-700">Lite</th>
-                <th className="py-3.5 px-3 sm:px-4 text-center font-semibold text-slate-700">Pro</th>
-                <th className="py-3.5 px-3 sm:px-4 text-center font-semibold text-slate-700">Pro Max</th>
+                <th className="py-3.5 px-4 sm:px-6 text-left font-semibold text-slate-900">SEO Add-on รวม</th>
+                <th className="py-3.5 px-4 text-center font-semibold text-slate-700 w-24">มี</th>
               </tr>
             </thead>
             <tbody>
-              {seoPricingComparison.map((row, i) => (
+              {seoAddonFeatures.map((row, i) => (
                 <tr key={row.name} className={i % 2 === 0 ? "bg-white" : "bg-slate-50/50"}>
                   <td className="py-3 px-4 sm:px-6 font-medium text-slate-800">{row.name}</td>
-                  {(["lite", "pro", "max"] as const).map((tier) => {
-                    const val = row[tier];
-                    return (
-                      <td key={tier} className="py-3 px-3 sm:px-4 text-center">
-                        {val === true ? (
-                          <Check className="w-4 h-4 mx-auto text-indigo-600" strokeWidth={2.5} />
-                        ) : val === false ? (
-                          <X className="w-4 h-4 mx-auto text-slate-300" strokeWidth={2} />
-                        ) : (
-                          <span className="text-slate-700 font-medium tabular-nums">{val}</span>
-                        )}
-                      </td>
-                    );
-                  })}
+                  <td className="py-3 px-4 text-center">
+                    {row.included ? (
+                      <Check className="w-4 h-4 mx-auto text-indigo-600" strokeWidth={2.5} />
+                    ) : (
+                      <X className="w-4 h-4 mx-auto text-slate-300" strokeWidth={2} />
+                    )}
+                  </td>
                 </tr>
               ))}
-              <tr className="border-t border-slate-200 bg-slate-50">
-                <td className="py-4 px-4 sm:px-6 font-semibold text-slate-900">สมัครแพ็ก</td>
-                {seoPricingPackages.map((pkg) => (
-                  <td key={pkg.id} className="py-4 px-3 sm:px-4 text-center">
-                    <Link
-                      href={planContactHref(pkg.id)}
-                      className="inline-block text-xs sm:text-sm font-medium px-4 py-2 rounded-lg border border-slate-200 text-slate-700 hover:border-violet-200 hover:bg-violet-50/50 transition-colors"
-                    >
-                      {pkg.cta}
-                    </Link>
-                  </td>
-                ))}
-              </tr>
             </tbody>
           </table>
         </div>

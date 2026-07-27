@@ -75,7 +75,7 @@ export const siteImages = {
   hero: {
     home: {
       src: "/images/hero/hero-home-visibility-stack-smooth.webp",
-      alt: "รับทำ SEO และเว็บไซต์ภูเก็ต — ติด Google Maps และ AI Search",
+      alt: "รับยิงแอด Google และ Meta ภูเก็ต — เริ่ม ฿6,500/เดือน",
       width: 1536,
       height: 1024,
     },

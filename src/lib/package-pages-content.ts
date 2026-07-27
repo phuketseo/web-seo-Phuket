@@ -4,8 +4,9 @@ import type { PricingPackage } from "@/lib/pricing-packages";
 import { getPricingPackage, planContactHref } from "@/lib/pricing-packages";
 
 export type PrimaryPackagePageId = "ads-starter" | "web-starter" | "annual-care";
+export type SeoAddonPackagePageId = "seo-addon";
 export type SeoPackagePageId = "lite" | "pro" | "max";
-export type PackagePageId = PrimaryPackagePageId | SeoPackagePageId;
+export type PackagePageId = PrimaryPackagePageId | SeoAddonPackagePageId | SeoPackagePageId;
 
 export type PackageFaq = { question: string; answer: string };
 
@@ -75,6 +76,7 @@ export const packagePaths: Record<PackagePageId, string> = {
   "ads-starter": "/packages/ads-starter",
   "web-starter": "/packages/web-starter",
   "annual-care": "/packages/annual-care",
+  "seo-addon": "/packages/seo-addon",
   lite: "/packages/seo-lite",
   pro: "/packages/seo-pro",
   max: "/packages/seo-pro-max",
@@ -223,7 +225,7 @@ export const packagePagesContent: Record<PackagePageId, PackagePageContent> = {
       "ทดสอบบนมือถือ + ส่งมอบพร้อมคู่มือแก้ข้อความเบื้องต้น",
     ],
     notIncluded: [
-      "SEO รายเดือน / บทความ blog — ดูแพ็ก SEO Lite ขึ้นไป",
+      "SEO รายเดือน — ดู SEO Add-on +฿6,500/เดือน (บวกกับเว็บ ขั้นต่ำ 12 เดือน)",
       "ยิงแอด Google/Meta — ดูแพ็ก Ads Starter ฿6,500/เดือน",
       "หน้าเว็บเกิน 10 หน้า — ใบเสนอราคาแยก",
       "ระบบจอง/ชำระเงินเต็มรูปแบบ (e-commerce)",
@@ -261,7 +263,7 @@ export const packagePagesContent: Record<PackagePageId, PackagePageContent> = {
       },
       {
         question: "มี SEO รวมไหม?",
-        answer: "มีแค่ตั้งค่า on-page พื้นฐาน — SEO รายเดือนอยู่ในแพ็ก SEO Lite ฿5,900/เดือนขึ้นไป",
+        answer: "มีแค่ตั้งค่า on-page พื้นฐาน — SEO รายเดือนผ่าน SEO Add-on +฿6,500/เดือน (บวกกับเว็บ ขั้นต่ำ 12 เดือน)",
       },
     ],
     relatedLinks: [
@@ -347,6 +349,101 @@ export const packagePagesContent: Record<PackagePageId, PackagePageContent> = {
     relatedLinks: [
       { label: "แพ็กเว็บ Starter", href: "/packages/web-starter" },
       { label: "รับทำเว็บไซต์ภูเก็ต", href: "/services/web-design" },
+      { label: "เปรียบเทียบราคา", href: "/pricing" },
+    ],
+  },
+  "seo-addon": {
+    id: "seo-addon",
+    path: packagePaths["seo-addon"],
+    metaTitle: "SEO Add-on +฿6,500/เดือน | บวกกับแพ็กเว็บ ขั้นต่ำ 1 ปี",
+    metaDescription:
+      "SEO Add-on ฿6,500/เดือน — บวกกับแพ็กเว็บ Starter เท่านั้น Local SEO, GBP, on-page สัญญาขั้นต่ำ 12 เดือน ไม่ขาย SEO แยกจากเว็บ",
+    heroBadge: "เพิ่มกับเว็บ · Local SEO",
+    heroTitle: "SEO Add-on",
+    heroHighlight: "+฿6,500/เดือน",
+    heroSubtitle:
+      "บวกกับแพ็กเว็บ Starter หรือเว็บจาก PhuketSEO — Local SEO, GBP, on-page สัญญาขั้นต่ำ 12 เดือน ไม่ขายแยกจากเว็บ",
+    answerBlock:
+      "SEO Add-on คือบริการ SEO รายเดือน ฿6,500 ที่บวกกับแพ็กเว็บเท่านั้น — ดูแล Google Business Profile, on-page SEO และรายงาน GSC/GBP สัญญาขั้นต่ำ 12 เดือน ไม่จำหน่ายแยกจากการทำเว็บ",
+    heroImage: siteImages.icons.seo,
+    showcaseImage: siteImages.services.localSeo,
+    showcaseCaption: "เหมาะลูกค้าที่มีเว็บแล้วและต้องการ compound organic ในโซนภูเก็ตระยะยาว",
+    monthlyTitle: "จ่าย +฿6,500/เดือน แล้วได้อะไร?",
+    monthlyIntro: "บวกกับแพ็กเว็บ — ขั้นต่ำ 12 เดือน แพ็กยิงแอดแยกที่ Ads Starter",
+    monthOneItems: [
+      "Audit Google Business Profile + เว็บ baseline",
+      "ตั้งหรือปรับ GBP — หมวดหมู่, NAP, รูป, เวลาเปิด",
+      "ส่งมอบ QR + template ขอรีวิว",
+      "วางแผน on-page SEO 10 หน้าแรกบนเว็บ",
+    ],
+    everyMonthItems: [
+      "โพสต์ Google Business Profile 2 ครั้ง/เดือน",
+      "On-page + technical check รายเดือน",
+      "ติดตามและตอบรีวิว",
+      "รายงาน GSC + GBP Insights รายเดือน",
+    ],
+    notIncluded: [
+      "ทำเว็บไซต์ — ต้องมีแพ็กเว็บ Starter ฿6,500 หรือเว็บจาก PhuketSEO ก่อน",
+      "ยิงแอด Google/Meta — ดูแพ็ก Ads Starter ฿6,500/เดือน",
+      "บทความ blog จำนวนมาก — คิดแยกตาม scope",
+      "AEO/GEO เต็มรูปแบบ — ติดต่อสำหรับ scope ขยาย",
+      "ยกเลิกก่อนครบ 12 เดือน (ตามสัญญา Add-on)",
+    ],
+    worthItTitle: "SEO Add-on เหมาะเมื่อไหร่?",
+    worthItPoints: [
+      "มีเว็บแล้ว ต้องการ Maps + organic ควบคู่กับแอด",
+      "ธุรกิจในโซนป่าตอง กะตะ ตัวเมือง ที่แข่งขันสูง",
+      "พร้อม commit 1 ปีเพื่อให้ SEO compound",
+    ],
+    idealFor: [
+      { title: "ลูกค้าเว็บ Starter", desc: "ทำเว็บแล้วต่อ SEO ในปีแรก" },
+      { title: "SME มีเว็บจากเรา", desc: "ต้องการดูแล GBP และ on-page ต่อเนื่อง" },
+      { title: "ธุรกิจบริการท้องถิ่น", desc: "ร้านอาหาร สปา คลินิก ที่พึ่ง Maps + search" },
+    ],
+    compareIntro: "จับคู่กับแพ็กเว็บหรือแอด",
+    compareCards: [
+      {
+        id: "web-starter",
+        name: "เว็บ Starter",
+        priceLabel: "6,500",
+        hook: "เว็บธุรกิจ ไม่เกิน 10 หน้า — ต้องมีก่อน Add-on",
+        href: packagePaths["web-starter"],
+        cta: "ดูเว็บ Starter",
+      },
+      {
+        id: "ads-starter",
+        name: "Ads Starter",
+        priceLabel: "6,500",
+        hook: "ยิงแอด Google หรือ Meta — แยกจาก SEO",
+        href: packagePaths["ads-starter"],
+        cta: "ดู Ads Starter",
+      },
+    ],
+    faqs: [
+      {
+        question: "SEO Add-on ขายแยกจากเว็บได้ไหม?",
+        answer: "ไม่ได้ — SEO Add-on บวกกับแพ็กเว็บ Starter ฿6,500 หรือเว็บที่ทำจาก PhuketSEO เท่านั้น ไม่ขาย SEO แยก",
+      },
+      {
+        question: "ทำไมต้องสัญญาขั้นต่ำ 12 เดือน?",
+        answer: "SEO ใช้เวลา compound — Maps และ organic มักเห็นผลชัดใน 3–6 เดือน สัญญา 1 ปีช่วยวางแผนงานต่อเนื่อง",
+      },
+      {
+        question: "รวมยิงแอด Google/Meta ไหม?",
+        answer: "ไม่รวม — ยิงแอดดูแพ็ก Ads Starter ฿6,500/เดือน (ยกเลิกได้ทุกเดือน) แยกจาก SEO Add-on",
+      },
+      {
+        question: "เว็บ + SEO ราคารวมเท่าไหร่?",
+        answer: "เว็บ Starter ฿6,500 ครั้งเดียว + SEO Add-on ฿6,500/เดือน × 12 = ฿78,000 ปีแรก (บวกดูแลรายปี ฿4,500 ถ้าต้องการ)",
+      },
+      {
+        question: "มีรายงานผลไหม?",
+        answer: "ส่งรายงาน GSC + GBP Insights รายเดือน พร้อมคำแนะนำเดือนถัดไป",
+      },
+    ],
+    relatedLinks: [
+      { label: "แพ็กเว็บ Starter", href: "/packages/web-starter" },
+      { label: "บริการ SEO ภูเก็ต", href: "/services/seo-phuket" },
       { label: "เปรียบเทียบราคา", href: "/pricing" },
     ],
   },
@@ -669,6 +766,7 @@ export const allPackagePageIds: PackagePageId[] = [
   "ads-starter",
   "web-starter",
   "annual-care",
+  "seo-addon",
   "lite",
   "pro",
   "max",
