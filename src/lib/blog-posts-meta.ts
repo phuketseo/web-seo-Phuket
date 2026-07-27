@@ -415,6 +415,38 @@ export const blogPostsMeta: BlogPostMeta[] = [
     thumbnail: getBlogThumbnail("google-ads-vs-seo-phuket"),
   },
   {
+    slug: "raaka-google-ads-phuket",
+    title: "ราคารับทำ Google Ads ภูเก็ต 2026 — ควรจ่ายเท่าไหร่ถึงคุ้มค่า?",
+    category: "Google Ads ภูเก็ต",
+    description:
+      "ราคารับทำ Google Ads ภูเก็ต 2026 ค่าจัดการ ฿5,900/เดือน งบ ad spend แยก เปรียบเทียบแพ็กและเลือกเอเยนซี่",
+    thumbnail: getBlogThumbnail("raaka-google-ads-phuket"),
+  },
+  {
+    slug: "google-ads-hotel-phuket",
+    title: "รับทำ Google Ads โรงแรมภูเก็ต — ลด OTA ด้วย Hotel Ads ที่แปลงผลได้",
+    category: "Google Ads ภูเก็ต",
+    description:
+      "รับทำ Google Ads โรงแรมภูเก็ต วางแผน keyword ในโซนป่าตอง กะตะ กมลา ลด commission OTA ด้วย direct booking",
+    thumbnail: getBlogThumbnail("google-ads-hotel-phuket"),
+  },
+  {
+    slug: "google-ads-restaurant-phuket",
+    title: "รับทำ Google Ads ร้านอาหารภูเก็ต — ดึง walk-in และจองโต๊ะจาก Google",
+    category: "Google Ads ภูเก็ต",
+    description:
+      "รับทำ Google Ads ร้านอาหารภูเก็ต วางแผน keyword ในโซนป่าตอง ตัวเมือง กะตะ ลดพึ่งแพลตฟอร์มด้วย Maps + Search Ads",
+    thumbnail: getBlogThumbnail("google-ads-restaurant-phuket"),
+  },
+  {
+    slug: "google-ads-spa-phuket",
+    title: "รับทำ Google Ads สปาภูเก็ต — ดึง direct booking ลดพึ่ง OTA",
+    category: "Google Ads ภูเก็ต",
+    description:
+      "รับทำ Google Ads สปาภูเก็ต วางแผน keyword spa kata massage patong ลด commission OTA ด้วย landing จองตรง",
+    thumbnail: getBlogThumbnail("google-ads-spa-phuket"),
+  },
+  {
     slug: "rab-tam-web-phuket",
     title: "รับทำเว็บไซต์ภูเก็ต — เว็บ Next.js เร็ว ติด Google พร้อม SEO",
     category: "เว็บ Next.js",

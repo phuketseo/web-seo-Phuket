@@ -282,7 +282,7 @@ export const packagePagesContent: Record<PackagePageId, PackagePageContent> = {
       },
     ],
     relatedLinks: [
-      { label: "บริการ Google Ads ภูเก็ต", href: "/services/google-ads" },
+      { label: "รับทำ Google Ads ภูเก็ต", href: "/services/google-ads" },
       { label: "บริการ SEO ภูเก็ต", href: "/services/seo-phuket" },
       { label: "AI Search Visibility", href: "/services/ai-search-visibility" },
       { label: "ราคา SEO ภูเก็ต (บทความ)", href: "/blog/raaka-seo-phuket" },
@@ -370,7 +370,7 @@ export const packagePagesContent: Record<PackagePageId, PackagePageContent> = {
       },
     ],
     relatedLinks: [
-      { label: "บริการ Google Ads ภูเก็ต", href: "/services/google-ads" },
+      { label: "รับทำ Google Ads ภูเก็ต", href: "/services/google-ads" },
       { label: "Google Ads vs SEO", href: "/blog/google-ads-vs-seo-phuket" },
       { label: "เปรียบเทียบราคาทุกแพ็ก", href: "/pricing" },
     ],

@@ -39,6 +39,14 @@ const services: {
     meta: "รวมในแพ็ก Pro",
     href: "/services/ai-search-visibility",
   },
+  {
+    num: "04",
+    iconImage: siteImages.icons.googleAds,
+    title: "รับทำ Google Ads ภูเก็ต",
+    desc: "ยิงแอด Search, Display และ Remarketing — ได้ lead เร็วในโซนจริง",
+    meta: "จาก ฿5,900/เดือน",
+    href: "/services/google-ads",
+  },
 ];
 
 const whyUs = [

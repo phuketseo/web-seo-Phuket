@@ -56,36 +56,51 @@ export const seoPhuketContent = {
 
 export const googleAdsContent = {
   answerBlock:
-    "Google Ads ภูเก็ต คือการยิงโฆษณาบน Google Search และ Display ให้ธุรกิจในภูเก็ตได้ leads หรือ booking เร็ว — รวมในแพ็ก SEO Pro Max ฿15,000/เดือน หรือจัดการแยกเริ่ม ฿5,900/เดือน",
+    "รับทำ Google Ads ภูเก็ตจาก PhuketSEO คือการวางแผนและบริหารโฆษณาบน Google Search, Maps และ Display ให้ธุรกิจในโซนป่าตอง กะตะ ตัวเมือง ถลาง กมลา กะทู้ ได้ lead หรือ booking เร็ว — ค่าจัดการเริ่ม ฿5,900/เดือน (ไม่รวม ad spend) หรือรวมในแพ็ก SEO Pro Max ฿15,000/เดือน ไม่มีสัญญาผูกมัด",
   intro: [
-    "บริการ Google Ads ภูเก็ตจาก PhuketSEO เหมาะสำหรับธุรกิจที่ต้องการ Leads หรือ Booking เร็ว โดยเฉพาะโรงแรม ร้านอาหาร สปา และธุรกิจบริการในช่วง High Season หรือเมื่อเปิดโปรโมชั่นใหม่ เราวางแผน keyword, ad copy และ landing page ให้ตรงกับ intent ของลูกค้าในภูเก็ต",
-    "ทีม PhuketSEO บริหาร Search Ads, Display Ads, Remarketing และ Conversion Tracking แบบครบวงจร ลด CPC ที่ไม่จำเป็น และเพิ่ม ROAS ด้วยการทดสอบ ad copy อย่างต่อเนื่อง สามารถทำควบคู่กับ SEO เพื่อสร้าง traffic ระยะสั้นและระยะยาวพร้อมกัน",
+    "หน้านี้คือหน้าบริการหลักของคีย์ รับทำ Google Ads ภูเก็ต — สำหรับธุรกิจไทยท้องถิ่นที่ต้องการลูกค้าจาก Google ทันที ไม่ว่าจะเป็นโรงแรมในกะตะ ร้านอาหารในตัวเมือง สปาในป่าตอง หรือ SME ที่เปิดโปรโมชันในช่วง high season เราเริ่มจาก audit keyword cost ในโซนจริง landing page และ conversion tracking ก่อนเปิดแคมเปญ",
+    "PhuketSEO บริหาร Search Ads, Display, Remarketing และ conversion tracking แบบครบวงจร — ลด CPC ที่ไม่ convert และเพิ่ม ROAS ด้วยการทดสอบ ad copy อย่างต่อเนื่อง ทำควบคู่บริการ SEO ภูเก็ตได้เมื่อต้องการ traffic ระยะสั้นและระยะยาวพร้อมกัน ขอ SEO Audit ฟรีหรือปรึกษาฟรีก่อนเริ่มยิงแอด",
   ],
   faqs: [
     {
-      question: "Google Ads ภูเก็ตเห็นผลเร็วแค่ไหน?",
+      question: "รับทำ Google Ads ภูเก็ต คืออะไร?",
       answer:
-        "แคมเปญ Search Ads มักเริ่มแสดงผลภายใน 24 ชั่วโมงหลัง setup ส่วนการ optimize ให้ CPA ลดลงและ conversion โตมักใช้ 2–4 สัปดาห์ ขึ้นกับ landing page และงบประมาณ",
+        "รับทำ Google Ads ภูเก็ต คือการวางแผนและบริหารโฆษณาบน Google ให้ธุรกิจในโซนภูเก็ตได้ lead หรือ booking โดยจ่ายค่าคลิก — PhuketSEO จัดการตั้งแต่ keyword research, ad copy, landing page และ conversion tracking",
     },
     {
-      question: "งบโฆษณาควรเริ่มที่เท่าไหร่สำหรับธุรกิจในภูเก็ต?",
+      question: "รับทำ Google Ads ภูเก็ต เห็นผลเร็วแค่ไหน?",
       answer:
-        "ธุรกิจท้องถิ่นขนาดเล็กมักเริ่ม ad spend 15,000–30,000 บาทต่อเดือน โรงแรมหรือ tour operator อาจใช้ 50,000 บาทขึ้นไปใน peak season เราช่วยประเมินงบที่เหมาะสมจาก keyword cost ในโซนจริง",
+        "Search Ads มักแสดงผลภายใน 24 ชั่วโมงหลัง setup — การลด CPA และเพิ่ม ROAS มักใช้ 2–4 สัปดาห์ ขึ้นกับ landing page และงบ ad spend",
     },
     {
-      question: "Google Ads กับ SEO ควรเลือกอันไหน?",
+      question: "ราคารับทำ Google Ads ภูเก็ต เท่าไหร่?",
       answer:
-        "SEO สร้าง traffic ยั่งยืนและลดต้นทุนระยะยาว Google Ads เหมาะเมื่อต้องการผลเร็วหรือทดสอบ keyword ก่อนลงมือ SEO ธุรกิจในภูเก็ตที่แข่งสูงมักทำทั้งคู่ควบคู่กัน",
+        "ค่าจัดการเริ่ม ฿5,900/เดือน ไม่รวม ad spend — รวมในแพ็ก SEO Pro Max ฿15,000/เดือน ไม่มีสัญญาผูกมัด มี campaign setup ฟรี",
     },
     {
-      question: "PhuketSEO จัดการ Google Ads ครอบคลุมอะไรบ้าง?",
+      question: "งบ ad spend ควรเริ่มเท่าไหร่ในภูเก็ต?",
       answer:
-        "ครอบคลุม campaign setup, keyword research, ad copywriting, landing page optimization, conversion tracking, remarketing, budget optimization และรายงานรายสัปดาห์/รายเดือน",
+        "SME มักเริ่ม ฿15,000–30,000/เดือน — โรงแรมหรือ tour ใน peak season อาจใช้ ฿50,000+ ขึ้นกับ keyword cost ในโซนป่าตอง กะตะ หรือตัวเมือง",
     },
     {
-      question: "ค่าบริการ Google Ads Management เริ่มต้นเท่าไหร่?",
+      question: "Google Ads กับ SEO ภูเก็ต ควรเลือกอันไหน?",
       answer:
-        "ค่าบริการจัดการเริ่มต้น ฿5,900 ต่อเดือน ไม่รวม ad spend มี campaign setup ฟรีและ dedicated account manager",
+        "SEO สร้างฐานระยะยาว Google Ads ได้ lead เร็ว — ธุรกิจในภูเก็ตมักทำ Maps/SEO เป็นฐาน แล้วเติม Ads ช่วง high season ดู Google Ads vs SEO ภูเก็ตบนบล็อก",
+    },
+    {
+      question: "ทำ Google Ads ภูเก็ตเองได้ไหม?",
+      answer:
+        "ทำบางส่วนเองได้ — แต่การ optimize bid, negative keyword และ tracking มักต้องใช้เวลา หลายธุรกิจจ้างเอเยนซี่ Google Ads ภูเก็ตเพื่อลด CPA และประหยัดงบ",
+    },
+    {
+      question: "PhuketSEO จัดการ Google Ads ครอบคลุมอะไร?",
+      answer:
+        "ครอบคลุม setup, keyword research, ad copy, landing optimization, remarketing, budget optimization และรายงานรายสัปดาห์ — ดูรายละเอียดในหน้านี้",
+    },
+    {
+      question: "ทำ Google Ads แล้วหยุดได้ไหม?",
+      answer:
+        "หยุดจ้างได้ทุกเดือน — แต่หยุดจ่าย ad spend แล้ว traffic จากแอดหายทันที ต่างจาก SEO ที่ยังมี organic ค้างอยู่",
     },
   ] satisfies ServiceFaq[],
 };

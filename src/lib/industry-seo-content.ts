@@ -73,6 +73,11 @@ export const industrySeoContent: Record<string, IndustryContent> = {
       },
     ],
     relatedBlog: { name: "Instagram Marketing ร้านอาหาร", href: "/blog/instagram-marketing-phuket-restaurants" },
+    relatedLinks: [
+      { name: "รับทำ Google Ads ภูเก็ต", href: "/services/google-ads" },
+      { name: "Google Ads ร้านอาหารภูเก็ต", href: "/blog/google-ads-restaurant-phuket" },
+      { name: "ราคา Google Ads ภูเก็ต", href: "/blog/raaka-google-ads-phuket" },
+    ],
   },
   spa: {
     slug: "seo-spa-phuket",
@@ -129,6 +134,11 @@ export const industrySeoContent: Record<string, IndustryContent> = {
       },
     ],
     relatedBlog: { name: "SEO สปาภูเก็ต", href: "/blog/seo-for-phuket-spas" },
+    relatedLinks: [
+      { name: "รับทำ Google Ads ภูเก็ต", href: "/services/google-ads" },
+      { name: "Google Ads สปาภูเก็ต", href: "/blog/google-ads-spa-phuket" },
+      { name: "ราคา Google Ads ภูเก็ต", href: "/blog/raaka-google-ads-phuket" },
+    ],
   },
   hotel: {
     slug: "seo-hotels-phuket",
@@ -185,6 +195,11 @@ export const industrySeoContent: Record<string, IndustryContent> = {
       },
     ],
     relatedBlog: { name: "SEO โรงแรมภูเก็ต", href: "/blog/seo-for-phuket-hotels" },
+    relatedLinks: [
+      { name: "รับทำ Google Ads ภูเก็ต", href: "/services/google-ads" },
+      { name: "Google Ads โรงแรมภูเก็ต", href: "/blog/google-ads-hotel-phuket" },
+      { name: "ราคา Google Ads ภูเก็ต", href: "/blog/raaka-google-ads-phuket" },
+    ],
   },
   realEstate: {
     slug: "seo-real-estate-phuket",
@@ -241,6 +256,10 @@ export const industrySeoContent: Record<string, IndustryContent> = {
       },
     ],
     relatedBlog: { name: "Web Design อสังหาฯ ภูเก็ต", href: "/blog/web-design-phuket-real-estate" },
+    relatedLinks: [
+      { name: "รับทำ Google Ads ภูเก็ต", href: "/services/google-ads" },
+      { name: "ราคา Google Ads ภูเก็ต", href: "/blog/raaka-google-ads-phuket" },
+    ],
   },
   tour: {
     slug: "seo-tours-phuket",
@@ -314,7 +333,8 @@ export const industrySeoContent: Record<string, IndustryContent> = {
     relatedLinks: [
       { name: "Local SEO ป่าตอง", href: "/local/patong" },
       { name: "Local SEO กะตะ", href: "/local/kata" },
-      { name: "Google Ads ภูเก็ต", href: "/services/google-ads" },
+      { name: "รับทำ Google Ads ภูเก็ต", href: "/services/google-ads" },
+      { name: "ราคา Google Ads ภูเก็ต", href: "/blog/raaka-google-ads-phuket" },
     ],
   },
 };

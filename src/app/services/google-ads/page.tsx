@@ -1,13 +1,28 @@
 ﻿import type { Metadata } from "next";
 import Link from "next/link";
-import { Target, TrendingUp, BarChart3, Zap, type LucideIcon } from "lucide-react";
+import {
+  Target,
+  TrendingUp,
+  BarChart3,
+  Zap,
+  Search,
+  Settings,
+  FileText,
+  type LucideIcon,
+} from "lucide-react";
 import { siteImages } from "@/lib/images";
-import { faqSchema, buildBreadcrumb } from "@/lib/schema";
+import {
+  faqSchema,
+  buildBreadcrumb,
+  localServiceProvider,
+  areaServedPhuket,
+} from "@/lib/schema";
 import { googleAdsContent } from "@/lib/service-content";
 import { ServiceFaqSection } from "@/components/ServiceFaqSection";
 import { siteConfig } from "@/lib/utils";
 import { BrandGradientDefs } from "@/components/BrandGradientDefs";
 import { HomeSection, HomeSectionHeader } from "@/components/home/HomeSection";
+import { GradientButton } from "@/components/GradientButton";
 import { ServiceBreadcrumb } from "@/components/services/ServiceBreadcrumb";
 import { ServiceMarketingHero } from "@/components/services/ServiceMarketingHero";
 import { ServicePricingTeaser } from "@/components/services/ServicePricingTeaser";
@@ -16,14 +31,43 @@ import { ServicePageCta } from "@/components/services/ServicePageCta";
 export const metadata: Metadata = {
   title: "รับทำ Google Ads ภูเก็ต | ยิงแอดตรงกลุ่มเป้าหมาย - PhuketSEO",
   description:
-    "บริการ Google Ads ภูเก็ต ยิงโฆษณาตรงกลุ่มเป้าหมาย ได้ผลลัพธ์ทันที ประหยัดงบประมาณ ROI สูงสุด ขอคำปรึกษาฟรี!",
+    "รับทำ Google Ads ภูเก็ต — วางแผน keyword ในโซนจริง บริหาร Search/Display/Remarketing ค่าจัดการเริ่ม ฿5,900/เดือน ไม่รวม ad spend ขอปรึกษาฟรี",
   alternates: { canonical: `${siteConfig.url}/services/google-ads` },
+  keywords: [
+    "รับทำ Google Ads ภูเก็ต",
+    "Google Ads ภูเก็ต",
+    "เอเยนซี่ Google Ads ภูเก็ต",
+    "ยิงแอด ภูเก็ต",
+    "จ้างยิงแอด ภูเก็ต",
+  ],
 };
 
 const breadcrumbSchema = buildBreadcrumb([
   { name: "หน้าแรก", url: siteConfig.url },
-  { name: "Google Ads ภูเก็ต", url: `${siteConfig.url}/services/google-ads` },
+  { name: "รับทำ Google Ads ภูเก็ต", url: `${siteConfig.url}/services/google-ads` },
 ]);
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "รับทำ Google Ads ภูเก็ต",
+  provider: localServiceProvider,
+  description:
+    "รับทำ Google Ads ภูเก็ต — วางแผน keyword ในโซนจริง บริหาร Search, Display และ Remarketing สำหรับธุรกิจในจังหวัดภูเก็ต",
+  areaServed: areaServedPhuket,
+  url: `${siteConfig.url}/services/google-ads`,
+  offers: {
+    "@type": "Offer",
+    priceCurrency: "THB",
+    price: "5900",
+    priceSpecification: {
+      "@type": "UnitPriceSpecification",
+      priceCurrency: "THB",
+      price: "5900",
+      unitText: "MONTH",
+    },
+  },
+};
 
 const faqSchemaJson = faqSchema(googleAdsContent.faqs);
 
@@ -32,6 +76,47 @@ const features: { icon: LucideIcon; title: string; desc: string }[] = [
   { icon: BarChart3, title: "Display Ads", desc: "Banner โฆษณาบนเว็บไซต์พันธมิตร Google เพิ่ม Brand Awareness" },
   { icon: TrendingUp, title: "Shopping Ads", desc: "แสดงสินค้าพร้อมราคาบน Google Shopping เพิ่ม Conversion" },
   { icon: Zap, title: "Remarketing", desc: "ติดตามผู้เยี่ยมชมเว็บไซต์และแสดงโฆษณาซ้ำเพื่อเพิ่ม Conversion" },
+];
+
+const adsProcess: { step: string; title: string; desc: string; icon: LucideIcon }[] = [
+  {
+    step: "01",
+    title: "Audit keyword + landing",
+    desc: "ดู cost per click ในโซนป่าตอง กะตะ ตัวเมือง และเช็กว่า landing แปลงผลได้",
+    icon: Search,
+  },
+  {
+    step: "02",
+    title: "Setup + tracking",
+    desc: "ติด conversion tracking (ฟอร์ม, โทร, LINE) ก่อนเปิดแคมเปญ",
+    icon: Settings,
+  },
+  {
+    step: "03",
+    title: "Campaign launch",
+    desc: "Search / Display / Remarketing ตามกลยุทธ์ที่วางไว้",
+    icon: Target,
+  },
+  {
+    step: "04",
+    title: "Optimize รายสัปดาห์",
+    desc: "ปรับ bid, ad copy, audience และ negative keywords",
+    icon: BarChart3,
+  },
+  {
+    step: "05",
+    title: "รายงาน + แผนถัดไป",
+    desc: "CPA, ROAS และแนะนำงบเดือนถัดไป",
+    icon: FileText,
+  },
+];
+
+const commonMistakes = [
+  "ยิงแอดโดยไม่มี conversion tracking — ไม่รู้ว่าแอดไหนได้ลูกค้า",
+  "landing page ไม่ตรงกับ ad copy (คนกดหา นวดป่าตอง แต่เจอหน้า generic)",
+  "งบน้อยในโซนแข่งสูง (ป่าตอง กะตะ) แล้วคาดหวัง lead ทุกวัน",
+  "ไม่แยกแคมเปญตามภาษา (ไทย / อังกฤษ / ต่างชาติ)",
+  "หยุด optimize หลังเปิดแคมเปญ 2 สัปดาห์",
 ];
 
 const includedItems = [
@@ -47,31 +132,51 @@ const includedItems = [
   "Quality Score Improvement",
 ];
 
+const guideLinks = [
+  { href: "/blog/raaka-google-ads-phuket", label: "ราคารับทำ Google Ads ภูเก็ต" },
+  { href: "/blog/google-ads-vs-seo-phuket", label: "Google Ads vs SEO ภูเก็ต" },
+  { href: "/blog/google-ads-restaurant-phuket", label: "Google Ads ร้านอาหารภูเก็ต" },
+  { href: "/blog/google-ads-spa-phuket", label: "Google Ads สปาภูเก็ต" },
+  { href: "/blog/google-ads-hotel-phuket", label: "Google Ads โรงแรมภูเก็ต" },
+  { href: "/blog/ying-aep-thi-phak-lek-ngoen-noi", label: "ยิงแอดที่พักงบน้อย" },
+  { href: "/methodology/phuket-visibility-stack", label: "Phuket Visibility Stack" },
+  { href: "/phuketseo", label: "ข้อมูล PhuketSEO (Entity)" },
+];
+
+const adsVsSeoRows: { dimension: string; ads: string; seo: string }[] = [
+  { dimension: "เห็นผล", ads: "ภายใน 24–48 ชม. หลังเปิดแคมเปญ", seo: "Maps 30–60 วัน, organic 3–6 เดือน" },
+  { dimension: "ค่าใช้จ่าย", ads: "ค่าจัดการ + ad spend ต่อคลิก", seo: "แพ็กรายเดือน ไม่จ่ายต่อคลิก" },
+  { dimension: "เหมาะเมื่อ", ads: "ต้องการ lead เร็ว, high season, โปรใหม่", seo: "สร้างฐานระยะยาว ลดต้นทุน lead" },
+  { dimension: "หยุดแล้ว", ads: "traffic หายทันที", seo: "การมองเห็นลดลงช้ากว่า แต่ไม่หายวันเดียว" },
+  { dimension: "ลำดับที่มักถูก", ads: "หลัง GBP/landing พร้อม", seo: "Maps + trust ในโซนก่อน" },
+];
+
 export default function GoogleAdsPage() {
   return (
     <div>
       <BrandGradientDefs />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchemaJson) }} />
 
-      <ServiceBreadcrumb serviceName="Google Ads" />
+      <ServiceBreadcrumb serviceName="รับทำ Google Ads ภูเก็ต" />
 
       <ServiceMarketingHero
-        eyebrow="Google Ads Management"
-        title="Google Ads ภูเก็ต"
+        eyebrow="หน้าบริการหลัก · รับทำ Google Ads ภูเก็ต"
+        title="รับทำ Google Ads ภูเก็ต"
         titleAccent="ยิงแอดตรงกลุ่มได้ผลทันที"
-        description="บริหารจัดการ Google Ads อย่างมืออาชีพ ลด CPC เพิ่ม Conversion ให้ทุกบาทที่ลงทุนได้ผลตอบแทนสูงสุด"
+        description="เอเยนซี่ Google Ads ภูเก็ตสำหรับธุรกิจไทยท้องถิ่น — วางแผน keyword ในโซนจริง บริหาร Search, Display และ Remarketing ตามงบที่เหมาะสม"
         answerBlock={googleAdsContent.answerBlock}
         image={siteImages.services.googleAds}
         stats={[
-          { value: "-40%", label: "ลด CPC เฉลี่ย" },
-          { value: "+300%", label: "เพิ่ม Conversion Rate" },
-          { value: "5x", label: "ROAS เฉลี่ย" },
-          { value: "24hr", label: "เห็นผลลัพธ์แรก" },
+          { value: "฿5,900", label: "ค่าจัดการเริ่มต้น" },
+          { value: "24hr", label: "แคมเปญเริ่มแสดง" },
+          { value: "2–4wk", label: "ระยะ optimize CPA" },
+          { value: "0", label: "ไม่ผูกมัด" },
         ]}
         trustBadges={["ไม่รวม Ad Spend", "Campaign Setup ฟรี", "รายงานรายสัปดาห์", "Dedicated Manager"]}
-        secondaryHref="#features"
-        secondaryLabel="ดูประเภทแอด"
+        secondaryHref="#process"
+        secondaryLabel="ดูขั้นตอนการทำงาน"
       />
 
       <HomeSection variant="muted" className="border-t-0">
@@ -80,7 +185,25 @@ export default function GoogleAdsPage() {
             <p key={paragraph.slice(0, 40)}>{paragraph}</p>
           ))}
           <p className="text-slate-600">
-            อ่านเพิ่ม:{" "}
+            อ่านคู่มือที่เกี่ยวข้อง:{" "}
+            {guideLinks.map((link, i) => (
+              <span key={link.href}>
+                {i > 0 ? " · " : null}
+                <Link href={link.href} className="text-violet-600 font-medium hover:underline underline-offset-2">
+                  {link.label}
+                </Link>
+              </span>
+            ))}
+          </p>
+          <p className="text-slate-600">
+            <Link href="/seo-audit" className="text-violet-600 font-medium hover:underline underline-offset-2">
+              ขอ SEO Audit ฟรี
+            </Link>
+            {" · "}
+            <Link href="/contact" className="text-violet-600 font-medium hover:underline underline-offset-2">
+              ปรึกษาฟรี
+            </Link>
+            {" · "}
             <Link href="/services/seo-phuket" className="text-violet-600 font-medium hover:underline underline-offset-2">
               บริการ SEO ภูเก็ต
             </Link>
@@ -92,7 +215,66 @@ export default function GoogleAdsPage() {
         </div>
       </HomeSection>
 
-      <HomeSection id="features" variant="white" containerClass="max-w-6xl">
+      <HomeSection variant="white">
+        <HomeSectionHeader
+          eyebrow="ขอบเขตงาน"
+          title="รับทำ Google Ads ภูเก็ต"
+          titleAccent="ครอบคลุมอะไรบ้าง"
+          description="ไม่รับประกันอันดับ 1 — เราวัดจากสิ่งที่ธุรกิจใช้ตัดสินใจจริง เช่น จำนวน lead, การจอง หรือ cost per acquisition"
+        />
+        <div className="grid sm:grid-cols-2 gap-4 text-sm sm:text-base text-slate-700 leading-relaxed">
+          <div className="rounded-xl border border-slate-200 bg-slate-50/80 p-5">
+            <h3 className="font-semibold text-slate-900 mb-2">โซนและประเภทธุรกิจ</h3>
+            <p>
+              ทำงานกับธุรกิจในป่าตอง กะตะ ตัวเมือง ถลาง กมลา กะทู้ — โรงแรม ร้านอาหาร สปา อสังหาฯ ทัวร์ คลินิก
+              และ SME ที่ต้องการลูกค้าจาก Google ทันที
+            </p>
+          </div>
+          <div className="rounded-xl border border-slate-200 bg-slate-50/80 p-5">
+            <h3 className="font-semibold text-slate-900 mb-2">สิ่งที่เราวัด (ไม่ใช่แค่ impressions)</h3>
+            <p>
+              CPA, ROAS, conversion จากฟอร์ม โทร หรือการจอง ตามที่ตกลงตอนเริ่มงาน — ดูเปรียบเทียบกับ SEO ที่{" "}
+              <Link
+                href="/blog/google-ads-vs-seo-phuket"
+                className="text-violet-600 font-medium hover:underline underline-offset-2"
+              >
+                Google Ads vs SEO ภูเก็ต
+              </Link>
+            </p>
+          </div>
+          <div className="rounded-xl border border-slate-200 bg-slate-50/80 p-5">
+            <h3 className="font-semibold text-slate-900 mb-2">ลำดับงานก่อนยิงแอด</h3>
+            <p>
+              Google Business Profile และ landing page ที่แปลงผลได้ก่อนเผาเงิน — ตาม{" "}
+              <Link
+                href="/methodology/phuket-visibility-stack"
+                className="text-violet-600 font-medium hover:underline underline-offset-2"
+              >
+                Phuket Visibility Stack
+              </Link>
+              {" "}และเช็กจาก{" "}
+              <Link
+                href="/blog/ying-aep-thi-phak-lek-ngoen-noi"
+                className="text-violet-600 font-medium hover:underline underline-offset-2"
+              >
+                ยิงแอดที่พักงบน้อย
+              </Link>
+            </p>
+          </div>
+          <div className="rounded-xl border border-slate-200 bg-slate-50/80 p-5">
+            <h3 className="font-semibold text-slate-900 mb-2">ข้อมูลเอเจนซี่แบบ entity</h3>
+            <p>
+              จุดเด่น บริการ พิกัด และราคาแบบอ้างอิงได้ — ดูที่{" "}
+              <Link href="/phuketseo" className="text-violet-600 font-medium hover:underline underline-offset-2">
+                หน้า PhuketSEO Entity
+              </Link>
+              {" "}· NAP ตรงกับ Google Business Profile
+            </p>
+          </div>
+        </div>
+      </HomeSection>
+
+      <HomeSection id="features" variant="muted" containerClass="max-w-6xl">
         <HomeSectionHeader
           title="ประเภท Google Ads"
           titleAccent="ที่เราจัดการ"
@@ -110,6 +292,91 @@ export default function GoogleAdsPage() {
               </div>
               <h3 className="font-semibold text-slate-900 mb-2">{f.title}</h3>
               <p className="text-slate-600 text-sm leading-relaxed">{f.desc}</p>
+            </div>
+          ))}
+        </div>
+      </HomeSection>
+
+      <HomeSection variant="white">
+        <HomeSectionHeader
+          eyebrow="ปัญหาที่พบบ่อย"
+          title="ทำไมธุรกิจในภูเก็ต"
+          titleAccent="ยิงแอดแล้วไม่ได้ลูกค้า?"
+          description="สาเหตุที่พบบ่อยคือยิงแอดก่อนมี landing page หรือ Google Business Profile ที่แปลงผลได้ — ลูกค้าคลิกแล้วไม่จอง ไม่โทร หรือ bounce สูง"
+        />
+        <ul className="space-y-2.5 text-sm sm:text-base text-slate-700">
+          {commonMistakes.map((item) => (
+            <li key={item} className="flex items-start gap-2.5">
+              <span className="mt-2 h-1.5 w-1.5 rounded-full bg-indigo-500 shrink-0" />
+              {item}
+            </li>
+          ))}
+        </ul>
+      </HomeSection>
+
+      <HomeSection variant="muted" containerClass="max-w-4xl">
+        <HomeSectionHeader
+          eyebrow="เปรียบเทียบ"
+          title="Google Ads กับ SEO ภูเก็ต"
+          titleAccent="ต่างกันอย่างไร?"
+          description="Google Ads ภูเก็ต ได้ lead เร็วเมื่อจ่ายงบ SEO ภูเก็ต สร้างฐานระยะยาวโดยไม่จ่ายต่อคลิก — ธุรกิจในภูเก็ตมักใช้ทั้งคู่ตามลำดับงาน"
+          centered
+          className="mx-auto max-w-2xl"
+        />
+        <div className="overflow-x-auto rounded-xl border border-slate-200 bg-white shadow-sm">
+          <table className="w-full text-sm sm:text-base text-left">
+            <thead>
+              <tr className="border-b border-slate-200 bg-slate-50/80">
+                <th className="px-4 py-3 font-semibold text-slate-900">มิติ</th>
+                <th className="px-4 py-3 font-semibold text-slate-900">Google Ads ภูเก็ต</th>
+                <th className="px-4 py-3 font-semibold text-slate-900">SEO ภูเก็ต</th>
+              </tr>
+            </thead>
+            <tbody className="text-slate-700">
+              {adsVsSeoRows.map((row) => (
+                <tr key={row.dimension} className="border-b border-slate-100 last:border-0">
+                  <td className="px-4 py-3 font-medium text-slate-900">{row.dimension}</td>
+                  <td className="px-4 py-3">{row.ads}</td>
+                  <td className="px-4 py-3">{row.seo}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p className="mt-4 text-sm text-slate-600 text-center">
+          อ่านเพิ่ม:{" "}
+          <Link
+            href="/blog/google-ads-vs-seo-phuket"
+            className="text-violet-600 font-medium hover:underline underline-offset-2"
+          >
+            Google Ads vs SEO ภูเก็ต
+          </Link>
+        </p>
+      </HomeSection>
+
+      <HomeSection id="process" variant="white" containerClass="max-w-6xl">
+        <HomeSectionHeader
+          eyebrow="ขั้นตอน"
+          title="กระบวนการรับทำ"
+          titleAccent="Google Ads ของเรา"
+          description="กระบวนการรับทำ Google Ads ของ PhuketSEO เริ่มจาก audit ในโซนจริง ไม่ใช่เปิดแคมเปญทันที"
+          centered
+          className="mx-auto max-w-2xl"
+        />
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
+          {adsProcess.map((p) => (
+            <div
+              key={p.step}
+              className="rounded-xl border border-slate-200 bg-white p-5 sm:p-6 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
+            >
+              <div className="w-9 h-9 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center mb-4">
+                <p.icon size={18} />
+              </div>
+              <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-indigo-600 mb-1.5">
+                Step {p.step}
+              </p>
+              <h3 className="font-semibold text-slate-900 mb-2">{p.title}</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">{p.desc}</p>
             </div>
           ))}
         </div>
@@ -138,6 +405,26 @@ export default function GoogleAdsPage() {
       </HomeSection>
 
       <ServiceFaqSection faqs={googleAdsContent.faqs} />
+
+      <HomeSection variant="gradient" containerClass="max-w-2xl">
+        <div className="text-center">
+          <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-3">
+            พร้อมรับทำ Google Ads ภูเก็ต?
+          </h2>
+          <p className="text-slate-600 text-sm sm:text-base mb-6 leading-relaxed">
+            ขอคำปรึกษาฟรี — เราวิเคราะห์ธุรกิจ โซน และงบ ad spend ที่เหมาะสมก่อนเปิดแคมเปญ
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <GradientButton href="/contact">ขอคำปรึกษาฟรี</GradientButton>
+            <Link
+              href="/pricing"
+              className="text-sm font-medium text-violet-600 hover:underline underline-offset-2"
+            >
+              ดูราคาแพ็กเกจทั้งหมด
+            </Link>
+          </div>
+        </div>
+      </HomeSection>
 
       <ServicePageCta
         title="เริ่มต้น Google Ads"

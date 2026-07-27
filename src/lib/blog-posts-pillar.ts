@@ -1643,9 +1643,9 @@ GEO — Entity, llms.txt, Content และ FAQ Schema ช่วยให้ AI 
       "เอเยนซี่ SEO ภูเก็ต",
     ],
     relatedServices: [
+      { name: "รับทำ Google Ads ภูเก็ต", href: "/services/google-ads" },
       { name: "บริการ SEO ภูเก็ต", href: "/services/seo-phuket" },
-      { name: "Google Ads ภูเก็ต", href: "/services/google-ads" },
-      { name: "ราคา SEO ภูเก็ต", href: "/blog/raaka-seo-phuket" },
+      { name: "ราคารับทำ Google Ads ภูเก็ต", href: "/blog/raaka-google-ads-phuket" },
       { name: "Phuket Visibility Stack", href: "/methodology/phuket-visibility-stack" },
     ],
     faqs: [
@@ -1663,7 +1663,7 @@ GEO — Entity, llms.txt, Content และ FAQ Schema ช่วยให้ AI 
       },
       {
         q: "รับทำ SEO ภูเก็ต หรือ Google Ads ราคาเท่าไหร่?",
-        a: "แพ็ก SEO Lite เริ่ม ฿5,900/เดือน Pro Max ฿15,000 รวมจัดการ Ads (ad spend แยก) ดู [ราคา SEO ภูเก็ต 2026](/blog/raaka-seo-phuket)",
+        a: "แพ็ก SEO Lite เริ่ม ฿5,900/เดือน Pro Max ฿15,000 รวมจัดการ Ads (ad spend แยก) ดู [ราคารับทำ Google Ads ภูเก็ต](/blog/raaka-google-ads-phuket) และ [ราคา SEO ภูเก็ต](/blog/raaka-seo-phuket)",
       },
       {
         q: "ทำ SEO ภูเก็ตเองได้ไหม แล้วใช้ Ads เมื่อไหร่?",
@@ -1679,7 +1679,7 @@ GEO — Entity, llms.txt, Content และ FAQ Schema ช่วยให้ AI 
       },
       {
         q: "PhuketSEO มีบริการ Google Ads ไหม?",
-        a: "มี — Ads เป็นช่องทางเสริมบนฐาน SEO + เว็บ ไม่ใช่ทดแทน organic บริการหลักคือ SEO + เว็บ Next.js รายละเอียดแพ็ก Pro Max ดูใน [ราคา SEO ภูเก็ต](/blog/raaka-seo-phuket)",
+        a: "มี — ดู [รับทำ Google Ads ภูเก็ต](/services/google-ads) และ [ราคารับทำ Google Ads ภูเก็ต](/blog/raaka-google-ads-phuket) Ads เป็นช่องทางเสริมบนฐาน SEO + เว็บ",
       },
     ],
     content: `

@@ -162,7 +162,14 @@ export default function PricingPage() {
           </table>
         </div>
         <p className="text-sm text-slate-600 mt-4 leading-relaxed">
-          Pro Max: ค่า ad spend Google (min ฿10,000) + Meta (min ฿5,000) แยกต่างหาก — ไม่รวมในราคา management
+          Pro Max: ค่า ad spend Google (min ฿10,000) + Meta (min ฿5,000) แยกต่างหาก — ไม่รวมในราคา management ·{" "}
+          <Link href="/services/google-ads" className="text-violet-600 font-medium hover:underline underline-offset-2">
+            รับทำ Google Ads ภูเก็ต
+          </Link>
+          {" · "}
+          <Link href="/blog/raaka-google-ads-phuket" className="text-violet-600 font-medium hover:underline underline-offset-2">
+            ราคา Google Ads ภูเก็ต
+          </Link>
         </p>
       </HomeSection>
 
