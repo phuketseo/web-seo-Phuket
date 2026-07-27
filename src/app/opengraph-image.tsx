@@ -1,7 +1,7 @@
 ﻿import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "PhuketSEO — รับยิงแอด Google & Meta ภูเก็ต เริ่ม ฿6,500";
+export const alt = "PhuketSEO — รับยิงแอด Google & Facebook ภูเก็ต ฿6,500/เดือน";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -39,7 +39,7 @@ export default async function Image() {
             marginBottom: 12,
           }}
         >
-          รับยิงแอด Google & Meta ภูเก็ต
+          รับยิงแอด Google & Facebook ภูเก็ต
         </div>
         <div
           style={{
@@ -48,7 +48,7 @@ export default async function Image() {
             textAlign: "center",
           }}
         >
-          Google หรือ Facebook · 1 แคมเปญ · แยกจากค่าทำเว็บ
+          ฿6,500/เดือน · 1 แคมเปญ · ค่ายิงแอดแยก
         </div>
         <div
           style={{
@@ -57,7 +57,7 @@ export default async function Image() {
             gap: 24,
           }}
         >
-          {["฿6,500/เดือน", "24 ชม. เปิดแคมเปญ", "เว็บ ฿6,500"].map((text) => (
+          {["ไม่ต้องทำเว็บก่อน", "ยกเลิกได้ทุกเดือน", "ป่าตอง กะตะ ตัวเมือง"].map((text) => (
             <div
               key={text}
               style={{

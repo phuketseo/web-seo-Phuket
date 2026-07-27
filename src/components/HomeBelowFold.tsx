@@ -2,7 +2,6 @@
 import Image from "next/image";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { siteImages, type SiteImage } from "@/lib/images";
-import { caseStudies } from "@/lib/case-studies-data";
 import { pricingPackages } from "@/lib/pricing-packages";
 import { GradientButton } from "@/components/GradientButton";
 import { HomeSection, HomeSectionHeader } from "@/components/home/HomeSection";
@@ -19,8 +18,8 @@ const services: {
   {
     num: "01",
     iconImage: siteImages.icons.googleAds,
-    title: "รับยิงแอด Google & Meta",
-    desc: "จัดการโฆษณา 1 แคมเปญ — เลือก Google Search/Maps หรือ Facebook/Instagram",
+    title: "รับยิงแอด Google & Facebook",
+    desc: "ลูกค้าค้นหาอยู่แล้ว เราช่วยให้เจอร้านคุณบน Google หรือ Facebook",
     meta: "จาก ฿6,500/เดือน",
     href: "/services/google-ads",
   },
@@ -28,22 +27,22 @@ const services: {
     num: "02",
     iconImage: siteImages.icons.webDesign,
     title: "ทำเว็บไซต์ภูเก็ต",
-    desc: "เว็บ mobile-first ไม่เกิน 10 หน้า ฟอร์ม + LINE CTA — แยกจากแพ็กแอด",
+    desc: "สำหรับร้านที่ยังไม่มีเว็บ มีฟอร์มและปุ่ม LINE ให้ลูกค้าทักได้",
     meta: "฿6,500 ครั้งเดียว",
     href: "/services/web-design",
   },
   {
     num: "03",
     iconImage: siteImages.icons.seo,
-    title: "SEO Add-on",
-    desc: "บวกกับแพ็กเว็บ — Local SEO, Maps, on-page ไม่ขายแยกจากเว็บ",
-    meta: "+฿6,500/เดือน · ขั้นต่ำ 1 ปี",
+    title: "บวก SEO กับเว็บ",
+    desc: "สำหรับร้านที่มีเว็บแล้ว อยากให้ติด Google และ Maps มากขึ้น สัญญา 1 ปี",
+    meta: "+฿6,500/เดือน",
     href: "/packages/seo-addon",
   },
   {
     num: "04",
-    title: "ดูแลรายปี",
-    desc: "โดเมน + โฮสติ้ง + SSL สำหรับเว็บที่มีอยู่แล้ว",
+    title: "ดูแลเว็บรายปี",
+    desc: "ต่ออายุโดเมนและโฮสต์ให้เว็บไม่ล่ม ไม่รวมแก้ข้อความในเว็บ",
     meta: "฿4,500/ปี",
     href: "/packages/annual-care",
   },
@@ -56,11 +55,11 @@ const whyUs = [
   },
   {
     title: "ผลลัพธ์วัดได้จริง",
-    desc: "รายงาน KPI รายเดือน: ranking, traffic, GBP views, conversion",
+    desc: "ส่งรายงานทุกเดือน — จำนวนลูกค้าที่ติดต่อ ค่าใช้จ่ายแอด และการมองเห็นบน Google",
   },
   {
     title: "แพ็กแอดยืดหยุ่น",
-    desc: "Ads Starter ยกเลิกได้ทุกเดือน — SEO Add-on ขั้นต่ำ 12 เดือนเมื่อบวกกับเว็บ",
+    desc: "ยิงแอดไม่ผูกสัญญา บวก SEO กับเว็บขั้นต่ำ 1 ปี",
   },
 ];
 
@@ -98,8 +97,6 @@ const faqSchema = {
 };
 
 export default function HomeBelowFold() {
-  const cs = caseStudies[0];
-
   return (
     <>
       <script
@@ -110,9 +107,9 @@ export default function HomeBelowFold() {
       <HomeSection id="services" variant="muted">
         <HomeSectionHeader
           eyebrow="บริการ"
-          title="การมองเห็นบน Google"
-          titleAccent="+ แอด & เว็บ"
-          description="แพ็กแยกชัด — ยิงแอด ทำเว็บ SEO บวกกับเว็บเท่านั้น"
+          title="เริ่มจากอะไร"
+          titleAccent="ก่อนดีที่สุด"
+          description="อยากให้ลูกค้าโทรหรือทัก LINE เร็วๆ เริ่มจากยิงแอดก่อนได้ ยังไม่ต้องมีเว็บ เมื่อพร้อมแล้วค่อยทำเว็บ หรือให้เว็บขึ้นหน้า Google ทีหลัง"
         />
 
           <ul className="flex flex-col gap-3 sm:gap-0 sm:divide-y sm:divide-slate-200 sm:border-y sm:border-slate-200 sm:bg-white sm:rounded-lg sm:overflow-hidden">
@@ -168,7 +165,7 @@ export default function HomeBelowFold() {
                 eyebrow="ทำไมเลือกเรา"
                 title="ธุรกิจในภูเก็ต"
                 titleAccent="ไว้ใจเรา"
-                description="ไม่ขายฝัน — วัดผลได้ รายงานชัด ยกเลิกได้เมื่อไหร่ก็ได้"
+                description="ไม่ขายฝัน — วัดผลได้ รายงานชัด แพ็กแอดไม่ผูกสัญญา"
                 className="mb-0 lg:mb-0"
               />
             </div>
@@ -188,78 +185,12 @@ export default function HomeBelowFold() {
           </div>
       </HomeSection>
 
-      {cs && (
-        <HomeSection variant="muted">
-            <HomeSectionHeader
-              eyebrow="ผลงาน"
-              title="เริ่มจาก"
-              titleAccent="เว็บของเราเอง"
-            />
-
-            <article className="bg-white rounded-xl border border-slate-200 p-6 sm:p-9 shadow-sm ring-1 ring-violet-100/50">
-              <div className="flex flex-wrap items-center gap-2 mb-4 text-xs text-slate-600">
-                <span className="font-medium text-slate-900">{cs.industry}</span>
-                <span aria-hidden className="text-slate-300">·</span>
-                <span>{cs.duration}</span>
-              </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight mb-4">
-                {cs.title}
-              </h3>
-              <p className="text-sm sm:text-base text-slate-700 sm:text-slate-600 leading-relaxed mb-6 max-w-2xl">
-                {cs.challenge}
-              </p>
-              {cs.quote && (
-                <blockquote className="border-l-2 border-violet-300 pl-4 mb-7 text-sm text-slate-700 sm:text-slate-600 italic max-w-2xl">
-                  &ldquo;{cs.quote}&rdquo;
-                </blockquote>
-              )}
-
-              <div className="grid sm:grid-cols-2 gap-6 sm:gap-8 mb-7">
-                <div>
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-slate-500 mb-3">
-                    สิ่งที่ส่งมอบ
-                  </p>
-                  <ul className="space-y-2">
-                    {cs.deliverables.map((d) => (
-                      <li key={d.label} className="text-sm text-slate-700">
-                        <span className="font-semibold text-slate-900 tabular-nums">{d.metric}</span>
-                        <span className="text-slate-600"> · {d.label}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-slate-500 mb-3">
-                    สัญญาณที่วัดได้
-                  </p>
-                  <ul className="space-y-2">
-                    {cs.outcomes.map((o) => (
-                      <li key={o.label} className="text-sm text-slate-700">
-                        <span className="font-semibold text-slate-900">{o.metric}</span>
-                        <span className="text-slate-600"> · {o.label}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-
-              <Link
-                href={`/case-studies/${cs.slug}`}
-                className="inline-flex items-center gap-1.5 text-sm font-medium text-violet-600 touch-manipulation active:text-violet-800 sm:hover:text-violet-700 transition-colors"
-              >
-                อ่าน case study เต็ม
-                <ArrowRight size={14} />
-              </Link>
-            </article>
-        </HomeSection>
-      )}
-
       <HomeSection variant="white">
           <HomeSectionHeader
             eyebrow="ราคา"
             title="แพ็ก"
-            titleAccent="Ads / เว็บ / SEO Add-on"
-            description="SEO บวกกับเว็บเท่านั้น — ดูรายละเอียดที่หน้าราคา"
+            titleAccent="ยิงแอด / เว็บ / SEO"
+            description="SEO บวกกับเว็บเท่านั้น ดูรายละเอียดและราคาเต็มที่หน้าราคา"
           />
 
           <PricingPlanGrid packages={pricingPackages} featureLimit={5} />

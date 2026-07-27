@@ -75,7 +75,7 @@ export const siteImages = {
   hero: {
     home: {
       src: "/images/hero/hero-home-visibility-stack-smooth.webp",
-      alt: "รับยิงแอด Google และ Meta ภูเก็ต — เริ่ม ฿6,500/เดือน",
+      alt: "รับยิงแอด Google และ Facebook ภูเก็ต — เริ่ม ฿6,500/เดือน",
       width: 1536,
       height: 1024,
     },

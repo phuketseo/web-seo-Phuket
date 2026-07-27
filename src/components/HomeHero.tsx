@@ -4,10 +4,10 @@ import { siteImages } from "@/lib/images";
 import { GradientButton } from "@/components/GradientButton";
 
 const proofStats = [
-  { value: "฿6,500", label: "ค่าจัดการแอด" },
-  { value: "Google/Meta", label: "เลือก 1 แพลตฟอร์ม" },
-  { value: "24 ชม.", label: "แคมเปญเปิด" },
-  { value: "฿6,500", label: "เว็บ Starter" },
+  { value: "฿6,500", label: "ค่าจัดการ/เดือน" },
+  { value: "1", label: "Google หรือ Facebook" },
+  { value: "ไม่ผูกมัด", label: "แจ้งก่อนรอบบิล" },
+  { value: "รายเดือน", label: "ส่งรายงานผล" },
 ];
 
 export default function HomeHero() {
@@ -34,26 +34,27 @@ export default function HomeHero() {
 
           <div className="min-w-0 order-2 lg:order-1">
             <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-indigo-600 mb-4 sm:mb-5">
-              รับยิงแอด Google & Meta ภูเก็ต
+              PhuketSEO · บริการยิงแอดภูเก็ต
             </p>
-            <h1 className="hero-lcp text-[2rem] sm:text-5xl lg:text-[3.25rem] font-bold text-slate-900 leading-[1.08] tracking-[-0.03em] mb-4 sm:mb-6">
-              รับยิงแอดโฆษณา{" "}
-              <span className="text-gradient-brand">ภูเก็ต</span>
-              <span className="text-slate-400 font-bold"> — </span>
-              Google หรือ Facebook
+            <h1 className="hero-lcp text-[2rem] sm:text-5xl lg:text-[3.25rem] font-bold text-slate-900 leading-[1.08] tracking-[-0.03em] mb-3 sm:mb-4">
+              รับยิงแอด Google & Facebook
+              <br />
+              <span className="text-gradient-brand">ภูเก็ต เริ่ม ฿6,500/เดือน</span>
             </h1>
-            <p className="text-base sm:text-lg text-slate-600 leading-[1.7] max-w-xl mb-7 sm:mb-9">
-              จัดการ Google Ads (Search, Maps) หรือ Meta Ads (Facebook, Instagram) 1 แคมเปญ
-              สำหรับธุรกิจในโซนป่าตอง กะตะ ตัวเมือง — แยกจากค่าทำเว็บ เริ่ม ฿6,500/เดือน
-              ไม่มีสัญญาผูกมัด
+            <p className="text-base sm:text-lg font-medium text-slate-800 leading-snug max-w-xl mb-3 sm:mb-4">
+              ลูกค้ากำลังค้นหาบน Google และ Facebook — ให้ธุรกิจคุณโผล่ก่อนร้านข้างๆ
+            </p>
+            <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-xl mb-7 sm:mb-9">
+              โรงแรม ร้านอาหาร สปา ในโซนป่าตอง กะตะ ตัวเมือง เริ่มยิงแอดได้ทันที ไม่ต้องมีเว็บก่อน
+              เริ่ม ฿6,500/เดือน ไม่มีสัญญาผูกมัด
             </p>
             <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-5 mb-8 sm:mb-10">
               <GradientButton href="/contact">ขอคำปรึกษาฟรี</GradientButton>
               <a
-                href="/pricing"
+                href="/packages/ads-starter"
                 className="inline-flex items-center gap-1.5 text-sm font-medium text-violet-600 sm:text-slate-600 touch-manipulation active:text-violet-700 sm:hover:text-violet-600 transition-colors"
               >
-                ดูแพ็กราคา
+                ดูแพ็ก Ads Starter
                 <ArrowRight size={14} />
               </a>
             </div>

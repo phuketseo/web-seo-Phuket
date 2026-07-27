@@ -7,9 +7,9 @@ export function cn(...inputs: ClassValue[]) {
 
 export const siteConfig = {
   name: "PhuketSEO",
-  tagline: "รับยิงแอด Google & Meta ภูเก็ต — เริ่ม ฿6,500/เดือน",
+  tagline: "รับยิงแอด Google & Facebook ภูเก็ต — ฿6,500/เดือน",
   description:
-    "รับยิงแอด Google และ Facebook ภูเก็ต สำหรับธุรกิจท้องถิ่น — จัดการ 1 แคมเปญ เริ่ม ฿6,500/เดือน ทำเว็บ Starter ฿6,500 แยกจากแอด",
+    "รับยิงแอด Google และ Facebook ภูเก็ต — 1 แคมเปญ เริ่ม ฿6,500/เดือน ค่ายิงแอดแยก ไม่ต้องทำเว็บก่อน",
   url: "https://phuketseo.com",
   phone: "092-555-1369",
   phoneInternational: "+66-92-555-1369",
