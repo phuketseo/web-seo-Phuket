@@ -4,7 +4,7 @@ export const primaryServices = [
   { name: "ทำเว็บไซต์ + SEO", href: "/services/web-design" },
   { name: "AI Search (AEO/GEO)", href: "/services/ai-search-visibility" },
   { name: "Google Ads ภูเก็ต", href: "/services/google-ads" },
-  { name: "Social Media", href: "/services/social-media" },
+  { name: "รับยิงแอด Facebook ภูเก็ต", href: "/services/social-media" },
 ];
 
 export const localSeo = [

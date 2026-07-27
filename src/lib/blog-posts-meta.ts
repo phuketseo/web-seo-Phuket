@@ -447,6 +447,14 @@ export const blogPostsMeta: BlogPostMeta[] = [
     thumbnail: getBlogThumbnail("google-ads-spa-phuket"),
   },
   {
+    slug: "ying-aep-google-maps-phuket",
+    title: "รับยิงแอด Google Maps ภูเก็ต — โปรโมต GBP ให้โผล่ near me",
+    category: "Google Ads ภูเก็ต",
+    description:
+      "รับยิงแอด Google Maps ภูเก็ต ราคา ลำดับงาน และแพ็ก SEO Lite สำหรับโปรโมต Google Business Profile บน Maps",
+    thumbnail: getBlogThumbnail("ying-aep-google-maps-phuket"),
+  },
+  {
     slug: "rab-tam-web-phuket",
     title: "รับทำเว็บไซต์ภูเก็ต — เว็บ Next.js เร็ว ติด Google พร้อม SEO",
     category: "เว็บ Next.js",

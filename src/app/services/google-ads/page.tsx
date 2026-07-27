@@ -8,6 +8,7 @@ import {
   Search,
   Settings,
   FileText,
+  MapPin,
   type LucideIcon,
 } from "lucide-react";
 import { siteImages } from "@/lib/images";
@@ -31,10 +32,12 @@ import { ServicePageCta } from "@/components/services/ServicePageCta";
 export const metadata: Metadata = {
   title: "รับทำ Google Ads ภูเก็ต | ยิงแอดตรงกลุ่มเป้าหมาย - PhuketSEO",
   description:
-    "รับทำ Google Ads ภูเก็ต — วางแผน keyword ในโซนจริง บริหาร Search/Display/Remarketing ค่าจัดการเริ่ม ฿5,900/เดือน ไม่รวม ad spend ขอปรึกษาฟรี",
+    "รับทำ Google Ads ภูเก็ต รับยิงแอด Google และ Google Maps — วางแผน keyword ในโซนจริง ค่าจัดการเริ่ม ฿5,900/เดือน ไม่รวม ad spend ขอปรึกษาฟรี",
   alternates: { canonical: `${siteConfig.url}/services/google-ads` },
   keywords: [
     "รับทำ Google Ads ภูเก็ต",
+    "รับยิงแอด google ภูเก็ต",
+    "รับยิงแอด google map ภูเก็ต",
     "Google Ads ภูเก็ต",
     "เอเยนซี่ Google Ads ภูเก็ต",
     "ยิงแอด ภูเก็ต",
@@ -51,6 +54,7 @@ const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   name: "รับทำ Google Ads ภูเก็ต",
+  alternateName: ["รับยิงแอด Google ภูเก็ต", "รับยิงแอด Google Maps ภูเก็ต"],
   provider: localServiceProvider,
   description:
     "รับทำ Google Ads ภูเก็ต — วางแผน keyword ในโซนจริง บริหาร Search, Display และ Remarketing สำหรับธุรกิจในจังหวัดภูเก็ต",
@@ -133,6 +137,7 @@ const includedItems = [
 ];
 
 const guideLinks = [
+  { href: "/blog/ying-aep-google-maps-phuket", label: "รับยิงแอด Google Maps ภูเก็ต" },
   { href: "/blog/raaka-google-ads-phuket", label: "ราคารับทำ Google Ads ภูเก็ต" },
   { href: "/blog/google-ads-vs-seo-phuket", label: "Google Ads vs SEO ภูเก็ต" },
   { href: "/blog/google-ads-restaurant-phuket", label: "Google Ads ร้านอาหารภูเก็ต" },
@@ -210,6 +215,10 @@ export default function GoogleAdsPage() {
             {" · "}
             <Link href="/packages/seo-pro-max" className="text-violet-600 font-medium hover:underline underline-offset-2">
               SEO Pro Max (รวม Ads)
+            </Link>
+            {" · "}
+            <Link href="/services/social-media" className="text-violet-600 font-medium hover:underline underline-offset-2">
+              รับยิงแอด Facebook ภูเก็ต
             </Link>
           </p>
         </div>
@@ -294,6 +303,41 @@ export default function GoogleAdsPage() {
               <p className="text-slate-600 text-sm leading-relaxed">{f.desc}</p>
             </div>
           ))}
+        </div>
+      </HomeSection>
+
+      <HomeSection variant="white" containerClass="max-w-4xl">
+        <HomeSectionHeader
+          eyebrow="Google Maps"
+          title="รับยิงแอด Google Maps"
+          titleAccent="ภูเก็ต ครอบคลุมอะไร?"
+          description="รับยิงแอด Google Maps ภูเก็ต คือการโปรโมต Google Business Profile บน Maps ให้ลูกค้าเห็นเมื่อค้นหา near me ในโซนป่าตอง กะตะ ตัวเมือง ถลาง กมลา กะทู้ — เหมาะกับร้าน walk-in ที่ต้องการโทร ขอเส้นทาง หรือดูโปรไฟล์"
+        />
+        <div className="grid sm:grid-cols-2 gap-4 text-sm sm:text-base text-slate-700 leading-relaxed">
+          <div className="rounded-xl border border-slate-200 bg-slate-50/80 p-5">
+            <div className="flex items-center gap-2 mb-2">
+              <MapPin className="text-indigo-600 shrink-0" size={18} />
+              <h3 className="font-semibold text-slate-900">แอดโปรโมต GBP/Maps</h3>
+            </div>
+            <p>
+              ตั้งและดูแลแคมเปญโปรโมต listing บน Maps — วัดจากโทร ขอเส้นทาง และการดูโปรไฟล์ รวมใน{" "}
+              <Link href="/packages/seo-lite" className="text-violet-600 font-medium hover:underline underline-offset-2">
+                แพ็ก SEO Lite ฿5,900/เดือน
+              </Link>
+            </p>
+          </div>
+          <div className="rounded-xl border border-slate-200 bg-slate-50/80 p-5">
+            <h3 className="font-semibold text-slate-900 mb-2">ลำดับก่อนยิงแอด Maps</h3>
+            <p>
+              ต้องมี GBP ครบ รีวิว และราคา/เมนูชัดก่อน — ไม่แนะนำยิง Maps โดย listing ว่าง อ่าน{" "}
+              <Link
+                href="/blog/ying-aep-google-maps-phuket"
+                className="text-violet-600 font-medium hover:underline underline-offset-2"
+              >
+                รับยิงแอด Google Maps ภูเก็ต
+              </Link>
+            </p>
+          </div>
         </div>
       </HomeSection>
 

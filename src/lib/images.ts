@@ -1431,6 +1431,7 @@ export const blogThumbnailBySlug: Record<string, SiteImage> = {
   "google-ads-hotel-phuket": siteImages.blog.seoHotel,
   "google-ads-restaurant-phuket": siteImages.blog.instagramRestaurant,
   "google-ads-spa-phuket": siteImages.blog.seoSpa,
+  "ying-aep-google-maps-phuket": siteImages.blog.gmbPhuket,
   "seo-clinic-phuket": siteImages.caseStudies.clinic,
   "direct-booking-hotel-phuket": siteImages.blog.seoHotelNew,
   "google-reviews-phuket": siteImages.blog.gmbPhuket,

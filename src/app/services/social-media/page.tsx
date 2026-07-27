@@ -22,13 +22,20 @@ import { ServicePricingTeaser } from "@/components/services/ServicePricingTeaser
 import { ServicePageCta } from "@/components/services/ServicePageCta";
 
 export const metadata: Metadata = {
-  title: "Social Media Marketing ภูเก็ต — เพิ่มยอดขาย | PhuketSEO",
+  title: "รับยิงแอด Facebook ภูเก็ต | Meta Ads - PhuketSEO",
   description:
-    "บริการ Social Media Marketing ภูเก็ต โดยผู้เชี่ยวชาญ เพิ่มการรับรู้แบรนด์ สร้างยอดขาย และเข้าถึงลูกค้าเป้าหมายของคุณ เริ่มต้นเพียง ฿7,900/เดือน",
+    "รับยิงแอด Facebook ภูเก็ต — บริหาร Meta Ads (Facebook + Instagram) ค่าจัดการเริ่ม ฿7,900/เดือน หรือรวมใน SEO Pro Max ฿15,000 ad spend แยก",
   alternates: { canonical: `${siteConfig.url}/services/social-media` },
+  keywords: [
+    "รับยิงแอด facebook",
+    "รับยิงแอด Facebook ภูเก็ต",
+    "Meta Ads ภูเก็ต",
+    "ยิงแอด Facebook ภูเก็ต",
+    "Facebook Ads ภูเก็ต",
+  ],
   openGraph: {
-    title: "Social Media Marketing ภูเก็ต | PhuketSEO",
-    description: "บริการ Social Media Marketing ภูเก็ต — เทคนิคเสริม SEO หลัก",
+    title: "รับยิงแอด Facebook ภูเก็ต | PhuketSEO",
+    description: "รับยิงแอด Facebook ภูเก็ต — Meta Ads สำหรับธุรกิจในภูเก็ต",
     url: `${siteConfig.url}/services/social-media`,
     type: "website",
     images: [defaultOgImage],
@@ -81,7 +88,7 @@ const processSteps = [
 export default function SocialMediaPage() {
   const breadcrumb = buildBreadcrumb([
     { name: "หน้าแรก", url: siteConfig.url },
-    { name: "Social Media Marketing", url: `${siteConfig.url}/services/social-media` },
+    { name: "รับยิงแอด Facebook ภูเก็ต", url: `${siteConfig.url}/services/social-media` },
   ]);
   const jsonLd = {
     "@context": "https://schema.org",
@@ -89,11 +96,12 @@ export default function SocialMediaPage() {
       { "@type": "BreadcrumbList", itemListElement: breadcrumb.itemListElement },
       {
         "@type": "Service",
-        serviceType: "Social Media Marketing",
+        serviceType: "Facebook Ads Management",
         provider: localServiceProvider,
         areaServed: { "@type": "Place", name: "ภูเก็ต" },
         description: socialMediaContent.answerBlock,
-        name: "Social Media Marketing ภูเก็ต",
+        name: "รับยิงแอด Facebook ภูเก็ต",
+        alternateName: ["Meta Ads ภูเก็ต", "รับยิงแอด facebook ภูเก็ต"],
         url: `${siteConfig.url}/services/social-media`,
         offers: {
           "@type": "Offer",
@@ -111,13 +119,13 @@ export default function SocialMediaPage() {
       <BrandGradientDefs />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-      <ServiceBreadcrumb serviceName="Social Media" />
+      <ServiceBreadcrumb serviceName="รับยิงแอด Facebook ภูเก็ต" />
 
       <ServiceMarketingHero
-        eyebrow="บริการเสริม"
-        title="Social Media Marketing"
+        eyebrow="บริการเสริม · รับยิงแอด Facebook ภูเก็ต"
+        title="รับยิงแอด Facebook"
         titleAccent="ภูเก็ต"
-        description="เพิ่มยอดขาย สร้างแบรนด์ให้เป็นที่รู้จัก และเข้าถึงลูกค้าเป้าหมายอย่างมีประสิทธิภาพ"
+        description="บริหาร Meta Ads บน Facebook และ Instagram ให้ธุรกิจในภูเก็ตได้ lead และยอดขาย — สอดคล้องกับ SEO และ Google Maps"
         answerBlock={socialMediaContent.answerBlock}
         image={siteImages.services.socialMedia}
         stats={[
@@ -126,7 +134,7 @@ export default function SocialMediaPage() {
           { value: "1-3 เดือน", label: "เห็น engagement" },
           { value: "SEO+", label: "สอดคล้อง GBP" },
         ]}
-        trustBadges={["Facebook · Instagram · TikTok", "วางแผนกลยุทธ์", "รายงานรายเดือน", "บริการเสริม SEO หลัก"]}
+        trustBadges={["Facebook · Instagram Ads", "Meta Pixel setup", "รายงานรายเดือน", "รวมใน Pro Max"]}
         secondaryHref="#process"
         secondaryLabel="ดูขั้นตอนการทำงาน"
       />
@@ -137,13 +145,17 @@ export default function SocialMediaPage() {
             <p key={p.slice(0, 40)}>{p}</p>
           ))}
           <p className="text-slate-600">
-            บริการหลักของเรา:{" "}
-            <Link href="/services/seo-phuket" className="text-violet-600 font-medium hover:underline underline-offset-2">
-              SEO ภูเก็ต
+            บริการที่เกี่ยวข้อง:{" "}
+            <Link href="/services/google-ads" className="text-violet-600 font-medium hover:underline underline-offset-2">
+              รับทำ Google Ads ภูเก็ต
             </Link>
             {" · "}
-            <Link href="/about" className="text-violet-600 font-medium hover:underline underline-offset-2">
-              เกี่ยวกับเรา
+            <Link href="/packages/seo-pro-max" className="text-violet-600 font-medium hover:underline underline-offset-2">
+              SEO Pro Max (รวม Meta Ads)
+            </Link>
+            {" · "}
+            <Link href="/services/seo-phuket" className="text-violet-600 font-medium hover:underline underline-offset-2">
+              SEO ภูเก็ต
             </Link>
           </p>
         </div>
@@ -216,11 +228,11 @@ export default function SocialMediaPage() {
       <ServiceFaqSection faqs={socialMediaContent.faqs} />
 
       <ServicePageCta
-        title="พร้อมเริ่ม Social Media"
-        titleAccent="แล้ว?"
-        description="ปรึกษาผู้เชี่ยวชาญวันนี้ เพื่อวางแผนกลยุทธ์ที่เหมาะกับธุรกิจในภูเก็ต"
-        secondaryHref="/services/seo-phuket"
-        secondaryLabel="ดูบริการ SEO หลัก"
+        title="พร้อมรับยิงแอด Facebook"
+        titleAccent="ภูเก็ต?"
+        description="ปรึกษาฟรี — เราวางแผน Meta Ads ที่เหมาะกับธุรกิจและงบในภูเก็ต"
+        secondaryHref="/pricing"
+        secondaryLabel="ดูราคาแพ็กเกจ"
       />
     </div>
   );

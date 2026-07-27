@@ -56,16 +56,26 @@ export const seoPhuketContent = {
 
 export const googleAdsContent = {
   answerBlock:
-    "รับทำ Google Ads ภูเก็ตจาก PhuketSEO คือการวางแผนและบริหารโฆษณาบน Google Search, Maps และ Display ให้ธุรกิจในโซนป่าตอง กะตะ ตัวเมือง ถลาง กมลา กะทู้ ได้ lead หรือ booking เร็ว — ค่าจัดการเริ่ม ฿5,900/เดือน (ไม่รวม ad spend) หรือรวมในแพ็ก SEO Pro Max ฿15,000/เดือน ไม่มีสัญญาผูกมัด",
+    "รับทำ Google Ads ภูเก็ตจาก PhuketSEO คือการวางแผนและบริหารโฆษณาบน Google Search, Maps และ Display ให้ธุรกิจในโซนป่าตอง กะตะ ตัวเมือง ถลาง กมลา กะทู้ ได้ lead หรือ booking เร็ว — รับยิงแอด Google ภูเก็ต ในความหมายเดียวกัน ค่าจัดการเริ่ม ฿5,900/เดือน (ไม่รวม ad spend) หรือรวมในแพ็ก SEO Pro Max ฿15,000/เดือน ไม่มีสัญญาผูกมัด",
   intro: [
-    "หน้านี้คือหน้าบริการหลักของคีย์ รับทำ Google Ads ภูเก็ต — สำหรับธุรกิจไทยท้องถิ่นที่ต้องการลูกค้าจาก Google ทันที ไม่ว่าจะเป็นโรงแรมในกะตะ ร้านอาหารในตัวเมือง สปาในป่าตอง หรือ SME ที่เปิดโปรโมชันในช่วง high season เราเริ่มจาก audit keyword cost ในโซนจริง landing page และ conversion tracking ก่อนเปิดแคมเปญ",
-    "PhuketSEO บริหาร Search Ads, Display, Remarketing และ conversion tracking แบบครบวงจร — ลด CPC ที่ไม่ convert และเพิ่ม ROAS ด้วยการทดสอบ ad copy อย่างต่อเนื่อง ทำควบคู่บริการ SEO ภูเก็ตได้เมื่อต้องการ traffic ระยะสั้นและระยะยาวพร้อมกัน ขอ SEO Audit ฟรีหรือปรึกษาฟรีก่อนเริ่มยิงแอด",
+    "หน้านี้คือหน้าบริการหลักของคีย์ รับทำ Google Ads ภูเก็ต และ รับยิงแอด Google ภูเก็ต — สำหรับธุรกิจไทยท้องถิ่นที่ต้องการลูกค้าจาก Google ทันที ไม่ว่าจะเป็นโรงแรมในกะตะ ร้านอาหารในตัวเมือง สปาในป่าตอง หรือ SME ที่เปิดโปรโมชันในช่วง high season เราเริ่มจาก audit keyword cost ในโซนจริง landing page และ conversion tracking ก่อนเปิดแคมเปญ",
+    "PhuketSEO บริหาร Search Ads, แอดโปรโมต Google Maps, Display, Remarketing และ conversion tracking แบบครบวงจร — ลด CPC ที่ไม่ convert และเพิ่ม ROAS ด้วยการทดสอบ ad copy อย่างต่อเนื่อง ทำควบคู่บริการ SEO ภูเก็ตได้เมื่อต้องการ traffic ระยะสั้นและระยะยาวพร้อมกัน",
   ],
   faqs: [
     {
       question: "รับทำ Google Ads ภูเก็ต คืออะไร?",
       answer:
         "รับทำ Google Ads ภูเก็ต คือการวางแผนและบริหารโฆษณาบน Google ให้ธุรกิจในโซนภูเก็ตได้ lead หรือ booking โดยจ่ายค่าคลิก — PhuketSEO จัดการตั้งแต่ keyword research, ad copy, landing page และ conversion tracking",
+    },
+    {
+      question: "รับยิงแอด Google ภูเก็ต กับ รับทำ Google Ads ต่างกันไหม?",
+      answer:
+        "ความหมายเดียวกัน — รับยิงแอด Google ภูเก็ต คือการจ้างเอเยนซ์บริหารโฆษณาบน Google Search, Maps และ Display ให้ธุรกิจในภูเก็ต ค่าจัดการเริ่ม ฿5,900/เดือน ไม่รวม ad spend",
+    },
+    {
+      question: "รับยิงแอด Google Maps ภูเก็ต คืออะไร?",
+      answer:
+        "รับยิงแอด Google Maps ภูเก็ต คือการโปรโมต Google Business Profile บน Maps ให้ลูกค้าเห็นเมื่อค้นหา near me ในโซนป่าตอง กะตะ ตัวเมือง — รวมในแพ็ก SEO Lite ฿5,900/เดือน หรือจัดการแยกผ่านบริการ Google Ads",
     },
     {
       question: "รับทำ Google Ads ภูเก็ต เห็นผลเร็วแค่ไหน?",
@@ -234,36 +244,51 @@ export const localSeoServiceContent = {
 
 export const socialMediaContent = {
   answerBlock:
-    "Social Media Marketing ภูเก็ต เป็นบริการเสริมสำหรับสร้างการรับรู้แบรนด์บน Facebook, Instagram และ TikTok — บริการหลักของ PhuketSEO คือ SEO + เว็บไซต์ เริ่มต้น ฿7,900/เดือน",
+    "รับยิงแอด Facebook ภูเก็ตจาก PhuketSEO คือการวางแผนและบริหาร Meta Ads (Facebook + Instagram) ให้ธุรกิจในโซนป่าตอง กะตะ ตัวเมือง ได้ lead หรือ booking เร็ว — รวมในแพ็ก SEO Pro Max ฿15,000/เดือน หรือบริการเสริม Social เริ่ม ฿7,900/เดือน (ad spend แยก)",
   intro: [
-    "บริการ Social Media Marketing จาก PhuketSEO เหมาะเป็นช่องทางเสริมเมื่อธุรกิจในภูเก็ตต้องการสร้างการรับรู้แบรนด์หรือโปรโมชั่นระยะสั้น โดยเฉพาะร้านอาหาร สปา และโรงแรมในช่วง high season",
-    "เราเน้นกลยุทธ์ที่สอดคล้องกับ SEO และ Google Business Profile — ไม่ใช่การโพสต์รายวันแบบ agency ทั่วไป แต่ช่วยวางแผน content, แคมเปญ และวัดผลให้สอดคล้องกับเป้าหมายธุรกิจในภูเก็ต",
+    "หน้านี้คือบริการ รับยิงแอด Facebook ภูเก็ต และ Meta Ads สำหรับธุรกิจที่ต้องการ reach บน Facebook และ Instagram โดยเฉพาะร้านอาหาร สปา โรงแรม และ SME ในช่วงโปรโมชันหรือ high season",
+    "PhuketSEO เน้นกลยุทธ์ที่สอดคล้องกับ SEO และ Google Business Profile — ไม่ใช่การโพสต์รายวันแบบ agency ทั่วไป แต่ช่วยวางแผนแคมเปญ Facebook Ads, audience targeting และ conversion tracking ให้สอดคล้องกับเป้าหมายธุรกิจในภูเก็ต บริการหลักของเรายังคือ SEO + เว็บไซต์",
   ],
   faqs: [
     {
-      question: "Social Media Marketing คืออะไร และสำคัญต่อธุรกิจในภูเก็ตอย่างไร?",
+      question: "รับยิงแอด Facebook ภูเก็ต คืออะไร?",
       answer:
-        "Social Media Marketing คือการใช้แพลตฟอร์มโซเชียลมีเดียเพื่อโปรโมทสินค้า บริการ หรือแบรนด์ของคุณ การมีตัวตนบนโซเชียลมีเดียช่วยให้ธุรกิจในภูเก็ตเข้าถึงนักท่องเที่ยวและคนท้องถิ่นได้อย่างมีประสิทธิภาพ สร้างการรับรู้และกระตุ้นยอดขายได้อย่างรวดเร็ว",
+        "รับยิงแอด Facebook ภูเก็ต คือการจ้างเอเยนซ์วางแผนและบริหารโฆษณาบน Facebook และ Instagram (Meta Ads) ให้ธุรกิจในภูเก็ตได้ lead หรือยอดขาย โดยจ่ายทั้งค่าจัดการและ ad spend",
     },
     {
-      question: "PhuketSEO ให้บริการ Social Media Marketing บนแพลตฟอร์มใดบ้าง?",
+      question: "ราคารับยิงแอด Facebook ภูเก็ต เท่าไหร่?",
       answer:
-        "เราให้บริการครอบคลุมแพลตฟอร์มยอดนิยม เช่น Facebook, Instagram, TikTok และ Line OA เพื่อให้ธุรกิจของคุณเข้าถึงกลุ่มเป้าหมายที่หลากหลายและเหมาะสมกับแต่ละแพลตฟอร์ม",
+        "บริการ Social/Meta Ads เริ่ม ฿7,900/เดือน (ค่าจัดการ ไม่รวม ad spend) หรือรวมในแพ็ก SEO Pro Max ฿15,000/เดือน ที่มี Meta Ads 1 แคมเปญ — ดูรายละเอียดที่หน้าราคา",
     },
     {
-      question: "ใช้เวลานานแค่ไหนกว่าจะเห็นผลลัพธ์จากการทำ Social Media Marketing?",
+      question: "Facebook Ads กับ Google Ads ภูเก็ต ควรเลือกอันไหน?",
       answer:
-        "ผลลัพธ์อาจแตกต่างกันไปขึ้นอยู่กับเป้าหมายและงบประมาณ โดยทั่วไปแล้ว คุณจะเริ่มเห็นการเปลี่ยนแปลงในการมีส่วนร่วมและการรับรู้แบรนด์ภายใน 1-3 เดือน และยอดขายที่เพิ่มขึ้นในระยะยาว",
+        "Google Ads จับ demand คนที่กำลังค้นหาอยู่แล้ว Facebook Ads เหมาะสร้าง awareness และ retarget ธุรกิจในภูเก็ตมักทำ Google + Maps เป็นฐาน แล้วเติม Facebook ช่วงโปร — ดูบริการ Google Ads ภูเก็ต",
     },
     {
-      question: "PhuketSEO มีกลยุทธ์เฉพาะสำหรับธุรกิจในภูเก็ตหรือไม่?",
+      question: "PhuketSEO ให้บริการบนแพลตฟอร์มใดบ้าง?",
       answer:
-        "แน่นอน เราเข้าใจตลาดภูเก็ตเป็นอย่างดี และพัฒนากลยุทธ์ที่เน้นการเข้าถึงกลุ่มเป้าหมายทั้งนักท่องเที่ยวและคนท้องถิ่น โดยใช้เนื้อหาที่น่าสนใจและตรงกับความต้องการของตลาดในพื้นที่",
+        "เราให้บริการ Meta Ads (Facebook, Instagram) เป็นหลักในหน้านี้ และสามารถวางแผน content บน TikTok หรือ Line OA เป็นช่องทางเสริมตามแพ็กที่เลือก",
     },
     {
-      question: "ค่าบริการ Social Media Marketing เริ่มต้นที่เท่าไหร่?",
+      question: "รับยิงแอด Facebook ภูเก็ต เห็นผลเร็วแค่ไหน?",
       answer:
-        "ค่าบริการของเราเริ่มต้นที่ ฿7,900 ต่อเดือน ซึ่งรวมการวางแผนกลยุทธ์ การสร้างเนื้อหา การจัดการแคมเปญโฆษณา และการวิเคราะห์ผลลัพธ์",
+        "แคมเปญ Meta Ads มักเริ่มแสดงผลภายใน 24–48 ชั่วโมงหลัง setup การ optimize ให้ cost per lead ลดลงมักใช้ 2–4 สัปดาห์ ขึ้นกับ creative และ landing page",
+    },
+    {
+      question: "ทำ Facebook Ads ภูเก็ตเองได้ไหม?",
+      answer:
+        "ทำได้ แต่การตั้ง pixel, audience และ A/B test creative มักต้องใช้เวลา หลายธุรกิจจ้างเอเยนซี่เมื่อต้องการลด cost per lead และประหยัดงบ",
+    },
+    {
+      question: "Meta Ads รวมในแพ็ก SEO Pro Max ไหม?",
+      answer:
+        "รวม — SEO Pro Max ฿15,000/เดือน มีจัดการ Meta Ads 1 แคมเปญ + Google Ads 1 แคมเปญ (ad spend แยก) ดูแพ็กที่หน้าราคา",
+    },
+    {
+      question: "หยุดยิงแอด Facebook แล้วผลจะหายไหม?",
+      answer:
+        "หยุดจ่าย ad spend แล้ว traffic จากแอดหายทันที — ต่างจาก SEO หรือ Maps ที่สะสมการมองเห็น organic ควรทำฐาน SEO ควบคู่",
     },
   ] satisfies ServiceFaq[],
 };

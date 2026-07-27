@@ -138,6 +138,7 @@ const blogRelatedSlugs: Record<string, string[]> = {
   ],
   "google-ads-vs-seo-phuket": [
     "raaka-google-ads-phuket",
+    "ying-aep-google-maps-phuket",
     "google-ads-hotel-phuket",
     "google-ads-restaurant-phuket",
     "google-ads-spa-phuket",
@@ -146,12 +147,19 @@ const blogRelatedSlugs: Record<string, string[]> = {
     "raaka-seo-phuket",
   ],
   "raaka-google-ads-phuket": [
+    "ying-aep-google-maps-phuket",
     "google-ads-vs-seo-phuket",
     "google-ads-hotel-phuket",
     "google-ads-restaurant-phuket",
     "google-ads-spa-phuket",
     "raaka-seo-phuket",
-    "ying-aep-thi-phak-lek-ngoen-noi",
+  ],
+  "ying-aep-google-maps-phuket": [
+    "raaka-google-ads-phuket",
+    "google-ads-vs-seo-phuket",
+    "local-seo-phuket",
+    "google-my-business-phuket",
+    "dan-andap-google-maps-phuket",
   ],
   "google-ads-hotel-phuket": [
     "direct-booking-hotel-phuket",
