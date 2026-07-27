@@ -15,6 +15,7 @@ export function PackageMarketingHero({
   title,
   titleAccent,
   priceLabel,
+  priceSuffix = "/เดือน",
   subtitle,
   answerBlock,
   image,
@@ -27,6 +28,7 @@ export function PackageMarketingHero({
   title: string;
   titleAccent: string;
   priceLabel: string;
+  priceSuffix?: string;
   subtitle: string;
   answerBlock: string;
   image: HeroImage;
@@ -63,7 +65,7 @@ export function PackageMarketingHero({
             </h1>
             <p className="text-2xl sm:text-3xl font-bold text-slate-900 tabular-nums mb-3 sm:mb-4">
               ฿{priceLabel}
-              <span className="text-base sm:text-lg font-normal text-slate-500">/เดือน</span>
+              <span className="text-base sm:text-lg font-normal text-slate-500">{priceSuffix}</span>
             </p>
             <p className="text-base sm:text-lg text-slate-600 leading-[1.7] max-w-xl mb-5 sm:mb-6">
               {subtitle}

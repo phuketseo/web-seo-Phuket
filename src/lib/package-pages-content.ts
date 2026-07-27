@@ -1,9 +1,11 @@
 import type { SiteImage } from "@/lib/images";
 import { siteImages } from "@/lib/images";
 import type { PricingPackage } from "@/lib/pricing-packages";
-import { planContactHref, pricingPackages } from "@/lib/pricing-packages";
+import { getPricingPackage, planContactHref } from "@/lib/pricing-packages";
 
-export type PackagePageId = "lite" | "pro" | "max";
+export type PrimaryPackagePageId = "ads-starter" | "web-starter" | "annual-care";
+export type SeoPackagePageId = "lite" | "pro" | "max";
+export type PackagePageId = PrimaryPackagePageId | SeoPackagePageId;
 
 export type PackageFaq = { question: string; answer: string };
 
@@ -41,17 +43,19 @@ export type PackagePageContent = {
   compareCards: PackageCompareCard[];
   faqs: PackageFaq[];
   relatedLinks: { label: string; href: string }[];
+  phaseOneLabel?: string;
+  phaseTwoLabel?: string;
 };
 
-const pkg = (id: PackagePageId) => pricingPackages.find((p) => p.id === id)!;
+const pkg = (id: PackagePageId) => getPricingPackage(id);
 
-const compareOthers = (current: PackagePageId): PackageCompareCard[] => {
-  const all: PackagePageId[] = ["lite", "pro", "max"];
+const compareOthers = (current: SeoPackagePageId): PackageCompareCard[] => {
+  const all: SeoPackagePageId[] = ["lite", "pro", "max"];
   return all
     .filter((id) => id !== current)
     .map((id) => {
       const p = pkg(id);
-      const hooks: Record<PackagePageId, string> = {
+      const hooks: Record<SeoPackagePageId, string> = {
         lite: "Maps + แอด GBP + รีวิว — งบน้อยสุด",
         pro: "เว็บ + SEO + แอด Landing — แพ็กแนะนำ SME",
         max: "GBP + Google + Meta ครบ — scale lead",
@@ -68,12 +72,284 @@ const compareOthers = (current: PackagePageId): PackageCompareCard[] => {
 };
 
 export const packagePaths: Record<PackagePageId, string> = {
+  "ads-starter": "/packages/ads-starter",
+  "web-starter": "/packages/web-starter",
+  "annual-care": "/packages/annual-care",
   lite: "/packages/seo-lite",
   pro: "/packages/seo-pro",
   max: "/packages/seo-pro-max",
 };
 
+const primaryCompareOthers = (current: PrimaryPackagePageId): PackageCompareCard[] => {
+  const all: PrimaryPackagePageId[] = ["ads-starter", "web-starter", "annual-care"];
+  const hooks: Record<PrimaryPackagePageId, string> = {
+    "ads-starter": "ยิงแอด Google หรือ Meta — 1 แคมเปญ",
+    "web-starter": "เว็บธุรกิจ ไม่เกิน 10 หน้า",
+    "annual-care": "โดเมน + โฮสติ้ง รายปี",
+  };
+  const ctas: Record<PrimaryPackagePageId, string> = {
+    "ads-starter": "ดู Ads Starter",
+    "web-starter": "ดูเว็บ Starter",
+    "annual-care": "ดูดูแลรายปี",
+  };
+  return all
+    .filter((id) => id !== current)
+    .map((id) => {
+      const p = pkg(id);
+      return {
+        id,
+        name: p.name,
+        priceLabel: p.priceLabel,
+        hook: hooks[id],
+        href: packagePaths[id],
+        cta: ctas[id],
+      };
+    });
+};
+
 export const packagePagesContent: Record<PackagePageId, PackagePageContent> = {
+  "ads-starter": {
+    id: "ads-starter",
+    path: packagePaths["ads-starter"],
+    metaTitle: "แพ็ก Ads Starter ฿6,500 | รับยิงแอด Google/Meta ภูเก็ต",
+    metaDescription:
+      "Ads Starter ฿6,500/เดือน — จัดการ Google Ads หรือ Meta Ads 1 แคมเปญ สำหรับธุรกิจในภูเก็ต ค่ายิงแอดแยก ไม่รวมทำเว็บ",
+    heroBadge: "แพ็กหลัก · Paid Ads",
+    heroTitle: "แพ็ก Ads Starter",
+    heroHighlight: "Google หรือ Meta",
+    heroSubtitle:
+      "฿6,500/เดือน (ค่าจัดการ) — เลือกยิงแอด Google Search/Maps หรือ Facebook/Instagram 1 แคมเปญ แยกจากค่าทำเว็บ",
+    answerBlock:
+      "Ads Starter คือแพ็กจัดการโฆษณารายเดือน ฿6,500 สำหรับธุรกิจในภูเก็ต — เลือก Google Ads (Search, Maps) หรือ Meta Ads (Facebook, Instagram) อย่างใดอย่างหนึ่ง 1 แคมเปญ ค่า ad spend จ่ายแพลตฟอร์มแยก",
+    heroImage: siteImages.icons.googleAds,
+    showcaseImage: siteImages.services.googleAds,
+    showcaseCaption: "เหมาะเริ่มยิงแอดก่อนมีเว็บใหญ่ — ใช้ landing หรือ LINE เป็นปลายทาง lead",
+    monthlyTitle: "จ่าย ฿6,500/เดือน แล้วได้อะไร?",
+    monthlyIntro: "ค่าจัดการครอบคลุม setup และดูแลแคมเปญ — งบยิงแอดจริงจ่าย Google หรือ Meta แยก",
+    monthOneItems: [
+      "ประชุมเป้าหมายธุรกิจ โซน (ป่าตอง กะตะ ตัวเมือง ฯลฯ) และงบ ad spend",
+      "ตั้งบัญชีโฆษณา + conversion tracking (GA4, pixel, UTM)",
+      "สร้างแคมเปญ 1 ชุด — keyword/audience, ad copy, ปลายทาง landing/LINE",
+      "ส่งมอบรายงาน baseline — impression, คลิก, cost เริ่มต้น",
+    ],
+    everyMonthItems: [
+      "ปรับแคมเปญ 2 ครั้ง/เดือน (bid, keyword, creative, budget)",
+      "ติดตาม conversion และ cost per lead",
+      "รายงานรายเดือน — สรุปผล + แนะนำเดือนถัดไป",
+      "แจ้งปัญหา tracking หรือ policy จากแพลตฟอร์ม",
+    ],
+    notIncluded: [
+      "ค่า ad spend — จ่าย Google/Meta โดยตรง (Google แนะนำขั้นต่ำ ~฿5,000/เดือน Meta ~฿3,000/เดือน)",
+      "ทำเว็บไซต์ — ดูแพ็กเว็บ Starter ฿6,500 ครั้งเดียว",
+      "แคมเปญที่ 2 หรือสลับแพลตฟอร์มกลางรอบบิล (ต้องอัปแพ็กหรือเพิ่มแคมเปญ)",
+      "ถ่ายรูป/video creative ระดับ production",
+      "SEO organic / GBP รายเดือน — ดูแพ็ก SEO Lite",
+    ],
+    worthItTitle: "฿6,500 คุ้มเมื่อไหร่?",
+    worthItPoints: [
+      "ต้องการ lead เร็วในโซนภูเก็ต โดยยังไม่พร้อมลงทุนเว็บใหญ่",
+      "มี LINE หรือ landing ง่ายๆ เป็นปลายทาง conversion แล้ว",
+      "อยากให้มืออาชีพดูแล tracking และลดเวลาลองผิดลองถูกเอง",
+    ],
+    idealFor: [
+      { title: "ร้านอาหาร / สปา", desc: "ยิง Maps หรือ Search ในโซนป่าตอง กะตะ กมลา — เน้นโทรและจอง" },
+      { title: "ทัวร์ / กิจกรรม", desc: "ช่วง high season ต้องการ inquiry ทันทีจากนักท่องเที่ยว" },
+      { title: "SME ท้องถิ่น", desc: "เริ่มจากแคมเปญเดียว วัด ROAS ก่อนขยายงบ" },
+    ],
+    compareIntro: "แพ็กหลักอื่น — แยกเว็บกับแอดชัดเจน",
+    compareCards: primaryCompareOthers("ads-starter"),
+    faqs: [
+      {
+        question: "Ads Starter ฿6,500 รวมอะไรบ้าง?",
+        answer:
+          "รวมจัดการ 1 แคมเปญบน Google Ads (Search/Maps) หรือ Meta Ads (Facebook/Instagram) — setup, ปรับแคมเปญ 2 ครั้ง/เดือน และรายงานรายเดือน ไม่รวมค่ายิงแอด",
+      },
+      {
+        question: "เลือก Google กับ Meta ได้ทั้งคู่ไหม?",
+        answer:
+          "แพ็กนี้เลือก 1 แพลตฟอร์มต่อเดือน — ถ้าต้องการทั้ง Google และ Meta พร้อมกัน ดูแพ็ก SEO Pro Max หรือติดต่อเพิ่มแคมเปญ",
+      },
+      {
+        question: "ต้องมีเว็บไซต์ก่อนไหม?",
+        answer:
+          "ไม่จำเป็น — ใช้ Google Business Profile, landing สั้น หรือ LINE เป็นปลายทางได้ ถ้าต้องการเว็บ ดูแพ็กเว็บ Starter ฿6,500 (แยกจากแพ็กแอด)",
+      },
+      {
+        question: "งบ ad spend ควรเริ่มเท่าไหร่?",
+        answer:
+          "Google Ads มักเริ่ม ~฿5,000/เดือนขึ้นไป Meta ~฿3,000/เดือน — ขึ้นกับอุตสาหกรรมและโซนในภูเก็ต",
+      },
+      {
+        question: "ยกเลิกได้เมื่อไหร่?",
+        answer: "แจ้งก่อนรอบบิล — ไม่มีสัญญาผูกมัด แคมเปญและบัญชีโฆษณาเป็นของลูกค้า",
+      },
+    ],
+    relatedLinks: [
+      { label: "รับทำ Google Ads ภูเก็ต", href: "/services/google-ads" },
+      { label: "รับยิงแอด Facebook ภูเก็ต", href: "/services/social-media" },
+      { label: "เปรียบเทียบราคาทั้งหมด", href: "/pricing" },
+    ],
+  },
+  "web-starter": {
+    id: "web-starter",
+    path: packagePaths["web-starter"],
+    metaTitle: "แพ็กเว็บ Starter ฿6,500 | รับทำเว็บไซต์ภูเก็ต ไม่เกิน 10 หน้า",
+    metaDescription:
+      "เว็บ Starter ฿6,500 ครั้งเดียว — เว็บธุรกิจภูเก็ต mobile-first ไม่เกิน 10 หน้า ฟอร์ม + LINE CTA แยกจากแพ็กยิงแอด",
+    heroBadge: "เว็บธุรกิจ · One-time",
+    heroTitle: "แพ็กเว็บ Starter",
+    heroHighlight: "ไม่เกิน 10 หน้า",
+    heroSubtitle:
+      "฿6,500 ครั้งเดียว — เว็บ Next.js ภาษาไทย mobile-first ฟอร์มติดต่อ + LINE ไม่รวม SEO รายเดือนหรือยิงแอด",
+    answerBlock:
+      "เว็บ Starter คือบริการทำเว็บไซต์ธุรกิจในภูเก็ต ราคา ฿6,500 ครั้งเดียว ไม่เกิน 10 หน้า ออกแบบ mobile-first พร้อมฟอร์มติดต่อและปุ่ม LINE — แยกจากแพ็กจัดการโฆษณา",
+    heroImage: siteImages.services.webDesign,
+    showcaseImage: siteImages.services.webDesign,
+    showcaseCaption: "เหมาะ SME ที่ต้องการเว็บออนไลน์เร็ว ก่อนลงทุน SEO หรือแอดเต็มรูปแบบ",
+    monthlyTitle: "จ่ายครั้งเดียว ฿6,500 แล้วได้อะไร?",
+    monthlyIntro: "ส่งมอบเว็บพร้อมใช้งาน — ดูแลโดเมน/โฮสต์ผ่านแพ็กรายปี ฿4,500",
+    phaseOneLabel: "สัปดาห์ 1–2 (วางแผน)",
+    phaseTwoLabel: "สัปดาห์ 3–6 (พัฒนา + ส่งมอบ)",
+    monthOneItems: [
+      "เก็บ requirement หน้าเว็บ (ไม่เกิน 10 หน้า) โทนสี โลโก้",
+      "วาง wireframe + โครงสร้างเมนูและ CTA",
+      "เตรียม content จากลูกค้า (ข้อความ รูป)",
+      "ตั้งโดเมน/โฮสต์ (หรือใช้ของลูกค้าเดิม)",
+    ],
+    everyMonthItems: [
+      "พัฒนาเว็บ Next.js mobile-first",
+      "ติดตั้งฟอร์มติดต่อ + ปุ่ม LINE / โทร",
+      "ตั้งค่า title, meta description และ schema พื้นฐาน",
+      "ทดสอบบนมือถือ + ส่งมอบพร้อมคู่มือแก้ข้อความเบื้องต้น",
+    ],
+    notIncluded: [
+      "SEO รายเดือน / บทความ blog — ดูแพ็ก SEO Lite ขึ้นไป",
+      "ยิงแอด Google/Meta — ดูแพ็ก Ads Starter ฿6,500/เดือน",
+      "หน้าเว็บเกิน 10 หน้า — ใบเสนอราคาแยก",
+      "ระบบจอง/ชำระเงินเต็มรูปแบบ (e-commerce)",
+      "แก้เนื้อหาหลังส่งมอบ (นอกแพ็กดูแลรายปี)",
+    ],
+    worthItTitle: "฿6,500 คุ้มเมื่อไหร่?",
+    worthItPoints: [
+      "ต้องการเว็บมืออาชีพงบจำกัด ก่อนลงทุน SEO หนัก",
+      "มี content พร้อมแล้ว ต้องการ launch เร็ว",
+      "จะยิงแอดทีหลัง — มีเว็บเป็นปลายทาง conversion",
+    ],
+    idealFor: [
+      { title: "ร้านบริการท้องถิ่น", desc: "หน้าแรก บริการ ราคา ติดต่อ — CTA ชัด" },
+      { title: "ธุรกิจใหม่ในภูเก็ต", desc: "ต้องการ presence ออนไลน์ก่อนเปิด high season" },
+      { title: "ลูกค้าแอด", desc: "มีแพ็ก Ads Starter แล้ว ต้องการ landing บนโดเมนตัวเอง" },
+    ],
+    compareIntro: "จับคู่กับแพ็กแอดหรือดูแลรายปี",
+    compareCards: primaryCompareOthers("web-starter"),
+    faqs: [
+      {
+        question: "เว็บ Starter ฿6,500 รวมกี่หน้า?",
+        answer: "ไม่เกิน 10 หน้า เช่น หน้าแรก เกี่ยวกับเรา บริการ แกลเลอรี ติดต่อ — หน้าเพิ่มคิดแยก",
+      },
+      {
+        question: "ใช้เวลาทำนานแค่ไหน?",
+        answer: "โดยทั่วไป 4–6 สัปดาห์ หลังได้ content ครบ — ขึ้นกับความซับซ้อนและ feedback",
+      },
+      {
+        question: "รวมโดเมนและโฮสติ้งไหม?",
+        answer: "ไม่รวมในราคา ฿6,500 — ดูแพ็กดูแลรายปี ฿4,500/ปี ที่รวมโดเมน + โฮสติ้ง + SSL",
+      },
+      {
+        question: "ทำคู่กับแพ็กแอดได้ไหม?",
+        answer: "ได้ — เว็บและแอดแยกราคากัน หลายลูกค้าเริ่มแอดก่อน แล้วค่อยทำเว็บเมื่อ lead เพิ่ม",
+      },
+      {
+        question: "มี SEO รวมไหม?",
+        answer: "มีแค่ตั้งค่า on-page พื้นฐาน — SEO รายเดือนอยู่ในแพ็ก SEO Lite ฿5,900/เดือนขึ้นไป",
+      },
+    ],
+    relatedLinks: [
+      { label: "รับทำเว็บไซต์ภูเก็ต", href: "/services/web-design" },
+      { label: "แพ็ก Ads Starter", href: "/packages/ads-starter" },
+      { label: "ดูแลรายปี ฿4,500", href: "/packages/annual-care" },
+    ],
+  },
+  "annual-care": {
+    id: "annual-care",
+    path: packagePaths["annual-care"],
+    metaTitle: "ดูแลเว็บรายปี ฿4,500 | โดเมน + โฮสติ้ง ภูเก็ต",
+    metaDescription:
+      "แพ็กดูแลรายปี ฿4,500 — รวมโดเมน โฮสติ้ง SSL และ security update สำหรับเว็บธุรกิจในภูเก็ต ไม่รวมแก้เนื้อหาหรือยิงแอด",
+    heroBadge: "ดูแลระบบ · รายปี",
+    heroTitle: "ดูแลเว็บ",
+    heroHighlight: "รายปี ฿4,500",
+    heroSubtitle:
+      "ต่ออายุโดเมน โฮสติ้ง SSL และอัปเดตความปลอดภัย — สำหรับลูกค้าที่มีเว็บแล้ว ไม่รวมแก้ข้อความ SEO หรือแอด",
+    answerBlock:
+      "แพ็กดูแลรายปี ฿4,500 คือบริการต่ออายุโดเมน โฮสติ้ง SSL และ security update สำหรับเว็บธุรกิจในภูเก็ต — ไม่รวมการแก้เนื้อหา ยิงแอด หรือ SEO รายเดือน",
+    heroImage: siteImages.icons.webDesign,
+    showcaseImage: siteImages.services.webDesign,
+    showcaseCaption: "เหมาะคู่กับเว็บ Starter หรือเว็บที่มีอยู่แล้ว — ให้เว็บออนไลน์ต่อเนื่องโดยไม่ต้องจัดการโดเมนเอง",
+    monthlyTitle: "จ่าย ฿4,500/ปี แล้วได้อะไร?",
+    monthlyIntro: "ดูแลโครงสร้างพื้นฐานของเว็บ — งาน content และ marketing เป็นแพ็กแยก",
+    phaseOneLabel: "เมื่อเริ่มแพ็ก",
+    phaseTwoLabel: "ตลอด 12 เดือน",
+    monthOneItems: [
+      "ตรวจสอบโดเมนและโฮสติ้งปัจจุบัน (หรือย้ายเข้าระบบ)",
+      "ตั้งค่า SSL และ redirect www/non-www",
+      "สำรองข้อมูลก่อนอัปเดตครั้งแรก",
+      "แจ้งวันหมดอายุโดเมนและรอบต่ออายุ",
+    ],
+    everyMonthItems: [
+      "ต่ออายุโดเมน (ตาม TLD ที่ลงทะเบียน)",
+      "โฮสติ้งและ bandwidth ตามแพ็ก",
+      "security patch / dependency update ตามความจำเป็น",
+      "ตรวจ uptime พื้นฐานและแจ้งเมื่อเว็บล่ม",
+    ],
+    notIncluded: [
+      "แก้ข้อความ รูป หรือเพิ่มหน้าเว็บ",
+      "SEO, GBP, บทความ blog",
+      "ยิงแอด Google/Meta",
+      "อีเมลธุรกิจ (ถ้าต้องการ — คิดแยก)",
+      "recovery จากการแฮกที่เกิดจากรหัสผ่านรั่ว (งาน forensic คิดแยก)",
+    ],
+    worthItTitle: "฿4,500/ปี คุ้มเมื่อไหร่?",
+    worthItPoints: [
+      "ไม่อยากจัดการต่ออายุโดเมนและโฮสต์เอง",
+      "เว็บเสร็จแล้ว ต้องการให้ออนไลน์ต่อเนื่อง",
+      "จะทำ SEO/แอดแยก — แพ็กนี้ดูแลแค่โครงสร้างพื้นฐาน",
+    ],
+    idealFor: [
+      { title: "ลูกค้าเว็บ Starter", desc: "จับคู่หลังส่งมอบเว็บ — โดเมนครบในปีแรก" },
+      { title: "เว็บเก่าที่ยังใช้งาน", desc: "ย้ายดูแลมา PhuketSEO โดยไม่ rebuild" },
+      { title: "ธุรกิจที่ไม่ได้อัปเดตบ่อย", desc: "เนื้อหาคงที่ ต้องการแค่เว็บไม่ล่ม" },
+    ],
+    compareIntro: "แพ็กหลักอื่น — เว็บ แอด และดูแลระบบ",
+    compareCards: primaryCompareOthers("annual-care"),
+    faqs: [
+      {
+        question: "฿4,500/ปี รวมโดเมนไหม?",
+        answer: "รวมต่ออายุโดเมนมาตรฐาน (เช่น .com) และโฮสติ้งตามแพ็ก — TLD พิเศษอาจมีค่าใช้จ่ายเพิ่ม",
+      },
+      {
+        question: "แก้ข้อความบนเว็บได้ไหม?",
+        answer: "ไม่รวม — แก้ content คิดแยกต่อครั้ง หรืออัปเป็นแพ็ก SEO Pro ที่มีดูแลเว็บรายเดือน",
+      },
+      {
+        question: "ต้องมีเว็บจาก PhuketSEO ไหม?",
+        answer: "ไม่จำเป็น — รับดูแลเว็บที่มีอยู่แล้ว หากโค้ดเข้ากันได้ (ส่วนใหญ่ Next.js/WordPress)",
+      },
+      {
+        question: "รวม backup ไหม?",
+        answer: "มี backup ก่อนอัปเดตสำคัญ — ไม่ใช่ backup รายวันแบบ enterprise (ติดต่อถ้าต้องการเพิ่ม)",
+      },
+      {
+        question: "ต่อกับแพ็กแอดได้ไหม?",
+        answer: "ได้ — แพ็กนี้ดูแลเว็บอย่างเดียว ยิงแอดดูแพ็ก Ads Starter ฿6,500/เดือน",
+      },
+    ],
+    relatedLinks: [
+      { label: "แพ็กเว็บ Starter", href: "/packages/web-starter" },
+      { label: "รับทำเว็บไซต์ภูเก็ต", href: "/services/web-design" },
+      { label: "เปรียบเทียบราคา", href: "/pricing" },
+    ],
+  },
   lite: {
     id: "lite",
     path: packagePaths.lite,
@@ -389,4 +665,11 @@ export function packageContactHref(id: PackagePageId): string {
   return planContactHref(id);
 }
 
-export const allPackagePageIds: PackagePageId[] = ["lite", "pro", "max"];
+export const allPackagePageIds: PackagePageId[] = [
+  "ads-starter",
+  "web-starter",
+  "annual-care",
+  "lite",
+  "pro",
+  "max",
+];

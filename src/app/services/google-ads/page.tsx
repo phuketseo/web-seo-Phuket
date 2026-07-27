@@ -32,7 +32,7 @@ import { ServicePageCta } from "@/components/services/ServicePageCta";
 export const metadata: Metadata = {
   title: "รับทำ Google Ads ภูเก็ต | ยิงแอดตรงกลุ่มเป้าหมาย - PhuketSEO",
   description:
-    "รับทำ Google Ads ภูเก็ต รับยิงแอด Google และ Google Maps — วางแผน keyword ในโซนจริง ค่าจัดการเริ่ม ฿5,900/เดือน ไม่รวม ad spend ขอปรึกษาฟรี",
+    "รับทำ Google Ads ภูเก็ต รับยิงแอด Google และ Google Maps — วางแผน keyword ในโซนจริง ค่าจัดการเริ่ม ฿6,500/เดือน (แพ็ก Ads Starter) ไม่รวม ad spend ขอปรึกษาฟรี",
   alternates: { canonical: `${siteConfig.url}/services/google-ads` },
   keywords: [
     "รับทำ Google Ads ภูเก็ต",
@@ -174,7 +174,7 @@ export default function GoogleAdsPage() {
         answerBlock={googleAdsContent.answerBlock}
         image={siteImages.services.googleAds}
         stats={[
-          { value: "฿5,900", label: "ค่าจัดการเริ่มต้น" },
+          { value: "฿6,500", label: "ค่าจัดการเริ่มต้น" },
           { value: "24hr", label: "แคมเปญเริ่มแสดง" },
           { value: "2–4wk", label: "ระยะ optimize CPA" },
           { value: "0", label: "ไม่ผูกมัด" },
@@ -321,8 +321,8 @@ export default function GoogleAdsPage() {
             </div>
             <p>
               ตั้งและดูแลแคมเปญโปรโมต listing บน Maps — วัดจากโทร ขอเส้นทาง และการดูโปรไฟล์ รวมใน{" "}
-              <Link href="/packages/seo-lite" className="text-violet-600 font-medium hover:underline underline-offset-2">
-                แพ็ก SEO Lite ฿5,900/เดือน
+              <Link href="/packages/ads-starter" className="text-violet-600 font-medium hover:underline underline-offset-2">
+                แพ็ก Ads Starter ฿6,500/เดือน
               </Link>
             </p>
           </div>
@@ -440,9 +440,9 @@ export default function GoogleAdsPage() {
             </ul>
           </div>
           <ServicePricingTeaser
-            priceLabel="5,900"
-            planName="Management Fee"
-            features={["ไม่รวม Ad Spend", "Campaign Setup ฟรี", "รายงานรายสัปดาห์", "Pro Max รวม Ads ฿15,000"]}
+            priceLabel="6,500"
+            planName="Ads Starter"
+            features={["ไม่รวม Ad Spend", "Google หรือ Meta 1 แคมเปญ", "รายงานรายเดือน", "แยกจากค่าทำเว็บ"]}
             proNote="แนะนำทำควบคู่ SEO เพื่อ traffic ระยะสั้น + ยั่งยืน"
           />
         </div>

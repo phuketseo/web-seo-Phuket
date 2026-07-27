@@ -24,7 +24,7 @@ import { ServicePageCta } from "@/components/services/ServicePageCta";
 export const metadata: Metadata = {
   title: "รับยิงแอด Facebook ภูเก็ต | Meta Ads - PhuketSEO",
   description:
-    "รับยิงแอด Facebook ภูเก็ต — บริหาร Meta Ads (Facebook + Instagram) ค่าจัดการเริ่ม ฿7,900/เดือน หรือรวมใน SEO Pro Max ฿15,000 ad spend แยก",
+    "รับยิงแอด Facebook ภูเก็ต — บริหาร Meta Ads (Facebook + Instagram) ค่าจัดการเริ่ม ฿6,500/เดือน (แพ็ก Ads Starter) ad spend แยก",
   alternates: { canonical: `${siteConfig.url}/services/social-media` },
   keywords: [
     "รับยิงแอด facebook",
@@ -129,7 +129,7 @@ export default function SocialMediaPage() {
         answerBlock={socialMediaContent.answerBlock}
         image={siteImages.services.socialMedia}
         stats={[
-          { value: "฿7,900", label: "เริ่มต้น/เดือน" },
+          { value: "฿6,500", label: "เริ่มต้น/เดือน" },
           { value: "3+", label: "แพลตฟอร์ม" },
           { value: "1-3 เดือน", label: "เห็น engagement" },
           { value: "SEO+", label: "สอดคล้อง GBP" },
@@ -213,15 +213,10 @@ export default function SocialMediaPage() {
 
       <HomeSection variant="muted" containerClass="max-w-lg mx-auto">
         <ServicePricingTeaser
-          priceLabel="7,900"
-          planName="Starter"
-          features={[
-            "วางแผนกลยุทธ์เบื้องต้น",
-            "สร้างเนื้อหา 8 โพสต์/เดือน",
-            "จัดการ 1 แพลตฟอร์ม",
-            "รายงานผลรายเดือน",
-          ]}
-          proNote="มีแพ็ก Professional และ Enterprise — ติดต่อเพื่อรายละเอียด"
+          priceLabel="6,500"
+          planName="Ads Starter (Meta)"
+          features={["ไม่รวม Ad Spend", "Facebook + Instagram 1 แคมเปญ", "รายงานรายเดือน", "แยกจากค่าทำเว็บ"]}
+          proNote="เลือก Google แทน Meta ได้ที่แพ็ก Ads Starter เดียวกัน — ดูหน้าราคา"
         />
       </HomeSection>
 

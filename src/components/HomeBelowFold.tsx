@@ -18,34 +18,34 @@ const services: {
 }[] = [
   {
     num: "01",
-    iconImage: siteImages.icons.seo,
-    title: "SEO ภูเก็ต",
-    desc: "Local SEO, On-page และ AEO/GEO — ติด Google Maps และ Organic Search",
-    meta: "จาก ฿5,900/เดือน",
-    href: "/services/seo-phuket",
+    iconImage: siteImages.icons.googleAds,
+    title: "รับยิงแอด Google & Meta",
+    desc: "จัดการโฆษณา 1 แคมเปญ — เลือก Google Search/Maps หรือ Facebook/Instagram",
+    meta: "จาก ฿6,500/เดือน",
+    href: "/services/google-ads",
   },
   {
     num: "02",
     iconImage: siteImages.icons.webDesign,
-    title: "ทำเว็บไซต์ + SEO",
-    desc: "เว็บเร็ว mobile-first พร้อม structure สำหรับ Google และ AI Search",
-    meta: "Setup จาก ฿29,900",
+    title: "ทำเว็บไซต์ภูเก็ต",
+    desc: "เว็บ mobile-first ไม่เกิน 10 หน้า ฟอร์ม + LINE CTA — แยกจากแพ็กแอด",
+    meta: "฿6,500 ครั้งเดียว",
     href: "/services/web-design",
   },
   {
     num: "03",
-    title: "AI Search Visibility",
-    desc: "AEO/GEO ให้ธุรกิจโผล่ AI Overview และ answer engines",
-    meta: "รวมในแพ็ก Pro",
-    href: "/services/ai-search-visibility",
+    iconImage: siteImages.icons.seo,
+    title: "SEO ภูเก็ต",
+    desc: "Local SEO, Maps และ organic ระยะยาว — เสริมหลังแอดหรือเว็บพร้อม",
+    meta: "จาก ฿5,900/เดือน",
+    href: "/services/seo-phuket",
   },
   {
     num: "04",
-    iconImage: siteImages.icons.googleAds,
-    title: "รับทำ Google Ads ภูเก็ต",
-    desc: "ยิงแอด Search, Display และ Remarketing — ได้ lead เร็วในโซนจริง",
-    meta: "จาก ฿5,900/เดือน",
-    href: "/services/google-ads",
+    title: "ดูแลรายปี",
+    desc: "โดเมน + โฮสติ้ง + SSL สำหรับเว็บที่มีอยู่แล้ว",
+    meta: "฿4,500/ปี",
+    href: "/packages/annual-care",
   },
 ];
 
@@ -71,7 +71,7 @@ const faqs = [
   },
   {
     q: "ค่าบริการ SEO ภูเก็ต เริ่มต้นที่เท่าไหร่?",
-    a: "แพ็ก Lite เริ่ม 5,900 บาท/เดือน แพ็ก Pro 8,900 บาท/เดือน และ Pro Max 15,000 บาท/เดือน — ค่ายิงแอดแยกจากค่าจัดการ",
+    a: "แพ็ก Ads Starter เริ่ม ฿6,500/เดือน (Google หรือ Meta 1 แคมเปญ) เว็บ Starter ฿6,500 ครั้งเดียว แพ็ก SEO Lite ฿5,900/เดือน — ค่ายิงแอดแยกจากค่าจัดการ",
   },
   {
     q: "PhuketSEO ให้บริการธุรกิจประเภทไหนบ้าง?",
@@ -111,8 +111,8 @@ export default function HomeBelowFold() {
         <HomeSectionHeader
           eyebrow="บริการ"
           title="การมองเห็นบน Google"
-          titleAccent="+ เว็บไซต์"
-          description="ส่งมอบได้จริง สำหรับธุรกิจไทยในภูเก็ต — SEO, เว็บเร็ว, AEO/GEO"
+          titleAccent="+ แอด & เว็บ"
+          description="แพ็กแยกชัด — ยิงแอด ทำเว็บ หรือ SEO ระยะยาว ตามงบธุรกิจในภูเก็ต"
         />
 
           <ul className="flex flex-col gap-3 sm:gap-0 sm:divide-y sm:divide-slate-200 sm:border-y sm:border-slate-200 sm:bg-white sm:rounded-lg sm:overflow-hidden">
@@ -258,8 +258,8 @@ export default function HomeBelowFold() {
           <HomeSectionHeader
             eyebrow="ราคา"
             title="แพ็ก"
-            titleAccent="Lite / Pro / Pro Max"
-            description="ไม่มีค่าใช้จ่ายซ่อนเร้น — ยกเลิกได้ทุกเดือน"
+            titleAccent="Ads / เว็บ / ดูแลรายปี"
+            description="แยกแอดกับเว็บชัดเจน — ดูแพ็ก SEO ระยะยาวที่หน้าราคา"
           />
 
           <PricingPlanGrid packages={pricingPackages} featureLimit={5} />

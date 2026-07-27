@@ -70,12 +70,12 @@ export const googleAdsContent = {
     {
       question: "รับยิงแอด Google ภูเก็ต กับ รับทำ Google Ads ต่างกันไหม?",
       answer:
-        "ความหมายเดียวกัน — รับยิงแอด Google ภูเก็ต คือการจ้างเอเยนซ์บริหารโฆษณาบน Google Search, Maps และ Display ให้ธุรกิจในภูเก็ต ค่าจัดการเริ่ม ฿5,900/เดือน ไม่รวม ad spend",
+        "ความหมายเดียวกัน — รับยิงแอด Google ภูเก็ต คือการจ้างเอเยนซ์บริหารโฆษณาบน Google Search, Maps และ Display ให้ธุรกิจในภูเก็ต ค่าจัดการเริ่ม ฿6,500/เดือน (แพ็ก Ads Starter) ไม่รวม ad spend",
     },
     {
       question: "รับยิงแอด Google Maps ภูเก็ต คืออะไร?",
       answer:
-        "รับยิงแอด Google Maps ภูเก็ต คือการโปรโมต Google Business Profile บน Maps ให้ลูกค้าเห็นเมื่อค้นหา near me ในโซนป่าตอง กะตะ ตัวเมือง — รวมในแพ็ก SEO Lite ฿5,900/เดือน หรือจัดการแยกผ่านบริการ Google Ads",
+        "รับยิงแอด Google Maps ภูเก็ต คือการโปรโมต Google Business Profile บน Maps ให้ลูกค้าเห็นเมื่อค้นหา near me ในโซนป่าตอง กะตะ ตัวเมือง — รวมในแพ็ก Ads Starter ฿6,500/เดือน (เลือก Google) หรือแพ็ก SEO Lite ฿5,900/เดือน",
     },
     {
       question: "รับทำ Google Ads ภูเก็ต เห็นผลเร็วแค่ไหน?",
@@ -85,7 +85,7 @@ export const googleAdsContent = {
     {
       question: "ราคารับทำ Google Ads ภูเก็ต เท่าไหร่?",
       answer:
-        "ค่าจัดการเริ่ม ฿5,900/เดือน ไม่รวม ad spend — รวมในแพ็ก SEO Pro Max ฿15,000/เดือน ไม่มีสัญญาผูกมัด มี campaign setup ฟรี",
+        "ค่าจัดการเริ่ม ฿6,500/เดือน (แพ็ก Ads Starter — Google หรือ Meta 1 แคมเปญ) ไม่รวม ad spend ไม่มีสัญญาผูกมัด มี campaign setup เดือนแรก",
     },
     {
       question: "งบ ad spend ควรเริ่มเท่าไหร่ในภูเก็ต?",
@@ -117,10 +117,10 @@ export const googleAdsContent = {
 
 export const webDesignContent = {
   answerBlock:
-    "รับทำเว็บไซต์ภูเก็ต ด้วย Next.js mobile-first พร้อม SEO และ AEO structure — setup เริ่ม ฿29,900 หรือดูแลรายเดือนรวมในแพ็ก SEO Pro ฿8,900",
+    "รับทำเว็บไซต์ภูเก็ต ด้วย Next.js mobile-first พร้อม SEO structure พื้นฐาน — แพ็กเว็บ Starter ฿6,500 ครั้งเดียว (ไม่เกิน 10 หน้า) หรือ SEO รายเดือนในแพ็ก Lite ขึ้นไป",
   intro: [
     "บริการทำเว็บไซต์ภูเก็ตจาก PhuketSEO เน้นเว็บที่เร็ว ติด Google และแปลง visitor เป็น lead จริง — ไม่ใช่แค่ portfolio สวย เราออกแบบ mobile-first ด้วย Next.js พร้อมโครงสร้าง SEO และ AEO ตั้งแต่วัน launch",
-    "เหมาะสำหรับร้านอาหาร สปา อสังหาริมทรัพย์ และ SME ในภูเก็ต ที่ต้องการเว็บภาษาไทย CTA ชัดเจน และความเร็วโหลดสูงบนมือถือ ทำควบคู่กับแพ็กเกจ SEO Pro ฿8,900/เดือน หรือ setup ครั้งเดียวตั้งแต่ ฿29,900",
+    "เหมาะสำหรับร้านอาหาร สปา อสังหาริมทรัพย์ และ SME ในภูเก็ต ที่ต้องการเว็บภาษาไทย CTA ชัดเจน และความเร็วโหลดสูงบนมือถือ — เริ่มจากแพ็กเว็บ Starter ฿6,500 ครั้งเดียว หรือ SEO รายเดือนในแพ็ก Pro ฿8,900",
   ],
   faqs: [
     {
@@ -141,7 +141,7 @@ export const webDesignContent = {
     {
       question: "ราคาเริ่มต้นเท่าไหร่?",
       answer:
-        "เว็บไซต์ setup ครั้งเดียวเริ่ม ฿29,900 (Landing 5 หน้า) ฿39,900 (Corporate 10 หน้า) หรือ ฿49,900 (15+ หน้า) ดูแลรายเดือนรวมในแพ็กเกจ SEO Pro ฿8,900",
+        "แพ็กเว็บ Starter ฿6,500 ครั้งเดียว (ไม่เกิน 10 หน้า) ดูแลโดเมน/โฮสต์ ฿4,500/ปี — งานใหญ่ 15+ หน้า ติดต่อใบเสนอราคา ดูแล SEO รายเดือนรวมในแพ็ก SEO Pro ฿8,900",
     },
     {
       question: "PhuketSEO ดูแลหลัง launch ไหม?",
@@ -258,7 +258,7 @@ export const socialMediaContent = {
     {
       question: "ราคารับยิงแอด Facebook ภูเก็ต เท่าไหร่?",
       answer:
-        "บริการ Social/Meta Ads เริ่ม ฿7,900/เดือน (ค่าจัดการ ไม่รวม ad spend) หรือรวมในแพ็ก SEO Pro Max ฿15,000/เดือน ที่มี Meta Ads 1 แคมเปญ — ดูรายละเอียดที่หน้าราคา",
+        "บริการ Meta Ads เริ่ม ฿6,500/เดือน (แพ็ก Ads Starter — เลือก Meta 1 แคมเปญ ค่าจัดการ ไม่รวม ad spend) หรือรวมในแพ็ก SEO Pro Max ฿15,000/เดือน — ดูรายละเอียดที่หน้าราคา",
     },
     {
       question: "Facebook Ads กับ Google Ads ภูเก็ต ควรเลือกอันไหน?",
@@ -283,7 +283,7 @@ export const socialMediaContent = {
     {
       question: "Meta Ads รวมในแพ็ก SEO Pro Max ไหม?",
       answer:
-        "รวม — SEO Pro Max ฿15,000/เดือน มีจัดการ Meta Ads 1 แคมเปญ + Google Ads 1 แคมเปญ (ad spend แยก) ดูแพ็กที่หน้าราคา",
+        "รวม — SEO Pro Max ฿15,000/เดือน มีจัดการ Meta Ads 1 แคมเปญ + Google Ads 1 แคมเปญ (ad spend แยก) หรือเริ่ม Meta อย่างเดียวที่แพ็ก Ads Starter ฿6,500 — ดูแพ็กที่หน้าราคา",
     },
     {
       question: "หยุดยิงแอด Facebook แล้วผลจะหายไหม?",

@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Home, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 import { contactPageJsonLd } from "@/lib/schema";
-import { pricingPackages } from "@/lib/pricing-packages";
+import { allPricingPackages, billingPeriodSuffix } from "@/lib/pricing-packages";
 import { responseTimeCopy } from "@/lib/response-times";
 import { formInputClass } from "@/lib/form-styles";
 import { ContactChannels } from "@/components/ContactChannels";
@@ -12,7 +12,10 @@ import { BrandGradientDefs } from "@/components/BrandGradientDefs";
 import { HomeSection, HomeSectionHeader } from "@/components/home/HomeSection";
 
 const planLabels = Object.fromEntries(
-  pricingPackages.map((pkg) => [pkg.id, `${pkg.name} ฿${pkg.priceLabel}/เดือน`])
+  allPricingPackages.map((pkg) => [
+    pkg.id,
+    `${pkg.name} ฿${pkg.priceLabel}${billingPeriodSuffix[pkg.billingPeriod]}`,
+  ])
 ) as Record<string, string>;
 
 const jsonLd = contactPageJsonLd;

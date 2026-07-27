@@ -17,12 +17,12 @@ import { ServicePageCta } from "@/components/services/ServicePageCta";
 export const metadata: Metadata = {
   title: "รับทำเว็บไซต์ภูเก็ต — เว็บเร็ว ติด Google | PhuketSEO",
   description:
-    "เว็บเร็ว ติด Google พร้อม SEO และ AI Search structure สำหรับธุรกิจในภูเก็ต Setup จาก ฿29,900 + ดูแลรายเดือนในแพ็ก Pro",
+    "เว็บเร็ว ติด Google พร้อม SEO structure สำหรับธุรกิจในภูเก็ต แพ็กเว็บ Starter ฿6,500 ครั้งเดียว + ดูแลรายปี ฿4,500",
   keywords: ["รับทำเว็บไซต์ภูเก็ต", "ออกแบบเว็บไซต์", "สร้างเว็บไซต์", "เว็บดีไซน์ภูเก็ต", "PhuketSEO"],
   alternates: { canonical: `${siteConfig.url}/services/web-design` },
   openGraph: {
     title: "รับทำเว็บไซต์ภูเก็ต — Next.js เร็ว ติด Google | PhuketSEO",
-    description: "เว็บ Next.js mobile-first พร้อม SEO และ AEO structure Setup จาก ฿29,900",
+    description: "เว็บ Next.js mobile-first พร้อม SEO structure แพ็ก Starter ฿6,500 ไม่เกิน 10 หน้า",
     url: `${siteConfig.url}/services/web-design`,
     type: "website",
     images: [defaultOgImage],
@@ -76,7 +76,7 @@ export default function WebDesignServicePage() {
         offers: {
           "@type": "Offer",
           priceCurrency: "THB",
-          priceSpecification: { "@type": "PriceSpecification", minPrice: "29900" },
+          priceSpecification: { "@type": "PriceSpecification", minPrice: "6500" },
         },
       },
       faqSchema(webDesignContent.faqs),
@@ -98,10 +98,10 @@ export default function WebDesignServicePage() {
         answerBlock={webDesignContent.answerBlock}
         image={siteImages.services.webDesign}
         stats={[
-          { value: "฿29,900", label: "Setup เริ่มต้น" },
+          { value: "฿6,500", label: "Starter เริ่มต้น" },
           { value: "Next.js", label: "เทคโนโลยี" },
-          { value: "CWV", label: "Core Web Vitals" },
-          { value: "Pro", label: "ดูแลรายเดือน" },
+          { value: "10 หน้า", label: "สูงสุด" },
+          { value: "฿4,500/ปี", label: "ดูแลโดเมน" },
         ]}
         trustBadges={["Mobile-first", "SEO + AEO ready", "Schema markup", "Support หลัง launch"]}
         secondaryHref="#site-types"
@@ -171,22 +171,30 @@ export default function WebDesignServicePage() {
           eyebrow="Setup"
           title="ค่าเว็บไซต์"
           titleAccent="ครั้งเดียว"
-          description="ดูแลรายเดือนรวมในแพ็ก SEO Pro ฿8,900 — หรือขอใบเสนอราคาตาม scope"
+          description="แพ็กเว็บ Starter ฿6,500 ไม่เกิน 10 หน้า — ดูแลโดเมน/โฮสต์ ฿4,500/ปี งานใหญ่ติดต่อใบเสนอราคา"
           centered
           className="mx-auto"
         />
-        <div className="grid sm:grid-cols-3 gap-3 mb-8">
+        <div className="grid sm:grid-cols-2 gap-3 mb-8 max-w-lg mx-auto">
           {webSetupPricing.map((w) => (
             <div key={w.name} className="rounded-xl border border-slate-200 bg-white p-5 text-center shadow-sm">
               <p className="font-semibold text-slate-900 text-sm">{w.name}</p>
-              <p className="text-2xl font-bold text-slate-900 tabular-nums mt-2">฿{w.price}</p>
+              <p className="text-2xl font-bold text-slate-900 tabular-nums mt-2">
+                {w.price.startsWith("ติดต่อ") ? w.price : `฿${w.price}`}
+              </p>
+              {"note" in w && w.note && (
+                <p className="text-xs text-slate-500 mt-2">{w.note}</p>
+              )}
             </div>
           ))}
         </div>
-        <div className="text-center">
-          <GradientButton href="/contact" className="px-7">
-            ขอใบเสนอราคาฟรี
+        <div className="text-center flex flex-col sm:flex-row items-center justify-center gap-3">
+          <GradientButton href="/packages/web-starter" className="px-7">
+            ดูแพ็กเว็บ Starter
           </GradientButton>
+          <Link href="/packages/annual-care" className="text-sm font-medium text-violet-600 hover:underline underline-offset-2">
+            ดูแลรายปี ฿4,500
+          </Link>
         </div>
       </HomeSection>
 

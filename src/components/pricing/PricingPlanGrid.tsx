@@ -1,21 +1,17 @@
 import Link from "next/link";
 import { Check } from "lucide-react";
 import type { PricingPackage } from "@/lib/pricing-packages";
-import { planContactHref } from "@/lib/pricing-packages";
-
-const packageDetailHref: Record<PricingPackage["id"], string> = {
-  lite: "/packages/seo-lite",
-  pro: "/packages/seo-pro",
-  max: "/packages/seo-pro-max",
-};
+import { billingPeriodSuffix, planContactHref } from "@/lib/pricing-packages";
 
 export function PricingPlanGrid({
   packages,
   featureLimit,
+  showDetailLink = true,
 }: {
   packages: PricingPackage[];
   /** จำกัดจำนวน bullet — หน้าแรกใช้ 5, หน้าราคาแสดงครบ */
   featureLimit?: number;
+  showDetailLink?: boolean;
 }) {
   return (
     <div className="grid md:grid-cols-3 gap-3 md:gap-4">
@@ -46,12 +42,12 @@ export function PricingPlanGrid({
               >
                 ฿{p.priceLabel}
               </span>
-              <span className="text-sm text-slate-500 md:text-slate-400 ml-1">/เดือน</span>
+              <span className="text-sm text-slate-500 md:text-slate-400 ml-1">
+                {billingPeriodSuffix[p.billingPeriod]}
+              </span>
             </div>
-            {p.id === "lite" && (
-              <p className="text-[11px] text-slate-500 md:text-slate-400 mb-2 leading-relaxed">
-                ค่ายิงแอด GBP/Maps แยกจากค่าจัดการ
-              </p>
+            {p.footnote && (
+              <p className="text-[11px] text-slate-500 md:text-slate-400 mb-2 leading-relaxed">{p.footnote}</p>
             )}
             <p className="text-sm text-slate-600 mb-4 leading-relaxed">{p.desc}</p>
             <ul className="space-y-2.5 mb-6 flex-1">
@@ -76,12 +72,14 @@ export function PricingPlanGrid({
             >
               {p.cta}
             </Link>
-            <Link
-              href={packageDetailHref[p.id]}
-              className="mt-3 block text-center text-sm font-medium text-violet-600 hover:underline underline-offset-2"
-            >
-              ดูรายละเอียดแพ็ก →
-            </Link>
+            {showDetailLink && (
+              <Link
+                href={p.detailHref}
+                className="mt-3 block text-center text-sm font-medium text-violet-600 hover:underline underline-offset-2"
+              >
+                ดูรายละเอียดแพ็ก →
+              </Link>
+            )}
           </div>
         );
       })}

@@ -4,6 +4,7 @@ import { ArrowRight, Check, X, Calendar, RefreshCw, ExternalLink } from "lucide-
 import { buildBreadcrumb, faqSchema, localServiceProvider, areaServedPhuket } from "@/lib/schema";
 import { ServiceFaqSection } from "@/components/ServiceFaqSection";
 import { siteConfig } from "@/lib/utils";
+import { billingPeriodSchemaUnit, billingPeriodSuffix } from "@/lib/pricing-packages";
 import {
   type PackagePageContent,
   getPackagePricing,
@@ -44,7 +45,7 @@ export function PackageDetailPage({ content }: Props) {
         "@type": "UnitPriceSpecification",
         price: pricing.price,
         priceCurrency: "THB",
-        unitText: "MONTH",
+        unitText: billingPeriodSchemaUnit[pricing.billingPeriod],
       },
       url: pageUrl,
     },
@@ -76,6 +77,7 @@ export function PackageDetailPage({ content }: Props) {
         title={content.heroTitle}
         titleAccent={content.heroHighlight}
         priceLabel={pricing.priceLabel}
+        priceSuffix={billingPeriodSuffix[pricing.billingPeriod]}
         subtitle={content.heroSubtitle}
         answerBlock={content.answerBlock}
         image={content.heroImage}
@@ -90,7 +92,7 @@ export function PackageDetailPage({ content }: Props) {
           <div className="rounded-xl border border-slate-200 bg-white p-5 sm:p-6 shadow-sm">
             <div className="flex items-center gap-2 text-indigo-600 font-semibold text-sm mb-4">
               <Calendar size={18} />
-              เดือนที่ 1 (Setup)
+              {content.phaseOneLabel ?? "เดือนที่ 1 (Setup)"}
             </div>
             <ul className="space-y-2.5">
               {content.monthOneItems.map((item) => (
@@ -104,7 +106,7 @@ export function PackageDetailPage({ content }: Props) {
           <div className="rounded-xl border border-slate-200 bg-white p-5 sm:p-6 shadow-sm">
             <div className="flex items-center gap-2 text-violet-600 font-semibold text-sm mb-4">
               <RefreshCw size={18} />
-              ทุกเดือนที่ต่ออายุ
+              {content.phaseTwoLabel ?? "ทุกเดือนที่ต่ออายุ"}
             </div>
             <ul className="space-y-2.5">
               {content.everyMonthItems.map((item) => (

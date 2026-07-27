@@ -5,8 +5,7 @@
  */
 
 import { siteConfig, businessHours } from "@/lib/utils";
-import { pricingPackages } from "@/lib/pricing-packages";
-import { packagePaths } from "@/lib/package-pages-content";
+import { allPricingPackages, billingPeriodSchemaUnit } from "@/lib/pricing-packages";
 
 export const businessEntityId = `${siteConfig.url}/#localbusiness`;
 export const organizationEntityId = `${siteConfig.url}/#organization`;
@@ -279,7 +278,7 @@ export const reviewSchema = {
 };
 
 /** Service + Offer สำหรับแพ็กราคา — ใช้ที่ /pricing */
-export const pricingServicesJsonLd = pricingPackages.map((pkg) => ({
+export const pricingServicesJsonLd = allPricingPackages.map((pkg) => ({
   "@type": "Service",
   name: pkg.name,
   description: pkg.desc,
@@ -293,9 +292,9 @@ export const pricingServicesJsonLd = pricingPackages.map((pkg) => ({
       "@type": "UnitPriceSpecification",
       price: pkg.price,
       priceCurrency: "THB",
-      unitText: "MONTH",
+      unitText: billingPeriodSchemaUnit[pkg.billingPeriod],
     },
-    url: `${siteConfig.url}${packagePaths[pkg.id]}`,
+    url: `${siteConfig.url}${pkg.detailHref}`,
   },
 }));
 
