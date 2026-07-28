@@ -74,10 +74,11 @@ export function resolveImageSrc(image: Pick<SiteImage, "src" | "rev">): string {
 export const siteImages = {
   hero: {
     home: {
-      src: "/images/hero/hero-home-visibility-stack-smooth.webp",
-      alt: "รับยิงแอด Google และ Facebook ภูเก็ต — เริ่ม ฿6,500/เดือน",
+      src: "/images/hero/hero-home-ads-web-smooth.webp",
+      alt: "รับยิงแอด Google และ Facebook ภูเก็ต — ทำเว็บไซต์ เริ่ม ฿6,500/เดือน",
       width: 1536,
       height: 1024,
+      rev: 1,
     },
     about: {
       src: "/images/hero/hero-about-team-clean.webp",
