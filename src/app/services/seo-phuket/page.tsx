@@ -20,6 +20,7 @@ import { GradientButton } from "@/components/GradientButton";
 import { ServiceBreadcrumb } from "@/components/services/ServiceBreadcrumb";
 import { ServiceMarketingHero } from "@/components/services/ServiceMarketingHero";
 import { ServicePricingTeaser } from "@/components/services/ServicePricingTeaser";
+import { FocusKeywordRankingsTable } from "@/components/services/FocusKeywordRankingsTable";
 
 export const metadata: Metadata = {
   title: "รับทำ SEO ภูเก็ต | Maps + Organic สำหรับธุรกิจท้องถิ่น - PhuketSEO",
@@ -175,6 +176,16 @@ export default function SeoPhuketPage() {
       </HomeSection>
 
       <HomeSection variant="white">
+        <HomeSectionHeader
+          eyebrow="ผลงานจริง"
+          title="อันดับคีย์เวิร์ด"
+          titleAccent="ที่เราติดตาม"
+          description="เว็บ PhuketSEO ทำ SEO ให้ตัวเองก่อน — ตารางนี้คือคีย์โฟกัสที่เช็คอันดับบน Google เป็นระยะ"
+        />
+        <FocusKeywordRankingsTable />
+      </HomeSection>
+
+      <HomeSection variant="muted">
         <HomeSectionHeader
           eyebrow="ขอบเขตงาน"
           title="รับทำ SEO ภูเก็ต"
