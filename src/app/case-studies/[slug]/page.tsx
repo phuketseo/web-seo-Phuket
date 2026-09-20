@@ -15,6 +15,8 @@ import { ServicePageCta } from "@/components/services/ServicePageCta";
 
 const caseStudyHeroImages: Record<string, SiteImage> = {
   "phuketseo-website-rebuild": siteImages.services.seo,
+  "hob-thai-massage-cherngtalay": siteImages.services.googleAds,
+  "house-of-beauty-phuket-8-branches": siteImages.services.localSeo,
 };
 
 export async function generateStaticParams() {
@@ -142,8 +144,26 @@ export default async function CaseStudyDetailPage({
                 </div>
               ))}
             </div>
+            {study.outcomesPeriod && (
+              <p className="mt-3 text-xs text-slate-500 leading-relaxed">
+                ที่มา: {study.outcomesPeriod} ตัวเลขเป็นผลของช่วงเวลานั้น ไม่ใช่การรับประกันผลลัพธ์
+              </p>
+            )}
           </div>
         </div>
+        {study.clientUrl && (
+          <p className="mt-8 text-center text-sm text-slate-600">
+            ดูเว็บจริงที่เราทำให้:{" "}
+            <a
+              href={study.clientUrl}
+              target="_blank"
+              rel="noopener"
+              className="text-violet-600 font-medium hover:underline underline-offset-2"
+            >
+              {study.clientUrl.replace("https://", "")}
+            </a>
+          </p>
+        )}
       </HomeSection>
 
       {study.quote && (

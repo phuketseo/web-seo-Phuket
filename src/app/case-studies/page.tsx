@@ -9,9 +9,9 @@ import { MarketingBreadcrumb } from "@/components/MarketingBreadcrumb";
 import { ServicePageCta } from "@/components/services/ServicePageCta";
 
 export const metadata: Metadata = {
-  title: "ผลงานของเรา - PhuketSEO | กรณีศึกษา SEO + AI Search",
+  title: "ผลงานของเรา - PhuketSEO | กรณีศึกษาเว็บไซต์และยิงแอดภูเก็ต",
   description:
-    "กรณีศึกษา SEO, เว็บ Next.js และ AEO/GEO จาก PhuketSEO — เริ่มจากเว็บ agency ของเราเอง",
+    "กรณีศึกษาจริงจาก PhuketSEO — เว็บไซต์และ Google Ads ให้ร้านนวดเชิงทะเลและร้านเสริมสวย 8 สาขาในภูเก็ต พร้อมตัวเลขจากแคมเปญจริง",
   alternates: { canonical: `${siteConfig.url}/case-studies` },
 };
 
@@ -41,7 +41,7 @@ export default function CaseStudiesPage() {
             eyebrow="Case studies"
             title="ผลงาน"
             titleAccent="ของเรา"
-            description="กรณีศึกษา SEO + เว็บ + AI Search จาก PhuketSEO — เริ่มจากเว็บ agency ของเราเอง"
+            description="เว็บไซต์และแคมเปญโฆษณาที่เราทำให้ธุรกิจในภูเก็ตจริง เปิดดูเว็บได้ทุกเคส พร้อมตัวเลขจากบัญชีโฆษณาที่เราดูแลอยู่"
             className="mb-0"
           />
         </div>
@@ -49,9 +49,9 @@ export default function CaseStudiesPage() {
 
       <HomeSection variant="muted" className="border-t-0" containerClass="max-w-4xl">
         <HomeSectionHeader
-          title="Case study"
-          titleAccent="ที่มีอยู่"
-          description="ตอนนี้มี case study จากเว็บของเราเอง — กำลังเพิ่มเรื่องจากลูกค้าธุรกิจในภูเก็ตเมื่อพร้อมเผยแพร่"
+          title="กรณีศึกษา"
+          titleAccent="ที่เผยแพร่ได้"
+          description="ทุกเคสเผยแพร่โดยได้รับอนุญาตจากลูกค้า ตัวเลขมาจากรายงานโฆษณาในช่วงที่ระบุ ไม่ใช่การรับประกันผลลัพธ์"
           centered
           className="mx-auto"
         />
@@ -71,6 +71,7 @@ export default function CaseStudiesPage() {
                   )}
                   <p className="text-slate-500 text-sm mb-1">
                     {study.client} · {study.industry}
+                    {study.clientUrl ? ` · ${study.clientUrl.replace("https://", "")}` : ""}
                   </p>
                   <h3 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight group-hover:text-violet-700 transition-colors">
                     {study.title}

@@ -258,25 +258,6 @@ export function buildRelatedArticlesItemList(
   };
 }
 
-export const reviewSchema = {
-  "@context": "https://schema.org",
-  "@type": "Review",
-  itemReviewed: {
-    "@id": businessEntityId,
-  },
-  reviewRating: {
-    "@type": "Rating",
-    ratingValue: "5",
-    bestRating: "5",
-  },
-  author: {
-    "@type": "Person",
-    name: "ลูกค้าโรงแรม",
-  },
-  reviewBody:
-    "PhuketSEO ช่วยให้โรงแรมของเราติดอันดับ 1 บน Google ใน 4 เดือน Organic Traffic เพิ่มขึ้น 250% และ Booking เพิ่มขึ้น 180% ประทับใจมากครับ",
-};
-
 /** Service + Offer สำหรับแพ็กราคา — ใช้ที่ /pricing */
 export const pricingServicesJsonLd = activePricingPackages.map((pkg) => ({
   "@type": "Service",
