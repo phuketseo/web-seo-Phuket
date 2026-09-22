@@ -201,6 +201,10 @@ export default function GoogleAdsPage() {
             ))}
           </p>
           <p className="text-slate-600">
+            <Link href="/" className="text-violet-600 font-medium hover:underline underline-offset-2">
+              รับยิงแอด ภูเก็ต
+            </Link>
+            {" · "}
             <Link href="/seo-audit" className="text-violet-600 font-medium hover:underline underline-offset-2">
               ขอ SEO Audit ฟรี
             </Link>

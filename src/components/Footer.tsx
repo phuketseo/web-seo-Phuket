@@ -48,6 +48,7 @@ const industries = [
 ];
 
 const secondaryServices = [
+  { name: "รับยิงแอด ภูเก็ต", href: "/" },
   { name: "Google Ads ภูเก็ต", href: "/services/google-ads" },
   { name: "รับยิงแอด Facebook ภูเก็ต", href: "/services/social-media" },
 ];

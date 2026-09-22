@@ -34,19 +34,19 @@ export default function HomeHero() {
 
           <div className="min-w-0 order-2 lg:order-1">
             <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-indigo-600 mb-4 sm:mb-5">
-              PhuketSEO · บริการยิงแอดภูเก็ต
+              PhuketSEO · รับยิงแอด ภูเก็ต
             </p>
             <h1 className="hero-lcp text-[2rem] sm:text-5xl lg:text-[3.25rem] font-bold text-slate-900 leading-[1.08] tracking-[-0.03em] mb-3 sm:mb-4">
-              รับยิงแอด Google & Facebook
+              รับยิงแอด ภูเก็ต
               <br />
-              <span className="text-gradient-brand">ภูเก็ต เริ่ม ฿6,500/เดือน</span>
+              <span className="text-gradient-brand">Google & Facebook เริ่ม ฿6,500/เดือน</span>
             </h1>
             <p className="text-base sm:text-lg font-medium text-slate-800 leading-snug max-w-xl mb-3 sm:mb-4">
-              ลูกค้ากำลังค้นหาบน Google และ Facebook — ให้ธุรกิจคุณโผล่ก่อนร้านข้างๆ
+              รับยิงแอด ภูเก็ตคือการทำให้ร้านคุณโผล่ตอนลูกค้าค้นหาบน Google หรือ Facebook ก่อนร้านข้างทาง
             </p>
             <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-xl mb-7 sm:mb-9">
-              โรงแรม ร้านอาหาร สปา ในโซนป่าตอง กะตะ ตัวเมือง เริ่มยิงแอดได้ทันที ไม่ต้องมีเว็บก่อน
-              เริ่ม ฿6,500/เดือน ไม่มีสัญญาผูกมัด
+              โรงแรม ร้านอาหาร สปา ในป่าตอง กะตะ ตัวเมือง ถลาง กมลา กะทู้ เริ่มได้ทันทีแม้ยังไม่มีเว็บ
+              ค่าจัดการ ฿6,500/เดือน ไม่มีสัญญาผูกมัด
             </p>
             <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-5 mb-8 sm:mb-10">
               <GradientButton href="/contact">ขอคำปรึกษาฟรี</GradientButton>

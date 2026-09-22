@@ -1,7 +1,7 @@
 ﻿import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "PhuketSEO — รับยิงแอด Google & Facebook ภูเก็ต ฿6,500/เดือน";
+export const alt = "รับยิงแอด ภูเก็ต — Google และ Facebook เริ่ม ฿6,500/เดือน";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -39,7 +39,7 @@ export default async function Image() {
             marginBottom: 12,
           }}
         >
-          รับยิงแอด Google & Facebook ภูเก็ต
+          รับยิงแอด ภูเก็ต
         </div>
         <div
           style={{

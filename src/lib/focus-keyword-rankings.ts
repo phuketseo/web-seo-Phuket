@@ -13,13 +13,28 @@ export type FocusKeywordRanking = {
 };
 
 /** อัปเดตทุกครั้งที่เช็คอันดับใหม่ */
-export const focusKeywordRankingsLastUpdated = "2026-07-28";
+export const focusKeywordRankingsLastUpdated = "2026-09-22";
 
 export const focusKeywordRankings: FocusKeywordRanking[] = [
   {
     keyword: "รับทำแอด google ภูเก็ต",
     rank: 1,
     pagePath: "/services/google-ads",
+  },
+  {
+    keyword: "รับทำ SEO ภูเก็ต",
+    rank: 2,
+    pagePath: "/services/seo-phuket",
+  },
+  {
+    keyword: "รับยิงแอด ภูเก็ต",
+    rank: 3,
+    pagePath: "/",
+  },
+  {
+    keyword: "รับทำแอด ภูเก็ต",
+    rank: 1,
+    pagePath: "/",
   },
   {
     keyword: "รับทำ Google Ads ภูเก็ต",
@@ -63,10 +78,5 @@ export const focusKeywordRankings: FocusKeywordRanking[] = [
     keyword: "รับทำเว็บไซต์ภูเก็ต",
     rank: 25,
     pagePath: "/services/web-design",
-  },
-  {
-    keyword: "รับทำ SEO ภูเก็ต",
-    rank: 2,
-    pagePath: "/services/seo-phuket",
   },
 ];

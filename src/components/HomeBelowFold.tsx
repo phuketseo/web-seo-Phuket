@@ -6,6 +6,8 @@ import { pricingPackages } from "@/lib/pricing-packages";
 import { GradientButton } from "@/components/GradientButton";
 import { HomeSection, HomeSectionHeader } from "@/components/home/HomeSection";
 import { PricingPlanGrid } from "@/components/pricing/PricingPlanGrid";
+import { areaServedPhuket, localServiceProvider } from "@/lib/schema";
+import { siteConfig } from "@/lib/utils";
 
 const services: {
   num: string;
@@ -18,10 +20,10 @@ const services: {
   {
     num: "01",
     iconImage: siteImages.icons.googleAds,
-    title: "รับยิงแอด Google & Facebook",
-    desc: "ลูกค้าค้นหาอยู่แล้ว เราช่วยให้เจอร้านคุณบน Google หรือ Facebook",
+    title: "รับยิงแอด ภูเก็ต",
+    desc: "ยิงแอด Google หรือ Facebook ให้ลูกค้าในป่าตอง กะตะ ตัวเมืองเจอร้านคุณ",
     meta: "จาก ฿6,500/เดือน",
-    href: "/services/google-ads",
+    href: "/packages/ads-starter",
   },
   {
     num: "02",
@@ -65,24 +67,32 @@ const whyUs = [
 
 const faqs = [
   {
-    q: "รับยิงแอด Google/Meta เริ่มเท่าไหร่?",
-    a: "แพ็ก Ads Starter ฿6,500/เดือน — เลือก Google Ads (Search/Maps) หรือ Meta Ads (Facebook/Instagram) 1 แคมเปญ ค่ายิงแอดแยก ยกเลิกได้ทุกเดือน",
+    q: "รับยิงแอด ภูเก็ต คืออะไร?",
+    a: "รับยิงแอด ภูเก็ตคือการจ้างดูแลโฆษณา Google หรือ Facebook ให้ร้านในภูเก็ตโผล่ตอนลูกค้าค้นหา แล้วโทรหรือทัก LINE ได้ ค่าจัดการเริ่ม ฿6,500/เดือน ค่ายิงแอดจ่ายแพลตฟอร์มแยก",
   },
   {
-    q: "ทำเว็บไซต์ภูเก็ตเท่าไหร่?",
-    a: "แพ็กเว็บ Starter ฿6,500 ครั้งเดียว ไม่เกิน 10 หน้า ดูแลโดเมน/โฮสต์ ฿4,500/ปี แยกจากแพ็กยิงแอด",
+    q: "รับยิงแอด ภูเก็ต ราคาเท่าไหร่?",
+    a: "แพ็ก Ads Starter ฿6,500/เดือน สำหรับ 1 แคมเปญ เลือก Google Ads หรือ Facebook Ads ค่ายิงแอดแยก ไม่มีสัญญาผูกมัด ยกเลิกได้ทุกเดือน",
   },
   {
-    q: "SEO ขายแยกจากเว็บได้ไหม?",
-    a: "ไม่ได้ — SEO Add-on +฿6,500/เดือน บวกกับแพ็กเว็บ Starter หรือเว็บจาก PhuketSEO เท่านั้น สัญญาขั้นต่ำ 12 เดือน",
+    q: "ยังไม่มีเว็บ เริ่มยิงแอดได้ไหม?",
+    a: "เริ่มได้เลย ใช้ LINE หรือ Google Maps เป็นปลายทางก่อนได้ เมื่อพร้อมค่อยทำเว็บแยก ไม่ต้องซื้อครบชุดวันแรก",
   },
   {
-    q: "Google Ads กับ SEO ต่างกันอย่างไร?",
-    a: "Google Ads ได้ lead เร็วแต่จ่าย ad spend ต่อเนื่อง SEO compound ช้ากว่าแต่ยั่งยืน — หลายธุรกิจเริ่มแอดก่อน แล้วบวก SEO เมื่อมีเว็บ",
+    q: "ยิงแอดแล้วเห็นผลช้าแค่ไหน?",
+    a: "คลิกมักเริ่มเห็นหลังโฆษณาผ่านการตรวจและเปิดแสดงแล้ว ต้นทุนต่อลูกค้าที่นิ่งขึ้นมักใช้เวลาปรับ 2–4 สัปดาห์ ขึ้นกับโซนและงบ",
   },
   {
-    q: "มีรายงานผลให้ดูไหม?",
-    a: "แพ็กแอดส่งรายงานรายเดือน (คลิก, lead, ค่าใช้จ่าย) SEO Add-on ส่งรายงาน GSC + GBP Insights รายเดือน",
+    q: "ยิงแอดเองได้ไหม?",
+    a: "ทำเองได้ถ้ามีเวลาเรียนระบบบิดและวัดผล หลายร้านในภูเก็ตจ้างเพราะไม่อยากทดลองบนงบโฆษณาเอง",
+  },
+  {
+    q: "SEO กับ Google Ads ต่างกันยังไง?",
+    a: "Google Ads ได้ลูกค้าเร็วแต่จ่ายต่อคลิก SEO สะสมการมองเห็นช้ากว่าแต่ไม่จ่ายต่อคลิก หลายร้านเริ่มจากยิงแอด แล้วบวก SEO เมื่อมีเว็บ",
+  },
+  {
+    q: "ทำ SEO แล้วหยุดได้มั้ย?",
+    a: "หยุดได้ แต่คู่แข่งในป่าตอง กะตะ ตัวเมืองไม่หยุด การมองเห็นที่สะสมมักค่อยๆ ลดถ้าไม่ดูแลเว็บและ Maps ต่อ",
   },
 ];
 
@@ -96,9 +106,36 @@ const faqSchema = {
   })),
 };
 
+const homeAdsServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "รับยิงแอด ภูเก็ต",
+  alternateName: ["รับยิงแอด Google ภูเก็ต", "รับยิงแอด Facebook ภูเก็ต", "รับทำแอด ภูเก็ต"],
+  provider: localServiceProvider,
+  description:
+    "รับยิงแอด ภูเก็ตบน Google และ Facebook สำหรับธุรกิจในป่าตอง กะตะ ตัวเมือง ถลาง กมลา กะทู้ ค่าจัดการเริ่ม ฿6,500/เดือน ไม่รวม ad spend",
+  areaServed: areaServedPhuket,
+  url: siteConfig.url,
+  offers: {
+    "@type": "Offer",
+    priceCurrency: "THB",
+    price: "6500",
+    priceSpecification: {
+      "@type": "UnitPriceSpecification",
+      priceCurrency: "THB",
+      price: "6500",
+      unitText: "MONTH",
+    },
+  },
+};
+
 export default function HomeBelowFold() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeAdsServiceSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
@@ -107,9 +144,9 @@ export default function HomeBelowFold() {
       <HomeSection id="services" variant="muted">
         <HomeSectionHeader
           eyebrow="บริการ"
-          title="เริ่มจากอะไร"
-          titleAccent="ก่อนดีที่สุด"
-          description="อยากให้ลูกค้าโทรหรือทัก LINE เร็วๆ เริ่มจากยิงแอดก่อนได้ ยังไม่ต้องมีเว็บ เมื่อพร้อมแล้วค่อยทำเว็บ หรือให้เว็บขึ้นหน้า Google ทีหลัง"
+          title="รับยิงแอด ภูเก็ต"
+          titleAccent="เริ่มจากตรงนี้"
+          description="รับยิงแอด ภูเก็ตทำงานโดยดึงลูกค้าที่กำลังค้นหาบน Google หรือ Facebook เข้ามาโทรหรือทัก LINE ก่อน เว็บและ SEO ทำทีหลังเมื่อพร้อม"
         />
 
           <ul className="flex flex-col gap-3 sm:gap-0 sm:divide-y sm:divide-slate-200 sm:border-y sm:border-slate-200 sm:bg-white sm:rounded-lg sm:overflow-hidden">

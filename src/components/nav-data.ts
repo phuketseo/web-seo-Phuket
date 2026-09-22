@@ -1,4 +1,5 @@
 export const primaryServices = [
+  { name: "รับยิงแอด ภูเก็ต", href: "/" },
   { name: "บริการ Local SEO", href: "/services/local-seo" },
   { name: "บริการ SEO ภูเก็ต", href: "/services/seo-phuket" },
   { name: "ทำเว็บไซต์ + SEO", href: "/services/web-design" },

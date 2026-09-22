@@ -146,6 +146,10 @@ export default function SocialMediaPage() {
           ))}
           <p className="text-slate-600">
             บริการที่เกี่ยวข้อง:{" "}
+            <Link href="/" className="text-violet-600 font-medium hover:underline underline-offset-2">
+              รับยิงแอด ภูเก็ต
+            </Link>
+            {" · "}
             <Link href="/services/google-ads" className="text-violet-600 font-medium hover:underline underline-offset-2">
               รับทำ Google Ads ภูเก็ต
             </Link>

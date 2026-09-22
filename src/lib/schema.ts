@@ -122,7 +122,8 @@ const localBusinessGraphNode = {
   parentOrganization: organizationRef,
   priceRange: "฿฿฿",
   description:
-    "รับทำ SEO + เว็บไซต์ภูเก็ต สำหรับธุรกิจไทยท้องถิ่น (Service Area Business) ให้บริการทั่วจังหวัดภูเก็ต ติด Google Maps และ AI Search",
+    "รับยิงแอด ภูเก็ต Google และ Facebook พร้อมทำเว็บไซต์และ SEO สำหรับธุรกิจไทยท้องถิ่นทั่วจังหวัดภูเก็ต",
+  knowsAbout: ["รับยิงแอด ภูเก็ต", "Google Ads", "Facebook Ads", "SEO ภูเก็ต", "ทำเว็บไซต์ภูเก็ต"],
   contactPoint: contactPointBase,
 };
 
