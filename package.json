@@ -9,12 +9,14 @@
     "start": "next start",
     "lint": "eslint",
     "check:images": "node scripts/check-images.mjs",
-    "convert:images": "node scripts/convert-public-images-to-webp.mjs"
+    "convert:images": "node scripts/convert-public-images-to-webp.mjs",
+    "import:gsc-sa": "node scripts/import-gsc-service-account.mjs"
   },
   "dependencies": {
     "@fontsource/google-sans": "^5.2.1",
     "@next/third-parties": "^16.2.7",
     "clsx": "^2.1.1",
+    "googleapis": "^189.0.0",
     "lucide-react": "^1.17.0",
     "next": "16.2.7",
     "react": "19.2.4",

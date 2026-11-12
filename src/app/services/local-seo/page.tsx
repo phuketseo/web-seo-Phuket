@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { MapPin, Star, FileCheck, BarChart3, ImageIcon, MessageCircle, type LucideIcon } from "lucide-react";
 import {
+  areaServedPhuket,
   areaServedThailand,
   buildBreadcrumb,
   faqSchema,
@@ -19,25 +20,42 @@ import { ServiceMarketingHero } from "@/components/services/ServiceMarketingHero
 import { ServicePricingTeaser } from "@/components/services/ServicePricingTeaser";
 
 export const metadata: Metadata = {
-  title: "บริการ Local SEO | ติด Google Maps ได้จริง - PhuketSEO",
+  title: "รับทำ Local SEO | ติด Google Maps ได้จริง - PhuketSEO",
   description:
-    "บริการ Local SEO ทำให้ธุรกิจโผล่ Google Maps เมื่อลูกค้าค้นหาในโซน — Google Business Profile รีวิว NAP แพ็กเริ่ม ฿5,900/เดือน ขอคำปรึกษาฟรี",
+    "รับทำ Local SEO ให้ธุรกิจโผล่ Google Maps เมื่อลูกค้าค้นหาในโซน ป่าตอง กะตะ ตัวเมือง ถลาง กมลา กะทู้ ดูแล GBP รีวิว NAP แพ็กเริ่ม ฿5,900/เดือน ขอคำปรึกษาฟรี",
   alternates: { canonical: `${siteConfig.url}/services/local-seo` },
+  keywords: [
+    "รับทำ local seo",
+    "บริการ local seo",
+    "บริษัทรับทำ local seo",
+    "บริการรับทำ local seo",
+    "รับทำ seo google maps",
+    "google maps seo thailand",
+    "local seo",
+    "local seo thailand",
+  ],
 };
 
 const breadcrumbSchema = buildBreadcrumb([
   { name: "หน้าแรก", url: siteConfig.url },
-  { name: "บริการ Local SEO", url: `${siteConfig.url}/services/local-seo` },
+  { name: "รับทำ Local SEO", url: `${siteConfig.url}/services/local-seo` },
 ]);
 
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "บริการ Local SEO",
+  name: "รับทำ Local SEO",
+  alternateName: [
+    "บริการ Local SEO",
+    "บริษัทรับทำ Local SEO",
+    "รับทำ SEO Google Maps",
+    "Google Maps SEO Thailand",
+  ],
   provider: localServiceProvider,
   description: localSeoServiceContent.answerBlock,
-  areaServed: areaServedThailand,
+  areaServed: [areaServedThailand, ...areaServedPhuket],
   serviceType: "Local SEO",
+  url: `${siteConfig.url}/services/local-seo`,
   offers: {
     "@type": "Offer",
     priceCurrency: "THB",
@@ -53,14 +71,14 @@ const serviceSchema = {
 };
 
 const faqSchemaJson = faqSchema(
-  localSeoServiceContent.faqs.map((f) => ({ question: f.question, answer: f.answer }))
+  localSeoServiceContent.faqs.map((f) => ({ question: f.question, answer: f.answer })),
 );
 
 const localSeoProcess: { step: string; title: string; desc: string; icon: LucideIcon }[] = [
   {
     step: "01",
-    title: "Audit Maps & คู่แข่ง",
-    desc: "ตรวจ Google Business Profile listing ซ้ำ หมวดหมู่ รีวิว และเปรียบเทียบรายการบนแผนที่ในโซน",
+    title: "Audit Maps และคู่แข่ง",
+    desc: "ตรวจ Google Business Profile ข้อมูลหมุดซ้ำ หมวดหมู่ รีวิว และเปรียบเทียบรายการบนแผนที่ในโซน",
     icon: MapPin,
   },
   {
@@ -71,28 +89,76 @@ const localSeoProcess: { step: string; title: string; desc: string; icon: Lucide
   },
   {
     step: "03",
-    title: "รีวิว & ความน่าเชื่อถือ",
-    desc: "กลยุทธ์ขอรีวิวจากลูกค้าจริง ตอบทุกรายการ และสร้างสัญญาณ trust บน Maps",
+    title: "รีวิวและความน่าเชื่อถือ",
+    desc: "กลยุทธ์ขอรีวิวจากลูกค้าจริง ตอบทุกรายการ และสร้างสัญญาณความน่าเชื่อถือบน Maps",
     icon: Star,
   },
   {
     step: "04",
-    title: "รูป โพสต์ & คำค้นโซน",
+    title: "รูป โพสต์ และคำค้นโซน",
     desc: "อัปเดตรูปและโพสต์ GBP เป็นประจำ ใช้คำค้นที่ลูกค้าในโซนพิมพ์จริง",
     icon: ImageIcon,
   },
   {
     step: "05",
     title: "รายงานผลรายเดือน",
-    desc: "Maps impressions การโทร ขอเส้นทาง และคำค้นที่โผล่ — KPI ที่วัดได้จริง",
+    desc: "ยอดการแสดงผลบน Maps การโทร ขอเส้นทาง และคำค้นที่โผล่ เป็น KPI ที่วัดได้จริง",
     icon: BarChart3,
   },
   {
     step: "06",
     title: "ดูแลต่อเนื่อง",
-    desc: "Local SEO ไม่ใช่งานครั้งเดียว — ดูแล listing และคู่แข่งในโซนอย่างสม่ำเสมอ",
+    desc: "Local SEO ไม่ใช่งานครั้งเดียว ต้องดูแล listing และคู่แข่งในโซนอย่างสม่ำเสมอ",
     icon: MessageCircle,
   },
+];
+
+const commonMistakes = [
+  "หมวดหมู่ Google Business Profile ผิด ทำให้โผล่คนละกลุ่มกับลูกค้าที่ค้นหา",
+  "ชื่อ ที่อยู่ เบอร์โทรไม่ตรงกันระหว่างเว็บ เพจ และ Maps",
+  "มี listing ซ้ำหลายหมุดในโซนเดียวกัน แล้วคะแนนกระจาย",
+  "โฟกัสแต่คีย์เวิร์ดบนเว็บ โดยไม่ดูแลรีวิวและโพสต์บน Maps",
+  "ยิงแอด Maps ก่อนที่ข้อมูลหมุดและรีวิวยังไม่พร้อมแปลงผล",
+];
+
+const localVsAdsRows: { dimension: string; local: string; ads: string }[] = [
+  {
+    dimension: "เห็นผล",
+    local: "Maps มักเริ่มเห็นภายใน 30–60 วัน",
+    ads: "เริ่มแสดงได้ภายใน 24–48 ชม. หลังเปิดแคมเปญ",
+  },
+  {
+    dimension: "ค่าใช้จ่าย",
+    local: "แพ็กรายเดือน ไม่จ่ายต่อคลิก",
+    ads: "ค่าจัดการบวกงบยิงแอดต่อคลิก",
+  },
+  {
+    dimension: "เหมาะเมื่อ",
+    local: "ต้องการลูกค้าจาก Maps และคำค้นในโซนระยะยาว",
+    ads: "ต้องการ lead เร็ว ช่วงโปรโมชันหรือ high season",
+  },
+  {
+    dimension: "หยุดแล้ว",
+    local: "การมองเห็นลดลงช้ากว่า แต่ไม่หายวันเดียว",
+    ads: "traffic จากแอดหายทันทีเมื่อหยุดงบ",
+  },
+  {
+    dimension: "ลำดับที่มักถูก",
+    local: "ตั้ง GBP และรีวิวก่อน แล้วค่อยเสริมเว็บหรือแอด",
+    ads: "หลัง listing และหน้าปลายทางพร้อมแปลงผล",
+  },
+];
+
+const guideLinks = [
+  { href: "/blog/local-seo-kue-arai", label: "Local SEO คืออะไร" },
+  { href: "/blog/raaka-local-seo", label: "จ้างทำ Local SEO ราคาเท่าไหร่" },
+  { href: "/blog/google-business-profile-local-seo", label: "Google Business Profile" },
+  { href: "/blog/leuk-aecensi-local-seo", label: "เลือกเอเยนซี่ Local SEO" },
+  { href: "/blog/google-maps-mai-tid-phuket", label: "Google Maps ไม่ติดภูเก็ต" },
+  { href: "/services/google-maps-pin", label: "รับปักหมุดธุรกิจ Google Maps ภูเก็ต" },
+  { href: "/services/seo-phuket", label: "รับทำ SEO ภูเก็ต" },
+  { href: "/services/google-ads", label: "รับทำ Google Ads ภูเก็ต" },
+  { href: "/pricing", label: "ดูราคาแพ็กเกจ" },
 ];
 
 const heroStats = [
@@ -110,17 +176,17 @@ export default function LocalSeoServicePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchemaJson) }} />
 
-      <ServiceBreadcrumb serviceName="บริการ Local SEO" />
+      <ServiceBreadcrumb serviceName="รับทำ Local SEO" />
 
       <ServiceMarketingHero
-        eyebrow="บริการ Local SEO"
-        title="บริการ Local SEO"
+        eyebrow="หน้าบริการหลัก · รับทำ Local SEO"
+        title="รับทำ Local SEO"
         titleAccent="ติด Google Maps ได้จริง"
-        description="ทำให้ธุรกิจโผล่ Google Maps เมื่อลูกค้าค้นหาในโซน — ดูแล Google Business Profile รีวิว และข้อมูล NAP ทั่วประเทศไทย"
+        description="เอเยนซี่ Local SEO สำหรับธุรกิจไทยท้องถิ่น ดูแล Google Business Profile รีวิว และข้อมูล NAP ให้โผล่เมื่อลูกค้าค้นหาในโซนป่าตอง กะตะ ตัวเมือง ถลาง กมลา กะทู้ และทั่วไทย"
         answerBlock={localSeoServiceContent.answerBlock}
         image={siteImages.services.localSeo}
         stats={heroStats}
-        trustBadges={["ให้บริการทั่วประเทศ", "รายงานรายเดือน", "ไม่มีสัญญาผูกมัด", "เริ่มจาก Maps"]}
+        trustBadges={["เริ่มจาก Maps", "รายงานรายเดือน", "ไม่มีสัญญาผูกมัด", "มาตรฐานจากโซนแข่งสูงในภูเก็ต"]}
         secondaryHref="#process"
         secondaryLabel="ดูขั้นตอนการทำงาน"
       />
@@ -131,32 +197,143 @@ export default function LocalSeoServicePage() {
             <p key={paragraph.slice(0, 40)}>{paragraph}</p>
           ))}
           <p className="text-slate-600">
-            อ่านเพิ่ม:{" "}
-            <Link href="/blog/local-seo-kue-arai" className="text-violet-600 font-medium hover:underline underline-offset-2">
-              Local SEO คืออะไร
+            ยังไม่ยืนยันตัวตนหรือหมุดชี้ผิดซอย เริ่มที่{" "}
+            <Link
+              href="/services/google-maps-pin"
+              className="text-violet-600 font-medium hover:underline underline-offset-2"
+            >
+              รับปักหมุดธุรกิจ Google Maps ภูเก็ต
+            </Link>{" "}
+            ก่อนดูแล Local SEO รายเดือน
+          </p>
+          <p className="text-slate-600">
+            อ่านคู่มือที่เกี่ยวข้อง:{" "}
+            {guideLinks.map((link, i) => (
+              <span key={link.href}>
+                {i > 0 ? " · " : null}
+                <Link href={link.href} className="text-violet-600 font-medium hover:underline underline-offset-2">
+                  {link.label}
+                </Link>
+              </span>
+            ))}
+          </p>
+          <p className="text-slate-600">
+            <Link href="/seo-audit" className="text-violet-600 font-medium hover:underline underline-offset-2">
+              ขอ SEO Audit ฟรี
             </Link>
             {" · "}
-            <Link href="/blog/raaka-local-seo" className="text-violet-600 font-medium hover:underline underline-offset-2">
-              จ้างทำ Local SEO ราคาเท่าไหร่
+            <Link href="/contact" className="text-violet-600 font-medium hover:underline underline-offset-2">
+              ปรึกษาฟรี
             </Link>
             {" · "}
-            <Link href="/blog/google-business-profile-local-seo" className="text-violet-600 font-medium hover:underline underline-offset-2">
-              Google Business Profile
-            </Link>
-            {" · "}
-            <Link href="/blog/leuk-aecensi-local-seo" className="text-violet-600 font-medium hover:underline underline-offset-2">
-              เลือกเอเจนซี่ Local SEO
+            <Link href="/phuketseo" className="text-violet-600 font-medium hover:underline underline-offset-2">
+              ข้อมูล PhuketSEO (Entity)
             </Link>
           </p>
         </div>
       </HomeSection>
 
-      <HomeSection id="process" variant="white" containerClass="max-w-6xl">
+      <HomeSection variant="white">
+        <HomeSectionHeader
+          eyebrow="ขอบเขตงาน"
+          title="รับทำ Local SEO"
+          titleAccent="ครอบคลุมอะไรบ้าง"
+          description="ไม่รับประกันอันดับ 1 เราวัดจากยอดการแสดงผลบน Maps การโทร ขอเส้นทาง และคำค้นในโซนจริง"
+        />
+        <div className="grid sm:grid-cols-2 gap-4 text-sm sm:text-base text-slate-700 leading-relaxed">
+          <div className="rounded-xl border border-slate-200 bg-slate-50/80 p-5">
+            <h3 className="font-semibold text-slate-900 mb-2">โซนและประเภทธุรกิจ</h3>
+            <p>
+              ทำงานกับธุรกิจในป่าตอง กะตะ ตัวเมือง ถลาง กมลา กะทู้ และโซนอื่นในไทย เช่น ร้านอาหาร คาเฟ่ สปา
+              คลินิก อสังหาฯ และ SME ที่พึ่งลูกค้าค้นหา Google ก่อนติดต่อ
+            </p>
+          </div>
+          <div className="rounded-xl border border-slate-200 bg-slate-50/80 p-5">
+            <h3 className="font-semibold text-slate-900 mb-2">สิ่งที่เราวัด</h3>
+            <p>
+              ยอดการแสดงผลบน Maps การโทร ขอเส้นทาง และคำค้นที่โผล่ ไม่ใช่แค่ screenshot อันดับคีย์เวิร์ด
+              ดูเกณฑ์ก่อนจ้างที่{" "}
+              <Link
+                href="/blog/leuk-aecensi-local-seo"
+                className="text-violet-600 font-medium hover:underline underline-offset-2"
+              >
+                เลือกเอเยนซี่ Local SEO
+              </Link>
+            </p>
+          </div>
+        </div>
+      </HomeSection>
+
+      <HomeSection variant="muted">
+        <HomeSectionHeader
+          eyebrow="ปัญหาที่พบบ่อย"
+          title="ทำไมธุรกิจมีหน้าร้าน"
+          titleAccent="แต่ไม่โผล่บน Maps?"
+          description="สาเหตุที่พบบ่อยคือข้อมูลหมุดไม่พร้อม รีวิวน้อย หรือหมวดหมู่ไม่ตรง ไม่ใช่แค่ยังไม่ได้ยิงแอด"
+        />
+        <ul className="space-y-2.5 text-sm sm:text-base text-slate-700">
+          {commonMistakes.map((item) => (
+            <li key={item} className="flex items-start gap-2.5">
+              <span className="mt-2 h-1.5 w-1.5 rounded-full bg-indigo-500 shrink-0" />
+              {item}
+            </li>
+          ))}
+        </ul>
+      </HomeSection>
+
+      <HomeSection variant="white" containerClass="max-w-4xl">
+        <HomeSectionHeader
+          eyebrow="เปรียบเทียบ"
+          title="Local SEO กับ Google Ads"
+          titleAccent="ต่างกันอย่างไร?"
+          description="Local SEO สร้างฐานจาก Maps โดยไม่จ่ายต่อคลิก Google Ads เร่ง lead เมื่อมีงบ ธุรกิจในภูเก็ตมักใช้ทั้งคู่ตามลำดับงาน"
+          centered
+          className="mx-auto max-w-2xl"
+        />
+        <div className="overflow-x-auto rounded-xl border border-slate-200 bg-white shadow-sm">
+          <table className="w-full text-sm sm:text-base text-left">
+            <thead>
+              <tr className="border-b border-slate-200 bg-slate-50/80">
+                <th className="px-4 py-3 font-semibold text-slate-900">มิติ</th>
+                <th className="px-4 py-3 font-semibold text-slate-900">รับทำ Local SEO</th>
+                <th className="px-4 py-3 font-semibold text-slate-900">Google Ads</th>
+              </tr>
+            </thead>
+            <tbody className="text-slate-700">
+              {localVsAdsRows.map((row) => (
+                <tr key={row.dimension} className="border-b border-slate-100 last:border-0">
+                  <td className="px-4 py-3 font-medium text-slate-900">{row.dimension}</td>
+                  <td className="px-4 py-3">{row.local}</td>
+                  <td className="px-4 py-3">{row.ads}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p className="mt-4 text-sm text-slate-600 text-center">
+          อ่านเพิ่ม:{" "}
+          <Link
+            href="/services/google-ads"
+            className="text-violet-600 font-medium hover:underline underline-offset-2"
+          >
+            รับทำ Google Ads ภูเก็ต
+          </Link>
+          {" · "}
+          <Link
+            href="/blog/google-ads-vs-seo-phuket"
+            className="text-violet-600 font-medium hover:underline underline-offset-2"
+          >
+            Google Ads vs SEO ภูเก็ต
+          </Link>
+        </p>
+      </HomeSection>
+
+      <HomeSection id="process" variant="muted" containerClass="max-w-6xl">
         <HomeSectionHeader
           eyebrow="ขั้นตอน"
-          title="กระบวนการ"
-          titleAccent="Local SEO"
-          description="เริ่มจาก Google Maps — ชั้นที่ลูกค้าเห็นก่อนตัดสินใจโทรหรือมาหน้าร้าน"
+          title="กระบวนการรับทำ"
+          titleAccent="Local SEO ของเรา"
+          description="กระบวนการรับทำ Local SEO ของ PhuketSEO เริ่มจาก audit Maps ในโซนจริง ไม่ใช่โพสต์รีวิวอย่างเดียว"
           centered
           className="mx-auto max-w-2xl"
         />
@@ -179,13 +356,13 @@ export default function LocalSeoServicePage() {
         </div>
       </HomeSection>
 
-      <HomeSection variant="muted" containerClass="max-w-6xl">
+      <HomeSection variant="white" containerClass="max-w-6xl">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           <div>
             <HomeSectionHeader
               eyebrow="สิ่งที่ได้"
-              title="บริการ Local SEO"
-              titleAccent="ครอบคลุมอะไร"
+              title="สิ่งที่รวมอยู่"
+              titleAccent="ในบริการ"
               className="mb-6"
             />
             <ul className="space-y-2.5">
@@ -201,7 +378,7 @@ export default function LocalSeoServicePage() {
             priceLabel="5,900"
             planName="SEO Lite"
             features={["GBP + Maps + รีวิว", "รายงาน GBP รายเดือน", "ไม่มีสัญญาผูกมัด", "Pro ฿8,900 (+เว็บ)"]}
-            proNote="อ่านเปรียบเทียบแพ็กที่ /blog/raaka-local-seo"
+            proNote="อ่านเปรียบเทียบแพ็กที่บทความราคา Local SEO หรือหน้า Pricing"
           />
         </div>
       </HomeSection>
@@ -210,17 +387,22 @@ export default function LocalSeoServicePage() {
 
       <HomeSection variant="gradient" containerClass="max-w-2xl">
         <div className="text-center">
-          <HomeSectionHeader
-            title="พร้อมให้ธุรกิจโผล่"
-            titleAccent="Google Maps?"
-            description="ขอคำปรึกษาฟรี — วิเคราะห์ Google Business Profile และบอกลำดับงานที่ควรทำก่อน"
-            centered
-            className="mb-7"
-          />
+          <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-3">
+            พร้อมรับทำ Local SEO?
+          </h2>
+          <p className="text-slate-600 text-sm sm:text-base mb-6 leading-relaxed">
+            ขอคำปรึกษาฟรี เราวิเคราะห์ Google Business Profile และบอกลำดับงานที่ควรทำก่อนในโซนของคุณ
+          </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <GradientButton href="/contact" className="px-7">
               ขอคำปรึกษาฟรี
             </GradientButton>
+            <Link
+              href="/pricing"
+              className="text-sm font-medium text-violet-600 hover:underline underline-offset-2"
+            >
+              ดูราคาแพ็กเกจทั้งหมด
+            </Link>
             <Link
               href="/seo-audit"
               className="inline-flex items-center justify-center text-sm font-medium px-6 py-3 rounded-lg border border-slate-200 text-slate-700 hover:border-violet-200 hover:bg-violet-50/50 transition-colors"

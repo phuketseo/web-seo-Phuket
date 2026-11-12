@@ -1,54 +1,10 @@
-﻿import Link from "next/link";
-import Image from "next/image";
-import { ArrowRight, ChevronDown } from "lucide-react";
-import { siteImages, type SiteImage } from "@/lib/images";
-import { pricingPackages } from "@/lib/pricing-packages";
+﻿import { ChevronDown } from "lucide-react";
 import { GradientButton } from "@/components/GradientButton";
 import { HomeSection, HomeSectionHeader } from "@/components/home/HomeSection";
-import { PricingPlanGrid } from "@/components/pricing/PricingPlanGrid";
+import { HomeServicesSection } from "@/components/home/HomeServicesSection";
+import { PricingTabsSection } from "@/components/pricing/PricingTabsSection";
 import { areaServedPhuket, localServiceProvider } from "@/lib/schema";
 import { siteConfig } from "@/lib/utils";
-
-const services: {
-  num: string;
-  title: string;
-  desc: string;
-  meta: string;
-  href: string;
-  iconImage?: SiteImage;
-}[] = [
-  {
-    num: "01",
-    iconImage: siteImages.icons.googleAds,
-    title: "รับยิงแอด ภูเก็ต",
-    desc: "ยิงแอด Google หรือ Facebook ให้ลูกค้าในป่าตอง กะตะ ตัวเมืองเจอร้านคุณ",
-    meta: "จาก ฿6,500/เดือน",
-    href: "/packages/ads-starter",
-  },
-  {
-    num: "02",
-    iconImage: siteImages.icons.webDesign,
-    title: "ทำเว็บไซต์ภูเก็ต",
-    desc: "สำหรับร้านที่ยังไม่มีเว็บ มีฟอร์มและปุ่ม LINE ให้ลูกค้าทักได้",
-    meta: "฿6,500 ครั้งเดียว",
-    href: "/services/web-design",
-  },
-  {
-    num: "03",
-    iconImage: siteImages.icons.seo,
-    title: "บวก SEO กับเว็บ",
-    desc: "สำหรับร้านที่มีเว็บแล้ว อยากให้ติด Google และ Maps มากขึ้น สัญญา 1 ปี",
-    meta: "+฿6,500/เดือน",
-    href: "/packages/seo-addon",
-  },
-  {
-    num: "04",
-    title: "ดูแลเว็บรายปี",
-    desc: "ต่ออายุโดเมนและโฮสต์ให้เว็บไม่ล่ม ไม่รวมแก้ข้อความในเว็บ",
-    meta: "฿4,500/ปี",
-    href: "/packages/annual-care",
-  },
-];
 
 const whyUs = [
   {
@@ -61,18 +17,22 @@ const whyUs = [
   },
   {
     title: "แพ็กแอดยืดหยุ่น",
-    desc: "ยิงแอดไม่ผูกสัญญา บวก SEO กับเว็บขั้นต่ำ 1 ปี",
+    desc: "เลือกระยะสัญญาโฆษณาและ SEO ได้ชัดเจน ดูราคารวมก่อนเริ่ม",
   },
 ];
 
 const faqs = [
   {
     q: "รับยิงแอด ภูเก็ต คืออะไร?",
-    a: "รับยิงแอด ภูเก็ตคือการจ้างดูแลโฆษณา Google หรือ Facebook ให้ร้านในภูเก็ตโผล่ตอนลูกค้าค้นหา แล้วโทรหรือทัก LINE ได้ ค่าจัดการเริ่ม ฿6,500/เดือน ค่ายิงแอดจ่ายแพลตฟอร์มแยก",
+    a: "รับยิงแอด ภูเก็ตคือการจ้างดูแลโฆษณา Google หรือ Facebook ให้ร้านในภูเก็ตโผล่ตอนลูกค้าค้นหา แล้วโทรหรือทัก LINE ได้ ค่าบริการเริ่ม ฿3,000/เดือน (สัญญารายปี) ค่ายิงแอดจ่ายแพลตฟอร์มแยก",
   },
   {
     q: "รับยิงแอด ภูเก็ต ราคาเท่าไหร่?",
-    a: "แพ็ก Ads Starter ฿6,500/เดือน สำหรับ 1 แคมเปญ เลือก Google Ads หรือ Facebook Ads ค่ายิงแอดแยก ไม่มีสัญญาผูกมัด ยกเลิกได้ทุกเดือน",
+    a: "ค่าบริการโฆษณา Meta/Google ตามสัญญา: รายเดือน ฿6,000 · 3 เดือน ฿5,000 · 6 เดือน ฿4,000 · ปี ฿3,000 ต่อเดือน ค่ายิงแอดแยก",
+  },
+  {
+    q: "รับยิงแอด Facebook ภูเก็ต ต่างจาก Google Ads ยังไง?",
+    a: "Facebook Ads จับคนบนฟีดและ retarget Google Ads จับคนที่กำลังค้นหา ค่าบริการแพ็กเดียวกัน เริ่ม ฿3,000–6,000/เดือนตามระยะสัญญา",
   },
   {
     q: "ยังไม่มีเว็บ เริ่มยิงแอดได้ไหม?",
@@ -113,17 +73,17 @@ const homeAdsServiceSchema = {
   alternateName: ["รับยิงแอด Google ภูเก็ต", "รับยิงแอด Facebook ภูเก็ต", "รับทำแอด ภูเก็ต"],
   provider: localServiceProvider,
   description:
-    "รับยิงแอด ภูเก็ตบน Google และ Facebook สำหรับธุรกิจในป่าตอง กะตะ ตัวเมือง ถลาง กมลา กะทู้ ค่าจัดการเริ่ม ฿6,500/เดือน ไม่รวม ad spend",
+    "รับยิงแอด ภูเก็ตบน Google และ Facebook สำหรับธุรกิจในป่าตอง กะตะ ตัวเมือง ถลาง กมลา กะทู้ ค่าบริการเริ่ม ฿3,000/เดือน ไม่รวม ad spend",
   areaServed: areaServedPhuket,
   url: siteConfig.url,
   offers: {
     "@type": "Offer",
     priceCurrency: "THB",
-    price: "6500",
+    price: "3000",
     priceSpecification: {
       "@type": "UnitPriceSpecification",
       priceCurrency: "THB",
-      price: "6500",
+      price: "3000",
       unitText: "MONTH",
     },
   },
@@ -141,58 +101,8 @@ export default function HomeBelowFold() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <HomeSection id="services" variant="muted">
-        <HomeSectionHeader
-          eyebrow="บริการ"
-          title="รับยิงแอด ภูเก็ต"
-          titleAccent="เริ่มจากตรงนี้"
-          description="รับยิงแอด ภูเก็ตทำงานโดยดึงลูกค้าที่กำลังค้นหาบน Google หรือ Facebook เข้ามาโทรหรือทัก LINE ก่อน เว็บและ SEO ทำทีหลังเมื่อพร้อม"
-        />
-
-          <ul className="flex flex-col gap-3 sm:gap-0 sm:divide-y sm:divide-slate-200 sm:border-y sm:border-slate-200 sm:bg-white sm:rounded-lg sm:overflow-hidden">
-            {services.map((s) => (
-              <li
-                key={s.href}
-                className="rounded-xl border border-slate-200 bg-white shadow-sm sm:rounded-none sm:border-0 sm:shadow-none"
-              >
-                <Link
-                  href={s.href}
-                  className="group relative z-10 flex gap-3 sm:gap-8 p-5 sm:p-8 touch-manipulation active:bg-violet-50 sm:hover:bg-slate-50/80 transition-colors duration-150"
-                >
-                  <span className="text-xs font-semibold text-indigo-600 sm:text-slate-400 tabular-nums pt-1 shrink-0 w-6">
-                    {s.num}
-                  </span>
-                  {s.iconImage && (
-                    <div className="hidden sm:flex w-10 h-10 shrink-0 items-center justify-center opacity-80">
-                      <Image
-                        src={s.iconImage.src}
-                        alt=""
-                        width={40}
-                        height={40}
-                        sizes="40px"
-                        className="object-contain"
-                        aria-hidden
-                      />
-                    </div>
-                  )}
-                  <div className="flex-1 min-w-0">
-                    <div className="flex flex-wrap items-baseline justify-between gap-2 mb-1.5">
-                      <h3 className="text-base sm:text-lg font-semibold text-slate-900 group-active:text-violet-600 sm:group-hover:text-violet-600 transition-colors">
-                        {s.title}
-                      </h3>
-                      <span className="text-xs text-slate-600 sm:text-slate-500 shrink-0">{s.meta}</span>
-                    </div>
-                    <p className="text-sm text-slate-700 sm:text-slate-600 leading-relaxed">{s.desc}</p>
-                  </div>
-                  <ArrowRight
-                    size={18}
-                    className="shrink-0 self-center text-violet-500 sm:text-slate-300 sm:group-hover:text-violet-500 sm:group-hover:translate-x-0.5 transition-all"
-                    aria-hidden
-                  />
-                </Link>
-              </li>
-            ))}
-          </ul>
+      <HomeSection id="services" variant="muted" containerClass="max-w-6xl">
+        <HomeServicesSection />
       </HomeSection>
 
       <HomeSection variant="white">
@@ -223,44 +133,31 @@ export default function HomeBelowFold() {
       </HomeSection>
 
       <HomeSection variant="white">
-          <HomeSectionHeader
-            eyebrow="ราคา"
-            title="แพ็ก"
-            titleAccent="ยิงแอด / เว็บ / SEO"
-            description="SEO บวกกับเว็บเท่านั้น ดูรายละเอียดและราคาเต็มที่หน้าราคา"
-          />
-
-          <PricingPlanGrid packages={pricingPackages} featureLimit={5} />
-          <p className="mt-6 md:mt-8 text-sm text-slate-600 text-center md:text-left">
-            <Link
-              href="/pricing"
-              className="text-violet-600 font-medium hover:underline underline-offset-2"
-            >
-              ดูรายละเอียดแพ็กทั้งหมด
-            </Link>
-          </p>
+          <PricingTabsSection defaultTab="ads" showPricingLink />
       </HomeSection>
 
-      <HomeSection variant="muted" containerClass="max-w-3xl">
+      <HomeSection variant="muted" containerClass="max-w-4xl">
           <HomeSectionHeader
             eyebrow="FAQ"
             title="คำถามที่"
             titleAccent="พบบ่อย"
             description="สรุปสั้นๆ ก่อนติดต่อ — ถามเพิ่มได้ตลอด"
+            centered
+            className="mb-8"
           />
 
-          <div className="divide-y divide-slate-200 border border-slate-200 bg-white rounded-xl shadow-sm overflow-hidden">
+          <div className="mx-auto w-full max-w-md sm:max-w-[50%] divide-y divide-slate-200 border border-slate-200 bg-white rounded-xl shadow-sm overflow-hidden">
             {faqs.map((f) => (
-              <details key={f.q} className="group px-5 sm:px-6 py-0.5">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-4 text-sm sm:text-base font-medium text-slate-900 touch-manipulation active:text-violet-700 sm:hover:text-violet-700 transition-colors [&::-webkit-details-marker]:hidden">
+              <details key={f.q} className="group px-4 sm:px-5 py-0.5">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-3 py-3.5 text-sm font-medium text-slate-900 touch-manipulation active:text-violet-700 sm:hover:text-violet-700 transition-colors [&::-webkit-details-marker]:hidden">
                   <span className="pr-2 group-open:text-violet-700">{f.q}</span>
                   <ChevronDown
-                    size={18}
+                    size={16}
                     className="shrink-0 text-slate-400 group-open:text-violet-600 transition-transform group-open:rotate-180"
                     aria-hidden
                   />
                 </summary>
-                <p className="pb-4 text-sm text-slate-700 sm:text-slate-600 leading-relaxed">{f.a}</p>
+                <p className="pb-3.5 text-sm text-slate-700 sm:text-slate-600 leading-relaxed">{f.a}</p>
               </details>
             ))}
           </div>

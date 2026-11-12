@@ -75,7 +75,7 @@ export const siteImages = {
   hero: {
     home: {
       src: "/images/hero/hero-home-ads-web-smooth.webp",
-      alt: "รับยิงแอด ภูเก็ต บน Google และ Facebook — เริ่ม ฿6,500/เดือน",
+      alt: "รับยิงแอด ภูเก็ต บน Google และ Facebook — เริ่ม ฿3,000/เดือน",
       width: 1536,
       height: 1024,
       rev: 2,
@@ -90,7 +90,7 @@ export const siteImages = {
   services: {
     seo: {
       src: "/images/services/hero-service-seo-clean.webp",
-      alt: "บริการ SEO ภูเก็ต เพิ่มอันดับ Google",
+      alt: "รับทำ SEO ภูเก็ต — Maps และ Organic สำหรับธุรกิจท้องถิ่นในโซนจริง",
       width: 2560,
       height: 1440,
     },
@@ -102,21 +102,35 @@ export const siteImages = {
     },
     socialMedia: {
       src: "/images/services/hero-service-social-media-clean.webp",
-      alt: "บริการ Social Media Marketing ภูเก็ต",
+      alt: "รับยิงแอด Facebook ภูเก็ต — Meta Ads Facebook Instagram แพ็กเริ่ม ฿3,000/เดือน",
       width: 2560,
       height: 1440,
     },
     webDesign: {
       src: "/images/services/hero-service-web-design-clean.webp",
-      alt: "บริการออกแบบเว็บไซต์ภูเก็ต",
+      alt: "รับทำเว็บไซต์ภูเก็ต — Next.js mobile-first พร้อม SEO structure แพ็กเริ่ม ฿6,500",
       width: 2560,
       height: 1440,
     },
     localSeo: {
       src: "/images/services/hero-service-local-seo-clean.webp",
-      alt: "บริการ Local SEO — ติด Google Maps รีวิว NAP แพ็กเริ่ม ฿5,900/เดือน",
+      alt: "รับทำ Local SEO ภูเก็ต — ติด Google Maps รีวิว NAP แพ็กเริ่ม ฿5,900/เดือน",
       width: 3840,
       height: 2560,
+    },
+  },
+  portfolio: {
+    hobThaiMassage: {
+      src: "/images/portfolio/hob-thai-massage-desktop.webp",
+      alt: "รับทำเว็บไซต์ภูเก็ต — mockup เว็บ HOB Thai Massage Cherngtalay",
+      width: 1440,
+      height: 900,
+    },
+    houseOfBeauty: {
+      src: "/images/portfolio/house-of-beauty-desktop.webp",
+      alt: "รับทำเว็บไซต์ภูเก็ต — mockup เว็บ House of Beauty Phuket 8 สาขา",
+      width: 1440,
+      height: 900,
     },
   },
   icons: {
@@ -504,13 +518,13 @@ export const siteImages = {
     },
     rabTamWebPillar: {
       src: "/images/blog/blog-thumb-rab-tam-web-phuket-clean.webp",
-      alt: "รับทำเว็บไซต์ภูเก็ต — Next.js เร็ว PageSpeed 95+ Setup ฿29,900",
+      alt: "รับทำเว็บไซต์ภูเก็ต — Next.js เร็ว mobile-first แพ็ก Starter ฿6,500",
       width: 2304,
       height: 1536,
     },
     rabTamWebPricing: {
       src: "/images/blog/blog-inline-rab-tam-web-pricing-clean.webp",
-      alt: "แพ็กเว็บ + SEO ภูเก็ต — Landing ฿29,900 Corporate ฿39,900 Multi-service ฿49,900",
+      alt: "แพ็กเว็บ Starter ภูเก็ต ฿6,500 ครั้งเดียว — ดูแลรายปี ฿4,500",
       width: 2304,
       height: 1536,
     },
@@ -1665,3 +1679,4 @@ export const blogInlineImages: Record<string, SiteImage> = {
 export function resolveBlogInlineImage(key: string): SiteImage | null {
   return blogInlineImages[key.trim()] ?? null;
 }
+

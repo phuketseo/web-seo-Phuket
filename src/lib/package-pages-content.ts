@@ -90,7 +90,7 @@ const primaryCompareOthers = (current: PrimaryPackagePageId): PackageCompareCard
     "annual-care": "โดเมน + โฮสติ้ง รายปี",
   };
   const ctas: Record<PrimaryPackagePageId, string> = {
-    "ads-starter": "ดู Ads Starter",
+    "ads-starter": "ดู แพ็กโฆษณา",
     "web-starter": "ดูเว็บ Starter",
     "annual-care": "ดูดูแลรายปี",
   };
@@ -113,21 +113,21 @@ export const packagePagesContent: Record<PackagePageId, PackagePageContent> = {
   "ads-starter": {
     id: "ads-starter",
     path: packagePaths["ads-starter"],
-    metaTitle: "แพ็ก Ads Starter ฿6,500 | รับยิงแอด Google/Meta ภูเก็ต",
+    metaTitle: "แพ็กโฆษณา เริ่ม ฿3,000/เดือน | รับยิงแอด Google/Meta ภูเก็ต",
     metaDescription:
-      "Ads Starter ฿6,500/เดือน — จัดการ Google Ads หรือ Meta Ads 1 แคมเปญ สำหรับธุรกิจในภูเก็ต ค่ายิงแอดแยก ไม่รวมทำเว็บ",
+      "แพ็กโฆษณา Meta/Google ตามสัญญา — รายเดือน ฿6,000 · 3 เดือน ฿5,000 · 6 เดือน ฿4,000 · ปี ฿3,000 ต่อเดือน ค่ายิงแอดแยก",
     heroBadge: "แพ็กหลัก · Paid Ads",
-    heroTitle: "แพ็ก Ads Starter",
+    heroTitle: "แพ็กโฆษณา",
     heroHighlight: "Google หรือ Meta",
     heroSubtitle:
-      "฿6,500/เดือน (ค่าจัดการ) — เลือกยิงแอด Google Search/Maps หรือ Facebook/Instagram 1 แคมเปญ แยกจากค่าทำเว็บ",
+      "ค่าบริการเริ่ม ฿3,000/เดือน ตามระยะสัญญา — ดูแล Meta และ/หรือ Google Ads ค่ายิงแอดแยก",
     answerBlock:
-      "Ads Starter คือแพ็กจัดการโฆษณารายเดือน ฿6,500 สำหรับธุรกิจในภูเก็ต — เลือก Google Ads (Search, Maps) หรือ Meta Ads (Facebook, Instagram) อย่างใดอย่างหนึ่ง 1 แคมเปญ ค่า ad spend จ่ายแพลตฟอร์มแยก",
+      "แพ็กโฆษณาคือค่าบริการดูแล Meta และ/หรือ Google Ads สำหรับธุรกิจในภูเก็ต — รายเดือน ฿6,000 · 3 เดือน ฿5,000 · 6 เดือน ฿4,000 · ปี ฿3,000 ต่อเดือน ค่า ad spend จ่ายแพลตฟอร์มแยก",
     heroImage: siteImages.icons.googleAds,
     showcaseImage: siteImages.services.googleAds,
     showcaseCaption: "เหมาะเริ่มยิงแอดก่อนมีเว็บใหญ่ — ใช้ landing หรือ LINE เป็นปลายทาง lead",
-    monthlyTitle: "จ่าย ฿6,500/เดือน แล้วได้อะไร?",
-    monthlyIntro: "ค่าจัดการครอบคลุม setup และดูแลแคมเปญ — งบยิงแอดจริงจ่าย Google หรือ Meta แยก",
+    monthlyTitle: "ค่าบริการครอบคลุมอะไรบ้าง?",
+    monthlyIntro: "ตั้งแคมเปญ ปรับงบ ครีเอทีฟ/คีย์เวิร์ด และรายงานรายเดือน — งบยิงแอดจริงจ่าย Google หรือ Meta แยก",
     monthOneItems: [
       "ประชุมเป้าหมายธุรกิจ โซน (ป่าตอง กะตะ ตัวเมือง ฯลฯ) และงบ ad spend",
       "ตั้งบัญชีโฆษณา + conversion tracking (GA4, pixel, UTM)",
@@ -147,7 +147,7 @@ export const packagePagesContent: Record<PackagePageId, PackagePageContent> = {
       "ถ่ายรูป/video creative ระดับ production",
       "SEO organic / GBP รายเดือน — ดูแพ็ก SEO Lite",
     ],
-    worthItTitle: "฿6,500 คุ้มเมื่อไหร่?",
+    worthItTitle: "แพ็กโฆษณาคุ้มเมื่อไหร่?",
     worthItPoints: [
       "ต้องการ lead เร็วในโซนภูเก็ต โดยยังไม่พร้อมลงทุนเว็บใหญ่",
       "มี LINE หรือ landing ง่ายๆ เป็นปลายทาง conversion แล้ว",
@@ -162,7 +162,7 @@ export const packagePagesContent: Record<PackagePageId, PackagePageContent> = {
     compareCards: primaryCompareOthers("ads-starter"),
     faqs: [
       {
-        question: "Ads Starter ฿6,500 รวมอะไรบ้าง?",
+        question: "แพ็กโฆษณา เริ่ม ฿3,000 รวมอะไรบ้าง?",
         answer:
           "รวมจัดการ 1 แคมเปญบน Google Ads (Search/Maps) หรือ Meta Ads (Facebook/Instagram) — setup, ปรับแคมเปญ 2 ครั้ง/เดือน และรายงานรายเดือน ไม่รวมค่ายิงแอด",
       },
@@ -209,7 +209,7 @@ export const packagePagesContent: Record<PackagePageId, PackagePageContent> = {
     showcaseImage: siteImages.services.webDesign,
     showcaseCaption: "เหมาะ SME ที่ต้องการเว็บออนไลน์เร็ว ก่อนลงทุน SEO หรือแอดเต็มรูปแบบ",
     monthlyTitle: "จ่ายครั้งเดียว ฿6,500 แล้วได้อะไร?",
-    monthlyIntro: "ส่งมอบเว็บพร้อมใช้งาน — ดูแลโดเมน/โฮสต์ผ่านแพ็กรายปี ฿4,500",
+    monthlyIntro: "ส่งมอบเว็บพร้อมใช้งาน — ดูแลโดเมน/โฮสต์ผ่านแพ็กรายปี ฿2,500",
     phaseOneLabel: "สัปดาห์ 1–2 (วางแผน)",
     phaseTwoLabel: "สัปดาห์ 3–6 (พัฒนา + ส่งมอบ)",
     monthOneItems: [
@@ -225,8 +225,8 @@ export const packagePagesContent: Record<PackagePageId, PackagePageContent> = {
       "ทดสอบบนมือถือ + ส่งมอบพร้อมคู่มือแก้ข้อความเบื้องต้น",
     ],
     notIncluded: [
-      "SEO รายเดือน — ดู SEO Add-on +฿6,500/เดือน (บวกกับเว็บ ขั้นต่ำ 12 เดือน)",
-      "ยิงแอด Google/Meta — ดูแพ็ก Ads Starter ฿6,500/เดือน",
+      "SEO รายเดือน — ดูแพ็ก SEO จาก ฿4,000/เดือน ตามสัญญา 3/6/12 เดือน",
+      "ยิงแอด Google/Meta — ดูแพ็กโฆษณา เริ่ม ฿3,000/เดือน",
       "หน้าเว็บเกิน 10 หน้า — ใบเสนอราคาแยก",
       "ระบบจอง/ชำระเงินเต็มรูปแบบ (e-commerce)",
       "แก้เนื้อหาหลังส่งมอบ (นอกแพ็กดูแลรายปี)",
@@ -240,7 +240,7 @@ export const packagePagesContent: Record<PackagePageId, PackagePageContent> = {
     idealFor: [
       { title: "ร้านบริการท้องถิ่น", desc: "หน้าแรก บริการ ราคา ติดต่อ — CTA ชัด" },
       { title: "ธุรกิจใหม่ในภูเก็ต", desc: "ต้องการ presence ออนไลน์ก่อนเปิด high season" },
-      { title: "ลูกค้าแอด", desc: "มีแพ็ก Ads Starter แล้ว ต้องการ landing บนโดเมนตัวเอง" },
+      { title: "ลูกค้าแอด", desc: "มีแพ็กโฆษณา แล้ว ต้องการ landing บนโดเมนตัวเอง" },
     ],
     compareIntro: "จับคู่กับแพ็กแอดหรือดูแลรายปี",
     compareCards: primaryCompareOthers("web-starter"),
@@ -255,7 +255,7 @@ export const packagePagesContent: Record<PackagePageId, PackagePageContent> = {
       },
       {
         question: "รวมโดเมนและโฮสติ้งไหม?",
-        answer: "ไม่รวมในราคา ฿6,500 — ดูแพ็กดูแลรายปี ฿4,500/ปี ที่รวมโดเมน + โฮสติ้ง + SSL",
+        answer: "ไม่รวมในราคา ฿6,500 — ดูแพ็กดูแลรายปี ฿2,500/ปี ที่รวมโดเมน + โฮสติ้ง + SSL",
       },
       {
         question: "ทำคู่กับแพ็กแอดได้ไหม?",
@@ -263,32 +263,32 @@ export const packagePagesContent: Record<PackagePageId, PackagePageContent> = {
       },
       {
         question: "มี SEO รวมไหม?",
-        answer: "มีแค่ตั้งค่า on-page พื้นฐาน — SEO รายเดือนผ่าน SEO Add-on +฿6,500/เดือน (บวกกับเว็บ ขั้นต่ำ 12 เดือน)",
+        answer: "มีแค่ตั้งค่า on-page พื้นฐาน — SEO รายเดือนดูแพ็ก SEO จาก ฿4,000/เดือน ตามสัญญา 3/6/12 เดือน",
       },
     ],
     relatedLinks: [
       { label: "รับทำเว็บไซต์ภูเก็ต", href: "/services/web-design" },
-      { label: "แพ็ก Ads Starter", href: "/packages/ads-starter" },
-      { label: "ดูแลรายปี ฿4,500", href: "/packages/annual-care" },
+      { label: "แพ็กโฆษณา", href: "/packages/ads-starter" },
+      { label: "ดูแลรายปี ฿2,500", href: "/packages/annual-care" },
     ],
   },
   "annual-care": {
     id: "annual-care",
     path: packagePaths["annual-care"],
-    metaTitle: "ดูแลเว็บรายปี ฿4,500 | โดเมน + โฮสติ้ง ภูเก็ต",
+    metaTitle: "ดูแลเว็บรายปี ฿2,500 | โดเมน + โฮสติ้ง ภูเก็ต",
     metaDescription:
-      "แพ็กดูแลรายปี ฿4,500 — รวมโดเมน โฮสติ้ง SSL และ security update สำหรับเว็บธุรกิจในภูเก็ต ไม่รวมแก้เนื้อหาหรือยิงแอด",
+      "แพ็กดูแลรายปี ฿2,500 — รวมโดเมน โฮสติ้ง SSL และ security update สำหรับเว็บธุรกิจในภูเก็ต ไม่รวมแก้เนื้อหาหรือยิงแอด",
     heroBadge: "ดูแลระบบ · รายปี",
     heroTitle: "ดูแลเว็บ",
-    heroHighlight: "รายปี ฿4,500",
+    heroHighlight: "รายปี ฿2,500",
     heroSubtitle:
       "ต่ออายุโดเมน โฮสติ้ง SSL และอัปเดตความปลอดภัย — สำหรับลูกค้าที่มีเว็บแล้ว ไม่รวมแก้ข้อความ SEO หรือแอด",
     answerBlock:
-      "แพ็กดูแลรายปี ฿4,500 คือบริการต่ออายุโดเมน โฮสติ้ง SSL และ security update สำหรับเว็บธุรกิจในภูเก็ต — ไม่รวมการแก้เนื้อหา ยิงแอด หรือ SEO รายเดือน",
+      "แพ็กดูแลรายปี ฿2,500 คือบริการต่ออายุโดเมน โฮสติ้ง SSL และ security update สำหรับเว็บธุรกิจในภูเก็ต — ไม่รวมการแก้เนื้อหา ยิงแอด หรือ SEO รายเดือน",
     heroImage: siteImages.icons.webDesign,
     showcaseImage: siteImages.services.webDesign,
     showcaseCaption: "เหมาะคู่กับเว็บ Starter หรือเว็บที่มีอยู่แล้ว — ให้เว็บออนไลน์ต่อเนื่องโดยไม่ต้องจัดการโดเมนเอง",
-    monthlyTitle: "จ่าย ฿4,500/ปี แล้วได้อะไร?",
+    monthlyTitle: "จ่าย ฿2,500/ปี แล้วได้อะไร?",
     monthlyIntro: "ดูแลโครงสร้างพื้นฐานของเว็บ — งาน content และ marketing เป็นแพ็กแยก",
     phaseOneLabel: "เมื่อเริ่มแพ็ก",
     phaseTwoLabel: "ตลอด 12 เดือน",
@@ -311,7 +311,7 @@ export const packagePagesContent: Record<PackagePageId, PackagePageContent> = {
       "อีเมลธุรกิจ (ถ้าต้องการ — คิดแยก)",
       "recovery จากการแฮกที่เกิดจากรหัสผ่านรั่ว (งาน forensic คิดแยก)",
     ],
-    worthItTitle: "฿4,500/ปี คุ้มเมื่อไหร่?",
+    worthItTitle: "฿2,500/ปี คุ้มเมื่อไหร่?",
     worthItPoints: [
       "ไม่อยากจัดการต่ออายุโดเมนและโฮสต์เอง",
       "เว็บเสร็จแล้ว ต้องการให้ออนไลน์ต่อเนื่อง",
@@ -326,7 +326,7 @@ export const packagePagesContent: Record<PackagePageId, PackagePageContent> = {
     compareCards: primaryCompareOthers("annual-care"),
     faqs: [
       {
-        question: "฿4,500/ปี รวมโดเมนไหม?",
+        question: "฿2,500/ปี รวมโดเมนไหม?",
         answer: "รวมต่ออายุโดเมนมาตรฐาน (เช่น .com) และโฮสติ้งตามแพ็ก — TLD พิเศษอาจมีค่าใช้จ่ายเพิ่ม",
       },
       {
@@ -343,7 +343,7 @@ export const packagePagesContent: Record<PackagePageId, PackagePageContent> = {
       },
       {
         question: "ต่อกับแพ็กแอดได้ไหม?",
-        answer: "ได้ — แพ็กนี้ดูแลเว็บอย่างเดียว ยิงแอดดูแพ็ก Ads Starter ฿6,500/เดือน",
+        answer: "ได้ — แพ็กนี้ดูแลเว็บอย่างเดียว ยิงแอดดูแพ็กโฆษณา เริ่ม ฿3,000/เดือน",
       },
     ],
     relatedLinks: [
@@ -355,21 +355,21 @@ export const packagePagesContent: Record<PackagePageId, PackagePageContent> = {
   "seo-addon": {
     id: "seo-addon",
     path: packagePaths["seo-addon"],
-    metaTitle: "SEO Add-on +฿6,500/เดือน | บวกกับแพ็กเว็บ ขั้นต่ำ 1 ปี",
+    metaTitle: "แพ็ก SEO จาก ฿4,000/เดือน | Local SEO ภูเก็ต",
     metaDescription:
-      "SEO Add-on ฿6,500/เดือน — บวกกับแพ็กเว็บ Starter เท่านั้น Local SEO, GBP, on-page สัญญาขั้นต่ำ 12 เดือน ไม่ขาย SEO แยกจากเว็บ",
-    heroBadge: "เพิ่มกับเว็บ · Local SEO",
-    heroTitle: "SEO Add-on",
-    heroHighlight: "+฿6,500/เดือน",
+      "แพ็ก SEO ตามสัญญา — ราย 3 เดือน ฿6,000 · 6 เดือน ฿5,000 · ปี ฿4,000 ต่อเดือน ครอบคลุม Local SEO, GBP, on-page",
+    heroBadge: "SEO · Local + Organic",
+    heroTitle: "แพ็ก SEO",
+    heroHighlight: "จาก ฿4,000/เดือน",
     heroSubtitle:
-      "บวกกับแพ็กเว็บ Starter หรือเว็บจาก PhuketSEO — Local SEO, GBP, on-page สัญญาขั้นต่ำ 12 เดือน ไม่ขายแยกจากเว็บ",
+      "เลือกระยะ 3 เดือน 6 เดือน หรือรายปี — คีย์เวิร์ด on-page Local SEO/Maps และรายงานรายเดือน",
     answerBlock:
-      "SEO Add-on คือบริการ SEO รายเดือน ฿6,500 ที่บวกกับแพ็กเว็บเท่านั้น — ดูแล Google Business Profile, on-page SEO และรายงาน GSC/GBP สัญญาขั้นต่ำ 12 เดือน ไม่จำหน่ายแยกจากการทำเว็บ",
+      "แพ็ก SEO คือบริการ SEO สำหรับธุรกิจในภูเก็ต — ราย 3 เดือน ฿6,000 · 6 เดือน ฿5,000 · ปี ฿4,000 ต่อเดือน ครอบคลุมคีย์เวิร์ด on-page Local SEO/Google Maps คอนเทนต์ตามแผน และรายงานรายเดือน",
     heroImage: siteImages.icons.seo,
     showcaseImage: siteImages.services.localSeo,
-    showcaseCaption: "เหมาะลูกค้าที่มีเว็บแล้วและต้องการ compound organic ในโซนภูเก็ตระยะยาว",
-    monthlyTitle: "จ่าย +฿6,500/เดือน แล้วได้อะไร?",
-    monthlyIntro: "บวกกับแพ็กเว็บ — ขั้นต่ำ 12 เดือน แพ็กยิงแอดแยกที่ Ads Starter",
+    showcaseCaption: "เหมาะธุรกิจที่ต้องการ compound organic ในโซนภูเก็ตระยะยาว",
+    monthlyTitle: "ค่าบริการ SEO ครอบคลุมอะไรบ้าง?",
+    monthlyIntro: "ตามระยะสัญญา 3 / 6 / 12 เดือน — แพ็กยิงแอดแยกที่แท็บโฆษณา",
     monthOneItems: [
       "Audit Google Business Profile + เว็บ baseline",
       "ตั้งหรือปรับ GBP — หมวดหมู่, NAP, รูป, เวลาเปิด",
@@ -384,7 +384,7 @@ export const packagePagesContent: Record<PackagePageId, PackagePageContent> = {
     ],
     notIncluded: [
       "ทำเว็บไซต์ — ต้องมีแพ็กเว็บ Starter ฿6,500 หรือเว็บจาก PhuketSEO ก่อน",
-      "ยิงแอด Google/Meta — ดูแพ็ก Ads Starter ฿6,500/เดือน",
+      "ยิงแอด Google/Meta — ดูแพ็กโฆษณา เริ่ม ฿3,000/เดือน",
       "บทความ blog จำนวนมาก — คิดแยกตาม scope",
       "AEO/GEO เต็มรูปแบบ — ติดต่อสำหรับ scope ขยาย",
       "ยกเลิกก่อนครบ 12 เดือน (ตามสัญญา Add-on)",
@@ -404,37 +404,37 @@ export const packagePagesContent: Record<PackagePageId, PackagePageContent> = {
     compareCards: [
       {
         id: "web-starter",
-        name: "เว็บ Starter",
+        name: "เว็บมาตรฐาน",
         priceLabel: "6,500",
-        hook: "เว็บธุรกิจ ไม่เกิน 10 หน้า — ต้องมีก่อน Add-on",
+        hook: "ทำเว็บครั้งเดียว — แยกจากแพ็ก SEO",
         href: packagePaths["web-starter"],
-        cta: "ดูเว็บ Starter",
+        cta: "ดูแพ็กเว็บ",
       },
       {
         id: "ads-starter",
-        name: "Ads Starter",
-        priceLabel: "6,500",
+        name: "แพ็กโฆษณา",
+        priceLabel: "3,000",
         hook: "ยิงแอด Google หรือ Meta — แยกจาก SEO",
         href: packagePaths["ads-starter"],
-        cta: "ดู Ads Starter",
+        cta: "ดูแพ็กโฆษณา",
       },
     ],
     faqs: [
       {
-        question: "SEO Add-on ขายแยกจากเว็บได้ไหม?",
-        answer: "ไม่ได้ — SEO Add-on บวกกับแพ็กเว็บ Starter ฿6,500 หรือเว็บที่ทำจาก PhuketSEO เท่านั้น ไม่ขาย SEO แยก",
+        question: "แพ็ก SEO ราคาเท่าไหร่?",
+        answer: "ราย 3 เดือน ฿6,000/เดือน (รวม ฿18,000) · ราย 6 เดือน ฿5,000/เดือน (รวม ฿30,000) · รายปี ฿4,000/เดือน (รวม ฿48,000)",
       },
       {
-        question: "ทำไมต้องสัญญาขั้นต่ำ 12 เดือน?",
-        answer: "SEO ใช้เวลา compound — Maps และ organic มักเห็นผลชัดใน 3–6 เดือน สัญญา 1 ปีช่วยวางแผนงานต่อเนื่อง",
+        question: "ทำไมถึงมีสัญญาราย 3 เดือนขึ้นไป?",
+        answer: "SEO ใช้เวลา compound — Maps และ organic มักเห็นผลชัดใน 3–6 เดือน จึงเริ่มจากราย 3 เดือนขึ้นไป",
       },
       {
         question: "รวมยิงแอด Google/Meta ไหม?",
-        answer: "ไม่รวม — ยิงแอดดูแพ็ก Ads Starter ฿6,500/เดือน (ยกเลิกได้ทุกเดือน) แยกจาก SEO Add-on",
+        answer: "ไม่รวม — ยิงแอดดูแพ็กโฆษณา เริ่ม ฿3,000/เดือน ตามระยะสัญญา แยกจากแพ็ก SEO",
       },
       {
         question: "เว็บ + SEO ราคารวมเท่าไหร่?",
-        answer: "เว็บ Starter ฿6,500 ครั้งเดียว + SEO Add-on ฿6,500/เดือน × 12 = ฿78,000 ปีแรก (บวกดูแลรายปี ฿4,500 ถ้าต้องการ)",
+        answer: "เว็บมาตรฐาน ฿6,500 ครั้งเดียว + แพ็ก SEO ตามสัญญาที่เลือก เช่น รายปี ฿4,000/เดือน (รวม ฿48,000) และโดเมน+เซิร์ฟเวอร์ ฿2,500/ปี ถ้าต้องการ",
       },
       {
         question: "มีรายงานผลไหม?",
@@ -771,3 +771,4 @@ export const allPackagePageIds: PackagePageId[] = [
   "pro",
   "max",
 ];
+
