@@ -687,8 +687,8 @@ PhuketSEO โฟกัส [SEO ร้านอาหารภูเก็ต](/i
     ],
     keywords: ["เว็บอสังหาริมทรัพย์ภูเก็ต", "รับทำเว็บภูเก็ต", "Next.js อสังหาฯ", "Lead Gen ภูเก็ต"],
     relatedServices: [
+      { name: "รับทำเว็บไซต์ภูเก็ต", href: "/services/web-design" },
       { name: "SEO อสังหาฯ (Industry)", href: "/industries/seo-real-estate-phuket" },
-      { name: "ทำเว็บไซต์ + SEO", href: "/services/web-design" },
       { name: "Local SEO กมลา", href: "/local/kamala" },
       { name: "Content EN ภูเก็ต", href: "/blog/content-marketing-phuket-foreigners" },
     ],
@@ -794,7 +794,7 @@ Property ที่ปรับทิศทางนี้อย่างต่�
 - **วางแผน web + SEO ตามโซน** — landing ต่อโครงการ EN/RU ตาม buyer mix
 - **ดูแล execution และวัดผล** — จาก wireframe ไปจนถึง lead ที่วัดได้
 
-PhuketSEO ทำ [Web Design + SEO ภูเก็ต](/services/web-design) ครบ — เข้าใจตลาด local และ buyer ต่างชาติ
+PhuketSEO ให้บริการ [รับทำเว็บไซต์ภูเก็ต](/services/web-design) คู่กับ SEO ตามโซน — เข้าใจตลาด local และ buyer ต่างชาติ
 
 ---
 
@@ -802,7 +802,7 @@ PhuketSEO ทำ [Web Design + SEO ภูเก็ต](/services/web-design) ค
 
 **เว็บอสังหาริมทรัพย์ภูเก็ต** ต้องแก้ทั้ง UX และการมองเห็น — สวยอย่างเดียวไม่พอ ทิศทางชัด แต่รายละเอียดต้องวิเคราะห์ตาม property จริง
 
-[SEO อสังหาฯ (Industry)](/industries/seo-real-estate-phuket) · [Content EN ภูเก็ต](/blog/content-marketing-phuket-foreigners) · [รับทำเว็บภูเก็ต](/blog/rab-tam-web-phuket)
+[รับทำเว็บไซต์ภูเก็ต](/services/web-design) · [SEO อสังหาฯ (Industry)](/industries/seo-real-estate-phuket) · [คู่มือรับทำเว็บ](/blog/rab-tam-web-phuket)
     `,
   },
   "google-my-business-phuket": {

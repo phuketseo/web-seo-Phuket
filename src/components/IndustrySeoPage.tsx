@@ -39,6 +39,7 @@ export default function IndustrySeoPage({ data }: { data: IndustryContent }) {
   const heroImage = industryHeroImages[data.slug] ?? siteImages.services.seo;
   const pricing = pricingForIndustry(data);
   const faqs = data.faqs.map((f) => ({ question: f.q, answer: f.a }));
+  const titleAccent = data.titleAccent ?? "ภูเก็ต";
 
   return (
     <div>
@@ -57,12 +58,15 @@ export default function IndustrySeoPage({ data }: { data: IndustryContent }) {
       </div>
 
       <ServiceMarketingHero
-        eyebrow={data.industryEn}
+        eyebrow={`หน้าบริการ industry · ${data.industryEn}`}
         title={data.headline}
-        titleAccent="ภูเก็ต"
+        titleAccent={titleAccent}
         description={data.description}
         answerBlock={data.answerBlock}
-        image={heroImage}
+        image={{
+          ...heroImage,
+          alt: `${data.headline} — ${heroImage.alt}`,
+        }}
         stats={data.stats.map((s) => ({ value: s.metric, label: s.label }))}
         trustBadges={["ผลลัพธ์วัดได้จริง", "โซนภูเก็ตจริง", "ไม่มีสัญญาผูกมัด", "ขอ Audit ฟรี"]}
         secondaryHref="#pain-points"
@@ -85,7 +89,7 @@ export default function IndustrySeoPage({ data }: { data: IndustryContent }) {
                   >
                     {data.relatedBlog.name}
                   </Link>
-                  {" · "}
+                  {(data.relatedLinks?.length ?? 0) > 0 ? " · " : null}
                 </>
               )}
               {data.relatedLinks?.map((link, i) => (
@@ -99,9 +103,13 @@ export default function IndustrySeoPage({ data }: { data: IndustryContent }) {
                   {i < (data.relatedLinks?.length ?? 0) - 1 ? " · " : ""}
                 </span>
               ))}
-              {data.relatedLinks?.length ? " · " : null}
+              {" · "}
               <Link href="/pricing" className="text-violet-600 font-medium hover:underline underline-offset-2">
                 ดูราคา
+              </Link>
+              {" · "}
+              <Link href="/seo-audit" className="text-violet-600 font-medium hover:underline underline-offset-2">
+                SEO Audit ฟรี
               </Link>
             </p>
           )}
@@ -134,6 +142,58 @@ export default function IndustrySeoPage({ data }: { data: IndustryContent }) {
           </div>
         </div>
       </HomeSection>
+
+      {data.commonMistakes && data.commonMistakes.length > 0 ? (
+        <HomeSection variant="muted" containerClass="max-w-4xl">
+          <HomeSectionHeader
+            title="ข้อผิดพลาดที่พบบ่อย"
+            titleAccent={`ใน${data.industry}`}
+            description="แก้ฐานเหล่านี้ก่อนยิงแอดหรือจ้างดันอันดับ"
+            centered
+            className="mx-auto max-w-2xl"
+          />
+          <ul className="space-y-2.5 text-sm sm:text-base text-slate-700">
+            {data.commonMistakes.map((item) => (
+              <li key={item} className="flex items-start gap-2.5">
+                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-indigo-500 shrink-0" />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </HomeSection>
+      ) : null}
+
+      {data.comparison ? (
+        <HomeSection variant="white" containerClass="max-w-4xl">
+          <HomeSectionHeader
+            title={data.comparison.title}
+            titleAccent={data.comparison.titleAccent}
+            description={data.comparison.description}
+            centered
+            className="mx-auto max-w-2xl"
+          />
+          <div className="overflow-x-auto rounded-xl border border-slate-200 bg-white shadow-sm">
+            <table className="w-full text-sm sm:text-base text-left">
+              <thead>
+                <tr className="border-b border-slate-200 bg-slate-50/80">
+                  <th className="px-4 py-3 font-semibold text-slate-900">มิติ</th>
+                  <th className="px-4 py-3 font-semibold text-slate-900">{data.comparison.leftLabel}</th>
+                  <th className="px-4 py-3 font-semibold text-slate-900">{data.comparison.rightLabel}</th>
+                </tr>
+              </thead>
+              <tbody className="text-slate-700">
+                {data.comparison.rows.map((row) => (
+                  <tr key={row.dimension} className="border-b border-slate-100 last:border-0">
+                    <td className="px-4 py-3 font-medium text-slate-900">{row.dimension}</td>
+                    <td className="px-4 py-3">{row.left}</td>
+                    <td className="px-4 py-3">{row.right}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </HomeSection>
+      ) : null}
 
       <HomeSection variant="muted" containerClass="max-w-4xl">
         <HomeSectionHeader title="Keywords" titleAccent="เป้าหมาย" centered className="mx-auto" />

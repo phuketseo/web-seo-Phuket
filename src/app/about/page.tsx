@@ -8,10 +8,11 @@ import { GradientButton } from "@/components/GradientButton";
 import { MarketingBreadcrumb } from "@/components/MarketingBreadcrumb";
 
 export const metadata: Metadata = {
-  title: "เกี่ยวกับเรา - PhuketSEO | SEO + เว็บไซต์ภูเก็ต",
+  title: "เกี่ยวกับเรา | ทีม PhuketSEO ในภูเก็ต",
   description:
-    "PhuketSEO ทีม SEO + Web ในภูเก็ต โฟกัสธุรกิจไทยท้องถิ่น ส่ง SEO Audit ใน 7 วัน แพ็กเกจ Lite ฿5,900 / Pro ฿8,900 / Pro Max ฿15,000",
+    "รู้จักทีม PhuketSEO ในภูเก็ต — แนวทางทำงานกับธุรกิจไทยท้องถิ่น ส่ง SEO Audit ใน 7 วัน รายละเอียดบริการแต่ละอย่างอยู่ที่หน้าบริการแยกชัด",
   alternates: { canonical: `${siteConfig.url}/about` },
+  robots: { index: true, follow: true },
 };
 
 const deliveryTimeline = [
@@ -38,6 +39,18 @@ export default function AboutPage() {
             "@context": "https://schema.org",
             "@graph": [
               {
+                "@type": "AboutPage",
+                "@id": `${siteConfig.url}/about#webpage`,
+                url: `${siteConfig.url}/about`,
+                name: "เกี่ยวกับทีม PhuketSEO",
+                description:
+                  "หน้าเกี่ยวกับทีม PhuketSEO ในภูเก็ต แนวทางทำงานและวิธีส่งมอบ รายละเอียดบริการอยู่ที่หน้าบริการแยกชัด",
+                inLanguage: "th-TH",
+                isPartOf: { "@id": `${siteConfig.url}/#website` },
+                about: { "@id": `${siteConfig.url}/#organization` },
+                mainEntity: { "@id": `${siteConfig.url}/#organization` },
+              },
+              {
                 "@type": "BreadcrumbList",
                 itemListElement: [
                   { "@type": "ListItem", position: 1, name: "หน้าแรก", item: siteConfig.url },
@@ -55,36 +68,43 @@ export default function AboutPage() {
           <HomeSectionHeader
             eyebrow="PhuketSEO"
             title="เกี่ยวกับ"
-            titleAccent="เรา"
-            description="รับทำ SEO + เว็บไซต์ภูเก็ต สำหรับธุรกิจไทยท้องถิ่น — ติด Google, เว็บเร็ว, พร้อม AI Search"
+            titleAccent="ทีมเรา"
+            description="ทีมในภูเก็ตที่ทำงานกับธุรกิจไทยท้องถิ่น เล่าแนวทางและวิธีส่งมอบ — รายละเอียดแพ็กและราคาอยู่ที่หน้าบริการ ไม่ใช่หน้านี้"
             className="mb-0"
           />
         </div>
       </section>
 
       <HomeSection variant="muted" className="border-t-0">
-        <HomeSectionHeader eyebrow="บริการ" title="เราทำ" titleAccent="อะไร" />
+        <HomeSectionHeader eyebrow="บทบาท" title="หน้านี้เล่าทีม" titleAccent="ไม่ใช่หน้าขายบริการ" />
         <div className="space-y-4 text-slate-700 leading-relaxed text-sm sm:text-base">
           <p>
-            PhuketSEO โฟกัสบริการที่ส่งมอบได้จริงและเห็นผลเร็ว: <strong className="text-slate-900">SEO ภูเก็ต</strong>,{" "}
-            <strong className="text-slate-900">เว็บไซต์ที่ Google ชอบ</strong>, และ{" "}
-            <strong className="text-slate-900">โครงสร้าง AEO/GEO</strong> ให้โผล่ AI Overview
+            PhuketSEO เป็นทีมในจังหวัดภูเก็ตที่โฟกัสงาน SEO เว็บไซต์ และโครงสร้าง AI Search สำหรับธุรกิจไทยท้องถิ่นในโซนป่าตอง กะตะ
+            ตัวเมือง ถลาง กมลา กะทู้ เราทำงานใกล้พื้นที่จริง ไม่ใช่เอเจนซี่ระยะไกลที่ส่งรายงาน keyword อย่างเดียว
           </p>
           <p>
             เราใช้ framework <strong className="text-slate-900">Phuket Visibility Stack™</strong> — Lite (Maps + รีวิว) → Pro
-            (เว็บ + SEO + AI) → Pro Max (+ Ads) ออกแบบมาสำหรับร้านอาหาร สปา อสังหาริมทรัพย์ และ SME ในภูเก็ต
+            (เว็บ + SEO + AI) → Pro Max (+ Ads) สำหรับร้านอาหาร สปา อสังหาริมทรัพย์ และ SME
           </p>
           <p>
-            ข้อมูลจุดเด่น บริการ พิกัด และราคาแบบ entity สำหรับ AI Search:{" "}
+            ถ้าต้องการดูขอบเขตงาน ราคา และขั้นตอนจ้างงาน ให้ไปที่หน้าบริการหลัก{" "}
+            <Link href="/services/seo-phuket" className="text-violet-700 hover:underline font-medium">
+              รับทำ SEO ภูเก็ต
+            </Link>
+            {" · "}
+            <Link href="/services/local-seo" className="text-violet-700 hover:underline font-medium">
+              รับทำ Local SEO
+            </Link>
+            {" · "}
             <Link href="/phuketseo" className="text-violet-700 hover:underline font-medium">
-              PhuketSEO Entity
+              ข้อมูล Entity PhuketSEO
             </Link>
           </p>
         </div>
       </HomeSection>
 
       <HomeSection variant="white" containerClass="max-w-4xl">
-        <HomeSectionHeader eyebrow="Timeline" title="ส่งมอบอะไร" titleAccent="เมื่อไหร่" centered className="mx-auto" />
+        <HomeSectionHeader eyebrow="Timeline" title="ทีมเราส่งมอบ" titleAccent="ตามช่วงเวลาแบบนี้" centered className="mx-auto" />
         <div className="grid sm:grid-cols-2 gap-3 md:gap-4">
           {deliveryTimeline.map((item) => (
             <div key={item.period} className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
@@ -111,21 +131,24 @@ export default function AboutPage() {
           </p>
           <p>
             แพ็กเกจ <strong className="text-slate-900">SEO Pro Max</strong> รวม Google + Meta Ads management สำหรับลูกค้าที่ต้องการ lead
-            เร็ว แต่บริการหลักที่เราเชี่ยวชาญคือ <strong className="text-slate-900">SEO + เว็บไซต์</strong> ที่ลูกค้าเห็นผลยั่งยืน
+            เร็ว แต่จุดแข็งหลักของทีมคือ SEO และเว็บไซต์ที่ลูกค้าเห็นผลยั่งยืน
           </p>
         </div>
         <div className="mt-5 flex flex-wrap gap-4 text-sm">
+          <Link href="/services/seo-phuket" className="text-violet-600 font-medium hover:underline underline-offset-2">
+            ดูหน้าบริการ SEO
+          </Link>
           <Link href="/services/google-ads" className="text-violet-600 font-medium hover:underline underline-offset-2">
-            ดูบริการ Google Ads (เสริม)
+            ดูบริการ Google Ads
           </Link>
           <Link href="/services/social-media" className="text-violet-600 font-medium hover:underline underline-offset-2">
-            ดูบริการ Social Media (เสริม)
+            ดูบริการ Social Media
           </Link>
         </div>
       </HomeSection>
 
       <HomeSection variant="white">
-        <HomeSectionHeader eyebrow="Values" title="ค่า" titleAccent="นิยม" />
+        <HomeSectionHeader eyebrow="Values" title="ค่า" titleAccent="นิยมของทีม" />
         <div className="space-y-4">
           {values.map((v) => (
             <div key={v.title} className="flex gap-4 items-start rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
@@ -144,27 +167,27 @@ export default function AboutPage() {
       <HomeSection variant="gradient" containerClass="max-w-2xl">
         <div className="text-center">
           <HomeSectionHeader
-            title="พร้อมเริ่มต้น"
-            titleAccent="แล้ว?"
-            description="ขอคำปรึกษาฟรี หรือขอ SEO Audit ไม่มีค่าใช้จ่าย"
+            title="อยากรู้จักงานของทีม"
+            titleAccent="ต่อ?"
+            description="ไปหน้าบริการหลักเพื่อดูขอบเขตและราคา หรือคุยกับทีมผ่านฟอร์มติดต่อ / SEO Audit ฟรี"
             centered
             className="mb-7"
           />
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <GradientButton href="/contact" className="px-7">
-              ติดต่อเรา
+            <GradientButton href="/services/seo-phuket" className="px-7">
+              ดูหน้าบริการ SEO
             </GradientButton>
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center text-sm font-medium px-6 py-3 rounded-lg border border-slate-200 text-slate-700 hover:border-violet-200 hover:bg-violet-50/50 transition-colors"
+            >
+              ติดต่อเรา
+            </Link>
             <Link
               href="/seo-audit"
               className="inline-flex items-center justify-center text-sm font-medium px-6 py-3 rounded-lg border border-slate-200 text-slate-700 hover:border-violet-200 hover:bg-violet-50/50 transition-colors"
             >
               ขอ SEO Audit ฟรี
-            </Link>
-            <Link
-              href="/pricing"
-              className="inline-flex items-center justify-center text-sm font-medium px-6 py-3 rounded-lg border border-slate-200 text-slate-700 hover:border-violet-200 hover:bg-violet-50/50 transition-colors"
-            >
-              ดูราคา
             </Link>
           </div>
         </div>

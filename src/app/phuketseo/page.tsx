@@ -17,9 +17,9 @@ import { phuketseoEntity, phuketseoEntityFaqs } from "@/lib/entity-content";
 import { siteConfig } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "PhuketSEO — เอเจนซี่รับทำ SEO ภูเก็ต | Entity",
+  title: "PhuketSEO | ข้อมูลบริษัทเอเจนซี่ SEO ในภูเก็ต (Entity)",
   description:
-    "PhuketSEO เอเจนซี่ SEO ภูเก็ต — จุดเด่น บริการ พิกัด ราคา โซนที่ให้บริการ รับทำ SEO Local SEO เว็บไซต์ AEO/GEO แพ็กเริ่ม ฿5,900/เดือน",
+    "ข้อมูล Entity ของ PhuketSEO — จุดเด่น พิกัด โซนที่ให้บริการ และลิงก์ไปหน้าบริการ SEO Local SEO เว็บไซต์ AEO/GEO แยกชัด",
   alternates: { canonical: `${siteConfig.url}/phuketseo` },
 };
 
@@ -36,17 +36,19 @@ const entityPageSchema = {
       "@type": "WebPage",
       "@id": `${siteConfig.url}/phuketseo#webpage`,
       url: `${siteConfig.url}/phuketseo`,
-      name: "PhuketSEO — เอเจนซี่รับทำ SEO ภูเก็ต",
+      name: "PhuketSEO — ข้อมูลบริษัทเอเจนซี่ SEO ในภูเก็ต",
       description: phuketseoEntity.legalDescription,
       inLanguage: "th-TH",
       isPartOf: { "@id": organizationEntityId },
       about: { "@id": businessEntityId },
       mainEntity: { "@id": businessEntityId },
+      significantLink: `${siteConfig.url}/services/seo-phuket`,
     },
     {
       "@type": "ProfessionalService",
       "@id": `${siteConfig.url}/phuketseo#service`,
-      name: "รับทำ SEO ภูเก็ต — PhuketSEO",
+      name: "บริการ SEO และ Digital Marketing ของ PhuketSEO",
+      url: `${siteConfig.url}/services/seo-phuket`,
       provider: { "@id": businessEntityId },
       areaServed: phuketseoEntity.serviceAreas.map((zone) => ({
         "@type": "Place",
@@ -122,7 +124,7 @@ export default function PhuketseoEntityPage() {
             href="/services/seo-phuket"
             className="inline-flex items-center rounded-full border border-violet-200 bg-violet-50/50 px-4 py-2 text-sm font-medium text-violet-700 hover:bg-violet-100 transition-colors"
           >
-            บริการ SEO ภูเก็ต
+            รับทำ SEO ภูเก็ต
           </Link>
           <Link
             href="/services/local-seo"

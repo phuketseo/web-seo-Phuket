@@ -76,7 +76,7 @@
     color: #ffffff;
     -webkit-text-fill-color: #ffffff;
     font-weight: 600;
-    border-radius: 12px;
+    border-radius: 9999px;
     box-shadow: 0 4px 14px rgba(99, 102, 241, 0.22);
     transition: filter 0.15s ease, box-shadow 0.15s ease;
     text-decoration: none;

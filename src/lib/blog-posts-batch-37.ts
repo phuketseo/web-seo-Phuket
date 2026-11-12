@@ -27,7 +27,7 @@ export const blogPostsBatch37 = {
       "Google Business Profile",
     ],
     relatedServices: [
-      { name: "บริการ Local SEO", href: "/services/local-seo" },
+      { name: "รับทำ Local SEO", href: "/services/local-seo" },
       { name: "จ้างทำ Local SEO ราคาเท่าไหร่", href: "/blog/raaka-local-seo" },
       { name: "เลือกเอเจนซี่ Local SEO", href: "/blog/leuk-aecensi-local-seo" },
       { name: "Google Business Profile", href: "/blog/google-business-profile-local-seo" },
@@ -172,7 +172,7 @@ Google Maps — ลูกค้าเลือกจากรายการบ�
 
 ## PhuketSEO ช่วยอย่างไร
 
-**PhuketSEO ให้บริการ local seo สำหรับธุรกิจในประเทศไทย** — เริ่มจาก audit Google Maps และคู่แข่งในโซน แล้ววางแผนตามประเภทธุรกิจจริง ดู [บริการ Local SEO](/services/local-seo):
+**PhuketSEO ให้บริการรับทำ Local SEO สำหรับธุรกิจในประเทศไทย** — เริ่มจาก audit Google Maps และคู่แข่งในโซน แล้ววางแผนตามประเภทธุรกิจจริง ดู [รับทำ Local SEO](/services/local-seo):
 
 - **วิเคราะห์ listing และคู่แข่งในโซน** — ไม่ใช่แค่ keyword ทั่วไป
 - **ดูแล GBP รีวิว และรายงานผลรายเดือน** — แพ็กเริ่มต้น ฿5,900/เดือน
@@ -218,7 +218,7 @@ Google Maps — ลูกค้าเลือกจากรายการบ�
       "แพ็ก local seo",
     ],
     relatedServices: [
-      { name: "บริการ Local SEO", href: "/services/local-seo" },
+      { name: "รับทำ Local SEO", href: "/services/local-seo" },
       { name: "Local SEO คืออะไร", href: "/blog/local-seo-kue-arai" },
       { name: "เลือกเอเจนซี่ Local SEO", href: "/blog/leuk-aecensi-local-seo" },
       { name: "ดูราคาทั้งหมด", href: "/pricing" },
@@ -319,7 +319,7 @@ Google Maps — ลูกค้าเลือกจากรายการบ�
 
 ## PhuketSEO ช่วยอย่างไร
 
-เราให้ **[บริการ local seo](/services/local-seo)** แบบแพ็กชัด — ไม่มีสัญญาผูกมัด รายงาน KPI รายเดือน เริ่มจาก audit Maps ฟรี
+เราให้ **[รับทำ Local SEO](/services/local-seo)** แบบแพ็กชัด — ไม่มีสัญญาผูกมัด รายงาน KPI รายเดือน เริ่มจาก audit Maps ฟรี
 
 [ขอคำปรึกษาฟรี](/contact) · [SEO Audit ฟรี](/seo-audit) · [Local SEO คืออะไร](/blog/local-seo-kue-arai) · [ดูราคาทั้งหมด](/pricing)
     `,
@@ -350,7 +350,7 @@ Google Maps — ลูกค้าเลือกจากรายการบ�
       "จ้างทำ local seo",
     ],
     relatedServices: [
-      { name: "บริการ Local SEO", href: "/services/local-seo" },
+      { name: "รับทำ Local SEO", href: "/services/local-seo" },
       { name: "Local SEO คืออะไร", href: "/blog/local-seo-kue-arai" },
       { name: "จ้างทำ Local SEO ราคาเท่าไหร่", href: "/blog/raaka-local-seo" },
       { name: "ขอ SEO Audit ฟรี", href: "/seo-audit" },
@@ -452,7 +452,7 @@ Red flag เอเจนซี่ Local SEO — รับประกันอ�
 
 ## PhuketSEO ช่วยอย่างไร
 
-เราให้ **[บริการ local seo](/services/local-seo)** แบบไม่มีสัญญาผูกมัด deliverable ชัด เริ่มจาก audit Maps ฟรี
+เราให้ **[รับทำ Local SEO](/services/local-seo)** แบบไม่มีสัญญาผูกมัด deliverable ชัด เริ่มจาก audit Maps ฟรี
 
 [ขอคำปรึกษาฟรี](/contact) · [SEO Audit ฟรี](/seo-audit) · [Local SEO คืออะไร](/blog/local-seo-kue-arai) · [ราคา](/blog/raaka-local-seo)
     `,
@@ -484,7 +484,7 @@ Red flag เอเจนซี่ Local SEO — รับประกันอ�
       "Google Maps SEO",
     ],
     relatedServices: [
-      { name: "บริการ Local SEO", href: "/services/local-seo" },
+      { name: "รับทำ Local SEO", href: "/services/local-seo" },
       { name: "Local SEO คืออะไร", href: "/blog/local-seo-kue-arai" },
       { name: "จ้างทำ Local SEO ราคาเท่าไหร่", href: "/blog/raaka-local-seo" },
       { name: "SEO ภูเก็ต คืออะไร", href: "/blog/seo-phuket-kue-arai" },
@@ -581,7 +581,7 @@ Local SEO กับ Google Ads — ฐานระยะยาว vs lead เร
 
 ## PhuketSEO ช่วยอย่างไร
 
-เราวางแผน [บริการ local seo](/services/local-seo) และ SEO ตามลำดับที่ธุรกิจต้องการจริง — ไม่ยัดแพ็กเดียวกันทุกร้าน
+เราวางแผน [รับทำ Local SEO](/services/local-seo) และ SEO ตามลำดับที่ธุรกิจต้องการจริง — ไม่ยัดแพ็กเดียวกันทุกร้าน
 
 [ขอคำปรึกษาฟรี](/contact) · [Local SEO คืออะไร](/blog/local-seo-kue-arai) · [Google Business Profile](/blog/google-business-profile-local-seo)
     `,
@@ -613,7 +613,7 @@ Local SEO กับ Google Ads — ฐานระยะยาว vs lead เร
       "Google My Business",
     ],
     relatedServices: [
-      { name: "บริการ Local SEO", href: "/services/local-seo" },
+      { name: "รับทำ Local SEO", href: "/services/local-seo" },
       { name: "Local SEO คืออะไร", href: "/blog/local-seo-kue-arai" },
       { name: "จ้างทำ Local SEO ราคาเท่าไหร่", href: "/blog/raaka-local-seo" },
       { name: "Google Business Profile ภูเก็ต", href: "/blog/google-my-business-phuket" },
@@ -729,7 +729,7 @@ Local SEO กับ Google Ads — ฐานระยะยาว vs lead เร
 
 ## PhuketSEO ช่วยอย่างไร
 
-เราเริ่มทุก **[บริการ local seo](/services/local-seo)** จาก audit GBP — ด้วยประสบการณ์จากภูเก็ตที่โซนแข่งสูง
+เราเริ่มทุก **[รับทำ Local SEO](/services/local-seo)** จาก audit GBP — ด้วยประสบการณ์จากภูเก็ตที่โซนแข่งสูง
 
 [ขอคำปรึกษาฟรี](/contact) · [SEO Audit ฟรี](/seo-audit) · [Local SEO คืออะไร](/blog/local-seo-kue-arai) · [ราคา](/blog/raaka-local-seo)
     `,

@@ -1,9 +1,14 @@
 import Link from "next/link";
 import {
-  focusKeywordRankings,
   focusKeywordRankingsLastUpdated,
+  pageLabelForPath,
   type FocusKeywordRanking,
 } from "@/lib/focus-keyword-rankings";
+import {
+  mergeFocusRanksWithCache,
+  readFocusSerpCache,
+  resolvedFocusLastUpdated,
+} from "@/lib/focus-serp-cache";
 
 function formatRank(rank: number | null, notRanked?: boolean) {
   if (notRanked) return "ไม่ติดอันดับ";
@@ -32,14 +37,16 @@ function sortByRank(rows: FocusKeywordRanking[]) {
   });
 }
 
-const formattedUpdateDate = new Date(focusKeywordRankingsLastUpdated).toLocaleDateString("th-TH", {
-  year: "numeric",
-  month: "long",
-  day: "numeric",
-});
+export async function FocusKeywordRankingsTable() {
+  const cache = await readFocusSerpCache();
+  const rows = sortByRank(mergeFocusRanksWithCache(undefined, cache));
+  const updatedAt = resolvedFocusLastUpdated(cache);
+  const formattedUpdateDate = new Date(updatedAt).toLocaleDateString("th-TH", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
 
-export function FocusKeywordRankingsTable() {
-  const rows = sortByRank(focusKeywordRankings);
 
   return (
     <div>
@@ -49,7 +56,7 @@ export function FocusKeywordRankingsTable() {
             <tr className="border-b border-slate-200 bg-slate-50/80">
               <th className="px-4 py-3 font-semibold text-slate-900">คีย์เวิร์ด</th>
               <th className="px-4 py-3 font-semibold text-slate-900 w-28">อันดับ</th>
-              <th className="px-4 py-3 font-semibold text-slate-900">หน้าที่ติด</th>
+              <th className="px-4 py-3 font-semibold text-slate-900">หน้าเป้าหมาย</th>
             </tr>
           </thead>
           <tbody className="text-slate-700">
@@ -64,7 +71,7 @@ export function FocusKeywordRankingsTable() {
                     href={row.pagePath}
                     className="text-violet-600 font-medium hover:underline underline-offset-2"
                   >
-                    {row.pagePath}
+                    {pageLabelForPath(row.pagePath)}
                   </Link>
                 </td>
               </tr>
@@ -73,12 +80,12 @@ export function FocusKeywordRankingsTable() {
         </table>
       </div>
       <p className="mt-4 text-sm text-slate-600 leading-relaxed">
-        เช็คอันดับด้วยการค้นหาจริงบน Google (ภูเก็ต). ไม่รับประกันอันดับคงที่ — ใช้เป็นตัวอย่างผลงานของเว็บ
+        เช็คอันดับจาก /admin (GSC / SerpAPI). ไม่รับประกันอันดับคงที่ — ใช้เป็นตัวอย่างผลงานของเว็บ
         PhuketSEO เอง
       </p>
       <p className="mt-2 text-xs text-slate-500">
         หมายเหตุ: อัปเดตอันดับ{" "}
-        <time dateTime={focusKeywordRankingsLastUpdated}>{formattedUpdateDate}</time>
+        <time dateTime={updatedAt || focusKeywordRankingsLastUpdated}>{formattedUpdateDate}</time>
       </p>
     </div>
   );

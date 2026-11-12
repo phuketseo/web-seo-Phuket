@@ -458,7 +458,7 @@ export const blogPostsMeta: BlogPostMeta[] = [
     slug: "rab-tam-web-phuket",
     title: "รับทำเว็บไซต์ภูเก็ต — เว็บ Next.js เร็ว ติด Google พร้อม SEO",
     category: "เว็บ Next.js",
-    description: "รับทำเว็บไซต์ภูเก็ต Next.js mobile-first พร้อม SEO AEO ราคา setup ฿29,900 ขึ้นไป",
+    description: "รับทำเว็บไซต์ภูเก็ต Next.js mobile-first พร้อม SEO AEO แพ็ก Starter ฿6,500 ครั้งเดียว",
     thumbnail: getBlogThumbnail("rab-tam-web-phuket"),
   },
   {

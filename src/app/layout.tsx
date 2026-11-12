@@ -1,25 +1,21 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { googleSans } from "@/lib/google-sans-font";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import DeferredLineChat from "@/components/DeferredLineChat";
 import DeferredGoogleAnalytics from "@/components/DeferredGoogleAnalytics";
-import CookieConsent from "@/components/CookieConsent";
+import SiteChrome from "@/components/SiteChrome";
 import { siteEntityGraphSchema } from "@/lib/schema";
 import { defaultOgImage, siteConfig } from "@/lib/utils";
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? siteConfig.url),
   title: {
-    default: "PhuketSEO | รับทำ SEO ภูเก็ต ติดอันดับ Google ได้จริง",
+    default: "PhuketSEO | รับยิงแอด ภูเก็ต Google & Facebook",
     template: "%s | PhuketSEO",
   },
   description: siteConfig.description,
   keywords: [
     "รับยิงแอด ภูเก็ต",
     "รับทำแอด ภูเก็ต",
-    "รับทำ SEO ภูเก็ต",
     "Google Ads ภูเก็ต",
     "Digital Marketing Phuket",
   ],
@@ -36,13 +32,13 @@ export const metadata: Metadata = {
     locale: "th_TH",
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: "PhuketSEO | รับทำ SEO + เว็บไซต์ภูเก็ต ติด Google พร้อม AI Search",
+    title: "PhuketSEO | รับยิงแอด ภูเก็ต Google & Facebook",
     description: siteConfig.description,
     images: [defaultOgImage],
   },
   twitter: {
     card: "summary_large_image",
-    title: "PhuketSEO | รับทำ SEO + เว็บไซต์ภูเก็ต",
+    title: "PhuketSEO | รับยิงแอด ภูเก็ต Google & Facebook",
     description: siteConfig.description,
     images: [defaultOgImage.url],
   },
@@ -56,8 +52,8 @@ export const metadata: Metadata = {
 };
 
 const CRITICAL_SHELL_CSS = `
-:root{--site-header-height:76px}
-[data-site-header]{position:fixed;top:0;left:0;right:0;z-index:50;background:#fff;box-shadow:0 1px 2px rgba(15,23,42,.06);border-bottom:1px solid #f1f5f9;padding:.375rem 0}
+:root{--site-header-height:80px}
+[data-site-header]{position:fixed;top:0;left:0;right:0;z-index:50;background:#fff;box-shadow:0 1px 2px rgba(15,23,42,.06);border-bottom:1px solid #f1f5f9;padding:.5rem 0}
 [data-site-header] .min-h-\\[66px\\]{min-height:66px}
 html{scroll-behavior:smooth}
 body{margin:0;font-family:Tahoma,"Segoe UI",sans-serif;color:#0f172a;background:#fff;-webkit-font-smoothing:antialiased}
@@ -81,11 +77,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(siteEntityGraphSchema) }}
         />
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
-        <DeferredLineChat />
-        <CookieConsent />
+        <SiteChrome>{children}</SiteChrome>
         {gaId && <DeferredGoogleAnalytics gaId={gaId} />}
       </body>
     </html>

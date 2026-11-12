@@ -15,7 +15,7 @@ export function GradientButton({
     <Link
       href={href}
       className={cn(
-        "btn-gradient-brand relative z-10 inline-flex items-center justify-center px-6 py-3 text-sm",
+        "btn-gradient-brand relative z-10 inline-flex items-center justify-center rounded-full px-7 py-3 text-sm font-semibold",
         className
       )}
     >

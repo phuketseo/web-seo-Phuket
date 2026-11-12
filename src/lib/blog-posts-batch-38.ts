@@ -16,7 +16,7 @@ export const blogPostsBatch38 = {
       "เหมาะกับร้านขายของ ร้านเสื้อผ้า ร้านมือถือ ร้านอุปกรณ์ และร้านในตลาดชุมชน — ลูกค้าโทรหรือมาหน้าร้านจาก Maps",
       "เริ่มจาก GBP ครบและยืนยันตัวตน → รีวิว → รูปและโพสต์ → คำค้นตรงย่าน",
       "ร้านออนไลน์อย่างเดียวไม่เหมาะเป็นหลัก — ต้องมีหน้าร้านหรือโซนบริการชัด",
-      "อ่าน [Local SEO คืออะไร](/blog/local-seo-kue-arai) สำหรับภาพรวม · [บริการ Local SEO](/services/local-seo)",
+      "อ่าน [Local SEO คืออะไร](/blog/local-seo-kue-arai) สำหรับภาพรวม · [รับทำ Local SEO](/services/local-seo)",
     ],
     keywords: [
       "ทำ local seo ร้านค้า",
@@ -26,7 +26,7 @@ export const blogPostsBatch38 = {
       "ร้านค้า near me",
     ],
     relatedServices: [
-      { name: "บริการ Local SEO", href: "/services/local-seo" },
+      { name: "รับทำ Local SEO", href: "/services/local-seo" },
       { name: "จ้างทำ Local SEO ร้านค้า", href: "/blog/raaka-local-seo-rang-kha" },
       { name: "Google Business Profile ร้านค้า", href: "/blog/gbp-rang-kha-local-seo" },
       { name: "คำค้น Local SEO ร้านค้า", href: "/blog/kham-kha-local-seo-rang-kha" },
@@ -50,7 +50,7 @@ export const blogPostsBatch38 = {
       },
       {
         q: "ทำ Local SEO ร้านค้าเองได้ไหม?",
-        a: "ทำบางส่วนเองได้ เช่น อัปเดต GBP ขอรีวิว และโพสต์รูปสินค้า แต่การวิเคราะห์คู่แข่งในย่านและดูแลต่อเนื่องมักใช้เวลา — ร้านที่ต้องการผลสม่ำเสมอมักใช้ [บริการ local seo](/services/local-seo)",
+        a: "ทำบางส่วนเองได้ เช่น อัปเดต GBP ขอรีวิว และโพสต์รูปสินค้า แต่การวิเคราะห์คู่แข่งในย่านและดูแลต่อเนื่องมักใช้เวลา — ร้านที่ต้องการผลสม่ำเสมอมักใช้ [รับทำ Local SEO](/services/local-seo)",
       },
       {
         q: "Local SEO ร้านค้ากับ SEO ต่างกันยังไง?",
@@ -162,7 +162,7 @@ Google Maps ร้านค้า — ลูกค้าเลือกจาก
 
 ## PhuketSEO ช่วยอย่างไร
 
-**PhuketSEO ให้ [บริการ local seo](/services/local-seo) สำหรับร้านค้าและ SME ในประเทศไทย** — เริ่มจาก audit Google Maps และคู่แข่งในย่าน:
+**PhuketSEO ให้ [รับทำ Local SEO](/services/local-seo) สำหรับร้านค้าและ SME ในประเทศไทย** — เริ่มจาก audit Google Maps และคู่แข่งในย่าน:
 
 - **วิเคราะห์ listing และคู่แข่งในโซน** — ไม่ใช่แค่ keyword ทั่วไป
 - **ดูแล GBP รีวิว และรายงานผลรายเดือน** — แพ็กเริ่มต้น ฿5,900/เดือน
@@ -176,7 +176,7 @@ Google Maps ร้านค้า — ลูกค้าเลือกจาก
 
 อ่านเพิ่ม: [จ้างทำ Local SEO ร้านค้า](/blog/raaka-local-seo-rang-kha) · [GBP ร้านค้า](/blog/gbp-rang-kha-local-seo) · [คำค้นร้านค้า](/blog/kham-kha-local-seo-rang-kha) · [ข้อผิดพลาด](/blog/local-seo-rang-kha-mistakes)
 
-[ขอคำปรึกษาฟรี](/contact) · [SEO Audit ฟรี](/seo-audit) · [บริการ Local SEO](/services/local-seo)
+[ขอคำปรึกษาฟรี](/contact) · [SEO Audit ฟรี](/seo-audit) · [รับทำ Local SEO](/services/local-seo)
     `,
   },
 
@@ -206,7 +206,7 @@ Google Maps ร้านค้า — ลูกค้าเลือกจาก
       "แพ็ก local seo ร้านค้า",
     ],
     relatedServices: [
-      { name: "บริการ Local SEO", href: "/services/local-seo" },
+      { name: "รับทำ Local SEO", href: "/services/local-seo" },
       { name: "ทำ Local SEO ร้านค้า", href: "/blog/tam-local-seo-rang-kha" },
       { name: "เลือกเอเจนซี่ Local SEO", href: "/blog/leuk-aecensi-local-seo" },
       { name: "แพ็ก SEO Lite", href: "/packages/seo-lite" },
@@ -306,7 +306,7 @@ Google Maps ร้านค้า — ลูกค้าเลือกจาก
 
 ## PhuketSEO ช่วยอย่างไร
 
-เราให้ **[บริการ local seo](/services/local-seo)** สำหรับร้านค้าและ SME — ไม่มีสัญญาผูกมัด รายงาน KPI รายเดือน
+เราให้ **[รับทำ Local SEO](/services/local-seo)** สำหรับร้านค้าและ SME — ไม่มีสัญญาผูกมัด รายงาน KPI รายเดือน
 
 [ขอคำปรึกษาฟรี](/contact) · [ทำ Local SEO ร้านค้า](/blog/tam-local-seo-rang-kha) · [ดูราคาทั้งหมด](/pricing)
     `,
@@ -338,7 +338,7 @@ Google Maps ร้านค้า — ลูกค้าเลือกจาก
       "ตั้งค่า gbp ร้านค้า",
     ],
     relatedServices: [
-      { name: "บริการ Local SEO", href: "/services/local-seo" },
+      { name: "รับทำ Local SEO", href: "/services/local-seo" },
       { name: "ทำ Local SEO ร้านค้า", href: "/blog/tam-local-seo-rang-kha" },
       { name: "Google Business Profile", href: "/blog/google-business-profile-local-seo" },
       { name: "Google Reviews ภูเก็ต", href: "/blog/google-reviews-phuket" },
@@ -445,7 +445,7 @@ Google Maps ร้านค้า — ลูกค้าเลือกจาก
 
 ## PhuketSEO ช่วยอย่างไร
 
-เราเริ่มทุก **[บริการ local seo](/services/local-seo)** จาก audit GBP ร้านค้า — รวมหมวดหมู่ รีวิว และคู่แข่งในย่าน
+เราเริ่มทุก **[รับทำ Local SEO](/services/local-seo)** จาก audit GBP ร้านค้า — รวมหมวดหมู่ รีวิว และคู่แข่งในย่าน
 
 [ขอคำปรึกษาฟรี](/contact) · [ทำ Local SEO ร้านค้า](/blog/tam-local-seo-rang-kha) · [ราคา](/blog/raaka-local-seo-rang-kha)
     `,
@@ -477,7 +477,7 @@ Google Maps ร้านค้า — ลูกค้าเลือกจาก
       "google maps ร้านค้า",
     ],
     relatedServices: [
-      { name: "บริการ Local SEO", href: "/services/local-seo" },
+      { name: "รับทำ Local SEO", href: "/services/local-seo" },
       { name: "ทำ Local SEO ร้านค้า", href: "/blog/tam-local-seo-rang-kha" },
       { name: "Google Business Profile ร้านค้า", href: "/blog/gbp-rang-kha-local-seo" },
       { name: "Near Me SEO ภูเก็ต", href: "/blog/near-me-seo-phuket" },
@@ -586,7 +586,7 @@ Google Maps ร้านค้า — ลูกค้าเลือกจาก
 
 ## PhuketSEO ช่วยอย่างไร
 
-เราวิเคราะห์คำค้นและคู่แข่งในย่านจริงก่อนทำ **[บริการ local seo](/services/local-seo)** — ไม่ยัด keyword list เดียวกันทุกร้าน
+เราวิเคราะห์คำค้นและคู่แข่งในย่านจริงก่อนทำ **[รับทำ Local SEO](/services/local-seo)** — ไม่ยัด keyword list เดียวกันทุกร้าน
 
 [ขอคำปรึกษาฟรี](/contact) · [ทำ Local SEO ร้านค้า](/blog/tam-local-seo-rang-kha) · [GBP ร้านค้า](/blog/gbp-rang-kha-local-seo)
     `,
@@ -618,7 +618,7 @@ Google Maps ร้านค้า — ลูกค้าเลือกจาก
       "ร้านค้าไม่โผล่ maps",
     ],
     relatedServices: [
-      { name: "บริการ Local SEO", href: "/services/local-seo" },
+      { name: "รับทำ Local SEO", href: "/services/local-seo" },
       { name: "ทำ Local SEO ร้านค้า", href: "/blog/tam-local-seo-rang-kha" },
       { name: "เลือกเอเจนซี่ Local SEO", href: "/blog/leuk-aecensi-local-seo" },
       { name: "SEO Audit ฟรี", href: "/seo-audit" },
@@ -713,7 +713,7 @@ NAP ร้านค้าไม่ตรง — ชื่อ เบอร์ ท
 
 ## PhuketSEO ช่วยอย่างไร
 
-เราเริ่มจาก **audit Google Maps ฟรี** สำหรับร้านค้า — หาข้อผิดพลาดก่อนเสนอแพ็ก [บริการ local seo](/services/local-seo)
+เราเริ่มจาก **audit Google Maps ฟรี** สำหรับร้านค้า — หาข้อผิดพลาดก่อนเสนอแพ็ก [รับทำ Local SEO](/services/local-seo)
 
 [ขอคำปรึกษาฟรี](/contact) · [SEO Audit ฟรี](/seo-audit) · [ทำ Local SEO ร้านค้า](/blog/tam-local-seo-rang-kha)
     `,

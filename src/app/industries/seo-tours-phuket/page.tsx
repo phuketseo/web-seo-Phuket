@@ -15,9 +15,10 @@ const data = industrySeoContent.tour;
 const pageUrl = `${siteConfig.url}/industries/seo-tours-phuket`;
 
 export const metadata: Metadata = {
-  title: "SEO บริษัททัวร์ภูเก็ต | Direct Booking - PhuketSEO",
+  title: "SEO บริษัททัวร์ภูเก็ต | รับทำ SEO ทัวร์ Direct Booking - PhuketSEO",
   description: data.description,
   alternates: { canonical: pageUrl },
+  keywords: data.keywords,
 };
 
 const breadcrumbSchema = buildBreadcrumb([
@@ -29,9 +30,10 @@ const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   "@id": `${pageUrl}#service`,
-  name: "SEO สำหรับบริษัททัวร์ภูเก็ต",
-  serviceType: "SEO สำหรับบริษัททัวร์",
-  description: data.description,
+  name: "SEO บริษัททัวร์ภูเก็ต",
+  alternateName: ["รับทำ SEO ทัวร์ภูเก็ต", "SEO เรือทัวร์ภูเก็ต"],
+  serviceType: "Tour Operator SEO",
+  description: data.answerBlock,
   url: pageUrl,
   provider: localServiceProvider,
   areaServed: areaServedPhuket,
@@ -39,14 +41,15 @@ const serviceSchema = {
   offers: {
     "@type": "Offer",
     priceCurrency: "THB",
-    price: "8900",
+    price: "5900",
     priceSpecification: {
       "@type": "UnitPriceSpecification",
       priceCurrency: "THB",
-      price: "8900",
+      price: "5900",
       unitText: "MONTH",
     },
-    url: `${siteConfig.url}/pricing`,
+    description: "แพ็ก SEO Lite เริ่มต้น หรือ Pro รวมเว็บจองตรง",
+    url: `${siteConfig.url}/packages/seo-lite`,
   },
 };
 

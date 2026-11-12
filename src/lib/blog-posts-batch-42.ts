@@ -20,7 +20,7 @@ export const blogPostsBatch42 = {
       "Google ดู 3 อย่างหลัก: ตรงกับคำค้น · อยู่ใกล้ลูกค้า · น่าเชื่อถือ (รีวิว รูป ข้อมูลตรง)",
       "เริ่มจากยืนยันตัวตนและปักหมุดถูก → หมวด GBP ตรง → รีวิวมีข้อความ → อัปเดตรูปและโพสต์",
       "ต่างจาก Google Ads ตรงที่ไม่จ่ายต่อคลิก แต่ใช้เวลา 30–90 วันในหลายโซน",
-      "ถ้าไม่ติดเลย อ่าน [วิธีแก้ Google Maps ไม่ติด](/blog/google-maps-mai-tid-phuket) · [รับปักหมุดธุรกิจ](/blog/rap-pak-mut-thurakij-phuket)",
+      "ถ้าไม่ติดเลย อ่าน [วิธีแก้ Google Maps ไม่ติด](/blog/google-maps-mai-tid-phuket) · [รับปักหมุดธุรกิจ](/services/google-maps-pin)",
     ],
     keywords: [
       "ดันอันดับ Google Maps",
@@ -31,9 +31,10 @@ export const blogPostsBatch42 = {
       "เอเยนซี่ SEO ภูเก็ต",
     ],
     relatedServices: [
-      { name: "บริการ Local SEO", href: "/services/local-seo" },
+      { name: "รับทำ Local SEO", href: "/services/local-seo" },
+      { name: "รับปักหมุดธุรกิจ Google Maps ภูเก็ต", href: "/services/google-maps-pin" },
       { name: "วิธีแก้ Maps ไม่ติด", href: "/blog/google-maps-mai-tid-phuket" },
-      { name: "รับปักหมุดธุรกิจ", href: "/blog/rap-pak-mut-thurakij-phuket" },
+      { name: "รับปักหมุดธุรกิจ (คู่มือ)", href: "/blog/rap-pak-mut-thurakij-phuket" },
       { name: "Google Business Profile", href: "/blog/google-my-business-phuket" },
     ],
     faqs: [
@@ -43,7 +44,7 @@ export const blogPostsBatch42 = {
       },
       {
         q: "ดันอันดับ Google Maps ภูเก็ตควรเริ่มจากอะไร?",
-        a: "เริ่มจากยืนยันตัวตนและปักหมุดถูกต้องบน Google Business Profile จากนั้นเลือกหมวดธุรกิจให้ตรง ใส่รูปหน้าร้านและบริการจริง แล้วขอรีวิวจากลูกค้าที่ใช้บริการแล้ว — ดู [รับปักหมุดธุรกิจ](/blog/rap-pak-mut-thurakij-phuket)",
+        a: "เริ่มจากยืนยันตัวตนและปักหมุดถูกต้องบน Google Business Profile จากนั้นเลือกหมวดธุรกิจให้ตรง ใส่รูปหน้าร้านและบริการจริง แล้วขอรีวิวจากลูกค้าที่ใช้บริการแล้ว — ดู [รับปักหมุดธุรกิจ Google Maps ภูเก็ต](/services/google-maps-pin)",
       },
       {
         q: "ดันอันดับ Google Maps ใช้เวลานานแค่ไหน?",
@@ -51,11 +52,11 @@ export const blogPostsBatch42 = {
       },
       {
         q: "รับดันอันดับ Google Maps ภูเก็ต ราคาเท่าไหร่?",
-        a: "แพ็ก SEO Lite เริ่ม ฿5,900/เดือน เน้น Google Maps + GBP แพ็ก Pro ฿8,900/เดือน รวมเว็บ + SEO — ดู [ราคา SEO ภูเก็ต](/blog/raaka-seo-phuket) หรือ [แพ็กเกจราคา](/pricing)",
+        a: "แพ็ก SEO Lite เริ่ม ฿5,900/เดือน เน้น Google Maps + GBP แพ็ก Pro ฿8,900/เดือน รวมเว็บ + SEO — ดู [รับทำ Local SEO](/services/local-seo) หรือ [แพ็กเกจราคา](/pricing)",
       },
       {
         q: "ดันอันดับ Google Maps เองได้ไหม?",
-        a: "ทำบางส่วนเองได้ เช่น อัปเดต GBP ขอรีวิว และโพสต์รูป แต่การวิเคราะห์คู่แข่งในโซนและแก้ listing ซ้ำมักต้องใช้เวลา — หลายธุรกิจใช้ [เอเยนซี่ SEO ภูเก็ต](/services/local-seo) เพื่อวางลำดับงาน",
+        a: "ทำบางส่วนเองได้ เช่น อัปเดต GBP ขอรีวิว และโพสต์รูป แต่การวิเคราะห์คู่แข่งในโซนและแก้ listing ซ้ำมักต้องใช้เวลา — หลายธุรกิจใช้ [รับทำ Local SEO](/services/local-seo) เพื่อวางลำดับงาน",
       },
       {
         q: "ดันอันดับ Maps กับ Google Ads ต่างกันยังไง?",
@@ -69,7 +70,7 @@ export const blogPostsBatch42 = {
     content: `
 **ดันอันดับ Google Maps ภูเก็ต** หมายถึง **การปรับ Google Business Profile รีวิว และสัญญาณความน่าเชื่อถือให้ธุรกิจโผล่ต้นๆบนแผนที่** เมื่อลูกค้าค้นในโซนจริง — เช่น ป่าตอง กะตะ ตัวเมือง ถลาง กมลา หรือกะทู้ **ดันอันดับ Google Maps ทำงานโดย** ทำให้ข้อมูลร้านตรงกับที่ลูกค้าค้น สะสมรีวิวจากลูกค้าจริง และอัปเดตรูปอย่างสม่ำเสมอ
 
-บทความนี้เป็นคู่มือหลัก (pillar) ของชุด Google Maps — อ่านคู่กับ [วิธีแก้ Google Maps ไม่ติด](/blog/google-maps-mai-tid-phuket) และ [รับปักหมุดธุรกิจ](/blog/rap-pak-mut-thurakij-phuket)
+บทความนี้เป็นคู่มือหลัก (pillar) ของชุด Google Maps — อ่านคู่กับ [วิธีแก้ Google Maps ไม่ติด](/blog/google-maps-mai-tid-phuket) · [รับปักหมุดธุรกิจ Google Maps ภูเก็ต](/services/google-maps-pin) · [คู่มือรับปักหมุด](/blog/rap-pak-mut-thurakij-phuket)
 
 :::image mapsBoostFactors
 ดันอันดับ Google Maps — ปัจจัยที่ Google ใช้จัดอันดับธุรกิจท้องถิ่น
@@ -98,7 +99,7 @@ export const blogPostsBatch42 = {
 ## 5 วิธีดันอันดับ Google Maps ที่ทำได้จริง
 
 **1. ยืนยันตัวตนและปักหมุดให้ถูก**
-หมุดผิด = ลูกค้าหลง รีวิวลบ และ Google ลดความเชื่อถือ — ดู [รับปักหมุดธุรกิจ Google Maps](/blog/rap-pak-mut-thurakij-phuket)
+หมุดผิด = ลูกค้าหลง รีวิวลบ และ Google ลดความเชื่อถือ — ดู [รับปักหมุดธุรกิจ Google Maps ภูเก็ต](/services/google-maps-pin)
 
 **2. เลือกหมวด Google Business Profile ให้ตรง**
 หมวดกว้างเกินไปทำให้โผล่ในคำค้นผิดกลุ่ม — ดู [Google Business Profile ภูเก็ต](/blog/google-my-business-phuket)
@@ -142,7 +143,7 @@ export const blogPostsBatch42 = {
 
 ## PhuketSEO ช่วยดันอันดับ Google Maps อย่างไร
 
-ทีม PhuketSEO วิเคราะห์ listing และคู่แข่งในโซนจริงก่อนลงมือ — ไม่ยัด keyword list เดียวกันทุกร้าน บริการ [รับทำ SEO ภูเก็ต](/services/local-seo) ครอบคลุม GBP รีวิว และรายงานผล
+ทีม PhuketSEO วิเคราะห์ listing และคู่แข่งในโซนจริงก่อนลงมือ — ไม่ยัด keyword list เดียวกันทุกร้าน บริการ [รับทำ Local SEO](/services/local-seo) ครอบคลุม GBP รีวิว และรายงานผล
 
 [ขอคำปรึกษาฟรี](/contact) · [ตรวจ SEO ฟรี](/seo-audit)
 
@@ -150,7 +151,7 @@ export const blogPostsBatch42 = {
 
 ## สรุป
 
-ดันอันดับ Google Maps ภูเก็ตได้จริงเมื่อปักหมุดถูก GBP ครบ รีวิวมีข้อความ และอัปเดตรูปสม่ำเสมอ — เริ่มจาก [รับปักหมุดธุรกิจ](/blog/rap-pak-mut-thurakij-phuket) ถ้ายังไม่ยืนยันตัวตน หรือ [วิธีแก้ Maps ไม่ติด](/blog/google-maps-mai-tid-phuket) ถ้าโผล่แต่ไม่ขึ้นอันดับ
+ดันอันดับ Google Maps ภูเก็ตได้จริงเมื่อปักหมุดถูก GBP ครบ รีวิวมีข้อความ และอัปเดตรูปสม่ำเสมอ — เริ่มจาก [รับปักหมุดธุรกิจ Google Maps ภูเก็ต](/services/google-maps-pin) ถ้ายังไม่ยืนยันตัวตน หรือ [วิธีแก้ Maps ไม่ติด](/blog/google-maps-mai-tid-phuket) ถ้าโผล่แต่ไม่ขึ้นอันดับ
 `,
   },
 
@@ -170,7 +171,7 @@ export const blogPostsBatch42 = {
       "อาการหลัก: ค้นชื่อร้านไม่เจอ · โผล่แต่อันดับต่ำ · โทรจาก Maps น้อยลง",
       "แก้พื้นฐานก่อน: ยืนยันตัวตน → รวม listing ซ้ำ → หมวดถูก → รูป 10+ รูป → ขอรีวิว",
       "หลัง listing พร้อมค่อยดันอันดับ — อ่าน [ดันอันดับ Google Maps](/blog/dan-andap-google-maps-phuket)",
-      "ปักหมุดผิดเป็นสาเหตุบ่อย — ดู [รับปักหมุดธุรกิจ](/blog/rap-pak-mut-thurakij-phuket)",
+      "ปักหมุดผิดเป็นสาเหตุบ่อย — ดู [รับปักหมุดธุรกิจ Google Maps ภูเก็ต](/services/google-maps-pin)",
     ],
     keywords: [
       "Google Maps ไม่ติด",
@@ -182,8 +183,9 @@ export const blogPostsBatch42 = {
     ],
     relatedServices: [
       { name: "ดันอันดับ Google Maps", href: "/blog/dan-andap-google-maps-phuket" },
-      { name: "รับปักหมุดธุรกิจ", href: "/blog/rap-pak-mut-thurakij-phuket" },
-      { name: "บริการ Local SEO", href: "/services/local-seo" },
+      { name: "รับปักหมุดธุรกิจ Google Maps ภูเก็ต", href: "/services/google-maps-pin" },
+      { name: "รับปักหมุดธุรกิจ (คู่มือ)", href: "/blog/rap-pak-mut-thurakij-phuket" },
+      { name: "รับทำ Local SEO", href: "/services/local-seo" },
       { name: "SEO Audit ฟรี", href: "/seo-audit" },
     ],
     faqs: [
@@ -193,7 +195,7 @@ export const blogPostsBatch42 = {
       },
       {
         q: "วิธีแก้ Google Maps ไม่ติด ควรเริ่มจากอะไร?",
-        a: "เริ่มจาก audit listing — ยืนยันตัวตน แก้ปักหมุด รวม listing ซ้ำ เลือกหมวดให้ตรง ใส่รูปหน้าร้านและบริการอย่างน้อย 10 รูป แล้วขอรีวิวจากลูกค้าจริง — ดู [รับปักหมุดธุรกิจ](/blog/rap-pak-mut-thurakij-phuket)",
+        a: "เริ่มจาก audit listing — ยืนยันตัวตน แก้ปักหมุด รวม listing ซ้ำ เลือกหมวดให้ตรง ใส่รูปหน้าร้านและบริการอย่างน้อย 10 รูป แล้วขอรีวิวจากลูกค้าจริง — ดู [รับปักหมุดธุรกิจ Google Maps ภูเก็ต](/services/google-maps-pin)",
       },
       {
         q: "Google Maps ไม่ติด ใช้เวลาแก้นานแค่ไหน?",
@@ -201,11 +203,11 @@ export const blogPostsBatch42 = {
       },
       {
         q: "จ้างแก้ Google Maps ไม่ติด ราคาเท่าไหร่?",
-        a: "แพ็ก SEO Lite เริ่ม ฿5,900/เดือน รวมดูแล GBP และรีวิว — งานปักหมุดหรือยืนยันตัวตนอาจมีค่า setup แยกตามเคส ดู [ราคา SEO ภูเก็ต](/blog/raaka-seo-phuket)",
+        a: "แพ็ก SEO Lite เริ่ม ฿5,900/เดือน รวมดูแล GBP และรีวิว — งานปักหมุดหรือยืนยันตัวตนอาจมีค่า setup แยกตามเคส ดู [รับทำ Local SEO](/services/local-seo)",
       },
       {
         q: "แก้ Google Maps ไม่ติดเองได้ไหม?",
-        a: "แก้ข้อผิดพลาดพื้นฐานเองได้ผ่าน Google Business Profile แต่การรวม listing ซ้ำ แก้ปักหมุดซับซ้อน หรือโดนระงับต้องใช้ประสบการณ์ — หลายร้านใช้ [เอเยนซี่ SEO ภูเก็ต](/services/local-seo)",
+        a: "แก้ข้อผิดพลาดพื้นฐานเองได้ผ่าน Google Business Profile แต่การรวม listing ซ้ำ แก้ปักหมุดซับซ้อน หรือโดนระงับต้องใช้ประสบการณ์ — หลายร้านใช้ [รับทำ Local SEO](/services/local-seo)",
       },
       {
         q: "Google Maps ไม่ติด กับ Google Ads ต่างกันยังไง?",
@@ -242,7 +244,7 @@ export const blogPostsBatch42 = {
 **Google Maps ไม่ติดมักเกิดจาก 4 กลุ่มสาเหตุ:**
 
 1. **GBP ไม่ยืนยันตัวตน** — ร้านยังเป็น "รอดำเนินการ" หรือถูกระงับ
-2. **ปักหมุดผิด** — หมุดอยู่คนละซอย หรือไกลจากหน้าร้านจริง ดู [รับปักหมุดธุรกิจ](/blog/rap-pak-mut-thurakij-phuket)
+2. **ปักหมุดผิด** — หมุดอยู่คนละซอย หรือไกลจากหน้าร้านจริง ดู [รับปักหมุดธุรกิจ Google Maps ภูเก็ต](/services/google-maps-pin)
 3. **ข้อมูล NAP ไม่ตรง** — ชื่อ เบอร์ ที่อยู่ต่างกันระหว่าง Maps เว็บ และป้ายหน้าร้าน
 4. **สัญญาณน่าเชื่อถือน้อยกว่าคู่แข่ง** — รีวิวน้อย รูปเก่า ไม่ตอบรีวิว
 
@@ -255,7 +257,7 @@ export const blogPostsBatch42 = {
 ## เช็กลิสต์แก้ Google Maps ไม่ติด
 
 **1.** เข้า Google Business Profile ตรวจสถานะยืนยันตัวตน  
-**2.** ลากหมุดให้ตรงหน้าร้าน — หรือใช้บริการ [รับปักหมุดธุรกิจ](/blog/rap-pak-mut-thurakij-phuket)  
+**2.** ลากหมุดให้ตรงหน้าร้าน — หรือใช้บริการ [รับปักหมุดธุรกิจ Google Maps ภูเก็ต](/services/google-maps-pin)  
 **3.** รวม listing ซ้ำ (request merge)  
 **4.** เลือกหมวดหมู่หลักให้ตรงธุรกิจ  
 **5.** อัปโหลดรูปหน้าร้าน ภายใน และบริการอย่างน้อย 10 รูป  
@@ -286,7 +288,7 @@ export const blogPostsBatch42 = {
 
 ## PhuketSEO ช่วยอย่างไร
 
-เรา audit listing ฟรีใน [SEO Audit](/seo-audit) หรือคุยเคสปักหมุดและ listing ซ้ำผ่าน [ขอคำปรึกษาฟรี](/contact) — บริการ [Local SEO ภูเก็ต](/services/local-seo) ครอบคลุมทั้งแก้ไม่ติดและดันอันดับ
+เรา audit listing ฟรีใน [SEO Audit](/seo-audit) หรือคุยเคสปักหมุดและ listing ซ้ำผ่าน [ขอคำปรึกษาฟรี](/contact) — บริการ [รับทำ Local SEO](/services/local-seo) ครอบคลุมทั้งแก้ไม่ติดและดันอันดับ
 
 ---
 
@@ -323,15 +325,15 @@ export const blogPostsBatch42 = {
       "แก้หมุด Google Maps ผิด",
     ],
     relatedServices: [
-      { name: "บริการ Local SEO", href: "/services/local-seo" },
+      { name: "รับปักหมุดธุรกิจ Google Maps ภูเก็ต", href: "/services/google-maps-pin" },
+      { name: "รับทำ Local SEO", href: "/services/local-seo" },
       { name: "ดันอันดับ Google Maps", href: "/blog/dan-andap-google-maps-phuket" },
       { name: "วิธีแก้ Maps ไม่ติด", href: "/blog/google-maps-mai-tid-phuket" },
-      { name: "Google Business Profile", href: "/blog/google-my-business-phuket" },
     ],
     faqs: [
       {
         q: "รับปักหมุดธุรกิจ คืออะไร?",
-        a: "รับปักหมุดธุรกิจ คือบริการช่วยตั้งและยืนยันตำแหน่งร้านบน Google Business Profile ให้หมุดบนแผนที่ตรงกับหน้าร้านจริง รวมการยืนยันตัวตนและแก้หมุดผิด — เป็นขั้นต่ำก่อนดันอันดับ Google Maps",
+        a: "รับปักหมุดธุรกิจ คือบริการช่วยตั้งและยืนยันตำแหน่งร้านบน Google Business Profile ให้หมุดบนแผนที่ตรงกับหน้าร้านจริง รวมการยืนยันตัวตนและแก้หมุดผิด — เป็นขั้นต่ำก่อนดันอันดับ Google Maps ดู [รับปักหมุดธุรกิจ Google Maps ภูเก็ต](/services/google-maps-pin)",
       },
       {
         q: "รับปักหมุดธุรกิจ ควรเริ่มเมื่อไหร่?",
@@ -343,11 +345,11 @@ export const blogPostsBatch42 = {
       },
       {
         q: "รับปักหมุดธุรกิจ ราคาเท่าไหร่?",
-        a: "งาน setup GBP และปักหมุดมักรวมในแพ็ก SEO Lite เริ่ม ฿5,900/เดือน หรือค่า setup แยกตามเคส (listing ซ้ำ โดนระงับ) — ดู [ราคา SEO ภูเก็ต](/blog/raaka-seo-phuket)",
+        a: "งาน setup GBP และปักหมุดมักรวมในแพ็ก SEO Lite เริ่ม ฿5,900/เดือน หรือค่า setup แยกตามเคส (listing ซ้ำ โดนระงับ) — ดู [รับปักหมุดธุรกิจ Google Maps ภูเก็ต](/services/google-maps-pin)",
       },
       {
         q: "ปักหมุด Google Maps เองได้ไหม?",
-        a: "ทำเองได้ผ่าน Google Business Profile แต่ถ้าหมุดถูก lock มี listing ซ้ำ หรือธุรกิจในห้าง/ชั้นในอาคาร การขอแก้มักซับซ้อน — หลายร้านใช้ที่ปรึกษา Local SEO ภูเก็ต",
+        a: "ทำเองได้ผ่าน Google Business Profile แต่ถ้าหมุดถูก lock มี listing ซ้ำ หรือธุรกิจในห้าง/ชั้นในอาคาร การขอแก้มักซับซ้อน — หลายร้านใช้ [รับปักหมุดธุรกิจ Google Maps ภูเก็ต](/services/google-maps-pin)",
       },
       {
         q: "ปักหมุดกับดันอันดับ Maps ต่างกันยังไง?",
@@ -427,13 +429,13 @@ PhuketSEO ช่วยปักหมุดและ GBP ในโซน **ป�
 
 ## PhuketSEO ช่วยอย่างไร
 
-บริการ [รับทำ SEO ภูเก็ต](/services/local-seo) รวมการตั้งค่า GBP ปักหมุด และดูแล listing ต่อเนื่อง — เริ่มจาก [ขอคำปรึกษาฟรี](/contact) หรือ [ตรวจ SEO ฟรี](/seo-audit)
+บริการ [รับปักหมุดธุรกิจ Google Maps ภูเก็ต](/services/google-maps-pin) โฟกัสตั้งหมุดและยืนยัน GBP — หลังฐานพร้อมค่อยดูแลต่อที่ [รับทำ Local SEO](/services/local-seo) เริ่มจาก [ขอคำปรึกษาฟรี](/contact) หรือ [ตรวจ SEO ฟรี](/seo-audit)
 
 ---
 
 ## สรุป
 
-รับปักหมุดธุรกิจ Google Maps ภูเก็ตเป็นขั้นแรกก่อนดันอันดับ — หมุดถูก ยืนยันแล้ว ค่อยไป [ดันอันดับ Google Maps](/blog/dan-andap-google-maps-phuket) และแก้เคส [Maps ไม่ติด](/blog/google-maps-mai-tid-phuket) ถ้ายังมีปัญหา
+รับปักหมุดธุรกิจ Google Maps ภูเก็ตเป็นขั้นแรกก่อนดันอันดับ — หมุดถูก ยืนยันแล้ว ค่อยไป [ดันอันดับ Google Maps](/blog/dan-andap-google-maps-phuket) และแก้เคส [Maps ไม่ติด](/blog/google-maps-mai-tid-phuket) ถ้ายังมีปัญหา หรือดูหน้าบริการ [รับปักหมุดธุรกิจ Google Maps ภูเก็ต](/services/google-maps-pin)
 `,
   },
 };

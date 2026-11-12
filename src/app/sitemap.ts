@@ -26,6 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/contact`, priority: 0.9, changeFrequency: "monthly", lastModified: now },
     { url: `${baseUrl}/seo-audit`, priority: 0.9, changeFrequency: "monthly", lastModified: now },
     { url: `${baseUrl}/phuketseo`, priority: 0.95, changeFrequency: "monthly", lastModified: now },
+    { url: `${baseUrl}/local-seo-package`, priority: 0.9, changeFrequency: "monthly", lastModified: now },
     { url: `${baseUrl}/blog`, priority: 0.85, changeFrequency: "weekly", lastModified: now },
     ...staticPaths(
       baseUrl,
@@ -40,11 +41,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     baseUrl,
     [
       "/services/local-seo",
+      "/services/google-maps-pin",
       "/services/seo-phuket",
       "/services/web-design",
       "/services/ai-search-visibility",
       "/services/google-ads",
+      "/services/google-ads-thailand",
       "/services/social-media",
+      "/services/facebook-ads",
     ],
     0.9
   );
