@@ -19,8 +19,11 @@ export default function SiteChrome({ children }: { children: React.ReactNode }) 
     <>
       <Navbar />
       <main>{children}</main>
+      {/* มือถือใช้ MobileBottomNav — ซ่อน footer บน mobile แต่ไม่ลบ */}
       <div className="pb-[calc(4.75rem+env(safe-area-inset-bottom))] md:pb-0">
-        <Footer />
+        <div className="hidden md:block">
+          <Footer />
+        </div>
       </div>
       {/* มือถือใช้ LINE ใน bottom nav แล้ว — ปุ่มลอยเหลือแค่เดสก์ท็อป */}
       <div className="hidden md:contents">
