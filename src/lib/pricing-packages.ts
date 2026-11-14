@@ -69,29 +69,30 @@ export const primaryPricingPackages: PricingPackage[] = [
       "Responsive",
       "ฟอร์ม / CTA",
       "SEO on-page พื้นฐาน",
+      "ปีถัดไป: โดเมน + hosting ฿2,500/ปี",
     ],
     cta: "ขอใบเสนอราคา",
     popular: false,
-    footnote: "โดเมน + เซิร์ฟเวอร์แยก ฿2,500/ปี",
+    footnote: "แพ็กเดียว · จ่ายครั้งแรก ฿6,500 · ปีถัดไป ฿2,500 (โดเมน + hosting)",
     detailHref: "/pricing",
   },
   {
     id: "annual-care",
-    name: "โดเมน + เซิร์ฟเวอร์",
-    tagline: "จ่ายปีละครั้ง",
+    name: "ต่ออายุโดเมน + hosting",
+    tagline: "ปีถัดไปของแพ็กเว็บ",
     price: 2500,
     priceLabel: "2,500",
     billingPeriod: "year",
-    desc: "ค่าโดเมนและเซิร์ฟเวอร์ จ่ายปีละ ฿2,500 — ต่ออายุให้ต่อเนื่อง",
+    desc: "ต่ออายุโดเมนและ hosting ปีละ ฿2,500 หลังมีเว็บกับเราแล้ว — ไม่ใช่แพ็กแยกให้เลือกตอนทำเว็บใหม่",
     features: [
       "ค่าโดเมน 1 ปี",
-      "ค่าเซิร์ฟเวอร์ / โฮสติ้ง 1 ปี",
+      "ค่าเซิร์ฟเวอร์ / hosting 1 ปี",
       "ต่ออายุให้ต่อเนื่อง",
       "ดูแลเทคนิคพื้นฐานของโฮสต์",
     ],
-    cta: "เลือกรายปี",
+    cta: "ต่ออายุรายปี",
     popular: false,
-    footnote: "ไม่รวมทำเว็บใหม่ — ดูแพ็กเว็บมาตรฐาน ฿6,500",
+    footnote: "สำหรับลูกค้าที่มีเว็บกับเราแล้ว · ทำเว็บใหม่เริ่มที่ ฿6,500",
     detailHref: "/pricing",
   },
 ];
@@ -226,7 +227,7 @@ export const seoPricingPackages = legacySeoPackages;
 export const pricingComparison = seoPricingComparison;
 
 export const webSetupPricing = [
-  { name: "เว็บมาตรฐาน", price: "6,500", note: "จ่ายครั้งเดียว" },
-  { name: "โดเมน + เซิร์ฟเวอร์", price: "2,500/ปี", note: "จ่ายปีละครั้ง" },
+  { name: "แพ็กเว็บไซต์", price: "6,500", note: "จ่ายครั้งแรก · ปีถัดไป ฿2,500" },
+  { name: "โดเมน + hosting (ปีถัดไป)", price: "2,500/ปี", note: "ต่ออายุหลังมีเว็บแล้ว" },
   { name: "SEO", price: "จาก 4,000/เดือน", note: "สัญญา 3/6/12 เดือน" },
 ];

@@ -31,7 +31,9 @@ export function PricingTabsSection({
       ? "md:grid-cols-4"
       : tab.plans.length === 3
         ? "md:grid-cols-3"
-        : "md:grid-cols-2 md:max-w-3xl md:mx-auto";
+        : tab.plans.length === 1
+          ? "md:grid-cols-1 md:max-w-xl md:mx-auto"
+          : "md:grid-cols-2 md:max-w-3xl md:mx-auto";
 
   const TitleTag = titleAs;
 
@@ -79,9 +81,10 @@ export function PricingTabsSection({
         {tab.plans.map((plan, index) => {
           const features =
             tab.id === "web"
-              ? webTabFeaturesByPlan[plan.id] ?? []
+              ? webTabFeaturesByPlan[plan.id] ?? tab.features
               : tab.features;
           const isLast = index === tab.plans.length - 1;
+          const isWebPack = tab.id === "web";
           return (
             <article
               key={plan.id}
@@ -100,19 +103,40 @@ export function PricingTabsSection({
               </div>
               <p className="text-sm text-slate-600 mb-5 leading-relaxed">{plan.desc}</p>
 
-              <div className="mb-1">
-                <span
-                  className={`text-3xl sm:text-4xl font-bold tabular-nums tracking-tight ${
-                    plan.popular ? "text-gradient-brand" : "text-slate-900"
-                  }`}
-                >
-                  ฿{plan.priceLabel}
-                </span>
-                {plan.periodSuffix ? (
-                  <span className="text-sm text-slate-500 ml-1">{plan.periodSuffix}</span>
-                ) : null}
-              </div>
-              <p className="text-xs text-slate-500 mb-5">{plan.unit}</p>
+              {isWebPack ? (
+                <div className="mb-5 space-y-3 rounded-xl border border-slate-200 bg-slate-50/80 p-4">
+                  <div>
+                    <p className="text-xs font-medium text-slate-500 mb-0.5">จ่ายครั้งแรก</p>
+                    <p className="text-3xl sm:text-4xl font-bold tabular-nums tracking-tight text-slate-900">
+                      ฿6,500
+                    </p>
+                    <p className="text-xs text-slate-500 mt-1">ทำเว็บไซต์ตาม brief</p>
+                  </div>
+                  <div className="border-t border-slate-200 pt-3">
+                    <p className="text-xs font-medium text-slate-500 mb-0.5">ปีถัดไป</p>
+                    <p className="text-2xl font-bold tabular-nums tracking-tight text-indigo-700">
+                      ฿2,500<span className="text-sm font-medium text-slate-500">/ปี</span>
+                    </p>
+                    <p className="text-xs text-slate-500 mt-1">ค่าโดเมน + hosting</p>
+                  </div>
+                </div>
+              ) : (
+                <>
+                  <div className="mb-1">
+                    <span
+                      className={`text-3xl sm:text-4xl font-bold tabular-nums tracking-tight ${
+                        plan.popular ? "text-gradient-brand" : "text-slate-900"
+                      }`}
+                    >
+                      ฿{plan.priceLabel}
+                    </span>
+                    {plan.periodSuffix ? (
+                      <span className="text-sm text-slate-500 ml-1">{plan.periodSuffix}</span>
+                    ) : null}
+                  </div>
+                  <p className="text-xs text-slate-500 mb-5">{plan.unit}</p>
+                </>
+              )}
 
               <Link
                 href={planContactHrefFromTab(plan.id)}
@@ -138,13 +162,15 @@ export function PricingTabsSection({
                 ))}
               </ul>
 
-              <div className="mt-6 pt-4 border-t border-slate-200">
-                <p className="text-xs text-slate-500 mb-1">{plan.totalLabel}</p>
-                <p className="text-lg font-semibold text-slate-900 tabular-nums">
-                  ฿{plan.totalPrice}
-                </p>
-                <p className="text-xs text-slate-500 mt-1">{plan.totalSub}</p>
-              </div>
+              {!isWebPack ? (
+                <div className="mt-6 pt-4 border-t border-slate-200">
+                  <p className="text-xs text-slate-500 mb-1">{plan.totalLabel}</p>
+                  <p className="text-lg font-semibold text-slate-900 tabular-nums">
+                    ฿{plan.totalPrice}
+                  </p>
+                  <p className="text-xs text-slate-500 mt-1">{plan.totalSub}</p>
+                </div>
+              ) : null}
             </article>
           );
         })}

@@ -20,14 +20,8 @@ const priceHighlights = [
   {
     label: "เว็บไซต์",
     value: "฿6,500",
-    unit: "จ่ายครั้งเดียว",
+    unit: "ครั้งแรก · ปีถัดไป ฿2,500",
     href: "#web-standard",
-  },
-  {
-    label: "โดเมน + เซิร์ฟเวอร์",
-    value: "฿2,500",
-    unit: "ต่อปี",
-    href: "#web-annual",
   },
 ];
 

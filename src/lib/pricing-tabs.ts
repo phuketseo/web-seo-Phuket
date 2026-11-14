@@ -154,52 +154,41 @@ export const pricingTabs: PricingTab[] = [
     label: "เว็บไซต์",
     headline: "แพ็ก",
     headlineAccent: "เว็บไซต์",
-    lead: "สร้างเว็บไซต์ หรือต่ออายุโดเมนและเซิร์ฟเวอร์",
-    note: "ขอบเขตงานยืนยันตอนคุย brief",
-    features: [],
+    lead: "แพ็กเดียว — จ่ายครั้งแรก ฿6,500 ทำเว็บตาม brief ปีถัดไป ฿2,500 เป็นค่าโดเมน + hosting",
+    note: "ขอบเขตงานยืนยันตอนคุย brief · ปีแรกมักรวมโดเมนและโฮสต์ในช่วงส่งมอบ ปีถัดไปต่ออายุ ฿2,500",
+    features: [
+      "หน้าหลัก + บริการ",
+      "Responsive",
+      "ฟอร์ม / CTA",
+      "SEO on-page พื้นฐาน",
+      "ปีถัดไป: โดเมน + hosting ฿2,500/ปี",
+    ],
     plans: [
       {
         id: "web-standard",
-        name: "มาตรฐาน",
-        desc: "ทำเว็บไซต์ครบชุดตาม brief",
+        name: "แพ็กเว็บไซต์",
+        desc: "ทำเว็บครบชุดตาม brief แล้วต่ออายุโดเมนกับ hosting ปีถัดไป",
         priceLabel: "6,500",
         periodSuffix: "",
-        unit: "แพ็กมาตรฐาน · จ่ายครั้งเดียว",
+        unit: "จ่ายครั้งแรก · ปีถัดไป ฿2,500 (โดเมน + hosting)",
         cta: "ขอใบเสนอราคา",
         popular: false,
-        totalLabel: "ราคารวม",
+        totalLabel: "จ่ายครั้งแรก",
         totalPrice: "6,500",
-        totalSub: "จ่ายครั้งเดียวตามแพ็ก",
-      },
-      {
-        id: "web-annual",
-        name: "รายปี",
-        desc: "ค่าโดเมนและเซิร์ฟเวอร์ จ่ายปีละครั้ง",
-        priceLabel: "2,500",
-        periodSuffix: "/ปี",
-        unit: "จ่ายปีละ 1 ครั้ง",
-        cta: "เลือกรายปี",
-        popular: true,
-        totalLabel: "ราคารวมต่อปี",
-        totalPrice: "2,500",
-        totalSub: "ค่าโดเมน + เซิร์ฟเวอร์ · จ่ายปีละ ฿2,500",
+        totalSub: "ปีถัดไป ฿2,500/ปี · ค่าโดเมน + hosting",
       },
     ],
   },
 ];
 
+/** @deprecated เหลือไว้เพื่อไม่ให้ import เก่าพัง — แท็บเว็บใช้ tab.features แล้ว */
 export const webTabFeaturesByPlan: Record<string, string[]> = {
   "web-standard": [
     "หน้าหลัก + บริการ",
     "Responsive",
     "ฟอร์ม / CTA",
     "SEO on-page พื้นฐาน",
-  ],
-  "web-annual": [
-    "ค่าโดเมน 1 ปี",
-    "ค่าเซิร์ฟเวอร์ / โฮสติ้ง 1 ปี",
-    "ต่ออายุให้ต่อเนื่อง",
-    "ดูแลเทคนิคพื้นฐานของโฮสต์",
+    "ปีถัดไป: โดเมน + hosting ฿2,500/ปี",
   ],
 };
 

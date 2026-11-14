@@ -10,10 +10,8 @@ import MobileBottomNav from "@/components/MobileBottomNav";
 export default function SiteChrome({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const isAdmin = pathname?.startsWith("/admin");
-  const isPreview = pathname?.startsWith("/preview");
 
-  // Preview routes own their chrome (Cap system experiment) — no site nav/footer/LINE
-  if (isAdmin || isPreview) {
+  if (isAdmin) {
     return <>{children}</>;
   }
 
