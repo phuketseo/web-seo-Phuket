@@ -23,7 +23,7 @@ export default function CookieConsent() {
       role="dialog"
       aria-labelledby="cookie-consent-title"
       aria-describedby="cookie-consent-desc"
-      className="fixed bottom-4 left-4 right-4 md:right-auto md:max-w-md z-[60] animate-in fade-in slide-in-from-bottom-4 duration-300"
+      className="fixed bottom-[calc(4.75rem+env(safe-area-inset-bottom))] left-4 right-4 z-[60] animate-in fade-in slide-in-from-bottom-4 duration-300 md:bottom-4 md:right-auto md:max-w-md"
     >
       <div className="bg-white rounded-2xl border border-slate-200 shadow-xl shadow-slate-200/60 p-4 sm:p-5">
         <p id="cookie-consent-desc" className="text-sm text-slate-600 leading-relaxed mb-4">
